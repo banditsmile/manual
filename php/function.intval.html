@@ -1,194 +1,83 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取变量的整数值</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.import-request-variables.html">import_request_variables</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-array.html">is_array</a></div>
- <div class="up"><a href="ref.var.html">Variable handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.intval" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">intval</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">intval</span> &mdash; <span class="dc-title">获取变量的整数值</span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.intval-description">
-  <h3 class="title">说明</h3>
-     <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>intval</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$var</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$base</code><span class="initializer"> = 10</span></span>
-  ] )</div>
-
-    <p class="para rdfs-comment">
-     通过使用指定的进制 <code class="parameter">base</code> 转换（默认是十进制），返回变量 <code class="parameter">var</code>
-     的 <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> 数值。
-      <span class="function"><strong>intval()</strong></span> 不能用于 object，否则会产生  <strong><code>E_NOTICE</code></strong> 错误并返回 1。
-    </p>
- </div>
-
-  
- <div class="refsect1 parameters" id="refsect1-function.intval-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">var</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要转换成 integer 的数量值
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">base</code></dt>
-
-     <dd>
-
-      <p class="para">
-       转化所使用的进制
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        如果 <code class="parameter">base</code> 是 0，通过检测 <code class="parameter">var</code> 的格式来决定使用的进制：
-        <ul class="itemizedlist">
-         <li class="listitem">
-          <span class="simpara">
-           如果字符串包括了 &quot;0x&quot; (或 &quot;0X&quot;) 的前缀，使用 16 进制 (hex)；否则，
-          </span>
-         </li>
-         <li class="listitem">
-          <span class="simpara">
-           如果字符串以 &quot;0&quot; 开始，使用 8  进制(octal)；否则，
-          </span>
-         </li>
-         <li class="listitem">
-          <span class="simpara">
-           将使用 10 进制 (decimal)。
-          </span>
-         </li>
-        </ul>
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >intval</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="����������" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="import_request_variables" HREF="function.import-request-variables.html"><LINK  REL="NEXT" TITLE="is_array" HREF="function.is-array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.import-request-variables.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.is-array.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.intval" ></A
+>intval</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115560" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>intval&nbsp;--&nbsp;��ȡ����������ֵ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115563" ></A
+><H2  >����</H2
+>int <B  CLASS="methodname" >intval</B
+> ( mixed var [, int base])<BR  ></BR
+><P  >&#13;     ͨ��ʹ���ض��Ľ���ת����Ĭ����ʮ���ƣ������ر��� <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+     �� <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> ��ֵ�� 
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >var</I
+></TT
+> �������κα������͡�<B  CLASS="function" >intval()</B
+>
+     �������� <A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+> �� <A  HREF="language.types.object.html"  ><B  CLASS="type" >object</B
+></A
+>��
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      ���� <TT  CLASS="parameter" ><I  >var</I
+></TT
+>
+      �������ַ��������� <B  CLASS="function" >intval()</B
+>
+      �� <TT  CLASS="parameter" ><I  >base</I
+></TT
+>
+      ����������Ч����
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     �μ� <A  HREF="function.floatval.html"  ><B  CLASS="function" >floatval()</B
+></A
+>��<A  HREF="function.strval.html"  ><B  CLASS="function" >strval()</B
+></A
+>��<A  HREF="function.settype.html"  ><B  CLASS="function" >settype()</B
+></A
+>
+     �� <A  HREF="language.types.type-juggling.html"  >����Ϸ��</A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.import-request-variables.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.is-array.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >import_request_variables</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >is_array</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.intval-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <code class="parameter">var</code> 的 integer 值，失败时返回 0。
-   空的 array 返回 0，非空的 array 返回 1。
-  </p>
-  <p class="para">
-   最大的值取决于操作系统。 32 位系统最大带符号的 integer 范围是 -2147483648 到 2147483647。举例，在这样的系统上， <em>intval(&#039;1000000000000&#039;)</em> 会返回 
-   2147483647。64 位系统上，最大带符号的 integer 值是 
-   9223372036854775807。
-  </p>
-  <p class="para">
-   字符串有可能返回 0，虽然取决于字符串最左侧的字符。   
-   使用
-   <a href="language.types.integer.html#language.types.integer.casting" class="link">整型转换</a> 
-   的共同规则。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.intval-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5564">
-    <p><strong>Example #1 <span class="function"><strong>intval()</strong></span> 例子</strong></p>
-    <div class="example-contents"><p>
-     下面的例子运行于 32 位系统上。
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">42</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;42<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">4.2</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;4<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'42'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;42<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'+42'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;42<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'-42'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;-42<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">042</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;34<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'042'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;42<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">1e10</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;1410065408<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'1e10'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">0x1A</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;26<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">42000000</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;42000000<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">420000000000000000000</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'420000000000000000000'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;2147483647<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #0000BB">42</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;42<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(</span><span style="color: #DD0000">'42'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;34<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(array());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">intval</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">));&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.intval-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    除非 <code class="parameter">var</code> 是一个字符串，否则 <code class="parameter">base</code> 不会起作用。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.intval-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        当传入的 <code class="parameter">var</code> 是 object，将会抛出 <strong><code>E_NOTICE</code></strong> 并返回 1。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.intval-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.boolval.html" class="function" rel="rdfs-seeAlso">boolval()</a> - Get the boolean value of a variable</span></li>
-    <li class="member"><span class="function"><a href="function.floatval.html" class="function" rel="rdfs-seeAlso">floatval()</a> - 获取变量的浮点值</span></li>
-    <li class="member"><span class="function"><a href="function.strval.html" class="function" rel="rdfs-seeAlso">strval()</a> - 获取变量的字符串值</span></li>
-    <li class="member"><span class="function"><a href="function.settype.html" class="function" rel="rdfs-seeAlso">settype()</a> - 设置变量的类型</span></li>
-    <li class="member"><span class="function"><a href="function.is-numeric.html" class="function" rel="rdfs-seeAlso">is_numeric()</a> - 检测变量是否为数字或数字字符串</span></li>
-    <li class="member"><a href="language.types.type-juggling.html" class="link">类型转换的判别</a></li>
-    <li class="member"><a href="ref.bc.html" class="link">BCMath 任意精度数学函数</a></li>
-   </ul>
-  </p>
- </div>
-
-   
-   
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.import-request-variables.html">import_request_variables</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-array.html">is_array</a></div>
- <div class="up"><a href="ref.var.html">Variable handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

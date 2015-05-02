@@ -1,97 +1,59 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»æ–‡ä»¶ä¸­åŠ è½½ä¸€ä¸ª PostScript Type 1 å­—ä½“</title>
+<HTML  ><HEAD  ><TITLE  >imagepsloadfont</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagepsfreefont" HREF="function.imagepsfreefont.html"><LINK  REL="NEXT" TITLE="imagepsslantfont" HREF="function.imagepsslantfont.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagepsfreefont.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagepsslantfont.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagepsloadfont" ></A
+>imagepsloadfont</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN40499" ></A
+><P  >    (PHP 3&#62;= 3.0.9, PHP 4 )</P
+>imagepsloadfont&nbsp;--&nbsp;´ÓÎÄ¼şÖĞ¼ÓÔØÒ»¸ö PostScript Type 1 ×ÖÌå</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN40502" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >imagepsloadfont</B
+> ( string filename)<BR  ></BR
+><P  >&#13;     Èç¹ûÒ»ÇĞÕı³££¬½«·µ»ØÒ»¸öºÏ·¨µÄ×ÖÌåË÷ÒıÒÔ±¸Ê¹ÓÃ¡£·ñÔò·µ»Ø
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ²¢ÏÔÊ¾Ò»ÌõĞÅÏ¢ËµÃ÷ÄÄÀï´íÁË£¬¶øÄãÎŞ·¨Ö±½Ó¶ÁÈ¡´ËĞÅÏ¢£¬ÒòÎªµ±Ç°ÊÇÒÔÍ¼Ïñ¸ñÊ½ÔÚÊä³ö¡£
+    </P
+><P  >&#13;     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />header </font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: image/jpeg"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$im </font><font  color="#007700">= </font><font  color="#0000BB">imagecreate </font><font  color="#007700">(</font><font  color="#0000BB">350</font><font  color="#007700">, </font><font  color="#0000BB">45</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$black </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$white </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$font </font><font  color="#007700">= </font><font  color="#0000BB">imagepsloadfont </font><font  color="#007700">(</font><font  color="#DD0000">"bchbi.pfb"</font><font  color="#007700">); </font><font  color="#FF8000">// or locate your .pfb files on your machine<br  /></font><font  color="#0000BB">imagepstext </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#DD0000">"Testing... It worked!"</font><font  color="#007700">, </font><font  color="#0000BB">$font</font><font  color="#007700">, </font><font  color="#0000BB">32</font><font  color="#007700">, </font><font  color="#0000BB">$white</font><font  color="#007700">, </font><font  color="#0000BB">$black</font><font  color="#007700">, </font><font  color="#0000BB">32</font><font  color="#007700">, </font><font  color="#0000BB">32</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagepsfreefont </font><font  color="#007700">(</font><font  color="#0000BB">$font</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagejpeg </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#DD0000">""</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">); </font><font  color="#FF8000">//for best quality...your mileage may vary<br  /></font><font  color="#0000BB">imagedestroy </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.imagepsfreefont.html"  ><B  CLASS="function" >imagepsfreefont()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagepsfreefont.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagepsslantfont.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagepsfreefont</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagepsslantfont</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagepsfreefont.html">imagepsfreefont</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagepsslantfont.html">imagepsslantfont</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagepsloadfont" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagepsloadfont</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsloadfont</span> &mdash; <span class="dc-title">ä»æ–‡ä»¶ä¸­åŠ è½½ä¸€ä¸ª PostScript Type 1 å­—ä½“</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imagepsloadfont-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>imagepsloadfont</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   ä»æ–‡ä»¶ <code class="parameter">filename</code> ä¸­åŠ è½½ä¸€ä¸ª PostScript Type 1 å­—ä½“ã€‚
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imagepsloadfont-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Postscript å­—ä½“æ–‡ä»¶çš„è·¯å¾„ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imagepsloadfont-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   å¦‚æœä¸€åˆ‡æ­£å¸¸ï¼Œå°†è¿”å›ä¸€ä¸ªåˆæ³•çš„å­—ä½“ç´¢å¼•ä»¥å¤‡ä½¿ç”¨ã€‚å¦åˆ™è¿”å›
-   <strong><code>FALSE</code></strong> å¹¶æ˜¾ç¤ºä¸€æ¡ä¿¡æ¯è¯´æ˜å“ªé‡Œé”™äº†ï¼Œä½†ä¸èƒ½ç›´æ¥è¯»å–æ­¤ä¿¡æ¯ï¼Œå› ä¸ºè¾“å‡ºæ ¼å¼æ˜¯å›¾åƒã€‚  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imagepsloadfont-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3348">
-    <p><strong>Example #1 <span class="function"><strong>imagepsloadfont()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;new&nbsp;image&nbsp;instance<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">350</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">45</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Allocate&nbsp;colors&nbsp;and&nbsp;fill&nbsp;the&nbsp;background<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$white&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagefilledrectangle</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">349</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">44</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$white</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;a&nbsp;font,&nbsp;write&nbsp;to&nbsp;the&nbsp;image&nbsp;and&nbsp;free&nbsp;the&nbsp;font&nbsp;from&nbsp;memory<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">"bchbi.pfb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepstext</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Testing...&nbsp;It&nbsp;worked!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">32</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$white</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$black</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">32</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">32</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Output&nbsp;the&nbsp;image<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-type:&nbsp;image/png'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.imagepsloadfont-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°ä»…åœ¨ PHP
-ç¼–è¯‘æ—¶æŒ‡å®šäº† <strong class="option configure">--with-t1lib[=DIR]</strong>
- æ—¶å¯ç”¨ã€‚</span></p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imagepsloadfont-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imagepsfreefont.html" class="function" rel="rdfs-seeAlso">imagepsfreefont()</a> - é‡Šæ”¾ä¸€ä¸ª PostScript Type 1 å­—ä½“æ‰€å ç”¨çš„å†…å­˜</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagepsfreefont.html">imagepsfreefont</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagepsslantfont.html">imagepsslantfont</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,170 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>计算字串出现的次数</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.substr-compare.html">substr_compare</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.substr-replace.html">substr_replace</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.substr-count" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">substr_count</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">substr_count</span> &mdash; <span class="dc-title">计算字串出现的次数</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.substr-count-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>substr_count</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$haystack</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$needle</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>substr_count()</strong></span> 返回子字符串<code class="parameter">needle</code> 在字符串 <code class="parameter">haystack</code> 中出现的次数。注意 <code class="parameter">needle</code> 区分大小写。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    该函数不会计算重叠字符串。参见下面的例子。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.substr-count-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">haystack</code></dt>
-
-     <dd>
-
-      <p class="para">
-       在此字符串中进行搜索。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">needle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要搜索的字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       开始计数的偏移位置。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       指定偏移位置之后的最大搜索长度。如果偏移量加上这个长度的和大于 <code class="parameter">haystack</code> 的总长度，则打印警告信息。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >substr_count</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="substr_compare" HREF="function.substr-compare.html"><LINK  REL="NEXT" TITLE="substr_replace" HREF="function.substr-replace.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.substr-compare.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.substr-replace.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.substr-count" ></A
+>substr_count</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN111158" ></A
+><P  >    (PHP 4 )</P
+>substr_count&nbsp;--&nbsp;Count the number of substring occurrences</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN111161" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >substr_count</B
+> ( string haystack, string needle)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >substr_count()</B
+> returns the number of times the
+     <TT  CLASS="parameter" ><I  >needle</I
+></TT
+> substring occurs in the
+     <TT  CLASS="parameter" ><I  >haystack</I
+></TT
+> string.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111177" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >substr_count()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">substr_count</font><font  color="#007700">(</font><font  color="#DD0000">"This is a test"</font><font  color="#007700">, </font><font  color="#DD0000">"is"</font><font  color="#007700">); </font><font  color="#FF8000">// prints out 2<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.count-chars.html"  ><B  CLASS="function" >count_chars()</B
+></A
+>,
+     <A  HREF="function.strpos.html"  ><B  CLASS="function" >strpos()</B
+></A
+>, <A  HREF="function.substr.html"  ><B  CLASS="function" >substr()</B
+></A
+>,
+     and <A  HREF="function.strstr.html"  ><B  CLASS="function" >strstr()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.substr-compare.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.substr-replace.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >substr_compare</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >substr_replace</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.substr-count-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-  该函数返回<span class="type"><span class="type 整型">整型</span></span>。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.substr-count-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        新增 <code class="parameter">offset</code> 和 <code class="parameter">length</code> 参数。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.substr-count-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5231">
-    <p><strong>Example #1 <span class="function"><strong>substr_count()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;test'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;14<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_count</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'is'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;2<br /><br />//&nbsp;字符串被简化为&nbsp;'s&nbsp;is&nbsp;a&nbsp;test'，因此输出&nbsp;1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_count</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'is'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;字符串被简化为&nbsp;'s&nbsp;i'，所以输出&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_count</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'is'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;因为&nbsp;5+10&nbsp;&gt;&nbsp;14，所以生成警告<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_count</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'is'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;输出&nbsp;1，因为该函数不计算重叠字符串<br /></span><span style="color: #0000BB">$text2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'gcdgcdgcd'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">substr_count</span><span style="color: #007700">(</span><span style="color: #0000BB">$text2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'gcdgcd'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.substr-count-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.count-chars.html" class="function" rel="rdfs-seeAlso">count_chars()</a> - 返回字符串所用字符的信息</span></li>
-    <li class="member"><span class="function"><a href="function.strpos.html" class="function" rel="rdfs-seeAlso">strpos()</a> - 查找字符串首次出现的位置</span></li>
-    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 返回字符串的子串</span></li>
-    <li class="member"><span class="function"><a href="function.strstr.html" class="function" rel="rdfs-seeAlso">strstr()</a> - 查找字符串的首次出现</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.substr-compare.html">substr_compare</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.substr-replace.html">substr_replace</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

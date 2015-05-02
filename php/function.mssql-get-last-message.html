@@ -1,87 +1,54 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns the last message from the server</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-free-statement.html">mssql_free_statement</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-guid-string.html">mssql_guid_string</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-get-last-message" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_get_last_message</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_get_last_message</span> &mdash; <span class="dc-title">Returns the last message from the server</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mssql-get-last-message-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mssql_get_last_message</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Gets the last message from the MS-SQL server
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-get-last-message-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">æ­¤å‡½æ•°æ²¡æœ‰å‚æ•°ã€‚</p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mssql-get-last-message-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns last error message from server, or an empty string if 
-   no error messages are returned from MSSQL.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mssql-get-last-message-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1661">
-    <p><strong>Example #1 <span class="function"><strong>mssql_get_last_message()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Connect&nbsp;to&nbsp;MSSQL&nbsp;and&nbsp;select&nbsp;the&nbsp;database<br /></span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'KALLESPC\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Make&nbsp;a&nbsp;query&nbsp;that&nbsp;will&nbsp;fail<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">mssql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;[php].[dbo].[not-found]'</span><span style="color: #007700">);<br /><br />if&nbsp;(!</span><span style="color: #0000BB">$query</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;The&nbsp;query&nbsp;has&nbsp;failed,&nbsp;print&nbsp;a&nbsp;nice&nbsp;error&nbsp;message<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;using&nbsp;mssql_get_last_message()<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">die(</span><span style="color: #DD0000">'MSSQL&nbsp;error:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mssql_get_last_message</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-MSSQL error: Invalid object name &#039;php.dbo.not-found&#039;.
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_get_last_message</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_free_statement" HREF="function.mssql-free-statement.html"><LINK  REL="NEXT" TITLE="mssql_guid_string" HREF="function.mssql-guid-string.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-free-statement.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-guid-string.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-get-last-message" ></A
+>mssql_get_last_message</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN58891" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mssql_get_last_message&nbsp;--&nbsp;
+     Returns the last message from the server
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN58894" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mssql_get_last_message</B
+> ( void )<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >¸Ãº¯ÊıÄ¿Ç°ÉĞÎŞ²Î¿¼ÎÄµµ£»½ö²ÎÊıÁĞ±í¿ÉÓÃ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-free-statement.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-guid-string.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_free_statement</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_guid_string</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.mssql-get-last-message-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mssql-min-error-severity.html" class="function" rel="rdfs-seeAlso">mssql_min_error_severity()</a> - Sets the minimum error severity</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-min-message-severity.html" class="function" rel="rdfs-seeAlso">mssql_min_message_severity()</a> - Sets the minimum message severity</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-free-statement.html">mssql_free_statement</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-guid-string.html">mssql_guid_string</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

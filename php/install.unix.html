@@ -1,173 +1,145 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Unix 系统下的安装</title>
+<HTML  ><HEAD  ><TITLE  >�� Unix ϵͳ�ϰ�װ</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="��װ" HREF="installation.html"><LINK  REL="PREVIOUS" TITLE="Unix/Solaris ��װ" HREF="install.solaris.html"><LINK  REL="NEXT" TITLE="Windows ϵͳ�µİ�װ" HREF="install.windows.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="install.solaris.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >�� 3. ��װ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="install.windows.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="install.unix" ></A
+>�� Unix ϵͳ�ϰ�װ</H1
+><P  >&#13;�ýڽ�ָ������ Unix ϵͳ��һ�����úͰ�װ PHP��
+�ڰ�װ֮ǰ��ȷ���о����κ�����ƽ̨�� web ��������ص��½ڡ�
+   </P
+><P  >&#13;Ԥ��֪ʶ������
+    <P  ></P
+><UL  ><LI  ><P  >&#13;      ���� Unix ����(������룬�ܹ����� "make" ��һ�� C ������)
+      </P
+></LI
+><LI  ><P  >&#13;       һ�� ANSI C ������ (�������)
+      </P
+></LI
+><LI  ><P  >&#13;       flex (���ڱ���)
+      </P
+></LI
+><LI  ><P  >&#13;       bison (���ڱ���)
+      </P
+></LI
+><LI  ><P  >&#13;       һ�� web ������
+      </P
+></LI
+><LI  ><P  >&#13;       �κ�ģ���������(���� gd�� pdf �⣬�ȵ�)
+      </P
+></LI
+></UL
+>
+   </P
+><P  >&#13;�м����� Unix ƽ̨�ϰ�װ PHP 
+�ķ�����ʹ�ñ�������õĹ��� ������ͨ��������Ԥ����ķ�ʽ��������Ҫ��ע��������� 
+PHP �Ĺ��̡�
+   </P
+><P  >&#13;��ʼ PHP ��װ�����ù�����ʹ��  <TT  CLASS="filename" >configure</TT
+> 
+�ű���������ѡ�������Ƶġ����ĸ�Ҫ�˴󲿷�ͨ��ѡ����ǻ�����������ѡ������ˣ��
+�� <A  HREF="install.configure.html"  >����������ѡ��</A
+> ���õ�һ���꾡��ѡ���б���
+�м��ְ�װ PHP �ķ�����  
+    <P  ></P
+><UL  ><LI  ><P  >&#13;       ��Ϊ <A  HREF="install.apache.html"  >Apache 1.x ģ��</A
+> ��
+        <A  HREF="install.apache2.html"  >Apache 2.x  ģ��</A
+>��
+      </P
+></LI
+><LI  ><P  >&#13;       ��Ϊ <A  HREF="install.caudium.html"  >  Caudium �� Pike ģ��</A
+>
+      </P
+></LI
+><LI  ><P  >&#13;       ͬ <A  HREF="install.otherhttpd.html"  >AOLServer, NSAPI,
+       phttpd, Pi3Web, Roxen, thttpd �� Zeus</A
+> һ��ʹ��
+      </P
+></LI
+><LI  ><P  >&#13;       ��Ϊ <A  HREF="install.commandline.html"  >CGI ������</A
+>
+      </P
+></LI
+></UL
+>
+   </P
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="install.unix.apache-module" ></A
+>Apache ģ����ٲο�</H2
+><P  >&#13;     PHP �ܹ�ʹ�ô�����ͬ�ķ������룬������õķ�ʽ����Ϊ 
+     Apache ��ģ�顣
+������һ�����ٰ�װ���ۡ�
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="install.unix.apache-module.quick" ></A
+><P  ><B  >���� 3-2. 
+ PHP 4 ���ٰ�װָ��( Apache ģ��汾)
+     </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="shell" >1.  gunzip apache_1.3.x.tar.gz
+2.  tar xvf apache_1.3.x.tar
+3.  gunzip php-x.x.x.tar.gz
+4.  tar xvf php-x.x.x.tar
+5.  cd apache_1.3.x
+6.  ./configure --prefix=/www
+7.  cd ../php-x.x.x
+8.  ./configure --with-mysql --with-apache=../apache_1.3.x --enable-ftp
+9.  make
+10. make install
+11. cd ../apache_1.3.x
+12. ./configure --activate-module=src/modules/php4/libphp4.a
+13. make
+14. make install
+15. cd ../php-x.x.x
+16. cp php.ini-dist /usr/local/lib/php.ini
+17. �༭��� httpd.conf �� srm.conf �ļ�����:
+      AddType application/x-httpd-php .php
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="install.general.html">安装前需要考虑的事项</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="install.unix.apache.html">Unix 系统下的 Apache 1.3.x</a></div>
- <div class="up"><a href="install.html">安装与配置</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="install.unix" class="chapter">
- <h1>Unix 系统下的安装</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="install.unix.apache.html">Unix 系统下的 Apache 1.3.x</a></li><li><a href="install.unix.apache2.html">Unix 系统下的 Apache 2.x</a></li><li><a href="install.unix.nginx.html">Unix 系统下的 Nginx 1.4.x</a></li><li><a href="install.unix.lighttpd-14.html">Unix 平台的 Lighttpd 1.4</a></li><li><a href="install.unix.sun.html">Sun Solaris 上的 Sun、iPlanet 和 Netscape 服务器</a></li><li><a href="install.unix.commandline.html">CGI 和命令行设置</a></li><li><a href="install.unix.hpux.html">针对 HP-UX 平台的安装提示</a></li><li><a href="install.unix.openbsd.html">在 OpenBSD 系统下的安装</a></li><li><a href="install.unix.solaris.html">针对 Solaris 的安装提示</a></li><li><a href="install.unix.debian.html">Debian GNU/Linux 安装说明</a></li></ul>
-
-  <p class="para">
-   本节将指导如何在 Unix 系统下安装和配置 PHP。在开始安装之前，请务必研究自己使用的系统和 web 服务器的相关章节。
-  </p>
- <p class="para">
-  在<a href="install.general.html" class="link">安装前需要考虑的事项</a>一节提到，在本节主要以
-  web 为中心介绍 PHP 的设置。不过本节也会覆盖一些 PHP 命令行用法的设置方法。
- </p>
- <p class="para">
-  在 Unix 平台下安装 PHP
-  有几种方法：使用配置和编译过程，或是使用各种预编译的包。本文主要针对配置和编译
-  PHP 的过程。很多 Unix 类系统都有包安装系统，可以用它来设置一个有着标准配置的
-  PHP。但是若需要与标准配置不同的功能（例如一个安全服务器，或者不同的数据库驱动扩展模块），可能需要编译
-  PHP 和／或 web
-  服务器。如果不熟悉编译软件，可以考虑搜索一下是否有人已经编译了包含所需要功能的预编译包。
- </p>
- <p class="para">
-  编译所需的知识和软件： 
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">基础的 Unix 技能（有能力操作“make”和一种 C 语言编译器）</span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">一个 ANSI C 语言编译器</span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">一个 web 服务器</span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">任何模块特需的组件（例如 <acronym title="Graphics Draw">GD</acronym> 和 <acronym title="Portable Document Format">PDF</acronym> 库等)</span>
-   </li>
-  </ul>
- </p>
- <p class="para">
-  直接从 Git 源文件或者自己修改过的包编译时可能需要：
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">
-     autoconf: 2.13+（PHP &lt; 5.4.0），2.59+（PHP &gt;= 5.4.0）
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     automake: 1.4+
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     libtool: 1.4.x+（除了 1.4.2）
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     re2c: 版本 0.13.4 或更高
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     flex: 版本 2.5.4（PHP &lt;= 5.2）
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     bison: 版本 1.28（建议），1.35 或 1.75
-    </span>
-   </li>
-  </ul>
- </p>
- <p class="para">
-  PHP 初始的配置和安装过程被 
-  <strong class="command">configure</strong> 脚本中一系列命令行选项控制。可以通过 
-  <strong class="command">./configure --help</strong>命令了解 PHP
-  所有可用的编译选项及简短解释。本手册是分开对这些选项编写文档的。可在附录中找到<a href="configure.html" class="link">核心配置选项</a>，而扩展模块特定的配置选项分别在其函数参考页面中描述。
- </p>
- <p class="para">
-  配置好 PHP 后，便可以开始编译模块和／或可执行文件。<strong class="command">make</strong>
-  命令用来做这一工作。如果该命令执行失败而找不到原因，请参考<a href="install.problems.html" class="link">安装问题</a>一节。
- </p>
-
- 
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-   
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
- 
-  
+18. ʹ����������������������� Apache 
+��������(�����ֹͣ��������������������������ʹ��
+ HUP �� USR1 �ź���ʹ���������ء�)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="install.building" ></A
+>����</H2
+><P  >&#13;�� PHP �����ã���׼������ CGI 
+ִ���ļ������� <B  CLASS="command" >make</B
+> ����������
+ �����ʧ���ˣ��㲻���ҳ�ԭ����ο� 
+ <A  HREF="install.problems.html"  >����</A
+> �ڡ�
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="install.solaris.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="install.windows.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Unix/Solaris ��װ</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="installation.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Windows ϵͳ�µİ�װ</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
- 
-  
-
-
-
-
-   
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="install.general.html">安装前需要考虑的事项</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="install.unix.apache.html">Unix 系统下的 Apache 1.3.x</a></div>
- <div class="up"><a href="install.html">安装与配置</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

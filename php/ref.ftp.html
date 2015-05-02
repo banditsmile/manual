@@ -1,300 +1,277 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>FTP å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ftp.examples-basic.html">åŸºæœ¬ç”¨æ³•</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-alloc.html">ftp_alloc</a></div>
- <div class="up"><a href="book.ftp.html">FTP</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.ftp" class="reference">
- <h1 class="title">FTP å‡½æ•°</h1>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-   
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.ftp-alloc.html">ftp_alloc</a> â€” ä¸ºè¦ä¸Šä¼ çš„æ–‡ä»¶åˆ†é…ç©ºé—´</li><li><a href="function.ftp-cdup.html">ftp_cdup</a> â€” åˆ‡æ¢åˆ°å½“å‰ç›®å½•çš„çˆ¶ç›®å½•</li><li><a href="function.ftp-chdir.html">ftp_chdir</a> â€” åœ¨ FTP æœåŠ¡å™¨ä¸Šæ”¹å˜å½“å‰ç›®å½•</li><li><a href="function.ftp-chmod.html">ftp_chmod</a> â€” è®¾ç½® FTP æœåŠ¡å™¨ä¸Šçš„æ–‡ä»¶æƒé™</li><li><a href="function.ftp-close.html">ftp_close</a> â€” å…³é—­ä¸€ä¸ª FTP è¿æ¥</li><li><a href="function.ftp-connect.html">ftp_connect</a> â€” å»ºç«‹ä¸€ä¸ªæ–°çš„ FTP è¿æ¥</li><li><a href="function.ftp-delete.html">ftp_delete</a> â€” åˆ é™¤ FTP æœåŠ¡å™¨ä¸Šçš„ä¸€ä¸ªæ–‡ä»¶</li><li><a href="function.ftp-exec.html">ftp_exec</a> â€” è¯·æ±‚è¿è¡Œä¸€æ¡ FTP å‘½ä»¤</li><li><a href="function.ftp-fget.html">ftp_fget</a> â€” ä» FTP æœåŠ¡å™¨ä¸Šä¸‹è½½ä¸€ä¸ªæ–‡ä»¶å¹¶ä¿å­˜åˆ°æœ¬åœ°ä¸€ä¸ªå·²ç»æ‰“å¼€çš„æ–‡ä»¶ä¸­</li><li><a href="function.ftp-fput.html">ftp_fput</a> â€” ä¸Šä¼ ä¸€ä¸ªå·²ç»æ‰“å¼€çš„æ–‡ä»¶åˆ° FTP æœåŠ¡å™¨</li><li><a href="function.ftp-get-option.html">ftp_get_option</a> â€” è¿”å›å½“å‰ FTP è¿æ¥çš„å„ç§ä¸åŒçš„é€‰é¡¹è®¾ç½®</li><li><a href="function.ftp-get.html">ftp_get</a> â€” ä» FTP æœåŠ¡å™¨ä¸Šä¸‹è½½ä¸€ä¸ªæ–‡ä»¶</li><li><a href="function.ftp-login.html">ftp_login</a> â€” ç™»å½• FTP æœåŠ¡å™¨</li><li><a href="function.ftp-mdtm.html">ftp_mdtm</a> â€” è¿”å›æŒ‡å®šæ–‡ä»¶çš„æœ€åä¿®æ”¹æ—¶é—´</li><li><a href="function.ftp-mkdir.html">ftp_mkdir</a> â€” å»ºç«‹æ–°ç›®å½•</li><li><a href="function.ftp-nb-continue.html">ftp_nb_continue</a> â€” è¿ç»­è·å–ï¼å‘é€æ–‡ä»¶ï¼ˆnon-blockingï¼‰</li><li><a href="function.ftp-nb-fget.html">ftp_nb_fget</a> â€” ä» FTP æœåŠ¡å™¨è·å–æ–‡ä»¶å¹¶å†™å…¥åˆ°ä¸€ä¸ªæ‰“å¼€çš„æ–‡ä»¶ï¼ˆéé˜»å¡ï¼‰</li><li><a href="function.ftp-nb-fput.html">ftp_nb_fput</a> â€” å°†æ–‡ä»¶å­˜å‚¨åˆ° FTP æœåŠ¡å™¨ ï¼ˆéé˜»å¡ï¼‰</li><li><a href="function.ftp-nb-get.html">ftp_nb_get</a> â€” ä» FTP æœåŠ¡å™¨ä¸Šè·å–æ–‡ä»¶å¹¶å†™å…¥æœ¬åœ°æ–‡ä»¶ï¼ˆnon-blockingï¼‰</li><li><a href="function.ftp-nb-put.html">ftp_nb_put</a> â€” å­˜å‚¨ä¸€ä¸ªæ–‡ä»¶è‡³ FTP æœåŠ¡å™¨ï¼ˆnon-blockingï¼‰</li><li><a href="function.ftp-nlist.html">ftp_nlist</a> â€” è¿”å›ç»™å®šç›®å½•çš„æ–‡ä»¶åˆ—è¡¨</li><li><a href="function.ftp-pasv.html">ftp_pasv</a> â€” è¿”å›å½“å‰ FTP è¢«åŠ¨æ¨¡å¼æ˜¯å¦æ‰“å¼€</li><li><a href="function.ftp-put.html">ftp_put</a> â€” ä¸Šä¼ æ–‡ä»¶åˆ° FTP æœåŠ¡å™¨</li><li><a href="function.ftp-pwd.html">ftp_pwd</a> â€” è¿”å›å½“å‰ç›®å½•å</li><li><a href="function.ftp-quit.html">ftp_quit</a> â€” ftp_close çš„ åˆ«å</li><li><a href="function.ftp-raw.html">ftp_raw</a> â€” å‘ FTP æœåŠ¡å™¨å‘é€å‘½ä»¤</li><li><a href="function.ftp-rawlist.html">ftp_rawlist</a> â€” è¿”å›æŒ‡å®šç›®å½•ä¸‹æ–‡ä»¶çš„è¯¦ç»†åˆ—è¡¨</li><li><a href="function.ftp-rename.html">ftp_rename</a> â€” æ›´æ”¹ FTP æœåŠ¡å™¨ä¸Šçš„æ–‡ä»¶æˆ–ç›®å½•å</li><li><a href="function.ftp-rmdir.html">ftp_rmdir</a> â€” åˆ é™¤ FTP æœåŠ¡å™¨ä¸Šçš„ä¸€ä¸ªç›®å½•</li><li><a href="function.ftp-set-option.html">ftp_set_option</a> â€” è®¾ç½®å„ç§ FTP è¿è¡Œæ—¶é€‰é¡¹</li><li><a href="function.ftp-site.html">ftp_site</a> â€” å‘æœåŠ¡å™¨å‘é€ SITE å‘½ä»¤</li><li><a href="function.ftp-size.html">ftp_size</a> â€” è¿”å›æŒ‡å®šæ–‡ä»¶çš„å¤§å°</li><li><a href="function.ftp-ssl-connect.html">ftp_ssl_connect</a> â€” æ‰“å¼€ SSL-FTP è¿æ¥</li><li><a href="function.ftp-systype.html">ftp_systype</a> â€” è¿”å›è¿œç¨‹ FTP æœåŠ¡å™¨çš„æ“ä½œç³»ç»Ÿç±»å‹</li></ul>
+<HTML  ><HEAD  ><TITLE  >FTP º¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="fribidi_log2vis" HREF="function.fribidi-log2vis.html"><LINK  REL="NEXT" TITLE="ftp_alloc" HREF="function.ftp-alloc.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fribidi-log2vis.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-alloc.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.ftp" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >XXXIII. FTP º¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN31035" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     FTP º¯Êı¿â¿ÉÒÔ°ïÖúÄúÊµÏÖ¿Í»§»úÓë·şÎñÆ÷Ö®¼ä±ê×¼ÎÄ¼ş´«ËÍĞ­Òé£¨FTP£©µÄ¹æ·¶½øĞĞÎÄ¼ş´«ËÍ¡£FTP
+     µÄÏêÏ¸¶¨Òå²Î¼û <A  href="http://www.faqs.org/rfcs/rfc959.html"  TARGET="_top" >http://www.faqs.org/rfcs/rfc959.html</A
+>¡£´ËÀ©Õ¹¿âÓÃÀ´Ê¹ÔËĞĞµÄ½Å±¾¶Ô
+     FTP ·şÎñÆ÷½øĞĞ¹ã·ºµÄ¿ØÖÆ¡£Èç¹ûÄãÖ»ÏëÔÚÒ»¸ö
+     FTP ·şÎñÆ÷ÉÏ¶ÁĞ´ÎÄ¼ş£¬¿¼ÂÇÊ¹ÓÃ<A  HREF="ref.filesystem.html"  >ÎÄ¼şÏµÍ³º¯Êı¿â</A
+>ÖĞµÄ
+     <A  HREF="wrappers.ftp.html"  ><TT  CLASS="literal" >ftp://</TT
+> wrapper</A
+>£¬ËüÌá¹©ÁË¼òµ¥ºÍ¸üÖ±¹ÛµÄ½Ó¿Ú¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.installation" ></A
+>°²×°</H1
+><P  >&#13;  In order to use FTP functions with your PHP configuration, you should
+  add the <TT  CLASS="option" >--enable-ftp</TT
+> option when
+  installing PHP 4 or <TT  CLASS="option" >--with-ftp</TT
+> when using
+   PHP 3.
+ </P
+><P  > <TT  CLASS="literal" >PHP</TT
+> µÄ Windows °æ±¾ÒÑ¾­ÄÚÖÃ¸ÃÀ©Õ¹Ä£¿éµÄÖ§³Ö¡£ÄúÎŞĞè¼ÓÔØÈÎºÎ¸½¼ÓµÄÀ©Õ¹¿â¼´¿ÉÊ¹ÓÃÕâĞ©º¯Êı¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >&#13;     ÔÚ FTP Ä£¿éÖĞÊ¹ÓÃÁËÒ»¸ö×ÊÔ´ÀàĞÍ£¬¸Ã×ÊÔ´ÀàĞÍÎª FTP µÄÁ¬½Ó¾ä±ú£¬ÓÉº¯Êı <A  HREF="function.ftp-connect.html"  ><B  CLASS="function" >ftp_connect()</B
+></A
+> ²úÉú¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >FTP_ASCII</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_TEXT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_BINARY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_IMAGE</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_TIMEOUT_SEC</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     ²Î¿¼º¯Êı <A  href="http://www.jb51.net/manual/php/function.ftp-set-option.html"  ><B  CLASS="function" >ftp_set_option()</B
+></A
+>¡£
+    </P
+></DD
+></DL
+></DIV
+><P  >&#13;  ÏÂÁĞ±äÁ¿ÔÚ PHP 4.3.0 ÒÔºó°æ±¾ÖĞ±»¼ÓÈë¡£
+ </P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >FTP_AUTOSEEK</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     ²Î¿¼º¯Êı <A  href="http://www.jb51.net/manual/php/function.ftp-set-option.html"  ><B  CLASS="function" >ftp_set_option()</B
+></A
+>¡£
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_AUTORESUME</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     Îª GET ºÍ PUT ÇëÇó×Ô¶¯¾ö¶¨»Ö¸´ºÍ¿ªÊ¼µÄÎ»ÖÃ
+     (Ö»ÄÜ¹¤×÷ÔÚ FTP_AUTOSEEK ´ò¿ªµÄÇé¿öÏÂ)
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_FAILED</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     Òì²½´«ÊäÊ§°Ü
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_FINISHED</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     Òì²½´«Êä³É¹¦
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FTP_MOREDATA</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     Òì²½´«ÊäÊÇ»î¶¯×´Ì¬µÄ
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="ftp.examples" ></A
+>·¶Àı</H1
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31131" ></A
+><P  ><B  >Àı×Ó 1. FTP ÊµÀı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// set up basic connection<br  /></font><font  color="#0000BB">$conn_id </font><font  color="#007700">= </font><font  color="#0000BB">ftp_connect</font><font  color="#007700">(</font><font  color="#0000BB">$ftp_server</font><font  color="#007700">); <br  /><br  /></font><font  color="#FF8000">// login with username and password<br  /></font><font  color="#0000BB">$login_result </font><font  color="#007700">= </font><font  color="#0000BB">ftp_login</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_name</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_pass</font><font  color="#007700">); <br  /><br  /></font><font  color="#FF8000">// check connection<br  /></font><font  color="#007700">if ((!</font><font  color="#0000BB">$conn_id</font><font  color="#007700">) || (!</font><font  color="#0000BB">$login_result</font><font  color="#007700">)) { <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"FTP connection has failed!"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Attempted to connect to $ftp_server for user $ftp_user_name"</font><font  color="#007700">; <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit; <br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Connected to $ftp_server, for user $ftp_user_name"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  /></font><font  color="#FF8000">// upload the file<br  /></font><font  color="#0000BB">$upload </font><font  color="#007700">= </font><font  color="#0000BB">ftp_put</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$destination_file</font><font  color="#007700">, </font><font  color="#0000BB">$source_file</font><font  color="#007700">, </font><font  color="#0000BB">FTP_BINARY</font><font  color="#007700">); <br  /><br  /></font><font  color="#FF8000">// check upload status<br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">$upload</font><font  color="#007700">) { <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"FTP upload has failed!"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Uploaded $source_file to $ftp_server as $destination_file"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  /></font><font  color="#FF8000">// close the FTP stream <br  /></font><font  color="#0000BB">ftp_close</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">); <br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.ftp-alloc.html"  >ftp_alloc</A
+>&nbsp;--&nbsp;Allocates space for a file to be uploaded.</DT
+><DT  ><A  HREF="function.ftp-cdup.html"  >ftp_cdup</A
+>&nbsp;--&nbsp;ÇĞ»»µ½µ±Ç°Ä¿Â¼µÄ¸¸Ä¿Â¼</DT
+><DT  ><A  HREF="function.ftp-chdir.html"  >ftp_chdir</A
+>&nbsp;--&nbsp;ÔÚ FTP ·şÎñÆ÷ÉÏÇĞ»»µ±Ç°Ä¿Â¼</DT
+><DT  ><A  HREF="function.ftp-chmod.html"  >ftp_chmod</A
+>&nbsp;--&nbsp;Set permissions on a file via FTP</DT
+><DT  ><A  HREF="function.ftp-close.html"  >ftp_close</A
+>&nbsp;--&nbsp;¹Ø±ÕÒ»¸ö»î¶¯µÄ FTP Á¬½Ó</DT
+><DT  ><A  HREF="function.ftp-connect.html"  >ftp_connect</A
+>&nbsp;--&nbsp;½¨Á¢Ò»¸öĞÂµÄ FTP Á¬½Ó</DT
+><DT  ><A  HREF="function.ftp-delete.html"  >ftp_delete</A
+>&nbsp;--&nbsp;É¾³ı FTP ·şÎñÆ÷ÉÏµÄÒ»¸öÎÄ¼ş</DT
+><DT  ><A  HREF="function.ftp-exec.html"  >ftp_exec</A
+>&nbsp;--&nbsp;ÇëÇóÔËĞĞÒ»Ìõ FTP ÃüÁî</DT
+><DT  ><A  HREF="function.ftp-fget.html"  >ftp_fget</A
+>&nbsp;--&nbsp;´Ó FTP ·şÎñÆ÷ÉÏÏÂÔØÒ»¸öÎÄ¼ş²¢±£´æµ½±¾µØÒ»¸öÒÑ¾­´ò¿ªµÄÎÄ¼şÖĞ</DT
+><DT  ><A  HREF="function.ftp-fput.html"  >ftp_fput</A
+>&nbsp;--&nbsp;ÉÏ´«Ò»¸öÒÑ¾­´ò¿ªµÄÎÄ¼şµ½ FTP ·şÎñÆ÷</DT
+><DT  ><A  HREF="function.ftp-get-option.html"  >ftp_get_option</A
+>&nbsp;--&nbsp;·µ»Øµ±Ç° FTP Á¬½ÓµÄ¸÷ÖÖ²»Í¬µÄÑ¡ÏîÉèÖÃ</DT
+><DT  ><A  HREF="function.ftp-get.html"  >ftp_get</A
+>&nbsp;--&nbsp;´Ó FTP ·şÎñÆ÷ÉÏÏÂÔØÒ»¸öÎÄ¼ş</DT
+><DT  ><A  HREF="function.ftp-login.html"  >ftp_login</A
+>&nbsp;--&nbsp;µÇÂ¼ FTP ·şÎñÆ÷</DT
+><DT  ><A  HREF="function.ftp-mdtm.html"  >ftp_mdtm</A
+>&nbsp;--&nbsp;·µ»ØÖ¸¶¨ÎÄ¼şµÄ×îºóĞŞ¸ÄÊ±¼ä</DT
+><DT  ><A  HREF="function.ftp-mkdir.html"  >ftp_mkdir</A
+>&nbsp;--&nbsp;½¨Á¢ĞÂÄ¿Â¼</DT
+><DT  ><A  HREF="function.ftp-nb-continue.html"  >ftp_nb_continue</A
+>&nbsp;--&nbsp;Á¬Ğø»ñÈ¡£¯·¢ËÍÎÄ¼ş£¨non-blocking£©</DT
+><DT  ><A  HREF="function.ftp-nb-fget.html"  >ftp_nb_fget</A
+>&nbsp;--&nbsp;Retrieves a file from the FTP server and writes it to an open file (non-blocking)</DT
+><DT  ><A  HREF="function.ftp-nb-fput.html"  >ftp_nb_fput</A
+>&nbsp;--&nbsp;Stores a file from an open file to the FTP server (non-blocking)</DT
+><DT  ><A  HREF="function.ftp-nb-get.html"  >ftp_nb_get</A
+>&nbsp;--&nbsp;´Ó FTP ·şÎñÆ÷ÉÏ»ñÈ¡ÎÄ¼ş²¢Ğ´Èë±¾µØÎÄ¼ş£¨non-blocking£©</DT
+><DT  ><A  HREF="function.ftp-nb-put.html"  >ftp_nb_put</A
+>&nbsp;--&nbsp;´æ´¢Ò»¸öÎÄ¼şÖÁ FTP ·şÎñÆ÷£¨non-blocking£©</DT
+><DT  ><A  HREF="function.ftp-nlist.html"  >ftp_nlist</A
+>&nbsp;--&nbsp;·µ»Ø¸ø¶¨Ä¿Â¼µÄÎÄ¼şÁĞ±í</DT
+><DT  ><A  HREF="function.ftp-pasv.html"  >ftp_pasv</A
+>&nbsp;--&nbsp;·µ»Øµ±Ç° FTP ±»¶¯Ä£Ê½ÊÇ·ñ´ò¿ª</DT
+><DT  ><A  HREF="function.ftp-put.html"  >ftp_put</A
+>&nbsp;--&nbsp;ÉÏ´«ÎÄ¼şµ½ FTP ·şÎñÆ÷</DT
+><DT  ><A  HREF="function.ftp-pwd.html"  >ftp_pwd</A
+>&nbsp;--&nbsp;·µ»Øµ±Ç°Ä¿Â¼Ãû</DT
+><DT  ><A  HREF="function.ftp-quit.html"  >ftp_quit</A
+>&nbsp;--&nbsp;<A  HREF="function.ftp-close.html"  ><B  CLASS="function" >ftp_close()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.ftp-raw.html"  >ftp_raw</A
+>&nbsp;--&nbsp;Sends an arbitrary command to an FTP server</DT
+><DT  ><A  HREF="function.ftp-rawlist.html"  >ftp_rawlist</A
+>&nbsp;--&nbsp;·µ»ØÖ¸¶¨Ä¿Â¼ÏÂÎÄ¼şµÄÏêÏ¸ÁĞ±í</DT
+><DT  ><A  HREF="function.ftp-rename.html"  >ftp_rename</A
+>&nbsp;--&nbsp;¸ü¸Ä FTP ·şÎñÆ÷ÉÏÖ¸¶¨µÄÎÄ¼şÃû</DT
+><DT  ><A  HREF="function.ftp-rmdir.html"  >ftp_rmdir</A
+>&nbsp;--&nbsp;É¾³ıÒ»¸öÄ¿Â¼</DT
+><DT  ><A  href="http://www.jb51.net/manual/php/function.ftp-set-option.html"  >ftp_set_option</A
+>&nbsp;--&nbsp;ÉèÖÃ¸÷ÖÖ FTP ÔËĞĞÊ±Ñ¡Ïî</DT
+><DT  ><A  HREF="function.ftp-site.html"  >ftp_site</A
+>&nbsp;--&nbsp;Ïò·şÎñÆ÷·¢ËÍ SITE ÃüÁî</DT
+><DT  ><A  HREF="function.ftp-size.html"  >ftp_size</A
+>&nbsp;--&nbsp;·µ»ØÖ¸¶¨ÎÄ¼şµÄ´óĞ¡</DT
+><DT  ><A  HREF="function.ftp-ssl-connect.html"  >ftp_ssl_connect</A
+>&nbsp;--&nbsp;Opens an Secure SSL-FTP connection</DT
+><DT  ><A  HREF="function.ftp-systype.html"  >ftp_systype</A
+>&nbsp;--&nbsp;·µ»ØÔ¶³Ì FTP ·şÎñÆ÷µÄÏµÍ³ÀàĞÍ</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fribidi-log2vis.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-alloc.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fribidi_log2vis</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_alloc</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ftp.examples-basic.html">åŸºæœ¬ç”¨æ³•</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-alloc.html">ftp_alloc</a></div>
- <div class="up"><a href="book.ftp.html">FTP</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

@@ -1,147 +1,117 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ‰“å¼€è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</title>
+<HTML  ><HEAD  ><TITLE  >popen</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="pclose" HREF="function.pclose.html"><LINK  REL="NEXT" TITLE="readfile" HREF="function.readfile.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pclose.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.readfile.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.popen" ></A
+>popen</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29451" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>popen&nbsp;--&nbsp;´ò¿ª½ø³ÌÎÄ¼şÖ¸Õë</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29454" ></A
+><H2  >ËµÃ÷</H2
+>resource <B  CLASS="methodname" >popen</B
+> ( string command, string mode)<BR  ></BR
+><P  >&#13;     ´ò¿ªÒ»¸öÖ¸Ïò½ø³ÌµÄ¹ÜµÀ£¬¸Ã½ø³ÌÓÉÅÉÉú¸ø¶¨µÄ <TT  CLASS="parameter" ><I  >command</I
+></TT
+> ÃüÁîÖ´ĞĞ¶ø²úÉú¡£
+    </P
+><P  >&#13;     ·µ»ØÒ»¸öºÍ <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>
+     Ëù·µ»ØµÄÏàÍ¬µÄÎÄ¼şÖ¸Õë£¬Ö»²»¹ıËüÊÇµ¥ÏòµÄ£¨Ö»ÄÜÓÃÓÚ¶Á»òĞ´£©²¢ÇÒ±ØĞëÓÃ
+     <A  HREF="function.pclose.html"  ><B  CLASS="function" >pclose()</B
+></A
+> À´¹Ø±Õ¡£´ËÖ¸Õë¿ÉÒÔÓÃÓÚ
+     <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>£¬<A  HREF="function.fgetss.html"  ><B  CLASS="function" >fgetss()</B
+></A
+> ºÍ
+     <A  HREF="function.fputs.html"  ><B  CLASS="function" >fputs()</B
+></A
+>¡£
+    </P
+><P  >&#13;     Èç¹û³ö´í·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Èç¹ûĞèÒªË«ÏòÖ§³Ö£¬Ê¹ÓÃ <A  HREF="function.proc-open.html"  ><B  CLASS="function" >proc_open()</B
+></A
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN29479" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >popen()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$handle </font><font  color="#007700">= </font><font  color="#0000BB">popen </font><font  color="#007700">(</font><font  color="#DD0000">"/bin/ls"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Èç¹ûÎ´ÕÒµ½ÒªÖ´ĞĞµÄÃüÁî£¬»á·µ»ØÒ»¸öºÏ·¨µÄ×ÊÔ´¡£Õâ¿´ÉÏÈ¥ºÜ¹Ö£¬µ«ÓĞµÀÀí¡£ËüÔÊĞíÄã·ÃÎÊ
+      shell ·µ»ØµÄÈÎºÎ´íÎóĞÅÏ¢£º
+      <DIV  CLASS="informalexample" ><A  NAME="AEN29485" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* ¼ÓÈëÖØ¶¨ÏòÒÔµÃµ½±ê×¼´íÎóÊä³ö stderr¡£ */<br  /></font><font  color="#0000BB">$handle </font><font  color="#007700">= </font><font  color="#0000BB">popen</font><font  color="#007700">(</font><font  color="#DD0000">'/path/to/spooge 2&gt;&amp;1'</font><font  color="#007700">, </font><font  color="#DD0000">'r'</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"'$handle'; " </font><font  color="#007700">. </font><font  color="#0000BB">gettype</font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$read </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">, </font><font  color="#0000BB">2096</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$read</font><font  color="#007700">;<br  /></font><font  color="#0000BB">pclose</font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.pclose.html"  ><B  CLASS="function" >pclose()</B
+></A
+>£¬<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> ºÍ
+     <A  HREF="function.proc-open.html"  ><B  CLASS="function" >proc_open()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pclose.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.readfile.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pclose</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >readfile</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pclose.html">pclose</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.readfile.html">readfile</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.popen" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">popen</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">popen</span> &mdash; <span class="dc-title">æ‰“å¼€è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.popen-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>popen</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$command</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   æ‰“å¼€ä¸€ä¸ªæŒ‡å‘è¿›ç¨‹çš„ç®¡é“ï¼Œè¯¥è¿›ç¨‹ç”±æ´¾ç”Ÿç»™å®šçš„ command å‘½ä»¤æ‰§è¡Œè€Œäº§ç”Ÿã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.popen-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">command</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å‘½ä»¤ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ¨¡å¼ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.popen-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ä¸€ä¸ªå’Œ <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
-   æ‰€è¿”å›çš„ç›¸åŒçš„æ–‡ä»¶æŒ‡é’ˆï¼Œåªä¸è¿‡å®ƒæ˜¯å•å‘çš„ï¼ˆåªèƒ½ç”¨äºè¯»æˆ–å†™ï¼‰å¹¶ä¸”å¿…é¡»ç”¨
-   <span class="function"><a href="function.pclose.html" class="function">pclose()</a></span> æ¥å…³é—­ã€‚æ­¤æŒ‡é’ˆå¯ä»¥ç”¨äº
-   <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span>ï¼Œ<span class="function"><a href="function.fgetss.html" class="function">fgetss()</a></span> å’Œ
-   <span class="function"><a href="function.fwrite.html" class="function">fwrite()</a></span>ã€‚
-   å½“æ¨¡å¼ä¸º &#039;r&#039;ï¼Œè¿”å›çš„æ–‡ä»¶æŒ‡é’ˆç­‰äºå‘½é‡Œçš„ STDOUTï¼Œå½“æ¨¡å¼ä¸º &#039;w&#039;ï¼Œè¿”å›çš„æ–‡ä»¶æŒ‡é’ˆç­‰äºå‘½ä»¤çš„ STDINã€‚
-  </p>
-  <p class="para">
-   å¦‚æœå‡ºé”™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.popen-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2517">
-    <p><strong>Example #1 <span class="function"><strong>popen()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">popen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/bin/ls"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-  å¦‚æœæœªæ‰¾åˆ°è¦æ‰§è¡Œçš„å‘½ä»¤ï¼Œä¼šè¿”å›ä¸€ä¸ªåˆæ³•çš„èµ„æºã€‚è¿™çœ‹ä¸Šå»å¾ˆæ€ªï¼Œä½†æœ‰é“ç†ã€‚å®ƒå…è®¸è®¿é—®
-    shell è¿”å›çš„ä»»ä½•é”™è¯¯ä¿¡æ¯ï¼š
-   <div class="example" id="example-2518">
-    <p><strong>Example #2 <span class="function"><strong>popen()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;åŠ å…¥é‡å®šå‘ä»¥å¾—åˆ°æ ‡å‡†é”™è¯¯è¾“å‡º&nbsp;stderrã€‚&nbsp;*/<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">popen</span><span style="color: #007700">(</span><span style="color: #DD0000">'/path/to/executable&nbsp;2&gt;&amp;1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"'</span><span style="color: #0000BB">$handle</span><span style="color: #DD0000">';&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">gettype</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$read&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2096</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$read</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">pclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 notes" id="refsect1-function.popen-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¦‚æœéœ€è¦åŒå‘æ”¯æŒï¼Œä½¿ç”¨ <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span>ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara"><a href="features.safe-mode.html" class="link">å®‰å…¨æ¨¡å¼</a> å¯ç”¨æ—¶ï¼Œå¯ä»…å¯ç”¨
-<a href="ini.sect.safe-mode.html#ini.safe-mode-exec-dir" class="link">safe_mode_exec_dir</a> æ‰§è¡Œæ–‡ä»¶ã€‚å®é™…ä¸Šï¼Œç°åœ¨ä¸å…è®¸åœ¨åˆ°å¯æ‰§è¡Œçš„è·¯å¾„ä¸­å­˜åœ¨ <em>..</em> ç»„ä»¶ã€‚</span></p></blockquote>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara"><a href="features.safe-mode.html" class="link">å®‰å…¨æ¨¡å¼</a> å¯ç”¨æ—¶ï¼Œå‘½ä»¤å­—ç¬¦ä¸²ä¼šè¢«
-<span class="function"><a href="function.escapeshellcmd.html" class="function">escapeshellcmd()</a></span> è½¬æ¢ã€‚å› æ­¤ï¼Œ<em>echo y | echo x</em> ä¼šå˜æˆ
-<em>echo y \| echo x</em>ã€‚</p></div>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.popen-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pclose.html" class="function" rel="rdfs-seeAlso">pclose()</a> - å…³é—­è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</span></li>
-    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - æ‰“å¼€æ–‡ä»¶æˆ–è€… URL</span></li>
-    <li class="member"><span class="function"><a href="function.proc-open.html" class="function" rel="rdfs-seeAlso">proc_open()</a> - æ‰§è¡Œä¸€ä¸ªå‘½ä»¤ï¼Œå¹¶ä¸”æ‰“å¼€ç”¨æ¥è¾“å…¥/è¾“å‡ºçš„æ–‡ä»¶æŒ‡é’ˆã€‚</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pclose.html">pclose</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.readfile.html">readfile</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,125 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Set a constraint on a relation</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbplus-errno.html">dbplus_errno</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbplus-first.html">dbplus_first</a></div>
- <div class="up"><a href="ref.dbplus.html">DB++ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dbplus-find" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dbplus_find</h1>
-  <p class="verinfo">(PHP 4 &lt;= 4.1.0, PECL dbplus &gt;= 0.9)</p><p class="refpurpose"><span class="refname">dbplus_find</span> &mdash; <span class="dc-title">Set a constraint on a relation</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.dbplus-find-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>dbplus_find</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$relation</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$constraints</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$tuple</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Places a constraint on the given <code class="parameter">relation</code>.
-  </p>
-  <p class="para">
-   Further calls to functions like <span class="function"><a href="function.dbplus-curr.html" class="function">dbplus_curr()</a></span> or
-   <span class="function"><a href="function.dbplus-next.html" class="function">dbplus_next()</a></span> will only return tuples matching the
-   given constraints.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.dbplus-find-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">relation</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A relation opened by <span class="function"><a href="function.dbplus-open.html" class="function">dbplus_open()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">constraints</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Constraints are triplets of strings containing of a domain name,
-       a comparison operator and a comparison value. The
-       <code class="parameter">constraints</code> parameter array may consist of
-       a collection of string arrays, each of which contains a domain, an
-       operator and a value, or of a single string array containing a
-       multiple of three elements.
-      </p>
-      <p class="para">
-       The comparison operator may be one of the following strings:
-       &#039;==&#039;, &#039;&gt;&#039;, &#039;&gt;=&#039;, &#039;&lt;&#039;, &#039;&lt;=&#039;, &#039;!=&#039;, &#039;~&#039; for a regular
-       expression match and &#039;BAND&#039; or &#039;BOR&#039; for bitwise operations.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">tuple</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >dbplus_find</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="DB++ Functions" HREF="ref.dbplus.html"><LINK  REL="PREVIOUS" TITLE="dbplus_errno" HREF="function.dbplus-errno.html"><LINK  REL="NEXT" TITLE="dbplus_first" HREF="function.dbplus-first.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbplus-errno.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dbplus-first.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dbplus-find" ></A
+>dbplus_find</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN20568" ></A
+><P  >    (4.1.0 - 4.2.3 only)</P
+>dbplus_find&nbsp;--&nbsp;Set a constraint on a relation</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN20571" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >dbplus_find</B
+> ( resource relation, array constraints, mixed tuple)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <B  CLASS="function" >dbplus_find()</B
+> will place a constraint on the
+     given relation. Further calls to functions like
+     <A  HREF="function.dbplus-curr.html"  ><B  CLASS="function" >dbplus_curr()</B
+></A
+> or
+     <A  HREF="function.dbplus-next.html"  ><B  CLASS="function" >dbplus_next()</B
+></A
+> will only return tuples matching
+     the given constraints.
+    </P
+><P  >&#13;     Constraints are triplets of strings containing of a domain name,
+     a comparison operator and a comparison value. The
+     <TT  CLASS="parameter" ><I  >constraints</I
+></TT
+> parameter array may consist of
+     a collection of string arrays, each of which contains a domain, an
+     operator and a value, or of a single string array containing a
+     multiple of three elements.
+    </P
+><P  >&#13;     The comparison operator may be one of the following strings:
+     '==', '&#62;', '&#62;=', '&#60;', '&#60;=', '!=', '~' for a regular
+     expression match and 'BAND' or 'BOR' for bitwise operations.
+    </P
+><P  >&#13;     See also <A  HREF="function.dbplus-unselect.html"  ><B  CLASS="function" >dbplus_unselect()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbplus-errno.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dbplus-first.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbplus_errno</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dbplus.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dbplus_first</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.dbplus-find-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.dbplus-find-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">æ­¤å‡½æ•°æ˜¯<em class="emphasis">å®éªŒæ€§</em>çš„ã€‚æ­¤å‡½æ•°çš„è¡¨è±¡ï¼ŒåŒ…æ‹¬åç§°åŠå…¶ç›¸å…³æ–‡æ¡£éƒ½å¯èƒ½åœ¨æœªæ¥çš„
-PHP å‘å¸ƒç‰ˆæœ¬ä¸­æœªé€šçŸ¥å°±è¢«ä¿®æ”¹ã€‚ä½¿ç”¨æœ¬å‡½æ•°é£é™©è‡ªæ‹… ã€‚</p></div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.dbplus-find-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dbplus-unselect.html" class="function" rel="rdfs-seeAlso">dbplus_unselect()</a> - Remove a constraint from relation</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbplus-errno.html">dbplus_errno</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbplus-first.html">dbplus_first</a></div>
- <div class="up"><a href="ref.dbplus.html">DB++ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

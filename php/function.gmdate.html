@@ -1,60 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ ¼å¼åŒ–ä¸€ä¸ª GMT/UTC æ—¥æœŸï¼æ—¶é—´</title>
+<HTML  ><HEAD  ><TITLE  >gmdate</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ê±¼äÈÕÆÚº¯Êı¿â" HREF="ref.datetime.html"><LINK  REL="PREVIOUS" TITLE="gettimeofday" HREF="function.gettimeofday.html"><LINK  REL="NEXT" TITLE="gmmktime" HREF="function.gmmktime.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.gettimeofday.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.gmmktime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.gmdate" ></A
+>gmdate</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN18576" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>gmdate&nbsp;--&nbsp;¸ñÊ½»¯Ò»¸ö GMT/UTC ÈÕÆÚ£¯Ê±¼ä</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN18579" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >gmdate</B
+> ( string format [, int timestamp])<BR  ></BR
+><P  >&#13;     Í¬ <A  HREF="function.date.html"  ><B  CLASS="function" >date()</B
+></A
+>
+     º¯ÊıÍêÈ«Ò»Ñù£¬Ö»³ıÁË·µ»ØµÄÊ±¼äÊÇ¸ñÁÖÍşÖÎ±ê×¼Ê±£¨GMT£©¡£ÀıÈçµ±ÔÚÖĞ¹ú£¨GMT
+     +0800£©ÔËĞĞÒÔÏÂ³ÌĞòÊ±£¬µÚÒ»ĞĞÏÔÊ¾¡°Jan 01 2000 00:00:00¡±¶øµÚ¶şĞĞÏÔÊ¾¡°Dec
+     31 1999 16:00:00¡±¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18592" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >gmdate()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M d Y H:i:s"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">gmdate </font><font  color="#007700">(</font><font  color="#DD0000">"M d Y H:i:s"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ Microsoft Windows
+      ÏµÁĞµÄ²Ù×÷ÏµÍ³ÖĞÊµÏÖ±¾º¯ÊıµÄÏµÍ³¿âÊÇ»µµÄ£¬Òò´Ë
+      <B  CLASS="function" >gmdate()</B
+> ²»Ö§³Ö¸ºµÄ
+      <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+> ²ÎÊıÖµ¡£Ï¸½Ú¼û´íÎó±¨¸æ£º<A  href="http://bugs.php.net/22620/"  TARGET="_top" >#22620</A
+>£¬<A  href="http://bugs.php.net/22457/"  TARGET="_top" >#22457</A
+> ºÍ <A  href="http://bugs.php.net/14391/"  TARGET="_top" >#14391</A
+>¡£
+     </P
+><P  >&#13;      ´ËÎÊÌâ²»»á³öÏÖÓÚ Unix/Linux
+      ²Ù×÷ÏµÍ³£¬¸ÃÏµÍ³ÏÂµÄÏµÍ³¿â»á°´ÕÕÔ¤ÆÚ½á¹ûÔË×÷¡£
+     </P
+><P  >&#13;      PHP ÎŞ·¨ĞŞ¸´»µµÄÏµÍ³¿â¡£ÒªĞŞÕıÓë´ËÀàËÆµÄÎÊÌâÇëÁªÏµ²Ù×÷ÏµÍ³¹©Ó¦ÉÌ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.date.html"  ><B  CLASS="function" >date()</B
+></A
+>£¬<A  HREF="function.mktime.html"  ><B  CLASS="function" >mktime()</B
+></A
+>£¬<A  HREF="function.gmmktime.html"  ><B  CLASS="function" >gmmktime()</B
+></A
+> ºÍ <A  HREF="function.strftime.html"  ><B  CLASS="function" >strftime()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.gettimeofday.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.gmmktime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >gettimeofday</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.datetime.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >gmmktime</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gettimeofday.html">gettimeofday</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gmmktime.html">gmmktime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.gmdate" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">gmdate</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">gmdate</span> &mdash; <span class="dc-title">æ ¼å¼åŒ–ä¸€ä¸ª GMT/UTC æ—¥æœŸï¼æ—¶é—´</span></p>
 
- </div>
- <div class="refsect1 unknown-examplet" id="refsect1-function.gmdate-unknown-examplet">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>gmdate</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$timestamp</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   åŒ <span class="function"><a href="function.date.html" class="function">date()</a></span>
-   å‡½æ•°å®Œå…¨ä¸€æ ·ï¼Œåªé™¤äº†è¿”å›çš„æ—¶é—´æ˜¯æ ¼æ—å¨æ²»æ ‡å‡†æ—¶ï¼ˆGMTï¼‰ã€‚ä¾‹å¦‚å½“åœ¨ä¸­å›½ï¼ˆGMT
-   +0800ï¼‰è¿è¡Œä»¥ä¸‹ç¨‹åºæ—¶ï¼Œç¬¬ä¸€è¡Œæ˜¾ç¤ºâ€œJan 01 2000 00:00:00â€è€Œç¬¬äºŒè¡Œæ˜¾ç¤ºâ€œDec
-   31 1999 16:00:00â€ã€‚
-   <div class="example" id="example-2406">
-    <p><strong>Example #1 <span class="function"><strong>gmdate()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M&nbsp;d&nbsp;Y&nbsp;H:i:s"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2000</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">gmdate</span><span style="color: #007700">(</span><span style="color: #DD0000">"M&nbsp;d&nbsp;Y&nbsp;H:i:s"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2000</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    åœ¨ PHP 5.1.0 ä¹‹å‰ï¼Œè´Ÿçš„æ—¶é—´æˆ³ï¼ˆ1970 å¹´ä¹‹å‰çš„æ—¥æœŸï¼‰åœ¨æŸäº›ç³»ç»Ÿä¸‹ï¼ˆä¾‹å¦‚
-    Windowsï¼‰ä¸èƒ½å·¥ä½œã€‚
-   </p>
-  </p></blockquote>
-  <p class="para">
-   å‚è§ <span class="function"><a href="function.date.html" class="function">date()</a></span>ï¼Œ<span class="function"><a href="function.mktime.html" class="function">mktime()</a></span>ï¼Œ<span class="function"><a href="function.gmmktime.html" class="function">gmmktime()</a></span>
-   å’Œ <span class="function"><a href="function.strftime.html" class="function">strftime()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gettimeofday.html">gettimeofday</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gmmktime.html">gmmktime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

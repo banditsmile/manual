@@ -1,62 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åˆ—å‡º MySQL è¿›ç¨‹</title>
+<HTML  ><HEAD  ><TITLE  >mysql_list_processes</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_list_fields" HREF="function.mysql-list-fields.html"><LINK  REL="NEXT" TITLE="mysql_list_tables" HREF="function.mysql-list-tables.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-list-fields.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-list-tables.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-list-processes" ></A
+>mysql_list_processes</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN66157" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>mysql_list_processes&nbsp;--&nbsp;ÁĞ³ö MySQL ½ø³Ì</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN66160" ></A
+><H2  >ËµÃ÷</H2
+>resource <B  CLASS="methodname" >mysql_list_processes</B
+> ( [resource link_identifier])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mysql_list_processes()</B
+>
+     ·µ»ØÒ»¸ö½á¹ûÖ¸Õë£¬ËµÃ÷ÁËµ±Ç°·şÎñÆ÷µÄÏß³Ì¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN66171" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mysql_list_processes()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">'localhost'</font><font  color="#007700">, </font><font  color="#DD0000">'mysql_user'</font><font  color="#007700">, </font><font  color="#DD0000">'mysql_password'</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">mysql_list_processes</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">$row </font><font  color="#007700">= </font><font  color="#0000BB">mysql_fetch_assoc</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)){<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">"%s %s %s %s %s\n"</font><font  color="#007700">, </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">"Id"</font><font  color="#007700">], </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">"Host"</font><font  color="#007700">], </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">"db"</font><font  color="#007700">],<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">"Command"</font><font  color="#007700">], </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">"Time"</font><font  color="#007700">]);<br  />}<br  /></font><font  color="#0000BB">mysql_free_result </font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÒÔÉÏÀı×Ó½«²úÉúÈçÏÂÊä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >1 localhost test Processlist 0
+4 localhost mysql sleep 5</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.mysql-thread-id.html"  ><B  CLASS="function" >mysql_thread_id()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-list-fields.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-list-tables.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_list_fields</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_list_tables</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-list-fields.html">mysql_list_fields</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-list-tables.html">mysql_list_tables</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-list-processes" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_list_processes</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_list_processes</span> &mdash; <span class="dc-title">åˆ—å‡º MySQL è¿›ç¨‹</span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-seealsx" id="refsect1-function.mysql-list-processes-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-seealsx">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">resource</span> <span class="methodname"><strong>mysql_list_processes</strong></span>
-      ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>mysql_list_processes()</strong></span>
-     è¿”å›ä¸€ä¸ªç»“æœæŒ‡é’ˆï¼Œè¯´æ˜äº†å½“å‰æœåŠ¡å™¨çš„çº¿ç¨‹ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-1728">
-      <p><strong>Example #1 <span class="function"><strong>mysql_list_processes()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_list_processes</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br />while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_fetch_assoc</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)){<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%s&nbsp;%s&nbsp;%s&nbsp;%s&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"Id"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"Host"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"db"</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"Command"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"Time"</span><span style="color: #007700">]);<br />}<br /></span><span style="color: #0000BB">mysql_free_result&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>
-       ä»¥ä¸Šä¾‹å­å°†äº§ç”Ÿå¦‚ä¸‹è¾“å‡ºï¼š
-      </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-1 localhost test Processlist 0
-4 localhost mysql sleep 5
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     å‚è§
-     <span class="function"><a href="function.mysql-thread-id.html" class="function">mysql_thread_id()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-list-fields.html">mysql_list_fields</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-list-tables.html">mysql_list_tables</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

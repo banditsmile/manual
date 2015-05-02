@@ -1,116 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—æ–‡ä»¶ä¿®æ”¹æ—¶é—´</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fileinode.html">fileinode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fileowner.html">fileowner</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.filemtime" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">filemtime</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">filemtime</span> &mdash; <span class="dc-title">å–å¾—æ–‡ä»¶ä¿®æ”¹æ—¶é—´</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.filemtime-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>filemtime</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   æœ¬å‡½æ•°è¿”å›æ–‡ä»¶ä¸­çš„æ•°æ®å—ä¸Šæ¬¡è¢«å†™å…¥çš„æ—¶é—´ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œæ–‡ä»¶çš„å†…å®¹ä¸Šæ¬¡è¢«ä¿®æ”¹çš„æ—¶é—´ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.filemtime-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ–‡ä»¶çš„è·¯å¾„ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.filemtime-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-      è¿”å›æ–‡ä»¶ä¸Šæ¬¡è¢«ä¿®æ”¹çš„æ—¶é—´ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚æ—¶é—´ä»¥ Unix æ—¶é—´æˆ³çš„æ–¹å¼è¿”å›ï¼Œå¯ç”¨äº
-   <span class="function"><a href="function.date.html" class="function">date()</a></span>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.filemtime-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2473">
-    <p><strong>Example #1 <span class="function"><strong>filemtime()</strong></span>  ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;outputs&nbsp;e.g.&nbsp;&nbsp;somefile.txt&nbsp;was&nbsp;last&nbsp;modified:&nbsp;December&nbsp;29&nbsp;2002&nbsp;22:16:23.<br /><br /></span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'somefile.txt'</span><span style="color: #007700">;<br />if&nbsp;(</span><span style="color: #0000BB">file_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$filename</span><span style="color: #DD0000">&nbsp;was&nbsp;last&nbsp;modified:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">date&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"F&nbsp;d&nbsp;Y&nbsp;H:i:s."</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">filemtime</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">));<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 errors" id="refsect1-function.filemtime-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-å¤±è´¥æ—¶æŠ›å‡º<strong><code>E_WARNING</code></strong>è­¦å‘Šã€‚
-</p>
- </div>
+<HTML  ><HEAD  ><TITLE  >filemtime</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fileinode" HREF="function.fileinode.html"><LINK  REL="NEXT" TITLE="fileowner" HREF="function.fileowner.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fileinode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fileowner.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.filemtime" ></A
+>filemtime</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28212" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>filemtime&nbsp;--&nbsp;È¡µÃÎÄ¼şĞŞ¸ÄÊ±¼ä</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28215" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >filemtime</B
+> ( string filename)<BR  ></BR
+><P  >&#13;     ·µ»ØÎÄ¼şÉÏ´Î±»ĞŞ¸ÄµÄÊ±¼ä£¬³ö´íÊ±·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£Ê±¼äÒÔ Unix Ê±¼ä´ÁµÄ·½Ê½·µ»Ø£¬¿ÉÓÃÓÚ
+     <A  HREF="function.date.html"  ><B  CLASS="function" >date()</B
+></A
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯ÊıµÄ½á¹û»á±»»º´æ¡£ÏêÏ¸ĞÅÏ¢²Î¼û <A  HREF="function.clearstatcache.html"  ><B  CLASS="function" >clearstatcache()</B
+></A
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯Êı²»ÄÜ×÷ÓÃÓÚ<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>£¬±»¼ì²éµÄÎÄ¼ş±ØĞëÍ¨¹ı·şÎñÆ÷µÄÎÄ¼şÏµÍ³·ÃÎÊ¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ±¾º¯Êı·µ»ØÎÄ¼şÖĞµÄÊı¾İ¿éÉÏ´Î±»Ğ´ÈëµÄÊ±¼ä£¬Ò²¾ÍÊÇËµ£¬ÎÄ¼şµÄÄÚÈİÉÏ´Î±»ĞŞ¸ÄµÄÊ±¼ä¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN28234" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >filemtime()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// outputs e.g.&nbsp;&nbsp;somefile.txt was last modified: December 29 2002 22:16:23.<br  /></font><font  color="#0000BB">$filename </font><font  color="#007700">= </font><font  color="#DD0000">'somefile.txt'</font><font  color="#007700">;<br  />if (</font><font  color="#0000BB">file_exists</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$filename was last modified: " </font><font  color="#007700">. </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"F d Y H:i:s."</font><font  color="#007700">, </font><font  color="#0000BB">filemtime</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">));<br  /><br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.filectime.html"  ><B  CLASS="function" >filectime()</B
+></A
+>£¬<A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+>£¬<A  HREF="function.touch.html"  ><B  CLASS="function" >touch()</B
+></A
+>
+     ºÍ <A  HREF="function.getlastmod.html"  ><B  CLASS="function" >getlastmod()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fileinode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fileowner.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fileinode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fileowner</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.filemtime-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">æ³¨æ„ï¼šä¸åŒæ–‡ä»¶ç³»ç»Ÿå¯¹æ—¶é—´çš„åˆ¤æ–­æ–¹æ³•å¯èƒ½æ˜¯ä¸ç›¸åŒçš„ã€‚</p></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°çš„ç»“æœä¼šè¢«ç¼“å­˜ã€‚å‚è§
-<span class="function"><a href="function.clearstatcache.html" class="function">clearstatcache()</a></span> ä»¥è·å¾—æ›´å¤šç»†èŠ‚ã€‚</span></p></blockquote>
-  <div class="tip"><strong class="tip">Tip</strong><p class="simpara">è‡ª PHP 5.0.0 èµ·, æ­¤å‡½æ•°ä¹Ÿç”¨äº<em class="emphasis">æŸäº›</em>
-URL åŒ…è£…å™¨ã€‚è¯·å‚è§ <a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a>ä»¥è·å¾—æ”¯æŒ <span class="function"><a href="function.stat.html" class="function">stat()</a></span> ç³»åˆ—å‡½æ•°åŠŸèƒ½çš„åŒ…è£…å™¨åˆ—è¡¨ã€‚</p></div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.filemtime-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.filectime.html" class="function" rel="rdfs-seeAlso">filectime()</a> - å–å¾—æ–‡ä»¶çš„ inode ä¿®æ”¹æ—¶é—´</span></li>
-    <li class="member"><span class="function"><a href="function.stat.html" class="function" rel="rdfs-seeAlso">stat()</a> - ç»™å‡ºæ–‡ä»¶çš„ä¿¡æ¯</span></li>
-    <li class="member"><span class="function"><a href="function.touch.html" class="function" rel="rdfs-seeAlso">touch()</a> - è®¾å®šæ–‡ä»¶çš„è®¿é—®å’Œä¿®æ”¹æ—¶é—´</span></li>
-    <li class="member"><span class="function"><a href="function.getlastmod.html" class="function" rel="rdfs-seeAlso">getlastmod()</a> - è·å–é¡µé¢æœ€åä¿®æ”¹çš„æ—¶é—´</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fileinode.html">fileinode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fileowner.html">fileowner</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,756 +1,548 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>字符串 函数</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="string.constants.html">预定义常量</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.addcslashes.html">addcslashes</a></div>
- <div class="up"><a href="book.strings.html">字符串</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.strings" class="reference">
- <h1 class="title">字符串 函数</h1>
-
- <div class="partintro">
-  <h1 class="title">参见</h1>
-  <p class="para">
-   更多强大的字符串处理函数，参见 <a href="ref.regex.html" class="link">POSIX 正则表达式函数</a>和 <a href="ref.pcre.html" class="link">Perl 兼容正则表达式函数</a>。
-  </p>
- </div>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.addcslashes.html">addcslashes</a> — 以 C 语言风格使用反斜线转义字符串中的字符</li><li><a href="function.addslashes.html">addslashes</a> — 使用反斜线引用字符串</li><li><a href="function.bin2hex.html">bin2hex</a> — 函数把ASCII字符的字符串转换为十六进制值</li><li><a href="function.chop.html">chop</a> — rtrim 的别名</li><li><a href="function.chr.html">chr</a> — 返回指定的字符</li><li><a href="function.chunk-split.html">chunk_split</a> — 将字符串分割成小块</li><li><a href="function.convert-cyr-string.html">convert_cyr_string</a> — 将字符由一种 Cyrillic 字符转换成另一种</li><li><a href="function.convert-uudecode.html">convert_uudecode</a> — 解码一个 uuencode 编码的字符串</li><li><a href="function.convert-uuencode.html">convert_uuencode</a> — 使用 uuencode 编码一个字符串</li><li><a href="function.count-chars.html">count_chars</a> — 返回字符串所用字符的信息</li><li><a href="function.crc32.html">crc32</a> — 计算一个字符串的 crc32 多项式</li><li><a href="function.crypt.html">crypt</a> — 单向字符串散列</li><li><a href="function.echo.html">echo</a> — 输出一个或多个字符串</li><li><a href="function.explode.html">explode</a> — 使用一个字符串分割另一个字符串</li><li><a href="function.fprintf.html">fprintf</a> — 将格式化后的字符串写入到流</li><li><a href="function.get-html-translation-table.html">get_html_translation_table</a> — 返回使用 htmlspecialchars 和 htmlentities 后的转换表</li><li><a href="function.hebrev.html">hebrev</a> — 将逻辑顺序希伯来文（logical-Hebrew）转换为视觉顺序希伯来文（visual-Hebrew）</li><li><a href="function.hebrevc.html">hebrevc</a> — 将逻辑顺序希伯来文（logical-Hebrew）转换为视觉顺序希伯来文（visual-Hebrew），并且转换换行符</li><li><a href="function.hex2bin.html">hex2bin</a> — 转换十六进制字符串为二进制字符串</li><li><a href="function.html-entity-decode.html">html_entity_decode</a> — Convert all HTML entities to their applicable characters</li><li><a href="function.htmlentities.html">htmlentities</a> — Convert all applicable characters to HTML entities</li><li><a href="function.htmlspecialchars-decode.html">htmlspecialchars_decode</a> — 将特殊的 HTML 实体转换回普通字符</li><li><a href="function.htmlspecialchars.html">htmlspecialchars</a> — Convert special characters to HTML entities</li><li><a href="function.implode.html">implode</a> — 将一个一维数组的值转化为字符串</li><li><a href="function.join.html">join</a> — 别名 implode</li><li><a href="function.lcfirst.html">lcfirst</a> — 使一个字符串的第一个字符小写</li><li><a href="function.levenshtein.html">levenshtein</a> — 计算两个字符串之间的编辑距离</li><li><a href="function.localeconv.html">localeconv</a> — Get numeric formatting information</li><li><a href="function.ltrim.html">ltrim</a> — 删除字符串开头的空白字符（或其他字符）</li><li><a href="function.md5-file.html">md5_file</a> — 计算指定文件的 MD5 散列值</li><li><a href="function.md5.html">md5</a> — 计算字符串的 MD5 散列值</li><li><a href="function.metaphone.html">metaphone</a> — Calculate the metaphone key of a string</li><li><a href="function.money-format.html">money_format</a> — Formats a number as a currency string</li><li><a href="function.nl-langinfo.html">nl_langinfo</a> — Query language and locale information</li><li><a href="function.nl2br.html">nl2br</a> — 在字符串所有新行之前插入 HTML 换行标记</li><li><a href="function.number-format.html">number_format</a> — 以千位分隔符方式格式化一个数字</li><li><a href="function.ord.html">ord</a> — 返回字符的 ASCII 码值</li><li><a href="function.parse-str.html">parse_str</a> — 将字符串解析成多个变量</li><li><a href="function.print.html">print</a> — 输出字符串</li><li><a href="function.printf.html">printf</a> — 输出格式化字符串</li><li><a href="function.quoted-printable-decode.html">quoted_printable_decode</a> — 将 quoted-printable 字符串转换为 8-bit 字符串</li><li><a href="function.quoted-printable-encode.html">quoted_printable_encode</a> — 将 8-bit 字符串转换成 quoted-printable 字符串</li><li><a href="function.quotemeta.html">quotemeta</a> — 转义元字符集</li><li><a href="function.rtrim.html">rtrim</a> — 删除字符串末端的空白字符（或者其他字符）</li><li><a href="function.setlocale.html">setlocale</a> — 设置地区信息</li><li><a href="function.sha1-file.html">sha1_file</a> — 计算文件的 sha1 散列值</li><li><a href="function.sha1.html">sha1</a> — 计算字符串的 sha1 散列值</li><li><a href="function.similar-text.html">similar_text</a> — 计算两个字符串的相似度</li><li><a href="function.soundex.html">soundex</a> — Calculate the soundex key of a string</li><li><a href="function.sprintf.html">sprintf</a> — Return a formatted string</li><li><a href="function.sscanf.html">sscanf</a> — 根据指定格式解析输入的字符</li><li><a href="function.str-getcsv.html">str_getcsv</a> — 解析 CSV 字符串为一个数组</li><li><a href="function.str-ireplace.html">str_ireplace</a> — str_replace 的忽略大小写版本</li><li><a href="function.str-pad.html">str_pad</a> — 使用另一个字符串填充字符串为指定长度</li><li><a href="function.str-repeat.html">str_repeat</a> — 重复一个字符串</li><li><a href="function.str-replace.html">str_replace</a> — 子字符串替换</li><li><a href="function.str-rot13.html">str_rot13</a> — 对字符串执行 ROT13 转换</li><li><a href="function.str-shuffle.html">str_shuffle</a> — 随机打乱一个字符串</li><li><a href="function.str-split.html">str_split</a> — 将字符串转换为数组</li><li><a href="function.str-word-count.html">str_word_count</a> — 返回字符串中单词的使用情况</li><li><a href="function.strcasecmp.html">strcasecmp</a> — 二进制安全比较字符串（不区分大小写）</li><li><a href="function.strchr.html">strchr</a> — 别名 strstr</li><li><a href="function.strcmp.html">strcmp</a> — 二进制安全字符串比较</li><li><a href="function.strcoll.html">strcoll</a> — 基于区域设置的字符串比较</li><li><a href="function.strcspn.html">strcspn</a> — 获取不匹配遮罩的起始子字符串的长度</li><li><a href="function.strip-tags.html">strip_tags</a> — 从字符串中去除 HTML 和 PHP 标记</li><li><a href="function.stripcslashes.html">stripcslashes</a> — 反引用一个使用 addcslashes 转义的字符串</li><li><a href="function.stripos.html">stripos</a> — 查找字符串首次出现的位置（不区分大小写）</li><li><a href="function.stripslashes.html">stripslashes</a> — 反引用一个引用字符串</li><li><a href="function.stristr.html">stristr</a> — strstr 函数的忽略大小写版本</li><li><a href="function.strlen.html">strlen</a> — 获取字符串长度</li><li><a href="function.strnatcasecmp.html">strnatcasecmp</a> — 使用&ldquo;自然顺序&rdquo;算法比较字符串（不区分大小写）</li><li><a href="function.strnatcmp.html">strnatcmp</a> — 使用自然排序算法比较字符串</li><li><a href="function.strncasecmp.html">strncasecmp</a> — 二进制安全比较字符串开头的若干个字符（不区分大小写）</li><li><a href="function.strncmp.html">strncmp</a> — 二进制安全比较字符串开头的若干个字符</li><li><a href="function.strpbrk.html">strpbrk</a> — 在字符串中查找一组字符的任何一个字符</li><li><a href="function.strpos.html">strpos</a> — 查找字符串首次出现的位置</li><li><a href="function.strrchr.html">strrchr</a> — 查找指定字符在字符串中的最后一次出现</li><li><a href="function.strrev.html">strrev</a> — 反转字符串</li><li><a href="function.strripos.html">strripos</a> — 计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）</li><li><a href="function.strrpos.html">strrpos</a> — 计算指定字符串在目标字符串中最后一次出现的位置</li><li><a href="function.strspn.html">strspn</a> — 计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度。</li><li><a href="function.strstr.html">strstr</a> — 查找字符串的首次出现</li><li><a href="function.strtok.html">strtok</a> — 标记分割字符串</li><li><a href="function.strtolower.html">strtolower</a> — 将字符串转化为小写</li><li><a href="function.strtoupper.html">strtoupper</a> — 将字符串转化为大写</li><li><a href="function.strtr.html">strtr</a> — 转换指定字符</li><li><a href="function.substr-compare.html">substr_compare</a> — 二进制安全比较字符串（从偏移位置比较指定长度）</li><li><a href="function.substr-count.html">substr_count</a> — 计算字串出现的次数</li><li><a href="function.substr-replace.html">substr_replace</a> — 替换字符串的子串</li><li><a href="function.substr.html">substr</a> — 返回字符串的子串</li><li><a href="function.trim.html">trim</a> — 去除字符串首尾处的空白字符（或者其他字符）</li><li><a href="function.ucfirst.html">ucfirst</a> — 将字符串的首字母转换为大写</li><li><a href="function.ucwords.html">ucwords</a> — 将字符串中每个单词的首字母转换为大写</li><li><a href="function.vfprintf.html">vfprintf</a> — 将格式化字符串写入流</li><li><a href="function.vprintf.html">vprintf</a> — 输出格式化字符串</li><li><a href="function.vsprintf.html">vsprintf</a> — 返回格式化字符串</li><li><a href="function.wordwrap.html">wordwrap</a> — 打断字符串为指定数量的字串</li></ul>
+<HTML  ><HEAD  ><TITLE  >�ַ�������������</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�����ο�" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="stream_wrapper_register" HREF="function.stream-wrapper-register.html"><LINK  REL="NEXT" TITLE="addcslashes" HREF="function.addcslashes.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-wrapper-register.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.addcslashes.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.strings" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >CVI. �ַ�������������</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN107489" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="strings.intro" ></A
+>����</H1
+><P  >&#13;    ���������еĺ����������ַ������и��ֲ��������ַ���������һЩר�Ų��������Բο��ֲ���������ʽ���ֺ�
+    <A  HREF="ref.url.html"  >URL ����</A
+> ����.
+    </P
+><P  >&#13;    �����Ҫ�˽��ַ�����������ݣ��ر����йص����ţ�˫���ŵȵĴ������֣����Բο��ֲ��� <A  HREF="language.types.html"  >����</A
+> �����е� <A  HREF="language.types.string.html"  >�ַ���</A
+> ��Ŀ��
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="strings.requirements" ></A
+>����</H1
+><P  >�����ⲿ���ļ��Ϳ��Լ��뱾��չģ���֧�֡�</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="strings.installation" ></A
+>��װ</H1
+><P  >��Щ������Ϊ PHP ���ĵ�һ���֣����豻��װ����ʹ�á�</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="string.constants" ></A
+>Ԥ���峣��</H1
+><P  >&#13;������Щ�������ɸ���չģ�鶨��ģ����ֻ���ڸ���չģ�鱻���뵽 PHP �У�����������ʱ����̬���غ���Щ��������Ч��</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >CRYPT_SALT_LENGTH</B
+></TT
+>
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CRYPT_STD_DES</B
+></TT
+>
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CRYPT_EXT_DES</B
+></TT
+>
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CRYPT_MD5</B
+></TT
+>
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CRYPT_BLOWFISH</B
+></TT
+>
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >HTML_SPECIALCHARS</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >HTML_ENTITIES</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >ENT_COMPAT</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >ENT_QUOTES</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >ENT_NOQUOTES</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CHAR_MAX</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_CTYPE</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_NUMERIC</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_TIME</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_COLLATE</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_MONETARY</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_ALL</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >LC_MESSAGES</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >STR_PAD_LEFT</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >STR_PAD_RIGHT</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >STR_PAD_BOTH</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="strings.seealso" ></A
+>��زο�</H1
+><P  >&#13;    ��������������˽��й��ַ����߼�������������ݣ�������ֲ�� <A  HREF="ref.regex.html"  >�������ʽ����</A
+>
+    �� <A  HREF="ref.pcre.html"  >Perl ���ݺ���</A
+> ����.
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ŀ¼</B
+></DT
+><DT  ><A  HREF="function.addcslashes.html"  >addcslashes</A
+>&nbsp;--&nbsp;Quote string with slashes in a C style</DT
+><DT  ><A  HREF="function.addslashes.html"  >addslashes</A
+>&nbsp;--&nbsp;Quote string with slashes</DT
+><DT  ><A  HREF="function.bin2hex.html"  >bin2hex</A
+>&nbsp;--&nbsp;
+     Convert binary data into hexadecimal representation
+    </DT
+><DT  ><A  HREF="function.chop.html"  >chop</A
+>&nbsp;--&nbsp;Alias of <A  HREF="function.rtrim.html"  ><B  CLASS="function" >rtrim()</B
+></A
+></DT
+><DT  ><A  HREF="function.chr.html"  >chr</A
+>&nbsp;--&nbsp;Return a specific character</DT
+><DT  ><A  HREF="function.chunk-split.html"  >chunk_split</A
+>&nbsp;--&nbsp;Split a string into smaller chunks</DT
+><DT  ><A  HREF="function.convert-cyr-string.html"  >convert_cyr_string</A
+>&nbsp;--&nbsp;
+     Convert from one Cyrillic character set to another
+    </DT
+><DT  ><A  HREF="function.count-chars.html"  >count_chars</A
+>&nbsp;--&nbsp;
+     Return information about characters used in a string
+    </DT
+><DT  ><A  HREF="function.crc32.html"  >crc32</A
+>&nbsp;--&nbsp;Calculates the crc32 polynomial of a string</DT
+><DT  ><A  HREF="function.crypt.html"  >crypt</A
+>&nbsp;--&nbsp;One-way string encryption (hashing)</DT
+><DT  ><A  HREF="function.echo.html"  >echo</A
+>&nbsp;--&nbsp;Output one or more strings</DT
+><DT  ><A  HREF="function.explode.html"  >explode</A
+>&nbsp;--&nbsp;Split a string by string</DT
+><DT  ><A  HREF="function.fprintf.html"  >fprintf</A
+>&nbsp;--&nbsp;Write a formatted string to a stream</DT
+><DT  ><A  HREF="function.get-html-translation-table.html"  >get_html_translation_table</A
+>&nbsp;--&nbsp;
+     Returns the translation table used by
+     <A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+> and
+     <A  HREF="function.htmlentities.html"  ><B  CLASS="function" >htmlentities()</B
+></A
+>
+    </DT
+><DT  ><A  HREF="function.hebrev.html"  >hebrev</A
+>&nbsp;--&nbsp;
+     Convert logical Hebrew text to visual text
+    </DT
+><DT  ><A  HREF="function.hebrevc.html"  >hebrevc</A
+>&nbsp;--&nbsp;
+     Convert logical Hebrew text to visual text with newline conversion
+    </DT
+><DT  ><A  HREF="function.html-entity-decode.html"  >html_entity_decode</A
+>&nbsp;--&nbsp;
+     Convert all HTML entities to their applicable characters
+    </DT
+><DT  ><A  HREF="function.htmlentities.html"  >htmlentities</A
+>&nbsp;--&nbsp;
+     Convert all applicable characters to HTML entities
+    </DT
+><DT  ><A  HREF="function.htmlspecialchars.html"  >htmlspecialchars</A
+>&nbsp;--&nbsp;
+     Convert special characters to HTML entities
+    </DT
+><DT  ><A  HREF="function.implode.html"  >implode</A
+>&nbsp;--&nbsp;Join array elements with a string</DT
+><DT  ><A  HREF="function.join.html"  >join</A
+>&nbsp;--&nbsp;Alias of <A  HREF="function.implode.html"  ><B  CLASS="function" >implode()</B
+></A
+></DT
+><DT  ><A  HREF="function.levenshtein.html"  >levenshtein</A
+>&nbsp;--&nbsp;
+     Calculate Levenshtein distance between two strings
+    </DT
+><DT  ><A  HREF="function.localeconv.html"  >localeconv</A
+>&nbsp;--&nbsp;Get numeric formatting information</DT
+><DT  ><A  HREF="function.ltrim.html"  >ltrim</A
+>&nbsp;--&nbsp;
+     Strip whitespace from the beginning of a string
+    </DT
+><DT  ><A  HREF="function.md5-file.html"  >md5_file</A
+>&nbsp;--&nbsp;Calculates the md5 hash of a given filename</DT
+><DT  ><A  HREF="function.md5.html"  >md5</A
+>&nbsp;--&nbsp;Calculate the md5 hash of a string</DT
+><DT  ><A  HREF="function.metaphone.html"  >metaphone</A
+>&nbsp;--&nbsp;Calculate the metaphone key of a string</DT
+><DT  ><A  HREF="function.money-format.html"  >money_format</A
+>&nbsp;--&nbsp;Formats a number as a currency string</DT
+><DT  ><A  HREF="function.nl-langinfo.html"  >nl_langinfo</A
+>&nbsp;--&nbsp;
+     Query language and locale information
+    </DT
+><DT  ><A  HREF="function.nl2br.html"  >nl2br</A
+>&nbsp;--&nbsp;
+     Inserts HTML line breaks before all newlines in a string
+    </DT
+><DT  ><A  HREF="function.number-format.html"  >number_format</A
+>&nbsp;--&nbsp;Format a number with grouped thousands</DT
+><DT  ><A  HREF="function.ord.html"  >ord</A
+>&nbsp;--&nbsp;Return ASCII value of character</DT
+><DT  ><A  HREF="function.parse-str.html"  >parse_str</A
+>&nbsp;--&nbsp;Parses the string into variables</DT
+><DT  ><A  HREF="function.print.html"  >print</A
+>&nbsp;--&nbsp;Output a string</DT
+><DT  ><A  HREF="function.printf.html"  >printf</A
+>&nbsp;--&nbsp;Output a formatted string</DT
+><DT  ><A  HREF="function.quoted-printable-decode.html"  >quoted_printable_decode</A
+>&nbsp;--&nbsp;
+     Convert a quoted-printable string to an 8 bit string
+    </DT
+><DT  ><A  HREF="function.quotemeta.html"  >quotemeta</A
+>&nbsp;--&nbsp;Quote meta characters</DT
+><DT  ><A  HREF="function.rtrim.html"  >rtrim</A
+>&nbsp;--&nbsp;
+     Strip whitespace from the end of a string
+    </DT
+><DT  ><A  HREF="function.setlocale.html"  >setlocale</A
+>&nbsp;--&nbsp;Set locale information</DT
+><DT  ><A  HREF="function.sha1-file.html"  >sha1_file</A
+>&nbsp;--&nbsp;Calculate the sha1 hash of a file</DT
+><DT  ><A  HREF="function.sha1.html"  >sha1</A
+>&nbsp;--&nbsp;Calculate the sha1 hash of a string</DT
+><DT  ><A  HREF="function.similar-text.html"  >similar_text</A
+>&nbsp;--&nbsp;
+     Calculate the similarity between two strings
+    </DT
+><DT  ><A  HREF="function.soundex.html"  >soundex</A
+>&nbsp;--&nbsp;Calculate the soundex key of a string</DT
+><DT  ><A  HREF="function.sprintf.html"  >sprintf</A
+>&nbsp;--&nbsp;Return a formatted string</DT
+><DT  ><A  HREF="function.sscanf.html"  >sscanf</A
+>&nbsp;--&nbsp;
+     Parses input from a string according to a format
+    </DT
+><DT  ><A  HREF="function.str-ireplace.html"  >str_ireplace</A
+>&nbsp;--&nbsp;
+     Case-insensitive version of <A  HREF="function.str-replace.html"  ><B  CLASS="function" >str_replace()</B
+></A
+>.
+    </DT
+><DT  ><A  HREF="function.str-pad.html"  >str_pad</A
+>&nbsp;--&nbsp;
+     Pad a string to a certain length with another string
+    </DT
+><DT  ><A  HREF="function.str-repeat.html"  >str_repeat</A
+>&nbsp;--&nbsp;Repeat a string</DT
+><DT  ><A  HREF="function.str-replace.html"  >str_replace</A
+>&nbsp;--&nbsp;
+     Replace all occurrences of the search string with the replacement string
+    </DT
+><DT  ><A  HREF="function.str-rot13.html"  >str_rot13</A
+>&nbsp;--&nbsp;Perform the rot13 transform on a string</DT
+><DT  ><A  HREF="function.str-shuffle.html"  >str_shuffle</A
+>&nbsp;--&nbsp;Randomly shuffles a string</DT
+><DT  ><A  HREF="function.str-split.html"  >str_split</A
+>&nbsp;--&nbsp;
+     Convert a string to an array
+    </DT
+><DT  ><A  HREF="function.str-word-count.html"  >str_word_count</A
+>&nbsp;--&nbsp;
+     Return information about words used in a string
+    </DT
+><DT  ><A  HREF="function.strcasecmp.html"  >strcasecmp</A
+>&nbsp;--&nbsp;
+     Binary safe case-insensitive string comparison
+    </DT
+><DT  ><A  HREF="function.strchr.html"  >strchr</A
+>&nbsp;--&nbsp;Alias of <A  HREF="function.strstr.html"  ><B  CLASS="function" >strstr()</B
+></A
+></DT
+><DT  ><A  HREF="function.strcmp.html"  >strcmp</A
+>&nbsp;--&nbsp;Binary safe string comparison</DT
+><DT  ><A  HREF="function.strcoll.html"  >strcoll</A
+>&nbsp;--&nbsp;Locale based string comparison</DT
+><DT  ><A  HREF="function.strcspn.html"  >strcspn</A
+>&nbsp;--&nbsp;
+     Find length of initial segment not matching mask
+    </DT
+><DT  ><A  HREF="function.strip-tags.html"  >strip_tags</A
+>&nbsp;--&nbsp;Strip HTML and PHP tags from a string</DT
+><DT  ><A  HREF="function.stripcslashes.html"  >stripcslashes</A
+>&nbsp;--&nbsp;
+     Un-quote string quoted with <A  HREF="function.addcslashes.html"  ><B  CLASS="function" >addcslashes()</B
+></A
+>
+    </DT
+><DT  ><A  HREF="function.stripos.html"  >stripos</A
+>&nbsp;--&nbsp;
+     Find position of first occurrence of a case-insensitive string
+    </DT
+><DT  ><A  HREF="function.stripslashes.html"  >stripslashes</A
+>&nbsp;--&nbsp;
+     Un-quote string quoted with <A  HREF="function.addslashes.html"  ><B  CLASS="function" >addslashes()</B
+></A
+>
+    </DT
+><DT  ><A  HREF="function.stristr.html"  >stristr</A
+>&nbsp;--&nbsp;
+     Case-insensitive <A  HREF="function.strstr.html"  ><B  CLASS="function" >strstr()</B
+></A
+>
+    </DT
+><DT  ><A  HREF="function.strlen.html"  >strlen</A
+>&nbsp;--&nbsp;Get string length</DT
+><DT  ><A  HREF="function.strnatcasecmp.html"  >strnatcasecmp</A
+>&nbsp;--&nbsp;
+     Case insensitive string comparisons using a "natural order"
+     algorithm
+    </DT
+><DT  ><A  HREF="function.strnatcmp.html"  >strnatcmp</A
+>&nbsp;--&nbsp;
+     String comparisons using a "natural order" algorithm
+    </DT
+><DT  ><A  HREF="function.strncasecmp.html"  >strncasecmp</A
+>&nbsp;--&nbsp;
+     Binary safe case-insensitive string comparison of the first n
+     characters
+    </DT
+><DT  ><A  HREF="function.strncmp.html"  >strncmp</A
+>&nbsp;--&nbsp;
+     Binary safe string comparison of the first n characters
+    </DT
+><DT  ><A  HREF="function.strpos.html"  >strpos</A
+>&nbsp;--&nbsp;
+     Find position of first occurrence of a string
+    </DT
+><DT  ><A  HREF="function.strrchr.html"  >strrchr</A
+>&nbsp;--&nbsp;
+     Find the last occurrence of a character in a string
+    </DT
+><DT  ><A  HREF="function.strrev.html"  >strrev</A
+>&nbsp;--&nbsp;Reverse a string</DT
+><DT  ><A  HREF="function.strripos.html"  >strripos</A
+>&nbsp;--&nbsp;
+     Find position of last occurrence of a case-insensitive string in a string
+    </DT
+><DT  ><A  HREF="function.strrpos.html"  >strrpos</A
+>&nbsp;--&nbsp;
+     Find position of last occurrence of a char in a string
+    </DT
+><DT  ><A  HREF="function.strspn.html"  >strspn</A
+>&nbsp;--&nbsp;
+     Find length of initial segment matching mask
+    </DT
+><DT  ><A  HREF="function.strstr.html"  >strstr</A
+>&nbsp;--&nbsp;Find first occurrence of a string</DT
+><DT  ><A  HREF="function.strtok.html"  >strtok</A
+>&nbsp;--&nbsp;Tokenize string</DT
+><DT  ><A  HREF="function.strtolower.html"  >strtolower</A
+>&nbsp;--&nbsp;Make a string lowercase</DT
+><DT  ><A  HREF="function.strtoupper.html"  >strtoupper</A
+>&nbsp;--&nbsp;Make a string uppercase</DT
+><DT  ><A  HREF="function.strtr.html"  >strtr</A
+>&nbsp;--&nbsp;Translate certain characters</DT
+><DT  ><A  HREF="function.substr-compare.html"  >substr_compare</A
+>&nbsp;--&nbsp;
+     Binary safe optionally case insensitive comparison of 2 strings from an offset, up to length characters
+    </DT
+><DT  ><A  HREF="function.substr-count.html"  >substr_count</A
+>&nbsp;--&nbsp;Count the number of substring occurrences</DT
+><DT  ><A  HREF="function.substr-replace.html"  >substr_replace</A
+>&nbsp;--&nbsp;Replace text within a portion of a string</DT
+><DT  ><A  HREF="function.substr.html"  >substr</A
+>&nbsp;--&nbsp;Return part of a string</DT
+><DT  ><A  HREF="function.trim.html"  >trim</A
+>&nbsp;--&nbsp;
+     Strip whitespace from the beginning and end of a string
+    </DT
+><DT  ><A  HREF="function.ucfirst.html"  >ucfirst</A
+>&nbsp;--&nbsp;Make a string's first character uppercase</DT
+><DT  ><A  HREF="function.ucwords.html"  >ucwords</A
+>&nbsp;--&nbsp;
+     Uppercase the first character of each word in a string
+    </DT
+><DT  ><A  HREF="function.vprintf.html"  >vprintf</A
+>&nbsp;--&nbsp;Output a formatted string</DT
+><DT  ><A  HREF="function.vsprintf.html"  >vsprintf</A
+>&nbsp;--&nbsp;Return a formatted string</DT
+><DT  ><A  HREF="function.wordwrap.html"  >wordwrap</A
+>&nbsp;--&nbsp;
+     Wraps a string to a given number of characters using a string
+     break character.
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-wrapper-register.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.addcslashes.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_wrapper_register</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >addcslashes</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="string.constants.html">预定义常量</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.addcslashes.html">addcslashes</a></div>
- <div class="up"><a href="book.strings.html">字符串</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

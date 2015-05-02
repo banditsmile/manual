@@ -1,47 +1,413 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ•°æ®åº“å®‰å…¨</title>
+<HTML  ><HEAD  ><TITLE  >Êı¾İ¿â°²È«</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="°²È«" HREF="http://shouce.jb51.net/php/security.index.html"><LINK  REL="PREVIOUS" TITLE="ÎÄ¼şÏµÍ³°²È«" HREF="security.filesystem.html"><LINK  REL="NEXT" TITLE="´íÎó±¨¸æ" HREF="security.errors.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="security.filesystem.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 15. °²È«</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="security.errors.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="security.database" ></A
+>Êı¾İ¿â°²È«</H1
+><P  >&#13;    ÏÖÔÚ£¬ÎªÁËÊ¹µÃÍøÕ¾ÄÜ¹»Ìá¹©¸÷ÖÖ¸÷Ñù¶¯Ì¬µÄÄÚÈİ£¬Êı¾İ¿âÒÑ¾­³ÉÎªËùÓĞ»ùÓÚ WEB Ó¦ÓÃ³ÌĞò×îÖØÒªµÄ×é¼ş¡£ÓÉÓÚÒ»Ğ©Ê®·ÖÃô¸Ğ»òÕß±£ÃÜµÄĞÅÏ¢¿ÉÄÜ»á´æ´¢ÔÚÕâÑùµÄÊı¾İ¿âÖĞ£¬Òò´Ë£¬ÄúĞèÒª·Ç³£É÷ÖØµÄ¿¼ÂÇÈçºÎ±£»¤ËüÃÇ¡£
+   </P
+><P  >&#13;    ÎªÁËÄÜ¹»´æ´¢»òÕß¼ìË÷ĞÅÏ¢£¬ÄúĞèÒªÁ¬½Óµ½Êı¾İ¿â£¬·¢ËÍÒ»¸öºÏ·¨µÄ²éÑ¯ÃüÁî£¬µÃµ½½á¹û£¬È»ºó¹Ø±ÕÁ¬½Ó¡£Ä¿Ç°£¬ÔÚÕâ¸ö½»»¥¹ı³ÌÖĞ×î³£ÓÃµÄ²éÑ¯ÓïÑÔÊÇ¡°½á¹¹»¯²éÑ¯ÓïÑÔ£¨Structured Query Language, SQL£©¡±¡£Çë²ÎÔÄÒÔÏÂÄÚÈİÒÔÁË½âºÚ¿ÍÈçºÎ<A  HREF="security.database.html#security.database.sql-injection"  >¡°ÀûÓÃ SQL ²éÑ¯¹¥»÷¡±</A
+>¡£
+   </P
+><P  >&#13;    ÕıÈçÄúËùÖªµÀµÄ£¬PHP ×ÔÉí²¢ÎŞ·¨±£»¤ÄúµÄÊı¾İ¿â¡£ÒÔÏÂÕÂ½ÚµÄÄÚÈİÖ¼ÔÚ½éÉÜÓĞ¹ØÈçºÎÀûÓÃ PHP ½Å±¾·ÃÎÊºÍ²Ù×÷Êı¾İ¿âµÄ×î»ù´¡µÄÖªÊ¶¡£
+   </P
+><P  >&#13;    Çë¼Ç×¡Õâ¸ö¼òµ¥µÄ·¨Ôò£º¾¡¿ÉÄÜÉî²ã´ÎµÄ·ÀÓù¡£ÎªÁË±£»¤ÄúµÄÊı¾İ¿âËù²ÉÈ¡µÃ´ëÊ©ºÍ³¡ËùÔ½¶à£¬¹¥»÷Õß±©Â¶¡¢ÀÄÓÃÊı¾İ¿âÖĞ´æ´¢µÄ±£ÃÜĞÅÏ¢µÄ¿ÉÄÜĞÔ¾ÍÔ½Ğ¡¡£Çë¾¡¿ÉÄÜ¸üºÃµÄÉè¼ÆÊı¾İ¿â½á¹¹ºÍÓ¦ÓÃ³ÌĞò¡£
+   </P
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.database.design" ></A
+>Éè¼ÆÊı¾İ¿â</H2
+><P  >&#13;      Ò»°ãÀ´ËµµÚÒ»²½×ÜÊÇ½¨Á¢Êı¾İ¿â£¬³ı·ÇÄúÏ£ÍûÊ¹ÓÃÒÑ¾­´æÔÚµÄµÚÈı·½Êı¾İ¿â¡£µ±Ò»¸öÊı¾İ¿â±»½¨Á¢ºó£¬Ëü½«±»Ö¸¶¨¸øÒ»¸öËùÓĞÕß£¬¼´ÔËĞĞ½¨Á¢Êı¾İ¿âÓï¾äµÄÓÃ»§¡£Í¨³££¬Ö»ÓĞËùÓĞÕß£¨»òÕß³¬¼¶ÓÃ»§£©²ÅÄÜ¶Ô¸ÃÊı¾İ¿âÖĞµÄ¶ÔÏó½øĞĞÈÎºÎ²Ù×÷£¬ÎªÁËÄÜÈÃÆäËüÓÃ»§Ê¹ÓÃ¸ÃÊı¾İ¿â£¬ĞèÒª½øĞĞÈ¨ÏŞÉèÖÃ¡£
+     </P
+><P  >&#13;      Ó¦ÓÃ³ÌĞò¾ö²»ÄÜÓÃËùÓĞÕß»òÕß³¬¼¶ÓÃ»§µÄÕËºÅÀ´Á¬½Óµ½Êı¾İ¿â£¬ÒòÎªÕâĞ©ÓÃ»§¿ÉÒÔÖ´ĞĞÈÎºÎ²éÑ¯£¬ÀıÈç£¬ĞŞ¸ÄÊı¾İ½á¹¹£¨ÈçÉ¾³ı±í¸ñ£©»òÕßÉ¾³ıËùÓĞµÄÄÚÈİ¡£
+     </P
+><P  >&#13;      Äú¿ÉÒÔÎªÓ¦ÓÃ³ÌĞò²»Í¬µÄ²¿·Ö½¨Á¢²»Í¬µÄÊı¾İ¿âÕËºÅ£¬Ê¹µÃËüÃÇÖ°ÄÜ¶ÔÊı¾İ¿â¶ÔÏóĞĞÊ¹·Ç³£ÓĞÏŞµÄÈ¨ÏŞ¡£¶ÔÕâĞ©ÕËºÅÓ¦¸ÃÖ»¸³Óè×îĞèÒªµÄÈ¨ÏŞ£¬Í¬Ê±Ó¦¸Ã·ÀÖ¹ÏàÍ¬µÄÓÃ»§ÄÜ¹»ÔÚ²»Í¬µÄÊ¹ÓÃÇé¿öÓëÊı¾İ¿â½øĞĞ½»Á÷¡£ÕâÒ²¾ÍÊÇËµ£¬Èç¹ûÄ³Ò»¸öÈëÇÖÕßÀûÓÃÕâĞ©ÕËºÅÖĞµÄÄ³Ò»¸ö»ñµÃÁË·ÃÎÊÄúÊı¾İ¿âµÄÈ¨ÏŞ£¬ËûÃÇÒ²½ö½öÄÜ¹»Ó°Ïìµ½ÄúµÄÓ¦ÓÃ³ÌĞòÁ¦ËùÄÜ¼°µÄ·¶Î§¡£
+     </P
+><P  >&#13;      Äú×îºÃ²»Òª°ÑËùÓĞµÄÊÂÎï¹ı³Ì¶¼·ÅÔÚ WEB Ó¦ÓÃ³ÌĞò£¨¼´ÄúµÄ½Å±¾£©ÖĞÀ´ÊµÊ©£¬¶ø³ä·ÖµÄÀûÓÃÊı¾İ¿â½á¹¹£¬Ê¹ÓÃÊÓÍ¼£¨view£©¡¢´¥·¢Æ÷£¨trigger£©»òÕß¹æÔò£¨rule£©¡£Èç¹ûĞèÒª¶ÔÏµÍ³½øĞĞÉı¼¶£¬ÔòĞèÒª¶ÔÊı¾İ¿â¿ª±ÙĞÂµÄ¶Ë¿Ú£¬Òò´ËÄúĞèÒª¶ÔÃ¿Ò»¸ö¶ÀÁ¢µÄÊı¾İ¿â¿Í»§ÖØĞÂÉèÖÃÈ¨ÏŞ¡£×ÜÖ®£¬´¥·¢Æ÷¿ÉÒÔ±»ÓÃÀ´Í¸Ã÷µØºÍ×Ô¶¯µØ´¦Àí×Ö¶Î£¬¸ÃÌØĞÔ¿ÉÒÔÔÚµ÷ÊÔÓ¦ÓÃ³ÌĞòµØÎÊÌâ»òÕß×·×ÙºóÌ¨ÊÂÎïÊ±Ìá¹©±ãÀûĞÅÏ¢¡£
+     </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.database.connection" ></A
+>Á¬½ÓÊı¾İ¿â</H2
+><P  >&#13;     Äú¿ÉÄÜÏ£ÍûÍ¨¹ı SSL ½¨Á¢Á¬½ÓÀ´¼ÓÃÜ¿Í»§¶ËºÍ·şÎñ¶ËÖ®¼äµÄÍ¨Ñ¶ÒÔÔö¼Ó°²È«ĞÔ£¬»òÕßÄú¿ÉÒÔÊ¹ÓÃ ssh À´¼ÓÃÜ¿Í»§¶ËºÍÊı¾İ¿â·şÎñÆ÷Ö®¼äµÄÍøÂçÁ¬½Ó¡£Èç¹ûÄúÊµÊ©ÁËÕâĞ©´ëÊ©£¬Ôò¼àÊÓÄúµÄÍøÂçÁ÷Á¿ÒÔ¼°ÒÔÕâÖÖ·½Ê½»ñÈ¡ĞÅÏ¢½«±ä³ÉÊ®·Ö¸´ÔÓµÄ¹¤×÷¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.database.storage" ></A
+>¼ÓÃÜ´æ´¢Ä£ĞÍ</H2
+><P  >&#13;     SSL/SSH protects data travelling from the client to the server, SSL/SSH
+     does not protect the persistent data stored in a database. SSL is an
+     on-the-wire protocol.
+    </P
+><P  >&#13;     Once an attacker gains access to your database directly (bypassing the
+     webserver), the stored sensitive data may be exposed or misused, unless
+     the information is protected by the database itself. Encrypting the data
+     is a good way to mitigate this threat, but very few databases offer this
+     type of data encryption.
+    </P
+><P  >&#13;     The easiest way to work around this problem is to first create your own
+     encryption package, and then use it from within your PHP scripts. PHP
+     can assist you in this case with its several extensions, such as <A  HREF="ref.mcrypt.html"  >Mcrypt</A
+> and <A  HREF="ref.mhash.html"  >Mhash</A
+>, covering a wide variety of encryption
+     algorithms. The script encrypts the data be stored first, and decrypts
+     it when retrieving. See the references for further examples how
+     encryption works.
+    </P
+><P  >&#13;     In case of truly hidden data, if its raw representation is not needed
+     (i.e. not be displayed), hashing may be also taken into consideration.
+     The well-known example for the hashing is storing the MD5 hash of a
+     password in a database, instead of the password itself. See also
+     <A  HREF="function.crypt.html"  ><B  CLASS="function" >crypt()</B
+></A
+> and <A  HREF="function.md5.html"  ><B  CLASS="function" >md5()</B
+></A
+>.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6169" ></A
+><P  ><B  >Àı×Ó 15-5. Ê¹ÓÃ¾­¹ı¹şÏ£ÔËËãµÄÃÜÂë×Ö¶Î</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+// storing password hash<br  />$query&nbsp;&nbsp;= sprintf("INSERT INTO users(name,pwd) VALUES('%s','%s');",<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addslashes($username), md5($password));<br  />$result = pg_exec($connection, $query);<br  /><br  />// querying if user submitted the right password<br  />$query = sprintf("SELECT 1 FROM users WHERE name='%s' AND pwd='%s';",<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addslashes($username), md5($password));<br  />$result = pg_exec($connection, $query);<br  /><br  />if (pg_numrows($result) &gt; 0) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo "Welcome, $username!";<br  />}<br  />else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo "Authentication failed for $username.";<br  />}</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.database.sql-injection" ></A
+>SQL ¹¥»÷</H2
+><P  >&#13;     Many web developers are unaware of how SQL queries can be tampered with,
+     and assume that an SQL query is a trusted command. It means that SQL
+     queries are able to circumvent access controls, thereby bypassing standard
+     authentication and authorization checks, and sometimes SQL queries even
+     may allow access to host operating system level commands.
+    </P
+><P  >&#13;     Direct SQL Command Injection is a technique where an attacker creates or
+     alters existing SQL commands to expose hidden data, or to override valuable
+     ones, or even to execute dangerous system level commands on the database
+     host. This is accomplished by the application taking user input and
+     combining it with static parameters to build a SQL query. The following
+     examples are based on true stories, unfortunately.
+    </P
+><P  >&#13;     Owing to the lack of input validation and connecting to the database on
+     behalf of a superuser or the one who can create users, the attacker
+     may create a superuser in your database.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6177" ></A
+><P  ><B  >Àı×Ó 15-6. 
+	   ½«½á¹û¼¯·ÖÀëµ½Ò³ÃæÖĞ£¬È»ºó´´Ôì³¬¼¶ÓÃ»§(PostgreSQL and MySQL)
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$offset = argv[0]; // beware, no input validation!<br  />$query&nbsp;&nbsp;= "SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET $offset;";<br  />// with PostgreSQL <br  />$result = pg_exec($conn, $query);<br  />// with MySQL<br  />$result = mysql_query($query);</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+      Normal users click on the 'next', 'prev' links where the <TT  CLASS="varname" >$offset</TT
+>
+      is encoded into the URL. The script expects that the incoming
+      <TT  CLASS="varname" >$offset</TT
+> is decimal number. However, someone tries to
+      break in with appending <A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+>'d form of the
+      following to the URL 
+      <DIV  CLASS="informalexample" ><A  NAME="AEN6183" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >// in case of PostgreSQL
+0;
+insert into pg_shadow(usename,usesysid,usesuper,usecatupd,passwd)
+    select 'crack', usesysid, 't','t','crack'
+    from pg_shadow where usename='postgres';
+--
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.filesystem.nullbytes.html">Null å­—ç¬¦é—®é¢˜</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.database.design.html">è®¾è®¡æ•°æ®åº“</a></div>
- <div class="up"><a href="security.html">å®‰å…¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="security.database" class="chapter">
-   <h1>æ•°æ®åº“å®‰å…¨</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="security.database.design.html">è®¾è®¡æ•°æ®åº“</a></li><li><a href="security.database.connection.html">è¿æ¥æ•°æ®åº“</a></li><li><a href="security.database.storage.html">åŠ å¯†å­˜å‚¨æ¨¡å‹</a></li><li><a href="security.database.sql-injection.html">SQL æ³¨å…¥</a></li></ul>
+// in case of MySQL
+0;
+UPDATE user SET Password=PASSWORD('crack') WHERE user='root';
+FLUSH PRIVILEGES;</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+      If it happened, then the script would present a superuser access to him.
+      Note that <TT  CLASS="literal" >0;</TT
+> is to supply a valid offset to the
+      original query and to terminate it.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      It is common technique to force the SQL parser to ignore the rest of the
+      query written by the developer with <TT  CLASS="literal" >--</TT
+> which is the
+      comment sign in SQL.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     A feasible way to gain passwords is to circumvent your search result pages.
+     What the attacker needs only is to try if there is any submitted variable
+     used in SQL statement which is not handled properly. These filters can be set 
+     commonly in a preceding form to customize <TT  CLASS="literal" >WHERE, ORDER BY, 
+     LIMIT</TT
+> and <TT  CLASS="literal" >OFFSET</TT
+> clauses in <TT  CLASS="literal" >SELECT</TT
+>
+     statements. If your database supports the <TT  CLASS="literal" >UNION</TT
+> construct, 
+     the attacker may try to append an entire query to the original one to list 
+     passwords from an arbitrary table. Using encrypted password fields is 
+     strongly encouraged.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6194" ></A
+><P  ><B  >Àı×Ó 15-7. 
+	   ÁĞ³öÎÄÕÂ£¬ÒÔ¼°Ò»Ğ©ÃÜÂë£¨ÈÎºÎÊı¾İ¿â·şÎñÆ÷£©
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$query&nbsp;&nbsp;= "SELECT id, name, inserted, size FROM products<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE size = '$size'<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORDER BY $order LIMIT $limit, $offset;";<br  />$result = odbc_exec($conn, $query);</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     The static part of the query can be combined with another
+     <TT  CLASS="literal" >SELECT</TT
+> statement which reveals all passwords:
+     <DIV  CLASS="informalexample" ><A  NAME="AEN6198" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >'
+union select '1', concat(uname||'-'||passwd) as name, '1971-01-01', '0' from usertable;
+--</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     If this query (playing with the <TT  CLASS="literal" >'</TT
+> and
+     <TT  CLASS="literal" >--</TT
+>) were assigned to one of the variables used in
+     <TT  CLASS="varname" >$query</TT
+>, the query beast awakened.
+    </P
+><P  >&#13;     SQL UPDATEs are also subject to attacking your database. These queries are
+     also threatened by chopping and appending an entirely new query to it. But
+     the attacker might fiddle with the <TT  CLASS="literal" >SET</TT
+> clause. In this
+     case some schema information must be possessed to manipulate the query
+     successfully. This can be acquired by examing the form variable names, or
+     just simply brute forcing. There are not so many naming convention for
+     fields storing passwords or usernames.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6205" ></A
+><P  ><B  >Àı×Ó 15-8. 
+	  ÀûÓÃÖØÉèÃÜÂëÀ´»ñÈ¡¸ü¶àµÄÈ¨ÏŞ£¨ÈÎºÎÊı¾İ¿â·şÎñÆ÷£©
+     </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$query = "UPDATE usertable SET pwd='$pwd' WHERE uid='$uid';";</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     But a malicious user sumbits the value
+     <TT  CLASS="literal" >' or uid like'%admin%'; --</TT
+> to <TT  CLASS="varname" >$uid</TT
+> to
+     change the admin's password, or simply sets <TT  CLASS="varname" >$pwd</TT
+> to
+     <TT  CLASS="literal" >"hehehe', admin='yes', trusted=100 "</TT
+> (with a trailing
+     space) to gain more privileges. Then, the query will be twisted:
+     <DIV  CLASS="informalexample" ><A  NAME="AEN6212" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+// $uid == ' or uid like'%admin%'; --<br  />$query = "UPDATE usertable SET pwd='...' WHERE uid='' or uid like '%admin%'; --";<br  /><br  />// $pwd == "hehehe', admin='yes', trusted=100 "<br  />$query = "UPDATE usertable SET pwd='hehehe', admin='yes', trusted=100 WHERE ...;"</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     A frightening example how operating system level commands can be accessed
+     on some database hosts.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6215" ></A
+><P  ><B  >Àı×Ó 15-9. ¹¥»÷Êı¾İ¿âÖ÷»úµÄ²Ù×÷ÏµÍ³ (MSSQL Server)</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$query&nbsp;&nbsp;= "SELECT * FROM products WHERE id LIKE '%$prod%'";<br  />$result = mssql_query($query);</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     If attacker submits the value
+     <TT  CLASS="literal" >a%' exec master..xp_cmdshell 'net user test testpass /ADD' --</TT
+>
+     to <TT  CLASS="varname" >$prod</TT
+>, then the <TT  CLASS="varname" >$query</TT
+> will be:
+     <DIV  CLASS="informalexample" ><A  NAME="AEN6221" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$query&nbsp;&nbsp;= "SELECT * FROM products<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE id LIKE '%a%'<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exec master..xp_cmdshell 'net user test testpass /ADD'--";<br  />$result = mssql_query($query);</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     MSSQL Server executes the SQL statements in the batch including a command
+     to add a new user to the local accounts database. If this application
+     were running as <TT  CLASS="literal" >sa</TT
+> and the MSSQLSERVER service is
+     running with sufficient privileges, the attacker would now have an
+     account with which to access this machine.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Some of the examples above is tied to a specific database server. This
+      does not mean that a similar attack is impossible against other products.
+      Your database server may be so vulnerable in other manner.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="sect3" ><H3  CLASS="sect3" ><A  NAME="security.database.avoiding" ></A
+>Ô¤·ÀµÄ¼¼ÇÉ</H3
+><P  >&#13;      You may plead that the attacker must possess a piece of information
+      about the database schema in most examples. You are right, but you
+      never know when and how it can be taken out, and if it happens,
+      your database may be exposed. If you are using an open source, or
+      publicly available database handling package, which may belong to a
+      content management system or forum, the intruders easily produce
+      a copy of a piece of your code. It may be also a security risk if it
+      is a poorly designed one.
+     </P
+><P  >&#13;      These attacks are mainly based on exploiting the code not being written
+      with security in mind. Never trust on any kind of input, especially
+      which comes from the client side, even though it comes from a select box,
+      a hidden input field or a cookie. The first example shows that such a
+      blameless query can cause disasters.
+     </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;        Never connect to the database as a superuser or as the database owner.
+        Use always customized users with very limited privileges.
+       </P
+></LI
+><LI  ><P  >&#13;        Check if the given input has the expected data type. PHP has
+        a wide range of input validating functions, from the simplest ones
+        found in <A  HREF="ref.variables.html"  >Variable Functions</A
+> and
+        in <A  HREF="ref.ctype.html"  >Character Type Functions</A
+>
+        (e.g. <A  HREF="function.is-numeric.html"  ><B  CLASS="function" >is_numeric()</B
+></A
+>, <A  HREF="function.ctype-digit.html"  ><B  CLASS="function" >ctype_digit()</B
+></A
+>
+        respectively) onwards the
+        <A  HREF="ref.pcre.html"  >Perl compatible Regular Expressions</A
+>
+        support.
+       </P
+></LI
+><LI  ><P  >&#13;        If the application waits for numerical input, consider to verify data
+        with <A  HREF="function.is-numeric.html"  ><B  CLASS="function" >is_numeric()</B
+></A
+>, or silently change its type
+        using <A  HREF="function.settype.html"  ><B  CLASS="function" >settype()</B
+></A
+>, or use its numeric representation
+        by <A  HREF="function.sprintf.html"  ><B  CLASS="function" >sprintf()</B
+></A
+>.
+        <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6245" ></A
+><P  ><B  >Àı×Ó 15-10. ¸ü¼Ó°²È«µÄ·ÖÒ³²éÑ¯Óï¾ä</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+settype($offset, 'integer');<br  />$query = "SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET $offset;";<br  /><br  />// please note %d in the format string, using %s would be meaningless<br  />$query = sprintf("SELECT id, name FROM products ORDER BY name LIMIT 20 OFFSET %d;",<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$offset);</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+       </P
+></LI
+><LI  ><P  >&#13;        Quote each non numeric user input which is passed to the database with
+        <A  HREF="function.addslashes.html"  ><B  CLASS="function" >addslashes()</B
+></A
+> or <A  HREF="function.addcslashes.html"  ><B  CLASS="function" >addcslashes()</B
+></A
+>.
+        See <A  HREF="security.database.html#security.database.storage"  >the first example</A
+>.
+        As the examples shows, quotes burnt into the static part of the query
+        is not enough, and can be easily hacked.
+       </P
+></LI
+><LI  ><P  >&#13;        Do not print out any database specific information, especially
+        about the schema, by fair means or foul. See also <A  HREF="security.errors.html"  >Error Reporting</A
+> and <A  HREF="ref.errorfunc.html"  >Error Handling and Logging Functions</A
+>.
+       </P
+></LI
+><LI  ><P  >&#13;        You may use stored procedures and previously defined cursors to abstract
+        data access so that users do not directly access tables or views, but
+        this solution has another impacts.
+       </P
+></LI
+></UL
+><P  >&#13;      Besides these, you benefit from logging queries either within your script
+      or by the database itself, if it supports. Obviously, the logging is unable
+      to prevent any harmful attempt, but it can be helpful to trace back which
+      application has been circumvented. The log is not useful by itself, but
+      through the information it contains. The more detail is generally better.
+     </P
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="security.filesystem.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="security.errors.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ÎÄ¼şÏµÍ³°²È«</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/security.index.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >´íÎó±¨¸æ</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-   <p class="simpara">
-    ä»Šæ—¶ä»Šæ—¥ï¼Œæ•°æ®åº“ç³»ç»Ÿå·²ç»æˆä¸ºå„ä¸ªåŠ¨æ€ç½‘ç«™ä¸Š web
-    åº”ç”¨ç¨‹åºçš„é‡è¦ç»„æˆéƒ¨åˆ†ã€‚ç”±äºéå¸¸æ•æ„Ÿå’Œæœºå¯†çš„æ•°æ®æœ‰å¯èƒ½ä¿å­˜åœ¨æ•°æ®åº“ä¸­ï¼Œæ‰€ä»¥å¯¹æ•°æ®åº“å®æ–½ä¿æŠ¤å°±æ˜¾å¾—å°¤ä¸ºé‡è¦äº†ã€‚
-   </p>
-   <p class="simpara">
-    è¦ä»æ•°æ®åº“ä¸­æå–æˆ–è€…å­˜å…¥æ•°æ®ï¼Œå°±å¿…é¡»ç»è¿‡è¿æ¥æ•°æ®åº“ã€å‘é€ä¸€æ¡åˆæ³•æŸ¥è¯¢ã€è·å–ç»“æœã€å…³é—­è¿æ¥ç­‰æ­¥éª¤ã€‚ç›®å‰ï¼Œèƒ½å®Œæˆè¿™ä¸€ç³»åˆ—åŠ¨ä½œçš„æœ€å¸¸ç”¨çš„æŸ¥è¯¢è¯­è¨€æ˜¯ç»“æ„åŒ–æŸ¥è¯¢è¯­è¨€
-    Structured Query Language (SQL)ã€‚å¯ä»¥çœ‹çœ‹æ”»å‡»è€…æ˜¯å¦‚ä½•<a href="security.database.sql-injection.html" class="link">ç¯¡æ”¹ SQL æŸ¥è¯¢è¯­å¥çš„</a>ã€‚
-   </p>
-   <p class="simpara">
-    PHP æœ¬èº«å¹¶ä¸èƒ½ä¿æŠ¤æ•°æ®åº“çš„å®‰å…¨ã€‚ä¸‹é¢çš„ç« èŠ‚åªæ˜¯è®²è¿°æ€æ ·ç”¨ PHP
-    è„šæœ¬å¯¹æ•°æ®åº“è¿›è¡ŒåŸºæœ¬çš„è®¿é—®å’Œæ“ä½œã€‚
-   </p>
-   <p class="simpara">
-    è®°ä½ä¸€æ¡ç®€å•çš„åŸåˆ™ï¼šæ·±å…¥é˜²å¾¡ã€‚ä¿æŠ¤æ•°æ®åº“çš„æªæ–½è¶Šå¤šï¼Œæ”»å‡»è€…å°±è¶Šéš¾è·å¾—å’Œä½¿ç”¨æ•°æ®åº“å†…çš„ä¿¡æ¯ã€‚æ­£ç¡®åœ°è®¾è®¡å’Œåº”ç”¨æ•°æ®åº“å¯ä»¥å‡å°‘è¢«æ”»å‡»çš„æ‹…å¿§ã€‚
-   </p>
-
-   
-
-   
-
-   
-
-   
-  </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.filesystem.nullbytes.html">Null å­—ç¬¦é—®é¢˜</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.database.design.html">è®¾è®¡æ•°æ®åº“</a></div>
- <div class="up"><a href="security.html">å®‰å…¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

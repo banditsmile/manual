@@ -1,75 +1,110 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回 OCI 语句的类型</title>
+<HTML  ><HEAD  ><TITLE  >oci_statement_type</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Oracle 8 ������" HREF="ref.oci8.html"><LINK  REL="PREVIOUS" TITLE="oci_set_prefetch" HREF="function.oci-set-prefetch.html"><LINK  REL="NEXT" TITLE="ocifetchinto" HREF="function.ocifetchinto.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.oci-set-prefetch.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ocifetchinto.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.oci-statement-type" ></A
+>oci_statement_type</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN81348" ></A
+><P  >    (no version information, might be only in CVS)</P
+>oci_statement_type&nbsp;--&nbsp;Returns the type of an OCI statement</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN81351" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >oci_statement_type</B
+> ( resource statement)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >oci_statement_type()</B
+> returns the query type of
+     statement <TT  CLASS="parameter" ><I  >statement</I
+></TT
+> as one of the following
+     values:
+     <P  ></P
+><OL  TYPE="1" ><LI  ><P  ><TT  CLASS="literal" >SELECT</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >UPDATE</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >DELETE</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >INSERT</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >CREATE</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >DROP</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >ALTER</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >BEGIN</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >DECLARE</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >UNKNOWN</TT
+></P
+></LI
+></OL
+>
+    </P
+><P  >&#13;     Parameter <TT  CLASS="parameter" ><I  >statement</I
+></TT
+> is a valid OCI statement
+     identifier, returned from <A  HREF="function.oci-parse.html"  ><B  CLASS="function" >oci_parse()</B
+></A
+>.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN81397" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >oci_statement_type()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$conn </font><font  color="#007700">= </font><font  color="#0000BB">oci_connect</font><font  color="#007700">(</font><font  color="#DD0000">"scott"</font><font  color="#007700">, </font><font  color="#DD0000">"tiger"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$sql&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#DD0000">"delete from emp where deptno = 10"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$stmt </font><font  color="#007700">= </font><font  color="#0000BB">oci_parse</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#0000BB">$sql</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">oci_statement_type</font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">) == </font><font  color="#DD0000">"DELETE"</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"You are not allowed to delete from this table&lt;br /&gt;"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">oci_close</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <B  CLASS="function" >oci_statement_type()</B
+> returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.oci-set-prefetch.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ocifetchinto.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >oci_set_prefetch</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.oci8.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ocifetchinto</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.oci-set-prefetch.html">oci_set_prefetch</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="class.OCI-Collection.html">OCI-Collection</a></div>
- <div class="up"><a href="ref.oci8.html">OCI8 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.oci-statement-type" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">oci_statement_type</h1>
-  <p class="verinfo">(PHP 5, PECL OCI8 &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">oci_statement_type</span> &mdash; <span class="dc-title">返回 OCI 语句的类型</span></p>
 
- </div>
- <div class="refsect1 unknown-seealsp" id="refsect1-function.oci-statement-type-unknown-seealsp">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>oci_statement_type</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$statement</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>oci_statement_type()</strong></span> 返回语句
-   <code class="parameter">statement</code> 的查询类型，其值为下列之一：
-   <ol type="1">
-    <li class="listitem"><span class="simpara"><em>SELECT</em></span></li>
-    <li class="listitem"><span class="simpara"><em>UPDATE</em></span></li>
-    <li class="listitem"><span class="simpara"><em>DELETE</em></span></li>
-    <li class="listitem"><span class="simpara"><em>INSERT</em></span></li>
-    <li class="listitem"><span class="simpara"><em>CREATE</em></span></li>
-    <li class="listitem"><span class="simpara"><em>DROP</em></span></li>
-    <li class="listitem"><span class="simpara"><em>ALTER</em></span></li>
-    <li class="listitem"><span class="simpara"><em>BEGIN</em></span></li>
-    <li class="listitem"><span class="simpara"><em>DECLARE</em></span></li>
-    <li class="listitem"><span class="simpara"><em>UNKNOWN</em></span></li>
-   </ol>
-  </p>
-  <p class="para">
-   <code class="parameter">statement</code> 参数是一个由
-   <span class="function"><a href="function.oci-parse.html" class="function">oci_parse()</a></span> 所返回的有效的 OCI 语句标识符。
-  </p>
-  <p class="para">
-   <div class="example" id="example-2165">
-    <p><strong>Example #1 <span class="function"><strong>oci_statement_type()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"scott"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"tiger"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$sql&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"delete&nbsp;from&nbsp;emp&nbsp;where&nbsp;deptno&nbsp;=&nbsp;10"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sql</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">oci_statement_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #DD0000">"DELETE"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"You&nbsp;are&nbsp;not&nbsp;allowed&nbsp;to&nbsp;delete&nbsp;from&nbsp;this&nbsp;table&lt;br&nbsp;/&gt;"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">oci_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <span class="function"><strong>oci_statement_type()</strong></span> 在出错时返回 <strong><code>FALSE</code></strong>。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在 PHP 5.0.0 之前的版本必须使用 <span class="function"><a href="function.ocistatementtype.html" class="function">ocistatementtype()</a></span>
-    替代本函数。该函数名仍然可用，为向下兼容作为
-    <span class="function"><strong>oci_statement_type()</strong></span> 的别名。不过其已被废弃，不推荐使用。
-   </p>
-  </p></blockquote>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.oci-set-prefetch.html">oci_set_prefetch</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="class.OCI-Collection.html">OCI-Collection</a></div>
- <div class="up"><a href="ref.oci8.html">OCI8 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

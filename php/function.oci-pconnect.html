@@ -1,250 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>使用一个持久连接连到 Oracle 数据库</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.oci-password-change.html">oci_password_change</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.oci-result.html">oci_result</a></div>
- <div class="up"><a href="ref.oci8.html">OCI8 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.oci-pconnect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">oci_pconnect</h1>
-  <p class="verinfo">(PHP 5, PECL OCI8 &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">oci_pconnect</span> &mdash; <span class="dc-title">使用一个持久连接连到 Oracle 数据库</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.oci-pconnect-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>oci_pconnect</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$db</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$charset</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$session_mode</code></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>oci_pconnect()</strong></span> 创建一个到 Oracle
-   服务器的持久连接并登录。持久连接会被缓冲并在请求之间重复使用，可以降低每个页面加载的消耗。一个典型的
-   PHP 应用程序对于每个 Apache 子进程（或者 PHP FastCGI/CGI
-   进程）会有一个打开的持久连接到 Oracle 服务器。更多信息见<a href="features.persistent-connections.html" class="link">数据库持久连接</a>一节。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    自 OCI8 扩展库版本 1.1 起，持久 Oracle
-    连接的生命周期和最大数目可以通过设定以下配置选项来调整：<a href="oci8.configuration.html#ini.oci8.persistent-timeout" class="link">oci8.persistent_timeout</a>，<a href="oci8.configuration.html#ini.oci8.ping-interval" class="link">oci8.ping_interval</a>
-    和 <a href="oci8.configuration.html#ini.oci8.max-persistent" class="link">oci8.max_persistent</a>。
-   </span>
-  </p></blockquote>
-  <p class="para">
-   可选的第三个参数可以是本地 Oracle 实例的名字或者是在
-   <var class="filename">tnsnames.ora</var>
-   的条目中的名字。如果没有指定第三个参数， PHP 使用环境变量
-   <em>ORACLE_SID</em> 和 <em>TWO_TASK</em>
-   来分别确定本地 Oracle 实例的名字和
-   <var class="filename">tnsnames.ora</var> 的位置。
-  </p>
-  <p class="para">
-   <code class="parameter">session_mode</code> 参数自版本 1.1
-   起可用并接受如下值：<strong><code>OCI_DEFAULT</code></strong>，<strong><code>OCI_SYSOPER</code></strong>
-   和 <strong><code>OCI_SYSDBA</code></strong>。如果指定了
-   <strong><code>OCI_SYSOPER</code></strong> 或 <strong><code>OCI_SYSDBA</code></strong>
-   其中之一，<span class="function"><a href="function.oci-new-connect.html" class="function">oci_new_connect()</a></span>
-   将尝试使用外部认证信息建立特权连接。特权连接默认被禁止。要启用，需要将
-   <a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
-   设为 On。
-  </p>
-  <p class="para">
-使用 Oracle
-客户端库来确定字符集。字符集不需要与数据库的字符集相匹配。如果不匹配，Oracle
-会尽可能地将数据从数据库字符集进行转换。因为依赖于字符集，可能不能给出可用的结果。转换也增加一些时间开销。
-</p>
-<p class="para">
- 如果不指定，Oracle 客户端用 <strong><code>NLS_LANG</code></strong> 环境变量来决定字符集。
-</p>
-<p class="para">
- 传递此参数可减少连接时间。
-</p>
-  <p class="para">
-   <span class="function"><strong>oci_pconnect()</strong></span> 返回连接标识符，出错则返回 <strong><code>FALSE</code></strong>。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在 PHP 5.0.0 之前的版本必须使用 <span class="function"><a href="function.ociplogon.html" class="function">ociplogon()</a></span>
-    替代本函数。该函数名仍然可用，为向下兼容作为
-    <span class="function"><strong>oci_pconnect()</strong></span> 的别名。不过其已被废弃，不推荐使用。
-   </p>
-  </p></blockquote>
-  <p class="para">
-   参见 <span class="function"><a href="function.oci-connect.html" class="function">oci_connect()</a></span> 和
-   <span class="function"><a href="function.oci-new-connect.html" class="function">oci_new_connect()</a></span>。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >oci_pconnect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Oracle 8 ������" HREF="ref.oci8.html"><LINK  REL="PREVIOUS" TITLE="oci_password_change" HREF="function.oci-password-change.html"><LINK  REL="NEXT" TITLE="oci_result" HREF="function.oci-result.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.oci-password-change.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.oci-result.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.oci-pconnect" ></A
+>oci_pconnect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN81224" ></A
+><P  >    (no version information, might be only in CVS)</P
+>oci_pconnect&nbsp;--&nbsp;Connect to an Oracle database using a persistent connection</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN81227" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >oci_pconnect</B
+> ( string username, string password [, string db])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >oci_pconnect()</B
+> creates a new persistent connection to 
+     an Oracle server and logs on. The optional third parameter can either contain 
+     the name of the local Oracle instance or the name of the entry in 
+     <TT  CLASS="filename" >tnsnames.ora</TT
+>. If the third parameter is not specified,
+     PHP uses environment variables <TT  CLASS="literal" >ORACLE_SID</TT
+> and 
+     <TT  CLASS="literal" >TWO_TASK</TT
+> to determine the name of local Oracle
+     instance and location of <TT  CLASS="filename" >tnsnames.ora</TT
+> accordingly.
+    </P
+><P  >&#13;     <B  CLASS="function" >oci_pconnect()</B
+> returns connection identifier or 
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Note, that these kind of links only work if you are using
+      a module version of PHP. See the
+      <A  HREF="features.persistent-connections.html"  >Persistent
+      Database Connections</A
+> section for more information.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.oci-connect.html"  ><B  CLASS="function" >oci_connect()</B
+></A
+> and
+     <A  HREF="function.oci-new-connect.html"  ><B  CLASS="function" >oci_new_connect()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.oci-password-change.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.oci-result.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >oci_password_change</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.oci8.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >oci_result</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 parameters" id="refsect1-function.oci-pconnect-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">username</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The Oracle user name.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">password</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The password for <code class="parameter">username</code>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">connection_string</code></dt>
-
-     <dd>
-
-      <p class="para">
-包含要连接的
-<em>Oracle 实例</em>。可以是 <a href="http://download.oracle.com/docs/cd/E11882_01/network.112/e10836/naming.htm" class="link external">&raquo;&nbsp;Easy Connect 串</a>，或是
-<var class="filename">tnsnames.ora</var> 文件中的连接名，或是本地 Oracle 实例名。
-</p>
-<p class="para">
- 如果不指定，PHP 使用环境变量来确定连接的 <em>Oracle 实例</em>，诸如
- <strong><code>TWO_TASK</code></strong>（Linux 下）或  <strong><code>LOCAL</code></strong>（Windows 下）与 <strong><code>ORACLE_SID</code></strong> 等。
-</p>
-<p class="para">
- 要使用 Easy Connect 命名方法，PHP 必须与 Oracle 10g 或更高版本的客户端库进行链接。Oracle 10g 的 Easy Connect
- 串格式：<em class="emphasis">[//]host_name[:port][/service_name]</em>。Oracle
- 11g 则为：<em class="emphasis">[//]host_name[:port][/service_name][:server_type][/instance_name]</em>。服务名可在数据库服务器机器上运行
- Oracle 实用程序 <em>lsnrctl status</em> 找到。
-</p>
-<p class="para">
- <var class="filename">tnsnames.ora</var> 文件可在 Oracle Net 查找路径中，此路径包括 <var class="filename">$ORACLE_HOME/network/admin</var>
- 和 <var class="filename">/etc</var>。 另一种方法是设置 <em>TNS_ADMIN</em> 以便通过 <var class="filename">$TNS_ADMIN/tnsnames.ora</var>
- 来读取。表确认 web 守护进程可读取此文件。
-</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">character_set</code></dt>
-
-     <dd>
-
-      <p class="para">
-使用 Oracle
-客户端库来确定字符集。字符集不需要与数据库的字符集相匹配。如果不匹配，Oracle
-会尽可能地将数据从数据库字符集进行转换。因为依赖于字符集，可能不能给出可用的结果。转换也增加一些时间开销。
-</p>
-<p class="para">
- 如果不指定，Oracle 客户端用 <strong><code>NLS_LANG</code></strong> 环境变量来决定字符集。
-</p>
-<p class="para">
- 传递此参数可减少连接时间。
-</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">session_mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-此参数在 PHP 5（PECL OCI8
-1.1）版本开始可用，并收受下列值：<strong><code>OCI_DEFAULT</code></strong>，<strong><code>OCI_SYSOPER</code></strong>
-和 <strong><code>OCI_SYSDBA</code></strong>。如为
-<strong><code>OCI_SYSOPER</code></strong> 或 <strong><code>OCI_SYSDBA</code></strong>
-其中之一，此函数将会使用外部的证书建立有特权的连接。有特权的连接默认是禁用的。需要将
-<a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
-设为 <em>On</em> 来启用。
-</p>
-<p class="para">
- PHP 5.3（PECL OCI8 1.3.4）引进了
- <strong><code>OCI_CRED_EXT</code></strong> 模式值。使用外部或操作系统认证必需在 Oracle
- 数据库中进行配置。<strong><code>OCI_CRED_EXT</code></strong>
- 标志只可用于用户为 &quot;/&quot;，密码为空的情况。<a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
- 可为 <em>On</em> 或 <em>Off</em>。
-</p>
-<p class="para">
- <strong><code>OCI_CRED_EXT</code></strong> 可与
- <strong><code>OCI_SYSOPER</code></strong> 或
- <strong><code>OCI_SYSDBA</code></strong> 模式组合使用。
-</p>
-<p class="para">
- <strong><code>OCI_CRED_EXT</code></strong> 由于安全的原因不支持 Windows 系统。
-</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.oci-pconnect-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns a connection identifier or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.oci-pconnect-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    Starting with PHP 5.1.2 and PECL oci8 1.1, the lifetime and
-    maximum number of persistent Oracle connections can be tuned by setting
-    the following configuration values: <a href="oci8.configuration.html#ini.oci8.persistent-timeout" class="link">oci8.persistent_timeout</a>,
-    <a href="oci8.configuration.html#ini.oci8.ping-interval" class="link">oci8.ping_interval</a> and
-    <a href="oci8.configuration.html#ini.oci8.max-persistent" class="link">oci8.max_persistent</a>.
-   </span>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    In PHP versions before 5.0.0 you must
-    use <span class="function"><a href="function.ociplogon.html" class="function">ociplogon()</a></span> instead.
-    在当前版本中，旧的函数名还可以被使用，但已经被废弃并不建议使用。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.oci-pconnect-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.oci-connect.html" class="function" rel="rdfs-seeAlso">oci_connect()</a> - 建立一个到 Oracle 服务器的连接</span></li>
-    <li class="member"><span class="function"><a href="function.oci-new-connect.html" class="function" rel="rdfs-seeAlso">oci_new_connect()</a> - 建定一个到 Oracle 服务器的新连接</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.oci-password-change.html">oci_password_change</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.oci-result.html">oci_result</a></div>
- <div class="up"><a href="ref.oci8.html">OCI8 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

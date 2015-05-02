@@ -1,143 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Prepares for a scan</title>
+<HTML  ><HEAD  ><TITLE  >yaz_scan</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="YAZ Functions" HREF="ref.yaz.html"><LINK  REL="PREVIOUS" TITLE="yaz_scan_result" HREF="function.yaz-scan-result.html"><LINK  REL="NEXT" TITLE="yaz_schema" HREF="function.yaz-schema.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.yaz-scan-result.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.yaz-schema.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.yaz-scan" ></A
+>yaz_scan</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN119984" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>yaz_scan&nbsp;--&nbsp;Prepares for a scan</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN119987" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >yaz_scan</B
+> ( resource id, string type, string startterm [, array flags])<BR  ></BR
+><P  >&#13;     This function prepares for a Z39.50 Scan Request, where parameter
+     <TT  CLASS="parameter" ><I  >id</I
+></TT
+> specifies connection. Starting term
+     point for the scan is given by <TT  CLASS="parameter" ><I  >startterm</I
+></TT
+>.
+     The form in which the starting term is specified is given by parameter
+     <TT  CLASS="parameter" ><I  >type</I
+></TT
+>. Currently only type <TT  CLASS="literal" >rpn</TT
+>
+     is supported. The optional parameter <TT  CLASS="parameter" ><I  >flags</I
+></TT
+>
+     specifies additional information to control the behaviour of the
+     scan request. Three indexes are currently read from the flags:
+     <TT  CLASS="literal" >number</TT
+> (number of terms requested),
+     <TT  CLASS="literal" >position</TT
+> (preferred position of term) and
+     <TT  CLASS="literal" >stepSize</TT
+> (preferred step size).
+     To actually transfer the Scan Request to the server and receive the
+     Scan Response, <A  HREF="function.yaz-wait.html"  ><B  CLASS="function" >yaz_wait()</B
+></A
+> must be called. Upon
+     completion of <A  HREF="function.yaz-wait.html"  ><B  CLASS="function" >yaz_wait()</B
+></A
+> call
+     <A  HREF="function.yaz-error.html"  ><B  CLASS="function" >yaz_error()</B
+></A
+> and <A  HREF="function.yaz-scan-result.html"  ><B  CLASS="function" >yaz_scan_result()</B
+></A
+> to
+     handle the response.
+    </P
+><P  >&#13;      The syntax of <TT  CLASS="parameter" ><I  >startterm</I
+></TT
+> is similar to the
+      RPN query as described in <A  HREF="function.yaz-search.html"  ><B  CLASS="function" >yaz_search()</B
+></A
+>. The
+      startterm consists of zero or more <TT  CLASS="literal" >@attr</TT
+>-operator 
+      specifications, then followed by exactly one token.
+    </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN120022" ></A
+><P  ><B  >¿˝◊” 1. PHP function that scans titles</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">scan_titles</font><font  color="#007700">(</font><font  color="#0000BB">$id</font><font  color="#007700">, </font><font  color="#0000BB">$startterm</font><font  color="#007700">) <br  />{<br  />&nbsp;&nbsp;</font><font  color="#0000BB">yaz_scan</font><font  color="#007700">(</font><font  color="#0000BB">$id</font><font  color="#007700">, </font><font  color="#DD0000">"rpn"</font><font  color="#007700">, </font><font  color="#DD0000">"@attr 1=4 " </font><font  color="#007700">. </font><font  color="#0000BB">$startterm</font><font  color="#007700">);<br  />&nbsp;&nbsp;</font><font  color="#0000BB">yaz_wait</font><font  color="#007700">();<br  />&nbsp;&nbsp;</font><font  color="#0000BB">$errno </font><font  color="#007700">= </font><font  color="#0000BB">yaz_errno</font><font  color="#007700">(</font><font  color="#0000BB">$id</font><font  color="#007700">);<br  />&nbsp;&nbsp;if (</font><font  color="#0000BB">$errno </font><font  color="#007700">== </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ar </font><font  color="#007700">= </font><font  color="#0000BB">yaz_scan_result</font><font  color="#007700">(</font><font  color="#0000BB">$id</font><font  color="#007700">, &amp;</font><font  color="#0000BB">$options</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">'Scan ok; '</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;while (list(</font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$val</font><font  color="#007700">) = </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$options</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$key = $val &amp;nbsp;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">'&lt;br /&gt;&lt;table&gt;'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;while (list(</font><font  color="#0000BB">$key</font><font  color="#007700">, list(</font><font  color="#0000BB">$k</font><font  color="#007700">, </font><font  color="#0000BB">$term</font><font  color="#007700">, </font><font  color="#0000BB">$tcount</font><font  color="#007700">)) = </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$ar</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (empty(</font><font  color="#0000BB">$k</font><font  color="#007700">)) continue;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;tr&gt;&lt;td&gt;$term&lt;/td&gt;&lt;td&gt;$tcount&lt;/td&gt;&lt;/tr&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">'&lt;/table&gt;'</font><font  color="#007700">;<br  />&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Scan failed. Error: " </font><font  color="#007700">. </font><font  color="#0000BB">yaz_error</font><font  color="#007700">(</font><font  color="#0000BB">$id</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.yaz-scan-result.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.yaz-schema.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >yaz_scan_result</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.yaz.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >yaz_schema</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-scan-result.html">yaz_scan_result</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-schema.html">yaz_schema</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.yaz-scan" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">yaz_scan</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PECL yaz &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">yaz_scan</span> &mdash; <span class="dc-title">Prepares for a scan</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.yaz-scan-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>yaz_scan</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$id</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$type</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$startterm</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$flags</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   This function prepares for a Z39.50 Scan Request on the specified 
-   connection.
-  </p>
-  <p class="para">
-   To actually transfer the Scan Request to the server and receive the
-   Scan Response, <span class="function"><a href="function.yaz-wait.html" class="function">yaz_wait()</a></span> must be called. Upon
-   completion of <span class="function"><a href="function.yaz-wait.html" class="function">yaz_wait()</a></span> call
-   <span class="function"><a href="function.yaz-error.html" class="function">yaz_error()</a></span> and <span class="function"><a href="function.yaz-scan-result.html" class="function">yaz_scan_result()</a></span> to
-   handle the response.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.yaz-scan-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The connection resource returned by <span class="function"><a href="function.yaz-connect.html" class="function">yaz_connect()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">type</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Currently only type <em>rpn</em> is supported.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">startterm</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Starting term point for the scan.
-      </p>
-      <p class="para">
-       The form in which the starting term is specified is given by parameter
-       <code class="parameter">type</code>.
-      </p>
-      <p class="para">
-       The syntax this parameter is similar to the RPN query as described in
-       <span class="function"><a href="function.yaz-search.html" class="function">yaz_search()</a></span>. It consists of zero or more 
-       <em>@attr</em>-operator specifications, then followed by 
-       exactly one token.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       This optional parameter specifies additional information to control 
-       the behaviour of the scan request. Three indexes are currently read 
-       from the flags array:
-       <em>number</em> (number of terms requested),
-       <em>position</em> (preferred position of term) and
-       <em>stepSize</em> (preferred step size).
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.yaz-scan-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Ê≤°ÊúâËøîÂõûÂÄº„ÄÇ
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.yaz-scan-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-4968">
-    <p><strong>Example #1 PHP function that scans titles</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">scan_titles</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$startterm</span><span style="color: #007700">)&nbsp;<br />{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">yaz_scan</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rpn"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"@attr&nbsp;1=4&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$startterm</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">yaz_wait</span><span style="color: #007700">();<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$errno&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">yaz_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">);<br />&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$errno&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">yaz_scan_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$options</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Scan&nbsp;ok;&nbsp;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$options&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">&nbsp;=&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #DD0000">&nbsp;&amp;nbsp;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;br&nbsp;/&gt;&lt;table&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(list(</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;list(</span><span style="color: #0000BB">$k</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$term</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$tcount</span><span style="color: #007700">))&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(empty(</span><span style="color: #0000BB">$k</span><span style="color: #007700">))&nbsp;continue;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;tr&gt;&lt;td&gt;</span><span style="color: #0000BB">$term</span><span style="color: #DD0000">&lt;/td&gt;&lt;td&gt;</span><span style="color: #0000BB">$tcount</span><span style="color: #DD0000">&lt;/td&gt;&lt;/tr&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/table&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Scan&nbsp;failed.&nbsp;Error:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">yaz_error</span><span style="color: #007700">(</span><span style="color: #0000BB">$id</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-scan-result.html">yaz_scan_result</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-schema.html">yaz_schema</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

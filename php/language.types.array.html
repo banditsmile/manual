@@ -1,781 +1,623 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Array æ•°ç»„</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.types.string.html">String å­—ç¬¦ä¸²</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.types.object.html">Object å¯¹è±¡</a></div>
- <div class="up"><a href="language.types.html">ç±»å‹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="language.types.array" class="sect1">
- <h2 class="title">Array æ•°ç»„</h2>
-
- <p class="para">
-   PHP ä¸­çš„<span class="type"><span class="type æ•°ç»„">æ•°ç»„</span></span>å®é™…ä¸Šæ˜¯ä¸€ä¸ªæœ‰åºæ˜ å°„ã€‚æ˜ å°„æ˜¯ä¸€ç§æŠŠ <em class="emphasis">values</em>
-   å…³è”åˆ° <em class="emphasis">keys</em> çš„ç±»å‹ã€‚æ­¤ç±»å‹åœ¨å¾ˆå¤šæ–¹é¢åšäº†ä¼˜åŒ–ï¼Œå› æ­¤å¯ä»¥æŠŠå®ƒå½“æˆçœŸæ­£çš„æ•°ç»„ï¼Œæˆ–åˆ—è¡¨ï¼ˆå‘é‡ï¼‰ï¼Œæ•£åˆ—è¡¨ï¼ˆæ˜¯æ˜ å°„çš„ä¸€ç§å®ç°ï¼‰ï¼Œå­—å…¸ï¼Œé›†åˆï¼Œæ ˆï¼Œé˜Ÿåˆ—ä»¥åŠæ›´å¤šå¯èƒ½æ€§ã€‚ç”±äºæ•°ç»„å…ƒç´ çš„å€¼ä¹Ÿå¯ä»¥æ˜¯å¦ä¸€ä¸ªæ•°ç»„ï¼Œæ ‘å½¢ç»“æ„å’Œå¤šç»´æ•°ç»„ä¹Ÿæ˜¯å…è®¸çš„ã€‚
- </p>
-
- <p class="para">
-   è§£é‡Šè¿™äº›ç»“æ„è¶…å‡ºäº†æœ¬æ‰‹å†Œçš„èŒƒå›´ï¼Œä½†å¯¹äºæ¯ç§ç»“æ„è‡³å°‘ä¼šæä¾›ä¸€ä¸ªä¾‹å­ã€‚è¦å¾—åˆ°è¿™äº›ç»“æ„çš„æ›´å¤šä¿¡æ¯ï¼Œå»ºè®®å‚è€ƒæœ‰å…³æ­¤å¹¿é˜”ä¸»é¢˜çš„å…¶å®ƒè‘—ä½œã€‚
- </p>
-   
- <div class="sect2" id="language.types.array.syntax">
-  <h3 class="title">è¯­æ³•</h3>
-  
-  <div class="sect3" id="language.types.array.syntax.array-func">
-   <h4 class="title">å®šä¹‰æ•°ç»„ <span class="function"><a href="function.array.html" class="function">array()</a></span></h4>
-
-   <p class="para">
-    å¯ä»¥ç”¨ <span class="function"><a href="function.array.html" class="function">array()</a></span> è¯­è¨€ç»“æ„æ¥æ–°å»ºä¸€ä¸ªæ•°ç»„ã€‚å®ƒæ¥å—ä»»æ„æ•°é‡ç”¨é€—å·åˆ†éš”çš„
-    <em><span class="replaceable">é”®ï¼ˆkeyï¼‰</span> =&gt; <span class="replaceable">å€¼ï¼ˆvalueï¼‰</span></em>å¯¹ã€‚
-   </p>
-
-   <pre class="synopsis">
-array( <span class="optional"> <span class="replaceable">key</span> =&gt; </span> <span class="replaceable">value</span>
+<HTML  ><HEAD  ><TITLE  >Êı×é</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÀàĞÍ" HREF="language.types.html"><LINK  REL="PREVIOUS" TITLE="×Ö·û´®" HREF="language.types.string.html"><LINK  REL="NEXT" TITLE="¶ÔÏó" HREF="language.types.object.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="language.types.string.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 6. ÀàĞÍ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="language.types.object.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="language.types.array" ></A
+>Êı×é</H1
+><P  >&#13;    PHP ÖĞµÄÊı×éÊµ¼ÊÉÏÊÇÒ»¸öÓĞĞòÍ¼¡£Í¼ÊÇÒ»ÖÖ°Ñ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >values</I
+></SPAN
+> Ó³Éäµ½ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >keys</I
+></SPAN
+> µÄÀàĞÍ¡£´ËÀàĞÍÔÚºÜ¶à·½Ãæ×öÁËÓÅ»¯£¬Òò´ËÄã¿ÉÒÔ°ÑËüµ±³ÉÕæÕıµÄÊı×éÀ´Ê¹ÓÃ£¬»òÁĞ±í£¨Ê¸Á¿£©£¬É¢ÁĞ±í£¨ÊÇÍ¼µÄÒ»ÖÖÊµÏÖ£©£¬×Öµä£¬¼¯ºÏ£¬Õ»£¬¶ÓÁĞÒÔ¼°¸ü¶à¿ÉÄÜĞÔ¡£ÒòÎª¿ÉÒÔÓÃÁíÒ»¸ö PHP Êı×é×÷ÎªÖµ£¬Ò²¿ÉÒÔºÜÈİÒ×µØÄ£ÄâÊ÷¡£
+   </P
+><P  >&#13;    ½âÊÍÕâĞ©½á¹¹³¬³öÁË±¾ÊÖ²áµÄ·¶Î§£¬µ«¶ÔÓÚÃ¿ÖÖ½á¹¹ÄãÖÁÉÙ»á·¢ÏÖÒ»¸öÀı×Ó¡£ÒªµÃµ½ÕâĞ©½á¹¹µÄ¸ü¶àĞÅÏ¢£¬ÎÒÃÇ½¨ÒéÄã²Î¿¼ÓĞ¹Ø´Ë¹ãÀ«Ö÷ÌâµÄÍâ²¿Öø×÷¡£
+   </P
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.types.array.syntax" ></A
+>Óï·¨</H2
+><DIV  CLASS="sect3" ><H3  CLASS="sect3" ><A  NAME="language.types.array.syntax.array-func" ></A
+>¶¨Òå <A  HREF="function.array.html"  ><B  CLASS="function" >array()</B
+></A
+></H3
+><P  >&#13;      ¿ÉÒÔÓÃ <A  HREF="function.array.html"  ><B  CLASS="function" >array()</B
+></A
+> ÓïÑÔ½á¹¹À´ĞÂ½¨Ò»¸ö <A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+>¡£Ëü½ÓÊÜÒ»¶¨ÊıÁ¿ÓÃ¶ººÅ·Ö¸ôµÄ
+      <TT  CLASS="literal" ><TT  CLASS="replaceable" ><I  >key</I
+></TT
+> =&#62; <TT  CLASS="replaceable" ><I  >value</I
+></TT
+></TT
+> ²ÎÊı¶Ô¡£
+     </P
+><P  >&#13;      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="synopsis" >array( [<TT  CLASS="replaceable" ><I  >key</I
+></TT
+> =&#62;]
+<TT  CLASS="replaceable" ><I  >value</I
+></TT
+>
      , ...
      )
-// <span class="replaceable">é”®ï¼ˆkeyï¼‰</span>å¯æ˜¯æ˜¯ä¸€ä¸ªæ•´æ•° <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> æˆ–å­—ç¬¦ä¸² <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-// <span class="replaceable">å€¼ï¼ˆvalueï¼‰</span>å¯ä»¥æ˜¯ä»»æ„ç±»å‹çš„å€¼</pre>
-   
-
-   <p class="para">
-    æœ€åä¸€ä¸ªæ•°ç»„å•å…ƒä¹‹åçš„é€—å·å¯ä»¥çœç•¥ã€‚é€šå¸¸ç”¨äºå•è¡Œæ•°ç»„å®šä¹‰ä¸­ï¼Œä¾‹å¦‚å¸¸ç”¨
-    <em>array(1, 2)</em> è€Œä¸æ˜¯
-    <em>array(1, 2, )</em>ã€‚å¯¹å¤šè¡Œæ•°ç»„å®šä¹‰é€šå¸¸ä¿ç•™æœ€åä¸€ä¸ªé€—å·ï¼Œè¿™æ ·è¦æ·»åŠ ä¸€ä¸ªæ–°å•å…ƒæ—¶æ›´æ–¹ä¾¿ã€‚
-   </p>
-
-   <p class="para">
-    è‡ª 5.4 èµ·å¯ä»¥ä½¿ç”¨çŸ­æ•°ç»„å®šä¹‰è¯­æ³•ï¼Œç”¨ <em>[]</em> æ›¿ä»£
-    <em>array()</em>ã€‚
-   </p>
-
-   <div class="example" id="example-95">
-    <p><strong>Example #1 ä¸€ä¸ªç®€å•æ•°ç»„</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"foo"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"bar"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,<br />);<br /><br /></span><span style="color: #FF8000">//&nbsp;è‡ª&nbsp;PHP&nbsp;5.4&nbsp;èµ·<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"foo"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"bar"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,<br />];<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-
-   <p class="para">
-    <span class="replaceable">key</span> å¯ä»¥æ˜¯ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> æˆ–è€…
-    <span class="type"><a href="language.types.string.html" class="type string">string</a></span>ã€‚<span class="replaceable">value</span> å¯ä»¥æ˜¯ä»»æ„ç±»å‹ã€‚
-   </p>
-
-   <p class="para">
-    æ­¤å¤– <span class="replaceable">key</span> ä¼šæœ‰å¦‚ä¸‹çš„å¼ºåˆ¶è½¬æ¢ï¼š
-    <ul class="itemizedlist">
-     <li class="listitem">
-      <span class="simpara">
-       åŒ…å«æœ‰åˆæ³•æ•´å‹å€¼çš„å­—ç¬¦ä¸²ä¼šè¢«è½¬æ¢ä¸ºæ•´å‹ã€‚ä¾‹å¦‚é”®å
-       <em>&quot;8&quot;</em> å®é™…ä¼šè¢«å‚¨å­˜ä¸º
-       <em>8</em>ã€‚ä½†æ˜¯ <em>&quot;08&quot;</em>
-       åˆ™ä¸ä¼šå¼ºåˆ¶è½¬æ¢ï¼Œå› ä¸ºå…¶ä¸æ˜¯ä¸€ä¸ªåˆæ³•çš„åè¿›åˆ¶æ•°å€¼ã€‚
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       æµ®ç‚¹æ•°ä¹Ÿä¼šè¢«è½¬æ¢ä¸ºæ•´å‹ï¼Œæ„å‘³ç€å…¶å°æ•°éƒ¨åˆ†ä¼šè¢«èˆå»ã€‚ä¾‹å¦‚é”®å
-       <em>8.7</em> å®é™…ä¼šè¢«å‚¨å­˜ä¸º <em>8</em>ã€‚
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       å¸ƒå°”å€¼ä¹Ÿä¼šè¢«è½¬æ¢æˆæ•´å‹ã€‚å³é”®å
-       <em>true</em> å®é™…ä¼šè¢«å‚¨å­˜ä¸º <em>1</em>
-       è€Œé”®å <em>false</em> ä¼šè¢«å‚¨å­˜ä¸º <em>0</em>ã€‚
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       <span class="type"><a href="language.types.null.html" class="type Null">Null</a></span> ä¼šè¢«è½¬æ¢ä¸ºç©ºå­—ç¬¦ä¸²ï¼Œå³é”®å
-       <em>null</em> å®é™…ä¼šè¢«å‚¨å­˜ä¸º <em>&quot;&quot;</em>ã€‚
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       æ•°ç»„å’Œå¯¹è±¡<em class="emphasis">ä¸èƒ½</em>è¢«ç”¨ä¸ºé”®åã€‚åšæŒè¿™ä¹ˆåšä¼šå¯¼è‡´è­¦å‘Šï¼š<em>Illegal offset type</em>ã€‚
-      </span>
-     </li>
-    </ul>
-   </p>
-   
-   <p class="para">
-    å¦‚æœåœ¨æ•°ç»„å®šä¹‰ä¸­å¤šä¸ªå•å…ƒéƒ½ä½¿ç”¨äº†åŒä¸€ä¸ªé”®åï¼Œåˆ™åªä½¿ç”¨äº†æœ€åä¸€ä¸ªï¼Œä¹‹å‰çš„éƒ½è¢«è¦†ç›–äº†ã€‚
-   </p>
-
-   <div class="example" id="example-96">
-    <p><strong>Example #2 ç±»å‹å¼ºåˆ¶ä¸è¦†ç›–ç¤ºä¾‹</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"1"&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1.5&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"d"</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(1) {
-  [1]=&gt;
-  string(1) &quot;d&quot;
-}
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     ä¸Šä¾‹ä¸­æ‰€æœ‰çš„é”®åéƒ½è¢«å¼ºåˆ¶è½¬æ¢ä¸º <em>1</em>ï¼Œåˆ™æ¯ä¸€ä¸ªæ–°å•å…ƒéƒ½ä¼šè¦†ç›–å‰ä¸€ä¸ªçš„å€¼ï¼Œæœ€åå‰©ä¸‹çš„åªæœ‰ä¸€ä¸ª
-     <em>&quot;d&quot;</em>ã€‚
-    </p></div>
-   </div>  
-
-   <p class="para">
-    PHP æ•°ç»„å¯ä»¥åŒæ—¶å«æœ‰ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> å’Œ <span class="type"><a href="language.types.string.html" class="type string">string</a></span> ç±»å‹çš„é”®åï¼Œå› ä¸º
-    PHP å®é™…å¹¶ä¸åŒºåˆ†ç´¢å¼•æ•°ç»„å’Œå…³è”æ•°ç»„ã€‚
-   </p>
-
-   <p class="para">
-    å¦‚æœå¯¹ç»™å‡ºçš„å€¼æ²¡æœ‰æŒ‡å®šé”®åï¼Œåˆ™å–å½“å‰æœ€å¤§çš„æ•´æ•°ç´¢å¼•å€¼ï¼Œè€Œæ–°çš„é”®åå°†æ˜¯è¯¥å€¼åŠ ä¸€ã€‚å¦‚æœæŒ‡å®šçš„é”®åå·²ç»æœ‰äº†å€¼ï¼Œåˆ™è¯¥å€¼ä¼šè¢«è¦†ç›–ã€‚
-   </p>
-   
-   <div class="example" id="example-97">
-    <p><strong>Example #3 æ··åˆ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> å’Œ <span class="type"><a href="language.types.string.html" class="type string">string</a></span> é”®å</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"foo"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"bar"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">100&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;-</span><span style="color: #0000BB">100</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;-</span><span style="color: #0000BB">100&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(4) {
-  [&quot;foo&quot;]=&gt;
-  string(3) &quot;bar&quot;
-  [&quot;bar&quot;]=&gt;
-  string(3) &quot;foo&quot;
-  [100]=&gt;
-  int(-100)
-  [-100]=&gt;
-  int(100)
-}
-</pre></div>
-    </div>
-   </div>
-   
-   <p class="para">
-    <span class="replaceable">key</span> ä¸ºå¯é€‰é¡¹ã€‚å¦‚æœæœªæŒ‡å®šï¼ŒPHP
-    å°†è‡ªåŠ¨ä½¿ç”¨ä¹‹å‰ç”¨è¿‡çš„æœ€å¤§ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> é”®ååŠ ä¸Š 1 ä½œä¸ºæ–°çš„é”®åã€‚
-   </p>
-   
-   <div class="example" id="example-98">
-    <p><strong>Example #4 æ²¡æœ‰é”®åçš„ç´¢å¼•æ•°ç»„</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hallo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"world"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(4) {
-  [0]=&gt;
-  string(3) &quot;foo&quot;
-  [1]=&gt;
-  string(3) &quot;bar&quot;
-  [2]=&gt;
-  string(5) &quot;hallo&quot;
-  [3]=&gt;
-  string(5) &quot;world&quot;
-}
-</pre></div>
-    </div>
-   </div>
-   
-   <p class="para">
-    è¿˜å¯ä»¥åªå¯¹æŸäº›å•å…ƒæŒ‡å®šé”®åè€Œå¯¹å…¶å®ƒçš„ç©ºç½®ï¼š
-   </p>
-   
-   <div class="example" id="example-99">
-    <p><strong>Example #5 ä»…å¯¹éƒ¨åˆ†å•å…ƒæŒ‡å®šé”®å</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">6&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"d"</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(4) {
-  [0]=&gt;
-  string(1) &quot;a&quot;
-  [1]=&gt;
-  string(1) &quot;b&quot;
-  [6]=&gt;
-  string(1) &quot;c&quot;
-  [7]=&gt;
-  string(1) &quot;d&quot;
-}
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     å¯ä»¥çœ‹åˆ°æœ€åä¸€ä¸ªå€¼ <em>&quot;d&quot;</em> è¢«è‡ªåŠ¨èµ‹äºˆäº†é”®å
-     <em>7</em>ã€‚è¿™æ˜¯ç”±äºä¹‹å‰æœ€å¤§çš„æ•´æ•°é”®åæ˜¯ <em>6</em>ã€‚
-    </p></div>
-   </div>
-
-  </div>
-  
-  <div class="sect3" id="language.types.array.syntax.accessing">
-   <h4 class="title">ç”¨æ–¹æ‹¬å·è¯­æ³•è®¿é—®æ•°ç»„å•å…ƒ</h4>
-   
-   <p class="para">
-    æ•°ç»„å•å…ƒå¯ä»¥é€šè¿‡ <em>array[key]</em> è¯­æ³•æ¥è®¿é—®ã€‚
-   </p>
-   
-   <div class="example" id="example-100">
-    <p><strong>Example #6 è®¿é—®æ•°ç»„å•å…ƒ</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"foo"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">42&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">24</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"multi"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"dimensional"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"array"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;)<br />);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #0000BB">42</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">"multi"</span><span style="color: #007700">][</span><span style="color: #DD0000">"dimensional"</span><span style="color: #007700">][</span><span style="color: #DD0000">"array"</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-string(3) &quot;bar&quot;
-int(24)
-string(3) &quot;foo&quot;
-</pre></div>
-    </div>
-   </div>
-   
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <p class="para">
-     æ–¹æ‹¬å·å’ŒèŠ±æ‹¬å·å¯ä»¥äº’æ¢ä½¿ç”¨æ¥è®¿é—®æ•°ç»„å•å…ƒï¼ˆä¾‹å¦‚ $array[42]
-     å’Œ $array{42} åœ¨ä¸Šä¾‹ä¸­æ•ˆæœç›¸åŒï¼‰ã€‚
-    </p>
-   </p></blockquote>
-
-   <p class="para">
-    è‡ª PHP 5.4 èµ·å¯ä»¥ç”¨æ•°ç»„é—´æ¥å¼•ç”¨å‡½æ•°æˆ–æ–¹æ³•è°ƒç”¨çš„ç»“æœã€‚ä¹‹å‰åªèƒ½é€šè¿‡ä¸€ä¸ªä¸´æ—¶å˜é‡ã€‚
-   </p>
-   
-   <p class="para">
-    è‡ª PHP 5.5 èµ·å¯ä»¥ç”¨æ•°ç»„é—´æ¥å¼•ç”¨ä¸€ä¸ªæ•°ç»„åŸå‹ã€‚
-   </p>
-   
-   <div class="example" id="example-101">
-    <p><strong>Example #7 æ•°ç»„é—´æ¥å¼•ç”¨</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">getArray</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;on&nbsp;PHP&nbsp;5.4<br /></span><span style="color: #0000BB">$secondElement&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getArray</span><span style="color: #007700">()[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;previously<br /></span><span style="color: #0000BB">$tmp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getArray</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$secondElement&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$tmp</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;or<br /></span><span style="color: #007700">list(,&nbsp;</span><span style="color: #0000BB">$secondElement</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">getArray</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <p class="para">
-     è¯•å›¾è®¿é—®ä¸€ä¸ªæœªå®šä¹‰çš„æ•°ç»„é”®åä¸è®¿é—®ä»»ä½•æœªå®šä¹‰å˜é‡ä¸€æ ·ï¼šä¼šå¯¼è‡´
-     <strong><code>E_NOTICE</code></strong> çº§åˆ«é”™è¯¯ä¿¡æ¯ï¼Œå…¶ç»“æœä¸º <strong><code>NULL</code></strong>ã€‚
-    </p>
-   </p></blockquote>
-  </div>
-
-  <div class="sect3" id="language.types.array.syntax.modifying">
-   <h4 class="title">ç”¨æ–¹æ‹¬å·çš„è¯­æ³•æ–°å»ºï¼ä¿®æ”¹</h4>
-
-   <p class="para">
-    å¯ä»¥é€šè¿‡æ˜ç¤ºåœ°è®¾å®šå…¶ä¸­çš„å€¼æ¥ä¿®æ”¹ä¸€ä¸ªå·²æœ‰æ•°ç»„ã€‚
-   </p>
-
-   <p class="para">
-    è¿™æ˜¯é€šè¿‡åœ¨æ–¹æ‹¬å·å†…æŒ‡å®šé”®åæ¥ç»™æ•°ç»„èµ‹å€¼å®ç°çš„ã€‚ä¹Ÿå¯ä»¥çœç•¥é”®åï¼Œåœ¨è¿™ç§æƒ…å†µä¸‹ç»™å˜é‡ååŠ ä¸Šä¸€å¯¹ç©ºçš„æ–¹æ‹¬å·ï¼ˆ<em>[]</em>ï¼‰ã€‚
-   </p>
-   
-   <pre class="synopsis">
-$arr[<span class="replaceable">key</span>] = <span class="replaceable">value</span>;
-$arr[] = <span class="replaceable">value</span>;
-// <span class="replaceable">key</span> å¯ä»¥æ˜¯ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> æˆ– <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-// <span class="replaceable">value</span> å¯ä»¥æ˜¯ä»»æ„ç±»å‹çš„å€¼</pre>
-   
-   <p class="para">
-    å¦‚æœ <var class="varname"><var class="varname">$arr</var></var>
-    è¿˜ä¸å­˜åœ¨ï¼Œå°†ä¼šæ–°å»ºä¸€ä¸ªï¼Œè¿™ä¹Ÿæ˜¯å¦ä¸€ç§æ–°å»ºæ•°ç»„çš„æ–¹æ³•ã€‚ä¸è¿‡å¹¶ä¸é¼“åŠ±è¿™æ ·åšï¼Œå› ä¸ºå¦‚æœ
-    <var class="varname"><var class="varname">$arr</var></var> å·²ç»åŒ…å«æœ‰å€¼ï¼ˆä¾‹å¦‚æ¥è‡ªè¯·æ±‚å˜é‡çš„ <span class="type"><a href="language.types.string.html" class="type string">string</a></span>ï¼‰åˆ™æ­¤å€¼ä¼šä¿ç•™è€Œ
-    <em>[]</em> å®é™…ä¸Šä»£è¡¨ç€<a href="language.types.string.html#language.types.string.substr" class="link">å­—ç¬¦ä¸²è®¿é—®è¿ç®—ç¬¦</a>ã€‚åˆå§‹åŒ–å˜é‡çš„æœ€å¥½æ–¹å¼æ˜¯ç›´æ¥ç»™å…¶èµ‹å€¼ã€‚ã€‚
-   </p>
-
-   <p class="para">
-    è¦ä¿®æ”¹æŸä¸ªå€¼ï¼Œé€šè¿‡å…¶é”®åç»™è¯¥å•å…ƒèµ‹ä¸€ä¸ªæ–°å€¼ã€‚è¦åˆ é™¤æŸé”®å€¼å¯¹ï¼Œå¯¹å…¶è°ƒç”¨
-    <span class="function"><a href="function.unset.html" class="function">unset()</a></span> å‡½æ•°ã€‚
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">5&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$arr</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">56</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;the&nbsp;same&nbsp;as&nbsp;$arr[13]&nbsp;=&nbsp;56;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;at&nbsp;this&nbsp;point&nbsp;of&nbsp;the&nbsp;script<br /><br /></span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"x"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">42</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;adds&nbsp;a&nbsp;new&nbsp;element&nbsp;to<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;array&nbsp;with&nbsp;key&nbsp;"x"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">5</span><span style="color: #007700">]);&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;removes&nbsp;the&nbsp;element&nbsp;from&nbsp;the&nbsp;array<br /><br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;deletes&nbsp;the&nbsp;whole&nbsp;array<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div> 
-    </div>
-
-   </div>
-
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <p class="para">
-     å¦‚ä¸Šæ‰€è¿°ï¼Œå¦‚æœç»™å‡ºæ–¹æ‹¬å·ä½†æ²¡æœ‰æŒ‡å®šé”®åï¼Œåˆ™å–å½“å‰æœ€å¤§æ•´æ•°ç´¢å¼•å€¼ï¼Œæ–°çš„é”®åå°†æ˜¯è¯¥å€¼åŠ ä¸Š
-     1ï¼ˆä½†æ˜¯æœ€å°ä¸º 0ï¼‰ã€‚å¦‚æœå½“å‰è¿˜æ²¡æœ‰æ•´æ•°ç´¢å¼•ï¼Œåˆ™é”®åå°†ä¸º
-     <em>0</em>ã€‚
-    </p>
-
-    <p class="para">
-     æ³¨æ„è¿™é‡Œæ‰€ä½¿ç”¨çš„æœ€å¤§æ•´æ•°é”®å<em class="emphasis">ä¸ä¸€å®š</em>å½“å‰å°±åœ¨æ•°ç»„ä¸­ã€‚å®ƒåªè¦åœ¨ä¸Šæ¬¡æ•°ç»„é‡æ–°ç”Ÿæˆç´¢å¼•åæ›¾ç»å­˜åœ¨è¿‡å°±è¡Œäº†ã€‚ä»¥ä¸‹é¢çš„ä¾‹å­æ¥è¯´æ˜ï¼š
-    </p>
-
-    <div class="informalexample">
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;åˆ›å»ºä¸€ä¸ªç®€å•çš„æ•°ç»„<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ç°åœ¨åˆ é™¤å…¶ä¸­çš„æ‰€æœ‰å…ƒç´ ï¼Œä½†ä¿æŒæ•°ç»„æœ¬èº«ä¸å˜:<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">]);<br />}<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;æ·»åŠ ä¸€ä¸ªå•å…ƒï¼ˆæ³¨æ„æ–°çš„é”®åæ˜¯&nbsp;5ï¼Œè€Œä¸æ˜¯ä½ å¯èƒ½ä»¥ä¸ºçš„&nbsp;0ï¼‰<br /></span><span style="color: #0000BB">$array</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;é‡æ–°ç´¢å¼•ï¼š<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_values</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$array</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div> 
-     </div>
-
-     <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+// <TT  CLASS="replaceable" ><I  >key</I
+></TT
+> ¿ÉÒÔÊÇ <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> »òÕß <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+>
+// <TT  CLASS="replaceable" ><I  >value</I
+></TT
+> ¿ÉÒÔÊÇÈÎºÎÖµ</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >&#13;      <DIV  CLASS="informalexample" ><A  NAME="AEN3732" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$arr </font><font  color="#007700">= array(</font><font  color="#DD0000">"foo" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"bar"</font><font  color="#007700">, </font><font  color="#0000BB">12 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">true</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"foo"</font><font  color="#007700">]; </font><font  color="#FF8000">// bar<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">12</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// 1<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+><P  >&#13;      <TT  CLASS="varname" >key</TT
+> ¿ÉÒÔÊÇ <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> »òÕß <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+>¡£Èç¹û¼üÃûÊÇÒ»¸ö
+      <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> µÄ±ê×¼±í´ï·½·¨£¬Ôò±»½âÊÍÎªÕûÊı£¨ÀıÈç <TT  CLASS="literal" >"8"</TT
+> ½«±»½âÊÍÎª
+      <TT  CLASS="literal" >8</TT
+>£¬¶ø <TT  CLASS="literal" >"08"</TT
+> ½«±»½âÊÍÎª <TT  CLASS="literal" >"08"</TT
+>£©¡£PHP ÖĞÊı×éÏÂ±êµÄ±äÁ¿ÀàĞÍ²»»á¶ÔÊı×éÔì³ÉÓ°Ïì£¬Êı×éµÄÀàĞÍÖ»ÓĞÒ»ÖÖ£¬Ëü¿ÉÒÔÍ¬Ê±°üº¬ÕûĞÍºÍ×Ö·û´®ĞÍµÄÏÂ±ê¡£
+     </P
+><P  >&#13;      Öµ¿ÉÒÔÊÇÈÎºÎÖµ¡£
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3744" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$arr </font><font  color="#007700">= array(</font><font  color="#DD0000">"somearray" </font><font  color="#007700">=&gt; array(</font><font  color="#0000BB">6 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">5</font><font  color="#007700">, </font><font  color="#0000BB">13 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">9</font><font  color="#007700">, </font><font  color="#DD0000">"a" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">42</font><font  color="#007700">));<br  /><br  />echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"somearray"</font><font  color="#007700">][</font><font  color="#0000BB">6</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// 5<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"somearray"</font><font  color="#007700">][</font><font  color="#0000BB">13</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// 9<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"somearray"</font><font  color="#007700">][</font><font  color="#DD0000">"a"</font><font  color="#007700">];&nbsp;&nbsp;</font><font  color="#FF8000">// 42<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+><P  >&#13;      Èç¹û¶Ô¸ø³öµÄÖµÃ»ÓĞÖ¸¶¨¼üÃû£¬ÔòÈ¡µ±Ç°×î´óµÄÕûÊıË÷ÒıÖµ£¬¶øĞÂµÄ¼üÃû½«ÊÇ¸ÃÖµ¼ÓÒ»¡£Èç¹ûÄãÖ¸¶¨µÄ¼üÃûÒÑ¾­ÓĞÁËÖµ£¬Ôò¸ÃÖµ»á±»¸²¸Ç¡£
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3747" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// This array is the same as ...<br  /></font><font  color="#007700">array(</font><font  color="#0000BB">5 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">43</font><font  color="#007700">, </font><font  color="#0000BB">32</font><font  color="#007700">, </font><font  color="#0000BB">56</font><font  color="#007700">, </font><font  color="#DD0000">"b" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">12</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ...this array<br  /></font><font  color="#007700">array(</font><font  color="#0000BB">5 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">43</font><font  color="#007700">, </font><font  color="#0000BB">6 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">32</font><font  color="#007700">, </font><font  color="#0000BB">7 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">56</font><font  color="#007700">, </font><font  color="#DD0000">"b" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">12</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;       ×Ô PHP 4.3.0 Æğ£¬ÉÏÊöµÄË÷ÒıÉú³É·½·¨¸Ä±äÁË¡£Èç½ñÈç¹ûÄã¸øÒ»¸öµ±Ç°×î´ó¼üÃûÊÇ¸ºÖµµÄÊı×éÌí¼ÓÒ»¸öĞÂÖµ£¬ÔòĞÂÉú³ÉµÄµÄË÷Òı½«ÎªÁã£¨<TT  CLASS="literal" >0</TT
+>£©¡£ÒÔÇ°ĞÂÉú³ÉµÄË÷ÒıÎªµ±Ç°×î´óË÷Òı¼ÓÒ»£¬ºÍÕıÖµµÄË÷ÒıÏàÍ¬¡£
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;      Ê¹ÓÃ <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> ×÷Îª¼üÃû½«Ê¹ <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> <TT  CLASS="literal" >1</TT
+> ³ÉÎª¼üÃû¡£Ê¹ÓÃ
+      <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ×÷Îª¼üÃû½«Ê¹ <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> <TT  CLASS="literal" >0</TT
+> ³ÉÎª¼üÃû¡£Ê¹ÓÃ
+      <TT  CLASS="literal" >NULL</TT
+> ×÷Îª¼üÃû½«µÈÍ¬ÓÚÊ¹ÓÃ¿Õ×Ö·û´®¡£Ê¹ÓÃ¿Õ×Ö·û´®×÷Îª¼üÃû½«ĞÂ½¨£¨»ò¸²¸Ç£©Ò»¸öÓÃ¿Õ×Ö·û´®×÷Îª¼üÃûµÄÖµ£¬ÕâºÍÓÃ¿ÕµÄ·½À¨ºÅ²»Ò»Ñù¡£
+     </P
+><P  >&#13;      ²»ÄÜÓÃÊı×éºÍ¶ÔÏó×÷Îª¼üÃû¡£ÕâÑù×ö»áµ¼ÖÂÒ»¸ö¾¯¸æ£º<TT  CLASS="literal" >Illegal offset type</TT
+>¡£
+     </P
+></DIV
+><DIV  CLASS="sect3" ><H3  CLASS="sect3" ><A  NAME="language.types.array.syntax.modifying" ></A
+>ÓÃ·½À¨ºÅµÄÓï·¨ĞÂ½¨£¯ĞŞ¸Ä</H3
+><P  >&#13;      ¿ÉÒÔÍ¨¹ıÃ÷Ê¾µØÉè¶¨ÖµÀ´¸Ä±äÒ»¸öÏÖÓĞµÄÊı×é¡£
+     </P
+><P  >&#13;      ÕâÊÇÍ¨¹ıÔÚ·½À¨ºÅÄÚÖ¸¶¨¼üÃûÀ´¸øÊı×é¸³ÖµÊµÏÖµÄ¡£Ò²¿ÉÒÔÊ¡ÂÔ¼üÃû£¬ÔÚÕâÖÖÇé¿öÏÂ¸ø±äÁ¿Ãû¼ÓÉÏÒ»¶Ô¿ÕµÄ·½À¨ºÅ£¨¡°<TT  CLASS="literal" >[]</TT
+>¡±£©¡£
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="synopsis" >$arr[<TT  CLASS="replaceable" ><I  >key</I
+></TT
+>] = <TT  CLASS="replaceable" ><I  >value</I
+></TT
+>;
+$arr[] = <TT  CLASS="replaceable" ><I  >value</I
+></TT
+>;
+// <TT  CLASS="replaceable" ><I  >key</I
+></TT
+> ¿ÉÒÔÊÇ <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> »òÕß <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+>
+// <TT  CLASS="replaceable" ><I  >value</I
+></TT
+> ¿ÉÒÔÎªÈÎºÎÖµ¡£</PRE
+></TD
+></TR
+></TABLE
+>
+      Èç¹û <TT  CLASS="varname" >$arr</TT
+> »¹²»´æÔÚ£¬½«»áĞÂ½¨Ò»¸ö¡£ÕâÒ²ÊÇÒ»ÖÖ¶¨ÒåÊı×éµÄÌæ»»·½·¨¡£Òª¸Ä±äÒ»¸öÖµ£¬Ö»Òª¸øËü¸³Ò»¸öĞÂÖµ¡£Èç¹ûÒªÉ¾³ıÒ»¸ö¼üÃû£¯Öµ¶Ô£¬Òª¶ÔËüÓÃ <A  HREF="function.unset.html"  ><B  CLASS="function" >unset()</B
+></A
+>¡£
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3777" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$arr </font><font  color="#007700">= array(</font><font  color="#0000BB">5 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">12 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$arr</font><font  color="#007700">[] = </font><font  color="#0000BB">56</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// This is the same as $arr[13] = 56;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// at this point of the script<br  /></font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"x"</font><font  color="#007700">] = </font><font  color="#0000BB">42</font><font  color="#007700">; </font><font  color="#FF8000">// This adds a new element to<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// the array with key "x"<br  /></font><font  color="#007700">unset(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">5</font><font  color="#007700">]); </font><font  color="#FF8000">// This removes the element from the array<br  /></font><font  color="#007700">unset(</font><font  color="#0000BB">$arr</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// This deletes the whole array<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ÈçÉÏËùÊö£¬Èç¹ûÄã¸ø³ö·½À¨ºÅµ«Ã»ÓĞÖ¸¶¨¼üÃû£¬ÔòÈ¡µ±Ç°×î´óÕûÊıË÷ÒıÖµ£¬ĞÂµÄ¼üÃû½«ÊÇ¸ÃÖµ
+       + 1¡£Èç¹ûµ±Ç°»¹Ã»ÓĞÕûÊıË÷Òı£¬Ôò¼üÃû½«Îª
+       <TT  CLASS="literal" >0</TT
+>¡£Èç¹ûÖÆ¶¨µÄ¼üÃûÒÑ¾­ÓĞÖµÁË£¬¸ÃÖµ½«±»¸²¸Ç¡£
+      </P
+><P  >&#13;       <DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;         ×Ô PHP 4.3.0 Æğ£¬ÉÏÊöµÄË÷ÒıÉú³É·½·¨¸Ä±äÁË¡£Èç½ñÈç¹ûÄã¸øÒ»¸öµ±Ç°×î´ó¼üÃûÊÇ¸ºÖµµÄÊı×éÌí¼ÓÒ»¸öĞÂÖµ£¬ÔòĞÂÉú³ÉµÄµÄË÷Òı½«ÎªÁã£¨<TT  CLASS="literal" >0</TT
+>£©¡£ÒÔÇ°ĞÂÉú³ÉµÄË÷ÒıÎªµ±Ç°×î´óË÷Òı¼ÓÒ»£¬ºÍÕıÖµµÄË÷ÒıÏàÍ¬¡£
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+      </P
+><P  >&#13;       ×¢ÒâÕâÀïËùÊ¹ÓÃµÄ×î´óÕûÊı¼üÃû<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >²»Ò»¶¨µ±Ç°¾ÍÔÚÊı×éÖĞ</I
+></SPAN
+>¡£ËüÖ»ÒªÔÚÉÏ´ÎÊı×éÖØĞÂÉú³ÉË÷ÒıºóÔø¾­´æÔÚ¹ı¾ÍĞĞÁË¡£ÒÔÏÂÀı×ÓËµÃ÷ÁË£º
+      </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN3788" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ´´½¨Ò»¸ö¼òµ¥µÄÊı×é<br  /></font><font  color="#0000BB">$array </font><font  color="#007700">= array(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$array</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ÏÖÔÚÉ¾³ıÆäÖĞµÄËùÓĞµ¥Ôª£¬µ«±£³ÖÊı×é±¾ÉíµÄ½á¹¹<br  /></font><font  color="#007700">foreach (</font><font  color="#0000BB">$array </font><font  color="#007700">as </font><font  color="#0000BB">$i </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$value</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;unset(</font><font  color="#0000BB">$array</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">]);<br  />}<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$array</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Ìí¼ÓÒ»¸öµ¥Ôª£¨×¢ÒâĞÂµÄ¼üÃûÊÇ 5£¬¶ø²»ÊÇÄã¿ÉÄÜÒÔÎªµÄ 0£©<br  /></font><font  color="#0000BB">$array</font><font  color="#007700">[] = </font><font  color="#0000BB">6</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$array</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ÖØĞÂË÷Òı£º<br  /></font><font  color="#0000BB">$array </font><font  color="#007700">= </font><font  color="#0000BB">array_values</font><font  color="#007700">(</font><font  color="#0000BB">$array</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$array</font><font  color="#007700">[] = </font><font  color="#0000BB">7</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$array</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;        ÒÔÉÏÀı×Ó½«²úÉúÈçÏÂÊä³ö£º
+        <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [0] =&gt; 1
-    [1] =&gt; 2
-    [2] =&gt; 3
-    [3] =&gt; 4
-    [4] =&gt; 5
+    [0] =&#62; 1
+    [1] =&#62; 2
+    [2] =&#62; 3
+    [3] =&#62; 4
+    [4] =&#62; 5
 )
 Array
 (
 )
 Array
 (
-    [5] =&gt; 6
+    [5] =&#62; 6
 )
 Array
 (
-    [0] =&gt; 6
-    [1] =&gt; 7
-)
-</pre></div>
-     </div>
-    </div>       
+    [0] =&#62; 6
+    [1] =&#62; 7
+)</PRE
+></TD
+></TR
+></TABLE
+>
+       </P
+><P  ></P
+></DIV
+></BLOCKQUOTE
+></DIV
+></DIV
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.types.array.useful-funcs" ></A
+>ÊµÓÃº¯Êı</H2
+><P  >&#13;     ÓĞÏàµ±¶àµÄÊµÓÃº¯Êı×÷ÓÃÓÚÊı×é£¬²Î¼û<A  HREF="ref.array.html"  >Êı×éº¯Êı¿â</A
+>Ò»½Ú¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <A  HREF="function.unset.html"  ><B  CLASS="function" >unset()</B
+></A
+> º¯ÊıÔÊĞíÈ¡ÏûÒ»¸öÊı×éÖĞµÄ¼üÃû¡£Òª×¢ÒâÊı×é½«²»»áÖØ½¨Ë÷Òı¡£
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3799" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?PHP<br  />$a </font><font  color="#007700">= array( </font><font  color="#0000BB">1 </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'one'</font><font  color="#007700">, </font><font  color="#0000BB">2 </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'two'</font><font  color="#007700">, </font><font  color="#0000BB">3 </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'three' </font><font  color="#007700">);<br  />unset( </font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#0000BB">2</font><font  color="#007700">] );<br  /></font><font  color="#FF8000">/* ½«²úÉúÒ»¸öÊı×é£¬¶¨ÒåÎª<br  />&nbsp;&nbsp;&nbsp;$a = array( 1=&gt;'one', 3=&gt;'three');<br  />&nbsp;&nbsp;&nbsp;¶ø²»ÊÇ<br  />&nbsp;&nbsp;&nbsp;$a = array( 1 =&gt; 'one', 2 =&gt; 'three');<br  />*/<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">array_values</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// Now b is array(1 =&gt; 'one', 2 =&gt;'three')<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
 
-   </p></blockquote>
-
-  </div>
- </div>
- 
- <div class="sect2" id="language.types.array.useful-funcs">
-  <h3 class="title">å®ç”¨å‡½æ•°</h3>
-
-  <p class="para">
-    æœ‰å¾ˆå¤šæ“ä½œæ•°ç»„çš„å‡½æ•°ï¼Œå‚è§<a href="ref.array.html" class="link">æ•°ç»„å‡½æ•°</a>ä¸€èŠ‚ã€‚
-  </p>
-
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><a href="function.unset.html" class="function">unset()</a></span> å‡½æ•°å…è®¸åˆ é™¤æ•°ç»„ä¸­çš„æŸä¸ªé”®ã€‚ä½†è¦æ³¨æ„æ•°ç»„å°†<em class="emphasis">ä¸ä¼š</em>é‡å»ºç´¢å¼•ã€‚å¦‚æœéœ€è¦åˆ é™¤åé‡å»ºç´¢å¼•ï¼Œå¯ä»¥ç”¨
-    <span class="function"><a href="function.array-values.html" class="function">array_values()</a></span> å‡½æ•°ã€‚
-   </p>
-   
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'one'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'two'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'three'</span><span style="color: #007700">);<br />unset(</span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]);<br /></span><span style="color: #FF8000">/*&nbsp;will&nbsp;produce&nbsp;an&nbsp;array&nbsp;that&nbsp;would&nbsp;have&nbsp;been&nbsp;defined&nbsp;as<br />&nbsp;&nbsp;&nbsp;$a&nbsp;=&nbsp;array(1&nbsp;=&gt;&nbsp;'one',&nbsp;3&nbsp;=&gt;&nbsp;'three');<br />&nbsp;&nbsp;&nbsp;and&nbsp;NOT<br />&nbsp;&nbsp;&nbsp;$a&nbsp;=&nbsp;array(1&nbsp;=&gt;&nbsp;'one',&nbsp;2&nbsp;=&gt;'three');<br />*/<br /><br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_values</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Now&nbsp;$b&nbsp;is&nbsp;array(0&nbsp;=&gt;&nbsp;'one',&nbsp;1&nbsp;=&gt;'three')<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p></blockquote> 
-
-  <p class="para">
-   <a href="control-structures.foreach.html" class="link">foreach</a> æ§åˆ¶ç»“æ„æ˜¯ä¸“é—¨ç”¨äºæ•°ç»„çš„ã€‚å®ƒæä¾›äº†ä¸€ä¸ªç®€å•çš„æ–¹æ³•æ¥éå†æ•°ç»„ã€‚
-  </p>
- </div>
- 
- <div class="sect2" id="language.types.array.donts">
-  <h3 class="title">æ•°ç»„åšä»€ä¹ˆå’Œä¸åšä»€ä¹ˆ</h3>
-
-  <div class="sect3" id="language.types.array.foo-bar">
-   <h4 class="title">ä¸ºä»€ä¹ˆ <em>$foo[bar]</em> é”™äº†ï¼Ÿ</h4>
-
-   <p class="para">
-     åº”è¯¥å§‹ç»ˆåœ¨ç”¨å­—ç¬¦ä¸²è¡¨ç¤ºçš„æ•°ç»„ç´¢å¼•ä¸ŠåŠ ä¸Šå¼•å·ã€‚ä¾‹å¦‚ç”¨
-     <em>$foo[&#039;bar&#039;]</em> è€Œä¸æ˜¯ <em>$foo[bar]</em>ã€‚ä½†æ˜¯ä¸ºä»€ä¹ˆå‘¢ï¼Ÿå¯èƒ½åœ¨è€çš„è„šæœ¬ä¸­è§è¿‡å¦‚ä¸‹è¯­æ³•ï¼š
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$foo</span><span style="color: #007700">[</span><span style="color: #0000BB">bar</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'enemy'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">[</span><span style="color: #0000BB">bar</span><span style="color: #007700">];<br /></span><span style="color: #FF8000">//&nbsp;etc<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   
-   <p class="para">
-    è¿™æ ·æ˜¯é”™çš„ï¼Œä½†å¯ä»¥æ­£å¸¸è¿è¡Œã€‚é‚£ä¹ˆä¸ºä»€ä¹ˆé”™äº†å‘¢ï¼ŸåŸå› æ˜¯æ­¤ä»£ç ä¸­æœ‰ä¸€ä¸ªæœªå®šä¹‰çš„å¸¸é‡ï¼ˆbarï¼‰è€Œä¸æ˜¯å­—ç¬¦ä¸²ï¼ˆ&#039;bar&#039;ï¼æ³¨æ„å¼•å·ï¼‰ï¼Œè€Œ
-    PHP å¯èƒ½ä¼šåœ¨ä»¥åå®šä¹‰æ­¤å¸¸é‡ï¼Œä¸å¹¸çš„æ˜¯ä½ çš„ä»£ç ä¸­æœ‰åŒæ ·çš„åå­—ã€‚å®ƒèƒ½è¿è¡Œï¼Œæ˜¯å› ä¸º
-    PHP è‡ªåŠ¨å°†<em class="emphasis">è£¸å­—ç¬¦ä¸²</em>ï¼ˆæ²¡æœ‰å¼•å·çš„å­—ç¬¦ä¸²ä¸”ä¸å¯¹åº”äºä»»ä½•å·²çŸ¥ç¬¦å·ï¼‰è½¬æ¢æˆä¸€ä¸ªå…¶å€¼ä¸ºè¯¥è£¸å­—ç¬¦ä¸²çš„æ­£å¸¸å­—ç¬¦ä¸²ã€‚ä¾‹å¦‚ï¼Œå¦‚æœæ²¡æœ‰å¸¸é‡å®šä¹‰ä¸º
-    <strong><code>bar</code></strong>ï¼ŒPHP å°†æŠŠå®ƒæ›¿ä»£ä¸º <em>&#039;bar&#039;</em> å¹¶ä½¿ç”¨ä¹‹ã€‚
-   </p>
-
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <span class="simpara">
-     è¿™å¹¶ä¸æ„å‘³ç€<em class="emphasis">æ€»æ˜¯</em>ç»™é”®ååŠ ä¸Šå¼•å·ã€‚ç”¨ä¸ç€ç»™é”®åä¸º<a href="language.constants.html" class="link">å¸¸é‡</a>æˆ–<a href="language.variables.html" class="link">å˜é‡</a>çš„åŠ ä¸Šå¼•å·ï¼Œå¦åˆ™ä¼šä½¿ PHP
-     ä¸èƒ½è§£æå®ƒä»¬ã€‚
-    </span>
-
-    <div class="informalexample">
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'display_errors'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'html_errors'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Simple&nbsp;array:<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\nChecking&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">:&nbsp;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Bad:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'$i'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Good:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Bad:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'$i'</span><span style="color: #007700">]}</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Good:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">]}</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-    <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Checking 0: 
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <A  HREF="control-structures.foreach.html"  >foreach</A
+> ¿ØÖÆ½á¹¹ÊÇ×¨ÃÅÓÃÓÚÊı×éµÄ¡£ËüÌá¹©ÁËÒ»¸ö¼òµ¥µÄ·½·¨À´±éÀúÊı×é¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.types.array.donts" ></A
+>Êı×é×öÊ²Ã´ºÍ²»×öÊ²Ã´</H2
+><DIV  CLASS="sect3" ><H3  CLASS="sect3" ><A  NAME="language.types.array.foo-bar" ></A
+>ÎªÊ²Ã´ <TT  CLASS="literal" >$foo[bar]</TT
+> ´íÁË£¿</H3
+><P  >&#13;      Ó¦¸ÃÊ¼ÖÕÔÚÓÃ×Ö·û´®±íÊ¾µÄÊı×éË÷ÒıÉÏ¼ÓÉÏÒıºÅ¡£ÀıÈçÓÃ
+      $foo['bar'] ¶ø²»ÊÇ $foo[bar]¡£µ«ÊÇÎªÊ²Ã´ $foo[bar] ´íÁËÄØ£¿Äã¿ÉÄÜÔÚÀÏµÄ½Å±¾ÖĞ¼û¹ıÈçÏÂÓï·¨£º
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3809" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo</font><font  color="#007700">[</font><font  color="#0000BB">bar</font><font  color="#007700">] = </font><font  color="#DD0000">'enemy'</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$foo</font><font  color="#007700">[</font><font  color="#0000BB">bar</font><font  color="#007700">];<br  /></font><font  color="#FF8000">// etc<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+      ÕâÑùÊÇ´íµÄ£¬µ«¿ÉÒÔÕı³£ÔËĞĞ¡£ÄÇÃ´ÎªÊ²Ã´´íÁËÄØ£¿Ô­ÒòÊÇ´Ë´úÂëÖĞÓĞÒ»¸öÎ´¶¨ÒåµÄ³£Á¿£¨bar£©¶ø²»ÊÇ×Ö·û´®£¨'bar'£­×¢ÒâÒıºÅ£©£¬¶ø PHP ¿ÉÄÜ»áÔÚÒÔºó¶¨Òå´Ë³£Á¿£¬²»ĞÒµÄÊÇÄãµÄ´úÂëÖĞÓĞÍ¬ÑùµÄÃû×Ö¡£ËüÄÜÔËĞĞ£¬ÊÇÒòÎª
+      PHP ×Ô¶¯½«<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >Âã×Ö·û´®</I
+></SPAN
+>£¨Ã»ÓĞÒıºÅµÄ×Ö·û´®ÇÒ²»¶ÔÓ¦ÓÚÈÎºÎÒÑÖª·ûºÅ£©×ª»»³ÉÒ»¸öÆäÖµÎª¸ÃÂã×Ö·û´®µÄÕı³£×Ö·û´®¡£ÀıÈç£¬Èç¹ûÃ»ÓĞ³£Á¿¶¨ÒåÎª
+      <TT  CLASS="constant" ><B  >bar</B
+></TT
+>£¬PHP ½«°ÑËüÌæ´úÎª <TT  CLASS="literal" >'bar'</TT
+> ²¢Ê¹ÓÃÖ®¡£
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       Õâ²¢²»ÒâÎ¶×Å<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >×ÜÊÇ</I
+></SPAN
+>¸ø¼üÃû¼ÓÉÏÒıºÅ¡£ÓÃ²»×Å¸ø¼üÃûÎª<A  HREF="language.constants.html"  >³£Á¿</A
+> »ò <A  HREF="language.variables.html"  >±äÁ¿</A
+> µÄ¼ÓÉÏÒıºÅ£¬·ñÔò»áÊ¹ PHP
+       ²»ÄÜ½âÎöËüÃÇ¡£
+      </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN3819" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'display_errors'</font><font  color="#007700">, </font><font  color="#0000BB">true</font><font  color="#007700">);<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'html_errors'</font><font  color="#007700">, </font><font  color="#0000BB">false</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// Simple array:<br  /></font><font  color="#0000BB">$array </font><font  color="#007700">= array(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$count </font><font  color="#007700">= </font><font  color="#0000BB">count</font><font  color="#007700">(</font><font  color="#0000BB">$array</font><font  color="#007700">);<br  />for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">$count</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"\nChecking $i: \n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Bad: " </font><font  color="#007700">. </font><font  color="#0000BB">$array</font><font  color="#007700">[</font><font  color="#DD0000">'$i'</font><font  color="#007700">] . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Good: " </font><font  color="#007700">. </font><font  color="#0000BB">$array</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Bad: {$array['$i']}\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Good: {$array[$i]}\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  ><B  >×¢: </B
+>
+       ÉÏÃæÀı×ÓÊä³öÎª£º
+       <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Checking 0:
 Notice: Undefined index:  $i in /path/to/script.html on line 9
-Bad: 
+Bad:
 Good: 1
 Notice: Undefined index:  $i in /path/to/script.html on line 11
-Bad: 
+Bad:
 Good: 1
 
-Checking 1: 
+Checking 1:
 Notice: Undefined index:  $i in /path/to/script.html on line 9
-Bad: 
+Bad:
 Good: 2
 Notice: Undefined index:  $i in /path/to/script.html on line 11
-Bad: 
-Good: 2
-</pre></div>        
-    </div>
-   </p></blockquote>
+Bad:
+Good: 2</PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;      ÑİÊ¾´ËĞ§Ó¦µÄ¸ü¶àÀı×Ó£º
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3824" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ÏÔÊ¾ËùÓĞ´íÎó<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$arr </font><font  color="#007700">= array(</font><font  color="#DD0000">'fruit' </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'apple'</font><font  color="#007700">, </font><font  color="#DD0000">'veggie' </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'carrot'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ÕıÈ·<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">'fruit'</font><font  color="#007700">];&nbsp;&nbsp;</font><font  color="#FF8000">// apple<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">'veggie'</font><font  color="#007700">]; </font><font  color="#FF8000">// carrot<br  /><br  />// ²»ÕıÈ·¡£This works but also throws a PHP error of<br  />// level E_NOTICE because of an undefined constant named fruit<br  />//<br  />// Notice: Use of undefined constant fruit - assumed 'fruit' in...<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">fruit</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// apple<br  /><br  />// Let's define a constant to demonstrate what's going on.&nbsp;&nbsp;We<br  />// will assign value 'veggie' to a constant named fruit.<br  /></font><font  color="#0000BB">define</font><font  color="#007700">(</font><font  color="#DD0000">'fruit'</font><font  color="#007700">,</font><font  color="#DD0000">'veggie'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Notice the difference now<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">'fruit'</font><font  color="#007700">];&nbsp;&nbsp;</font><font  color="#FF8000">// apple<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">fruit</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// carrot<br  /><br  />// The following is okay as it's inside a string.&nbsp;&nbsp;Constants are not<br  />// looked for within strings so no E_NOTICE error here<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"Hello $arr[fruit]"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Hello apple<br  /><br  />// With one exception, braces surrounding arrays within strings<br  />// allows constants to be looked for<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"Hello {$arr[fruit]}"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Hello carrot<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"Hello {$arr['fruit']}"</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// Hello apple<br  /><br  />// This will not work, results in a parse error such as:<br  />// Parse error: parse error, expecting T_STRING' or T_VARIABLE' or T_NUM_STRING'<br  />// This of course applies to using autoglobals in strings as well<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"Hello $arr['fruit']"</font><font  color="#007700">;<br  />print </font><font  color="#DD0000">"Hello $_GET['foo']"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Concatenation is another option<br  /></font><font  color="#007700">print </font><font  color="#DD0000">"Hello " </font><font  color="#007700">. </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">'fruit'</font><font  color="#007700">]; </font><font  color="#FF8000">// Hello apple<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+><P  >&#13;      µ±´ò¿ª <A  HREF="function.error-reporting.html"  ><B  CLASS="function" >error_reporting()</B
+></A
+> À´ÏÔÊ¾
+      <TT  CLASS="constant" ><B  >E_NOTICE</B
+></TT
+> ¼¶±ğµÄ´íÎó£¨ÀıÈç½«ÆäÉèÎª
+      <TT  CLASS="constant" ><B  >E_ALL</B
+></TT
+>£©Ê±½«¿´µ½ÕâĞ©´íÎó¡£Ä¬ÈÏÇé¿öÏÂ
+      <A  HREF="ref.errorfunc.html#ini.error-reporting"  >error_reporting</A
+>
+      ±»¹Ø±Õ²»ÏÔÊ¾ÕâĞ©¡£
+     </P
+><P  >&#13;      ºÍÔÚ<A  HREF="language.types.array.html#language.types.array.syntax"  >Óï·¨</A
+>Ò»½ÚÖĞ¹æ¶¨µÄÒ»Ñù£¬ÔÚ·½À¨ºÅ£¨¡°<TT  CLASS="literal" >[</TT
+>¡±ºÍ¡°<TT  CLASS="literal" >]</TT
+>¡±£©Ö®¼ä±ØĞëÓĞÒ»¸ö±í´ïÊ½¡£ÕâÒâÎ¶×ÅÄã¿ÉÒÔÕâÑùĞ´£º
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3835" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">somefunc</font><font  color="#007700">(</font><font  color="#0000BB">$bar</font><font  color="#007700">)];<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+      ÕâÊÇÒ»¸öÓÃº¯Êı·µ»ØÖµ×÷ÎªÊı×éË÷ÒıµÄÀı×Ó¡£PHP Ò²¿ÉÒÔÓÃÒÑÖª³£Á¿£¬Äã¿ÉÄÜÖ®Ç°ÒÑ¾­¼û¹ı <TT  CLASS="literal" >E_*</TT
+>¡£
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3838" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$error_descriptions</font><font  color="#007700">[</font><font  color="#0000BB">E_ERROR</font><font  color="#007700">]&nbsp;&nbsp;&nbsp;= </font><font  color="#DD0000">"A fatal error has occured"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$error_descriptions</font><font  color="#007700">[</font><font  color="#0000BB">E_WARNING</font><font  color="#007700">] = </font><font  color="#DD0000">"PHP issued a warning"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$error_descriptions</font><font  color="#007700">[</font><font  color="#0000BB">E_NOTICE</font><font  color="#007700">]&nbsp;&nbsp;= </font><font  color="#DD0000">"This is just an informal notice"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+      ×¢Òâ <TT  CLASS="literal" >E_ERROR</TT
+> Ò²ÊÇ¸öºÏ·¨µÄ±êÊ¶·û£¬¾ÍºÍµÚÒ»¸öÀı×ÓÖĞµÄ <TT  CLASS="literal" >bar</TT
+> Ò»Ñù¡£µ«ÊÇÉÏÒ»¸öÀı×ÓÊµ¼ÊÉÏºÍÈçÏÂĞ´·¨ÊÇÒ»ÑùµÄ£º
+      <DIV  CLASS="informalexample" ><A  NAME="AEN3842" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$error_descriptions</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">] = </font><font  color="#DD0000">"A fatal error has occured"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$error_descriptions</font><font  color="#007700">[</font><font  color="#0000BB">2</font><font  color="#007700">] = </font><font  color="#DD0000">"PHP issued a warning"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$error_descriptions</font><font  color="#007700">[</font><font  color="#0000BB">8</font><font  color="#007700">] = </font><font  color="#DD0000">"This is just an informal notice"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+      ÒòÎª <TT  CLASS="literal" >E_ERROR</TT
+> µÈÓÚ <TT  CLASS="literal" >1</TT
+>£¬µÈµÈ¡£
+     </P
+><P  >&#13;      ÈçÍ¬ÎÒÃÇÔÚÒÔÉÏÀı×ÓÖĞ½âÊÍµÄÄÇÑù£¬<TT  CLASS="literal" >$foo[bar]</TT
+>
+      Æğ×÷ÓÃµ«ÆäÊµÊÇ´íÎóµÄ¡£ËüÆğ×÷ÓÃÊÇÒòÎª¸ù¾İÓï·¨µÄÔ¤ÆÚ£¬<TT  CLASS="literal" >bar</TT
+> ±»µ±³ÉÁËÒ»¸ö³£Á¿±í´ïÊ½¡£È»¶ø£¬ÔÚÕâ¸öÀı×ÓÖĞ²»´æÔÚÃûÎª
+      <TT  CLASS="literal" >bar</TT
+> µÄ³£Á¿¡£PHP ¾Í¼Ù¶¨ÄãÖ¸µÄÊÇ×ÖÃæÉÏµÄ <TT  CLASS="literal" >bar</TT
+>£¬Ò²¾ÍÊÇ×Ö·û´®
+      <TT  CLASS="literal" >"bar"</TT
+>£¬µ«ÄãÍü¼ÇĞ´ÒıºÅÁË¡£
+     </P
+><DIV  CLASS="sect4" ><H4  CLASS="sect4" ><A  NAME="AEN3852" ></A
+>ÄÇÃ´ÎªÊ²Ã´ÕâÑù×ö²»ºÃ£¿</H4
+><P  >&#13;       ÔÚÎ´À´µÄÄ³Ò»Ê±¿Ì£¬PHP ¿ª·¢Ğ¡×é¿ÉÄÜ»áÏëĞÂÔöÒ»¸ö³£Á¿»òÕß¹Ø¼ü×Ö£¬»òÕßÄú¿ÉÄÜÏ£ÍûÔÚÒÔºóÔÚÄúµÄ³ÌĞòÖĞÒıÈëĞÂµÄ³£Á¿£¬ÄÇÄã¾ÍÓĞÂé·³ÁË¡£ÀıÈçÄãÒÑ¾­²»ÄÜÕâÑùÓÃ
+       <TT  CLASS="literal" >empty</TT
+> ºÍ <TT  CLASS="literal" >default</TT
+> ÕâÁ½¸ö´ÊÁË£¬ÒòÎªËûÃÇÊÇ<A  HREF="reserved.html"  >±£Áô×Ö</A
+>¡£
+      </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        ÖØÉêÒ»´Î£¬ÔÚË«ÒıºÅ×Ö·û´®ÖĞ£¬²»¸øË÷Òı¼ÓÉÏÒıºÅÊÇºÏ·¨µÄÒò´Ë
+        <TT  CLASS="literal" >"$foo[bar]"</TT
+>ÊÇºÏ·¨µÄ¡£ÖÁÓÚÎªÊ²Ã´²Î¼ûÒÔÉÏµÄÀı×ÓºÍ<A  HREF="language.types.string.html#language.types.string.parsing"  >×Ö·û´®ÖĞµÄ±äÁ¿½âÎö</A
+>ÖĞµÄ½âÊÍ¡£
+       </P
+></BLOCKQUOTE
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.types.array.casting" ></A
+>×ª»»ÎªÊı×é</H2
+><P  >&#13;     ¶ÔÓÚÈÎºÎµÄÀàĞÍ£ºÕûĞÍ¡¢¸¡µã¡¢×Ö·û´®¡¢²¼¶ûºÍ×ÊÔ´£¬Èç¹ûÄú½«Ò»¸öÖµ×ª»»ÎªÊı×é£¬Äú½«µÃµ½Ò»¸ö½öÓĞÒ»¸öÔªËØµÄÊı×é£¨ÆäÏÂ±êÎª 0£©£¬¸ÃÔªËØ¼´Îª´Ë±êÁ¿µÄÖµ¡£
+    </P
+><P  >&#13;     Èç¹ûÄú½«Ò»¸ö¶ÔÏó×ª»»³ÉÒ»¸öÊı×é£¬ÄúËùµÃµ½µÄÊı×éµÄÔªËØÎª¸Ã¶ÔÏóµÄÊôĞÔ£¨³ÉÔ±±äÁ¿£©£¬Æä¼üÃûÎª³ÉÔ±±äÁ¿Ãû¡£
+    </P
+><P  >&#13;     Èç¹ûÄú½«Ò»¸ö <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> Öµ×ª»»³ÉÊı×é£¬Äú½«µÃµ½Ò»¸ö¿ÕÊı×é¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.types.array.examples" ></A
+>Àı×Ó</H2
+><P  >&#13;     PHP ÖĞµÄÊı×éÀàĞÍÓĞ·Ç³£¶àµÄÓÃÍ¾£¬Òò´ËÕâÀïÓĞÒ»Ğ©Àı×ÓÕ¹Ê¾Êı×éµÄÍêÕûÍşÁ¦¡£
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN3872" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// this<br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= array( </font><font  color="#DD0000">'color' </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'red'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'taste' </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'sweet'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'shape' </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'round'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'name'&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#DD0000">'apple'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// key will be 0<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// is completely equivalent with<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'color'</font><font  color="#007700">] = </font><font  color="#DD0000">'red'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'taste'</font><font  color="#007700">] = </font><font  color="#DD0000">'sweet'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'shape'</font><font  color="#007700">] = </font><font  color="#DD0000">'round'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#DD0000">'name'</font><font  color="#007700">]&nbsp;&nbsp;= </font><font  color="#DD0000">'apple'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= </font><font  color="#0000BB">4</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// key will be 0<br  /><br  /></font><font  color="#0000BB">$b</font><font  color="#007700">[] = </font><font  color="#DD0000">'a'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b</font><font  color="#007700">[] = </font><font  color="#DD0000">'b'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b</font><font  color="#007700">[] = </font><font  color="#DD0000">'c'</font><font  color="#007700">;<br  /></font><font  color="#FF8000">// will result in the array array(0 =&gt; 'a' , 1 =&gt; 'b' , 2 =&gt; 'c'),<br  />// or simply array('a', 'b', 'c')<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN3874" ></A
+><P  ><B  >Àı×Ó 6-4. Ê¹ÓÃ array()</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// Array as (property-)map<br  /></font><font  color="#0000BB">$map </font><font  color="#007700">= array( </font><font  color="#DD0000">'version'&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">4</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'OS'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#DD0000">'Linux'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'lang'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#DD0000">'english'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'short_tags' </font><font  color="#007700">=&gt; </font><font  color="#0000BB">true<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// strictly numerical keys<br  /></font><font  color="#0000BB">$array </font><font  color="#007700">= array( </font><font  color="#0000BB">7</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">8</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">0</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">156</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</font><font  color="#0000BB">10<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// this is the same as array(0 =&gt; 7, 1 =&gt; 8, ...)<br  /><br  /></font><font  color="#0000BB">$switching </font><font  color="#007700">= array(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">10</font><font  color="#007700">, </font><font  color="#FF8000">// key = 0<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">5&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt;&nbsp;&nbsp;</font><font  color="#0000BB">6</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">3&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt;&nbsp;&nbsp;</font><font  color="#0000BB">7</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'a'&nbsp;&nbsp;</font><font  color="#007700">=&gt;&nbsp;&nbsp;</font><font  color="#0000BB">4</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">11</font><font  color="#007700">, </font><font  color="#FF8000">// key = 6 (maximum of integer-indices was 5)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'8'&nbsp;&nbsp;</font><font  color="#007700">=&gt;&nbsp;&nbsp;</font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#FF8000">// key = 8 (integer!)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'02' </font><font  color="#007700">=&gt; </font><font  color="#0000BB">77</font><font  color="#007700">, </font><font  color="#FF8000">// key = '02'<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">0&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">12&nbsp;&nbsp;</font><font  color="#FF8000">// the value 10 will be overwritten by 12<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// empty array<br  /></font><font  color="#0000BB">$empty </font><font  color="#007700">= array();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="language.types.array.examples.loop" ></A
+><P  ><B  >Àı×Ó 6-5. ¼¯ºÏ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$colors </font><font  color="#007700">= array(</font><font  color="#DD0000">'red'</font><font  color="#007700">, </font><font  color="#DD0000">'blue'</font><font  color="#007700">, </font><font  color="#DD0000">'green'</font><font  color="#007700">, </font><font  color="#DD0000">'yellow'</font><font  color="#007700">);<br  /><br  />foreach (</font><font  color="#0000BB">$colors </font><font  color="#007700">as </font><font  color="#0000BB">$color</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Do you like $color?\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">/* output:<br  />Do you like red?<br  />Do you like blue?<br  />Do you like green?<br  />Do you like yellow?<br  />*/<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     ×¢ÒâÄ¿Ç°²»¿ÉÄÜÔÚÕâÑùÒ»¸öÑ­»·ÖĞÖ±½Ó¸Ä±äÊı×éµÄÖµ¡£¿ÉÒÔ¸Ä±äµÄÀı×ÓÈçÏÂ£º
+      
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="language.types.array.examples.changeloop" ></A
+><P  ><B  >Àı×Ó 6-6. ¼¯ºÏ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">foreach (</font><font  color="#0000BB">$colors </font><font  color="#007700">as </font><font  color="#0000BB">$key </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$color</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// won't work:<br  />&nbsp;&nbsp;&nbsp;&nbsp;//$color = strtoupper($color);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;//works:<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$colors</font><font  color="#007700">[</font><font  color="#0000BB">$key</font><font  color="#007700">] = </font><font  color="#0000BB">strtoupper</font><font  color="#007700">(</font><font  color="#0000BB">$color</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$colors</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* output:<br  />Array<br  />(<br  />&nbsp;&nbsp;&nbsp;&nbsp;[0] =&gt; RED<br  />&nbsp;&nbsp;&nbsp;&nbsp;[1] =&gt; BLUE<br  />&nbsp;&nbsp;&nbsp;&nbsp;[2] =&gt; GREEN<br  />&nbsp;&nbsp;&nbsp;&nbsp;[3] =&gt; YELLOW<br  />)<br  />*/<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ±¾Àı²úÉúÒ»¸ö»ùÓÚÒ»µÄÊı×é¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN3885" ></A
+><P  ><B  >Àı×Ó 6-7. »ùÓÚÒ»µÄÊı×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$firstquarter&nbsp;&nbsp;</font><font  color="#007700">= array(</font><font  color="#0000BB">1 </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'January'</font><font  color="#007700">, </font><font  color="#DD0000">'February'</font><font  color="#007700">, </font><font  color="#DD0000">'March'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$firstquarter</font><font  color="#007700">);<br  /></font><font  color="#FF8000">/* output:<br  />Array<br  />(<br  />&nbsp;&nbsp;&nbsp;&nbsp;[1] =&gt; 'January'<br  />&nbsp;&nbsp;&nbsp;&nbsp;[2] =&gt; 'February'<br  />&nbsp;&nbsp;&nbsp;&nbsp;[3] =&gt; 'March'<br  />)<br  />*/<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN3888" ></A
+><P  ><B  >Àı×Ó 6-8. Ìî³äÊı×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// fill an array with all items from a directory<br  /></font><font  color="#0000BB">$handle </font><font  color="#007700">= </font><font  color="#0000BB">opendir</font><font  color="#007700">(</font><font  color="#DD0000">'.'</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">false </font><font  color="#007700">!== (</font><font  color="#0000BB">$file </font><font  color="#007700">= </font><font  color="#0000BB">readdir</font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$files</font><font  color="#007700">[] = </font><font  color="#0000BB">$file</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">closedir</font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     Êı×éÊÇÓĞĞòµÄ¡£ÄãÒ²¿ÉÒÔÊ¹ÓÃ²»Í¬µÄÅÅĞòº¯ÊıÀ´¸Ä±äË³Ğò¡£¸ü¶àĞÅÏ¢²Î¼û<A  HREF="ref.array.html"  >Êı×éº¯Êı¿â</A
+>¡£Äú¿ÉÒÔÓÃ <A  HREF="function.count.html"  ><B  CLASS="function" >count()</B
+></A
+> º¯ÊıÀ´Êı³öÊı×éÖĞÔªËØµÄ¸öÊı¡£
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN3894" ></A
+><P  ><B  >Àı×Ó 6-9. Êı×éÅÅĞò</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />sort</font><font  color="#007700">(</font><font  color="#0000BB">$files</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$files</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     ÒòÎªÊı×éÖĞµÄÖµ¿ÉÒÔÎªÈÎÒâÖµ£¬Ò²¿ÉÊÇÁíÒ»¸öÊı×é¡£ÕâÑùÄã¿ÉÒÔ²úÉúµİ¹é»ò¶àÎ¬Êı×é¡£
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN3898" ></A
+><P  ><B  >Àı×Ó 6-10. µİ¹éºÍ¶àÎ¬Êı×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$fruits </font><font  color="#007700">= array ( </font><font  color="#DD0000">"fruits"&nbsp;&nbsp;</font><font  color="#007700">=&gt; array ( </font><font  color="#DD0000">"a" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"orange"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"b" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"banana"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"c" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"apple"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"numbers" </font><font  color="#007700">=&gt; array ( </font><font  color="#0000BB">1</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">2</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">3</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">4</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">5</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">6<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"holes"&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt; array (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"first"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">5 </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"second"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"third"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br  /><br  /></font><font  color="#FF8000">// Some examples to address values in the array above<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$fruits</font><font  color="#007700">[</font><font  color="#DD0000">"holes"</font><font  color="#007700">][</font><font  color="#0000BB">5</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// prints "second"<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$fruits</font><font  color="#007700">[</font><font  color="#DD0000">"fruits"</font><font  color="#007700">][</font><font  color="#DD0000">"a"</font><font  color="#007700">]; </font><font  color="#FF8000">// prints "orange"<br  /></font><font  color="#007700">unset(</font><font  color="#0000BB">$fruits</font><font  color="#007700">[</font><font  color="#DD0000">"holes"</font><font  color="#007700">][</font><font  color="#0000BB">0</font><font  color="#007700">]);&nbsp;&nbsp;</font><font  color="#FF8000">// remove "first"<br  /><br  />// Create a new multi-dimensional array<br  /></font><font  color="#0000BB">$juices</font><font  color="#007700">[</font><font  color="#DD0000">"apple"</font><font  color="#007700">][</font><font  color="#DD0000">"green"</font><font  color="#007700">] = </font><font  color="#DD0000">"good"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;	 ÄúĞèÒª×¢ÒâÊı×éµÄ¸³Öµ×ÜÊÇ»áÉæ¼°µ½ÖµµÄ¿½±´¡£ÄúĞèÒªÔÚ¸´ÖÆÊı×éÊ±ÓÃÖ¸Ïò·ûºÅ£¨&#38;£©¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN3902" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$arr1 </font><font  color="#007700">= array(</font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$arr2 </font><font  color="#007700">= </font><font  color="#0000BB">$arr1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$arr2</font><font  color="#007700">[] = </font><font  color="#0000BB">4</font><font  color="#007700">; </font><font  color="#FF8000">// $arr2 is changed,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// $arr1 is still array(2,3)<br  /><br  /></font><font  color="#0000BB">$arr3 </font><font  color="#007700">= &amp;</font><font  color="#0000BB">$arr1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$arr3</font><font  color="#007700">[] = </font><font  color="#0000BB">4</font><font  color="#007700">; </font><font  color="#FF8000">// now $arr1 and $arr3 are the same<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="language.types.string.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="language.types.object.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >×Ö·û´®</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="language.types.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >¶ÔÏó</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-   <p class="para">
-    æ¼”ç¤ºæ­¤è¡Œä¸ºçš„æ›´å¤šä¾‹å­ï¼š
-   </p>
 
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Show&nbsp;all&nbsp;errors<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'fruit'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'veggie'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Correct<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'fruit'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;apple<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'veggie'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;carrot<br /><br />//&nbsp;Incorrect.&nbsp;&nbsp;This&nbsp;works&nbsp;but&nbsp;also&nbsp;throws&nbsp;a&nbsp;PHP&nbsp;error&nbsp;of&nbsp;level&nbsp;E_NOTICE&nbsp;because<br />//&nbsp;of&nbsp;an&nbsp;undefined&nbsp;constant&nbsp;named&nbsp;fruit<br />//&nbsp;<br />//&nbsp;Notice:&nbsp;Use&nbsp;of&nbsp;undefined&nbsp;constant&nbsp;fruit&nbsp;-&nbsp;assumed&nbsp;'fruit'&nbsp;in...<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">fruit</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;apple<br /><br />//&nbsp;This&nbsp;defines&nbsp;a&nbsp;constant&nbsp;to&nbsp;demonstrate&nbsp;what's&nbsp;going&nbsp;on.&nbsp;&nbsp;The&nbsp;value&nbsp;'veggie'<br />//&nbsp;is&nbsp;assigned&nbsp;to&nbsp;a&nbsp;constant&nbsp;named&nbsp;fruit.<br /></span><span style="color: #0000BB">define</span><span style="color: #007700">(</span><span style="color: #DD0000">'fruit'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'veggie'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Notice&nbsp;the&nbsp;difference&nbsp;now<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'fruit'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;apple<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">fruit</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;carrot<br /><br />//&nbsp;The&nbsp;following&nbsp;is&nbsp;okay,&nbsp;as&nbsp;it's&nbsp;inside&nbsp;a&nbsp;string.&nbsp;Constants&nbsp;are&nbsp;not&nbsp;looked&nbsp;for<br />//&nbsp;within&nbsp;strings,&nbsp;so&nbsp;no&nbsp;E_NOTICE&nbsp;occurs&nbsp;here<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">fruit</span><span style="color: #007700">]</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Hello&nbsp;apple<br /><br />//&nbsp;With&nbsp;one&nbsp;exception:&nbsp;braces&nbsp;surrounding&nbsp;arrays&nbsp;within&nbsp;strings&nbsp;allows&nbsp;constants<br />//&nbsp;to&nbsp;be&nbsp;interpreted<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">fruit</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Hello&nbsp;carrot<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'fruit'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Hello&nbsp;apple<br /><br />//&nbsp;This&nbsp;will&nbsp;not&nbsp;work,&nbsp;and&nbsp;will&nbsp;result&nbsp;in&nbsp;a&nbsp;parse&nbsp;error,&nbsp;such&nbsp;as:<br />//&nbsp;Parse&nbsp;error:&nbsp;parse&nbsp;error,&nbsp;expecting&nbsp;T_STRING'&nbsp;or&nbsp;T_VARIABLE'&nbsp;or&nbsp;T_NUM_STRING'<br />//&nbsp;This&nbsp;of&nbsp;course&nbsp;applies&nbsp;to&nbsp;using&nbsp;superglobals&nbsp;in&nbsp;strings&nbsp;as&nbsp;well<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'fruit']"</span><span style="color: #007700">;<br />print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'foo']"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Concatenation&nbsp;is&nbsp;another&nbsp;option<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'fruit'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;Hello&nbsp;apple<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-
-   <p class="para">
-    å½“æ‰“å¼€ <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> æ¥æ˜¾ç¤º
-    <strong><code>E_NOTICE</code></strong> çº§åˆ«çš„é”™è¯¯ï¼ˆå°†å…¶è®¾ä¸º
-    <strong><code>E_ALL</code></strong>ï¼‰æ—¶å°†çœ‹åˆ°è¿™äº›é”™è¯¯ã€‚é»˜è®¤æƒ…å†µä¸‹
-    <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a>
-    è¢«å…³é—­ä¸æ˜¾ç¤ºè¿™äº›ã€‚
-   </p>
-
-   <p class="para">
-    å’Œåœ¨<a href="language.types.array.html#language.types.array.syntax" class="link">è¯­æ³•</a>ä¸€èŠ‚ä¸­è§„å®šçš„ä¸€æ ·ï¼Œåœ¨æ–¹æ‹¬å·ï¼ˆâ€œ<em>[</em>â€å’Œâ€œ<em>]</em>â€ï¼‰ä¹‹é—´å¿…é¡»æœ‰ä¸€ä¸ªè¡¨è¾¾å¼ã€‚è¿™æ„å‘³ç€å¯ä»¥è¿™æ ·å†™ï¼š
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">somefunc</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">)];<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   
-   <p class="para">
-    è¿™æ˜¯ä¸€ä¸ªç”¨å‡½æ•°è¿”å›å€¼ä½œä¸ºæ•°ç»„ç´¢å¼•çš„ä¾‹å­ã€‚PHP ä¹Ÿå¯ä»¥ç”¨å·²çŸ¥å¸¸é‡ï¼Œå¯èƒ½ä¹‹å‰å·²ç»è§è¿‡ï¼š
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_ERROR</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">"A&nbsp;fatal&nbsp;error&nbsp;has&nbsp;occured"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_WARNING</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;issued&nbsp;a&nbsp;warning"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">]&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;just&nbsp;an&nbsp;informal&nbsp;notice"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   
-   <p class="para">
-    æ³¨æ„ <em>E_ERROR</em> ä¹Ÿæ˜¯ä¸ªåˆæ³•çš„æ ‡è¯†ç¬¦ï¼Œå°±å’Œç¬¬ä¸€ä¸ªä¾‹å­ä¸­çš„
-    <em>bar</em> ä¸€æ ·ã€‚ä½†æ˜¯ä¸Šä¸€ä¸ªä¾‹å­å®é™…ä¸Šå’Œå¦‚ä¸‹å†™æ³•æ˜¯ä¸€æ ·çš„ï¼š
-   </p>
-  
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"A&nbsp;fatal&nbsp;error&nbsp;has&nbsp;occured"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;issued&nbsp;a&nbsp;warning"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$error_descriptions</span><span style="color: #007700">[</span><span style="color: #0000BB">8</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;just&nbsp;an&nbsp;informal&nbsp;notice"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   
-   <p class="para">
-    å› ä¸º <em>E_ERROR</em> ç­‰äº <em>1</em>ï¼Œç­‰ç­‰ã€‚
-   </p>
-
-   <div class="sect4" id="language.types.array.foo-bar.why">
-    <h5 class="title">é‚£ä¹ˆä¸ºä»€ä¹ˆè¿™æ ·åšä¸å¥½ï¼Ÿ</h5>
-
-    <p class="para">
-     ä¹Ÿè®¸æœ‰ä¸€å¤©ï¼ŒPHP å¼€å‘å°ç»„å¯èƒ½ä¼šæƒ³æ–°å¢ä¸€ä¸ªå¸¸é‡æˆ–è€…å…³é”®å­—ï¼Œæˆ–è€…ç”¨æˆ·å¯èƒ½å¸Œæœ›ä»¥ååœ¨è‡ªå·±çš„ç¨‹åºä¸­å¼•å…¥æ–°çš„å¸¸é‡ï¼Œé‚£å°±æœ‰éº»çƒ¦äº†ã€‚ä¾‹å¦‚å·²ç»ä¸èƒ½è¿™æ ·ç”¨
-     <em>empty</em> å’Œ <em>default</em> è¿™ä¸¤ä¸ªè¯äº†ï¼Œå› ä¸ºä»–ä»¬æ˜¯<a href="reserved.html" class="link">ä¿ç•™å­—</a>ã€‚
-    </p>
-
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <span class="simpara">
-      é‡ç”³ä¸€æ¬¡ï¼Œåœ¨åŒå¼•å·å­—ç¬¦ä¸²ä¸­ï¼Œä¸ç»™ç´¢å¼•åŠ ä¸Šå¼•å·æ˜¯åˆæ³•çš„å› æ­¤
-      <em>&quot;$foo[bar]&quot;</em>
-      æ˜¯åˆæ³•çš„ï¼ˆâ€œåˆæ³•â€çš„åŸæ–‡ä¸º validã€‚åœ¨å®é™…æµ‹è¯•ä¸­ï¼Œè¿™ä¹ˆåšç¡®å®å¯ä»¥è®¿é—®æ•°ç»„çš„è¯¥å…ƒç´ ï¼Œä½†æ˜¯ä¼šæŠ¥ä¸€ä¸ªå¸¸é‡æœªå®šä¹‰çš„
-      noticeã€‚æ— è®ºå¦‚ä½•ï¼Œå¼ºçƒˆå»ºè®®ä¸è¦ä½¿ç”¨ $foo[bar]è¿™æ ·çš„å†™æ³•ï¼Œè€Œè¦ä½¿ç”¨ $foo[&#039;bar&#039;]
-      æ¥è®¿é—®æ•°ç»„ä¸­å…ƒç´ ã€‚--haohappy æ³¨ï¼‰ã€‚è‡³äºä¸ºä»€ä¹ˆå‚è§ä»¥ä¸Šçš„ä¾‹å­å’Œ<a href="language.types.string.html#language.types.string.parsing" class="link">å­—ç¬¦ä¸²ä¸­çš„å˜é‡è§£æ</a>ä¸­çš„è§£é‡Šã€‚
-     </span>
-    </p></blockquote>
-
-   </div>
-  </div>
- </div>
-
- <div class="sect2" id="language.types.array.casting">
-  <h3 class="title">è½¬æ¢ä¸ºæ•°ç»„</h3>
-  
-  <p class="para">
-   å¯¹äºä»»æ„ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>ï¼Œ<span class="type"><a href="language.types.float.html" class="type float">float</a></span>ï¼Œ<span class="type"><a href="language.types.string.html" class="type string">string</a></span>ï¼Œ<span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-   å’Œ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> ç±»å‹ï¼Œå¦‚æœå°†ä¸€ä¸ªå€¼è½¬æ¢ä¸ºæ•°ç»„ï¼Œå°†å¾—åˆ°ä¸€ä¸ªä»…æœ‰ä¸€ä¸ªå…ƒç´ çš„æ•°ç»„ï¼Œå…¶ä¸‹æ ‡ä¸º
-   0ï¼Œè¯¥å…ƒç´ å³ä¸ºæ­¤æ ‡é‡çš„å€¼ã€‚æ¢å¥è¯è¯´ï¼Œ<em>(array)$scalarValue</em> ä¸
-   <em>array($scalarValue)</em> å®Œå…¨ä¸€æ ·ã€‚
-  </p>
-  
-  <p class="para">
-   å¦‚æœä¸€ä¸ª <span class="type"><a href="language.types.object.html" class="type object">object</a></span> ç±»å‹è½¬æ¢ä¸º
-   <span class="type"><a href="language.types.array.html" class="type array">array</a></span>ï¼Œåˆ™ç»“æœä¸ºä¸€ä¸ªæ•°ç»„ï¼Œå…¶å•å…ƒä¸ºè¯¥å¯¹è±¡çš„å±æ€§ã€‚é”®åå°†ä¸ºæˆå‘˜å˜é‡åï¼Œä¸è¿‡æœ‰å‡ ç‚¹ä¾‹å¤–ï¼šæ•´æ•°å±æ€§ä¸å¯è®¿é—®ï¼›ç§æœ‰å˜é‡å‰ä¼šåŠ ä¸Šç±»åä½œå‰ç¼€ï¼›ä¿æŠ¤å˜é‡å‰ä¼šåŠ ä¸Šä¸€ä¸ª
-   &#039;*&#039; åšå‰ç¼€ã€‚è¿™äº›å‰ç¼€çš„å‰åéƒ½å„æœ‰ä¸€ä¸ª NULL å­—ç¬¦ã€‚è¿™ä¼šå¯¼è‡´ä¸€äº›ä¸å¯é¢„çŸ¥çš„è¡Œä¸ºï¼š
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$A</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;will&nbsp;become&nbsp;'\0A\0A'<br /></span><span style="color: #007700">}<br /><br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$A</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;will&nbsp;become&nbsp;'\0B\0A'<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$AA</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;will&nbsp;become&nbsp;'AA'<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((array)&nbsp;new&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   ä¸Šä¾‹ä¼šæœ‰ä¸¤ä¸ªé”®åä¸º &#039;AA&#039;ï¼Œä¸è¿‡å…¶ä¸­ä¸€ä¸ªå®é™…ä¸Šæ˜¯ &#039;\0A\0A&#039;ã€‚
-  </p>
-  
-  <p class="para">
-   å°† <strong><code>NULL</code></strong> è½¬æ¢ä¸º <span class="type"><a href="language.types.array.html" class="type array">array</a></span> ä¼šå¾—åˆ°ä¸€ä¸ªç©ºçš„æ•°ç»„ã€‚
-  </p>
- </div>
-
- <div class="sect2" id="language.types.array.comparing">
-  <h3 class="title">æ¯”è¾ƒ</h3>
-
-  <p class="para">
-   å¯ä»¥ç”¨ <span class="function"><a href="function.array-diff.html" class="function">array_diff()</a></span> å’Œ<a href="language.operators.array.html" class="link">æ•°ç»„è¿ç®—ç¬¦</a>æ¥æ¯”è¾ƒæ•°ç»„ã€‚
-  </p>
- </div>
-
- <div class="sect2" id="language.types.array.examples">
-  <h3 class="title">ç¤ºä¾‹</h3>
-
-  <p class="para">
-   PHP ä¸­çš„æ•°ç»„ç±»å‹æœ‰éå¸¸å¤šçš„ç”¨é€”ã€‚ä»¥ä¸‹æ˜¯ä¸€äº›ç¤ºä¾‹ï¼š
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;This:<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(&nbsp;</span><span style="color: #DD0000">'color'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'taste'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'sweet'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'shape'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'round'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'name'&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;key&nbsp;will&nbsp;be&nbsp;0<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'c'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;.&nbsp;.&nbsp;.is&nbsp;completely&nbsp;equivalent&nbsp;with&nbsp;this:<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #DD0000">'color'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #DD0000">'taste'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'sweet'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #DD0000">'shape'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'round'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">]&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;key&nbsp;will&nbsp;be&nbsp;0<br /><br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$b</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">'a'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">'c'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;After&nbsp;the&nbsp;above&nbsp;code&nbsp;is&nbsp;executed,&nbsp;$a&nbsp;will&nbsp;be&nbsp;the&nbsp;array<br />//&nbsp;array('color'&nbsp;=&gt;&nbsp;'red',&nbsp;'taste'&nbsp;=&gt;&nbsp;'sweet',&nbsp;'shape'&nbsp;=&gt;&nbsp;'round',&nbsp;<br />//&nbsp;'name'&nbsp;=&gt;&nbsp;'apple',&nbsp;0&nbsp;=&gt;&nbsp;4),&nbsp;and&nbsp;$b&nbsp;will&nbsp;be&nbsp;the&nbsp;array&nbsp;<br />//&nbsp;array(0&nbsp;=&gt;&nbsp;'a',&nbsp;1&nbsp;=&gt;&nbsp;'b',&nbsp;2&nbsp;=&gt;&nbsp;'c'),&nbsp;or&nbsp;simply&nbsp;array('a',&nbsp;'b',&nbsp;'c').<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <div class="example" id="example-102">
-   <p><strong>Example #8 ä½¿ç”¨ array()</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Array&nbsp;as&nbsp;(property-)map<br /></span><span style="color: #0000BB">$map&nbsp;</span><span style="color: #007700">=&nbsp;array(&nbsp;</span><span style="color: #DD0000">'version'&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'OS'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Linux'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'lang'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'english'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'short_tags'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #FF8000">//&nbsp;strictly&nbsp;numerical&nbsp;keys<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;array(&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">156</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</span><span style="color: #0000BB">10<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;this&nbsp;is&nbsp;the&nbsp;same&nbsp;as&nbsp;array(0&nbsp;=&gt;&nbsp;7,&nbsp;1&nbsp;=&gt;&nbsp;8,&nbsp;...)<br /><br /></span><span style="color: #0000BB">$switching&nbsp;</span><span style="color: #007700">=&nbsp;array(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;key&nbsp;=&nbsp;0<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">5&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">3&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'a'&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">11</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;key&nbsp;=&nbsp;6&nbsp;(maximum&nbsp;of&nbsp;integer-indices&nbsp;was&nbsp;5)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'8'&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;key&nbsp;=&nbsp;8&nbsp;(integer!)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'02'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">77</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;key&nbsp;=&nbsp;'02'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">0&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">12&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;the&nbsp;value&nbsp;10&nbsp;will&nbsp;be&nbsp;overwritten&nbsp;by&nbsp;12<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #FF8000">//&nbsp;empty&nbsp;array<br /></span><span style="color: #0000BB">$empty&nbsp;</span><span style="color: #007700">=&nbsp;array();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-
-   </div>
-
-  </div>
-
-  <div class="example" id="language.types.array.examples.loop">
-   <p><strong>Example #9 é›†åˆ</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$colors&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'red'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'blue'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'green'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yellow'</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$colors&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Do&nbsp;you&nbsp;like&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">?\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-Do you like red?
-Do you like blue?
-Do you like green?
-Do you like yellow?
-</pre></div>
-   </div>
-  </div>
-  
-  <p class="para">
-   ç›´æ¥æ”¹å˜æ•°ç»„çš„å€¼è‡ª PHP 5 èµ·å¯ä»¥é€šè¿‡å¼•ç”¨ä¼ é€’æ¥åšåˆ°ã€‚ä¹‹å‰çš„ç‰ˆæœ¬éœ€è¦éœ€è¦é‡‡å–å˜é€šçš„æ–¹æ³•ï¼š
-  </p>
-
-  <div class="example" id="language.types.array.examples.changeloop">
-   <p><strong>Example #10 åœ¨å¾ªç¯ä¸­æ”¹å˜å•å…ƒ</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$colors&nbsp;</span><span style="color: #007700">as&nbsp;&amp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);<br />}<br />unset(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">/*&nbsp;ensure&nbsp;that&nbsp;following&nbsp;writes&nbsp;to<br />$color&nbsp;will&nbsp;not&nbsp;modify&nbsp;the&nbsp;last&nbsp;array&nbsp;element&nbsp;*/<br /><br />//&nbsp;Workaround&nbsp;for&nbsp;older&nbsp;versions<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$colors&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$colors</span><span style="color: #007700">[</span><span style="color: #0000BB">$key</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$colors</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; RED
-    [1] =&gt; BLUE
-    [2] =&gt; GREEN
-    [3] =&gt; YELLOW
-)
-</pre></div>
-   </div>
-  </div>
-
-  <p class="para">
-   æœ¬ä¾‹ç”Ÿæˆä¸€ä¸ªä¸‹æ ‡ä» 1 å¼€å§‹çš„æ•°ç»„ã€‚
-  </p>
-
-  <div class="example" id="example-105">
-   <p><strong>Example #11 ä¸‹æ ‡ä» 1 å¼€å§‹çš„æ•°ç»„</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$firstquarter&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'January'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'February'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'March'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$firstquarter</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-Array 
-(
-    [1] =&gt; &#039;January&#039;
-    [2] =&gt; &#039;February&#039;
-    [3] =&gt; &#039;March&#039;
-)
-</pre></div>   
-   </div>
-  </div>
-
-  <div class="example" id="example-106">
-   <p><strong>Example #12 å¡«å……æ•°ç»„</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;fill&nbsp;an&nbsp;array&nbsp;with&nbsp;all&nbsp;items&nbsp;from&nbsp;a&nbsp;directory<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">opendir</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">);<br />while&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">!==&nbsp;(</span><span style="color: #0000BB">$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">readdir</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$files</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$file</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">closedir</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   æ•°ç»„æ˜¯æœ‰åºçš„ã€‚ä¹Ÿå¯ä»¥ä½¿ç”¨ä¸åŒçš„æ’åºå‡½æ•°æ¥æ”¹å˜é¡ºåºã€‚æ›´å¤šä¿¡æ¯å‚è§<a href="ref.array.html" class="link">æ•°ç»„å‡½æ•°</a>ã€‚å¯ä»¥ç”¨
-   <span class="function"><a href="function.count.html" class="function">count()</a></span> å‡½æ•°æ¥æ•°å‡ºæ•°ç»„ä¸­å…ƒç´ çš„ä¸ªæ•°ã€‚
-  </p>
-
-  <div class="example" id="example-107">
-   <p><strong>Example #13 æ•°ç»„æ’åº</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$files</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$files</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   å› ä¸ºæ•°ç»„ä¸­çš„å€¼å¯ä»¥ä¸ºä»»æ„å€¼ï¼Œä¹Ÿå¯æ˜¯å¦ä¸€ä¸ªæ•°ç»„ã€‚è¿™æ ·å¯ä»¥äº§ç”Ÿé€’å½’æˆ–å¤šç»´æ•°ç»„ã€‚
-  </p>
-
-  <div class="example" id="example-108">
-   <p><strong>Example #14 é€’å½’å’Œå¤šç»´æ•°ç»„</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$fruits&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(&nbsp;</span><span style="color: #DD0000">"fruits"&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array&nbsp;(&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"banana"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"c"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"apple"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"numbers"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array&nbsp;(&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">6<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"holes"&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"first"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">5&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"second"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"third"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br /><br /></span><span style="color: #FF8000">//&nbsp;Some&nbsp;examples&nbsp;to&nbsp;address&nbsp;values&nbsp;in&nbsp;the&nbsp;array&nbsp;above&nbsp;<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">[</span><span style="color: #DD0000">"holes"</span><span style="color: #007700">][</span><span style="color: #0000BB">5</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;"second"<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">[</span><span style="color: #DD0000">"fruits"</span><span style="color: #007700">][</span><span style="color: #DD0000">"a"</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;"orange"<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">[</span><span style="color: #DD0000">"holes"</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">]);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;remove&nbsp;"first"<br /><br />//&nbsp;Create&nbsp;a&nbsp;new&nbsp;multi-dimensional&nbsp;array<br /></span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">][</span><span style="color: #DD0000">"green"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"good"</span><span style="color: #007700">;&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   <span class="type"><span class="type æ•°ç»„(Array)">æ•°ç»„(Array)</span></span> çš„èµ‹å€¼æ€»æ˜¯ä¼šæ¶‰åŠåˆ°å€¼çš„æ‹·è´ã€‚ä½¿ç”¨<a href="language.operators.html" class="link">å¼•ç”¨è¿ç®—ç¬¦</a>é€šè¿‡å¼•ç”¨æ¥æ‹·è´æ•°ç»„ã€‚
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$arr1&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$arr2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$arr1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$arr2</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;$arr2&nbsp;is&nbsp;changed,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;$arr1&nbsp;is&nbsp;still&nbsp;array(2,&nbsp;3)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">$arr3&nbsp;</span><span style="color: #007700">=&nbsp;&amp;</span><span style="color: #0000BB">$arr1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$arr3</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;now&nbsp;$arr1&nbsp;and&nbsp;$arr3&nbsp;are&nbsp;the&nbsp;same<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
- </div>
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.types.string.html">String å­—ç¬¦ä¸²</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.types.object.html">Object å¯¹è±¡</a></div>
- <div class="up"><a href="language.types.html">ç±»å‹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

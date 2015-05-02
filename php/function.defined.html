@@ -1,106 +1,100 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>检查某个名称的常量是否存在</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.define.html">define</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.die.html">die</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.defined" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">defined</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">defined</span> &mdash; <span class="dc-title">检查某个名称的常量是否存在</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.defined-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>defined</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   检查该名称的常量是否已定义。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    如果你要检查一个变量是否存在，请使用 <span class="function"><a href="function.isset.html" class="function">isset()</a></span>。
-      <span class="function"><strong>defined()</strong></span> 函数仅对 <a href="language.constants.html" class="link">constants</a> 有效。如果你要检测一个函数是否存在，使用 <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span>。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.defined-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       常量的名称。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.defined-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-  如果该名称的常量已定义，返回 <strong><code>TRUE</code></strong>；未定义则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.defined-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4076">
-    <p><strong>Example #1 检查常量</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Note&nbsp;the&nbsp;use&nbsp;of&nbsp;quotes,&nbsp;this&nbsp;is&nbsp;important.&nbsp;&nbsp;This&nbsp;example&nbsp;is&nbsp;checking<br />&nbsp;*&nbsp;if&nbsp;the&nbsp;string&nbsp;'TEST'&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;constant&nbsp;named&nbsp;TEST&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">defined</span><span style="color: #007700">(</span><span style="color: #DD0000">'TEST'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">TEST</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.defined-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.define.html" class="function" rel="rdfs-seeAlso">define()</a> - 定义一个常量</span></li>
-    <li class="member"><span class="function"><a href="function.constant.html" class="function" rel="rdfs-seeAlso">constant()</a> - 返回一个常量的值</span></li>
-    <li class="member"><span class="function"><a href="function.get-defined-constants.html" class="function" rel="rdfs-seeAlso">get_defined_constants()</a> - 返回所有常量的关联数组，键是常量名，值是常量值</span></li>
-    <li class="member"><span class="function"><a href="function.function-exists.html" class="function" rel="rdfs-seeAlso">function_exists()</a> - 如果给定的函数已经被定义就返回 TRUE</span></li>
-    <li class="member"><a href="language.constants.html" class="link">Constants</a>这一节</li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >defined</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Miscellaneous Functions" HREF="ref.misc.html"><LINK  REL="PREVIOUS" TITLE="define" HREF="function.define.html"><LINK  REL="NEXT" TITLE="die" HREF="function.die.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.define.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.die.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.defined" ></A
+>defined</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN62218" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>defined&nbsp;--&nbsp;
+     Checks whether a given named constant exists
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN62221" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >defined</B
+> ( string name)<BR  ></BR
+><P  >&#13;     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the named constant given by
+     <TT  CLASS="parameter" ><I  >name</I
+></TT
+> has been defined, 
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN62234" ></A
+><P  ><B  >���� 1. Checking Constants</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* Note the use of quotes, this is important.&nbsp;&nbsp;This example is checking <br  /> * if the string 'CONSTANT' is the name of a constant named CONSTANT */<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">defined</font><font  color="#007700">(</font><font  color="#DD0000">'CONSTANT'</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">CONSTANT</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      If you want to see if a variable exists, use 
+      <A  HREF="function.isset.html"  ><B  CLASS="function" >isset()</B
+></A
+> as <B  CLASS="function" >defined()</B
+> only
+      applies to <A  HREF="language.constants.html"  >constants</A
+>.
+      If you want to see if a function exists, use 
+      <A  HREF="function.function-exists.html"  ><B  CLASS="function" >function_exists()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.define.html"  ><B  CLASS="function" >define()</B
+></A
+>,
+     <A  HREF="function.constant.html"  ><B  CLASS="function" >constant()</B
+></A
+>,
+     <A  HREF="function.get-defined-constants.html"  ><B  CLASS="function" >get_defined_constants()</B
+></A
+>, 
+     <A  HREF="function.function-exists.html"  ><B  CLASS="function" >function_exists()</B
+></A
+>, and the section on
+     <A  HREF="language.constants.html"  >Constants</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.define.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.die.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >define</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.misc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >die</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.define.html">define</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.die.html">die</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

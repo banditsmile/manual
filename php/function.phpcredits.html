@@ -1,199 +1,153 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>打印 PHP 贡献者名单</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.php-uname.html">php_uname</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.phpinfo.html">phpinfo</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.phpcredits" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">phpcredits</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">phpcredits</span> &mdash; <span class="dc-title">打印 PHP 贡献者名单</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.phpcredits-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>phpcredits</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$flag</code><span class="initializer"> = CREDITS_ALL</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   这个函数打印出了 PHP 开发者、模块等贡献者名单。
-   它生成了合适、可嵌入信息到页面中的 HTML 代码。
-  </p>   
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.phpcredits-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">flag</code></dt>
-
-     <dd>
-
-      <p class="para">
-       生成自定义的贡献者页面，你也许想要使用 <code class="parameter">flag</code> 参数。
-      </p>
-      <p class="para">
-       <table class="doctable table">
-        <caption><strong>预定义的 <span class="function"><strong>phpcredits()</strong></span> flags</strong></caption>
-        
-         <thead>
-          <tr>
-           <th>名称</th>
-           <th>描述</th>
-          </tr>
-
-         </thead>
-
-         <tbody class="tbody">
-          <tr>
-           <td>CREDITS_ALL</td>
-           <td>
-            所有贡献者，等同于使用： <strong><code>CREDITS_DOCS</code></strong> +
-            <strong><code>CREDITS_GENERAL</code></strong> + <strong><code>CREDITS_GROUP</code></strong> +
-            <strong><code>CREDITS_MODULES</code></strong> + <strong><code>CREDITS_FULLPAGE</code></strong>。
-            它以适当的标签产生了完整独立的 HTML 页面。
-           </td>
-          </tr>
-
-          <tr>
-           <td>CREDITS_DOCS</td>
-           <td>文档组贡献名单</td>
-          </tr>
-
-          <tr>
-           <td>CREDITS_FULLPAGE</td>
-           <td>
-            常用于和其他标志进行组合。
-            表示需要打印包含其他标志表示信息的独立 HTML 页面。
-           </td>
-          </tr>
-
-          <tr>
-           <td>CREDITS_GENERAL</td>
-           <td>
-            普遍名单：语言设计与理念、PHP作者以及 SAPI 模块。
-           </td>
-          </tr>
-
-          <tr>
-           <td>CREDITS_GROUP</td>
-           <td>核心开发者名单</td>
-          </tr>
-
-          <tr>
-           <td>CREDITS_MODULES</td>
-           <td>
-            PHP 扩展模块以及它们的作者的清单
-           </td>
-          </tr>
-
-          <tr>
-           <td>CREDITS_SAPI</td>
-           <td>
-            PHP 的服务器 API 模块以及他们的作者的清单
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.phpcredits-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.phpcredits-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-504">
-    <p><strong>Example #1 打印普遍名单</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />phpcredits</span><span style="color: #007700">(</span><span style="color: #0000BB">CREDITS_GENERAL</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-505">
-    <p><strong>Example #2 打印核心开发者和文档组</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />phpcredits</span><span style="color: #007700">(</span><span style="color: #0000BB">CREDITS_GROUP&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">CREDITS_DOCS&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">CREDITS_FULLPAGE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-506">
-    <p><strong>Example #3 打印所有贡献者</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-&lt;html&gt;<br />&nbsp;&lt;head&gt;<br />&nbsp;&nbsp;&lt;title&gt;My&nbsp;credits&nbsp;page&lt;/title&gt;<br />&nbsp;&lt;/head&gt;<br />&nbsp;&lt;body&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;一些你自己的代码<br /></span><span style="color: #0000BB">phpcredits</span><span style="color: #007700">(</span><span style="color: #0000BB">CREDITS_ALL&nbsp;</span><span style="color: #007700">-&nbsp;</span><span style="color: #0000BB">CREDITS_FULLPAGE</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;一些其他的代码<br /></span><span style="color: #0000BB">?&gt;<br /></span>&nbsp;&lt;/body&gt;<br />&lt;/html&gt;</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >phpcredits</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="php_uname" HREF="function.php-uname.html"><LINK  REL="NEXT" TITLE="phpinfo" HREF="function.phpinfo.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.php-uname.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.phpinfo.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.phpcredits" ></A
+>phpcredits</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN89518" ></A
+><P  >    (PHP 4 )</P
+>phpcredits&nbsp;--&nbsp;Prints out the credits for PHP</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN89521" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >phpcredits</B
+> ( [int flag])<BR  ></BR
+><P  >&#13;     This function prints out the credits listing the PHP developers,
+     modules, etc. It generates the appropriate HTML codes to insert
+     the information in a page. <TT  CLASS="parameter" ><I  >flag</I
+></TT
+> is
+     optional, and it defaults to <TT  CLASS="constant" ><B  >CREDITS_ALL</B
+></TT
+>.
+     To generate a custom credits page, you may want to use the
+     <TT  CLASS="parameter" ><I  >flag</I
+></TT
+> parameter.  For example to print
+     the general credits, you will use somewhere in your code:
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN89534" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />phpcredits</font><font  color="#007700">(</font><font  color="#0000BB">CREDITS_GENERAL</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     And if you want to print the core developers and the
+     documentation group, in a page of its own, you will use:
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN89538" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />phpcredits</font><font  color="#007700">(</font><font  color="#0000BB">CREDITS_GROUP </font><font  color="#007700">+ </font><font  color="#0000BB">CREDITS_DOCS </font><font  color="#007700">+ </font><font  color="#0000BB">CREDITS_FULLPAGE</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     And if you feel like embedding all the credits in your page, then
+     code like the one below will do it:
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN89542" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+&lt;html&gt;<br  /> &lt;head&gt;<br  />&nbsp;&nbsp;&lt;title&gt;My credits page&lt;/title&gt;<br  /> &lt;/head&gt;<br  /> &lt;body&gt;<br  /><font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// some code of your own<br  /></font><font  color="#0000BB">phpcredits</font><font  color="#007700">(</font><font  color="#0000BB">CREDITS_ALL </font><font  color="#007700">- </font><font  color="#0000BB">CREDITS_FULLPAGE</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// some more code<br  /></font><font  color="#0000BB">?&gt;<br  /></font> &lt;/body&gt;<br  />&lt;/html&gt;</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN89545" ></A
+><P  ><B  >���� 1. Pre-defined <B  CLASS="function" >phpcredits()</B
+> flags</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_ALL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          All the credits, equivalent to using: CREDITS_DOCS +
+          CREDITS_GENERAL + CREDITS_GROUP + CREDITS_MODULES +
+          CREDITS_FULLPAGE. It generates a complete stand-alone HTML
+          page with the appropriate tags.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_DOCS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >The credits for the documentation team</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_FULLPAGE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Usually used in combination with the other flags.  Indicates
+          that the a complete stand-alone HTML page needs to be
+          printed including the information indicated by the other
+          flags.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_GENERAL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          General credits: Language design and concept, PHP 4.0
+          authors and SAPI module.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_GROUP</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >A list of the core developers</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_MODULES</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          A list of the extension modules for PHP, and their authors
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >CREDITS_SAPI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          A list of the server API modules for PHP, and their authors
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.phpinfo.html"  ><B  CLASS="function" >phpinfo()</B
+></A
+>,
+     <A  HREF="function.phpversion.html"  ><B  CLASS="function" >phpversion()</B
+></A
+> and
+     <A  HREF="function.php-logo-guid.html"  ><B  CLASS="function" >php_logo_guid()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.php-uname.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.phpinfo.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >php_uname</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >phpinfo</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.phpcredits-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在 CLI 模式下 <span class="function"><strong>phpcredits()</strong></span> 输出明文而不是 HTML。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.phpcredits-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.phpversion.html" class="function" rel="rdfs-seeAlso">phpversion()</a> - 获取当前的PHP版本</span></li>
-    <li class="member"><span class="function"><a href="function.php-logo-guid.html" class="function" rel="rdfs-seeAlso">php_logo_guid()</a> - 获取 logo 的 guid</span></li>
-    <li class="member"><span class="function"><a href="function.phpinfo.html" class="function" rel="rdfs-seeAlso">phpinfo()</a> - 输出关于 PHP 配置的信息</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.php-uname.html">php_uname</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.phpinfo.html">phpinfo</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

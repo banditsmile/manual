@@ -1,261 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>将一个字符串写入文件</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.file-get-contents.html">file_get_contents</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.file.html">file</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.file-put-contents" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">file_put_contents</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">file_put_contents</span> &mdash; <span class="dc-title">将一个字符串写入文件</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.file-put-contents-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>file_put_contents</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$data</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment"> 
-   和依次调用 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>，<span class="function"><a href="function.fwrite.html" class="function">fwrite()</a></span>
-   以及 <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> 功能一样。
-  </p>
-  <p class="para">
-   If <code class="parameter">filename</code> does not exist, the file is created.
-   Otherwise, the existing file is overwritten, unless the 
-   <strong><code>FILE_APPEND</code></strong> flag is set.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.file-put-contents-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要被写入数据的文件名。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要写入的数据。类型可以是 <span class="type"><a href="language.types.string.html" class="type string">string</a></span>，<span class="type"><a href="language.types.array.html" class="type array">array</a></span>
-       或者是 <span class="type"><span class="type stream">stream</span></span> 资源（如上面所说的那样）。
-      </p>
-      <p class="para">
-       如果 <code class="parameter">data</code>
-   指定为 stream 资源，这里 stream
-   中所保存的缓存数据将被写入到指定文件中，这种用法就相似于使用
-   <span class="function"><a href="function.stream-copy-to-stream.html" class="function">stream_copy_to_stream()</a></span> 函数。
-      </p>
-      <p class="para">
-       参数 <code class="parameter">data</code> 可以是数组（但不能为多维数组），这就相当于
-   <em>file_put_contents($filename, join(&#039;&#039;, $array))</em>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">flags</code> 的值可以是
-       以下 flag 使用 OR (<em>|</em>) 运算符进行的组合。
-      </p>
-       <p class="para">
-       <table class="doctable table">
-        <caption><strong>Available flags</strong></caption>
-        
-         <thead>
-          <tr>
-           <th>Flag</th>
-           <th>描述</th>
-          </tr>
-
-         </thead>
-
-         <tbody class="tbody">
-          <tr>
-           <td>
-            <strong><code>FILE_USE_INCLUDE_PATH</code></strong>
-           </td>
-           <td>
-            在 include 目录里搜索  <code class="parameter">filename</code>。
-            更多信息可参见 <a href="ini.core.html#ini.include-path" class="link">include_path</a>。
-           </td>
-          </tr>
-
-          <tr>
-           <td>
-            <strong><code>FILE_APPEND</code></strong>
-           </td>
-           <td>
-            如果文件 <code class="parameter">filename</code>  已经存在，追加数据而不是覆盖。
-           </td>
-          </tr>
-
-          <tr>
-           <td>
-            <strong><code>LOCK_EX</code></strong>
-           </td>
-           <td>
-            在写入时获得一个独占锁。
-           </td>
-          </tr>
-
-          
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">context</code></dt>
-
-     <dd>
-
-      <p class="para">
-       一个 context 资源。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >file_put_contents</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ļ�ϵͳ������" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="file_get_contents" HREF="function.file-get-contents.html"><LINK  REL="NEXT" TITLE="file" HREF="function.file.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.file-get-contents.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.file.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.file-put-contents" ></A
+>file_put_contents</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28003" ></A
+><P  >    (PHP 5 CVS only)</P
+>file_put_contents&nbsp;--&nbsp;��һ���ַ���д���ļ�</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28006" ></A
+><H2  >˵��</H2
+>int <B  CLASS="methodname" >file_put_contents</B
+> ( string filename, string data [, int flags [, resource context]])<BR  ></BR
+><P  >&#13;     �����ε��� <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>��<A  HREF="function.fwrite.html"  ><B  CLASS="function" >fwrite()</B
+></A
+>
+     �Լ� <A  HREF="function.fclose.html"  ><B  CLASS="function" >fclose()</B
+></A
+> ����һ��������������д���ļ����ֽ�����
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> ������ <TT  CLASS="constant" ><B  >FILE_USE_INCLUDE_PATH</B
+></TT
+>
+     ��/�� <TT  CLASS="constant" ><B  >FILE_APPEND</B
+></TT
+>������ʹ��
+     <TT  CLASS="constant" ><B  >FILE_USE_INCLUDE_PATH</B
+></TT
+> ѡ��ʱҪ���С�ġ�
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>�ú��������ڶ����ƶ���</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >��ʾ: </B
+>���<A  HREF="ref.filesystem.html#ini.allow-url-fopen"  >��fopen wrappers��</A
+>�Ѿ������������ʹ�øú�����ʱ�򣬿��԰�
+URL ��Ϊ�ļ�����ʹ�á������ <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>
+��ȡ����ָ���ļ�������ϸ��Ϣ�Լ�֧�ֵ� URL Э����б�<A  HREF="wrappers.html"  >��¼ J</A
+>��</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     �μ�
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>��<A  HREF="function.fwrite.html"  ><B  CLASS="function" >fwrite()</B
+></A
+>��<A  HREF="function.fclose.html"  ><B  CLASS="function" >fclose()</B
+></A
+>
+     �� <A  HREF="function.file-get-contents.html"  ><B  CLASS="function" >file_get_contents()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.file-get-contents.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.file.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >file_get_contents</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >file</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.file-put-contents-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   该函数将返回写入到文件内数据的字节数，失败时返回<strong><code>FALSE</code></strong>
-  </p>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">此函数可能返回布尔值
-<strong><code>FALSE</code></strong>，但也可能返回等同于 <strong><code>FALSE</code></strong> 的非布尔值。请阅读 <a href="language.types.boolean.html" class="link">布尔类型</a>章节以获取更多信息。应使用
-<a href="language.operators.comparison.html" class="link">===
-运算符</a>来测试此函数的返回值。</p></div>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.file-put-contents-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2466">
-    <p><strong>Example #1 Simple usage example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'people.txt'</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;Open&nbsp;the&nbsp;file&nbsp;to&nbsp;get&nbsp;existing&nbsp;content<br /></span><span style="color: #0000BB">$current&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Append&nbsp;a&nbsp;new&nbsp;person&nbsp;to&nbsp;the&nbsp;file<br /></span><span style="color: #0000BB">$current&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"John&nbsp;Smith\n"</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;Write&nbsp;the&nbsp;contents&nbsp;back&nbsp;to&nbsp;the&nbsp;file<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$current</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   <div class="example" id="example-2467">
-    <p><strong>Example #2 Using flags</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'people.txt'</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;new&nbsp;person&nbsp;to&nbsp;add&nbsp;to&nbsp;the&nbsp;file<br /></span><span style="color: #0000BB">$person&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"John&nbsp;Smith\n"</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;Write&nbsp;the&nbsp;contents&nbsp;to&nbsp;the&nbsp;file,&nbsp;<br />//&nbsp;using&nbsp;the&nbsp;FILE_APPEND&nbsp;flag&nbsp;to&nbsp;append&nbsp;the&nbsp;content&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file<br />//&nbsp;and&nbsp;the&nbsp;LOCK_EX&nbsp;flag&nbsp;to&nbsp;prevent&nbsp;anyone&nbsp;else&nbsp;writing&nbsp;to&nbsp;the&nbsp;file&nbsp;at&nbsp;the&nbsp;same&nbsp;time<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$person</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FILE_APPEND&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">LOCK_EX</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.file-put-contents-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        Added context support
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        添加了对 <strong><code>LOCK_EX</code></strong> 的支持和 <code class="parameter">data</code>
-        参数处理 stream 资源的功能。
-       </td>
-      </tr>
-
-      
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.file-put-contents-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">此函数可安全用于二进制对象。</span></p></blockquote>
-  <div class="tip"><strong class="tip">Tip</strong><p class="simpara">如已启用<a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">fopen 包装器</a>，在此函数中， URL 可作为文件名。关于如何指定文件名详见 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>。各种
-wapper 的不同功能请参见 <a href="wrappers.html" class="xref">支持的协议和封装协议</a>，注意其用法及其可提供的预定义变量。</p></div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.file-put-contents-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - 打开文件或者 URL</span></li>
-    <li class="member"><span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - 写入文件（可安全用于二进制文件）</span></li>
-    <li class="member"><span class="function"><a href="function.file-get-contents.html" class="function" rel="rdfs-seeAlso">file_get_contents()</a> - 将整个文件读入一个字符串</span></li>
-    <li class="member"><span class="function"><a href="function.stream-context-create.html" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - 创建资源流上下文</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.file-get-contents.html">file_get_contents</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.file.html">file</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

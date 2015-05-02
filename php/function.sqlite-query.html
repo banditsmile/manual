@@ -1,213 +1,127 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Executes a query against a given database and returns a result handle</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqlite-prev.html">sqlite_prev</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sqlite-rewind.html">sqlite_rewind</a></div>
- <div class="up"><a href="ref.sqlite.html">SQLite 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.sqlite-query" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">sqlite_query</h1>
-  <h1 class="refname">SQLiteDatabase::query</h1>
-  <p class="verinfo">(PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">sqlite_query</span> -- <span class="refname">SQLiteDatabase::query</span> &mdash; <span class="dc-title">Executes a query against a given database and returns a result handle</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.sqlite-query-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>sqlite_query</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$dbhandle</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = SQLITE_BOTH</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$error_msg</code></span>
-  ]] )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>sqlite_query</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$dbhandle</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = SQLITE_BOTH</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$error_msg</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">面向对象风格 (method):</p>
-  <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type"><span class="type SQLiteResult">SQLiteResult</span></span> <span class="methodname"><strong>SQLiteDatabase::query</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = SQLITE_BOTH</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$error_msg</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   Executes an SQL statement given by the <code class="parameter">query</code> against
-   a given database handle.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.sqlite-query-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">dbhandle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The SQLite Database resource; returned from
-       <span class="function"><a href="function.sqlite-open.html" class="function">sqlite_open()</a></span> when used procedurally. This parameter
-       is not required when using the object-oriented method.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">query</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The query to be executed.
-      </p>
-      <p class="para">
-       Data inside the query should be <a href="function.sqlite-escape-string.html" class="link">properly escaped</a>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">result_type</code></dt>
-
-     <dd>
-
-      <p class="para">可选的 <code class="parameter">result_type</code>
-参数接受常量，且决定返回的数组如何被索引。使用
-<strong><code>SQLITE_ASSOC</code></strong> 会仅返回关联索引（已命名字段），而
-<strong><code>SQLITE_NUM</code></strong> 会仅返回数值索引。<strong><code>SQLITE_BOTH</code></strong>
-会同时返回关联和数值索引。<strong><code>SQLITE_BOTH</code></strong> 是此函数的默认值。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">error_msg</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The specified variable will be filled if an error occurs. This is
-       specially important because SQL syntax errors can&#039;t be fetched using
-       the <span class="function"><a href="function.sqlite-last-error.html" class="function">sqlite_last_error()</a></span> function.
-      </p>
-     </dd>
-
-    
-
-   </dl>
-
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">为兼容其他数据库扩展(比如 MySQL)，支持两种可替代的语法。推荐第一种格式，函数的第一个参数是<code class="parameter">dbhandle</code>。</span></p></blockquote>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.sqlite-query-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   This function will return a result handle 或者在失败时返回 <strong><code>FALSE</code></strong>.
-   For queries that return rows, the result handle can then be used with
-   functions such as <span class="function"><a href="function.sqlite-fetch-array.html" class="function">sqlite_fetch_array()</a></span> and
-   <span class="function"><a href="function.sqlite-seek.html" class="function">sqlite_seek()</a></span>.
-  </p>
-  <p class="para">
-   Regardless of the query type, this function will return <strong><code>FALSE</code></strong> if the
+<HTML  ><HEAD  ><TITLE  >sqlite_query</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="SQLite" HREF="ref.sqlite.html"><LINK  REL="PREVIOUS" TITLE="sqlite_popen" HREF="function.sqlite-popen.html"><LINK  REL="NEXT" TITLE="sqlite_rewind" HREF="function.sqlite-rewind.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sqlite-popen.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sqlite-rewind.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.sqlite-query" ></A
+>sqlite_query</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN101651" ></A
+><P  >    (no version information, might be only in CVS)</P
+>sqlite_query&nbsp;--&nbsp;
+   Executes a query against a given database and returns a result handle.
+  </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN101654" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >sqlite_query</B
+> ( resource dbhandle, string query)<BR  ></BR
+>resource <B  CLASS="methodname" >sqlite_query</B
+> ( string query, resource dbhandle)<BR  ></BR
+><P  >&#13;   Executes an SQL statement given by the <TT  CLASS="parameter" ><I  >query</I
+></TT
+> against
+   a given database handle (specified by the <TT  CLASS="parameter" ><I  >dbhandle</I
+></TT
+> 
+   parameter).
+  </P
+><P  >&#13;   For queries that return rows, this function will return a result handle
+   which can then be used with functions such as
+   <A  HREF="function.sqlite-fetch-array.html"  ><B  CLASS="function" >sqlite_fetch_array()</B
+></A
+> and
+   <A  HREF="function.sqlite-seek.html"  ><B  CLASS="function" >sqlite_seek()</B
+></A
+>.
+  </P
+><P  >&#13;   For other kinds of queries, this function will return a boolean result;
+   <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> for success or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> for failure.
+  </P
+><P  >&#13;   Regardless of the query type, this function will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the
    query failed.
-  </p>
-  <p class="para">
-   <span class="function"><strong>sqlite_query()</strong></span> returns a buffered, seekable result
+  </P
+><P  >&#13;   <B  CLASS="function" >sqlite_query()</B
+> returns a buffered, seekable result
    handle.  This is useful for reasonably small queries where you need to
    be able to randomly access the rows.  Buffered result handles will
    allocate memory to hold the entire result and will not return until it
    has been fetched.  If you only need sequential access to the data, it is
    recommended that you use the much higher performance
-   <span class="function"><a href="function.sqlite-unbuffered-query.html" class="function">sqlite_unbuffered_query()</a></span> instead.
-  </p>
- </div>
-
-
-<div class="refsect1 changelog" id="refsect1-function.sqlite-query-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        Added the <code class="parameter">error_msg</code> parameter
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.sqlite-query-notes">
-  <h3 class="title">注释</h3>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="simpara">
-    SQLite <em class="emphasis">will</em> execute multiple queries separated by
+   <A  HREF="function.sqlite-unbuffered-query.html"  ><B  CLASS="function" >sqlite_unbuffered_query()</B
+></A
+> instead.
+  </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+    Two alternative syntaxes are supported for compatibility with other
+    database extensions (such as MySQL).
+    The preferred form is the first one, where the
+    <TT  CLASS="parameter" ><I  >db</I
+></TT
+> parameter is the first parameter to the
+    function.
+   </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;    SQLite <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >will</I
+></SPAN
+> execute multiple queries separated by
     semicolons, so you can use it to execute a batch of SQL that you have
-    loaded from a file or have embedded in a script. However, this works only
-    when the result of the function is not used - if it is used, 
-    only the first SQL statement would be executed. Function
-    <span class="function"><a href="function.sqlite-exec.html" class="function">sqlite_exec()</a></span> will always execute multiple SQL 
-    statements.
-   </p>
-   <p class="simpara">
-    When executing multiple queries, the return value of this function
-    will be <strong><code>FALSE</code></strong> if there was an error, but undefined otherwise (it might
-    be <strong><code>TRUE</code></strong> for success or it might return a result handle).
-   </p>
-  </div>
- </div>
+    loaded from a file or have embedded in a script.
+   </P
+><P  >&#13;    When executing multiple queries, the return value of this function
+    will be <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the was an error, but undefined otherwise (it might
+    be <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> for success or it might return a result handle).
+   </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;   See also <A  HREF="function.sqlite-unbuffered-query.html"  ><B  CLASS="function" >sqlite_unbuffered_query()</B
+></A
+> and 
+   <A  HREF="function.sqlite-array-query.html"  ><B  CLASS="function" >sqlite_array_query()</B
+></A
+>.
+  </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sqlite-popen.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sqlite-rewind.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sqlite_popen</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sqlite.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sqlite_rewind</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.sqlite-query-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.sqlite-unbuffered-query.html" class="function" rel="rdfs-seeAlso">sqlite_unbuffered_query()</a> - Execute a query that does not prefetch and buffer all data</span></li>
-    <li class="member"><span class="function"><a href="function.sqlite-array-query.html" class="function" rel="rdfs-seeAlso">sqlite_array_query()</a> - Execute a query against a given database and returns an array</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqlite-prev.html">sqlite_prev</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sqlite-rewind.html">sqlite_rewind</a></div>
- <div class="up"><a href="ref.sqlite.html">SQLite 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

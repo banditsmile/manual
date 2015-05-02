@@ -1,83 +1,61 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Return the number of rows that were affected by the previous query</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-add-user.html">ibase_add_user</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-backup.html">ibase_backup</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-affected-rows" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_affected_rows</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_affected_rows</span> &mdash; <span class="dc-title">Return the number of rows that were affected by the previous query</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-affected-rows-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>ibase_affected_rows</strong></span>
-    ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   This function returns the number of rows that were affected by the
-   previous query (INSERT, UPDATE or DELETE) that was executed from within
-   the specified transaction context.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-affected-rows-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A transaction context. If <code class="parameter">link_identifier</code> is a
-       connection resource, its default transaction is used.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_affected_rows</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_add_user" HREF="function.ibase-add-user.html"><LINK  REL="NEXT" TITLE="ibase_blob_add" HREF="function.ibase-blob-add.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-add-user.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-blob-add.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-affected-rows" ></A
+>ibase_affected_rows</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN44902" ></A
+><P  >    (no version information, might be only in CVS)</P
+>ibase_affected_rows&nbsp;--&nbsp;
+     Return the number of rows that were affected by the previous query
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN44905" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >ibase_affected_rows</B
+> ( resource link_identifier)<BR  ></BR
+><P  >&#13;     This function returns the number of rows that were affected by the previous query that was
+     executed from within the transaction context specified by <TT  CLASS="parameter" ><I  >link_identifier</I
+></TT
+>.
+     If <TT  CLASS="parameter" ><I  >link_identifier</I
+></TT
+> is a connection resource, its default transaction
+     is used.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ibase-query.html"  ><B  CLASS="function" >ibase_query()</B
+></A
+> and
+     <A  HREF="function.ibase-execute.html"  ><B  CLASS="function" >ibase_execute()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-add-user.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-blob-add.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_add_user</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_blob_add</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-affected-rows-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns the number of rows as an integer.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-affected-rows-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-query.html" class="function" rel="rdfs-seeAlso">ibase_query()</a> - Execute a query on an InterBase database</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-execute.html" class="function" rel="rdfs-seeAlso">ibase_execute()</a> - Execute a previously prepared query</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-add-user.html">ibase_add_user</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-backup.html">ibase_backup</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

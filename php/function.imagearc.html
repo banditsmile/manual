@@ -1,62 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç”»æ¤­åœ†å¼§</title>
+<HTML  ><HEAD  ><TITLE  >imagearc</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imageantialias" HREF="function.imageantialias.html"><LINK  REL="NEXT" TITLE="imagechar" HREF="function.imagechar.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imageantialias.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagechar.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagearc" ></A
+>imagearc</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38424" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imagearc&nbsp;--&nbsp;»­ÍÖÔ²»¡</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38427" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >imagearc</B
+> ( resource image, int cx, int cy, int w, int h, int s, int e, int color)<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >imagearc()</B
+> ÒÔ
+    <TT  CLASS="parameter" ><I  >cx</I
+></TT
+>£¬<TT  CLASS="parameter" ><I  >cy</I
+></TT
+>£¨Í¼Ïñ×óÉÏ½ÇÎª 0, 0£©ÎªÖĞĞÄÔÚ
+    <TT  CLASS="parameter" ><I  >image</I
+></TT
+> Ëù´ú±íµÄÍ¼ÏñÖĞ»­Ò»¸öÍÖÔ²»¡¡£<TT  CLASS="parameter" ><I  >w</I
+></TT
+>
+    ºÍ <TT  CLASS="parameter" ><I  >h</I
+></TT
+> ·Ö±ğÖ¸¶¨ÁËÍÖÔ²µÄ¿í¶ÈºÍ¸ß¶È£¬ÆğÊ¼ºÍ½áÊøµãÒÔ
+    <TT  CLASS="parameter" ><I  >s</I
+></TT
+> ºÍ <TT  CLASS="parameter" ><I  >e</I
+></TT
+>
+    ²ÎÊıÒÔ½Ç¶ÈÖ¸¶¨¡£0¡ãÎ»ÓÚÈıµãÖÓÎ»ÖÃ£¬ÒÔÄæÊ±Õë·½Ïò»æ»­¡£
+   </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38465" ></A
+><P  ><B  >Àı×Ó 1. ÓÃ <B  CLASS="function" >imagearc()</B
+> »­Ò»¸öÔ²</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// create a 200*200 image<br  /></font><font  color="#0000BB">$img </font><font  color="#007700">= </font><font  color="#0000BB">imagecreate</font><font  color="#007700">(</font><font  color="#0000BB">200</font><font  color="#007700">, </font><font  color="#0000BB">200</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// allocate some colors<br  /></font><font  color="#0000BB">$white </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$img</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// draw a white circle<br  /></font><font  color="#0000BB">imagearc</font><font  color="#007700">(</font><font  color="#0000BB">$img</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">150</font><font  color="#007700">, </font><font  color="#0000BB">150</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">360</font><font  color="#007700">, </font><font  color="#0000BB">$white</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// output image in the browser<br  /></font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: image/png"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagepng</font><font  color="#007700">(</font><font  color="#0000BB">$img</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// free memory<br  /></font><font  color="#0000BB">imagedestroy</font><font  color="#007700">(</font><font  color="#0000BB">$img</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;    ²Î¼û <A  HREF="function.imageellipse.html"  ><B  CLASS="function" >imageellipse()</B
+></A
+>£¬<A  HREF="function.imagefilledellipse.html"  ><B  CLASS="function" >imagefilledellipse()</B
+></A
+>
+    ºÍ <A  HREF="function.imagefilledarc.html"  ><B  CLASS="function" >imagefilledarc()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imageantialias.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagechar.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imageantialias</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagechar</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imageantialias.html">imageantialias</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagechar.html">imagechar</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagearc" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagearc</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagearc</span> &mdash; <span class="dc-title">ç”»æ¤­åœ†å¼§</span></p>
 
- </div>
- <div class="refsect1 unknown-seealsp" id="refsect1-function.imagearc-unknown-seealsp">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imagearc</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$cx</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$cy</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$w</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$h</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$s</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$e</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$color</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>imagearc()</strong></span> ä»¥
-   <code class="parameter">cx</code>ï¼Œ<code class="parameter">cy</code>ï¼ˆå›¾åƒå·¦ä¸Šè§’ä¸º 0, 0ï¼‰ä¸ºä¸­å¿ƒåœ¨
-   <code class="parameter">image</code> æ‰€ä»£è¡¨çš„å›¾åƒä¸­ç”»ä¸€ä¸ªæ¤­åœ†å¼§ã€‚<code class="parameter">w</code>
-   å’Œ <code class="parameter">h</code> åˆ†åˆ«æŒ‡å®šäº†æ¤­åœ†çš„å®½åº¦å’Œé«˜åº¦ï¼Œèµ·å§‹å’Œç»“æŸç‚¹ä»¥
-   <code class="parameter">s</code> å’Œ <code class="parameter">e</code>
-   å‚æ•°ä»¥è§’åº¦æŒ‡å®šã€‚0Â°ä½äºä¸‰ç‚¹é’Ÿä½ç½®ï¼Œä»¥é¡ºæ—¶é’ˆæ–¹å‘ç»˜ç”»ã€‚
-  </p>
-  <div class="example" id="example-3281">
-   <p><strong>Example #1 ç”¨ <span class="function"><strong>imagearc()</strong></span> ç”»ä¸€ä¸ªåœ†</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;åˆ›å»ºä¸€ä¸ª&nbsp;200X200&nbsp;çš„å›¾åƒ<br /></span><span style="color: #0000BB">$img&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">200</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;åˆ†é…é¢œè‰²<br /></span><span style="color: #0000BB">$white&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$img</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$img</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ç”»ä¸€ä¸ªé»‘è‰²çš„åœ†<br /></span><span style="color: #0000BB">imagearc</span><span style="color: #007700">(</span><span style="color: #0000BB">$img</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">360</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$black</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;å°†å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;image/png"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$img</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;é‡Šæ”¾å†…å­˜<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$img</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-  <p class="para">
-   å‚è§ <span class="function"><a href="function.imageellipse.html" class="function">imageellipse()</a></span>ï¼Œ<span class="function"><a href="function.imagefilledellipse.html" class="function">imagefilledellipse()</a></span>
-   å’Œ <span class="function"><a href="function.imagefilledarc.html" class="function">imagefilledarc()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imageantialias.html">imageantialias</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagechar.html">imagechar</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

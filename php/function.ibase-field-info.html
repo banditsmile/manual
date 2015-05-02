@@ -1,112 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get information about a field</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-fetch-row.html">ibase_fetch_row</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-free-event-handler.html">ibase_free_event_handler</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-field-info" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_field_info</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_field_info</span> &mdash; <span class="dc-title">Get information about a field</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-field-info-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>ibase_field_info</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_number</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Returns an array with information about a field after a select
-   query has been run.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-field-info-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An InterBase result identifier.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">field_number</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Field offset.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_field_info</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_fetch_row" HREF="function.ibase-fetch-row.html"><LINK  REL="NEXT" TITLE="ibase_free_event_handler" HREF="function.ibase-free-event-handler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-fetch-row.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-free-event-handler.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-field-info" ></A
+>ibase_field_info</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45407" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>ibase_field_info&nbsp;--&nbsp;
+     Get information about a field
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45410" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >ibase_field_info</B
+> ( resource result, int field_number)<BR  ></BR
+><P  >&#13;     Returns an array with information about a field after a select
+     query has been run. The array is in the form of name, alias,
+     relation, length, type.
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN45423" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$rs </font><font  color="#007700">= </font><font  color="#0000BB">ibase_query</font><font  color="#007700">(</font><font  color="#DD0000">"SELECT * FROM tablename"</font><font  color="#007700">); <br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$coln </font><font  color="#007700">= </font><font  color="#0000BB">ibase_num_fields</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">$coln</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$col_info </font><font  color="#007700">= </font><font  color="#0000BB">ibase_field_info</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">, </font><font  color="#0000BB">$i</font><font  color="#007700">); <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"name: "</font><font  color="#007700">. </font><font  color="#0000BB">$col_info</font><font  color="#007700">[</font><font  color="#DD0000">'name'</font><font  color="#007700">]. </font><font  color="#DD0000">"\n"</font><font  color="#007700">; <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"alias: "</font><font  color="#007700">. </font><font  color="#0000BB">$col_info</font><font  color="#007700">[</font><font  color="#DD0000">'alias'</font><font  color="#007700">]. </font><font  color="#DD0000">"\n"</font><font  color="#007700">; <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"relation: "</font><font  color="#007700">. </font><font  color="#0000BB">$col_info</font><font  color="#007700">[</font><font  color="#DD0000">'relation'</font><font  color="#007700">]. </font><font  color="#DD0000">"\n"</font><font  color="#007700">; <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"length: "</font><font  color="#007700">. </font><font  color="#0000BB">$col_info</font><font  color="#007700">[</font><font  color="#DD0000">'length'</font><font  color="#007700">]. </font><font  color="#DD0000">"\n"</font><font  color="#007700">; <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"type: "</font><font  color="#007700">. </font><font  color="#0000BB">$col_info</font><font  color="#007700">[</font><font  color="#DD0000">'type'</font><font  color="#007700">]. </font><font  color="#DD0000">"\n"</font><font  color="#007700">; <br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.ibase-num-fields.html"  ><B  CLASS="function" >ibase_num_fields()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-fetch-row.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-free-event-handler.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_fetch_row</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_free_event_handler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-field-info-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an array with the following keys: <em>name</em>,
-   <em>alias</em>, <em>relation</em>,
-   <em>length</em> and <em>type</em>.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.ibase-field-info-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1133">
-    <p><strong>Example #1 <span class="function"><strong>ibase_field_info()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$rs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;tablename"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$coln&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">);<br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$coln</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$col_info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_field_info</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"name:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$col_info</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">].&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"alias:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$col_info</span><span style="color: #007700">[</span><span style="color: #DD0000">'alias'</span><span style="color: #007700">].&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"relation:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$col_info</span><span style="color: #007700">[</span><span style="color: #DD0000">'relation'</span><span style="color: #007700">].&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"length:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$col_info</span><span style="color: #007700">[</span><span style="color: #DD0000">'length'</span><span style="color: #007700">].&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"type:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$col_info</span><span style="color: #007700">[</span><span style="color: #DD0000">'type'</span><span style="color: #007700">].&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-field-info-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-num-fields.html" class="function" rel="rdfs-seeAlso">ibase_num_fields()</a> - Get the number of fields in a result set</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-fetch-row.html">ibase_fetch_row</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-free-event-handler.html">ibase_free_event_handler</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,134 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç»™å‡ºä¸€ä¸ªæ–‡ä»¶æˆ–ç¬¦å·è¿æ¥çš„ä¿¡æ¯</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.linkinfo.html">linkinfo</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mkdir.html">mkdir</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.lstat" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">lstat</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">lstat</span> &mdash; <span class="dc-title">ç»™å‡ºä¸€ä¸ªæ–‡ä»¶æˆ–ç¬¦å·è¿æ¥çš„ä¿¡æ¯</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.lstat-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>lstat</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   è·å–ç”± <code class="parameter">filename</code> æŒ‡å®šçš„æ–‡ä»¶æˆ–ç¬¦å·è¿æ¥çš„ç»Ÿè®¡ä¿¡æ¯ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.lstat-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ–‡ä»¶æˆ–ç¬¦å·è¿æ¥çš„è·¯å¾„ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.lstat-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æœ‰å…³ <span class="function"><strong>lstat()</strong></span>
-   è¿”å›çš„æ•°ç»„ç»“æ„è§æ‰‹å†Œä¸­ <span class="function"><a href="function.stat.html" class="function">stat()</a></span> å‡½æ•°çš„é¡µé¢ã€‚
-   æœ¬å‡½æ•°å’Œ
-   <span class="function"><a href="function.stat.html" class="function">stat()</a></span> å‡½æ•°ç›¸åŒï¼Œåªé™¤äº†å¦‚æœ
-   <code class="parameter">filename</code> å‚æ•°æ˜¯ç¬¦å·è¿æ¥çš„è¯ï¼Œåˆ™è¯¥ç¬¦å·è¿æ¥çš„çŠ¶æ€è¢«è¿”å›ï¼Œè€Œä¸æ˜¯è¯¥ç¬¦å·è¿æ¥æ‰€æŒ‡å‘çš„æ–‡ä»¶çš„çŠ¶æ€ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.lstat-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2507">
-    <p><strong>Example #1  <span class="function"><a href="function.stat.html" class="function">stat()</a></span> å’Œ <span class="function"><strong>lstat()</strong></span> çš„å¯¹ç…§</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />symlink</span><span style="color: #007700">(</span><span style="color: #DD0000">'uploads.php'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'uploads'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Contrast&nbsp;information&nbsp;for&nbsp;uploads.php&nbsp;and&nbsp;uploads<br /></span><span style="color: #0000BB">array_diff</span><span style="color: #007700">(</span><span style="color: #0000BB">stat</span><span style="color: #007700">(</span><span style="color: #DD0000">'uploads'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">lstat</span><span style="color: #007700">(</span><span style="color: #DD0000">'uploads'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents"><p>
-     Information that differs between the two files.
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [ino] =&gt; 97236376
-    [mode] =&gt; 33188
-    [size] =&gt; 34
-    [atime] =&gt; 1223580003
-    [mtime] =&gt; 1223581848
-    [ctime] =&gt; 1223581848
-    [blocks] =&gt; 8
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >lstat</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="linkinfo" HREF="function.linkinfo.html"><LINK  REL="NEXT" TITLE="mkdir" HREF="function.mkdir.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.linkinfo.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mkdir.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.lstat" ></A
+>lstat</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29251" ></A
+><P  >    (PHP 3&#62;= 3.0.4, PHP 4 )</P
+>lstat&nbsp;--&nbsp;¸ø³öÒ»¸öÎÄ¼ş»ò·ûºÅÁ¬½ÓµÄĞÅÏ¢</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29254" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >lstat</B
+> ( string filename)<BR  ></BR
+><P  >&#13;     »ñÈ¡ÓÉ <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> Ö¸¶¨µÄÎÄ¼ş»ò·ûºÅÁ¬½ÓµÄÍ³¼ÆĞÅÏ¢¡£±¾º¯ÊıºÍ
+     <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+> º¯ÊıÏàÍ¬£¬Ö»³ıÁËÈç¹û
+     <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> ²ÎÊıÊÇ·ûºÅÁ¬½ÓµÄ»°£¬Ôò¸Ã·ûºÅÁ¬½ÓµÄ×´Ì¬±»·µ»Ø£¬¶ø²»ÊÇ¸Ã·ûºÅÁ¬½ÓËùÖ¸ÏòµÄÎÄ¼şµÄ×´Ì¬¡£
+    </P
+><P  >&#13;     ÓĞ¹Ø <B  CLASS="function" >lstat()</B
+>
+     ·µ»ØµÄÊı×é½á¹¹¼ûÊÖ²áÖĞ <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+> º¯ÊıµÄÒ³Ãæ¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯ÊıµÄ½á¹û»á±»»º´æ¡£ÏêÏ¸ĞÅÏ¢²Î¼û <A  HREF="function.clearstatcache.html"  ><B  CLASS="function" >clearstatcache()</B
+></A
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯Êı²»ÄÜ×÷ÓÃÓÚ<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>£¬±»¼ì²éµÄÎÄ¼ş±ØĞëÍ¨¹ı·şÎñÆ÷µÄÎÄ¼şÏµÍ³·ÃÎÊ¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.linkinfo.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mkdir.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >linkinfo</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mkdir</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 errors" id="refsect1-function.lstat-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-å¤±è´¥æ—¶æŠ›å‡º<strong><code>E_WARNING</code></strong>è­¦å‘Šã€‚
-</p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.lstat-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°çš„ç»“æœä¼šè¢«ç¼“å­˜ã€‚å‚è§
-<span class="function"><a href="function.clearstatcache.html" class="function">clearstatcache()</a></span> ä»¥è·å¾—æ›´å¤šç»†èŠ‚ã€‚</span></p></blockquote>
-  <div class="tip"><strong class="tip">Tip</strong><p class="simpara">è‡ª PHP 5.0.0 èµ·, æ­¤å‡½æ•°ä¹Ÿç”¨äº<em class="emphasis">æŸäº›</em>
-URL åŒ…è£…å™¨ã€‚è¯·å‚è§ <a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a>ä»¥è·å¾—æ”¯æŒ <span class="function"><a href="function.stat.html" class="function">stat()</a></span> ç³»åˆ—å‡½æ•°åŠŸèƒ½çš„åŒ…è£…å™¨åˆ—è¡¨ã€‚</p></div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.lstat-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.stat.html" class="function" rel="rdfs-seeAlso">stat()</a> - ç»™å‡ºæ–‡ä»¶çš„ä¿¡æ¯</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.linkinfo.html">linkinfo</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mkdir.html">mkdir</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,66 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—ç»“æœæ•°æ®</title>
+<HTML  ><HEAD  ><TITLE  >mysql_result</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_real_escape_string" HREF="function.mysql-real-escape-string.html"><LINK  REL="NEXT" TITLE="mysql_select_db" HREF="function.mysql-select-db.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-real-escape-string.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-select-db.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-result" ></A
+>mysql_result</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN66436" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_result&nbsp;--&nbsp;È¡µÃ½á¹ûÊı¾İ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN66439" ></A
+><H2  >ËµÃ÷</H2
+>mixed <B  CLASS="methodname" >mysql_result</B
+> ( resource result, int row [, mixed field])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mysql_result()</B
+> ·µ»Ø MySQL
+     ½á¹û¼¯ÖĞÒ»¸öµ¥ÔªµÄÄÚÈİ¡£×Ö¶Î²ÎÊı¿ÉÒÔÊÇ×Ö¶ÎµÄÆ«ÒÆÁ¿»òÕß×Ö¶ÎÃû£¬»òÕßÊÇ×Ö¶Î±íµã×Ö¶ÎÃû£¨tablename.fieldname£©¡£Èç¹û¸øÁĞÆğÁË±ğÃû£¨'select
+     foo as bar from...'£©£¬ÔòÓÃ±ğÃûÌæ´úÁĞÃû¡£
+    </P
+><P  >&#13;     µ±×÷ÓÃÓÚºÜ´óµÄ½á¹û¼¯Ê±£¬Ó¦¸Ã¿¼ÂÇÊ¹ÓÃÄÜ¹»È¡µÃÕûĞĞµÄº¯Êı£¨ÔÚÏÂ±ßÖ¸³ö£©¡£ÕâĞ©º¯ÊıÔÚÒ»´Îº¯Êıµ÷ÓÃÖĞ·µ»ØÁË¶à¸öµ¥ÔªµÄÄÚÈİ£¬±È
+     <B  CLASS="function" >mysql_result()</B
+>
+     ¿ìµÃ¶à¡£´ËÍâ×¢ÒâÔÚ×Ö¶Î²ÎÊıÖĞÖ¸¶¨Êı×ÖÆ«ÒÆÁ¿±ÈÖ¸¶¨×Ö¶ÎÃû»òÕß
+     tablename.fieldname Òª¿ìµÃ¶à¡£
+    </P
+><P  >&#13;     µ÷ÓÃ <B  CLASS="function" >mysql_result()</B
+>
+     ²»ÄÜºÍÆäËü´¦Àí½á¹û¼¯µÄº¯Êı»ìºÏµ÷ÓÃ¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN66460" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mysql_result()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">mysql_query</font><font  color="#007700">(</font><font  color="#DD0000">"SELECT name FROM work.employee"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not query: . mysql_error());<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;echo mysql_result($result,2); // outputs third employee's name<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;mysql_close($link);<br  />?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÍÆ¼öÊ¹ÓÃ¸ßĞÔÄÜµÄÌæ´úº¯Êı£º<A  HREF="function.mysql-fetch-row.html"  ><B  CLASS="function" >mysql_fetch_row()</B
+></A
+>£¬<A  HREF="function.mysql-fetch-array.html"  ><B  CLASS="function" >mysql_fetch_array()</B
+></A
+>£¬<A  HREF="function.mysql-fetch-assoc.html"  ><B  CLASS="function" >mysql_fetch_assoc()</B
+></A
+>
+     ºÍ <A  HREF="function.mysql-fetch-object.html"  ><B  CLASS="function" >mysql_fetch_object()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-real-escape-string.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-select-db.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_real_escape_string</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_select_db</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-real-escape-string.html">mysql_real_escape_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-select-db.html">mysql_select_db</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-result" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_result</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_result</span> &mdash; <span class="dc-title">å–å¾—ç»“æœæ•°æ®</span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.mysql-result-unknown-unknown-seealsq">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>mysql_result</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>
-     [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$field</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>mysql_result()</strong></span> è¿”å› MySQL
-     ç»“æœé›†ä¸­ä¸€ä¸ªå•å…ƒçš„å†…å®¹ã€‚å­—æ®µå‚æ•°å¯ä»¥æ˜¯å­—æ®µçš„åç§»é‡æˆ–è€…å­—æ®µåï¼Œæˆ–è€…æ˜¯å­—æ®µè¡¨ç‚¹å­—æ®µåï¼ˆtablename.fieldnameï¼‰ã€‚å¦‚æœç»™åˆ—èµ·äº†åˆ«åï¼ˆ&#039;select
-     foo as bar from...&#039;ï¼‰ï¼Œåˆ™ç”¨åˆ«åæ›¿ä»£åˆ—åã€‚
-    </p>
-    <p class="para">
-     å½“ä½œç”¨äºå¾ˆå¤§çš„ç»“æœé›†æ—¶ï¼Œåº”è¯¥è€ƒè™‘ä½¿ç”¨èƒ½å¤Ÿå–å¾—æ•´è¡Œçš„å‡½æ•°ï¼ˆåœ¨ä¸‹è¾¹æŒ‡å‡ºï¼‰ã€‚è¿™äº›å‡½æ•°åœ¨ä¸€æ¬¡å‡½æ•°è°ƒç”¨ä¸­è¿”å›äº†å¤šä¸ªå•å…ƒçš„å†…å®¹ï¼Œæ¯”
-     <span class="function"><strong>mysql_result()</strong></span>
-     å¿«å¾—å¤šã€‚æ­¤å¤–æ³¨æ„åœ¨å­—æ®µå‚æ•°ä¸­æŒ‡å®šæ•°å­—åç§»é‡æ¯”æŒ‡å®šå­—æ®µåæˆ–è€…
-     tablename.fieldname è¦å¿«å¾—å¤šã€‚
-    </p>
-    <p class="para">
-     è°ƒç”¨ <span class="function"><strong>mysql_result()</strong></span>
-     ä¸èƒ½å’Œå…¶å®ƒå¤„ç†ç»“æœé›†çš„å‡½æ•°æ··åˆè°ƒç”¨ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-1734">
-      <p><strong>Example #1 <span class="function"><strong>mysql_result()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mysql_user"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mysql_password"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;name&nbsp;FROM&nbsp;work.employee"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;query:&nbsp;.&nbsp;mysql_error());<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;mysql_result(</span><span style="color: #0000BB">$result</span><span style="color: #DD0000">,2);&nbsp;//&nbsp;outputs&nbsp;third&nbsp;employee's&nbsp;name<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;mysql_close(</span><span style="color: #0000BB">$link</span><span style="color: #DD0000">);<br />?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     æ¨èä½¿ç”¨é«˜æ€§èƒ½çš„æ›¿ä»£å‡½æ•°ï¼š<span class="function"><a href="function.mysql-fetch-row.html" class="function">mysql_fetch_row()</a></span>ï¼Œ<span class="function"><a href="function.mysql-fetch-array.html" class="function">mysql_fetch_array()</a></span>ï¼Œ<span class="function"><a href="function.mysql-fetch-assoc.html" class="function">mysql_fetch_assoc()</a></span>
-     å’Œ <span class="function"><a href="function.mysql-fetch-object.html" class="function">mysql_fetch_object()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-real-escape-string.html">mysql_real_escape_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-select-db.html">mysql_select_db</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

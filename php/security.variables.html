@@ -1,72 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>用户提交的数据</title>
+<HTML  ><HEAD  ><TITLE  >�û��ύ������</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="��ȫ" HREF="http://shouce.jb51.net/php/security.index.html"><LINK  REL="PREVIOUS" TITLE="Using Register Globals" HREF="security.registerglobals.html"><LINK  REL="NEXT" TITLE="���� PHP" HREF="security.hiding.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="security.registerglobals.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >�� 15. ��ȫ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="security.hiding.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="security.variables" ></A
+>�û��ύ������</H1
+><P  >&#13;    The greatest weakness in many PHP programs is not inherent in the
+    language itself, but merely an issue of code not being written with
+    security in mind. For this reason, you should always take the time
+    to consider the implications of a given piece of code, to ascertain
+    the possible damage if an unexpected variable is submitted to it.
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6325" ></A
+><P  ><B  >���� 15-17. Σ�յı����÷�</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// remove a file from the user's home directory... or maybe<br  />// somebody else's?<br  /></font><font  color="#0000BB">unlink </font><font  color="#007700">(</font><font  color="#0000BB">$evil_var</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Write logging of their access... or maybe an /etc/passwd entry?<br  /></font><font  color="#0000BB">fputs </font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">$evil_var</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Execute something trivial.. or rm -rf *?<br  /></font><font  color="#0000BB">system </font><font  color="#007700">(</font><font  color="#0000BB">$evil_var</font><font  color="#007700">);<br  /></font><font  color="#0000BB">exec </font><font  color="#007700">(</font><font  color="#0000BB">$evil_var</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    You should always carefully examine your code to make sure that any
+    variables being submitted from a web browser are being properly
+    checked, and ask yourself the following questions:
+    <P  ></P
+><UL  ><LI  ><P  >&#13;       Will this script only affect the intended files?
+      </P
+></LI
+><LI  ><P  >&#13;       Can unusual or undesirable data be acted upon?
+      </P
+></LI
+><LI  ><P  >&#13;       Can this script be used in unintended ways?
+      </P
+></LI
+><LI  ><P  >&#13;       Can this be used in conjunction with other scripts in a negative
+       manner?
+      </P
+></LI
+><LI  ><P  >&#13;       Will any transactions be adequately logged?
+      </P
+></LI
+></UL
+>
+    By adequately asking these questions while writing the script,
+    rather than later, you prevent an unfortunate re-write when you
+    need to increase your security. By starting out with this mindset,
+    you won't guarantee the security of your system, but you can help
+    improve it.
+   </P
+><P  >&#13;    You may also want to consider turning off register_globals,
+    magic_quotes, or other convenience settings which may confuse
+    you as to the validity, source, or value of a given variable.
+    Working with PHP in error_reporting(E_ALL) mode can also help warn
+    you about variables being used before they are checked or
+    initialized (so you can prevent unusual data from being
+    operated upon).
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="security.registerglobals.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="security.hiding.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Using Register Globals</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/security.index.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >���� PHP</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.globals.html">使用 Register Globals</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.magicquotes.html">魔术引号</a></div>
- <div class="up"><a href="security.html">安全</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="security.variables" class="chapter">
-   <h1>用户提交的数据</h1>
 
-   <p class="para">
-    很多 PHP 程序所存在的重大弱点并不是 PHP
-    语言本身的问题，而是编程者的安全意识不高而导致的。因此，必须时时注意每一段代码可能存在的问题，去发现非正确数据提交时可能造成的影响。
-    <div class="example" id="example-358">
-     <p><strong>Example #1 危险的变量用法</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;从用户目录中删除一个文件，或者……能删除更多的东西？<br /></span><span style="color: #0000BB">unlink&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;记录用户的登陆，或者……能否在&nbsp;/etc/passwd&nbsp;添加数据？<br /></span><span style="color: #0000BB">fwrite&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;执行一些普通的命令，或者……可以执行&nbsp;rm&nbsp;-rf&nbsp;*&nbsp;？<br /></span><span style="color: #0000BB">system&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">exec&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$evil_var</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    必须时常留意你的代码，以确保每一个从客户端提交的变量都经过适当的检查，然后问自己以下一些问题：
-    <ul class="itemizedlist">
-     <li class="listitem">
-      <span class="simpara">
-       此脚本是否只能影响所预期的文件？
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       非正常的数据被提交后能否产生作用？
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       此脚本能用于计划外的用途吗？
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       此脚本能否和其它脚本结合起来做坏事？
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       是否所有的事务都被充分记录了？
-      </span>
-     </li>
-    </ul>
-    在写代码的时候问自己这些问题，否则以后可能要为了增加安全性而重写代码了。注意了这些问题的话，也许还不完全能保证系统的安全，但是至少可以提高安全性。
-   </p>
-   <p class="para">
-    还可以考虑关闭 register_globals，magic_quotes
-    或者其它使编程更方便但会使某个变量的合法性，来源和其值被搞乱的设置。在开发时，可以使用 error_reporting(E_ALL)
-    模式帮助检查变量使用前是否有被检查或被初始化，这样就可以防止某些非正常的数据的挠乱了。
-   </p>
-  </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.globals.html">使用 Register Globals</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.magicquotes.html">魔术引号</a></div>
- <div class="up"><a href="security.html">安全</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

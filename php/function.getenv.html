@@ -1,104 +1,81 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取一个环境变量的值</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-required-files.html">get_required_files</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.getlastmod.html">getlastmod</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.getenv" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">getenv</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">getenv</span> &mdash; <span class="dc-title">获取一个环境变量的值</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.getenv-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>getenv</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$varname</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   获取一个环境变量的值。
-  </p>
-  <p class="para">
-   使用 <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> 你可以看到所有环境变量的列表。
-   这些变量很多都在 <a href="http://www.faqs.org/rfcs/rfc3875" class="link external">&raquo;&nbsp;RFC 3875</a> 的范围之内，
-   尤其是章节4.1，&quot;Request Meta-Variables&quot;。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.getenv-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">varname</code></dt>
-
-     <dd>
-
-      <p class="para">
-       变量名。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.getenv-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回环境变量 <code class="parameter">varname</code> 的值，
-   如果环境变量 <code class="parameter">varname</code> 不存在则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.getenv-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-486">
-    <p><strong>Example #1 <span class="function"><strong>getenv()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;getenv()&nbsp;使用示例<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;或简单仅使用全局变量（$_SERVER&nbsp;或&nbsp;$_ENV）<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >getenv</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="get_required_files" HREF="function.get-required-files.html"><LINK  REL="NEXT" TITLE="getlastmod" HREF="function.getlastmod.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.get-required-files.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.getlastmod.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.getenv" ></A
+>getenv</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN88082" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>getenv&nbsp;--&nbsp;Gets the value of an environment variable</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN88085" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >getenv</B
+> ( string varname)<BR  ></BR
+><P  >&#13;     Returns the value of the environment variable
+     <TT  CLASS="parameter" ><I  >varname</I
+></TT
+>, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on an error.
+     <DIV  CLASS="informalexample" ><A  NAME="AEN88096" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$ip </font><font  color="#007700">= </font><font  color="#0000BB">getenv</font><font  color="#007700">(</font><font  color="#DD0000">"REMOTE_ADDR"</font><font  color="#007700">); </font><font  color="#FF8000">// get the ip number of the user<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     You can see a list of all the environmental variables by using
+     <A  HREF="function.phpinfo.html"  ><B  CLASS="function" >phpinfo()</B
+></A
+>. You can find out what many of them
+     mean by taking a look at the <A  href="http://hoohoo.ncsa.uiuc.edu/cgi/"  TARGET="_top" >CGI
+     specification</A
+>, specifically the <A  href="http://hoohoo.ncsa.uiuc.edu/cgi/env.html"  TARGET="_top" >page on environmental variables</A
+>.
+    </P
+><P  >&#13;     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+       This function does not work in ISAPI mode.
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.putenv.html"  ><B  CLASS="function" >putenv()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.get-required-files.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.getlastmod.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >get_required_files</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >getlastmod</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.getenv-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.putenv.html" class="function" rel="rdfs-seeAlso">putenv()</a> - 设置环境变量的值</span></li>
-    <li class="member"><span class="function"><a href="function.apache-getenv.html" class="function" rel="rdfs-seeAlso">apache_getenv()</a> - 获取 Apache subprocess_env 变量</span></li>
-    <li class="member"><a href="language.variables.superglobals.html" class="link">超全局变量</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-required-files.html">get_required_files</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.getlastmod.html">getlastmod</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

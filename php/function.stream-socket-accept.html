@@ -1,132 +1,99 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>接受由 stream_socket_server 创建的套接字连接</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-set-write-buffer.html">stream_set_write_buffer</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-socket-client.html">stream_socket_client</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-socket-accept" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_socket_accept</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">stream_socket_accept</span> &mdash; <span class="dc-title">接受由 <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> 创建的套接字连接</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.stream-socket-accept-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>stream_socket_accept</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$server_socket</code></span>
-   [, <span class="methodparam"><span class="type">float</span> <code class="parameter">$timeout</code><span class="initializer"> = ini_get(&quot;default_socket_timeout&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$peername</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   接受由 <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> 创建的套接字连接。
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.stream-socket-accept-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">server_socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-       需要接受的服务器创建的套接字连接。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">timeout</code></dt>
-
-     <dd>
-
-      <p class="para">
-       覆盖默认的套接字接受的超时时限。输入的时间需以秒为单位。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">peername</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果包含该参数并且是可以从选中的传输数据中获取到，则将被设置给连接中的客户端主机的名称（地址）（怕出入很大，附带上原文：Will be set to the name (address) of the client which connected, if
-       included and available from the selected transport.）
-
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        也可以之后通过 <span class="function"><a href="function.stream-socket-get-name.html" class="function">stream_socket_get_name()</a></span> 来确定。
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.stream-socket-accept-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回接受套接之后的资源流  或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stream_socket_accept</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_set_write_buffer" HREF="function.stream-set-write-buffer.html"><LINK  REL="NEXT" TITLE="stream_socket_client" HREF="function.stream-socket-client.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-set-write-buffer.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-socket-client.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-socket-accept" ></A
+>stream_socket_accept</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN106870" ></A
+><P  >    (PHP 5 CVS only)</P
+>stream_socket_accept&nbsp;--&nbsp;
+     Accept a connection on a socket created by <A  HREF="function.stream-socket-server.html"  ><B  CLASS="function" >stream_socket_server()</B
+></A
+>
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN106874" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >stream_socket_accept</B
+> ( resource server_socket [, int timeout [, string &#38;peername]])<BR  ></BR
+><P  >&#13;     Accept a connection on a socket previously created by
+     <A  HREF="function.stream-socket-server.html"  ><B  CLASS="function" >stream_socket_server()</B
+></A
+>.  If
+     <TT  CLASS="parameter" ><I  >timeout</I
+></TT
+> is specified, the default
+     socket accept timeout will be overridden with the time 
+     specified in seconds.  The name (address) of the client
+     which connected will be passed back in <TT  CLASS="parameter" ><I  >peername</I
+></TT
+>
+     if included and available from the selected transport.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >peername</I
+></TT
+> can also be determined later
+     using <A  HREF="function.stream-socket-get-name.html"  ><B  CLASS="function" >stream_socket_get_name()</B
+></A
+>.
+    </P
+><P  >&#13;     If the call fails, it will return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >&#13;     See also <A  HREF="function.stream-socket-server.html"  ><B  CLASS="function" >stream_socket_server()</B
+></A
+>, 
+     <A  HREF="function.stream-socket-get-name.html"  ><B  CLASS="function" >stream_socket_get_name()</B
+></A
+>,
+     <A  HREF="function.stream-set-blocking.html"  ><B  CLASS="function" >stream_set_blocking()</B
+></A
+>,
+     <A  HREF="function.stream-set-timeout.html"  ><B  CLASS="function" >stream_set_timeout()</B
+></A
+>, 
+     <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>,
+     <A  HREF="function.fgetss.html"  ><B  CLASS="function" >fgetss()</B
+></A
+>, <A  HREF="function.fputs.html"  ><B  CLASS="function" >fputs()</B
+></A
+>,
+     <A  HREF="function.fclose.html"  ><B  CLASS="function" >fclose()</B
+></A
+>, <A  HREF="function.feof.html"  ><B  CLASS="function" >feof()</B
+></A
+>, and
+     the <A  HREF="ref.curl.html"  >Curl extension</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-set-write-buffer.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-socket-client.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_set_write_buffer</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_socket_client</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.stream-socket-accept-notes">
-  <h3 class="title">注释</h3>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    该函数不能被用于 UDP 套接字。可以使用 <span class="function"><a href="function.stream-socket-recvfrom.html" class="function">stream_socket_recvfrom()</a></span> 和
-    <span class="function"><a href="function.stream-socket-sendto.html" class="function">stream_socket_sendto()</a></span> 来取而代之。
-   </p>
- </div>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.stream-socket-accept-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.stream-socket-server.html" class="function" rel="rdfs-seeAlso">stream_socket_server()</a> - Create an Internet or Unix domain server socket</span></li>
-    <li class="member"><span class="function"><a href="function.stream-socket-get-name.html" class="function" rel="rdfs-seeAlso">stream_socket_get_name()</a> - 获取本地或者远程的套接字名称</span></li>
-    <li class="member"><span class="function"><a href="function.stream-set-blocking.html" class="function" rel="rdfs-seeAlso">stream_set_blocking()</a> - 为资源流设置阻塞或者阻塞模式</span></li>
-    <li class="member"><span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - Set timeout period on a stream</span></li>
-    <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - 从文件指针中读取一行</span></li>
-    <li class="member"><span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - 从文件指针中读取一行并过滤掉 HTML 标记</span></li>
-    <li class="member"><span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - 写入文件（可安全用于二进制文件）</span></li>
-    <li class="member"><span class="function"><a href="function.fclose.html" class="function" rel="rdfs-seeAlso">fclose()</a> - 关闭一个已打开的文件指针</span></li>
-    <li class="member"><span class="function"><a href="function.feof.html" class="function" rel="rdfs-seeAlso">feof()</a> - 测试文件指针是否到了文件结束的位置</span></li>
-    <li class="member"><a href="ref.curl.html" class="xref">cURL 函数</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-set-write-buffer.html">stream_set_write_buffer</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-socket-client.html">stream_socket_client</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,37 +1,60 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>数据库</title>
+<HTML  ><HEAD  ><TITLE  >Databases</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Migrating from PHP 4 to PHP 5" HREF="migration5.html"><LINK  REL="PREVIOUS" TITLE="New Directives" HREF="migration5.newconf.html"><LINK  REL="NEXT" TITLE="New Object Model" HREF="migration5.oop.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="migration5.newconf.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ B. Migrating from PHP 4 to PHP 5</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration5.oop.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.databases" ></A
+>Databases</H1
+><P  >&#13;    There were some changes in PHP 5 regarding databases (MySQL and SQLite).
+   </P
+><P  >&#13;    In PHP 5 the MySQL client libraries are not bundled, because of licence
+    problems and some others. For more information, read the <A  HREF="faq.databases.html#faq.databases.mysql.php5"  >FAQ entry</A
+>.
+   </P
+><P  >&#13;    There is also a new extension, <A  HREF="ref.mysqli.html"  >MySQLi (Improved
+     MySQL)</A
+>, which is designed to work with MySQL 4.1 and above.
+   </P
+><P  >&#13;    Since PHP 5, the <A  HREF="ref.sqlite.html"  >SQLite</A
+> extension is
+    built-in PHP. SQLite is embeddable SQL database engine and is not a
+    client library used to connect to a big database server (like MySQL or
+    PostgreSQL). The SQLite library reads and writes directly to and from the
+    database files on disk.
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+     The <A  HREF="ref.tidy.html"  >Tidy</A
+> extension has also changed its
+     API completly.
+    </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="migration5.newconf.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration5.oop.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >New Directives</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="migration5.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >New Object Model</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.newconf.html">新指令</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.oop.html">新对象模型</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5.databases" class="section">
-   <h2 class="title">数据库</h2>
-   <p class="para">
-    关于数据库（MySQL 和 SQLite）在 PHP 5 中有些改变。
-   </p>
-   <p class="para">
-    PHP 5 中不再绑定 MySQL 客户端连接库，因为授权和一些其它问题。更多信息见
-    <a href="faq.databases.html#faq.databases.mysql.php5" class="link">FAQ</a>。
-   </p>
-   <p class="para">
-    有个新扩展库 <a href="ref.mysqli.html" class="link">MySQLi（改良版
-    MySQL）</a>，设计用来工作于 MySQL 4.1 及更高版本之下。
-   </p>
-   <p class="para">
-    自 PHP 5 起，<a href="ref.sqlite.html" class="link">SQLite</a> 扩展库内置在
-    PHP 中。SQLite 是一个可嵌入 SQL
-    数据库引擎，不是客户端连接库用来连接大型数据库服务器（如 MySQL 或
-    PostgreSQL）的。SQLite 库直接读写磁盘上的数据库文件。
-   </p>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.newconf.html">新指令</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.oop.html">新对象模型</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,138 +1,112 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç¼–ç  URL å­—ç¬¦ä¸²</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.urldecode.html">urldecode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.v8js.html">V8js</a></div>
- <div class="up"><a href="ref.url.html">URL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.urlencode" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">urlencode</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">urlencode</span> &mdash; <span class="dc-title">ç¼–ç  URL å­—ç¬¦ä¸²</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.urlencode-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>urlencode</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   )</div>
-
-    <p class="para rdfs-comment">
-     æ­¤å‡½æ•°ä¾¿äºå°†å­—ç¬¦ä¸²ç¼–ç å¹¶å°†å…¶ç”¨äº URL çš„è¯·æ±‚éƒ¨åˆ†ï¼ŒåŒæ—¶å®ƒè¿˜ä¾¿äºå°†å˜é‡ä¼ é€’ç»™ä¸‹ä¸€é¡µã€‚
-    </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.urlencode-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦ç¼–ç çš„å­—ç¬¦ä¸²ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.urlencode-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-    è¿”å›å­—ç¬¦ä¸²ï¼Œæ­¤å­—ç¬¦ä¸²ä¸­é™¤äº†
-   <em>-_.</em> 
-   ä¹‹å¤–çš„æ‰€æœ‰éå­—æ¯æ•°å­—å­—ç¬¦éƒ½å°†è¢«æ›¿æ¢æˆç™¾åˆ†å·ï¼ˆ<em>%</em>ï¼‰åè·Ÿä¸¤ä½åå…­è¿›åˆ¶æ•°ï¼Œç©ºæ ¼åˆ™ç¼–ç ä¸ºåŠ å·ï¼ˆ<em>+</em>ï¼‰ã€‚æ­¤ç¼–ç ä¸ WWW
-   è¡¨å• POST æ•°æ®çš„ç¼–ç æ–¹å¼æ˜¯ä¸€æ ·çš„ï¼ŒåŒæ—¶ä¸
-   <em>application/x-www-form-urlencoded</em>
-   çš„åª’ä½“ç±»å‹ç¼–ç æ–¹å¼ä¸€æ ·ã€‚ç”±äºå†å²åŸå› ï¼Œæ­¤ç¼–ç åœ¨å°†ç©ºæ ¼ç¼–ç ä¸ºåŠ å·ï¼ˆ+ï¼‰æ–¹é¢ä¸
-   RFC1738 ç¼–ç ï¼ˆå‚è§
-   <span class="function"><a href="function.rawurlencode.html" class="function">rawurlencode()</a></span>ï¼‰ä¸åŒã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.urlencode-examples">
-  <h3 class="title">èŒƒä¾‹</h3> 
-  <p class="para">  
-   <div class="example" id="example-4399">
-    <p><strong>Example #1 <span class="function"><strong>urlencode()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="mycgi?foo='</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$userinput</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-4400">
-    <p><strong>Example #2 <span class="function"><strong>urlencode()</strong></span> ä¸ <span class="function"><a href="function.htmlentities.html" class="function">htmlentities()</a></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$query_string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'&amp;bar='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="mycgi?'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$query_string</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'"&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.urlencode-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-       æ³¨æ„ï¼šå°å¿ƒä¸ HTML å®ä½“ç›¸åŒ¹é…çš„å˜é‡ã€‚åƒ
-   &amp;ampã€&amp;copy å’Œ &amp;pound 
-   éƒ½å°†è¢«æµè§ˆå™¨è§£æï¼Œå¹¶ä½¿ç”¨å®é™…å®ä½“æ›¿ä»£æ‰€æœŸå¾…çš„å˜é‡åã€‚è¿™æ˜¯æ˜æ˜¾çš„æ··ä¹±ï¼ŒW3C
-   å·²ç»å‘Šè¯«äººä»¬å¥½å‡ å¹´äº†ã€‚å‚è€ƒåœ°å€ï¼š<a href="http://www.w3.org/TR/html4/appendix/notes.html#h-B.2.2" class="link external">&raquo;&nbsp;http://www.w3.org/TR/html4/appendix/notes.html#h-B.2.2</a>ã€‚
-   </p>
-   <p class="para">
-    PHP
-   é€šè¿‡ arg_separator.ini æŒ‡ä»¤ï¼Œæ”¯æŒå°†å‚æ•°åˆ†å‰²ç¬¦å˜æˆ W3C 
-   æ‰€å»ºè®®çš„åˆ†å·ã€‚ä¸å¹¸çš„æ˜¯å¤§å¤šæ•°ç”¨æˆ·ä»£ç†å¹¶ä¸å‘é€åˆ†å·åˆ†éš”ç¬¦æ ¼å¼çš„è¡¨å•æ•°æ®ã€‚è¾ƒä¸ºç®€å•çš„è§£å†³åŠæ³•æ˜¯ä½¿ç”¨
-   &amp;amp; ä»£æ›¿ &amp; ä½œä¸ºåˆ†éš”ç¬¦ã€‚ä½ ä¸éœ€è¦ä¸ºæ­¤ä¿®æ”¹ PHP
-   çš„ arg_separatorã€‚è®©å®ƒä»ä¸º &amp;ï¼Œè€Œä»…ä½¿ç”¨ <span class="function"><a href="function.htmlentities.html" class="function">htmlentities()</a></span>
-   æˆ– <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span> å¯¹ä½ çš„ URL è¿›è¡Œç¼–ç ã€‚
-   </p>
-  </p></blockquote>
- </div>
+<HTML  ><HEAD  ><TITLE  >urlencode</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="URL º¯Êı¿â" HREF="ref.url.html"><LINK  REL="PREVIOUS" TITLE="urldecode" HREF="function.urldecode.html"><LINK  REL="NEXT" TITLE="±äÁ¿º¯Êı¿â" HREF="ref.variables.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.urldecode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.variables.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.urlencode" ></A
+>urlencode</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115252" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>urlencode&nbsp;--&nbsp;±àÂë URL ×Ö·û´®</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115255" ></A
+><H2  >ÃèÊö</H2
+>string <B  CLASS="methodname" >urlencode</B
+> ( string str)<BR  ></BR
+><P  >&#13;     ·µ»Ø×Ö·û´®£¬´Ë×Ö·û´®ÖĞ³ıÁË
+     <TT  CLASS="literal" >-_.</TT
+> 
+     Ö®ÍâµÄËùÓĞ·Ç×ÖÄ¸Êı×Ö×Ö·û¶¼½«±»Ìæ»»³É°Ù·ÖºÅ£¨<TT  CLASS="literal" >%</TT
+>£©ºó¸úÁ½Î»Ê®Áù½øÖÆÊı£¬¿Õ¸ñÔò±àÂëÎª¼ÓºÅ£¨<TT  CLASS="literal" >+</TT
+>£©¡£´Ë±àÂëÓë WWW
+     ±íµ¥ POST Êı¾İµÄ±àÂë·½Ê½ÊÇÒ»ÑùµÄ£¬Í¬Ê±Óë
+     <TT  CLASS="literal" >application/x-www-form-urlencoded</TT
+>
+     µÄÃ½ÌåÀàĞÍ±àÂë·½Ê½Ò»Ñù¡£ÓÉÓÚÀúÊ·Ô­Òò£¬´Ë±àÂëÔÚ½«¿Õ¸ñ±àÂëÎª¼ÓºÅ£¨+£©·½ÃæÓë
+     RFC1738 ±àÂë£¨²Î¼û
+     <A  HREF="function.rawurlencode.html"  ><B  CLASS="function" >rawurlencode()</B
+></A
+>£©²»Í¬¡£´Ëº¯Êı±ãÓÚ½«×Ö·û´®±àÂë²¢½«ÆäÓÃÓÚ URL µÄÇëÇó²¿·Ö£¬Í¬Ê±Ëü»¹±ãÓÚ½«±äÁ¿´«µİ¸øÏÂÒ»Ò³£º
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115269" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >urlencode()</B
+> Ê¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'&lt;a href="mycgi?foo='</font><font  color="#007700">, </font><font  color="#0000BB">urlencode</font><font  color="#007700">(</font><font  color="#0000BB">$userinput</font><font  color="#007700">), </font><font  color="#DD0000">'"&gt;'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ×¢Òâ£ºĞ¡ĞÄÓë HTML ÊµÌåÏàÆ¥ÅäµÄ±äÁ¿¡£Ïñ
+     &#38;amp¡¢&#38;copy ºÍ &#38;pound 
+     ¶¼½«±»ä¯ÀÀÆ÷½âÎö£¬²¢Ê¹ÓÃÊµ¼ÊÊµÌåÌæ´úËùÆÚ´ıµÄ±äÁ¿Ãû¡£ÕâÊÇÃ÷ÏÔµÄ»ìÂÒ£¬W3C
+     ÒÑ¾­¸æ½ëÈËÃÇºÃ¼¸ÄêÁË¡£²Î¿¼µØÖ·£º<A  href="http://www.w3.org/TR/html4/appendix/notes.html#h-B.2.2"  TARGET="_top" >http://www.w3.org/TR/html4/appendix/notes.html#h-B.2.2</A
+>
+     PHP Í¨¹ı arg_separator .ini Ö¸Áî£¬Ö§³Ö½«²ÎÊı·Ö¸î·û±ä³É W3C 
+     Ëù½¨ÒéµÄ·ÖºÅ¡£²»ĞÒµÄÊÇ´ó¶àÊıÓÃ»§´úÀí²¢²»·¢ËÍ·ÖºÅ·Ö¸ô·û¸ñÊ½µÄ±íµ¥Êı¾İ¡£½ÏÎª¼òµ¥µÄ½â¾ö°ì·¨ÊÇÊ¹ÓÃ
+     &#38;amp; ´úÌæ &#38; ×÷Îª·Ö¸ô·û¡£Äã²»ĞèÒªÎª´ËĞŞ¸Ä PHP
+     µÄ arg_separator¡£ÈÃËüÈÔÎª &#38;£¬¶ø½öÊ¹ÓÃ
+     htmlentities(urlencode($data)) ¶ÔÄãµÄ URL ½øĞĞ±àÂë¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115276" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >urlencode()</B
+> Óë <A  HREF="function.htmlentities.html"  ><B  CLASS="function" >htmlentities()</B
+></A
+> Ê¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'&lt;a href="mycgi?foo='</font><font  color="#007700">, </font><font  color="#0000BB">htmlentities</font><font  color="#007700">(</font><font  color="#0000BB">urlencode</font><font  color="#007700">(</font><font  color="#0000BB">$userinput</font><font  color="#007700">)), </font><font  color="#DD0000">'"&gt;'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.urldecode.html"  ><B  CLASS="function" >urldecode()</B
+></A
+>¡¢<A  HREF="function.htmlentities.html"  ><B  CLASS="function" >htmlentities()</B
+></A
+>¡¢<A  HREF="function.rawurldecode.html"  ><B  CLASS="function" >rawurldecode()</B
+></A
+>
+     Óë <A  HREF="function.rawurlencode.html"  ><B  CLASS="function" >rawurlencode()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.urldecode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >urldecode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.url.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >±äÁ¿º¯Êı¿â</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.urlencode-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.urldecode.html" class="function" rel="rdfs-seeAlso">urldecode()</a> - è§£ç å·²ç¼–ç çš„ URL å­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.htmlentities.html" class="function" rel="rdfs-seeAlso">htmlentities()</a> - Convert all applicable characters to HTML entities</span></li>
-    <li class="member"><span class="function"><a href="function.rawurlencode.html" class="function" rel="rdfs-seeAlso">rawurlencode()</a> - æŒ‰ç…§ RFC 1738 å¯¹ URL è¿›è¡Œç¼–ç </span></li>
-    <li class="member"><span class="function"><a href="function.rawurldecode.html" class="function" rel="rdfs-seeAlso">rawurldecode()</a> - å¯¹å·²ç¼–ç çš„ URL å­—ç¬¦ä¸²è¿›è¡Œè§£ç </span></li>
-    <li class="member"><a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.urldecode.html">urldecode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.v8js.html">V8js</a></div>
- <div class="up"><a href="ref.url.html">URL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

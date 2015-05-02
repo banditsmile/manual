@@ -1,60 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>移植配置文件</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.cli-cgi.html">CLI 和 CGI</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.functions.html">新函数</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5.configuration" class="section">
-   <h2 class="title">移植配置文件</h2>
-   <p class="para">
-    由于 ISAPI 模块的名字改了，从 php4xxx 改为
-    php5xxx，因此需要对配置文件作些修改。CLI 和 CGI
-    文件名也改了。更多信息请查看<a href="migration5.cli-cgi.html" class="link">相应章节</a>。
-   </p>
-   <p class="para">
-    移植 Apache 配置极其简单。照下面的例子来检查需要做的修改：
-    <div class="example" id="example-5877">
-     <p><strong>Example #1 移植 Apache 配置文件到 PHP 5</strong></p>
-     <div class="example-contents">
-<div class="apache-confcode"><pre class="apache-confcode"># 将下面这行：
+<HTML  ><HEAD  ><TITLE  >Migrating Configuration Files</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Migrating from PHP 4 to PHP 5" HREF="migration5.html"><LINK  REL="PREVIOUS" TITLE="CLI and CGI" HREF="migration5.cli-cgi.html"><LINK  REL="NEXT" TITLE="New Functions" HREF="migration5.functions.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="migration5.cli-cgi.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ B. Migrating from PHP 4 to PHP 5</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration5.functions.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.configuration" ></A
+>Migrating Configuration Files</H1
+><P  >&#13;    Since the ISAPI modules changed their names, from php4xxx to php5xxx, you
+    need to make some changes in the configuration files. There were also
+    changes in the CLI and CGI filenames. Please refer to the <A  HREF="migration5.cli-cgi.html"  >corresponding section</A
+> for more
+    information.
+   </P
+><P  >&#13;    Migrate the Apache configuration is extremely easy. See the example below
+    to check the change you need to do:
+    <DIV  CLASS="informalexample" ><A  NAME="AEN126444" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="apache-conf" ># change this line:    
 LoadModule php4_module /php/sapi/php4apache2.dll
 
-# 改成这一行：
-LoadModule php5_module /php/php5apache2.dll</pre>
+# with this one:
+LoadModule php5_module /php/php5apache2.dll</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    If your webserver is running PHP in CGI mode, you should note that the
+    CGI version has changed its name from php.exe to php-cgi.exe.
+    In Apache you should do something like this:
+    <DIV  CLASS="informalexample" ><A  NAME="AEN126447" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="apache-conf" ># change this line:    
+Action application/x-httpd-php "/php/php.exe" 
+
+# with this one:
+Action application/x-httpd-php "/php/php-cgi.exe"</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    In other webservers you need to change either the CGI or the ISAPI module
+    filenames.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="migration5.cli-cgi.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration5.functions.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >CLI and CGI</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="migration5.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >New Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    如果 web 服务器是以 CGI 模式运行 PHP 的，应该注意 CGI 版本的名字从
-    <var class="filename">php.exe</var> 改为了
-    <var class="filename">php-cgi.exe</var>。在 Apache 中，应该照这样改：
-    <div class="example" id="example-5878">
-     <p><strong>Example #2 移植 Apache 配置文件到 PHP 5，CGI 模式</strong></p>
-     <div class="example-contents">
-<div class="apache-confcode"><pre class="apache-confcode"># 将下面这行：
-Action application/x-httpd-php &quot;/php/php.exe&quot;
-
-# 改成这一行：
-Action application/x-httpd-php &quot;/php/php-cgi.exe&quot;</pre>
-</div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    其它的 web 服务器中，需要修改 CGI 或者 ISAPI 模块的名字。
-   </p>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.cli-cgi.html">CLI 和 CGI</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.functions.html">新函数</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

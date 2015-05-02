@@ -1,193 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>调用回调函数，并把一个数组参数作为回调函数的参数</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.call-user-func.html">call_user_func</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.call-user-func-array" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">call_user_func_array</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.4, PHP 5)</p><p class="refpurpose"><span class="refname">call_user_func_array</span> &mdash; <span class="dc-title">调用回调函数，并把一个数组参数作为回调函数的参数</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.call-user-func-array-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>call_user_func_array</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$callback</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$param_arr</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-      把第一个参数作为回调函数（<code class="parameter">callback</code>）调用，把参数数组作（<code class="parameter">param_arr</code>）为回调函数的的参数传入。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.call-user-func-array-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">callback</code></dt>
-
-     <dd>
-
-      <p class="para">
-          被调用的回调函数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">param_arr</code></dt>
-
-     <dd>
-
-      <p class="para">
-          要被传入回调函数的数组，这个数组得是索引数组。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >call_user_func_array</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Function Handling Functions" HREF="ref.funchand.html"><LINK  REL="PREVIOUS" TITLE="Function Handling Functions" HREF="ref.funchand.html"><LINK  REL="NEXT" TITLE="call_user_func" HREF="function.call-user-func.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.funchand.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.call-user-func.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.call-user-func-array" ></A
+>call_user_func_array</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN32203" ></A
+><P  >    (PHP 4 &#62;= 4.0.4)</P
+>call_user_func_array&nbsp;--&nbsp;
+     Call a user function given with an array of parameters
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN32206" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >call_user_func_array</B
+> ( callback function [, array param_arr])<BR  ></BR
+><P  >&#13;     Call a user defined function given by
+     <TT  CLASS="parameter" ><I  >function</I
+></TT
+>, with
+     the parameters in <TT  CLASS="parameter" ><I  >param_arr</I
+></TT
+>.
+     For example:
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN32221" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">debug</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#0000BB">$val</font><font  color="#007700">) <br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"***DEBUGGING\nVARIABLE: $var\nVALUE:"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">is_array</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">) || </font><font  color="#0000BB">is_object</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">) || </font><font  color="#0000BB">is_resource</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"\n$val\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"***\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$c </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$host </font><font  color="#007700">= </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">"SERVER_NAME"</font><font  color="#007700">];<br  /><br  /></font><font  color="#0000BB">call_user_func_array</font><font  color="#007700">(</font><font  color="#DD0000">'debug'</font><font  color="#007700">, array(</font><font  color="#DD0000">"host"</font><font  color="#007700">, </font><font  color="#0000BB">$host</font><font  color="#007700">));<br  /></font><font  color="#0000BB">call_user_func_array</font><font  color="#007700">(</font><font  color="#DD0000">'debug'</font><font  color="#007700">, array(</font><font  color="#DD0000">"c"</font><font  color="#007700">, </font><font  color="#0000BB">$c</font><font  color="#007700">));<br  /></font><font  color="#0000BB">call_user_func_array</font><font  color="#007700">(</font><font  color="#DD0000">'debug'</font><font  color="#007700">, array(</font><font  color="#DD0000">"_POST"</font><font  color="#007700">, </font><font  color="#0000BB">$_POST</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     See also:
+     <A  HREF="function.call-user-func.html"  ><B  CLASS="function" >call_user_func()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.funchand.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.call-user-func.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Function Handling Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.funchand.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >call_user_func</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.call-user-func-array-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-      返回回调函数的结果。如果出错的话就返回<strong><code>FALSE</code></strong>
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.call-user-func-array-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-           对面向对象里面的关键字的解析有所增强。在此之前，使用双引号来来连接一个类和里面的一个方法，把之作为参数来作为回调函数的会，将会发出一个<strong><code>E_STRICT</code></strong>的警告，因为这个传入的参数被视为静态方法。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.call-user-func-array-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5414">
-    <p><strong>Example #1 <span class="function"><strong>call_user_func_array()</strong></span>例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foobar</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">__FUNCTION__</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&nbsp;got&nbsp;</span><span style="color: #0000BB">$arg</span><span style="color: #DD0000">&nbsp;and&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br />class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">__METHOD__</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&nbsp;got&nbsp;</span><span style="color: #0000BB">$arg</span><span style="color: #DD0000">&nbsp;and&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;Call&nbsp;the&nbsp;foobar()&nbsp;function&nbsp;with&nbsp;2&nbsp;arguments<br /></span><span style="color: #0000BB">call_user_func_array</span><span style="color: #007700">(</span><span style="color: #DD0000">"foobar"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"one"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"two"</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Call&nbsp;the&nbsp;$foo-&gt;bar()&nbsp;method&nbsp;with&nbsp;2&nbsp;arguments<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">call_user_func_array</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"three"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"four"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-foobar got one and two
-foo::bar got three and four
-</pre></div>
-    </div>
-   </div>
-   <div class="example" id="example-5415">
-    <p><strong>Example #2 <span class="function"><strong>call_user_func_array()</strong></span>使用命名空间的情况</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foobar</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">Foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$name</span><span style="color: #007700">}</span><span style="color: #DD0000">!\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;As&nbsp;of&nbsp;PHP&nbsp;5.3.0<br /></span><span style="color: #0000BB">call_user_func_array</span><span style="color: #007700">(</span><span style="color: #0000BB">__NAMESPACE__&nbsp;</span><span style="color: #007700">.</span><span style="color: #DD0000">'\Foo::test'</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'Hannes'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;As&nbsp;of&nbsp;PHP&nbsp;5.3.0<br /></span><span style="color: #0000BB">call_user_func_array</span><span style="color: #007700">(array(</span><span style="color: #0000BB">__NAMESPACE__&nbsp;</span><span style="color: #007700">.</span><span style="color: #DD0000">'\Foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'test'</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">'Philip'</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Hello Hannes!
-Hello Philip!
-</pre></div>
-    </div>
-   </div>
-   <div class="example" id="example-5416">
-    <p><strong>Example #3 把完整的函数作为回调传入<span class="function"><strong>call_user_func_array()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$func&nbsp;</span><span style="color: #007700">=&nbsp;function(</span><span style="color: #0000BB">$arg1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$arg1&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #007700">;<br />};<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">call_user_func_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$func</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">)));&nbsp;</span><span style="color: #FF8000">/*&nbsp;As&nbsp;of&nbsp;PHP&nbsp;5.3.0&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-int(8)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.call-user-func-array-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-       PHP 5.4之前，如果<code class="parameter">param_arr</code>里面的参数是引用传值，那么不管原函数默认的各个参数是不是引用传值，都会以引用方式传入到回调函数。虽然以引用传值这种方式来传递参数给回调函数，不会发出不支持的警告，但是不管怎么说，这样做还是不被支持的。并且在PHP 5.4里面被去掉了。而且，这也不适用于内部函数，for which the function signature is honored。如果回调函数默认设置需要接受的参数是引用传递的时候，按值传递，结果将会输出一个警告。<span class="function"><a href="function.call-user-func.html" class="function">call_user_func()</a></span> 将会返回 <strong><code>FALSE</code></strong>（there is, however, an exception for passed values with reference count = 1, such as in literals, as these can be turned into references without ill effects — but also without writes to that value having any effect —; do not rely in this behavior, though, as the reference count is an implementation detail and the soundness of this behavior is questionable）。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">在函数中注册有多个回调内容时(如使用
-<span class="function"><a href="function.call-user-func.html" class="function">call_user_func()</a></span> 与 <span class="function"><strong>call_user_func_array()</strong></span>)，如在前一个回调中有未捕获的异常，其后的将不再被调用。</p></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.call-user-func-array-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.call-user-func.html" class="function" rel="rdfs-seeAlso">call_user_func()</a> - 把第一个参数作为回调函数调用</span></li>
-    <li class="member"><a href="language.pseudo-types.html#language.types.callback" class="link">callback</a> 类型的信息</li>
-    <li class="member"><span class="methodname"><a href="reflectionfunction.invokeargs.html" class="methodname" rel="rdfs-seeAlso">ReflectionFunction::invokeArgs()</a> - Invokes function args</span></li>
-    <li class="member"><span class="methodname"><a href="reflectionmethod.invokeargs.html" class="methodname" rel="rdfs-seeAlso">ReflectionMethod::invokeArgs()</a> - 带参数执行</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.call-user-func.html">call_user_func</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

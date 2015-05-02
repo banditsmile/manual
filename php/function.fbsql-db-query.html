@@ -1,109 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Send a FrontBase query</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-database.html">fbsql_database</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-db-status.html">fbsql_db_status</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-db-query" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_db_query</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_db_query</span> &mdash; <span class="dc-title">Send a FrontBase query</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fbsql-db-query-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>fbsql_db_query</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Selects a database and executes a query on it. 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fbsql-db-query-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">database</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The database to be selected.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">query</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The SQL query to be executed.
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        The query string shall always end with a semicolon.
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para">由
-<span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 或
-<span class="function"><a href="function.fbsql-pconnect.html" class="function">fbsql_pconnect()</a></span> 返回的 FrontBase 链接标识符.</p>
-<p class="para">如可选并未指定，函数会尝试查找一个到 FrontBase 服务器的开放链接，且如没有找到这样的链接，会尝试通过不带参数调用 <span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 来创建一个。</p>
-</dd>
-
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fbsql_db_query</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_database" HREF="function.fbsql-database.html"><LINK  REL="NEXT" TITLE="fbsql_db_status" HREF="function.fbsql-db-status.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fbsql-database.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-db-status.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-db-query" ></A
+>fbsql_db_query</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN26020" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>fbsql_db_query&nbsp;--&nbsp;Send a FrontBase query</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN26023" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >fbsql_db_query</B
+> ( string database, string query [, resource link_identifier])<BR  ></BR
+><P  > 
+     Returns: A positive FrontBase result identifier to the query
+     result, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  > 
+     <B  CLASS="function" >fbsql_db_query()</B
+> selects a database and
+     executes a query on it.  If the optional link identifier isn't
+     specified, the function will try to find an open link to the
+     FrontBase server and if no such link is found it'll try to create
+     one as if <A  HREF="function.fbsql-connect.html"  ><B  CLASS="function" >fbsql_connect()</B
+></A
+> was called with no
+     arguments
+    </P
+><P  > 
+     See also <A  HREF="function.fbsql-connect.html"  ><B  CLASS="function" >fbsql_connect()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fbsql-database.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-db-status.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_database</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_db_status</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.fbsql-db-query-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns a positive FrontBase result identifier to the query result, or
-   <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fbsql-db-query-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fbsql-query.html" class="function" rel="rdfs-seeAlso">fbsql_query()</a> - Send a FrontBase query</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-connect.html" class="function" rel="rdfs-seeAlso">fbsql_connect()</a> - Open a connection to a FrontBase Server</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-database.html">fbsql_database</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-db-status.html">fbsql_db_status</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,174 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è§£æä¸€ä¸ªé…ç½®æ–‡ä»¶</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.move-uploaded-file.html">move_uploaded_file</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.parse-ini-string.html">parse_ini_string</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.parse-ini-file" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">parse_ini_file</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">parse_ini_file</span> &mdash; <span class="dc-title">è§£æä¸€ä¸ªé…ç½®æ–‡ä»¶</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.parse-ini-file-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>parse_ini_file</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$process_sections</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$scanner_mode</code><span class="initializer"> = INI_SCANNER_NORMAL</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>parse_ini_file()</strong></span> è½½å…¥ä¸€ä¸ªç”±
-   <code class="parameter">filename</code> æŒ‡å®šçš„ ini
-   æ–‡ä»¶ï¼Œå¹¶å°†å…¶ä¸­çš„è®¾ç½®ä½œä¸ºä¸€ä¸ªè”åˆæ•°ç»„è¿”å›ã€‚
-  </p>
-  <p class="para">
-   ini æ–‡ä»¶çš„ç»“æ„å’Œ <var class="filename">php.ini</var> çš„ç›¸ä¼¼ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.parse-ini-file-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦è§£æçš„ ini æ–‡ä»¶çš„æ–‡ä»¶åã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">process_sections</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœå°†æœ€åçš„
-   <code class="parameter">process_sections</code> å‚æ•°è®¾ä¸º
-   <strong><code>TRUE</code></strong>ï¼Œå°†å¾—åˆ°ä¸€ä¸ªå¤šç»´æ•°ç»„ï¼ŒåŒ…æ‹¬äº†é…ç½®æ–‡ä»¶ä¸­æ¯ä¸€èŠ‚çš„åç§°å’Œè®¾ç½®ã€‚<code class="parameter">process_sections</code>
-   çš„é»˜è®¤å€¼æ˜¯ <strong><code>FALSE</code></strong>ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">scanner_mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Can either be <strong><code>INI_SCANNER_NORMAL</code></strong> (default) or 
-       <strong><code>INI_SCANNER_RAW</code></strong>. If <strong><code>INI_SCANNER_RAW</code></strong> 
-       is supplied, then option values will not be parsed.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.parse-ini-file-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶ä»¥å…³è”æ•°ç»„ <span class="type"><a href="language.types.array.html" class="type array">array</a></span> è¿”å›è®¾ç½®ï¼Œå¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- 
- <div class="refsect1 changelog" id="refsect1-function.parse-ini-file-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-         Added optional <code class="parameter">scanner_mode</code> parameter.
-         Single quotes may now be used around variable assignments.
-         Hash marks (<em>#</em>) may no longer be used as comments
-         and will throw a deprecation warning if used.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.2.7</td>
-       <td>
-        On syntax error this function will return <strong><code>FALSE</code></strong> rather than an empty
-        array.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.2.4</td>
-       <td>
-        ç”±æ•°å­—ç»„æˆçš„é”®åå’Œå°èŠ‚åä¼šè¢« PHP å½“ä½œ<a href="language.types.integer.html" class="link">æ•´æ•°</a>æ¥å¤„ç†ï¼Œå› æ­¤ä»¥
-   0 å¼€å¤´çš„æ•°å­—ä¼šè¢«å½“ä½œå…«è¿›åˆ¶è€Œä»¥ 0x å¼€å¤´çš„ä¼šè¢«å½“ä½œåå…­è¿›åˆ¶ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        è¯¥å‡½æ•°ä¹Ÿå¼€å§‹å¤„ç†é€‰é¡¹å€¼å†…çš„æ–°è¡Œã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.2.1</td>
-       <td>
-        æœ¬å‡½æ•°ä¹Ÿå¼€å§‹å—åˆ°<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">å®‰å…¨æ¨¡å¼</a>å’Œ
-    <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> çš„å½±å“ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.parse-ini-file-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2511">
-    <p><strong>Example #1 <var class="filename">sample.ini</var> çš„å†…å®¹</strong></p>
-    <div class="example-contents">
-<div class="cdata"><pre>
-; This is a sample configuration file
-; Comments start with &#039;;&#039;, as in php.ini
+<HTML  ><HEAD  ><TITLE  >parse_ini_file</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="move_uploaded_file" HREF="function.move-uploaded-file.html"><LINK  REL="NEXT" TITLE="pathinfo" HREF="function.pathinfo.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.move-uploaded-file.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pathinfo.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.parse-ini-file" ></A
+>parse_ini_file</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29349" ></A
+><P  >    (PHP 4 )</P
+>parse_ini_file&nbsp;--&nbsp;½âÎöÒ»¸öÅäÖÃÎÄ¼ş</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29352" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >parse_ini_file</B
+> ( string filename [, bool process_sections])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >parse_ini_file()</B
+> ÔØÈëÒ»¸öÓÉ
+     <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> Ö¸¶¨µÄ ini
+     ÎÄ¼ş£¬²¢½«ÆäÖĞµÄÉèÖÃ×÷ÎªÒ»¸ö½áºÏÊı×é·µ»Ø¡£Èç¹û½«×îºóµÄ
+     <TT  CLASS="parameter" ><I  >process_sections</I
+></TT
+> ²ÎÊıÉèÎª
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬½«µÃµ½Ò»¸ö¶àÎ¬Êı×é£¬°üÀ¨ÁËÅäÖÃÎÄ¼şÖĞÃ¿Ò»½ÚµÄÃû³ÆºÍÉèÖÃ¡£<TT  CLASS="parameter" ><I  >process_sections</I
+></TT
+>
+     µÄÄ¬ÈÏÖµÊÇ <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ±¾º¯ÊıºÍ <TT  CLASS="filename" >php.ini</TT
+>
+      ÎÄ¼şÃ»ÓĞ¹ØÏµ£¬¸ÃÎÄ¼şÔÚÔËĞĞ½Å±¾Ê±¾ÍÒÑ¾­´¦Àí¹ıÁË¡£±¾º¯Êı¿ÉÒÔÓÃÀ´¶ÁÈ¡Äã×Ô¼ºµÄÓ¦ÓÃ³ÌĞòµÄÅäÖÃÎÄ¼ş¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Èç¹û ini ÎÄ¼şÖĞµÄÖµ°üº¬ÈÎºÎ·Ç×ÖÄ¸Êı×ÖµÄ×Ö·û£¬ĞèÒª½«ÆäÀ¨ÔÚË«ÒıºÅÖĞ£¨"£©¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ×Ô PHP 4.2.1 Æä±¾º¯ÊıÒ²ÊÜµ½<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>ºÍ
+      <A  HREF="features.safe-mode.html#ini.open-basedir"  >open_basedir</A
+> µÄÓ°Ïì¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÓĞĞ©±£Áô×Ö²»ÄÜ×÷Îª ini ÎÄ¼şÖĞµÄ¼üÃû£¬°üÀ¨£ºnull£¬yes£¬no£¬true ºÍ false¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ini ÎÄ¼şµÄ½á¹¹ºÍ <TT  CLASS="filename" >php.ini</TT
+> µÄÏàËÆ¡£
+    </P
+><P  >&#13;     <A  HREF="language.constants.html"  >³£Á¿</A
+>Ò²¿ÉÒÔÔÚ ini
+     ÎÄ¼şÖĞ±»½âÎö£¬Òò´ËÈç¹ûÔÚÔËĞĞ <B  CLASS="function" >parse_ini_file()</B
+>
+     Ö®Ç°¶¨ÒåÁË³£Á¿×÷Îª ini µÄÖµ£¬½«»á±»¼¯³Éµ½½á¹ûÖĞÈ¥¡£Ö»ÓĞ ini
+     µÄÖµ»á±»ÇóÖµ¡£ÀıÈç£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN29387" ></A
+><P  ><B  >Àı×Ó 1. <TT  CLASS="filename" >sample.ini</TT
+> µÄÄÚÈİ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >; This is a sample configuration file
+; Comments start with ';', as in php.ini
 
 [first_section]
 one = 1
@@ -176,141 +87,92 @@ five = 5
 animal = BIRD
 
 [second_section]
-path = &quot;/usr/local/bin&quot;
-URL = &quot;http://www.example.com/~username&quot;
+path = /usr/local/bin
+URL = "http://www.example.com/~username"</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN29392" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >parse_ini_file()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >&#60;?php
 
-[third_section]
-phpversion[] = &quot;5.0&quot;
-phpversion[] = &quot;5.1&quot;
-phpversion[] = &quot;5.2&quot;
-phpversion[] = &quot;5.3&quot;
-</pre></div>
-    </div>
+define ('BIRD', 'Dodo bird');
 
-   </div>
-   <div class="example" id="example-2512">
-    <p><strong>Example #2 <span class="function"><strong>parse_ini_file()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents"><p>
-      <a href="language.constants.html" class="link">å¸¸é‡</a>ä¹Ÿå¯ä»¥åœ¨ ini
-   æ–‡ä»¶ä¸­è¢«è§£æï¼Œå› æ­¤å¦‚æœåœ¨è¿è¡Œ <span class="function"><strong>parse_ini_file()</strong></span>
-   ä¹‹å‰å®šä¹‰äº†å¸¸é‡ä½œä¸º ini çš„å€¼ï¼Œå°†ä¼šè¢«é›†æˆåˆ°ç»“æœä¸­å»ã€‚åªæœ‰ ini
-   çš„å€¼ä¼šè¢«æ±‚å€¼ã€‚ä¾‹å¦‚ï¼š
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />define</span><span style="color: #007700">(</span><span style="color: #DD0000">'BIRD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Dodo&nbsp;bird'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Parse&nbsp;without&nbsp;sections<br /></span><span style="color: #0000BB">$ini_array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">parse_ini_file</span><span style="color: #007700">(</span><span style="color: #DD0000">"sample.ini"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$ini_array</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Parse&nbsp;with&nbsp;sections<br /></span><span style="color: #0000BB">$ini_array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">parse_ini_file</span><span style="color: #007700">(</span><span style="color: #DD0000">"sample.ini"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$ini_array</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
+// Parse without sections
+$ini_array = parse_ini_file("sample.ini");
+print_r($ini_array);
 
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+// Parse with sections
+$ini_array = parse_ini_file("sample.ini", TRUE);
+print_r($ini_array);
+
+?&#62;</PRE
+></TD
+></TR
+></TABLE
+><P  >&#13;       ½«Êä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [one] =&gt; 1
-    [five] =&gt; 5
-    [animal] =&gt; Dodo bird
-    [path] =&gt; /usr/local/bin
-    [URL] =&gt; http://www.example.com/~username
-    [phpversion] =&gt; Array
-        (
-            [0] =&gt; 5.0
-            [1] =&gt; 5.1
-            [2] =&gt; 5.2
-            [3] =&gt; 5.3
-        )
-
+    [one] =&#62; 1
+    [five] =&#62; 5
+    [animal] =&#62; Dodo bird
+    [path] =&#62; /usr/local/bin
+    [URL] =&#62; http://www.example.com/~username
 )
 Array
 (
-    [first_section] =&gt; Array
+    [first_section] =&#62; Array
         (
-            [one] =&gt; 1
-            [five] =&gt; 5
-            [animal] =&gt; Dodo bird
+            [one] =&#62; 1
+            [five] =&#62; 5
+            [animal] = Dodo bird
         )
 
-    [second_section] =&gt; Array
+    [second_section] =&#62; Array
         (
-            [path] =&gt; /usr/local/bin
-            [URL] =&gt; http://www.example.com/~username
+            [path] =&#62; /usr/local/bin
+            [URL] =&#62; http://www.example.com/~username
         )
 
-    [third_section] =&gt; Array
-        (
-            [phpversion] =&gt; Array
-                (
-                    [0] =&gt; 5.0
-                    [1] =&gt; 5.1
-                    [2] =&gt; 5.2
-                    [3] =&gt; 5.3
-                )
-
-        )
-
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2513">
-    <p><strong>Example #3 <span class="function"><strong>parse_ini_file()</strong></span> parsing a php.ini file</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;A&nbsp;simple&nbsp;function&nbsp;used&nbsp;for&nbsp;comparing&nbsp;the&nbsp;results&nbsp;below<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">yesno</span><span style="color: #007700">(</span><span style="color: #0000BB">$expression</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return(</span><span style="color: #0000BB">$expression&nbsp;</span><span style="color: #007700">?&nbsp;</span><span style="color: #DD0000">'Yes'&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #DD0000">'No'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Get&nbsp;the&nbsp;path&nbsp;to&nbsp;php.ini&nbsp;using&nbsp;the&nbsp;php_ini_loaded_file()&nbsp;<br />//&nbsp;function&nbsp;available&nbsp;as&nbsp;of&nbsp;PHP&nbsp;5.2.4<br /></span><span style="color: #0000BB">$ini_path&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">php_ini_loaded_file</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Parse&nbsp;php.ini<br /></span><span style="color: #0000BB">$ini&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">parse_ini_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$ini_path</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Print&nbsp;and&nbsp;compare&nbsp;the&nbsp;values,&nbsp;note&nbsp;that&nbsp;using&nbsp;get_cfg_var()<br />//&nbsp;will&nbsp;give&nbsp;the&nbsp;same&nbsp;results&nbsp;for&nbsp;parsed&nbsp;and&nbsp;loaded&nbsp;here<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'(parsed)&nbsp;magic_quotes_gpc&nbsp;=&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">yesno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ini</span><span style="color: #007700">[</span><span style="color: #DD0000">'magic_quotes_gpc'</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'(loaded)&nbsp;magic_quotes_gpc&nbsp;=&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">yesno</span><span style="color: #007700">(</span><span style="color: #0000BB">get_cfg_var</span><span style="color: #007700">(</span><span style="color: #DD0000">'magic_quotes_gpc'</span><span style="color: #007700">))&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-(parsed) magic_quotes_gpc = Yes
-(loaded) magic_quotes_gpc = Yes
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.move-uploaded-file.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pathinfo.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >move_uploaded_file</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pathinfo</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.parse-ini-file-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    æœ¬å‡½æ•°å’Œ <var class="filename">php.ini</var>
-    æ–‡ä»¶æ²¡æœ‰å…³ç³»ï¼Œè¯¥æ–‡ä»¶åœ¨è¿è¡Œè„šæœ¬æ—¶å°±å·²ç»å¤„ç†è¿‡äº†ã€‚æœ¬å‡½æ•°å¯ä»¥ç”¨æ¥è¯»å–ä½ è‡ªå·±çš„åº”ç”¨ç¨‹åºçš„é…ç½®æ–‡ä»¶ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¦‚æœ ini æ–‡ä»¶ä¸­çš„å€¼åŒ…å«ä»»ä½•éå­—æ¯æ•°å­—çš„å­—ç¬¦ï¼Œéœ€è¦å°†å…¶æ‹¬åœ¨åŒå¼•å·ä¸­ï¼ˆ&quot;ï¼‰ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    æœ‰äº›ä¿ç•™å­—ä¸èƒ½ä½œä¸º ini æ–‡ä»¶ä¸­çš„é”®åï¼ŒåŒ…æ‹¬ï¼šnullï¼Œyesï¼Œnoï¼Œtrue å’Œ falseã€‚å€¼ä¸º
-    nullï¼Œno å’Œ false ç­‰æ•ˆäº &quot;&quot;ï¼Œå€¼ä¸º yes å’Œ true ç­‰æ•ˆäº &quot;1&quot;ã€‚å­—ç¬¦
-    <em>{}|&amp;~![()&quot;</em> ä¹Ÿä¸èƒ½ç”¨åœ¨é”®åçš„ä»»ä½•åœ°æ–¹ï¼Œè€Œä¸”è¿™äº›å­—ç¬¦åœ¨é€‰é¡¹å€¼ä¸­æœ‰ç€ç‰¹æ®Šçš„æ„ä¹‰ã€‚
-   </span>
-  </p></blockquote>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.parse-ini-file-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.parse-ini-string.html" class="function" rel="rdfs-seeAlso">parse_ini_string()</a> - Parse a configuration string</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.move-uploaded-file.html">move_uploaded_file</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.parse-ini-string.html">parse_ini_string</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

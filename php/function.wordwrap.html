@@ -1,163 +1,133 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>打断字符串为指定数量的字串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.vsprintf.html">vsprintf</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="changelog.strings.html">更新日志</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.wordwrap" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">wordwrap</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">wordwrap</span> &mdash; <span class="dc-title">打断字符串为指定数量的字串</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.wordwrap-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>wordwrap</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$width</code><span class="initializer"> = 75</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$break</code><span class="initializer"> = &quot;\n&quot;</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$cut</code><span class="initializer"> = false</span></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   使用字符串断点将字符串打断为指定数量的字串。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.wordwrap-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       输入字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">width</code></dt>
-
-     <dd>
-
-      <p class="para">
-       列宽度。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">break</code></dt>
-
-     <dd>
-
-      <p class="para">
-       使用可选的 <code class="parameter">break</code> 参数打断字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">cut</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果 <code class="parameter">cut</code> 设置为 <strong><code>TRUE</code></strong>，字符串总是在指定的宽度或者之前位置被打断。因此，如果有的单词宽度超过了给定的宽度，它将被分隔开来。（参见第二个范例）。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.wordwrap-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回打断后的字符串。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.wordwrap-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5246">
-    <p><strong>Example #1 <span class="function"><strong>wordwrap()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumped&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$newtext&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">wordwrap</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$newtext</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-The quick brown fox&lt;br /&gt;
-jumped over the lazy&lt;br /&gt;
-dog.
-</pre></div>
-    </div>
-   </div>
-   <div class="example" id="example-5247">
-    <p><strong>Example #2 <span class="function"><strong>wordwrap()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"A&nbsp;very&nbsp;long&nbsp;woooooooooooord."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$newtext&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">wordwrap</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$newtext</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-A very
+<HTML  ><HEAD  ><TITLE  >wordwrap</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="vsprintf" HREF="function.vsprintf.html"><LINK  REL="NEXT" TITLE="Sybase Functions" HREF="ref.sybase.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.vsprintf.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.sybase.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.wordwrap" ></A
+>wordwrap</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN111461" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>wordwrap&nbsp;--&nbsp;
+     Wraps a string to a given number of characters using a string
+     break character.
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN111464" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >wordwrap</B
+> ( string str [, int width [, string break [, boolean cut]]])<BR  ></BR
+><P  >&#13;     Returns a string with <TT  CLASS="parameter" ><I  >str</I
+></TT
+> wrapped
+     at the column number specified by the optional
+     <TT  CLASS="parameter" ><I  >width</I
+></TT
+> parameter.  The line is broken
+     using the (optional) <TT  CLASS="parameter" ><I  >break</I
+></TT
+> parameter.
+    </P
+><P  >&#13;     <B  CLASS="function" >wordwrap()</B
+> will automatically wrap at column
+     75 and break using '<TT  CLASS="literal" >\n</TT
+>' (newline) if 
+     <TT  CLASS="parameter" ><I  >width</I
+></TT
+> or <TT  CLASS="parameter" ><I  >break</I
+></TT
+> 
+     are not given.
+    </P
+><P  >&#13;     If the <TT  CLASS="parameter" ><I  >cut</I
+></TT
+> is set to 1, the string is
+     always wrapped at the specified width. So if you have a word
+     that is larger than the given width, it is broken apart.
+     (See second example).
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+       The optional <TT  CLASS="parameter" ><I  >cut</I
+></TT
+> parameter was added in PHP
+       4.0.3
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111495" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >wordwrap()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$text </font><font  color="#007700">= </font><font  color="#DD0000">"The quick brown fox jumped over the lazy dog."</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$newtext </font><font  color="#007700">= </font><font  color="#0000BB">wordwrap</font><font  color="#007700">(</font><font  color="#0000BB">$text</font><font  color="#007700">, </font><font  color="#0000BB">20</font><font  color="#007700">, </font><font  color="#DD0000">"&lt;br /&gt;"</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"$newtext\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;     This example would display:
+    </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >The quick brown fox
+jumped over the 
+lazy dog.</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111501" ></A
+><P  ><B  >���� 2. <B  CLASS="function" >wordwrap()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$text </font><font  color="#007700">= </font><font  color="#DD0000">"A very long woooooooooooord."</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$newtext </font><font  color="#007700">= </font><font  color="#0000BB">wordwrap</font><font  color="#007700">(</font><font  color="#0000BB">$text</font><font  color="#007700">, </font><font  color="#0000BB">8</font><font  color="#007700">, </font><font  color="#DD0000">"\n"</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"$newtext\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;     This example would display:
+    </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >A very
 long
 wooooooo
-ooooord.
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+ooooord.</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also <A  HREF="function.nl2br.html"  ><B  CLASS="function" >nl2br()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.vsprintf.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.sybase.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >vsprintf</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Sybase Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.wordwrap-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.nl2br.html" class="function" rel="rdfs-seeAlso">nl2br()</a> - 在字符串所有新行之前插入 HTML 换行标记</span></li>
-    <li class="member"><span class="function"><a href="function.chunk-split.html" class="function" rel="rdfs-seeAlso">chunk_split()</a> - 将字符串分割成小块</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.vsprintf.html">vsprintf</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="changelog.strings.html">更新日志</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

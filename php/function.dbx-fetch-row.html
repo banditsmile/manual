@@ -1,111 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetches rows from a query-result that had the 
-  DBX_RESULT_UNBUFFERED flag set</title>
+<HTML  ><HEAD  ><TITLE  >dbx_fetch_row</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="dbx Functions" HREF="ref.dbx.html"><LINK  REL="PREVIOUS" TITLE="dbx_escape_string" HREF="function.dbx-escape-string.html"><LINK  REL="NEXT" TITLE="dbx_query" HREF="function.dbx-query.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbx-escape-string.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dbx-query.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dbx-fetch-row" ></A
+>dbx_fetch_row</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN19908" ></A
+><P  >    (no version information, might be only in CVS)</P
+>dbx_fetch_row&nbsp;--&nbsp;Fetches rows from a query-result that had the 
+    <TT  CLASS="constant" ><B  >DBX_RESULT_UNBUFFERED</B
+></TT
+> flag set</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN19912" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >dbx_fetch_row</B
+> ( object result_identifier)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >dbx_fetch_row()</B
+> returns a row on success, and 
+     <TT  CLASS="literal" >0</TT
+> on failure (e.g. when no more rows are available). 
+     When the <TT  CLASS="constant" ><B  >DBX_RESULT_UNBUFFERED</B
+></TT
+> is not set in the 
+     query, <B  CLASS="function" >dbx_fetch_row()</B
+> will fail as all rows have 
+     already been fetched into the results <SPAN  CLASS="property" >data</SPAN
+> property.
+    </P
+><P  >&#13;     As a side effect, the <SPAN  CLASS="property" >rows</SPAN
+> property of the query-result
+     object is incremented for each successful call to 
+     <B  CLASS="function" >dbx_fetch_row()</B
+>.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN19929" ></A
+><P  ><B  >¿˝◊” 1. How to handle the returned value</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$result </font><font  color="#007700">= </font><font  color="#0000BB">dbx_query</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">, </font><font  color="#DD0000">'SELECT id, parentid, description FROM table'</font><font  color="#007700">, </font><font  color="#0000BB">DBX_RESULT_UNBUFFERED</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"&lt;table&gt;\n"</font><font  color="#007700">;<br  />while (</font><font  color="#0000BB">$row </font><font  color="#007700">= </font><font  color="#0000BB">dbx_fetch_row</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;foreach (</font><font  color="#0000BB">$row </font><font  color="#007700">as </font><font  color="#0000BB">$field</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;td&gt;$field&lt;/td&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;/tr&gt;\n"</font><font  color="#007700">;<br  />}<br  />echo </font><font  color="#DD0000">"&lt;/table&gt;\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >result_identifier</I
+></TT
+> parameter is the result
+     object returned by a call to <A  HREF="function.dbx-query.html"  ><B  CLASS="function" >dbx_query()</B
+></A
+>.
+    </P
+><P  >&#13;     The returned array contains the same information as any row would have
+     in the dbx_query result <SPAN  CLASS="property" >data</SPAN
+> property, including
+     columns accessible by index or fieldname when the flags for dbx_guery
+     were set that way.
+    </P
+><P  >&#13;     See also <A  HREF="function.dbx-query.html"  ><B  CLASS="function" >dbx_query()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbx-escape-string.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dbx-query.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbx_escape_string</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dbx.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dbx_query</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-escape-string.html">dbx_escape_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbx-query.html">dbx_query</a></div>
- <div class="up"><a href="ref.dbx.html">dbx ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dbx-fetch-row" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dbx_fetch_row</h1>
-  <p class="verinfo">(PHP 5 &lt;= 5.0.5, PECL dbx &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">dbx_fetch_row</span> &mdash; <span class="dc-title">Fetches rows from a query-result that had the 
-  <strong><code>DBX_RESULT_UNBUFFERED</code></strong> flag set</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.dbx-fetch-row-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>dbx_fetch_row</strong></span>
-    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$result_identifier</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>dbx_fetch_row()</strong></span> fetches rows from a result identifier
-   that had the <strong><code>DBX_RESULT_UNBUFFERED</code></strong> flag set.
-  </p>
-  <p class="para">
-   When the <strong><code>DBX_RESULT_UNBUFFERED</code></strong> is not set in the 
-   query, <span class="function"><strong>dbx_fetch_row()</strong></span> will fail as all rows have 
-   already been fetched into the results <span class="property">data</span> property.
-  </p>
-  <p class="para">
-   As a side effect, the <span class="property">rows</span> property of the query-result
-   object is incremented for each successful call to 
-   <span class="function"><strong>dbx_fetch_row()</strong></span>.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.dbx-fetch-row-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A result set returned by <span class="function"><a href="function.dbx-query.html" class="function">dbx_query()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.dbx-fetch-row-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an object on success that contains the same information as any row
-   would have in the <span class="function"><a href="function.dbx-query.html" class="function">dbx_query()</a></span> result 
-   <span class="property">data</span> property, including columns accessible by index 
-   or fieldname when the flags for <span class="function"><a href="function.dbx-query.html" class="function">dbx_query()</a></span> were set
-   that way.
-  </p>
-  <p class="para">
-   Upon failure, returns <em>0</em> (e.g. when no more rows are
-   available).
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.dbx-fetch-row-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-908">
-    <p><strong>Example #1 How to handle the returned value</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;id,&nbsp;parentid,&nbsp;description&nbsp;FROM&nbsp;table'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DBX_RESULT_UNBUFFERED</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;table&gt;\n"</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_fetch_row</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;tr&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$field</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;td&gt;</span><span style="color: #0000BB">$field</span><span style="color: #DD0000">&lt;/td&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/tr&gt;\n"</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;/table&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.dbx-fetch-row-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dbx-query.html" class="function" rel="rdfs-seeAlso">dbx_query()</a> - Send a query and fetch all results (if any)</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-escape-string.html">dbx_escape_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbx-query.html">dbx_query</a></div>
- <div class="up"><a href="ref.dbx.html">dbx ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

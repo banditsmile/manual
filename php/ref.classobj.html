@@ -1,200 +1,160 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç±»/å¯¹è±¡ å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="classobj.examples.html">èŒƒä¾‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.autoload.html">__autoload</a></div>
- <div class="up"><a href="book.classobj.html">ç±»/å¯¹è±¡</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.classobj" class="reference">
- <h1 class="title">ç±»/å¯¹è±¡ å‡½æ•°</h1>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.autoload.html">__autoload</a> â€” å°è¯•åŠ è½½æœªå®šä¹‰çš„ç±»</li><li><a href="function.call-user-method-array.html">call_user_method_array</a> â€” è°ƒç”¨ä¸€ä¸ªç”¨æˆ·æ–¹æ³•ï¼ŒåŒæ—¶ä¼ é€’å‚æ•°æ•°ç»„ï¼ˆå·²åºŸå¼ƒï¼‰</li><li><a href="function.call-user-method.html">call_user_method</a> â€” å¯¹ç‰¹å®šå¯¹è±¡è°ƒç”¨ç”¨æˆ·æ–¹æ³•ï¼ˆå·²åºŸå¼ƒï¼‰</li><li><a href="function.class-alias.html">class_alias</a> â€” ä¸ºä¸€ä¸ªç±»åˆ›å»ºåˆ«å</li><li><a href="function.class-exists.html">class_exists</a> â€” æ£€æŸ¥ç±»æ˜¯å¦å·²å®šä¹‰</li><li><a href="function.get-called-class.html">get_called_class</a> â€” åæœŸé™æ€ç»‘å®šï¼ˆ&quot;Late Static Binding&quot;ï¼‰ç±»çš„åç§°</li><li><a href="function.get-class-methods.html">get_class_methods</a> â€” è¿”å›ç”±ç±»çš„æ–¹æ³•åç»„æˆçš„æ•°ç»„</li><li><a href="function.get-class-vars.html">get_class_vars</a> â€” è¿”å›ç”±ç±»çš„é»˜è®¤å±æ€§ç»„æˆçš„æ•°ç»„</li><li><a href="function.get-class.html">get_class</a> â€” è¿”å›å¯¹è±¡çš„ç±»å</li><li><a href="function.get-declared-classes.html">get_declared_classes</a> â€” è¿”å›ç”±å·²å®šä¹‰ç±»çš„åå­—æ‰€ç»„æˆçš„æ•°ç»„</li><li><a href="function.get-declared-interfaces.html">get_declared_interfaces</a> â€” è¿”å›ä¸€ä¸ªæ•°ç»„åŒ…å«æ‰€æœ‰å·²å£°æ˜çš„æ¥å£</li><li><a href="function.get-declared-traits.html">get_declared_traits</a> â€” è¿”å›æ‰€æœ‰å·²å®šä¹‰çš„ traits çš„æ•°ç»„</li><li><a href="function.get-object-vars.html">get_object_vars</a> â€” è¿”å›ç”±å¯¹è±¡å±æ€§ç»„æˆçš„å…³è”æ•°ç»„</li><li><a href="function.get-parent-class.html">get_parent_class</a> â€” è¿”å›å¯¹è±¡æˆ–ç±»çš„çˆ¶ç±»å</li><li><a href="function.interface-exists.html">interface_exists</a> â€” æ£€æŸ¥æ¥å£æ˜¯å¦å·²è¢«å®šä¹‰</li><li><a href="function.is-a.html">is_a</a> â€” å¦‚æœå¯¹è±¡å±äºè¯¥ç±»æˆ–è¯¥ç±»æ˜¯æ­¤å¯¹è±¡çš„çˆ¶ç±»åˆ™è¿”å› TRUE</li><li><a href="function.is-subclass-of.html">is_subclass_of</a> â€” å¦‚æœæ­¤å¯¹è±¡æ˜¯è¯¥ç±»çš„å­ç±»ï¼Œåˆ™è¿”å› TRUE</li><li><a href="function.method-exists.html">method_exists</a> â€” æ£€æŸ¥ç±»çš„æ–¹æ³•æ˜¯å¦å­˜åœ¨</li><li><a href="function.property-exists.html">property_exists</a> â€” æ£€æŸ¥å¯¹è±¡æˆ–ç±»æ˜¯å¦å…·æœ‰è¯¥å±æ€§</li><li><a href="function.trait-exists.html">trait_exists</a> â€” æ£€æŸ¥æŒ‡å®šçš„ trait æ˜¯å¦å­˜åœ¨</li></ul>
+<HTML  ><HEAD  ><TITLE  >Àà£¯¶ÔÏóº¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="com_set" HREF="function.com-set.html"><LINK  REL="NEXT" TITLE="call_user_method_array" HREF="function.call-user-method-array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.com-set.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.call-user-method-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.classobj" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >IX. Àà£¯¶ÔÏóº¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN12850" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;      ÕâĞ©º¯ÊıÔÊĞíÄã»ñÈ¡ÀàºÍ¶ÔÏóÊµÀıµÄĞÅÏ¢¡£Äã¿ÉÒÔÈ¡µÃ¶ÔÏóËùÊôµÄÀàµÄÃû×Ö£¬ÒÔ¼°ËüµÄ³ÉÔ±ÊôĞÔºÍ·½·¨¡£Í¨¹ıÊ¹ÓÃÕâĞ©º¯Êı£¬Äã²»½ö¿ÉÒÔÅªÇå³şÒ»¸ö¶ÔÏóÀàµÄÈ«Ìå³ÉÔ±£¬¶øÇÒ¿ÉÒÔÖªµÀËüµÄÆğÔ´£¨ÀıÈç£¬¸Ã¶ÔÏóÀàÊÇÄÄ¸öÀàµÄÀ©Õ¹£©¡£
+     </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ³£Á¿¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="classobj.examples" ></A
+>·¶Àı</H1
+><P  >&#13;      ÔÚÕâ¸öÀı×ÓÖĞ£¬ÎÒÃÇÏÈ¶¨ÒåÁËÒ»¸ö»ù´¡ÀàºÍÒ»¸öÀ©Õ¹Àà¡£»ù´¡ÀàÃèÊöµÄÊÇÆÕÍ¨µÄÊß²Ë£¨Vegetable£©£¬ËüÊÇ·ñ¿ÉÊ³ÓÃ£¨is_edible£©ÒÔ¼°ËüÊÇÊ²Ã´ÑÕÉ«£¨what_color£©¡£×ÓÀà
+      <TT  CLASS="varname" >Spinach</TT
+> Ôö¼ÓÁË¡°Åëµ÷¡±µÄ·½·¨£¨cook_it£©ºÍ¡°»ñÖªËüÊÇ·ñÒÑ±»Åëµ÷ÁË¡±µÄ·½·¨£¨is_cooked£©¡£
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN12874" ></A
+><P  ><B  >Àı×Ó 1. classes.inc</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// »ù´¡Àà¼°ÆäÊôĞÔºÍ·½·¨<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Vegetable </font><font  color="#007700">{<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$edible</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$color</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">Vegetable</font><font  color="#007700">( </font><font  color="#0000BB">$edible</font><font  color="#007700">, </font><font  color="#0000BB">$color</font><font  color="#007700">=</font><font  color="#DD0000">"green" </font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">edible </font><font  color="#007700">= </font><font  color="#0000BB">$edible</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">color </font><font  color="#007700">= </font><font  color="#0000BB">$color</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">is_edible</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">edible</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">what_color</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">color</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />} </font><font  color="#FF8000">// Àà Vegetable µÄ½áÊø<br  /><br  />// ´Ó»ù´¡ÀàÀ©Õ¹<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Spinach </font><font  color="#007700">extends </font><font  color="#0000BB">Vegetable </font><font  color="#007700">{<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$cooked </font><font  color="#007700">= </font><font  color="#0000BB">false</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">Spinach</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">Vegetable</font><font  color="#007700">( </font><font  color="#0000BB">true</font><font  color="#007700">, </font><font  color="#DD0000">"green" </font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">cook_it</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">cooked </font><font  color="#007700">= </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">is_cooked</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">cooked</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />} </font><font  color="#FF8000">// Àà Spinach µÄ½áÊø<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >&#13;     ½Ó×Å£¬ÎÒÃÇ´ÓÕâĞ©¶ÔÏóÖĞ´´½¨ÁËÁ½¸ö¶ÔÏóÊµÀı£¬´òÓ¡³öËüÃÇµÄÏà¹ØĞÅÏ¢£¬°üÀ¨ËüÃÇµÄÆğÔ´¡£ÎÒÃÇ»¹¶¨ÒåÁËÒ»Ğ©ÊµÓÃº¯Êı£¬ËüÃÇÖ÷ÒªÊÇÎªÁËÈÃ±äÁ¿µÄÊä³öºÃ¿´Ğ©¡£
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN12879" ></A
+><P  ><B  >Àı×Ó 2. test_script.php</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+&lt;pre&gt;<br  /><font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">include </font><font  color="#DD0000">"classes.inc"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// ÊµÓÃº¯Êı<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">print_vars</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$arr </font><font  color="#007700">= </font><font  color="#0000BB">get_object_vars</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;while (list(</font><font  color="#0000BB">$prop</font><font  color="#007700">, </font><font  color="#0000BB">$val</font><font  color="#007700">) = </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">))<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"\t$prop = $val\n"</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">print_methods</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$arr </font><font  color="#007700">= </font><font  color="#0000BB">get_class_methods</font><font  color="#007700">(</font><font  color="#0000BB">get_class</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;foreach (</font><font  color="#0000BB">$arr </font><font  color="#007700">as </font><font  color="#0000BB">$method</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"\tfunction $method()\n"</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">class_parentage</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">, </font><font  color="#0000BB">$class</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global $</font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">is_subclass_of</font><font  color="#007700">($</font><font  color="#0000BB">$obj</font><font  color="#007700">, </font><font  color="#0000BB">$class</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Object $obj belongs to class "</font><font  color="#007700">.</font><font  color="#0000BB">get_class</font><font  color="#007700">($</font><font  color="#0000BB">$obj</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">" a subclass of $class\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Object $obj does not belong to a subclass of $class\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#FF8000">// ´´½¨Á½¸ö¶ÔÏóÊµÀı<br  /><br  /></font><font  color="#0000BB">$veggie </font><font  color="#007700">= new </font><font  color="#0000BB">Vegetable</font><font  color="#007700">(</font><font  color="#0000BB">true</font><font  color="#007700">,</font><font  color="#DD0000">"blue"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$leafy </font><font  color="#007700">= new </font><font  color="#0000BB">Spinach</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// ´òÓ¡³ö¶ÔÏóµÄÏà¹ØĞÅÏ¢<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"veggie: CLASS "</font><font  color="#007700">.</font><font  color="#0000BB">get_class</font><font  color="#007700">(</font><font  color="#0000BB">$veggie</font><font  color="#007700">).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"leafy: CLASS "</font><font  color="#007700">.</font><font  color="#0000BB">get_class</font><font  color="#007700">(</font><font  color="#0000BB">$leafy</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">", PARENT "</font><font  color="#007700">.</font><font  color="#0000BB">get_parent_class</font><font  color="#007700">(</font><font  color="#0000BB">$leafy</font><font  color="#007700">).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// ÏÔÊ¾ veggie µÄÊôĞÔ<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"\nveggie: Properties\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_vars</font><font  color="#007700">(</font><font  color="#0000BB">$veggie</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ÏÔÊ¾ leafy µÄ·½·¨<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"\nleafy: Methods\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_methods</font><font  color="#007700">(</font><font  color="#0000BB">$leafy</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"\nParentage:\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">class_parentage</font><font  color="#007700">(</font><font  color="#DD0000">"leafy"</font><font  color="#007700">, </font><font  color="#DD0000">"Spinach"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">class_parentage</font><font  color="#007700">(</font><font  color="#DD0000">"leafy"</font><font  color="#007700">, </font><font  color="#DD0000">"Vegetable"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;<br  /></font>&lt;/pre&gt;</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;        ÉÏ±ßÀı×ÓÖĞÖØµãÒª×¢ÒâµÄÊÇ¶ÔÏó
+        <TT  CLASS="varname" >$leafy</TT
+> ÊÇ
+        <B  CLASS="classname" >Spinach</B
+> ÀàµÄÒ»¸öÊµÀı£¬¶ø
+        <B  CLASS="classname" >Spinach</B
+> ÀàÊÇ
+        <B  CLASS="classname" >Vegetable</B
+> ÀàµÄÒ»¸ö×ÓÀà£¬Òò´ËÉÏ±ß½Å±¾µÄ×îºó²¿·Ö½«»áÊä³ö£º
+       </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >[...]
+Parentage:
+Object leafy does not belong to a subclass of Spinach
+Object leafy belongs to class spinach a subclass of Vegetable</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.call-user-method-array.html"  >call_user_method_array</A
+>&nbsp;--&nbsp;
+     µ÷ÓÃÒ»¸öÓÃ»§·½·¨£¬Í¬Ê±´«µİ²ÎÊıÊı×é£ÛÒÑÍ£ÓÃ£İ
+    </DT
+><DT  ><A  HREF="function.call-user-method.html"  >call_user_method</A
+>&nbsp;--&nbsp;
+     µ÷ÓÃÌØ¶¨¶ÔÏóµÄÓÃ»§·½·¨£ÛÒÑÍ£ÓÃ£İ
+    </DT
+><DT  ><A  HREF="function.class-exists.html"  >class_exists</A
+>&nbsp;--&nbsp;¼ì²éÀàÊÇ·ñÒÑ¶¨Òå</DT
+><DT  ><A  HREF="function.get-class-methods.html"  >get_class_methods</A
+>&nbsp;--&nbsp;·µ»ØÓÉÀàµÄ·½·¨Ãû×é³ÉµÄÊı×é</DT
+><DT  ><A  HREF="function.get-class-vars.html"  >get_class_vars</A
+>&nbsp;--&nbsp;
+     ·µ»ØÓÉÀàµÄÄ¬ÈÏÊôĞÔ×é³ÉµÄÊı×é
+    </DT
+><DT  ><A  HREF="function.get-class.html"  >get_class</A
+>&nbsp;--&nbsp;·µ»Ø¶ÔÏóµÄÀàÃû</DT
+><DT  ><A  HREF="function.get-declared-classes.html"  >get_declared_classes</A
+>&nbsp;--&nbsp;·µ»ØÓÉÒÑ¶¨ÒåÀàµÄÃû×ÖËù×é³ÉµÄÊı×é</DT
+><DT  ><A  HREF="function.get-object-vars.html"  >get_object_vars</A
+>&nbsp;--&nbsp;·µ»ØÓÉ¶ÔÏóÊôĞÔ×é³ÉµÄ¹ØÁªÊı×é</DT
+><DT  ><A  HREF="function.get-parent-class.html"  >get_parent_class</A
+>&nbsp;--&nbsp;·µ»Ø¶ÔÏó»òÀàµÄ¸¸ÀàÃû</DT
+><DT  ><A  HREF="function.is-a.html"  >is_a</A
+>&nbsp;--&nbsp;
+     Èç¹û¶ÔÏóÊôÓÚ¸ÃÀà»ò¸ÃÀàÊÇ´Ë¶ÔÏóµÄ¸¸ÀàÔò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>
+    </DT
+><DT  ><A  HREF="function.is-subclass-of.html"  >is_subclass_of</A
+>&nbsp;--&nbsp;
+     Èç¹û´Ë¶ÔÏóÊÇ¸ÃÀàµÄ×ÓÀà£¬Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>
+    </DT
+><DT  ><A  HREF="function.method-exists.html"  >method_exists</A
+>&nbsp;--&nbsp;¼ì²éÀàµÄ·½·¨ÊÇ·ñ´æÔÚ</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.com-set.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.call-user-method-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >com_set</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >call_user_method_array</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="classobj.examples.html">èŒƒä¾‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.autoload.html">__autoload</a></div>
- <div class="up"><a href="book.classobj.html">ç±»/å¯¹è±¡</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

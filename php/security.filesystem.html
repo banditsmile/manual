@@ -1,100 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ–‡ä»¶ç³»ç»Ÿå®‰å…¨</title>
+<HTML  ><HEAD  ><TITLE  >ÎÄ¼şÏµÍ³°²È«</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="°²È«" HREF="http://shouce.jb51.net/php/security.index.html"><LINK  REL="PREVIOUS" TITLE="°²×°Îª Apache Ä£¿é" HREF="security.apache.html"><LINK  REL="NEXT" TITLE="Êı¾İ¿â°²È«" HREF="security.database.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="security.apache.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 15. °²È«</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="security.database.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="security.filesystem" ></A
+>ÎÄ¼şÏµÍ³°²È«</H1
+><P  >&#13;    PHP ÊÜ´ó¶àÊı·şÎñÆ÷ÏµÍ³°²È«»úÖÆµÄ¿ØÖÆ£¬ÕâĞ©°²È«»úÖÆÍ¨³£ÊÇ»ùÓÚÎÄ¼şºÍÄ¿Â¼Ğí¿É»ù´¡µÄ¡£ÕâÊ¹µÃÄú¿ÉÒÔ¿ØÖÆÎÄ¼şÏµÍ³ÖĞµÄÄÄĞ©ÎÄ¼ş¿ÉÒÔ±»¶ÁÈ¡¡£ÄúĞèÒªÌØ±ğ×¢ÒâËùÓĞÈ«¾Ö¿É¶ÁµÄÎÄ¼ş£¬Òª±£Ö¤ËùÓĞ·ÃÎÊ¸ÃÎÄ¼şÏµÍ³µÄÓÃ»§¶ÔËüÃÇµÄ¶ÁÈ¡ÊÇ°²È«µÄ¡£
+   </P
+><P  >&#13;    ÓÉÓÚ PHP ÔÚÉè¼ÆµÄÊ±ºò£¬ÔÊĞíÓÃ»§¼¶·ÃÎÊÎÄ¼şÏµÍ³£¬Òò´Ë±àĞ´Ò»¸ö PHP ½Å±¾Ê¹µÃÄúÄÜ¹»¶ÁÈ¡ÖîÈç /etc/passwd£¬¸ü¸ÄÄúµÄÒÔÌ«ÍøÁ¬½Ó£¬·¢ËÍ·±ÖØµÄ´òÓ¡»úÈÎÎñµÈÊÇÍêÈ«ÓĞ¿ÉÄÜµÄ¡£ÕâÀïÓĞÒ»Ğ©Ã÷ÏÔµÄ¹ØÁª£¬ÄúĞèÒª±£Ö¤Äú¶ÁÈ¡ºÍĞ´ÈëµÄÊÇÕıÈ·µÄÎÄ¼ş¡£
+   </P
+><P  >&#13;    ÔÚÒÔÏÂ½Å±¾ÖĞ£¬Ò»¸öÓÃ»§Ï£Íû¸Ã½Å±¾ÄÜ¹»É¾³ıËüÃÇÖ÷Ä¿Â¼ÖĞµÄÒ»¸öÎÄ¼ş¡£Õâ½ö½öÊÇ¼ÙÉèÁËÒ»ÖÖ PHP WEB ½Ó¿ÚÍ¨³£±»ÓÃ×÷ÎÄ¼ş¹ÜÀíµÄÇé¿ö£¬Òò´Ë Apache ÓÃ»§±»ÔÊĞíÉ¾³ıÓÃ»§Ö÷Ä¿Â¼µÄÎÄ¼ş¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6125" ></A
+><P  ><B  >Àı×Ó 15-1. ±¡ÈõµÄ±äÁ¿¼ìÑé½«µ¼ÖÂ¡­¡­</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// remove a file from the user's home directory<br  /></font><font  color="#0000BB">$username </font><font  color="#007700">= </font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'user_submitted_name'</font><font  color="#007700">];<br  /></font><font  color="#0000BB">$homedir </font><font  color="#007700">= </font><font  color="#DD0000">"/home/$username"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$file_to_delete </font><font  color="#007700">= </font><font  color="#DD0000">"$userfile"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">unlink </font><font  color="#007700">(</font><font  color="#DD0000">"$homedir/$userfile"</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"$file_to_delete has been deleted!"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   ÓÉÓÚÓÃ»§ÃûÊÇ¿ÉÒÔ´ÓÓÃ»§±íµ¥·¢ËÍµÄ£¬Òò´ËËûÃÇ¿ÉÒÔÌá½»Ò»¸öÓÃ»§ÃûºÍÊôÓÚÆäËûÈËµÄÎÄ¼ş£¬Ê¹µÃÕâĞ©ÎÄ¼ş±»É¾³ı¡£ÔÚ¸ÃÇé¿öÏÂ£¬Äú»áĞèÒªÊ¹ÓÃÁíÍâµÄ±íµ¥À´ÊÚÈ¨¡£¿¼ÂÇÒ»ÏÂÈç¹û±»Ìá½»µÄ±äÁ¿ÊÇ¡°../etc/¡±ºÍ¡°passwd¡±½«»á·¢ÉúÊ²Ã´£¿Õâ¸öÊ±ºòÆä´úÂë¿ÉÒÔ±»Àí½âÎª£º
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6128" ></A
+><P  ><B  >Àı×Ó 15-2. Ò»¸öÎÄ¼şÏµÍ³¹¥»÷</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// removes a file from anywhere on the hard drive that<br  />// the PHP user has access to. If PHP has root access:<br  /></font><font  color="#0000BB">$username </font><font  color="#007700">= </font><font  color="#DD0000">"../etc/"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$homedir </font><font  color="#007700">= </font><font  color="#DD0000">"/home/../etc/"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$file_to_delete </font><font  color="#007700">= </font><font  color="#DD0000">"passwd"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">unlink </font><font  color="#007700">(</font><font  color="#DD0000">"/home/../etc/passwd"</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"/home/../etc/passwd has been deleted!"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+	ÓĞÁ½ÖÖÄú±ØĞë²ÉÈ¡µÄ´ëÊ©À´±ÜÃâÕâĞ©ÎÊÌâ¡£
+    <P  ></P
+><UL  ><LI  ><P  >&#13;	   ¶Ô PHP WEB ÓÃ»§½ö¸³ÓèÓĞÏŞµÄÈ¨ÏŞ¡£
+      </P
+></LI
+><LI  ><P  >&#13;	   ¼ìÑéËùÓĞÌá½»µÄ±äÁ¿¡£
+      </P
+></LI
+></UL
+>
+	ÒÔÏÂÊÇ¾­¹ı¸Ä½øµÄ½Å±¾£º
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6136" ></A
+><P  ><B  >Àı×Ó 15-3. ¸ü¼Ó°²È«µÄÎÄ¼şÃû¼ìÑé</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// removes a file from the hard drive that<br  />// the PHP user has access to.<br  /></font><font  color="#0000BB">$username </font><font  color="#007700">= </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'REMOTE_USER'</font><font  color="#007700">]; </font><font  color="#FF8000">// using an authentication mechanisim<br  /><br  /></font><font  color="#0000BB">$homedir </font><font  color="#007700">= </font><font  color="#DD0000">"/home/$username"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$file_to_delete </font><font  color="#007700">= </font><font  color="#0000BB">basename</font><font  color="#007700">(</font><font  color="#DD0000">"$userfile"</font><font  color="#007700">); </font><font  color="#FF8000">// strip paths<br  /></font><font  color="#0000BB">unlink </font><font  color="#007700">(</font><font  color="#0000BB">$homedir</font><font  color="#007700">/</font><font  color="#0000BB">$file_to_delete</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"/home/logging/filedelete.log"</font><font  color="#007700">,</font><font  color="#DD0000">"+a"</font><font  color="#007700">); </font><font  color="#FF8000">//log the deletion<br  /></font><font  color="#0000BB">$logstring </font><font  color="#007700">= </font><font  color="#DD0000">"$username $homedir $file_to_delete"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">fputs </font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">$logstring</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"$file_to_delete has been deleted!"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+	¾¡¹ÜÈç´Ë£¬¸Ã½Å±¾»¹ÊÇÓĞÒ»Ğ©ÎÊÌâ¡£Èç¹ûÄúµÄÊÚÈ¨ÏµÍ³ÔÊĞíÓÃ»§½¨Á¢ËûÃÇ×Ô¼ºµÄÓÃ»§µÇÂ¼£¬¶øÄ³ÓÃ»§Ñ¡ÔñµÇÂ¼¡°../etc/¡±£¬ÏµÍ³½«±»ÔÙ´Î±©Â¶¡£»ùÓÚÕâÒ»µã£¬Äú¿ÉÄÜ¸üÔ¸Òâ±àĞ´Ò»¸ö¸üºÃµÄ¼ìÑé£º
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6139" ></A
+><P  ><B  >Àı×Ó 15-4. ¸ü°²È«µÄÎÄ¼şÃû¼ìÑé</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$username </font><font  color="#007700">= </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'REMOTE_USER'</font><font  color="#007700">]; </font><font  color="#FF8000">// using an authentication mechanisim<br  /></font><font  color="#0000BB">$homedir </font><font  color="#007700">= </font><font  color="#DD0000">"/home/$username"</font><font  color="#007700">;<br  /><br  />if (!</font><font  color="#0000BB">ereg</font><font  color="#007700">(</font><font  color="#DD0000">'^[^./][^/]*$'</font><font  color="#007700">, </font><font  color="#0000BB">$userfile</font><font  color="#007700">))<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">'bad filename'</font><font  color="#007700">); </font><font  color="#FF8000">//die, do not process<br  /><br  /></font><font  color="#007700">if (!</font><font  color="#0000BB">ereg</font><font  color="#007700">(</font><font  color="#DD0000">'^[^./][^/]*$'</font><font  color="#007700">, </font><font  color="#0000BB">$username</font><font  color="#007700">))<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">'bad username'</font><font  color="#007700">); </font><font  color="#FF8000">//die, do not process<br  />//etc...<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ¸ù¾İÄúµÄ²Ù×÷ÏµÍ³µÄ²»Í¬£¬ÄúĞèÒª¿¼ÂÇĞí¶à¸÷ÖÖ¸÷ÑùµÄÎÄ¼ş£¬°üÀ¨Éè±¸ÏîÄ¿£¨/dev/ »ò COM1£©£¬ÉèÖÃÎÄ¼ş£¨/etc/ ÎÄ¼şºÍ .ini ÎÄ¼ş£©£¬Í¨³£µÄÎÄ¼ş´æ´¢Çø£¨/home/£¬My Documents£©µÈ¡£»ùÓÚÕâÒ»µã£¬½¨Á¢Ò»¸ö²ßÂÔ½ûÖ¹ËùÓĞ³ıÁËÄúÃ÷È·µÄÊÚÈ¨µÄĞĞÎª¿ÉÄÜÒª¸ü¼òµ¥Ò»Ğ©¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="security.apache.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="security.database.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >°²×°Îª Apache Ä£¿é</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/security.index.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Êı¾İ¿â°²È«</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.apache.html">ä»¥ Apache æ¨¡å—å®‰è£…æ—¶</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.filesystem.nullbytes.html">Null å­—ç¬¦é—®é¢˜</a></div>
- <div class="up"><a href="security.html">å®‰å…¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="security.filesystem" class="chapter">
-   <h1>æ–‡ä»¶ç³»ç»Ÿå®‰å…¨</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="security.filesystem.nullbytes.html">Null å­—ç¬¦é—®é¢˜</a></li></ul>
 
-   <p class="simpara">
-    PHP éµä»å¤§å¤šæ•°æœåŠ¡å™¨ç³»ç»Ÿä¸­å…³äºæ–‡ä»¶å’Œç›®å½•æƒé™çš„å®‰å…¨æœºåˆ¶ã€‚è¿™å°±ä½¿ç®¡ç†å‘˜å¯ä»¥æ§åˆ¶å“ªäº›æ–‡ä»¶åœ¨æ–‡ä»¶ç³»ç»Ÿå†…æ˜¯å¯è¯»çš„ã€‚å¿…é¡»ç‰¹åˆ«æ³¨æ„çš„æ˜¯å…¨å±€çš„å¯è¯»æ–‡ä»¶ï¼Œå¹¶ç¡®ä¿æ¯ä¸€ä¸ªæœ‰æƒé™çš„ç”¨æˆ·å¯¹è¿™äº›æ–‡ä»¶çš„è¯»å–åŠ¨ä½œéƒ½æ˜¯å®‰å…¨çš„ã€‚
-   </p>
-   <p class="simpara">
-    PHP è¢«è®¾è®¡ä¸ºä»¥ç”¨æˆ·çº§åˆ«æ¥è®¿é—®æ–‡ä»¶ç³»ç»Ÿï¼Œæ‰€ä»¥å®Œå…¨æœ‰å¯èƒ½é€šè¿‡ç¼–å†™ä¸€æ®µ
-    PHP ä»£ç æ¥è¯»å–ç³»ç»Ÿæ–‡ä»¶å¦‚
-    /etc/passwdï¼Œæ›´æ”¹ç½‘ç»œè¿æ¥ä»¥åŠå‘é€å¤§é‡æ‰“å°ä»»åŠ¡ç­‰ç­‰ã€‚å› æ­¤å¿…é¡»ç¡®ä¿
-    PHP ä»£ç è¯»å–å’Œå†™å…¥çš„æ˜¯åˆé€‚çš„æ–‡ä»¶ã€‚
-   </p>
-   <p class="simpara">
-    è¯·çœ‹ä¸‹é¢çš„ä»£ç ï¼Œç”¨æˆ·æƒ³è¦åˆ é™¤è‡ªå·±ä¸»ç›®å½•ä¸­çš„ä¸€ä¸ªæ–‡ä»¶ã€‚å‡è®¾æ­¤æƒ…å½¢æ˜¯é€šè¿‡
-    web ç•Œé¢æ¥ç®¡ç†æ–‡ä»¶ç³»ç»Ÿï¼Œå› æ­¤ Apache ç”¨æˆ·æœ‰æƒåˆ é™¤ç”¨æˆ·ç›®å½•ä¸‹çš„æ–‡ä»¶ã€‚
-   </p>
-   <p class="para">
-    <div class="example" id="example-340">
-     <p><strong>Example #1 ä¸å¯¹å˜é‡è¿›è¡Œå®‰å…¨æ£€æŸ¥ä¼šå¯¼è‡´â€¦â€¦</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;ä»ç”¨æˆ·ç›®å½•ä¸­åˆ é™¤æŒ‡å®šçš„æ–‡ä»¶<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_submitted_name'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">$userfile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_submitted_filename'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">$homedir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/home/</span><span style="color: #0000BB">$username</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">unlink&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$homedir</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$userfile</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;file&nbsp;has&nbsp;been&nbsp;deleted!"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-    æ—¢ç„¶ username å’Œ filename å˜é‡å¯ä»¥é€šè¿‡ç”¨æˆ·è¡¨å•æ¥æäº¤ï¼Œé‚£å°±å¯ä»¥æäº¤åˆ«äººçš„ç”¨æˆ·åå’Œæ–‡ä»¶åï¼Œç”šè‡³å¯ä»¥åˆ æ‰æœ¬æ¥ä¸åº”è¯¥è®©ä»–ä»¬åˆ é™¤çš„æ–‡ä»¶ã€‚è¿™ç§æƒ…å†µä¸‹ï¼Œå°±è¦è€ƒè™‘å…¶å®ƒæ–¹å¼çš„è®¤è¯ã€‚æƒ³æƒ³çœ‹å¦‚æœæäº¤çš„å˜é‡æ˜¯â€œ../etc/â€å’Œâ€œpasswdâ€ä¼šå‘ç”Ÿä»€ä¹ˆã€‚ä¸Šé¢çš„ä»£ç å°±ç­‰åŒäºï¼š
-    <div class="example" id="example-341">
-     <p><strong>Example #2 â€¦â€¦æ–‡ä»¶ç³»ç»Ÿæ”»å‡»</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;åˆ é™¤ç¡¬ç›˜ä¸­ä»»ä½•&nbsp;PHP&nbsp;æœ‰è®¿é—®æƒé™çš„æ–‡ä»¶ã€‚å¦‚æœ&nbsp;PHP&nbsp;æœ‰&nbsp;root&nbsp;æƒé™ï¼š<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_submitted_name'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;"../etc"<br /></span><span style="color: #0000BB">$userfile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_submitted_filename'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;"passwd"<br /></span><span style="color: #0000BB">$homedir&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/home/</span><span style="color: #0000BB">$username</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;"/home/../etc"<br /><br /></span><span style="color: #0000BB">unlink</span><span style="color: #007700">(</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$homedir</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$userfile</span><span style="color: #DD0000">"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;"/home/../etc/passwd"<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;file&nbsp;has&nbsp;been&nbsp;deleted!"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-    æœ‰ä¸¤ä¸ªé‡è¦æªæ–½æ¥é˜²æ­¢æ­¤ç±»é—®é¢˜ã€‚
-    <ul class="itemizedlist">
-     <li class="listitem">
-      <span class="simpara">
-       åªç»™ PHP çš„ web ç”¨æˆ·å¾ˆæœ‰é™çš„æƒé™ã€‚
-      </span>
-     </li>
-     <li class="listitem">
-      <span class="simpara">
-       æ£€æŸ¥æ‰€æœ‰æäº¤ä¸Šæ¥çš„å˜é‡ã€‚
-      </span>
-     </li>
-    </ul>
-    ä¸‹é¢æ˜¯æ”¹è¿›çš„è„šæœ¬ï¼š
-    <div class="example" id="example-342">
-     <p><strong>Example #3 æ›´å®‰å…¨çš„æ–‡ä»¶åæ£€æŸ¥</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;åˆ é™¤ç¡¬ç›˜ä¸­&nbsp;PHP&nbsp;æœ‰æƒè®¿é—®çš„æ–‡ä»¶<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REMOTE_USER'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;ä½¿ç”¨è®¤è¯æœºåˆ¶<br /></span><span style="color: #0000BB">$userfile&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_submitted_filename'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">$homedir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/home/</span><span style="color: #0000BB">$username</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$filepath&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$homedir</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$userfile</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /><br /><br />if&nbsp;(</span><span style="color: #0000BB">file_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$filepath</span><span style="color: #007700">)&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">unlink</span><span style="color: #007700">(</span><span style="color: #0000BB">$filepath</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$logstring&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Deleted&nbsp;</span><span style="color: #0000BB">$filepath</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$logstring&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Failed&nbsp;to&nbsp;delete&nbsp;</span><span style="color: #0000BB">$filepath</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/logging/filedelete.log"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$logstring</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$logstring</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ENT_QUOTES</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-    ç„¶è€Œï¼Œè¿™æ ·åšä»ç„¶æ˜¯æœ‰ç¼ºé™·çš„ã€‚å¦‚æœè®¤è¯ç³»ç»Ÿå…è®¸ç”¨æˆ·å»ºç«‹è‡ªå·±çš„ç™»å½•ç”¨æˆ·åï¼Œè€Œç”¨æˆ·é€‰æ‹©ç”¨â€œ../etc/â€ä½œä¸ºç”¨æˆ·åï¼Œç³»ç»Ÿåˆä¸€æ¬¡æ²¦é™·äº†ã€‚æ‰€ä»¥ï¼Œéœ€è¦åŠ å¼ºæ£€æŸ¥ï¼š
-    <div class="example" id="example-343">
-     <p><strong>Example #4 æ›´å®‰å…¨çš„æ–‡ä»¶åæ£€æŸ¥</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REMOTE_USER'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;ä½¿ç”¨è®¤è¯æœºåˆ¶<br /></span><span style="color: #0000BB">$userfile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user_submitted_filename'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">$homedir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/home/</span><span style="color: #0000BB">$username</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$filepath&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$homedir</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$userfile</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />if&nbsp;(!</span><span style="color: #0000BB">ctype_alnum</span><span style="color: #007700">(</span><span style="color: #0000BB">$username</span><span style="color: #007700">)&nbsp;||&nbsp;!</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">'/^(?:[a-z0-9_-]|\.(?!\.))+$/iD'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$userfile</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Bad&nbsp;username/filename"</span><span style="color: #007700">);<br />}<br /></span><span style="color: #FF8000">//åç•¥â€¦â€¦<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    æ ¹æ®æ“ä½œç³»ç»Ÿçš„ä¸åŒï¼Œå­˜åœ¨ç€å„ç§å„æ ·éœ€è¦æ³¨æ„çš„æ–‡ä»¶ï¼ŒåŒ…æ‹¬è”ç³»åˆ°ç³»ç»Ÿçš„è®¾å¤‡ï¼ˆ/dev/
-    æˆ–è€… COM1ï¼‰ã€é…ç½®æ–‡ä»¶ï¼ˆ/ect/ æ–‡ä»¶å’Œ .iniæ–‡ä»¶ï¼‰ã€å¸¸ç”¨çš„å­˜å‚¨åŒºåŸŸï¼ˆ/home/ æˆ–è€… My
-    Documentsï¼‰ç­‰ç­‰ã€‚ç”±äºæ­¤åŸå› ï¼Œå»ºç«‹ä¸€ä¸ªç­–ç•¥ç¦æ­¢æ‰€æœ‰æƒé™è€Œåªå¼€æ”¾æ˜ç¡®å…è®¸çš„é€šå¸¸æ›´å®¹æ˜“äº›ã€‚
-   </p>
-   
-  </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.apache.html">ä»¥ Apache æ¨¡å—å®‰è£…æ—¶</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.filesystem.nullbytes.html">Null å­—ç¬¦é—®é¢˜</a></div>
- <div class="up"><a href="security.html">å®‰å…¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

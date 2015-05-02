@@ -1,68 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä¸Šä¼ å¤šä¸ªæ–‡ä»¶</title>
+<HTML  ><HEAD  ><TITLE  >ÉÏ´«¶à¸öÎÄ¼ş</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÉÏ´«´¦Àí" HREF="http://shouce.jb51.net/php/features.file-upload.html"><LINK  REL="PREVIOUS" TITLE="Ò»Ğ©×¢ÒâÊÂÏî" HREF="features.file-upload.common-pitfalls.html"><LINK  REL="NEXT" TITLE="¶Ô PUT ·½·¨µÄÖ§³Ö" HREF="features.file-upload.put-method.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="features.file-upload.common-pitfalls.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 18. ÎÄ¼şÉÏ´«´¦Àí</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="features.file-upload.put-method.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="features.file-upload.multiple" ></A
+>ÉÏ´«¶à¸öÎÄ¼ş</H1
+><P  >&#13;    Äú¿ÉÒÔ¶Ô <TT  CLASS="literal" >input</TT
+> ÓòÊ¹ÓÃ²»Í¬µÄ <TT  CLASS="literal" >name</TT
+> À´ÉÏ´«¶à¸öÎÄ¼ş¡£
+   </P
+><P  >&#13;    PHP Ö§³ÖÍ¬Ê±ÉÏ´«¶à¸öÎÄ¼ş²¢½«ËüÃÇµÄĞÅÏ¢×Ô¶¯ÒÔÊı×éµÄĞÎÊ½×éÖ¯¡£ÒªÍê³ÉÕâÏî¹¦ÄÜ£¬ÄúĞèÒªÔÚ HTML ±íµ¥ÖĞ¶ÔÎÄ¼şÉÏ´«ÓòÊ¹ÓÃÀàËÆÓÚ¶àÏÂÀ­²Ëµ¥ºÍ¸´Ñ¡¿òµÄÊı×éÃû³ÆÀ´Ìá½»¡£
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+	 ¶Ô¶àÎÄ¼şÉÏ´«µÄÖ§³ÖÊÇÔÚ 3.0.10 °æ±¾Ìí¼ÓµÄ¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6610" ></A
+><P  ><B  >Àı×Ó 18-3. ÉÏ´«¶à¸öÎÄ¼ş</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;form action="file-upload.php" method="POST" enctype="multipart/form-data"&#62;
+  Send these files:&#60;br&#62;
+  &#60;input name="userfile[]" type="file"&#62;&#60;br&#62;
+  &#60;input name="userfile[]" type="file"&#62;&#60;br&#62;
+  &#60;input type="submit" value="Send files"&#62;
+&#60;/form&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    µ±ÒÔÉÏ±íµ¥±»Ìá½»ºó£¬Êı×é <TT  CLASS="varname" >$_FILES['userfile']</TT
+>¡¢<TT  CLASS="varname" >$_FILES['userfile']['name']</TT
+> ºÍ <TT  CLASS="varname" >$_FILES['userfile']['size']</TT
+> ½«±»³õÊ¼»¯£¨ÔÚ PHP 4.1.0 ÒÔÇ°°æ±¾ÊÇ <TT  CLASS="varname" >$HTTP_POST_FILES</TT
+>¡££©Èç¹û <TT  CLASS="literal" >register_globals</TT
+> µÄÉèÖÃÎª on£¬ÔòºÍÎÄ¼şÉÏ´«Ïà¹ØµÄÈ«¾Ö±äÁ¿Ò²½«±»³õÊ¼»¯¡£ËùÓĞÕâĞ©Ìá½»µÄĞÅÏ¢¶¼½«±»´¢´æµ½ÒÔÊı×ÖÎªË÷ÒıµÄÊı×éÖĞ¡£
+   </P
+><P  >&#13;    ÀıÈç£¬¼ÙÉèÃûÎª <TT  CLASS="filename" >/home/test/review.html</TT
+> ºÍ <TT  CLASS="filename" >/home/test/xwp.out</TT
+> µÄÎÄ¼ş±»Ìá½»£¬Ôò <TT  CLASS="varname" >$_FILES['userfile']['name'][0]</TT
+> ½«°üº¬ÎÄ¼ş <TT  CLASS="filename" >review.html</TT
+> µÄÃû³Æ£¬¶ø <TT  CLASS="varname" >$_FILES['userfile']['name'][1]</TT
+> Ôò½«°üº¬ÎÄ¼ş <TT  CLASS="filename" >xwp.out</TT
+> µÄÃû³Æ¡£ÀàËÆµÄ£¬<TT  CLASS="varname" >$_FILES['userfile']['size'][0]</TT
+> ½«°üº¬ÎÄ¼ş <TT  CLASS="filename" >review.html</TT
+> µÄ´óĞ¡£¬ÒÀ´ËÀàÍÆ¡£
+   </P
+><P  >&#13;    <TT  CLASS="varname" >$_FILES['userfile']['name'][0]</TT
+>¡¢<TT  CLASS="varname" >$_FILES['userfile']['tmp_name'][0]</TT
+>¡¢<TT  CLASS="varname" >$_FILES['userfile']['size'][0]</TT
+> ÒÔ¼°
+    <TT  CLASS="varname" >$_FILES['userfile']['type'][0]</TT
+> ¶¼½«±»Í¬Ê±ÉèÖÃ²¢ÓĞĞ§¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="features.file-upload.common-pitfalls.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="features.file-upload.put-method.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Ò»Ğ©×¢ÒâÊÂÏî</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/features.file-upload.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >¶Ô PUT ·½·¨µÄÖ§³Ö</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.file-upload.common-pitfalls.html">å¸¸è§ç¼ºé™·</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="features.file-upload.put-method.html">å¯¹ PUT æ–¹æ³•çš„æ”¯æŒ</a></div>
- <div class="up"><a href="features.file-upload.html">æ–‡ä»¶ä¸Šä¼ å¤„ç†</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="features.file-upload.multiple" class="sect1">
-  <h2 class="title">ä¸Šä¼ å¤šä¸ªæ–‡ä»¶</h2>
-  <p class="simpara">
-   å¯ä»¥å¯¹ <em>input</em> åŸŸä½¿ç”¨ä¸åŒçš„ <em>name</em> æ¥ä¸Šä¼ å¤šä¸ªæ–‡ä»¶ã€‚
-  </p>
-  <p class="simpara">
-   PHP æ”¯æŒåŒæ—¶ä¸Šä¼ å¤šä¸ªæ–‡ä»¶å¹¶å°†å®ƒä»¬çš„ä¿¡æ¯è‡ªåŠ¨ä»¥æ•°ç»„çš„å½¢å¼ç»„ç»‡ã€‚è¦å®Œæˆè¿™é¡¹åŠŸèƒ½ï¼Œéœ€è¦åœ¨
-   HTML è¡¨å•ä¸­å¯¹æ–‡ä»¶ä¸Šä¼ åŸŸä½¿ç”¨å’Œå¤šé€‰æ¡†ä¸å¤é€‰æ¡†ç›¸åŒçš„æ•°ç»„å¼æäº¤è¯­æ³•ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¯¹å¤šæ–‡ä»¶ä¸Šä¼ çš„æ”¯æŒæ˜¯åœ¨ PHP 3.0.10 ç‰ˆæœ¬æ·»åŠ çš„ã€‚
-   </p>
-  </p></blockquote>
-  <p class="para">
-   <div class="example" id="example-372">
-    <p><strong>Example #1 ä¸Šä¼ å¤šä¸ªæ–‡ä»¶</strong></p>
-    <div class="example-contents">
-<div class="htmlcode"><pre class="htmlcode">&lt;form action=&quot;file-upload.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
-  Send these files:&lt;br /&gt;
-  &lt;input name=&quot;userfile[]&quot; type=&quot;file&quot; /&gt;&lt;br /&gt;
-  &lt;input name=&quot;userfile[]&quot; type=&quot;file&quot; /&gt;&lt;br /&gt;
-  &lt;input type=&quot;submit&quot; value=&quot;Send files&quot; /&gt;
-&lt;/form&gt;</pre>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-    </div>
-
-   </div>
-  </p>
-  <p class="simpara">
-   å½“ä»¥ä¸Šè¡¨å•è¢«æäº¤åï¼Œæ•°ç»„
-   <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']</a></var></var>ï¼Œ<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name']</a></var></var>
-   å’Œ <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['size']</a></var></var> å°†è¢«åˆå§‹åŒ–ï¼ˆåœ¨
-   PHP 4.1.0 ä»¥å‰ç‰ˆæœ¬æ˜¯ <var class="varname"><var class="varname">$HTTP_POST_FILES</var></var>ï¼‰ã€‚å¦‚æœ
-   <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
-   çš„è®¾ç½®ä¸º onï¼Œåˆ™å’Œæ–‡ä»¶ä¸Šä¼ ç›¸å…³çš„å…¨å±€å˜é‡ä¹Ÿå°†è¢«åˆå§‹åŒ–ã€‚æ‰€æœ‰è¿™äº›æäº¤çš„ä¿¡æ¯éƒ½å°†è¢«å‚¨å­˜åˆ°ä»¥æ•°å­—ä¸ºç´¢å¼•çš„æ•°ç»„ä¸­ã€‚
-  </p>
-  <p class="simpara">
-   ä¾‹å¦‚ï¼Œå‡è®¾åä¸º <var class="filename">/home/test/review.html</var> å’Œ
-   <var class="filename">/home/test/xwp.out</var> çš„æ–‡ä»¶è¢«æäº¤ï¼Œåˆ™
-   <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name'][0]</a></var></var> çš„å€¼å°†æ˜¯
-   <var class="filename">review.html</var>ï¼Œè€Œ
-   <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name'][1]</a></var></var> çš„å€¼å°†æ˜¯
-   <var class="filename">xwp.out</var>ã€‚ç±»ä¼¼çš„ï¼Œ<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['size'][0]</a></var></var>
-   å°†åŒ…å«æ–‡ä»¶ <var class="filename">review.html</var> çš„å¤§å°ï¼Œä¾æ­¤ç±»æ¨ã€‚
-  </p>
-  <p class="simpara">
-   æ­¤å¤–ä¹ŸåŒæ—¶è®¾ç½®äº† <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name'][0]</a></var></var>ï¼Œ<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['tmp_name'][0]</a></var></var>ï¼Œ<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['size'][0]</a></var></var>
-   ä»¥åŠ <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['type'][0]</a></var></var>ã€‚
-  </p>
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.file-upload.common-pitfalls.html">å¸¸è§ç¼ºé™·</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="features.file-upload.put-method.html">å¯¹ PUT æ–¹æ³•çš„æ”¯æŒ</a></div>
- <div class="up"><a href="features.file-upload.html">æ–‡ä»¶ä¸Šä¼ å¤„ç†</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

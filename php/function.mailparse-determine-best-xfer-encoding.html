@@ -1,94 +1,69 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets the best way of encoding</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.mailparse.html">Mailparse å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mailparse-msg-create.html">mailparse_msg_create</a></div>
- <div class="up"><a href="ref.mailparse.html">Mailparse å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mailparse-determine-best-xfer-encoding" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mailparse_determine_best_xfer_encoding</h1>
-  <p class="verinfo">(PECL mailparse &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">mailparse_determine_best_xfer_encoding</span> &mdash; <span class="dc-title">Gets the best way of encoding</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.mailparse-determine-best-xfer-encoding-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mailparse_determine_best_xfer_encoding</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$fp</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Figures out the best way of encoding the content read from the given file
-   pointer.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mailparse-determine-best-xfer-encoding-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">fp</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A valid file pointer, which must be seek-able.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mailparse-determine-best-xfer-encoding-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns one of the character encodings supported by the
-   <a href="ref.mbstring.html" class="link">mbstring</a> module.
-  </p>
- </div>
-
-
-
- <div class="refsect1 examples" id="refsect1-function.mailparse-determine-best-xfer-encoding-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3661">
-    <p><strong>Example #1 <span class="function"><strong>mailparse_determine_best_xfer_encoding()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'somemail.eml'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">'Best&nbsp;encoding:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mailparse_determine_best_xfer_encoding</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Best encoding: 7bit
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mailparse_determine_best_xfer_encoding</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="mailparse Functions" HREF="ref.mailparse.html"><LINK  REL="PREVIOUS" TITLE="mailparse Functions" HREF="ref.mailparse.html"><LINK  REL="NEXT" TITLE="mailparse_msg_create" HREF="function.mailparse-msg-create.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.mailparse.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mailparse-msg-create.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mailparse-determine-best-xfer-encoding" ></A
+>mailparse_determine_best_xfer_encoding</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN49102" ></A
+><P  >    (4.1.0 - 4.1.2 only)</P
+>mailparse_determine_best_xfer_encoding&nbsp;--&nbsp;
+     Figures out the best way of encoding the content read from the
+     file pointer fp, which must be seek-able 
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN49105" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >mailparse_determine_best_xfer_encoding</B
+> ( resource fp)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >¸Ãº¯ÊıÄ¿Ç°ÉĞÎŞ²Î¿¼ÎÄµµ£»½ö²ÎÊıÁĞ±í¿ÉÓÃ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.mailparse.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mailparse-msg-create.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mailparse Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mailparse.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mailparse_msg_create</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.mailparse.html">Mailparse å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mailparse-msg-create.html">mailparse_msg_create</a></div>
- <div class="up"><a href="ref.mailparse.html">Mailparse å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

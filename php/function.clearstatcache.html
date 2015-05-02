@@ -1,177 +1,101 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ¸…é™¤æ–‡ä»¶çŠ¶æ€ç¼“å­˜</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.chown.html">chown</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.copy.html">copy</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.clearstatcache" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">clearstatcache</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">clearstatcache</span> &mdash; <span class="dc-title">æ¸…é™¤æ–‡ä»¶çŠ¶æ€ç¼“å­˜</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.clearstatcache-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>clearstatcache</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$clear_realpath_cache</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   å½“ä½¿ç”¨ <span class="function"><a href="function.stat.html" class="function">stat()</a></span>ï¼Œ<span class="function"><a href="function.lstat.html" class="function">lstat()</a></span>
-   æˆ–è€…ä»»ä½•åˆ—åœ¨å—å½±å“å‡½æ•°è¡¨ï¼ˆè§ä¸‹é¢ï¼‰ä¸­çš„å‡½æ•°æ—¶ï¼ŒPHP
-   å°†ç¼“å­˜è¿™äº›å‡½æ•°çš„è¿”å›ä¿¡æ¯ä»¥æä¾›æ›´å¿«çš„æ€§èƒ½ã€‚ç„¶è€Œåœ¨æŸäº›æƒ…å†µä¸‹ï¼Œä½ å¯èƒ½æƒ³æ¸…é™¤è¢«ç¼“å­˜çš„ä¿¡æ¯ã€‚ä¾‹å¦‚å¦‚æœåœ¨ä¸€ä¸ªè„šæœ¬ä¸­å¤šæ¬¡æ£€æŸ¥åŒä¸€ä¸ªæ–‡ä»¶ï¼Œè€Œè¯¥æ–‡ä»¶åœ¨æ­¤è„šæœ¬æ‰§è¡ŒæœŸé—´æœ‰è¢«åˆ é™¤æˆ–ä¿®æ”¹çš„å±é™©æ—¶ï¼Œä½ éœ€è¦æ¸…é™¤æ–‡ä»¶çŠ¶æ€ç¼“å­˜ã€‚è¿™ç§æƒ…å†µä¸‹ï¼Œå¯ä»¥ç”¨
-   <span class="function"><strong>clearstatcache()</strong></span> å‡½æ•°æ¥æ¸…é™¤è¢«
-   PHP ç¼“å­˜çš„è¯¥æ–‡ä»¶ä¿¡æ¯ã€‚
-  </p>
-  <p class="para">
-   å¿…é¡»æ³¨æ„çš„æ˜¯ï¼Œå¯¹äºä¸å­˜åœ¨çš„æ–‡ä»¶ï¼ŒPHP å¹¶ä¸ä¼šç¼“å­˜å…¶ä¿¡æ¯ã€‚æ‰€ä»¥å¦‚æœè°ƒç”¨
-   <span class="function"><a href="function.file-exists.html" class="function">file_exists()</a></span> æ¥æ£€æŸ¥ä¸å­˜åœ¨çš„æ–‡ä»¶ï¼Œåœ¨è¯¥æ–‡ä»¶æ²¡æœ‰è¢«åˆ›å»ºä¹‹å‰ï¼Œå®ƒéƒ½ä¼šè¿”å›
-   <strong><code>FALSE</code></strong>ã€‚å¦‚æœè¯¥æ–‡ä»¶è¢«åˆ›å»ºäº†ï¼Œå°±ç®—ä»¥åè¢«åˆ é™¤ï¼Œå®ƒéƒ½ä¼šè¿”å› <strong><code>TRUE</code></strong>
-   å‡½æ•° <span class="function"><a href="function.unlink.html" class="function">unlink()</a></span> ä¼šè‡ªåŠ¨æ¸…é™¤è¯¥ç¼“å­˜.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    æœ¬å‡½æ•°ç¼“å­˜ç‰¹å®šæ–‡ä»¶åçš„ä¿¡æ¯ï¼Œå› æ­¤åªåœ¨å¯¹åŒä¸€ä¸ªæ–‡ä»¶åè¿›è¡Œå¤šæ¬¡æ“ä½œå¹¶ä¸”éœ€è¦è¯¥æ–‡ä»¶ä¿¡æ¯ä¸è¢«ç¼“å­˜æ—¶æ‰éœ€è¦è°ƒç”¨
-    <span class="function"><strong>clearstatcache()</strong></span>ã€‚
-   </p>
-  </p></blockquote>
-  <p class="para">
-   å—å½±å“çš„å‡½æ•°åŒ…æ‹¬
-   <span class="function"><a href="function.stat.html" class="function">stat()</a></span>ï¼Œ
-   <span class="function"><a href="function.lstat.html" class="function">lstat()</a></span>ï¼Œ
-   <span class="function"><a href="function.file-exists.html" class="function">file_exists()</a></span>ï¼Œ
-   <span class="function"><a href="function.is-writable.html" class="function">is_writable()</a></span>ï¼Œ
-   <span class="function"><a href="function.is-readable.html" class="function">is_readable()</a></span>ï¼Œ
-   <span class="function"><a href="function.is-executable.html" class="function">is_executable()</a></span>ï¼Œ
-   <span class="function"><a href="function.is-file.html" class="function">is_file()</a></span>ï¼Œ
-   <span class="function"><a href="function.is-dir.html" class="function">is_dir()</a></span>ï¼Œ
-   <span class="function"><a href="function.is-link.html" class="function">is_link()</a></span>ï¼Œ
-   <span class="function"><a href="function.filectime.html" class="function">filectime()</a></span>ï¼Œ
-   <span class="function"><a href="function.fileatime.html" class="function">fileatime()</a></span>ï¼Œ
-   <span class="function"><a href="function.filemtime.html" class="function">filemtime()</a></span>ï¼Œ
-   <span class="function"><a href="function.fileinode.html" class="function">fileinode()</a></span>ï¼Œ
-   <span class="function"><a href="function.filegroup.html" class="function">filegroup()</a></span>ï¼Œ
-   <span class="function"><a href="function.fileowner.html" class="function">fileowner()</a></span>ï¼Œ
-   <span class="function"><a href="function.filesize.html" class="function">filesize()</a></span>ï¼Œ
-   <span class="function"><a href="function.filetype.html" class="function">filetype()</a></span>
-   å’Œ <span class="function"><a href="function.fileperms.html" class="function">fileperms()</a></span>ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.clearstatcache-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">clear_realpath_cache</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ˜¯å¦æ¸…é™¤çœŸå®è·¯å¾„ç¼“å­˜
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ¸…é™¤æ–‡ä»¶åæŒ‡å®šçš„æ–‡ä»¶çš„çœŸå®è·¯å¾„ç¼“å­˜; åªåœ¨
-       <code class="parameter">clear_realpath_cache</code> ä¸º <strong><code>TRUE</code></strong> 
-       æ—¶å¯ç”¨
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >clearstatcache</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="chown" HREF="function.chown.html"><LINK  REL="NEXT" TITLE="copy" HREF="function.copy.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.chown.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.copy.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.clearstatcache" ></A
+>clearstatcache</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN27515" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>clearstatcache&nbsp;--&nbsp;Çå³ıÎÄ¼ş×´Ì¬»º´æ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN27518" ></A
+><H2  >ËµÃ÷</H2
+>void <B  CLASS="methodname" >clearstatcache</B
+> ( void )<BR  ></BR
+><P  >&#13;     µ±Ê¹ÓÃ <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+>£¬<A  HREF="function.lstat.html"  ><B  CLASS="function" >lstat()</B
+></A
+>
+     »òÕßÈÎºÎÁĞÔÚÊÜÓ°Ïìº¯Êı±í£¨¼ûÏÂÃæ£©ÖĞµÄº¯ÊıÊ±£¬PHP
+     ½«»º´æÕâĞ©º¯ÊıµÄ·µ»ØĞÅÏ¢ÒÔÌá¹©¸ü¿ìµÄĞÔÄÜ¡£È»¶øÔÚÄ³Ğ©Çé¿öÏÂ£¬Äã¿ÉÄÜÏëÇå³ı±»»º´æµÄĞÅÏ¢¡£ÀıÈçÈç¹ûÔÚÒ»¸ö½Å±¾ÖĞ¶à´Î¼ì²éÍ¬Ò»¸öÎÄ¼ş£¬¶ø¸ÃÎÄ¼şÔÚ´Ë½Å±¾Ö´ĞĞÆÚ¼äÓĞ±»É¾³ı»òĞŞ¸ÄµÄÎ£ÏÕÊ±£¬ÄãĞèÒªÇå³ıÎÄ¼ş×´Ì¬»º´æ¡£ÕâÖÖÇé¿öÏÂ£¬¿ÉÒÔÓÃ
+     <B  CLASS="function" >clearstatcache()</B
+> º¯ÊıÀ´Çå³ı±»
+     PHP »º´æµÄ¸ÃÎÄ¼şĞÅÏ¢¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ±¾º¯Êı»º´æÌØ¶¨ÎÄ¼şÃûµÄĞÅÏ¢£¬Òò´ËÖ»ÔÚ¶ÔÍ¬Ò»¸öÎÄ¼şÃû½øĞĞ¶à´Î²Ù×÷²¢ÇÒĞèÒª¸ÃÎÄ¼şĞÅÏ¢²»±»»º´æÊ±²ÅĞèÒªµ÷ÓÃ
+       <B  CLASS="function" >clearstatcache()</B
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ÊÜÓ°ÏìµÄº¯Êı°üÀ¨
+     <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+>£¬<A  HREF="function.lstat.html"  ><B  CLASS="function" >lstat()</B
+></A
+>£¬<A  HREF="function.file-exists.html"  ><B  CLASS="function" >file_exists()</B
+></A
+>£¬<A  HREF="function.is-writable.html"  ><B  CLASS="function" >is_writable()</B
+></A
+>£¬<A  HREF="function.is-readable.html"  ><B  CLASS="function" >is_readable()</B
+></A
+>£¬<A  HREF="function.is-executable.html"  ><B  CLASS="function" >is_executable()</B
+></A
+>£¬<A  HREF="function.is-file.html"  ><B  CLASS="function" >is_file()</B
+></A
+>£¬<A  HREF="function.is-dir.html"  ><B  CLASS="function" >is_dir()</B
+></A
+>£¬<A  HREF="function.is-link.html"  ><B  CLASS="function" >is_link()</B
+></A
+>£¬<A  HREF="function.filectime.html"  ><B  CLASS="function" >filectime()</B
+></A
+>£¬<A  HREF="function.fileatime.html"  ><B  CLASS="function" >fileatime()</B
+></A
+>£¬<A  HREF="function.filemtime.html"  ><B  CLASS="function" >filemtime()</B
+></A
+>£¬<A  HREF="function.fileinode.html"  ><B  CLASS="function" >fileinode()</B
+></A
+>£¬<A  HREF="function.filegroup.html"  ><B  CLASS="function" >filegroup()</B
+></A
+>£¬<A  HREF="function.fileowner.html"  ><B  CLASS="function" >fileowner()</B
+></A
+>£¬<A  HREF="function.filesize.html"  ><B  CLASS="function" >filesize()</B
+></A
+>£¬<A  HREF="function.filetype.html"  ><B  CLASS="function" >filetype()</B
+></A
+>
+     ºÍ <A  HREF="function.fileperms.html"  ><B  CLASS="function" >fileperms()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.chown.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.copy.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >chown</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >copy</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.clearstatcache-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æ²¡æœ‰è¿”å›å€¼ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.clearstatcache-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        å¢åŠ äº†å¯é€‰çš„ <code class="parameter">clear_realpath_cache</code> 
-        å’Œ <code class="parameter">filename</code> å‚æ•°.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.clearstatcache-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2448">
-    <p><strong>Example #1 <span class="function"><strong>clearstatcache()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'output_log.txt'</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">get_owner</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$stat&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stat</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$user&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">posix_getpwuid</span><span style="color: #007700">(</span><span style="color: #0000BB">$stat</span><span style="color: #007700">[</span><span style="color: #DD0000">'uid'</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #0000BB">$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"UID&nbsp;@&nbsp;%s:&nbsp;%s\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'r'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">get_owner</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">chown</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ross'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'r'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">get_owner</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">clearstatcache</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'r'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">get_owner</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-UID @ Sun, 12 Oct 2008 20:48:28 +0100: root
-UID @ Sun, 12 Oct 2008 20:48:28 +0100: root
-UID @ Sun, 12 Oct 2008 20:48:28 +0100: ross
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- 
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.chown.html">chown</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.copy.html">copy</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

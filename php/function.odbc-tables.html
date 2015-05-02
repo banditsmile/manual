@@ -1,192 +1,154 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get the list of table names stored in a specific data source</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-tableprivileges.html">odbc_tableprivileges</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.pdo.html">PDO</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.odbc-tables" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">odbc_tables</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">odbc_tables</span> &mdash; <span class="dc-title">Get the list of table names stored in a specific data source</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.odbc-tables-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>odbc_tables</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection_id</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$qualifier</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$owner</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$types</code></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   Lists all tables in the requested range.
-  </p>
-  <p class="para">
-   To support enumeration of qualifiers, owners, and table types,
-   the following special semantics for the
-   <code class="parameter">qualifier</code>, <code class="parameter">owner</code>,
-   <code class="parameter">name</code>, and
-   <code class="parameter">table_type</code> are available:
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      If <code class="parameter">qualifier</code> is a single percent
-      character (%) and <code class="parameter">owner</code> and
-      <code class="parameter">name</code> are empty strings, then the result
-      set contains a list of valid qualifiers for the data
-      source. (All columns except the TABLE_QUALIFIER column contain
-      NULLs.)
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      If <code class="parameter">owner</code> is a single percent character
-      (%) and <code class="parameter">qualifier</code> and
-      <code class="parameter">name</code> are empty strings, then the result
-      set contains a list of valid owners for the data source. (All
-      columns except the TABLE_OWNER column contain
-      NULLs.)
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      If <code class="parameter">table_type</code> is a single percent
-      character (%) and <code class="parameter">qualifier</code>,
-      <code class="parameter">owner</code> and <code class="parameter">name</code>
-      are empty strings, then the result set contains a list of
-      valid table types for the data source. (All columns except the
-      TABLE_TYPE column contain NULLs.)
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.odbc-tables-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">connection_id</code></dt>
-
-     <dd>
-
-      <p class="para">ODBC ËøûÊé•Ê†áËØÜÁ¨¶ÔºåËØ¶ËßÅ
-<span class="function"><a href="function.odbc-connect.html" class="function">odbc_connect()</a></span>„ÄÇ</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">qualifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The qualifier.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">owner</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The owner. Accepts search patterns (&#039;%&#039; to match zero or more
-       characters and &#039;_&#039; to match a single character).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The name. Accepts search patterns (&#039;%&#039; to match zero or more
-       characters and &#039;_&#039; to match a single character).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">types</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If <code class="parameter">table_type</code> is not an empty string, it
-       must contain a list of comma-separated values for the types of
-       interest; each value may be enclosed in single quotes (&#039;) or
-       unquoted. For example, &quot;&#039;TABLE&#039;,&#039;VIEW&#039;&quot; or &quot;TABLE, VIEW&quot;.  If the
-       data source does not support a specified table type,
-       <span class="function"><strong>odbc_tables()</strong></span> does not return any results for
-       that type.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >odbc_tables</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Unified ODBC Functions" HREF="ref.odbc.html"><LINK  REL="PREVIOUS" TITLE="odbc_tableprivileges" HREF="function.odbc-tableprivileges.html"><LINK  REL="NEXT" TITLE="Object Aggregation/Composition Functions" HREF="ref.objaggregation.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.odbc-tableprivileges.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.objaggregation.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.odbc-tables" ></A
+>odbc_tables</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN79084" ></A
+><P  >    (PHP 3&#62;= 3.0.17, PHP 4 )</P
+>odbc_tables&nbsp;--&nbsp;
+     Get the list of table names stored in a specific data source.
+     Returns a result identifier containing the
+     information.
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN79087" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >odbc_tables</B
+> ( resource connection_id [, string qualifier [, string owner [, string name [, string types]]]])<BR  ></BR
+><P  >&#13;     Lists all tables in the requested range.  Returns an ODBC result
+     identifier or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+    </P
+><P  >&#13;     The result set has the following columns:
+     <P  ></P
+><UL  ><LI  ><P  >TABLE_QUALIFIER</P
+></LI
+><LI  ><P  >TABLE_OWNER</P
+></LI
+><LI  ><P  >TABLE_NAME</P
+></LI
+><LI  ><P  >TABLE_TYPE</P
+></LI
+><LI  ><P  >REMARKS</P
+></LI
+></UL
+> 
+    </P
+><P  >&#13;     The result set is ordered by TABLE_TYPE, TABLE_QUALIFIER,
+     TABLE_OWNER and TABLE_NAME.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >owner</I
+></TT
+> and <TT  CLASS="parameter" ><I  >name</I
+></TT
+>
+     arguments accept search patterns ('%' to match zero or more
+     characters and '_' to match a single character).
+    </P
+><P  >&#13;     To support enumeration of qualifiers, owners, and table types,
+     the following special semantics for the
+     <TT  CLASS="parameter" ><I  >qualifier</I
+></TT
+>, <TT  CLASS="parameter" ><I  >owner</I
+></TT
+>,
+     <TT  CLASS="parameter" ><I  >name</I
+></TT
+>, and
+     <TT  CLASS="parameter" ><I  >table_type</I
+></TT
+> are available:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        If <TT  CLASS="parameter" ><I  >qualifier</I
+></TT
+> is a single percent
+        character (%) and <TT  CLASS="parameter" ><I  >owner</I
+></TT
+> and
+        <TT  CLASS="parameter" ><I  >name</I
+></TT
+> are empty strings, then the result
+        set contains a list of valid qualifiers for the data
+        source. (All columns except the TABLE_QUALIFIER column contain
+        NULLs.)
+       </P
+></LI
+><LI  ><P  >&#13;        If <TT  CLASS="parameter" ><I  >owner</I
+></TT
+> is a single percent character
+        (%) and <TT  CLASS="parameter" ><I  >qualifier</I
+></TT
+> and
+        <TT  CLASS="parameter" ><I  >name</I
+></TT
+> are empty strings, then the result
+        set contains a list of valid owners for the data source. (All
+        columns except the TABLE_OWNER column contain
+        NULLs.)
+       </P
+></LI
+><LI  ><P  >&#13;        If <TT  CLASS="parameter" ><I  >table_type</I
+></TT
+> is a single percent
+        character (%) and <TT  CLASS="parameter" ><I  >qualifier</I
+></TT
+>,
+        <TT  CLASS="parameter" ><I  >owner</I
+></TT
+> and <TT  CLASS="parameter" ><I  >name</I
+></TT
+>
+        are empty strings, then the result set contains a list of
+        valid table types for the data source. (All columns except the
+        TABLE_TYPE column contain NULLs.)
+       </P
+></LI
+></UL
+> 
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >table_type</I
+></TT
+> is not an empty string, it
+     must contain a list of comma-separated values for the types of
+     interest; each value may be enclosed in single quotes (') or
+     unquoted. For example, "'TABLE','VIEW'" or "TABLE, VIEW".  If the
+     data source does not support a specified table type,
+     <B  CLASS="function" >odbc_tables()</B
+> does not return any results for
+     that type.
+    </P
+><P  >&#13;     See also <A  HREF="function.odbc-tableprivileges.html"  ><B  CLASS="function" >odbc_tableprivileges()</B
+></A
+> to retrieve
+     associated privileges.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.odbc-tableprivileges.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.objaggregation.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >odbc_tableprivileges</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.odbc.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Object Aggregation/Composition Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.odbc-tables-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an ODBC result identifier containing the information 
-   ÊàñËÄÖÂú®Â§±Ë¥•Êó∂ËøîÂõû <strong><code>FALSE</code></strong>.
-  </p>
-  <p class="para">
-   The result set has the following columns:
-   <ul class="itemizedlist">
-    <li class="listitem"><span class="simpara">TABLE_QUALIFIER</span></li>
-    <li class="listitem"><span class="simpara">TABLE_OWNER</span></li>
-    <li class="listitem"><span class="simpara">TABLE_NAME</span></li>
-    <li class="listitem"><span class="simpara">TABLE_TYPE</span></li>
-    <li class="listitem"><span class="simpara">REMARKS</span></li>
-   </ul>
-  </p>
-  <p class="simpara">
-   The result set is ordered by TABLE_TYPE, TABLE_QUALIFIER,
-   TABLE_OWNER and TABLE_NAME.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.odbc-tables-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.odbc-tableprivileges.html" class="function" rel="rdfs-seeAlso">odbc_tableprivileges()</a> - Lists tables and the privileges associated with each table</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-tableprivileges.html">odbc_tableprivileges</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.pdo.html">PDO</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

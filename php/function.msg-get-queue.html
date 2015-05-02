@@ -1,104 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Create or attach to a message queue</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftok.html">ftok</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.msg-queue-exists.html">msg_queue_exists</a></div>
- <div class="up"><a href="ref.sem.html">Semaphore å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.msg-get-queue" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">msg_get_queue</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">msg_get_queue</span> &mdash; <span class="dc-title">Create or attach to a message queue</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.msg-get-queue-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>msg_get_queue</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$key</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$perms</code><span class="initializer"> = 0666</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>msg_get_queue()</strong></span> returns an id that can be used to
-   access the System V message queue with the given
-   <code class="parameter">key</code>. The first call creates the message queue with
-   the optional <code class="parameter">perms</code>.
-   A second call to <span class="function"><strong>msg_get_queue()</strong></span> for the same
-   <code class="parameter">key</code> will return a different message queue
-   identifier, but both identifiers access the same underlying message
-   queue.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.msg-get-queue-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">key</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Message queue numeric ID
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">perms</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Queue permissions. Default to 0666. If the message queue already
-       exists, the <code class="parameter">perms</code> will be ignored.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.msg-get-queue-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a resource handle that can be used to access the System V message queue.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >msg_get_queue</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Semaphore, Shared Memory and IPC Functions" HREF="ref.sem.html"><LINK  REL="PREVIOUS" TITLE="ftok" HREF="function.ftok.html"><LINK  REL="NEXT" TITLE="msg_receive" HREF="function.msg-receive.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftok.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.msg-receive.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.msg-get-queue" ></A
+>msg_get_queue</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN96870" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>msg_get_queue&nbsp;--&nbsp;
+     Create or attach to a message queue
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN96873" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >msg_get_queue</B
+> ( int key [, int perms])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >msg_get_queue()</B
+> returns an id that can be used to
+     access the System V message queue with the given
+     <TT  CLASS="parameter" ><I  >key</I
+></TT
+>. The first call creates the message queue with
+     the optional <TT  CLASS="parameter" ><I  >perms</I
+></TT
+> (default: 0666).
+     A second call to <B  CLASS="function" >msg_get_queue()</B
+> for the same
+     <TT  CLASS="parameter" ><I  >key</I
+></TT
+> will return a different message queue
+     identifier, but both identifiers access the same underlying message
+     queue.
+     If the message queue already exists, the <TT  CLASS="parameter" ><I  >perms</I
+></TT
+>
+     will be ignored.
+    </P
+><P  >&#13;     See also: <A  HREF="function.msg-remove-queue.html"  ><B  CLASS="function" >msg_remove_queue()</B
+></A
+>,
+     <A  HREF="function.msg-receive.html"  ><B  CLASS="function" >msg_receive()</B
+></A
+>, <A  HREF="function.msg-send.html"  ><B  CLASS="function" >msg_send()</B
+></A
+>,
+     <A  HREF="function.msg-stat-queue.html"  ><B  CLASS="function" >msg_stat_queue()</B
+></A
+> and
+     <A  HREF="function.msg-set-queue.html"  ><B  CLASS="function" >msg_set_queue()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftok.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.msg-receive.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftok</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >msg_receive</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.msg-get-queue-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.msg-remove-queue.html" class="function" rel="rdfs-seeAlso">msg_remove_queue()</a> - Destroy a message queue</span></li>
-    <li class="member"><span class="function"><a href="function.msg-receive.html" class="function" rel="rdfs-seeAlso">msg_receive()</a> - Receive a message from a message queue</span></li>
-    <li class="member"><span class="function"><a href="function.msg-send.html" class="function" rel="rdfs-seeAlso">msg_send()</a> - Send a message to a message queue</span></li>
-    <li class="member"><span class="function"><a href="function.msg-stat-queue.html" class="function" rel="rdfs-seeAlso">msg_stat_queue()</a> - Returns information from the message queue data structure</span></li>
-    <li class="member"><span class="function"><a href="function.msg-set-queue.html" class="function" rel="rdfs-seeAlso">msg_set_queue()</a> - Set information in the message queue data structure</span></li>
-   </ul>
-  </p>
- </div>
-  
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftok.html">ftok</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.msg-queue-exists.html">msg_queue_exists</a></div>
- <div class="up"><a href="ref.sem.html">Semaphore å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

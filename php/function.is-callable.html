@@ -1,127 +1,56 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>检测参数是否为合法的可调用结构</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.is-bool.html">is_bool</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-double.html">is_double</a></div>
- <div class="up"><a href="ref.var.html">Variable handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.is-callable" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">is_callable</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">is_callable</span> &mdash; <span class="dc-title">
-     检测参数是否为合法的可调用结构
-    </span></p>
-
-   </div>
- 
- <div class="refsect1 description" id="refsect1-function.is-callable-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>is_callable</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$name</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$syntax_only</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$callable_name</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   验证变量的内容能否作为函数调用。
-   这可以检查包含有效函数名的变量，或者一个数组，包含了正确编码的对象以及函数名。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.is-callable-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要检查的回调函数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">syntax_only</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设置为 <strong><code>TRUE</code></strong>，这个函数仅仅验证 <code class="parameter">name</code> 可能是函数或方法。
-       它仅仅拒绝非字符，或者未包含能用于回调函数的有效结构。有效的应该包含两个元素，第一个是一个对象或者字符，第二个元素是个字符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">callable_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       接受“可调用的名称”。下面的例子是“someClass::someMethod”。
-       注意，尽管 someClass::SomeMethod() 的含义是可调用的静态方法，但例子的情况并不是这样的。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >is_callable</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="����������" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="is_bool" HREF="function.is-bool.html"><LINK  REL="NEXT" TITLE="is_double" HREF="function.is-double.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.is-bool.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.is-double.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.is-callable" ></A
+>is_callable</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115644" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>is_callable&nbsp;--&nbsp;
+     �������Ƿ�Ϊ�Ϸ��Ŀɵ��ýṹ
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115647" ></A
+><H2  >����</H2
+>bool <B  CLASS="methodname" >is_callable</B
+> ( mixed var [, bool syntax_only [, string callable_name]])<BR  ></BR
+><P  >&#13;     <DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >�ú���Ŀǰ���޲ο��ĵ����������б����á�
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.is-bool.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.is-double.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >is_bool</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >is_double</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.is-callable-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果 <code class="parameter">name</code> 可调用则返回 <strong><code>TRUE</code></strong>，否则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.is-callable-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5566">
-    <p><strong>Example #1 <span class="function"><strong>is_callable()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;&nbsp;How&nbsp;to&nbsp;check&nbsp;a&nbsp;variable&nbsp;to&nbsp;see&nbsp;if&nbsp;it&nbsp;can&nbsp;be&nbsp;called<br />//&nbsp;&nbsp;as&nbsp;a&nbsp;function.<br /><br />//<br />//&nbsp;&nbsp;Simple&nbsp;variable&nbsp;containing&nbsp;a&nbsp;function<br />//<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">someFunction</span><span style="color: #007700">()&nbsp;<br />{<br />}<br /><br /></span><span style="color: #0000BB">$functionVariable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'someFunction'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_callable</span><span style="color: #007700">(</span><span style="color: #0000BB">$functionVariable</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">));&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;someFunction<br /><br />//<br />//&nbsp;&nbsp;Array&nbsp;containing&nbsp;a&nbsp;method<br />//<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">someClass&nbsp;</span><span style="color: #007700">{<br /><br />&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">someMethod</span><span style="color: #007700">()&nbsp;<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;}<br /><br />}<br /><br /></span><span style="color: #0000BB">$anObject&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">someClass</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$methodVariable&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$anObject</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'someMethod'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_callable</span><span style="color: #007700">(</span><span style="color: #0000BB">$methodVariable</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">));&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;bool(true)<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$callable_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;someClass::someMethod<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>   
-  </p>   
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.is-callable-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.function-exists.html" class="function" rel="rdfs-seeAlso">function_exists()</a> - 如果给定的函数已经被定义就返回 TRUE</span></li>
-    <li class="member"><span class="function"><a href="function.method-exists.html" class="function" rel="rdfs-seeAlso">method_exists()</a> - 检查类的方法是否存在</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.is-bool.html">is_bool</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-double.html">is_double</a></div>
- <div class="up"><a href="ref.var.html">Variable handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

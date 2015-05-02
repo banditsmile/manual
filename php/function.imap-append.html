@@ -1,164 +1,83 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Append a string message to a specified mailbox</title>
+<HTML  ><HEAD  ><TITLE  >imap_append</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_alerts" HREF="function.imap-alerts.html"><LINK  REL="NEXT" TITLE="imap_base64" HREF="function.imap-base64.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-alerts.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-base64.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-append" ></A
+>imap_append</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN41769" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imap_append&nbsp;--&nbsp;
+     Append a string message to a specified mailbox
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN41772" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >imap_append</B
+> ( resource imap_stream, string mbox, string message [, string options])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >imap_append()</B
+> appends a string message to the
+     specified mailbox <TT  CLASS="parameter" ><I  >mbox</I
+></TT
+>. If the optional
+     <TT  CLASS="parameter" ><I  >options</I
+></TT
+> is specified, writes the
+     <TT  CLASS="parameter" ><I  >options</I
+></TT
+> to that mailbox also.
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     When talking to the Cyrus IMAP server, you must use "\r\n" as
+     your end-of-line terminator instead of "\n" or the operation will
+     fail.
+    </P
+><P  >     
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN41799" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imap_append()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$stream </font><font  color="#007700">= </font><font  color="#0000BB">imap_open</font><font  color="#007700">(</font><font  color="#DD0000">"{your.imap.host}INBOX.Drafts"</font><font  color="#007700">, </font><font  color="#DD0000">"username"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$check </font><font  color="#007700">= </font><font  color="#0000BB">imap_check</font><font  color="#007700">(</font><font  color="#0000BB">$stream</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Msg Count before append: "</font><font  color="#007700">. </font><font  color="#0000BB">$check</font><font  color="#007700">-&gt;</font><font  color="#0000BB">Nmsgs </font><font  color="#007700">. </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">imap_append</font><font  color="#007700">(</font><font  color="#0000BB">$stream</font><font  color="#007700">, </font><font  color="#DD0000">"{your.imap.host}INBOX.Drafts"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">, </font><font  color="#DD0000">"From: me@example.com\r\n"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">. </font><font  color="#DD0000">"To: you@example.com\r\n"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">. </font><font  color="#DD0000">"Subject: test\r\n"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">. </font><font  color="#DD0000">"\r\n"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">. </font><font  color="#DD0000">"this is a test message, please ignore\r\n"<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$check </font><font  color="#007700">= </font><font  color="#0000BB">imap_check</font><font  color="#007700">(</font><font  color="#0000BB">$stream</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Msg Count after append : "</font><font  color="#007700">. </font><font  color="#0000BB">$check</font><font  color="#007700">-&gt;</font><font  color="#0000BB">Nmsgs </font><font  color="#007700">. </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">imap_close</font><font  color="#007700">(</font><font  color="#0000BB">$stream</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-alerts.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-base64.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_alerts</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_base64</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-alerts.html">imap_alerts</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-base64.html">imap_base64</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-append" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_append</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_append</span> &mdash; <span class="dc-title">Append a string message to a specified mailbox</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-append-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imap_append</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mailbox</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$message</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$options</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$internal_date</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   Appends a string <code class="parameter">message</code> to the specified <code class="parameter">mailbox</code>. 
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-append-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">ç”± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> è¿”å›çš„ IMAP æµã€‚</p></dd>
-
-    
-     <dt>
-<code class="parameter">mailbox</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The mailbox name, see <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> for more
-       information
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">message</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The message to be append, as a string
-      </p>
-      <p class="para">
-       When talking to the Cyrus IMAP server, you must use &quot;\r\n&quot; as
-       your end-of-line terminator instead of &quot;\n&quot; or the operation will
-       fail
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If provided, the <code class="parameter">options</code> will also be written
-       to the <code class="parameter">mailbox</code>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">internal_date</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If this parameter is set, it will set the INTERNALDATE on the appended message.  The parameter should be a date string that conforms to the rfc2060 specifications for a date_time value.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-append-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.imap-append-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.2</td>
-       <td>
-        Added INTERNALDATE support to imap_append.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.imap-append-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3629">
-    <p><strong>Example #1 <span class="function"><strong>imap_append()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$stream&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"{imap.example.org}INBOX.Drafts"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$check&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_check</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Msg&nbsp;Count&nbsp;before&nbsp;append:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$check</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Nmsgs&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">imap_append</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"{imap.example.org}INBOX.Drafts"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"From:&nbsp;me@example.com\r\n"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"To:&nbsp;you@example.com\r\n"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"Subject:&nbsp;test\r\n"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\r\n"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"this&nbsp;is&nbsp;a&nbsp;test&nbsp;message,&nbsp;please&nbsp;ignore\r\n"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$check&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_check</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Msg&nbsp;Count&nbsp;after&nbsp;append&nbsp;:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$check</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Nmsgs&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">imap_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-alerts.html">imap_alerts</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-base64.html">imap_base64</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

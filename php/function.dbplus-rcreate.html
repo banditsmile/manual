@@ -1,116 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Creates a new DB++ relation</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbplus-rchperm.html">dbplus_rchperm</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbplus-rcrtexact.html">dbplus_rcrtexact</a></div>
- <div class="up"><a href="ref.dbplus.html">DB++ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dbplus-rcreate" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dbplus_rcreate</h1>
-  <p class="verinfo">(PHP 4 &lt;= 4.1.0, PECL dbplus &gt;= 0.9)</p><p class="refpurpose"><span class="refname">dbplus_rcreate</span> &mdash; <span class="dc-title">Creates a new DB++ relation</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.dbplus-rcreate-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>dbplus_rcreate</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$domlist</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$overwrite</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Creates a new relation. Any existing relation sharing the same
-   <code class="parameter">name</code> will be overwritten if the relation is
-   currently not in use and <code class="parameter">overwrite</code> is set to TRUE.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.dbplus-rcreate-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">name</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">domlist</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A combination of domains. May be passed as a single domain name string
-       or as an array of domain names.
-      </p>
-      <p class="para">
-       This parameter should contain the domain specification for the new
-       relation within an array of domain description strings. A domain
-       description string consists of a domain name unique to this
-       relation, a slash and a type specification character. See the
-       db++ documentation, especially the dbcreate(1) manpage, for a
-       description of available type specifiers and their meanings.
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        This function will also accept a string with space delimited domain
-        description strings, but it is recommended to use an array
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">overwrite</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >dbplus_rcreate</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="DB++ Functions" HREF="ref.dbplus.html"><LINK  REL="PREVIOUS" TITLE="dbplus_rchperm" HREF="function.dbplus-rchperm.html"><LINK  REL="NEXT" TITLE="dbplus_rcrtexact" HREF="function.dbplus-rcrtexact.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbplus-rchperm.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dbplus-rcrtexact.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dbplus-rcreate" ></A
+>dbplus_rcreate</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN20938" ></A
+><P  >    (4.1.0 - 4.2.3 only)</P
+>dbplus_rcreate&nbsp;--&nbsp;Creates a new DB++ relation</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN20941" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >dbplus_rcreate</B
+> ( string name, mixed domlist [, bool overwrite])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <B  CLASS="function" >dbplus_rcreate()</B
+> will create a new relation
+     named <TT  CLASS="parameter" ><I  >name</I
+></TT
+>. An existing relation by the
+     same name will only be overwritten if the relation is currently
+     not in use and <TT  CLASS="parameter" ><I  >overwrite</I
+></TT
+> is set to TRUE.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >domlist</I
+></TT
+> should contain the domain
+     specification for the new relation within an array of domain
+     description strings. ( <B  CLASS="function" >dbplus_rcreate()</B
+> will
+     also accept a string with space delimited domain description
+     strings, but it is recommended to use an array). A domain
+     description string consists of a domain name unique to this
+     relation, a slash and a type specification character. See the
+     db++ documentation, especially the dbcreate(1) manpage, for a
+     description of available type specifiers and their meanings.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbplus-rchperm.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dbplus-rcrtexact.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbplus_rchperm</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dbplus.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dbplus_rcrtexact</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.dbplus-rcreate-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.dbplus-rcreate-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">æ­¤å‡½æ•°æ˜¯<em class="emphasis">å®éªŒæ€§</em>çš„ã€‚æ­¤å‡½æ•°çš„è¡¨è±¡ï¼ŒåŒ…æ‹¬åç§°åŠå…¶ç›¸å…³æ–‡æ¡£éƒ½å¯èƒ½åœ¨æœªæ¥çš„
-PHP å‘å¸ƒç‰ˆæœ¬ä¸­æœªé€šçŸ¥å°±è¢«ä¿®æ”¹ã€‚ä½¿ç”¨æœ¬å‡½æ•°é£é™©è‡ªæ‹… ã€‚</p></div>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbplus-rchperm.html">dbplus_rchperm</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbplus-rcrtexact.html">dbplus_rcrtexact</a></div>
- <div class="up"><a href="ref.dbplus.html">DB++ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

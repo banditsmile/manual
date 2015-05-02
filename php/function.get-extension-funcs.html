@@ -1,134 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回模块函数名称的数组</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-defined-constants.html">get_defined_constants</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-include-path.html">get_include_path</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-extension-funcs" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">get_extension_funcs</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">get_extension_funcs</span> &mdash; <span class="dc-title">返回模块函数名称的数组</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.get-extension-funcs-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>get_extension_funcs</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$module_name</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   该函数根据 <code class="parameter">module_name</code> 返回模块内定义的所有函数的名称。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.get-extension-funcs-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">module_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       模块名称。
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        这个参数必须是<em class="emphasis">小写（lowercase）</em>的。
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.get-extension-funcs-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回包含所有函数名的数组，如果 <code class="parameter">module_name</code> 不是一个有效的扩展则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >get_extension_funcs</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="get_defined_constants" HREF="function.get-defined-constants.html"><LINK  REL="NEXT" TITLE="get_include_path" HREF="function.get-include-path.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.get-defined-constants.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-include-path.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-extension-funcs" ></A
+>get_extension_funcs</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN87920" ></A
+><P  >    (PHP 4 )</P
+>get_extension_funcs&nbsp;--&nbsp;
+     Returns an array with the names of the functions of a module
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN87923" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_extension_funcs</B
+> ( string module_name)<BR  ></BR
+><P  >&#13;     This function returns the names of all the functions defined in
+     the module indicated by <TT  CLASS="parameter" ><I  >module_name</I
+></TT
+>.
+    </P
+><P  >&#13;     For example the lines below
+     <DIV  CLASS="informalexample" ><A  NAME="AEN87934" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_extension_funcs</font><font  color="#007700">(</font><font  color="#DD0000">"xml"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_extension_funcs</font><font  color="#007700">(</font><font  color="#DD0000">"gd"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       will print a list of the functions in the modules
+       <TT  CLASS="varname" >xml</TT
+> and <TT  CLASS="varname" >gd</TT
+> respectively.
+      </P
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.get-loaded-extensions.html"  ><B  CLASS="function" >get_loaded_extensions()</B
+></A
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.get-defined-constants.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-include-path.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >get_defined_constants</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_include_path</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.get-extension-funcs-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-480">
-    <p><strong>Example #1 打印 XML 函数</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">get_extension_funcs</span><span style="color: #007700">(</span><span style="color: #DD0000">"xml"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; xml_parser_create
-    [1] =&gt; xml_parser_create_ns
-    [2] =&gt; xml_set_object
-    [3] =&gt; xml_set_element_handler
-    [4] =&gt; xml_set_character_data_handler
-    [5] =&gt; xml_set_processing_instruction_handler
-    [6] =&gt; xml_set_default_handler
-    [7] =&gt; xml_set_unparsed_entity_decl_handler
-    [8] =&gt; xml_set_notation_decl_handler
-    [9] =&gt; xml_set_external_entity_ref_handler
-    [10] =&gt; xml_set_start_namespace_decl_handler
-    [11] =&gt; xml_set_end_namespace_decl_handler
-    [12] =&gt; xml_parse
-    [13] =&gt; xml_parse_into_struct
-    [14] =&gt; xml_get_error_code
-    [15] =&gt; xml_error_string
-    [16] =&gt; xml_get_current_line_number
-    [17] =&gt; xml_get_current_column_number
-    [18] =&gt; xml_get_current_byte_index
-    [19] =&gt; xml_parser_free
-    [20] =&gt; xml_parser_set_option
-    [21] =&gt; xml_parser_get_option
-    [22] =&gt; utf8_encode
-    [23] =&gt; utf8_decode
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.get-extension-funcs-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.get-loaded-extensions.html" class="function" rel="rdfs-seeAlso">get_loaded_extensions()</a> - 返回所有编译并加载模块名的 array</span></li>
-    <li class="member"><span class="methodname"><a href="reflectionextension.getfunctions.html" class="methodname" rel="rdfs-seeAlso">ReflectionExtension::getFunctions()</a> - Gets extension functions</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-defined-constants.html">get_defined_constants</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-include-path.html">get_include_path</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

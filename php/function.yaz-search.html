@@ -1,225 +1,186 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Prepares for a search</title>
+<HTML  ><HEAD  ><TITLE  >yaz_search</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="YAZ Functions" HREF="ref.yaz.html"><LINK  REL="PREVIOUS" TITLE="yaz_schema" HREF="function.yaz-schema.html"><LINK  REL="NEXT" TITLE="yaz_set_option" HREF="function.yaz-set-option.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.yaz-schema.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.yaz-set-option.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.yaz-search" ></A
+>yaz_search</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN120048" ></A
+><P  >    (PHP 4 &#62;= 4.0.1)</P
+>yaz_search&nbsp;--&nbsp;Prepares for a search</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN120051" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >yaz_search</B
+> ( resource id, string type, string query)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >yaz_search()</B
+> prepares for a search on the
+     connection given by parameter <TT  CLASS="parameter" ><I  >id</I
+></TT
+>.
+     The parameter <TT  CLASS="parameter" ><I  >type</I
+></TT
+> represents the query type - only
+     <TT  CLASS="literal" >"rpn"</TT
+> is supported now in which case the
+     third argument specifies a Type-1 query in prefix query notation.
+     Like <A  HREF="function.yaz-connect.html"  ><B  CLASS="function" >yaz_connect()</B
+></A
+> this
+     function is non-blocking and only prepares for a search to be
+     executed later when <A  HREF="function.yaz-wait.html"  ><B  CLASS="function" >yaz_wait()</B
+></A
+> is called.
+    </P
+></DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN120072" ></A
+><H2  >The RPN query</H2
+><P  >&#13;     The RPN query is a textual representation of the Type-1 query as
+     defined by the Z39.50 standard. However, in the text representation
+     as used by YAZ a prefix notation is used, that is the operater
+     precedes the operands. The query string is a sequence of tokens where
+     white space is ignored unless surrounded by double quotes. Tokens beginning
+     with an at-character (<TT  CLASS="literal" >@</TT
+>) are considered operators,
+     otherwise they are treated as search terms.
+    </P
+><DIV  CLASS="table" ><A  NAME="AEN120076" ></A
+><P  ><B  >±Ì∏Ò 1. RPN Operators</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" >Construct</TH
+><TH  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >@and</TT
+> query1 query2</TD
+><TD  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >intersection of query1 and query2</TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >@or</TT
+> query1 query2</TD
+><TD  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >union of query1 and query2</TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >@not</TT
+> query1 query2</TD
+><TD  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >query1 and not query2</TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >@set</TT
+> name</TD
+><TD  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >result set reference</TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >@attrset</TT
+> set query</TD
+><TD  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >specifies attribute-set for query. This construction is only
+               allowed once - in the beginning of the whole query</TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >@attr</TT
+> [set] type=value query</TD
+><TD  WIDTH="67%" ALIGN="LEFT" VALIGN="MIDDLE" >applies attribute to query. The type and value are
+                 integers specifying the attribute-type and attribute-value
+                 respectively. The set, if given, specifies the
+                 attribute-set.</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN120110" ></A
+><P  ><B  >¿˝◊” 1. Query Examples</B
+></P
+><P  >&#13;     You can search for simple terms, like this
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >computer</PRE
+></TD
+></TR
+></TABLE
+>
+      which matches documents where "computer" occur.
+      No attributes are specified.
+    </P
+><P  >&#13;     The Query
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >"knuth donald"</PRE
+></TD
+></TR
+></TABLE
+>
+     matches documents where "knuth donald" occur (provided that the
+     server supports phrase search).
+     </P
+><P  >&#13;     This query applies two attributes for the same phrase.
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >@attr 1=1003 @attr 4=1 "knuth donald"</PRE
+></TD
+></TR
+></TABLE
+>
+     First attribute is type 1 (Bib-1 use), attribute value is 1003
+     (Author).
+     Second attribute has is type 4 (structure), value 1 (phrase),
+     so this should match documents where Donald Knuth is author.
+     </P
+><P  >&#13;      This query
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >@and @or a b @not @or c d e</PRE
+></TD
+></TR
+></TABLE
+>
+      would in infix notation look like
+        <TT  CLASS="literal" >(a or b) and ((c or d) not e)</TT
+>.
+     </P
+><P  >&#13;     Another, more complex, one:
+<TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >@attrset gils @and @attr 1=4 art @attr 1=2000 company</PRE
+></TD
+></TR
+></TABLE
+>
+     The query as a whole uses the GILS attributeset. The query matches
+     documents where <TT  CLASS="literal" >art</TT
+> occur in the title (GILS,BIB-1)
+     and in which <TT  CLASS="literal" >company</TT
+> occur as Distributor (GILS).
+     </P
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     You can find information about attributes at the 
+     <A  href="http://www.loc.gov/z3950/agency/defns/bib1.html"  TARGET="_top" >Z39.50 Maintenance Agency</A
+>
+     site.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      If you would like to use a more friendly notation,
+      use the CCL parser - functions <A  HREF="function.yaz-ccl-conf.html"  ><B  CLASS="function" >yaz_ccl_conf()</B
+></A
+> and 
+      <A  HREF="function.yaz-ccl-parse.html"  ><B  CLASS="function" >yaz_ccl_parse()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.yaz-schema.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.yaz-set-option.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >yaz_schema</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.yaz.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >yaz_set_option</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-schema.html">yaz_schema</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-set-option.html">yaz_set_option</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.yaz-search" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">yaz_search</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.1, PECL yaz &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">yaz_search</span> &mdash; <span class="dc-title">Prepares for a search</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.yaz-search-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>yaz_search</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$id</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$type</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>yaz_search()</strong></span> prepares for a search on the given 
-   connection.
-  </p>
-  <p class="para">
-   Like <span class="function"><a href="function.yaz-connect.html" class="function">yaz_connect()</a></span> this function is non-blocking and
-   only prepares for a search to be executed later when 
-   <span class="function"><a href="function.yaz-wait.html" class="function">yaz_wait()</a></span> is called.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.yaz-search-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The connection resource returned by <span class="function"><a href="function.yaz-connect.html" class="function">yaz_connect()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">type</code></dt>
-
-     <dd>
-
-      <p class="para">
-       This parameter represents the query type - only <em>&quot;rpn&quot;</em>
-       is supported now in which case the third argument specifies a Type-1 
-       query in prefix query notation. 
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">query</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The RPN query is a textual representation of the Type-1 query as
-       defined by the Z39.50 standard. However, in the text representation
-       as used by YAZ a prefix notation is used, that is the operator
-       precedes the operands. The query string is a sequence of tokens where
-       white space is ignored unless surrounded by double quotes. Tokens beginning
-       with an at-character (<em>@</em>) are considered operators,
-       otherwise they are treated as search terms.
-      </p>
-      <table class="doctable table">
-       <caption><strong>RPN Operators</strong></caption>
-       
-        <col width="1*" />
-        <col width="2*" />
-        <thead>
-         <tr>
-          <th>Construct</th>
-          <th>Description</th>
-         </tr>
-
-        </thead>
-
-        <tbody class="tbody">
-         <tr>
-          <td><em>@and</em> query1 query2</td>
-          <td>intersection of query1 and query2</td>
-         </tr>
-
-         <tr>
-          <td><em>@or</em> query1 query2</td>
-          <td>union of query1 and query2</td>
-         </tr>
-
-         <tr>
-          <td><em>@not</em> query1 query2</td>
-          <td>query1 and not query2</td>
-         </tr>
-
-         <tr>
-          <td><em>@set</em> name</td>
-          <td>result set reference</td>
-         </tr>
-
-         <tr>
-          <td><em>@attrset</em> set query</td>
-          <td>
-           specifies attribute-set for query. This construction is only allowed
-           once - in the beginning of the whole query
-          </td>
-         </tr>
-
-         <tr>
-          <td><em>@attr</em> [set] type=value query</td>
-          <td>
-           applies attribute to query. The type and value are integers 
-           specifying the attribute-type and attribute-value respectively. 
-           The set, if given, specifies the attribute-set.
-          </td>
-         </tr>
-
-        </tbody>
-       
-      </table>
-     
-      <p class="para">
-       You can find information about attributes at the 
-       <a href="http://www.loc.gov/z3950/agency/defns/bib1.html" class="link external">&raquo;&nbsp;Z39.50 Maintenance Agency</a>
-       site.
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        If you would like to use a more friendly notation,
-        use the CCL parser - functions <span class="function"><a href="function.yaz-ccl-conf.html" class="function">yaz_ccl_conf()</a></span> and 
-        <span class="function"><a href="function.yaz-ccl-parse.html" class="function">yaz_ccl_parse()</a></span>.
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.yaz-search-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   ÊàêÂäüÊó∂ËøîÂõû <strong><code>TRUE</code></strong>Ôºå ÊàñËÄÖÂú®Â§±Ë¥•Êó∂ËøîÂõû <strong><code>FALSE</code></strong>„ÄÇ
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.yaz-search-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <div class="example" id="example-4969">
-   <p><strong>Example #1 Query Examples</strong></p>
-   <div class="example-contents"><p>
-    You can search for simple terms, like this:
-    <div class="example-contents screen">
-<div class="examplescode"><pre class="examplescode">computer</pre>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-    </div>
-    which matches documents where &quot;computer&quot; occur. No attributes are 
-    specified.
-   </p></div>
-   <div class="example-contents"><p>
-    The query 
-    <div class="example-contents screen">
-<div class="examplescode"><pre class="examplescode">&quot;knuth donald&quot;</pre>
-</div>
-    </div>
-    matches documents where &quot;knuth donald&quot; occur (provided that the
-    server supports phrase search).
-   </p></div>
-   <div class="example-contents"><p>
-    This query applies two attributes for the same phrase.
-    <div class="example-contents screen">@attr 1=1003 @attr 4=1 &quot;knuth donald&quot;</div>
-    First attribute is type 1 (Bib-1 use), attribute value is 1003
-    (Author).
-    Second attribute has is type 4 (structure), value 1 (phrase),
-    so this should match documents where Donald Knuth is author.
-   </p></div>
-   <div class="example-contents"><p>
-    The query
-    <div class="example-contents screen">
-<div class="examplescode"><pre class="examplescode">@and @or a b @not @or c d e</pre>
-</div>
-    </div>
-    would in infix notation look like <em>(a or b) and ((c or d) not 
-    e)</em>.
-   </p></div>
-   <div class="example-contents"><p>
-    Another, more complex, one:
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-@attrset gils @and @attr 1=4 art @attr 1=2000 company
-</pre></div>
-    </div>
-    The query as a whole uses the GILS attributeset. The query matches
-    documents where <em>art</em> occur in the title (GILS,BIB-1)
-    and in which <em>company</em> occur as Distributor (GILS).
-   </p></div>
-  </div>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-schema.html">yaz_schema</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-set-option.html">yaz_set_option</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

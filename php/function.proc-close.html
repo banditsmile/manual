@@ -1,77 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>关闭由 proc_open 打开的进程并且返回进程退出码</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.passthru.html">passthru</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.proc-get-status.html">proc_get_status</a></div>
- <div class="up"><a href="ref.exec.html">程序执行 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.proc-close" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">proc_close</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">proc_close</span> &mdash; <span class="dc-title">关闭由 <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> 打开的进程并且返回进程退出码</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.proc-close-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>proc_close</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$process</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-    <span class="function"><strong>proc_close()</strong></span> 同 <span class="function"><a href="function.pclose.html" class="function">pclose()</a></span> 函数类似，
-    只是 <span class="function"><strong>proc_close()</strong></span> 
-    只能用来关闭由 <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> 函数打开的进程。
-    <span class="function"><strong>proc_close()</strong></span> 函数会等待进程终止，
-    并且返回进程的返回值。
-    如果有连接到进程的已经打开的管道，
-    那么需要在调用此函数之前调用 <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> 函数来关闭管道，
-    否则会引发死锁 - 在管道处于打开状态时，子进程将不能退出。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.proc-close-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">process</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要关闭的由 <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> 打开的 <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> 。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >proc_close</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Program Execution Functions" HREF="ref.exec.html"><LINK  REL="PREVIOUS" TITLE="passthru" HREF="function.passthru.html"><LINK  REL="NEXT" TITLE="proc_get_status" HREF="function.proc-get-status.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.passthru.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.proc-get-status.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.proc-close" ></A
+>proc_close</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93696" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>proc_close&nbsp;--&nbsp;
+     Close a process opened by <A  HREF="function.proc-open.html"  ><B  CLASS="function" >proc_open()</B
+></A
+> and return the exit code of that
+     process.
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93700" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >proc_close</B
+> ( resource process)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >proc_close()</B
+> is similar to <A  HREF="function.pclose.html"  ><B  CLASS="function" >pclose()</B
+></A
+>
+     except that it only works on processes opened by
+     <A  HREF="function.proc-open.html"  ><B  CLASS="function" >proc_open()</B
+></A
+>.
+     <B  CLASS="function" >proc_close()</B
+> waits for the process to terminate, and
+     returns its exit code.  If you have open pipes to that process, you
+     should <A  HREF="function.fclose.html"  ><B  CLASS="function" >fclose()</B
+></A
+> them prior to calling this function in
+     order to avoid a deadlock - the child process may not be able to exit
+     while the pipes are open.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.passthru.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.proc-get-status.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >passthru</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.exec.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >proc_get_status</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.proc-close-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-    返回进程的终止状态码。
-    如果发生错误，将返回  <em>-1</em>。
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.passthru.html">passthru</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.proc-get-status.html">proc_get_status</a></div>
- <div class="up"><a href="ref.exec.html">程序执行 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

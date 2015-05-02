@@ -1,146 +1,143 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>switch</title>
+<HTML  ><HEAD  ><TITLE  >switch</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Á÷³Ì¿ØÖÆ" HREF="control-structures.html"><LINK  REL="PREVIOUS" TITLE="continue" HREF="control-structures.continue.html"><LINK  REL="NEXT" TITLE="declare" HREF="control-structures.declare.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="control-structures.continue.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 11. Á÷³Ì¿ØÖÆ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="control-structures.declare.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="control-structures.switch" ></A
+><TT  CLASS="literal" >switch</TT
+></H1
+><P  >&#13;    <TT  CLASS="literal" >switch</TT
+> Óï¾äºÍ¾ßÓĞÍ¬Ñù±í´ïÊ½µÄÒ»ÏµÁĞµÄ IF Óï¾äÏàËÆ¡£ºÜ¶à³¡ºÏÏÂĞèÒª°ÑÍ¬Ò»¸ö±äÁ¿£¨»ò±í´ïÊ½£©ÓëºÜ¶à²»Í¬µÄÖµ±È½Ï£¬²¢¸ù¾İËüµÈÓÚÄÄ¸öÖµÀ´Ö´ĞĞ²»Í¬µÄ´úÂë¡£ÕâÕıÊÇ <TT  CLASS="literal" >switch</TT
+> Óï¾äµÄÓÃÍ¾¡£
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     ×¢ÒâºÍÆäËüÓïÑÔ²»Í¬£¬<A  HREF="control-structures.continue.html"  >continue</A
+>
+     Óï¾ä×÷ÓÃµ½ switch ÉÏµÄ×÷ÓÃÀàËÆÓÚ <TT  CLASS="literal" >break</TT
+>¡£Èç¹ûÄãÔÚÑ­»·ÖĞÓĞÒ»¸ö
+     switch ²¢Ï£Íû continue µ½Íâ²ãÑ­»·ÖĞµÄÏÂÒ»¸öÂÖ»Ø£¬ÓÃ <TT  CLASS="literal" >continue 2</TT
+>¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    ÏÂÃæÁ½¸öÀı×ÓÊ¹ÓÃÁ½ÖÖ²»Í¬·½·¨ÊµÏÖÍ¬ÑùµÄÊÂ£¬Ò»¸öÓÃÒ»ÏµÁĞ <TT  CLASS="literal" >if</TT
+> Óï¾ä£¬ÁíÒ»¸öÓÃ <TT  CLASS="literal" >switch</TT
+> Óï¾ä£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5211" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$i </font><font  color="#007700">== </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 0"</font><font  color="#007700">;<br  />} elseif (</font><font  color="#0000BB">$i </font><font  color="#007700">== </font><font  color="#0000BB">1</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 1"</font><font  color="#007700">;<br  />} elseif (</font><font  color="#0000BB">$i </font><font  color="#007700">== </font><font  color="#0000BB">2</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 2"</font><font  color="#007700">;<br  />}<br  /><br  />switch (</font><font  color="#0000BB">$i</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">0</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 0"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">1</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 1"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">2</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 2"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    Îª±ÜÃâ´íÎó£¬Àí½â <TT  CLASS="literal" >switch</TT
+> ÊÇÔõÑùÖ´ĞĞµÄ·Ç³£ÖØÒª¡£<TT  CLASS="literal" >switch</TT
+> Óï¾äÒ»ĞĞ½ÓÒ»ĞĞµØÖ´ĞĞ£¨Êµ¼ÊÉÏÊÇÓï¾ä½ÓÓï¾ä£©¡£¿ªÊ¼Ê±Ã»ÓĞ´úÂë±»Ö´ĞĞ¡£½öµ±Ò»¸ö <TT  CLASS="literal" >case</TT
+> Óï¾äÖĞµÄÖµºÍ <TT  CLASS="literal" >switch</TT
+> ±í´ïÊ½µÄÖµÆ¥ÅäÊ± PHP ²Å¿ªÊ¼Ö´ĞĞÓï¾ä£¬Ö±µ½ <TT  CLASS="literal" >switch</TT
+> µÄ³ÌĞò¶Î½áÊø»òÕßÓöµ½µÚÒ»¸ö <TT  CLASS="literal" >break</TT
+> Óï¾äÎªÖ¹¡£Èç¹û²»ÔÚ case µÄÓï¾ä¶Î×îºóĞ´ÉÏ <TT  CLASS="literal" >break</TT
+> µÄ»°£¬PHP ½«¼ÌĞøÖ´ĞĞÏÂÒ»¸ö case ÖĞµÄÓï¾ä¶Î¡£ÀıÈç£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5221" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">switch (</font><font  color="#0000BB">$i</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">0</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 0"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">1</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 1"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">2</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 2"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    ÕâÀïÈç¹û $i µÈÓÚ 0£¬PHP ½«Ö´ĞĞËùÓĞµÄ print Óï¾ä£¡Èç¹û $i µÈÓÚ 1£¬PHP ½«Ö´ĞĞºóÃæÁ½Ìõ print Óï¾ä¡£Ö»ÓĞµ± $i µÈÓÚ 2 Ê±£¬Äã²ÅµÃµ½¡°Ô¤ÆÚ¡±µÄ½á¹û £­ Ö»ÏÔÊ¾¡°i equals 2¡±¡£ËùÒÔ£¬±ğÍüÁË <TT  CLASS="literal" >break</TT
+> Óï¾ä¾ÍºÜÖØÒª£¨¼´Ê¹ÔÚÄ³Ğ©Çé¿öÏÂÄã¹ÊÒâÏë±ÜÃâÌá¹©ËüÃÇÊ±£©¡£
+   </P
+><P  >&#13;    ÔÚ <TT  CLASS="literal" >switch</TT
+> Óï¾äÖĞÌõ¼şÖ»ÇóÖµÒ»´Î²¢ÓÃÀ´ºÍÃ¿¸ö <TT  CLASS="literal" >case</TT
+> Óï¾ä±È½Ï¡£ÔÚ <TT  CLASS="literal" >elseif</TT
+> Óï¾äÖĞÌõ¼ş»áÔÙ´ÎÇóÖµ¡£Èç¹ûÌõ¼ş±ÈÒ»¸ö¼òµ¥µÄ±È½ÏÒª¸´ÔÓµÃ¶à»òÕßÔÚÒ»¸öºÜ¶à´ÎµÄÑ­»·ÖĞ£¬ÄÇÃ´ÓÃ <TT  CLASS="literal" >switch</TT
+> Óï¾ä¿ÉÄÜ»á¿ìÒ»Ğ©¡£
+   </P
+><P  >&#13;    ÔÚÒ»¸ö case ÖĞµÄÓï¾äÒ²¿ÉÒÔÎª¿Õ£¬ÕâÑùÖ»²»¹ı½«¿ØÖÆ×ªÒÆµ½ÁËÏÂÒ»¸ö case ÖĞµÄÓï¾ä¡£
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5231" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">switch (</font><font  color="#0000BB">$i</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">0</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">1</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">2</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i is less than 3 but not negative"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">3</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i is 3"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    Ò»¸ö case µÄÌØÀıÊÇ <TT  CLASS="literal" >default</TT
+>¡£ËüÆ¥ÅäÁËÈÎºÎºÍÆäËü case ¶¼²»Æ¥ÅäµÄÇé¿ö£¬²¢ÇÒÓ¦¸ÃÊÇ×îºóÒ»Ìõ <TT  CLASS="literal" >case</TT
+> Óï¾ä¡£ÀıÈç£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5236" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">switch (</font><font  color="#0000BB">$i</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">0</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 0"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">1</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 1"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">2</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 2"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;default:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i is not equal to 0, 1 or 2"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    <TT  CLASS="literal" >case</TT
+> ±í´ïÊ½¿ÉÒÔÊÇÈÎºÎÇóÖµÎª¼òµ¥ÀàĞÍµÄ±í´ïÊ½£¬¼´ÕûĞÍ»ò¸¡µãÊıÒÔ¼°×Ö·û´®¡£²»ÄÜÓÃÊı×é»ò¶ÔÏó£¬³ı·ÇËüÃÇ±»½â³ıÁËµ½¼òµ¥ÀàĞÍµÄÒıÓÃ¡£
+   </P
+><P  >&#13;    <TT  CLASS="literal" >switch</TT
+> Ö§³ÖÌæ´úÓï·¨µÄÁ÷³Ì¿ØÖÆ¡£¸ü¶àĞÅÏ¢¼û<A  HREF="control-structures.alternative-syntax.html"  >Á÷³Ì¿ØÖÆµÄÌæ´úÓï·¨</A
+>Ò»½Ú¡£
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5243" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">switch (</font><font  color="#0000BB">$i</font><font  color="#007700">):<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">0</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 0"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">1</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 1"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#0000BB">2</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i equals 2"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;default:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"i is not equal to 0, 1 or 2"</font><font  color="#007700">;<br  />endswitch;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="control-structures.continue.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="control-structures.declare.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><TT  CLASS="literal" >continue</TT
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="control-structures.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><TT  CLASS="literal" >declare</TT
+></TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="control-structures.continue.html">continue</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="control-structures.declare.html">declare</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="control-structures.switch" class="sect1">
- <h2 class="title"><em>switch</em></h2>
- <p class="verinfo">(PHP 4, PHP 5)</p>
- <p class="simpara">
-  <em>switch</em> è¯­å¥ç±»ä¼¼äºå…·æœ‰åŒä¸€ä¸ªè¡¨è¾¾å¼çš„ä¸€ç³»åˆ— <em>if</em>
-  è¯­å¥ã€‚å¾ˆå¤šåœºåˆä¸‹éœ€è¦æŠŠåŒä¸€ä¸ªå˜é‡ï¼ˆæˆ–è¡¨è¾¾å¼ï¼‰ä¸å¾ˆå¤šä¸åŒçš„å€¼æ¯”è¾ƒï¼Œå¹¶æ ¹æ®å®ƒç­‰äºå“ªä¸ªå€¼æ¥æ‰§è¡Œä¸åŒçš„ä»£ç ã€‚è¿™æ­£æ˜¯
-  <em>switch</em> è¯­å¥çš„ç”¨é€”ã€‚
- </p>
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <span class="simpara">
-   æ³¨æ„å’Œå…¶å®ƒè¯­è¨€ä¸åŒï¼Œ<a href="control-structures.continue.html" class="link">continue</a>
-   è¯­å¥ä½œç”¨åˆ° switch ä¸Šçš„ä½œç”¨ç±»ä¼¼äº <em>break</em>ã€‚å¦‚æœåœ¨å¾ªç¯ä¸­æœ‰ä¸€ä¸ª
-   switch å¹¶å¸Œæœ› continue åˆ°å¤–å±‚å¾ªç¯ä¸­çš„ä¸‹ä¸€è½®å¾ªç¯ï¼Œç”¨ <em>continue 2</em>ã€‚
-  </span>
- </p></blockquote>
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <p class="para">
-   æ³¨æ„ switch/case ä½œçš„æ˜¯<a href="types.comparisons.html#types.comparisions-loose" class="link">æ¾æ•£æ¯”è¾ƒ</a>ã€‚
-  </p>
- </p></blockquote>  
- <p class="para">
-  ä¸‹é¢ä¸¤ä¸ªä¾‹å­ä½¿ç”¨ä¸¤ç§ä¸åŒæ–¹æ³•å®ç°åŒæ ·çš„äº‹ï¼Œä¸€ä¸ªç”¨ä¸€ç³»åˆ—çš„
-  <em>if</em> å’Œ <em>elseif</em>
-  è¯­å¥ï¼Œå¦ä¸€ä¸ªç”¨ <em>switch</em> è¯­å¥ï¼š
-  <div class="example" id="example-145">
-   <p><strong>Example #1 <em>switch</em> ç»“æ„</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;0"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;1"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;2"</span><span style="color: #007700">;<br />}<br /><br />switch&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;0"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;1"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;2"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
 
-  </div>
-  <div class="example" id="example-146">
-   <p><strong>Example #2 <em>switch</em> ç»“æ„å¯ä»¥ç”¨å­—ç¬¦ä¸²</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />case&nbsp;</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;apple"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />case&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;bar"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />case&nbsp;</span><span style="color: #DD0000">"cake"</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;cake"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  ä¸ºé¿å…é”™è¯¯ï¼Œç†è§£ <em>switch</em> æ˜¯æ€æ ·æ‰§è¡Œçš„éå¸¸é‡è¦ã€‚<em>switch</em>
-  è¯­å¥ä¸€è¡Œæ¥ä¸€è¡Œåœ°æ‰§è¡Œï¼ˆå®é™…ä¸Šæ˜¯è¯­å¥æ¥è¯­å¥ï¼‰ã€‚å¼€å§‹æ—¶æ²¡æœ‰ä»£ç è¢«æ‰§è¡Œã€‚ä»…å½“ä¸€ä¸ª
-  <em>case</em> è¯­å¥ä¸­çš„å€¼å’Œ <em>switch</em>
-  è¡¨è¾¾å¼çš„å€¼åŒ¹é…æ—¶ PHP æ‰å¼€å§‹æ‰§è¡Œè¯­å¥ï¼Œç›´åˆ° <em>switch</em>
-  çš„ç¨‹åºæ®µç»“æŸæˆ–è€…é‡åˆ°ç¬¬ä¸€ä¸ª <em>break</em>
-  è¯­å¥ä¸ºæ­¢ã€‚å¦‚æœä¸åœ¨ case çš„è¯­å¥æ®µæœ€åå†™ä¸Š <em>break</em>
-  çš„è¯ï¼ŒPHP å°†ç»§ç»­æ‰§è¡Œä¸‹ä¸€ä¸ª case ä¸­çš„è¯­å¥æ®µã€‚ä¾‹å¦‚ï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;0"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;1"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;2"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="simpara">
-  è¿™é‡Œå¦‚æœ <var class="varname"><var class="varname">$i</var></var> ç­‰äº 0ï¼ŒPHP å°†æ‰§è¡Œæ‰€æœ‰çš„ echo è¯­å¥ï¼å¦‚æœ
-  <var class="varname"><var class="varname">$i</var></var> ç­‰äº 1ï¼ŒPHP å°†æ‰§è¡Œåé¢ä¸¤æ¡ echo è¯­å¥ã€‚åªæœ‰å½“
-  <var class="varname"><var class="varname">$i</var></var> ç­‰äº 2 æ—¶ï¼Œæ‰ä¼šå¾—åˆ°â€œé¢„æœŸâ€çš„ç»“æœâ€”â€”åªæ˜¾ç¤ºâ€œi equals 2â€ã€‚æ‰€ä»¥ï¼Œåˆ«å¿˜äº†
-  <em>break</em> è¯­å¥å°±å¾ˆé‡è¦ï¼ˆå³ä½¿åœ¨æŸäº›æƒ…å†µä¸‹æ•…æ„æƒ³é¿å…æä¾›å®ƒä»¬æ—¶ï¼‰ã€‚
- </p>
- <p class="simpara">
-  åœ¨ <em>switch</em> è¯­å¥ä¸­æ¡ä»¶åªæ±‚å€¼ä¸€æ¬¡å¹¶ç”¨æ¥å’Œæ¯ä¸ª
-  <em>case</em> è¯­å¥æ¯”è¾ƒã€‚åœ¨ <em>elseif</em>
-  è¯­å¥ä¸­æ¡ä»¶ä¼šå†æ¬¡æ±‚å€¼ã€‚å¦‚æœæ¡ä»¶æ¯”ä¸€ä¸ªç®€å•çš„æ¯”è¾ƒè¦å¤æ‚å¾—å¤šæˆ–è€…åœ¨ä¸€ä¸ªå¾ˆå¤šæ¬¡çš„å¾ªç¯ä¸­ï¼Œé‚£ä¹ˆç”¨
-  <em>switch</em> è¯­å¥å¯èƒ½ä¼šå¿«ä¸€äº›ã€‚
- </p>
- <p class="para">
-  åœ¨ä¸€ä¸ª case ä¸­çš„è¯­å¥ä¹Ÿå¯ä»¥ä¸ºç©ºï¼Œè¿™æ ·åªä¸è¿‡å°†æ§åˆ¶è½¬ç§»åˆ°äº†ä¸‹ä¸€ä¸ª case ä¸­çš„è¯­å¥ã€‚
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;less&nbsp;than&nbsp;3&nbsp;but&nbsp;not&nbsp;negative"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;3"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  ä¸€ä¸ª case çš„ç‰¹ä¾‹æ˜¯ <em>default</em>ã€‚å®ƒåŒ¹é…äº†ä»»ä½•å’Œå…¶å®ƒ
-  case éƒ½ä¸åŒ¹é…çš„æƒ…å†µã€‚ä¾‹å¦‚ï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;0"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;1"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;2"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;not&nbsp;equal&nbsp;to&nbsp;0,&nbsp;1&nbsp;or&nbsp;2"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  <em>case</em>
-  è¡¨è¾¾å¼å¯ä»¥æ˜¯ä»»ä½•æ±‚å€¼ä¸ºç®€å•ç±»å‹çš„è¡¨è¾¾å¼ï¼Œå³æ•´å‹æˆ–æµ®ç‚¹æ•°ä»¥åŠå­—ç¬¦ä¸²ã€‚ä¸èƒ½ç”¨æ•°ç»„æˆ–å¯¹è±¡ï¼Œé™¤éå®ƒä»¬è¢«è§£é™¤å¼•ç”¨æˆä¸ºç®€å•ç±»å‹ã€‚
- </p>
- <p class="para">
-  <em>switch</em> æ”¯æŒæ›¿ä»£è¯­æ³•çš„æµç¨‹æ§åˆ¶ã€‚æ›´å¤šä¿¡æ¯è§<a href="control-structures.alternative-syntax.html" class="link">æµç¨‹æ§åˆ¶çš„æ›¿ä»£è¯­æ³•</a>ä¸€èŠ‚ã€‚
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">):<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;0"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;1"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;equals&nbsp;2"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;is&nbsp;not&nbsp;equal&nbsp;to&nbsp;0,&nbsp;1&nbsp;or&nbsp;2"</span><span style="color: #007700">;<br />endswitch;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  å…è®¸ä½¿ç”¨åˆ†å·ä»£æ›¿ case è¯­å¥åçš„å†’å·ï¼Œä¾‹å¦‚ï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch(</span><span style="color: #0000BB">$beer</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #DD0000">'tuborg'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #DD0000">'carlsberg'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;</span><span style="color: #DD0000">'heineken'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Good&nbsp;choice'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;default;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Please&nbsp;make&nbsp;a&nbsp;new&nbsp;selection...'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>  
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="control-structures.continue.html">continue</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="control-structures.declare.html">declare</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

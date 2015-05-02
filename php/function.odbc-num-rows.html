@@ -1,79 +1,57 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Number of rows in a result</title>
+<HTML  ><HEAD  ><TITLE  >odbc_num_rows</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Unified ODBC Functions" HREF="ref.odbc.html"><LINK  REL="PREVIOUS" TITLE="odbc_num_fields" HREF="function.odbc-num-fields.html"><LINK  REL="NEXT" TITLE="odbc_pconnect" HREF="function.odbc-pconnect.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.odbc-num-fields.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.odbc-pconnect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.odbc-num-rows" ></A
+>odbc_num_rows</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN78617" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>odbc_num_rows&nbsp;--&nbsp;Number of rows in a result</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN78620" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >odbc_num_rows</B
+> ( resource result_id)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >odbc_num_rows()</B
+> will return the number of rows
+     in an ODBC result.  This function will return -1 on error.  For
+     INSERT, UPDATE and DELETE statements
+     <B  CLASS="function" >odbc_num_rows()</B
+> returns the number of rows
+     affected.  For a SELECT clause this <TT  CLASS="literal" >can</TT
+> be 
+     the number of rows available.
+    </P
+><P  >&#13;     Note: Using <B  CLASS="function" >odbc_num_rows()</B
+> to determine the
+     number of rows available after a SELECT will return -1 with many
+     drivers.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.odbc-num-fields.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.odbc-pconnect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >odbc_num_fields</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.odbc.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >odbc_pconnect</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-num-fields.html">odbc_num_fields</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.odbc-pconnect.html">odbc_pconnect</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.odbc-num-rows" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">odbc_num_rows</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">odbc_num_rows</span> &mdash; <span class="dc-title">Number of rows in a result</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.odbc-num-rows-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>odbc_num_rows</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result_id</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Gets the number of rows in a result. For INSERT, UPDATE and DELETE
-   statements <span class="function"><strong>odbc_num_rows()</strong></span> returns the number of rows
-   affected.  For a SELECT clause this <em>can</em> be the number
-   of rows available.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.odbc-num-rows-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result_id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The result identifier returned by <span class="function"><a href="function.odbc-exec.html" class="function">odbc_exec()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.odbc-num-rows-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns the number of rows in an ODBC result.
-   This function will return -1 on error.
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.odbc-num-rows-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Using <span class="function"><strong>odbc_num_rows()</strong></span> to determine the number of rows
-    available after a SELECT will return -1 with many drivers.
-   </p>
-  </p></blockquote>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-num-fields.html">odbc_num_fields</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.odbc-pconnect.html">odbc_pconnect</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

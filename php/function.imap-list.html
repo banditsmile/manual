@@ -1,118 +1,72 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Read the list of mailboxes</title>
+<HTML  ><HEAD  ><TITLE  >imap_list</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_last_error" HREF="function.imap-last-error.html"><LINK  REL="NEXT" TITLE="imap_listmailbox" HREF="function.imap-listmailbox.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-last-error.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-listmailbox.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-list" ></A
+>imap_list</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN42625" ></A
+><P  >    (PHP 3&#62;= 3.0.4, PHP 4 )</P
+>imap_list&nbsp;--&nbsp;Read the list of mailboxes</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN42628" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >imap_list</B
+> ( resource imap_stream, string ref, string pattern)<BR  ></BR
+><P  >&#13;     Returns an array containing the names of the mailboxes.
+     See <A  HREF="function.imap-getmailboxes.html"  ><B  CLASS="function" >imap_getmailboxes()</B
+></A
+> for a description
+     of <TT  CLASS="parameter" ><I  >ref</I
+></TT
+> and <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+>.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN42647" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >imap_list()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$mbox </font><font  color="#007700">= </font><font  color="#0000BB">imap_open</font><font  color="#007700">(</font><font  color="#DD0000">"{your.imap.host}"</font><font  color="#007700">, </font><font  color="#DD0000">"username"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">, </font><font  color="#0000BB">OP_HALFOPEN</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"can't connect: " </font><font  color="#007700">. </font><font  color="#0000BB">imap_last_error</font><font  color="#007700">());<br  /> <br  /></font><font  color="#0000BB">$list </font><font  color="#007700">= </font><font  color="#0000BB">imap_list</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">, </font><font  color="#DD0000">"{your.imap.host}"</font><font  color="#007700">, </font><font  color="#DD0000">"*"</font><font  color="#007700">);<br  />if (</font><font  color="#0000BB">is_array</font><font  color="#007700">(</font><font  color="#0000BB">$list</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;</font><font  color="#0000BB">reset</font><font  color="#007700">(</font><font  color="#0000BB">$list</font><font  color="#007700">);<br  />&nbsp;&nbsp;while (list(</font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$val</font><font  color="#007700">) = </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$list</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">imap_utf7_decode</font><font  color="#007700">(</font><font  color="#0000BB">$val</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  />} else {<br  />&nbsp;&nbsp;echo </font><font  color="#DD0000">"imap_list failed: " </font><font  color="#007700">. </font><font  color="#0000BB">imap_last_error</font><font  color="#007700">() . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">imap_close</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.imap-getmailboxes.html"  ><B  CLASS="function" >imap_getmailboxes()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-last-error.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-listmailbox.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_last_error</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_listmailbox</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-last-error.html">imap_last_error</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-listmailbox.html">imap_listmailbox</a></div>
- <div class="up"><a href="ref.imap.html">IMAP 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-list" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_list</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_list</span> &mdash; <span class="dc-title">Read the list of mailboxes</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-list-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>imap_list</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ref</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Read the list of mailboxes.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-list-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">由 <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> 返回的 IMAP 流。</p></dd>
-
-    
-     <dt>
-<code class="parameter">ref</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">ref</code> should normally be just the server
-       specification as described in <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">pattern</code></dt>
-
-     <dd>
-
-      <p class="para">指定在邮箱层级的何处开始查找。</p>
-<p class="para">在组成 <code class="parameter">pattern</code> 的字符中可使用两个特殊字符：
- &#039;<em>*</em>&#039; 和 &#039;<em>%</em>&#039;。
- &#039;<em>*</em>&#039; 是指返回所有邮箱目录. 如果将 &#039;<em>*</em>&#039; 作为
- <code class="parameter">pattern</code> 参数时, 则会返回整个邮箱层级结构。
- &#039;<em>%</em>&#039; 是指只返回当前级次。
- &#039;<em>%</em>&#039; 作为 <code class="parameter">pattern</code> 参数则只会返回顶层邮箱；
- &#039;<em>~/mail/%</em>&#039; 用于 <em>UW_IMAPD</em>
- 则会返回名为 <var class="filename">~/mail</var> 的目录, 但不包含其子目录。</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-list-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns an array containing the names of the mailboxes.
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imap-list-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-3640">
-    <p><strong>Example #1 <span class="function"><strong>imap_list()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$mbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"{imap.example.org}"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">OP_HALFOPEN</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"can't&nbsp;connect:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">imap_last_error</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_list</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"{imap.example.org}"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"*"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$list</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">imap_utf7_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"imap_list&nbsp;failed:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">imap_last_error</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">imap_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imap-list-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imap-getmailboxes.html" class="function" rel="rdfs-seeAlso">imap_getmailboxes()</a> - Read the list of mailboxes, returning detailed information on each one</span></li>
-    <li class="member"><span class="function"><a href="function.imap-lsub.html" class="function" rel="rdfs-seeAlso">imap_lsub()</a> - List all the subscribed mailboxes</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-last-error.html">imap_last_error</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-listmailbox.html">imap_listmailbox</a></div>
- <div class="up"><a href="ref.imap.html">IMAP 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

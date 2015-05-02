@@ -1,105 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns the last error on the socket</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-import-stream.html">socket_import_stream</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-listen.html">socket_listen</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.socket-last-error" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">socket_last_error</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">socket_last_error</span> &mdash; <span class="dc-title">Returns the last error on the socket </span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.socket-last-error-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>socket_last_error</strong></span>
-    ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   If a socket resource is passed to this function, the last error which
-   occurred on this particular socket is returned. If the socket resource is
-   omitted, the error code of the last failed socket function is returned.
-   The latter is particularly helpful for functions like
-   <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> which don&#039;t return a socket on
-   failure and <span class="function"><a href="function.socket-select.html" class="function">socket_select()</a></span> which can fail for reasons
-   not directly tied to a particular socket.  The error code is suitable to
-   be fed to <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> which returns a string
-   describing the given error code.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.socket-last-error-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A valid socket resource created with <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.socket-last-error-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   This function returns a socket error code.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.socket-last-error-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-4878">
-    <p><strong>Example #1 <span class="function"><strong>socket_last_error()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$socket&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">socket_create</span><span style="color: #007700">(</span><span style="color: #0000BB">AF_INET</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SOCK_STREAM</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SOL_TCP</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$socket&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$errorcode&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">socket_last_error</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$errormsg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">socket_strerror</span><span style="color: #007700">(</span><span style="color: #0000BB">$errorcode</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Couldn't&nbsp;create&nbsp;socket:&nbsp;[</span><span style="color: #0000BB">$errorcode</span><span style="color: #DD0000">]&nbsp;</span><span style="color: #0000BB">$errormsg</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >socket_last_error</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="PREVIOUS" TITLE="socket_iovec_set" HREF="function.socket-iovec-set.html"><LINK  REL="NEXT" TITLE="socket_listen" HREF="function.socket-listen.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.socket-iovec-set.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.socket-listen.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.socket-last-error" ></A
+>socket_last_error</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN104625" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>socket_last_error&nbsp;--&nbsp;Returns the last error on the socket </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN104628" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >socket_last_error</B
+> ( [resource socket])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     This function returns a socket error code.
+    </P
+><P  >&#13;     If a socket resource is passed to this function, the last error which
+     occurred on this particular socket is returned. If the socket resource is
+     omitted, the error code of the last failed socket function is returned.
+     The latter is in particular helpful for functions like
+     <A  HREF="function.socket-create.html"  ><B  CLASS="function" >socket_create()</B
+></A
+> which don't return a socket on
+     failure and <A  HREF="function.socket-select.html"  ><B  CLASS="function" >socket_select()</B
+></A
+> which can fail for reasons
+     not directly tied to a particular socket.  The error code is suitable to
+     be fed to <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+> which returns a string
+     describing the given error code.
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">false </font><font  color="#007700">== (</font><font  color="#0000BB">$socket </font><font  color="#007700">= @</font><font  color="#0000BB">socket_create</font><font  color="#007700">(</font><font  color="#0000BB">AF_INET</font><font  color="#007700">, </font><font  color="#0000BB">SOCK_STREAM</font><font  color="#007700">, </font><font  color="#0000BB">SOL_TCP</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"Couldn't create socket, error code is: " </font><font  color="#007700">. </font><font  color="#0000BB">socket_last_error</font><font  color="#007700">() .<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">",error message is: " </font><font  color="#007700">. </font><font  color="#0000BB">socket_strerror</font><font  color="#007700">(</font><font  color="#0000BB">socket_last_error</font><font  color="#007700">()));<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >socket_last_error()</B
+> does not clear the error code, use
+      <A  HREF="function.socket-clear-error.html"  ><B  CLASS="function" >socket_clear_error()</B
+></A
+> for this purpose.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.socket-iovec-set.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.socket-listen.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >socket_iovec_set</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >socket_listen</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.socket-last-error-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>socket_last_error()</strong></span> does not clear the error code, use
-    <span class="function"><a href="function.socket-clear-error.html" class="function">socket_clear_error()</a></span> for this purpose.
-   </p>
-  </p></blockquote>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-import-stream.html">socket_import_stream</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-listen.html">socket_listen</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

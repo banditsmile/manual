@@ -1,113 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>从资源流里读取一行直到给定的定界符</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-get-filters.html">stream_get_filters</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-get-meta-data.html">stream_get_meta_data</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-get-line" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_get_line</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">stream_get_line</span> &mdash; <span class="dc-title">从资源流里读取一行直到给定的定界符</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.stream-get-line-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>stream_get_line</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$ending</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-      从给定的资源流里读取一行。
-  </p>
-  <p class="para">
-   当读取到 <code class="parameter">length</code> 个字节数就结束，或者当在读取的字符串中发现  <code class="parameter">ending</code> （<em class="emphasis">不</em>包含到返回值里）也结束，又或者遇到了 <acronym title="End Of File">EOF</acronym> 也结束（总之以上条件中哪个先出现就以哪个为准）。
-  </p>
-  <p class="para">
-   这个函数与 <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span> 几乎是相同的，唯一的区别是在这个函数里面允许指定行尾的定界符，而不是使用标准的 \n， \r 还有 \r\n ，并且返回值中<em class="emphasis">不</em>包含定界符。（翻译注：也可以把 \n 等作为定界符传入 <code class="parameter">ending</code> ）
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.stream-get-line-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       一个有效的文件句柄。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       需要从句柄里读取的字节数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">ending</code></dt>
-
-     <dd>
-
-      <p class="para">
-       可选参数，字符串定界符。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stream_get_line</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_get_filters" HREF="function.stream-get-filters.html"><LINK  REL="NEXT" TITLE="stream_get_meta_data" HREF="function.stream-get-meta-data.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-get-filters.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-get-meta-data.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-get-line" ></A
+>stream_get_line</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN106531" ></A
+><P  >    (PHP 5 CVS only)</P
+>stream_get_line&nbsp;--&nbsp;Gets line from stream resource up to a given delimiter</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN106534" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_get_line</B
+> ( resource handle, int length, string ending)<BR  ></BR
+><P  >&#13;     Returns a string of up to <TT  CLASS="parameter" ><I  >length</I
+></TT
+> bytes read from the file
+     pointed to by <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>. Reading ends when
+     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> bytes have been read, when the string specified by
+     <TT  CLASS="parameter" ><I  >ending</I
+></TT
+> is found (which is <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+>included
+     in the return value), or on EOF (whichever comes first). 
+    </P
+><P  >&#13;     If an error occurs, returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >&#13;     This function is nearly identical to <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>
+     except in that it allows end of line delimiters other than the
+     standard \n, \r, and \r\n, and does <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+>
+     return the delimiter itself.
+    </P
+><P  > 
+     See also <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+>,
+     <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>, and
+     <A  HREF="function.fgetc.html"  ><B  CLASS="function" >fgetc()</B
+></A
+>,
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-get-filters.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-get-meta-data.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_get_filters</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_get_meta_data</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.stream-get-line-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回一个字符串，该字符串的内容根据 <code class="parameter">length</code> 字节数从 <code class="parameter">handle</code> 里读取。
-  </p>
-  <p class="para">
-   如果发生错误，则返回 <strong><code>FALSE</code></strong>.
-  </p>
- </div>
-
-  
- <div class="refsect1 seealso" id="refsect1-function.stream-get-line-seealso">
-  <h3 class="title">参见</h3>
-  <ul class="simplelist">
-   <li class="member"><span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - 读取文件（可安全用于二进制文件）</span></li>
-   <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - 从文件指针中读取一行</span></li>
-   <li class="member"><span class="function"><a href="function.fgetc.html" class="function" rel="rdfs-seeAlso">fgetc()</a> - 从文件指针中读取字符</span></li>
-  </ul>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-get-filters.html">stream_get_filters</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-get-meta-data.html">stream_get_meta_data</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

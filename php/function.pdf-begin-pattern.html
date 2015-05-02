@@ -1,41 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Start pattern definition</title>
+<HTML  ><HEAD  ><TITLE  >pdf_begin_pattern</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP 手册" HREF="index-2.html"><LINK  REL="UP" TITLE="PDF functions " HREF="ref.pdf.html"><LINK  REL="PREVIOUS" TITLE="pdf_begin_page" HREF="function.pdf-begin-page.html"><LINK  REL="NEXT" TITLE="pdf_begin_template" HREF="function.pdf-begin-template.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP 手册</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pdf-begin-page.html"  ACCESSKEY="P" >后退</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pdf-begin-template.html"  ACCESSKEY="N" >前进</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pdf-begin-pattern" ></A
+>pdf_begin_pattern</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN85129" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>pdf_begin_pattern&nbsp;--&nbsp;Starts new pattern</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN85132" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pdf_begin_pattern</B
+> ( resource pdfdoc, float width, float height, float xstep, float ystep, int painttype)<BR  ></BR
+><P  >&#13;      Starts a new pattern definition and returns a pattern handle.
+      <TT  CLASS="parameter" ><I  >width</I
+></TT
+>, and <TT  CLASS="parameter" ><I  >height</I
+></TT
+>
+      define the bounding box for the pattern.  <TT  CLASS="parameter" ><I  >xstep</I
+></TT
+>
+      and <TT  CLASS="parameter" ><I  >ystep</I
+></TT
+> give the repeated pattern offsets.
+      <TT  CLASS="parameter" ><I  >painttype</I
+></TT
+>=1 means that the pattern has its
+      own colour settings whereas a value of 2 indicates that the current
+      colour is used when the pattern is applied.
+    </P
+><P  >&#13;     See also <A  HREF="function.pdf-end-pattern.html"  ><B  CLASS="function" >pdf_end_pattern()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pdf-begin-page.html"  ACCESSKEY="P" >后退</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >起点</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pdf-begin-template.html"  ACCESSKEY="N" >前进</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pdf_begin_page</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pdf.html"  ACCESSKEY="U" >上一级</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pdf_begin_template</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pdf-begin-page.html">PDF_begin_page</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pdf-begin-template-ext.html">PDF_begin_template_ext</a></div>
- <div class="up"><a href="ref.pdf.html">PDF 鍑芥暟</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pdf-begin-pattern" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">PDF_begin_pattern</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PECL pdflib &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">PDF_begin_pattern</span> &mdash; <span class="dc-title">Start pattern definition</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.pdf-begin-pattern-description">
-  <h3 class="title">璇存槑</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>PDF_begin_pattern</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$pdfdoc</code></span>
-   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$width</code></span>
-   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$height</code></span>
-   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$xstep</code></span>
-   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$ystep</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$painttype</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Starts a new pattern definition.
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pdf-begin-page.html">PDF_begin_page</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pdf-begin-template-ext.html">PDF_begin_template_ext</a></div>
- <div class="up"><a href="ref.pdf.html">PDF 鍑芥暟</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

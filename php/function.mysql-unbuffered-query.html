@@ -1,60 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å‘ MySQL å‘é€ä¸€æ¡ SQL æŸ¥è¯¢ï¼Œå¹¶ä¸è·å–å’Œç¼“å­˜ç»“æœçš„è¡Œ</title>
+<HTML  ><HEAD  ><TITLE  >mysql_unbuffered_query</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_thread_id" HREF="function.mysql-thread-id.html"><LINK  REL="NEXT" TITLE="Improved MySQL Extension" HREF="ref.mysqli.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-thread-id.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.mysqli.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-unbuffered-query" ></A
+>mysql_unbuffered_query</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN66580" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>mysql_unbuffered_query&nbsp;--&nbsp;
+     Ïò MySQL ·¢ËÍÒ»Ìõ SQL ²éÑ¯£¬²¢²»»ñÈ¡ºÍ»º´æ½á¹ûµÄĞĞ
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN66583" ></A
+><H2  >ËµÃ÷</H2
+>resource <B  CLASS="methodname" >mysql_unbuffered_query</B
+> ( string query [, resource link_identifier])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mysql_unbuffered_query()</B
+> Ïò
+     MySQL ·¢ËÍÒ»Ìõ SQL ²éÑ¯
+     <TT  CLASS="parameter" ><I  >query</I
+></TT
+>£¬µ«²»Ïñ
+     <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+>
+     ÄÇÑù×Ô¶¯»ñÈ¡²¢»º´æ½á¹û¼¯¡£Ò»·½Ãæ£¬ÕâÔÚ´¦ÀíºÜ´óµÄ½á¹û¼¯Ê±»á½ÚÊ¡¿É¹ÛµÄÄÚ´æ¡£ÁíÒ»·½Ãæ£¬¿ÉÒÔÔÚ»ñÈ¡µÚÒ»ĞĞºóÁ¢¼´¶Ô½á¹û¼¯½øĞĞ²Ù×÷£¬¶ø²»ÓÃµÈµ½Õû¸ö
+     SQL Óï¾ä¶¼Ö´ĞĞÍê±Ï¡£µ±Ê¹ÓÃ¶à¸öÊı¾İ¿âÁ¬½ÓÊ±£¬±ØĞëÖ¸¶¨¿ÉÑ¡²ÎÊı
+     <TT  CLASS="parameter" ><I  >link_identifier</I
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >mysql_unbuffered_query()</B
+>
+      µÄºÃ´¦ÊÇÓĞ´ú¼ÛµÄ£ºÔÚ
+      <B  CLASS="function" >mysql_unbuffered_query()</B
+>
+      ·µ»ØµÄ½á¹û¼¯Ö®ÉÏ²»ÄÜÊ¹ÓÃ
+      <A  HREF="function.mysql-num-rows.html"  ><B  CLASS="function" >mysql_num_rows()</B
+></A
+> ºÍ <A  HREF="function.mysql-data-seek.html"  ><B  CLASS="function" >mysql_data_seek()</B
+></A
+>¡£´ËÍâÔÚÏò
+      MySQL ·¢ËÍÒ»ÌõĞÂµÄ SQL
+      ²éÑ¯Ö®Ç°£¬±ØĞëÌáÈ¡µôËùÓĞÎ´»º´æµÄ SQL
+      ²éÑ¯Ëù²úÉúµÄ½á¹ûĞĞ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-thread-id.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.mysqli.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_thread_id</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Improved MySQL Extension</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-thread-id.html">mysql_thread_id</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.mysqli.html">Mysqli</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-unbuffered-query" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_unbuffered_query</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_unbuffered_query</span> &mdash; <span class="dc-title">
-     å‘ MySQL å‘é€ä¸€æ¡ SQL æŸ¥è¯¢ï¼Œå¹¶ä¸è·å–å’Œç¼“å­˜ç»“æœçš„è¡Œ
-    </span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-unknown-unknown-seealss" id="refsect1-function.mysql-unbuffered-query-unknown-unknown-unknown-unknown-seealss">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">resource</span> <span class="methodname"><strong>mysql_unbuffered_query</strong></span>
-       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-      [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-     ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>mysql_unbuffered_query()</strong></span> å‘
-     MySQL å‘é€ä¸€æ¡ SQL æŸ¥è¯¢
-     <code class="parameter">query</code>ï¼Œä½†ä¸åƒ
-     <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>
-     é‚£æ ·è‡ªåŠ¨è·å–å¹¶ç¼“å­˜ç»“æœé›†ã€‚ä¸€æ–¹é¢ï¼Œè¿™åœ¨å¤„ç†å¾ˆå¤§çš„ç»“æœé›†æ—¶ä¼šèŠ‚çœå¯è§‚çš„å†…å­˜ã€‚å¦ä¸€æ–¹é¢ï¼Œå¯ä»¥åœ¨è·å–ç¬¬ä¸€è¡Œåç«‹å³å¯¹ç»“æœé›†è¿›è¡Œæ“ä½œï¼Œè€Œä¸ç”¨ç­‰åˆ°æ•´ä¸ª
-     SQL è¯­å¥éƒ½æ‰§è¡Œå®Œæ¯•ã€‚å½“ä½¿ç”¨å¤šä¸ªæ•°æ®åº“è¿æ¥æ—¶ï¼Œå¿…é¡»æŒ‡å®šå¯é€‰å‚æ•°
-     <code class="parameter">link_identifier</code>ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      <span class="function"><strong>mysql_unbuffered_query()</strong></span>
-      çš„å¥½å¤„æ˜¯æœ‰ä»£ä»·çš„ï¼šåœ¨
-      <span class="function"><strong>mysql_unbuffered_query()</strong></span>
-      è¿”å›çš„ç»“æœé›†ä¹‹ä¸Šä¸èƒ½ä½¿ç”¨
-      <span class="function"><a href="function.mysql-num-rows.html" class="function">mysql_num_rows()</a></span> å’Œ <span class="function"><a href="function.mysql-data-seek.html" class="function">mysql_data_seek()</a></span>ã€‚æ­¤å¤–åœ¨å‘
-      MySQL å‘é€ä¸€æ¡æ–°çš„ SQL
-      æŸ¥è¯¢ä¹‹å‰ï¼Œå¿…é¡»æå–æ‰æ‰€æœ‰æœªç¼“å­˜çš„ SQL
-      æŸ¥è¯¢æ‰€äº§ç”Ÿçš„ç»“æœè¡Œã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-thread-id.html">mysql_thread_id</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.mysqli.html">Mysqli</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

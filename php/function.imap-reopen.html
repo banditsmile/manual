@@ -1,177 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Reopen IMAP stream to new mailbox</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-renamemailbox.html">imap_renamemailbox</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-rfc822-parse-adrlist.html">imap_rfc822_parse_adrlist</a></div>
- <div class="up"><a href="ref.imap.html">IMAP ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-reopen" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_reopen</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_reopen</span> &mdash; <span class="dc-title">Reopen <acronym title="Internet Message Access Protocol">IMAP</acronym> stream to new mailbox</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-reopen-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imap_reopen</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mailbox</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$n_retries</code><span class="initializer"> = 0</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   Reopens the specified stream to a new <code class="parameter">mailbox</code> on an
-   <acronym title="Internet Message Access Protocol">IMAP</acronym> or <acronym title="Network News Transfer Protocol">NNTP</acronym> server.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-reopen-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">Áî± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> ËøîÂõûÁöÑ IMAP ÊµÅ„ÄÇ</p></dd>
-
-    
-     <dt>
-<code class="parameter">mailbox</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The mailbox name, see <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> for more
-       information
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The <code class="parameter">options</code> are a bit mask with one or more of
-       the following:
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>OP_READONLY</code></strong> - Open mailbox read-only
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>OP_ANONYMOUS</code></strong> - Don&#039;t use or update a
-          <var class="filename">.newsrc</var> for news (<acronym title="Network News Transfer Protocol">NNTP</acronym> only)
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>OP_HALFOPEN</code></strong> - For <acronym title="Internet Message Access Protocol">IMAP</acronym>
-          and <acronym title="Network News Transfer Protocol">NNTP</acronym> names, open a connection but
-          don&#039;t open a mailbox.
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>OP_EXPUNGE</code></strong> - Silently expunge recycle stream
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CL_EXPUNGE</code></strong> - Expunge mailbox automatically upon mailbox close
-          (see also <span class="function"><a href="function.imap-delete.html" class="function">imap_delete()</a></span> and
-          <span class="function"><a href="function.imap-expunge.html" class="function">imap_expunge()</a></span>)
-         </span>
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">n_retries</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Number of maximum connect attempts
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-reopen-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns <strong><code>TRUE</code></strong> if the stream is reopened, <strong><code>FALSE</code></strong> otherwise.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >imap_reopen</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_renamemailbox" HREF="function.imap-renamemailbox.html"><LINK  REL="NEXT" TITLE="imap_rfc822_parse_adrlist" HREF="function.imap-rfc822-parse-adrlist.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-renamemailbox.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-rfc822-parse-adrlist.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-reopen" ></A
+>imap_reopen</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN43104" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imap_reopen&nbsp;--&nbsp;Reopen IMAP stream to new mailbox</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN43107" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >imap_reopen</B
+> ( resource imap_stream, string mailbox [, string options])<BR  ></BR
+><P  >  
+     This function reopens the specified stream to a new 
+     <TT  CLASS="parameter" ><I  >mailbox</I
+></TT
+> on an IMAP or NNTP server.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >options</I
+></TT
+> are a bit mask with one or more of the following:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >OP_READONLY</B
+></TT
+> - Open mailbox read-only
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >OP_ANONYMOUS</B
+></TT
+> - Don't use or update a
+        <TT  CLASS="filename" >.newsrc</TT
+> for news (NNTP only)
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >OP_HALFOPEN</B
+></TT
+> - For IMAP and NNTP names, open a connection but
+        don't open a mailbox.
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >CL_EXPUNGE</B
+></TT
+> - Expunge mailbox automatically upon mailbox close
+        (see also <A  HREF="function.imap-delete.html"  ><B  CLASS="function" >imap_delete()</B
+></A
+> and
+        <A  HREF="function.imap-expunge.html"  ><B  CLASS="function" >imap_expunge()</B
+></A
+>)
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     »Áπ˚≥…π¶‘Ú∑µªÿ <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¨ ß∞‹‘Ú∑µªÿ <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>°£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-renamemailbox.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-rfc822-parse-adrlist.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_renamemailbox</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_rfc822_parse_adrlist</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 changelog" id="refsect1-function.imap-reopen-changelog">
-  <h3 class="title">Êõ¥Êñ∞Êó•Âøó</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ÁâàÊú¨</th>
-       <th>ËØ¥Êòé</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.0</td>
-       <td><code class="parameter">n_retries</code> added</td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.imap-reopen-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-3647">
-    <p><strong>Example #1 <span class="function"><strong>imap_reopen()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$mbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"{imap.example.org:143}INBOX"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">",&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">imap_errors</span><span style="color: #007700">()));<br /></span><span style="color: #FF8000">//&nbsp;...<br /></span><span style="color: #0000BB">imap_reopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"{imap.example.org:143}INBOX.Sent"</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">",&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">imap_errors</span><span style="color: #007700">()));<br /></span><span style="color: #FF8000">//&nbsp;..<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-renamemailbox.html">imap_renamemailbox</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-rfc822-parse-adrlist.html">imap_rfc822_parse_adrlist</a></div>
- <div class="up"><a href="ref.imap.html">IMAP ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,119 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>解密数据</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-ofb.html">mcrypt_ofb</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.mhash.html">Mhash</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mdecrypt-generic" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mdecrypt_generic</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">mdecrypt_generic</span> &mdash; <span class="dc-title">解密数据</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mdecrypt-generic-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mdecrypt_generic</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$td</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   解密数据。
-   请注意，由于存在数据补齐的情况，
-   返回字符串的长度可能和明文的长度不相等。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mdecrypt-generic-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">td</code></dt>
-
-     <dd>
-
-      <p class="para">
-       由
-       <span class="function"><a href="function.mcrypt-module-open.html" class="function">mcrypt_module_open()</a></span> 函数创建的加密描述符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       密文。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mdecrypt-generic-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-865">
-    <p><strong>Example #1 <span class="function"><strong>mdecrypt_generic()</strong></span> 例程</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;数据&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'this&nbsp;is&nbsp;a&nbsp;very&nbsp;long&nbsp;key,&nbsp;even&nbsp;too&nbsp;long&nbsp;for&nbsp;the&nbsp;cipher'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$plain_text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'very&nbsp;important&nbsp;data'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;打开加密模块，并且创建初始向量&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$td&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_module_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'des'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ecb'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mcrypt_enc_get_key_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv_size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_enc_get_iv_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">$iv_size</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_RAND</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;初始化加密句柄&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">mcrypt_generic_init</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv</span><span style="color: #007700">)&nbsp;!=&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;加密数据&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$c_t&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_generic</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$plain_text</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_deinit</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;为解密重新初始化缓冲区&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_init</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$p_t&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mdecrypt_generic</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c_t</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;执行清理工作&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_deinit</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_module_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">strncmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$p_t</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$plain_text</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$plain_text</span><span style="color: #007700">))&nbsp;==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ok\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"error\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   上例中演示了如何检测
-   解密后的数据是否和原始明文长度一致。
-   需要着重提醒的是，在对数据进行机密之前，
-   必须使用 <span class="function"><a href="function.mcrypt-generic-init.html" class="function">mcrypt_generic_init()</a></span> 
-   函数来重新初始化缓冲区。   
-  </p>
-  <p class="para">
-   调用本函数之前，
-   必须使用密钥和初始向量来调用 <span class="function"><a href="function.mcrypt-generic-init.html" class="function">mcrypt_generic_init()</a></span> 函数
-   对解密句柄进行初始化。
-   加解密工作完成之后，需要调用 <span class="function"><a href="function.mcrypt-generic-deinit.html" class="function">mcrypt_generic_deinit()</a></span> 来释放加解密缓冲区。
-   例程请参见 <span class="function"><a href="function.mcrypt-module-open.html" class="function">mcrypt_module_open()</a></span>。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mdecrypt_generic</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_ofb" HREF="function.mcrypt-ofb.html"><LINK  REL="NEXT" TITLE="MCVE Payment Functions" HREF="ref.mcve.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-ofb.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.mcve.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mdecrypt-generic" ></A
+>mdecrypt_generic</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN55033" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>mdecrypt_generic&nbsp;--&nbsp;Decrypt data</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN55036" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mdecrypt_generic</B
+> ( resource td, string data)<BR  ></BR
+><P  >&#13;     This function decrypts data. Note that the length of the returned string
+     can in fact be longer then the unencrypted string, due to the padding of
+     the data.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN55049" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >mdecrypt_generic()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Data */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$key </font><font  color="#007700">= </font><font  color="#DD0000">'this is a very long key, even too long for the cipher'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$plain_text </font><font  color="#007700">= </font><font  color="#DD0000">'very important data'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Open module, and create IV */ <br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$td </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_module_open</font><font  color="#007700">(</font><font  color="#DD0000">'des'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#DD0000">'ecb'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$key </font><font  color="#007700">= </font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">mcrypt_enc_get_key_size</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$iv_size </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_enc_get_iv_size</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$iv </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_create_iv</font><font  color="#007700">(</font><font  color="#0000BB">$iv_size</font><font  color="#007700">, </font><font  color="#0000BB">MCRYPT_RAND</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Initialize encryption handle */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">if (</font><font  color="#0000BB">mcrypt_generic_init</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$iv</font><font  color="#007700">) != -</font><font  color="#0000BB">1</font><font  color="#007700">) {<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Encrypt data */<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$c_t </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_generic</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$plain_text</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_deinit</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Reinitialize buffers for decryption */<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_init</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$iv</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$p_t </font><font  color="#007700">= </font><font  color="#0000BB">mdecrypt_generic</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$c_t</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Clean up */<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_deinit</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_module_close</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">strncmp</font><font  color="#007700">(</font><font  color="#0000BB">$p_t</font><font  color="#007700">, </font><font  color="#0000BB">$plain_text</font><font  color="#007700">, </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$plain_text</font><font  color="#007700">)) == </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"ok\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"error\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     The above example shows how to check if the data before the encryption is
+     the same as the data after the decryption. It is very important to
+     reinitialize the encryption buffer with
+     <A  HREF="function.mcrypt-generic-init.html"  ><B  CLASS="function" >mcrypt_generic_init()</B
+></A
+> before you try to decrypt the
+     data.
+    </P
+><P  >&#13;     The decryption handle should always be initialized with
+     <A  HREF="function.mcrypt-generic-init.html"  ><B  CLASS="function" >mcrypt_generic_init()</B
+></A
+> with a key and an IV before
+     calling this function. Where the encryption is done, you should free the
+     encryption buffers by calling <A  HREF="function.mcrypt-generic-deinit.html"  ><B  CLASS="function" >mcrypt_generic_deinit()</B
+></A
+>.
+     See <A  HREF="function.mcrypt-module-open.html"  ><B  CLASS="function" >mcrypt_module_open()</B
+></A
+> for an example.
+    </P
+><P  >&#13;     See also <A  HREF="function.mcrypt-generic.html"  ><B  CLASS="function" >mcrypt_generic()</B
+></A
+>,
+     <A  HREF="function.mcrypt-generic-init.html"  ><B  CLASS="function" >mcrypt_generic_init()</B
+></A
+>, and
+     <A  HREF="function.mcrypt-generic-deinit.html"  ><B  CLASS="function" >mcrypt_generic_deinit()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-ofb.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.mcve.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_ofb</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >MCVE Payment Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.mdecrypt-generic-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mcrypt-generic.html" class="function" rel="rdfs-seeAlso">mcrypt_generic()</a> - 加密数据</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic-init.html" class="function" rel="rdfs-seeAlso">mcrypt_generic_init()</a> - 初始化加密所需的缓冲区</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic-deinit.html" class="function" rel="rdfs-seeAlso">mcrypt_generic_deinit()</a> - 对加密模块进行清理工作</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-ofb.html">mcrypt_ofb</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.mhash.html">Mhash</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

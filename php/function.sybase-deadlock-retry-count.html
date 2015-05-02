@@ -1,101 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Sets the deadlock retry count</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sybase-data-seek.html">sybase_data_seek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sybase-fetch-array.html">sybase_fetch_array</a></div>
- <div class="up"><a href="ref.sybase.html">Sybase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.sybase-deadlock-retry-count" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">sybase_deadlock_retry_count</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">sybase_deadlock_retry_count</span> &mdash; <span class="dc-title">Sets the deadlock retry count</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.sybase-deadlock-retry-count-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>sybase_deadlock_retry_count</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$retry_count</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Using <span class="function"><strong>sybase_deadlock_retry_count()</strong></span>, the number of retries
-   can be defined in cases of deadlocks. By default, every deadlock is retried
-   an infinite number of times or until the process is killed by Sybase, the
-   executing script is killed (for instance, by <span class="function"><a href="function.set-time-limit.html" class="function">set_time_limit()</a></span>)
-   or the query succeeds.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.sybase-deadlock-retry-count-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">retry_count</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <table class="doctable table">
-        <caption><strong>Values for retry_count</strong></caption>
-        
-         <tbody class="tbody">
-          <tr>
-           <td>-1</td>
-           <td>Retry forever (default)</td>
-          </tr>
-
-          <tr>
-           <td>0</td>
-           <td>Do not retry</td>
-          </tr>
-
-          <tr>
-           <td>n</td>
-           <td>Retry n times</td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >sybase_deadlock_retry_count</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Sybase Functions" HREF="ref.sybase.html"><LINK  REL="PREVIOUS" TITLE="sybase_data_seek" HREF="function.sybase-data-seek.html"><LINK  REL="NEXT" TITLE="sybase_fetch_array" HREF="function.sybase-fetch-array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sybase-data-seek.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sybase-fetch-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.sybase-deadlock-retry-count" ></A
+>sybase_deadlock_retry_count</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN111834" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>sybase_deadlock_retry_count&nbsp;--&nbsp;Sets the deadlock retry count</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN111837" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >sybase_deadlock_retry_count</B
+> ( int retry_count)<BR  ></BR
+><P  > 
+     Using <B  CLASS="function" >sybase_deadlock_retry_count()</B
+>, the number of retries
+     can be defined in cases of deadlocks. By default, every deadlock is retried
+     an infinite number of times or until the process is killed by Sybase, the 
+     executing script is killed (for instance, by <A  HREF="function.set-time-limit.html"  ><B  CLASS="function" >set_time_limit()</B
+></A
+>)
+     or the query succeeds.
+    </P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN111849" ></A
+><P  ><B  >±í¸ñ 1. Values for retry_count</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Retry forever (default)</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Do not retry</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >n</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Retry n times</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>¸Ãº¯Êı½öÊÊÓÃÓÚ Sybase µÄ CT ¿â½Ó¿Ú£¬¶ø²»ÊÊÓÃÓÚ DB ¿â¡£</P
+></BLOCKQUOTE
+></DIV
+> 
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sybase-data-seek.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sybase-fetch-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sybase_data_seek</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sybase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sybase_fetch_array</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.sybase-deadlock-retry-count-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æ²¡æœ‰è¿”å›å€¼ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.sybase-deadlock-retry-count-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°ä»…é€‚ç”¨äºå¯¹ Sybase ä½¿ç”¨ CT åº“æ¥å£ï¼Œè€Œä¸é€‚ç”¨äº DB åº“ã€‚</span></p></blockquote>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sybase-data-seek.html">sybase_data_seek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sybase-fetch-array.html">sybase_fetch_array</a></div>
- <div class="up"><a href="ref.sybase.html">Sybase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

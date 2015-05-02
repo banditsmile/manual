@@ -1,33 +1,69 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åˆ«å fbsql_table_name</title>
+<HTML  ><HEAD  ><TITLE  >fbsql_tablename</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_stop_db" HREF="function.fbsql-stop-db.html"><LINK  REL="NEXT" TITLE="fbsql_username" HREF="function.fbsql-username.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fbsql-stop-db.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-username.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-tablename" ></A
+>fbsql_tablename</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN27018" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>fbsql_tablename&nbsp;--&nbsp;Get table name of field</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN27021" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >fbsql_tablename</B
+> ( resource result, int i)<BR  ></BR
+><P  > 
+     <B  CLASS="function" >fbsql_tablename()</B
+> takes a result pointer
+     returned by the <A  HREF="function.fbsql-list-tables.html"  ><B  CLASS="function" >fbsql_list_tables()</B
+></A
+> function
+     as well as an integer index and returns the name of a table. The
+     <A  HREF="function.fbsql-num-rows.html"  ><B  CLASS="function" >fbsql_num_rows()</B
+></A
+> function may be used to
+     determine the number of tables in the result pointer.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN27036" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >fbsql_tablename()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php <br  />fbsql_connect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"_SYSTEM"</font><font  color="#007700">, </font><font  color="#DD0000">""</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_list_tables</font><font  color="#007700">(</font><font  color="#DD0000">"wisconsin"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />while (</font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">fbsql_num_rows</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$tb_names</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] = </font><font  color="#0000BB">fbsql_tablename</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">, </font><font  color="#0000BB">$i</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$tb_names</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] . </font><font  color="#DD0000">"&lt;br /&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$i</font><font  color="#007700">++;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fbsql-stop-db.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-username.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_stop_db</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_username</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-table-name.html">fbsql_table_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-username.html">fbsql_username</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-tablename" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_tablename</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_tablename</span> &mdash; <span class="dc-title">åˆ«å <span class="function"><a href="function.fbsql-table-name.html" class="function">fbsql_table_name()</a></span></span></p>
 
- </div>
-
- <div class="refsect1 description" id="refsect1-function.fbsql-tablename-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <p class="para">
-   æ­¤å‡½æ•°æ˜¯è¯¥å‡½æ•°çš„åˆ«åï¼š <span class="function"><a href="function.fbsql-table-name.html" class="function">fbsql_table_name()</a></span>.
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-table-name.html">fbsql_table_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-username.html">fbsql_username</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

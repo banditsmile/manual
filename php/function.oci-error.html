@@ -1,89 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回上一个错误</title>
+<HTML  ><HEAD  ><TITLE  >oci_error</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Oracle 8 ������" HREF="ref.oci8.html"><LINK  REL="PREVIOUS" TITLE="oci_define_by_name" HREF="function.oci-define-by-name.html"><LINK  REL="NEXT" TITLE="oci_execute" HREF="function.oci-execute.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.oci-define-by-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.oci-execute.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.oci-error" ></A
+>oci_error</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN80109" ></A
+><P  >    (no version information, might be only in CVS)</P
+>oci_error&nbsp;--&nbsp;Returns the last error found</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN80112" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >ocierror</B
+> ( [resource source])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >oci_error()</B
+> returns the last error found.  If
+     the optional <TT  CLASS="parameter" ><I  >source</I
+></TT
+> is not
+     provided, the last error encountered is returned. You can use
+     connection or statement resources as value of parameter 
+     <TT  CLASS="parameter" ><I  >source</I
+></TT
+>. If no error is
+     found, <B  CLASS="function" >oci_error()</B
+> returns
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>. <B  CLASS="function" >oci_error()</B
+> returns the error as an
+     associative array. In this array, <TT  CLASS="literal" >code</TT
+>
+     consists the oracle error code and <TT  CLASS="literal" >message</TT
+>
+     the oracle error string.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >As of PHP 4.3: </B
+>
+      <TT  CLASS="literal" >offset</TT
+> and <TT  CLASS="literal" >sqltext</TT
+> will
+      also be included in the return array to indicate the location
+      of the error and the original SQL text which caused it.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.oci-define-by-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.oci-execute.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >oci_define_by_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.oci8.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >oci_execute</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.oci-define-by-name.html">oci_define_by_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.oci-execute.html">oci_execute</a></div>
- <div class="up"><a href="ref.oci8.html">OCI8 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.oci-error" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">oci_error</h1>
-  <p class="verinfo">(PHP 5, PECL OCI8 &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">oci_error</span> &mdash; <span class="dc-title">返回上一个错误</span></p>
 
- </div>
- <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.oci-error-unknown-unknown-seealsq">
-  <h3 class="title">说明</h3>
-   <div class="methodsynopsis dc-description">
-    <span class="type">array</span> <span class="methodname"><strong>oci_error</strong></span>
-     ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$source</code></span>
-   ] )</div>
-
-  <p class="para rdfs-comment">
-   对于大多数错误，参数是最适合的资源句柄。对于
-   <span class="function"><a href="function.oci-connect.html" class="function">oci_connect()</a></span>，<span class="function"><a href="function.oci-new-connect.html" class="function">oci_new_connect()</a></span>
-   或 <span class="function"><a href="function.oci-pconnect.html" class="function">oci_pconnect()</a></span>
-   的连接错误，不要传递参数。如果没有发现错误，<span class="function"><strong>oci_error()</strong></span>
-   返回 <strong><code>FALSE</code></strong>。<span class="function"><strong>oci_error()</strong></span>
-   以一个关联数组返回错误。在此数组中，<em>code</em>
-   是 oracle 错误代码而 <em>message</em> 是 oracle 的错误字符串。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <strong>自 PHP 4.3 起</strong><br />
-   <p class="para">
-    <em>offset</em> 和 <em>sqltext</em>
-    也包括在返回的数组中，用来指出错误发生的位置以及造成错误的原始的 SQL 文本。
-   </p>
-  </p></blockquote>
-  <p class="para">
-   <div class="example" id="example-2109">
-    <p><strong>Example #1 连接错误后显示 Oracle 错误信息</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-$conn&nbsp;=&nbsp;@oci_connect("scott",&nbsp;"tiger",&nbsp;"mydb");<br />if&nbsp;(!$conn)&nbsp;{<br />&nbsp;&nbsp;$e&nbsp;=&nbsp;oci_error();&nbsp;&nbsp;&nbsp;//&nbsp;For&nbsp;oci_connect&nbsp;errors&nbsp;pass&nbsp;no&nbsp;handle<br />&nbsp;&nbsp;echo&nbsp;htmlentities($e['message']);<br />}</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2110">
-    <p><strong>Example #2 语法解析错误后显示 Oracle 错误信息</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-$stmt&nbsp;=&nbsp;@oci_parse($conn,&nbsp;"select&nbsp;'&nbsp;from&nbsp;dual");&nbsp;&nbsp;//&nbsp;note&nbsp;mismatched&nbsp;quote<br />if&nbsp;(!$stmt)&nbsp;{<br />&nbsp;&nbsp;$e&nbsp;=&nbsp;oci_error($conn);&nbsp;&nbsp;//&nbsp;For&nbsp;oci_parse&nbsp;errors&nbsp;pass&nbsp;the&nbsp;connection&nbsp;handle<br />&nbsp;&nbsp;echo&nbsp;htmlentities($e['message']);<br />}</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2111">
-    <p><strong>Example #3 执行错误后显示 Oracle 错误信息和出错的语句</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-$r&nbsp;=&nbsp;oci_execute($stmt);<br />if&nbsp;(!$r)&nbsp;{<br />&nbsp;&nbsp;$e&nbsp;=&nbsp;oci_error($stmt);&nbsp;//&nbsp;For&nbsp;oci_execute&nbsp;errors&nbsp;pass&nbsp;the&nbsp;statementhandle<br />&nbsp;&nbsp;echo&nbsp;htmlentities($e['message']);<br />&nbsp;&nbsp;echo&nbsp;"&lt;pre&gt;";<br />&nbsp;&nbsp;echo&nbsp;htmlentities($e['sqltext']);<br />&nbsp;&nbsp;printf("\n%".($e['offset']+1)."s",&nbsp;"^");<br />&nbsp;&nbsp;echo&nbsp;"&lt;/pre&gt;";<br />}</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在 PHP 5.0.0 之前的版本必须使用 <span class="function"><a href="function.ocierror.html" class="function">ocierror()</a></span>
-    替代本函数。该函数名仍然可用，为向下兼容作为
-    <span class="function"><strong>oci_error()</strong></span> 的别名。不过其已被废弃，不推荐使用。
-   </p>
-  </p></blockquote>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.oci-define-by-name.html">oci_define_by_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.oci-execute.html">oci_execute</a></div>
- <div class="up"><a href="ref.oci8.html">OCI8 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

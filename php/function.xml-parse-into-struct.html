@@ -1,73 +1,53 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å°† XML æ•°æ®è§£æåˆ°æ•°ç»„ä¸­</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xml-get-error-code.html">xml_get_error_code</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xml-parse.html">xml_parse</a></div>
- <div class="up"><a href="ref.xml.html">XML è§£æå™¨å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.xml-parse-into-struct" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">xml_parse_into_struct</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">xml_parse_into_struct</span> &mdash; <span class="dc-title">å°† XML æ•°æ®è§£æåˆ°æ•°ç»„ä¸­</span></p>
-
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.xml-parse-into-struct-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">int</span> <span class="methodname"><strong>xml_parse_into_struct</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parser</code></span>
-     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-     , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$values</code></span>
-     [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$index</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     è¯¥å‡½æ•°å°† XML æ–‡ä»¶è§£æåˆ°ä¸¤ä¸ªå¯¹åº”çš„æ•°ç»„ä¸­ï¼Œ<code class="parameter">index</code>
-     å‚æ•°å«æœ‰æŒ‡å‘ <code class="parameter">values</code>
-     æ•°ç»„ä¸­å¯¹åº”å€¼çš„æŒ‡é’ˆã€‚æœ€åä¸¤ä¸ªæ•°ç»„å‚æ•°å¯ç”±æŒ‡é’ˆä¼ é€’ç»™å‡½æ•°ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      <span class="function"><strong>xml_parse_into_struct()</strong></span> å¤±è´¥è¿”å› 0ï¼ŒæˆåŠŸè¿”å›
-      1ã€‚è¿™å’Œ <strong><code>FALSE</code></strong> ä¸
-      <strong><code>TRUE</code></strong> ä¸åŒï¼Œä½¿ç”¨ä¾‹å¦‚ === çš„è¿ç®—ç¬¦æ—¶è¦æ³¨æ„ã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     ä»¥ä¸‹èŒƒä¾‹æ˜¾ç¤ºäº†ç”±è¯¥å‡½æ•°ç”Ÿæˆçš„æ•°ç»„çš„å†…éƒ¨ç»“æ„ã€‚æˆ‘ä»¬ç®€å•åœ°å°†ä¸€ä¸ª
-     <em>note</em> åµŒå…¥åˆ°ä¸€ä¸ª <em>para</em>
-     æ ‡è®°ä¸­ï¼Œè§£æåæˆ‘ä»¬å¯ä»¥æ‰“å°å‡ºç”Ÿæˆçš„æ•°ç»„çš„ç»“æ„ï¼š
-     <div class="example" id="example-5800">
-      <p><strong>Example #1 <span class="function"><strong>xml_parse_into_struct()</strong></span> ç¤ºä¾‹</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$simple&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"&lt;para&gt;&lt;note&gt;simple&nbsp;note&lt;/note&gt;&lt;/para&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$p&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xml_parser_create</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">xml_parse_into_struct</span><span style="color: #007700">(</span><span style="color: #0000BB">$p</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$simple</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$vals</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$index</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">xml_parser_free</span><span style="color: #007700">(</span><span style="color: #0000BB">$p</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Index&nbsp;array\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$index</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"\nVals&nbsp;array\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$vals</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     <div class="example-contents"><p>
-     è¿è¡Œä»¥ä¸Šä»£ç ï¼Œæˆ‘ä»¬å¾—åˆ°çš„è¾“å‡ºå°†æ˜¯ï¼š
-     </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Index array
+<HTML  ><HEAD  ><TITLE  >xml_parse_into_struct</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="XML Óï·¨½âÎöº¯Êı¿â" HREF="ref.xml.html"><LINK  REL="PREVIOUS" TITLE="xml_get_error_code" HREF="function.xml-get-error-code.html"><LINK  REL="NEXT" TITLE="xml_parse" HREF="function.xml-parse.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.xml-get-error-code.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.xml-parse.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.xml-parse-into-struct" ></A
+>xml_parse_into_struct</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN117595" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>xml_parse_into_struct&nbsp;--&nbsp;½« XML Êı¾İ½âÎöµ½Êı×éÖĞ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN117598" ></A
+><H2  >ÃèÊö</H2
+>int <B  CLASS="methodname" >xml_parse_into_struct</B
+> ( resource parser, string data, array &#38;values [, array &#38;index])<BR  ></BR
+><P  >&#13;	 ¸Ãº¯Êı½« XML ÎÄ¼ş½âÎöµ½Á½¸ö¶ÔÓ¦µÄÊı×éÖĞ£¬<TT  CLASS="parameter" ><I  >index</I
+></TT
+> ²ÎÊıº¬ÓĞÖ¸Ïò <TT  CLASS="parameter" ><I  >values</I
+></TT
+> Êı×éÖĞ¶ÔÓ¦ÖµµÄÖ¸Õë¡£×îºóÁ½¸öÊı×é²ÎÊı¿ÉÓÉÖ¸Õë´«µİ¸øº¯Êı¡£
+    </P
+><P  >&#13;	 ÒÔÏÂ·¶ÀıÏÔÊ¾ÁËÓÉ¸Ãº¯ÊıÉú³ÉµÄÊı×éµÄÄÚ²¿½á¹¹¡£ÎÒÃÇ¼òµ¥µØ½«Ò»¸ö <TT  CLASS="literal" >note</TT
+> Ç¶Èëµ½Ò»¸ö <TT  CLASS="literal" >para</TT
+> ±ê¼ÇÖĞ£¬½âÎöºóÎÒÃÇ¿ÉÒÔ´òÓ¡³öÉú³ÉµÄÊı×éµÄ½á¹¹£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN117621" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$simple </font><font  color="#007700">= </font><font  color="#DD0000">"&lt;para&gt;&lt;note&gt;simple note&lt;/note&gt;&lt;/para&gt;"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$p </font><font  color="#007700">= </font><font  color="#0000BB">xml_parser_create</font><font  color="#007700">();<br  /></font><font  color="#0000BB">xml_parse_into_struct</font><font  color="#007700">(</font><font  color="#0000BB">$p</font><font  color="#007700">,</font><font  color="#0000BB">$simple</font><font  color="#007700">,</font><font  color="#0000BB">$vals</font><font  color="#007700">,</font><font  color="#0000BB">$index</font><font  color="#007700">);<br  /></font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$p</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Index array\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$index</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"\nVals array\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$vals</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;	 ÔËĞĞÒÔÉÏ´úÂë£¬ÎÒÃÇµÃµ½µÄÊä³ö½«ÊÇ£º
+     </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Index array
 Array
 (
-    [PARA] =&gt; Array
+    [PARA] =&#62; Array
         (
-            [0] =&gt; 0
-            [1] =&gt; 2
+            [0] =&#62; 0
+            [1] =&#62; 2
         )
 
-    [NOTE] =&gt; Array
+    [NOTE] =&#62; Array
         (
-            [0] =&gt; 1
+            [0] =&#62; 1
         )
 
 )
@@ -75,106 +55,136 @@ Array
 Vals array
 Array
 (
-    [0] =&gt; Array
+    [0] =&#62; Array
         (
-            [tag] =&gt; PARA
-            [type] =&gt; open
-            [level] =&gt; 1
+            [tag] =&#62; PARA
+            [type] =&#62; open
+            [level] =&#62; 1
         )
 
-    [1] =&gt; Array
+    [1] =&#62; Array
         (
-            [tag] =&gt; NOTE
-            [type] =&gt; complete
-            [level] =&gt; 2
-            [value] =&gt; simple note
+            [tag] =&#62; NOTE
+            [type] =&#62; complete
+            [level] =&#62; 2
+            [value] =&#62; simple note
         )
 
-    [2] =&gt; Array
+    [2] =&#62; Array
         (
-            [tag] =&gt; PARA
-            [type] =&gt; close
-            [level] =&gt; 1
+            [tag] =&#62; PARA
+            [type] =&#62; close
+            [level] =&#62; 1
         )
 
-)
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     å¦‚æœæ‚¨çš„ XML æ–‡æ¡£å¾ˆå¤æ‚ï¼ŒåŸºäºè¯¥æ–‡æ¡£çš„äº‹ä»¶å¤„ç†ï¼ˆEvent-drivenï¼‰è§£æï¼ˆåŸºäº expat æ‰©å±•åº“ï¼‰ä¹Ÿä¼šå¯¹åº”çš„å˜å¾—å¤æ‚ã€‚è¯¥å‡½æ•°ç”Ÿæˆçš„å¹¶é DOM é£æ ¼çš„å¯¹è±¡ï¼Œè€Œæ˜¯æ¨ªå‘çš„æ ‘çŠ¶ç»“æ„ã€‚å› æ­¤ï¼Œæˆ‘ä»¬èƒ½å¤Ÿæ–¹ä¾¿çš„å»ºç«‹è¡¨è¾¾ XML æ–‡ä»¶æ•°æ®çš„å¯¹è±¡ã€‚æˆ‘ä»¬å‡è®¾ä»¥ä¸‹ XML æ–‡ä»¶è¡¨ç¤ºä¸€ä¸ªå…³äºæ°¨åŸºé…¸ä¿¡æ¯çš„å°å‹æ•°æ®åº“ï¼š
-     <div class="example" id="example-5801">
-      <p><strong>Example #2 moldb.xml - åˆ†å­ä¿¡æ¯çš„å°å‹æ•°æ®åº“</strong></p>
-      <div class="example-contents">
-<div class="xmlcode"><pre class="xmlcode">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;moldb&gt;
+)</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;	 Èç¹ûÄúµÄ XML ÎÄµµºÜ¸´ÔÓ£¬»ùÓÚ¸ÃÎÄµµµÄÊÂ¼ş´¦Àí£¨Event-driven£©½âÎö£¨»ùÓÚ expat À©Õ¹¿â£©Ò²»á¶ÔÓ¦µÄ±äµÃ¸´ÔÓ¡£¸Ãº¯ÊıÉú³ÉµÄ²¢·Ç DOM ·ç¸ñµÄ¶ÔÏó£¬¶øÊÇºáÏòµÄÊ÷×´½á¹¹¡£Òò´Ë£¬ÎÒÃÇÄÜ¹»·½±ãµÄ½¨Á¢±í´ï XML ÎÄ¼şÊı¾İµÄ¶ÔÏó¡£ÎÒÃÇ¼ÙÉèÒÔÏÂ XML ÎÄ¼ş±íÊ¾Ò»¸ö¹ØÓÚ°±»ùËáĞÅÏ¢µÄĞ¡ĞÍÊı¾İ¿â£º
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117626" ></A
+><P  ><B  >Àı×Ó 1. moldb.xml - ·Ö×ÓĞÅÏ¢µÄĞ¡ĞÍÊı¾İ¿â</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="xml" >&#60;?xml version="1.0"?&#62;
+&#60;moldb&#62;
 
-    &lt;molecule&gt;
-        &lt;name&gt;Alanine&lt;/name&gt;
-        &lt;symbol&gt;ala&lt;/symbol&gt;
-        &lt;code&gt;A&lt;/code&gt;
-        &lt;type&gt;hydrophobic&lt;/type&gt;
-    &lt;/molecule&gt;
+    &#60;molecule&#62;
+        &#60;name&#62;Alanine&#60;/name&#62;
+        &#60;symbol&#62;ala&#60;/symbol&#62;
+        &#60;code&#62;A&#60;/code&#62;
+        &#60;type&#62;hydrophobic&#60;/type&#62;
+    &#60;/molecule&#62;
 
-    &lt;molecule&gt;
-        &lt;name&gt;Lysine&lt;/name&gt;
-        &lt;symbol&gt;lys&lt;/symbol&gt;
-        &lt;code&gt;K&lt;/code&gt;
-        &lt;type&gt;charged&lt;/type&gt;
-    &lt;/molecule&gt;
+    &#60;molecule&#62;
+        &#60;name&#62;Lysine&#60;/name&#62;
+        &#60;symbol&#62;lys&#60;/symbol&#62;
+        &#60;code&#62;K&#60;/code&#62;
+        &#60;type&#62;charged&#60;/type&#62;
+    &#60;/molecule&#62;
 
-&lt;/moldb&gt;</pre>
-</div>
-      </div>
-
-     </div>
-     ä»¥ä¸‹æ˜¯è§£æè¯¥æ–‡æ¡£å¹¶ç”Ÿæˆç›¸åº”å¯¹è±¡çš„ä»£ç ï¼š
-     <div class="example" id="example-5802">
-      <p><strong>Example #3 
-       parsemoldb.php - å°† moldb.xml è§£æåˆ°åˆ†å­ï¼ˆmolecularï¼‰å¯¹è±¡çš„æ•°ç»„ä¸­
-      </strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">AminoAcid&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;aa&nbsp;å§“å<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">var&nbsp;</span><span style="color: #0000BB">$symbol</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ä¸‰å­—æ¯ç¬¦å·<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">var&nbsp;</span><span style="color: #0000BB">$code</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å•å­—æ¯ä»£ç <br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">var&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;hydrophobic,&nbsp;charged&nbsp;æˆ–&nbsp;neutral<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">AminoAcid&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$aa</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$aa&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$k</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">$v</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$k&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$aa</span><span style="color: #007700">[</span><span style="color: #0000BB">$k</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">readDatabase</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;è¯»å–&nbsp;aminoacids&nbsp;çš„&nbsp;XML&nbsp;æ•°æ®<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">""</span><span style="color: #007700">,</span><span style="color: #0000BB">file</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$parser&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xml_parser_create</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">xml_parser_set_option</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">XML_OPTION_CASE_FOLDING</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">xml_parser_set_option</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">XML_OPTION_SKIP_WHITE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">xml_parse_into_struct</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$values</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">xml_parser_free</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;éå†&nbsp;XML&nbsp;ç»“æ„<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$tags&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">$val</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"molecule"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$molranges&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$val</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;each&nbsp;contiguous&nbsp;pair&nbsp;of&nbsp;array&nbsp;entries&nbsp;are&nbsp;the<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;lower&nbsp;and&nbsp;upper&nbsp;range&nbsp;for&nbsp;each&nbsp;molecule&nbsp;definition<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">for&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$molranges</span><span style="color: #007700">);&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">+=</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$offset&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$molranges</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">]&nbsp;+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$len&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$molranges</span><span style="color: #007700">[</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;-&nbsp;</span><span style="color: #0000BB">$offset</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tdb</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">parseMol</span><span style="color: #007700">(</span><span style="color: #0000BB">array_slice</span><span style="color: #007700">(</span><span style="color: #0000BB">$values</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$offset</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$len</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$tdb</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">parseMol</span><span style="color: #007700">(</span><span style="color: #0000BB">$mvalues</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$mvalues</span><span style="color: #007700">);&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mol</span><span style="color: #007700">[</span><span style="color: #0000BB">$mvalues</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">][</span><span style="color: #DD0000">"tag"</span><span style="color: #007700">]]&nbsp;=&nbsp;</span><span style="color: #0000BB">$mvalues</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">][</span><span style="color: #DD0000">"value"</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;</span><span style="color: #0000BB">AminoAcid</span><span style="color: #007700">(</span><span style="color: #0000BB">$mol</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">readDatabase</span><span style="color: #007700">(</span><span style="color: #DD0000">"moldb.xml"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"**&nbsp;Database&nbsp;of&nbsp;AminoAcid&nbsp;objects:\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-     åœ¨æ‰§è¡Œå®Œ <var class="filename">parsemoldb.php</var> åï¼Œå˜é‡ <var class="varname"><var class="varname">$db</var></var> å°†åŒ…å«æœ‰ä¸€ä¸ªç”± <strong class="classname">AminoAcid</strong> å¯¹è±¡ç»„æˆçš„æ•°ç»„ï¼Œè¯¥è„šæœ¬çš„è¾“å‡ºå¦‚ä¸‹ï¼š
-     <div class="informalexample">
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-** Database of AminoAcid objects:
+&#60;/moldb&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+	 ÒÔÏÂÊÇ½âÎö¸ÃÎÄµµ²¢Éú³ÉÏàÓ¦¶ÔÏóµÄ´úÂë£º
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117629" ></A
+><P  ><B  >Àı×Ó 2. 
+       parsemoldb.php - ½« moldb.xml ½âÎöµ½·Ö×Ó£¨molecular£©¶ÔÏóµÄÊı×éÖĞ
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">class </font><font  color="#0000BB">AminoAcid </font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$name</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// aa name<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">var </font><font  color="#0000BB">$symbol</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// three letter symbol<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">var </font><font  color="#0000BB">$code</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// one letter code<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">var </font><font  color="#0000BB">$type</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// hydrophobic, charged or neutral<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">function </font><font  color="#0000BB">AminoAcid </font><font  color="#007700">(</font><font  color="#0000BB">$aa</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach (</font><font  color="#0000BB">$aa </font><font  color="#007700">as </font><font  color="#0000BB">$k</font><font  color="#007700">=&gt;</font><font  color="#0000BB">$v</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">$k </font><font  color="#007700">= </font><font  color="#0000BB">$aa</font><font  color="#007700">[</font><font  color="#0000BB">$k</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />function </font><font  color="#0000BB">readDatabase</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// read the xml database of aminoacids<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">implode</font><font  color="#007700">(</font><font  color="#DD0000">""</font><font  color="#007700">,</font><font  color="#0000BB">file</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$parser </font><font  color="#007700">= </font><font  color="#0000BB">xml_parser_create</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parser_set_option</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">,</font><font  color="#0000BB">XML_OPTION_CASE_FOLDING</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parser_set_option</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">,</font><font  color="#0000BB">XML_OPTION_SKIP_WHITE</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parse_into_struct</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">,</font><font  color="#0000BB">$data</font><font  color="#007700">,</font><font  color="#0000BB">$values</font><font  color="#007700">,</font><font  color="#0000BB">$tags</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// loop through the structures<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">foreach (</font><font  color="#0000BB">$tags </font><font  color="#007700">as </font><font  color="#0000BB">$key</font><font  color="#007700">=&gt;</font><font  color="#0000BB">$val</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$key </font><font  color="#007700">== </font><font  color="#DD0000">"molecule"</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$molranges </font><font  color="#007700">= </font><font  color="#0000BB">$val</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// each contiguous pair of array entries are the <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// lower and upper range for each molecule definition<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">count</font><font  color="#007700">(</font><font  color="#0000BB">$molranges</font><font  color="#007700">); </font><font  color="#0000BB">$i</font><font  color="#007700">+=</font><font  color="#0000BB">2</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$offset </font><font  color="#007700">= </font><font  color="#0000BB">$molranges</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] + </font><font  color="#0000BB">1</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$len </font><font  color="#007700">= </font><font  color="#0000BB">$molranges</font><font  color="#007700">[</font><font  color="#0000BB">$i </font><font  color="#007700">+ </font><font  color="#0000BB">1</font><font  color="#007700">] - </font><font  color="#0000BB">$offset</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$tdb</font><font  color="#007700">[] = </font><font  color="#0000BB">parseMol</font><font  color="#007700">(</font><font  color="#0000BB">array_slice</font><font  color="#007700">(</font><font  color="#0000BB">$values</font><font  color="#007700">, </font><font  color="#0000BB">$offset</font><font  color="#007700">, </font><font  color="#0000BB">$len</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$tdb</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">parseMol</font><font  color="#007700">(</font><font  color="#0000BB">$mvalues</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">count</font><font  color="#007700">(</font><font  color="#0000BB">$mvalues</font><font  color="#007700">); </font><font  color="#0000BB">$i</font><font  color="#007700">++)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$mol</font><font  color="#007700">[</font><font  color="#0000BB">$mvalues</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">][</font><font  color="#DD0000">"tag"</font><font  color="#007700">]] = </font><font  color="#0000BB">$mvalues</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">][</font><font  color="#DD0000">"value"</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;return new </font><font  color="#0000BB">AminoAcid</font><font  color="#007700">(</font><font  color="#0000BB">$mol</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#0000BB">$db </font><font  color="#007700">= </font><font  color="#0000BB">readDatabase</font><font  color="#007700">(</font><font  color="#DD0000">"moldb.xml"</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"** Database of AminoAcid objects:\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$db</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+	 ÔÚÖ´ĞĞÍê <TT  CLASS="filename" >parsemoldb.php</TT
+> ºó£¬±äÁ¿ <TT  CLASS="varname" >$db</TT
+> ½«°üº¬ÓĞÒ»¸öÓÉ <B  CLASS="classname" >AminoAcid</B
+> ¶ÔÏó×é³ÉµÄÊı×é£¬¸Ã½Å±¾µÄÊä³öÈçÏÂ£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN117635" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >** Database of AminoAcid objects:
 Array
 (
-    [0] =&gt; aminoacid Object
+    [0] =&#62; aminoacid Object
         (
-            [name] =&gt; Alanine
-            [symbol] =&gt; ala
-            [code] =&gt; A
-            [type] =&gt; hydrophobic
+            [name] =&#62; Alanine
+            [symbol] =&#62; ala
+            [code] =&#62; A
+            [type] =&#62; hydrophobic
         )
 
-    [1] =&gt; aminoacid Object
+    [1] =&#62; aminoacid Object
         (
-            [name] =&gt; Lysine
-            [symbol] =&gt; lys
-            [code] =&gt; K
-            [type] =&gt; charged
+            [name] =&#62; Lysine
+            [symbol] =&#62; lys
+            [code] =&#62; K
+            [type] =&#62; charged
         )
 
-)
-</pre></div>
-      </div>
-     </div>
-    </p>
-   </div>
+)</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.xml-get-error-code.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.xml-parse.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >xml_get_error_code</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.xml.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >xml_parse</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xml-get-error-code.html">xml_get_error_code</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xml-parse.html">xml_parse</a></div>
- <div class="up"><a href="ref.xml.html">XML è§£æå™¨å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

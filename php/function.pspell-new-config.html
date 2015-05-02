@@ -1,94 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Load a new dictionary with settings based on a given config</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pspell-config-save-repl.html">pspell_config_save_repl</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pspell-new-personal.html">pspell_new_personal</a></div>
- <div class="up"><a href="ref.pspell.html">Pspell ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pspell-new-config" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pspell_new_config</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">pspell_new_config</span> &mdash; <span class="dc-title">Load a new dictionary with settings based on a given config
-  </span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pspell-new-config-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>pspell_new_config</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$config</code></span>
-   )</div>
-
-  <p class="simpara">
-   <span class="function"><strong>pspell_new_config()</strong></span> opens up a new dictionary with
-   settings specified in a config, created with
-   <span class="function"><a href="function.pspell-config-create.html" class="function">pspell_config_create()</a></span> and modified with
-   <span class="function"><strong>pspell_config_*()</strong></span> functions. This method provides you
-   with the most flexibility and has all the functionality provided by
-   <span class="function"><a href="function.pspell-new.html" class="function">pspell_new()</a></span> and
-   <span class="function"><a href="function.pspell-new-personal.html" class="function">pspell_new_personal()</a></span>.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pspell-new-config-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">config</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The <code class="parameter">config</code> parameter is the one returned by
-       <span class="function"><a href="function.pspell-config-create.html" class="function">pspell_config_create()</a></span> when the config was created.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.pspell-new-config-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns a dictionary link identifier on success.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.pspell-new-config-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-2831">
-    <p><strong>Example #1 <span class="function"><strong>pspell_new_config()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$pspell_config&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pspell_config_create</span><span style="color: #007700">(</span><span style="color: #DD0000">"en"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_config_personal</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/dictionaries/custom.pws"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_config_repl</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/dictionaries/custom.repl"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pspell_link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pspell_new_config</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >pspell_new_config</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Pspell Functions" HREF="ref.pspell.html"><LINK  REL="PREVIOUS" TITLE="pspell_config_save_repl" HREF="function.pspell-config-save-repl.html"><LINK  REL="NEXT" TITLE="pspell_new_personal" HREF="function.pspell-new-personal.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pspell-config-save-repl.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pspell-new-personal.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pspell-new-config" ></A
+>pspell_new_config</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN95379" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>pspell_new_config&nbsp;--&nbsp;Load a new dictionary with settings based on a given config
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN95382" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pspell_new_config</B
+> ( int config)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pspell_new_config()</B
+> opens up a new dictionary with
+     settings specified in a config, created with with
+     <A  HREF="function.pspell-config-create.html"  ><B  CLASS="function" >pspell_config_create()</B
+></A
+> and modified with
+     <B  CLASS="function" >pspell_config_*()</B
+> functions. This method provides you
+     with the most flexibility and has all the functionality provided by
+     <A  HREF="function.pspell-new.html"  ><B  CLASS="function" >pspell_new()</B
+></A
+> and 
+     <A  HREF="function.pspell-new-personal.html"  ><B  CLASS="function" >pspell_new_personal()</B
+></A
+>.
+    </P
+><P  >&#13;     The config parameter is the one returned by
+     <A  HREF="function.pspell-config-create.html"  ><B  CLASS="function" >pspell_config_create()</B
+></A
+> when the config was created.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN95399" ></A
+><P  ><B  >¿˝◊” 1. <B  CLASS="function" >pspell_new_config()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$pspell_config </font><font  color="#007700">= </font><font  color="#0000BB">pspell_config_create</font><font  color="#007700">(</font><font  color="#DD0000">"en"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">pspell_config_personal</font><font  color="#007700">(</font><font  color="#0000BB">$pspell_config</font><font  color="#007700">, </font><font  color="#DD0000">"/var/dictionaries/custom.pws"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">pspell_config_repl</font><font  color="#007700">(</font><font  color="#0000BB">$pspell_config</font><font  color="#007700">, </font><font  color="#DD0000">"/var/dictionaries/custom.repl"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$pspell_link </font><font  color="#007700">= </font><font  color="#0000BB">pspell_new_config</font><font  color="#007700">(</font><font  color="#0000BB">$pspell_config</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pspell-config-save-repl.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pspell-new-personal.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pspell_config_save_repl</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pspell.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pspell_new_personal</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pspell-config-save-repl.html">pspell_config_save_repl</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pspell-new-personal.html">pspell_new_personal</a></div>
- <div class="up"><a href="ref.pspell.html">Pspell ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

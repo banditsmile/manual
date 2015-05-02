@@ -1,62 +1,73 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>冲刷出（送出）输出缓冲区中的内容</title>
+<HTML  ><HEAD  ><TITLE  >ob_flush</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="������ƺ���" HREF="ref.outcontrol.html"><LINK  REL="PREVIOUS" TITLE="ob_end_flush" HREF="function.ob-end-flush.html"><LINK  REL="NEXT" TITLE="ob_get_clean" HREF="function.ob-get-clean.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ob-end-flush.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ob-get-clean.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ob-flush" ></A
+>ob_flush</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN84034" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>ob_flush&nbsp;--&nbsp;
+     Flush (send) the output buffer
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN84037" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >ob_flush</B
+> ( void )<BR  ></BR
+><P  >&#13;     This function will send the contents of the output buffer (if
+     any).  If you want to further
+     process the buffer's contents you have to call
+     <A  HREF="function.ob-get-contents.html"  ><B  CLASS="function" >ob_get_contents()</B
+></A
+> before
+     <B  CLASS="function" >ob_flush()</B
+> as the buffer contents are
+     discarded after <B  CLASS="function" >ob_flush()</B
+> is called.
+    </P
+><P  >&#13;     This function does not destroy the output buffer like
+     <A  HREF="function.ob-end-flush.html"  ><B  CLASS="function" >ob_end_flush()</B
+></A
+> does.
+    </P
+><P  >&#13;     See also <A  HREF="function.ob-get-contents.html"  ><B  CLASS="function" >ob_get_contents()</B
+></A
+>,
+     <A  HREF="function.ob-clean.html"  ><B  CLASS="function" >ob_clean()</B
+></A
+>,
+     <A  HREF="function.ob-end-flush.html"  ><B  CLASS="function" >ob_end_flush()</B
+></A
+> and
+     <A  HREF="function.ob-end-clean.html"  ><B  CLASS="function" >ob_end_clean()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ob-end-flush.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ob-get-clean.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ob_end_flush</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.outcontrol.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ob_get_clean</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ob-end-flush.html">ob_end_flush</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-get-clean.html">ob_get_clean</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ob-flush" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ob_flush</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">ob_flush</span> &mdash; <span class="dc-title">冲刷出（送出）输出缓冲区中的内容</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ob-flush-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>ob_flush</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   这个函数将送出缓冲区的内容（如果里边有内容的话）。如果想进一步处理缓冲区中的内容，必须在<span class="function"><strong>ob_flush()</strong></span>之前调用<span class="function"><a href="function.ob-get-contents.html" class="function">ob_get_contents()</a></span> ，因为在调用<span class="function"><strong>ob_flush()</strong></span>之后缓冲区内容将被丢弃。
-  </p>
-  <p class="para">
-  此函数不会销毁输出缓冲区，而像<span class="function"><a href="function.ob-end-flush.html" class="function">ob_end_flush()</a></span> 函数会销毁缓冲区。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ob-flush-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   没有返回值。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ob-flush-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ob-get-contents.html" class="function" rel="rdfs-seeAlso">ob_get_contents()</a> - 返回输出缓冲区的内容</span></li>
-    <li class="member"><span class="function"><a href="function.ob-clean.html" class="function" rel="rdfs-seeAlso">ob_clean()</a> - 清空（擦掉）输出缓冲区</span></li>
-    <li class="member"><span class="function"><a href="function.ob-end-flush.html" class="function" rel="rdfs-seeAlso">ob_end_flush()</a> - 冲刷出（送出）输出缓冲区内容并关闭缓冲</span></li>
-    <li class="member"><span class="function"><a href="function.ob-end-clean.html" class="function" rel="rdfs-seeAlso">ob_end_clean()</a> - 清空（擦除）缓冲区并关闭输出缓冲</span></li>
-   </ul>
-  </p>
- </div>
- 
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ob-end-flush.html">ob_end_flush</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-get-clean.html">ob_get_clean</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

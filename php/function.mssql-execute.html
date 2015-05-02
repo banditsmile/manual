@@ -1,118 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Executes a stored procedure on a MS SQL server database</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-data-seek.html">mssql_data_seek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-fetch-array.html">mssql_fetch_array</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql 鍑芥暟</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-execute" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_execute</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.7, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_execute</span> &mdash; <span class="dc-title">Executes a stored procedure on a MS SQL server database</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mssql-execute-description">
-  <h3 class="title">璇存槑</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>mssql_execute</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$stmt</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$skip_results</code><span class="initializer"> = false</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Executes a stored procedure on a MS SQL server database
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-execute-parameters">
-  <h3 class="title">鍙傛暟</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">stmt</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Statement handle obtained with <span class="function"><a href="function.mssql-init.html" class="function">mssql_init()</a></span>. 
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">skip_results</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Whenever to skip the results or not.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mssql-execute-examples">
-  <h3 class="title">鑼冧緥</h3>
-  <p class="para">
-   <div class="example" id="example-1648">
-    <p><strong>Example #1 <span class="function"><strong>mssql_execute()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;new&nbsp;statement<br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'NewBlogEntry'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Some&nbsp;data&nbsp;strings<br /></span><span style="color: #0000BB">$title&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Test&nbsp;of&nbsp;blogging&nbsp;system'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$content&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'If&nbsp;you&nbsp;can&nbsp;read&nbsp;this,&nbsp;then&nbsp;the&nbsp;new&nbsp;system&nbsp;is&nbsp;compatible&nbsp;with&nbsp;MSSQL'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Bind&nbsp;values<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@author'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Felipe&nbsp;Pena'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">SQLVARCHAR</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@date'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'08/10/2008'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SQLVARCHAR</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@title'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$title</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SQLVARCHAR</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'@content'</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$content</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SQLTEXT</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Execute&nbsp;the&nbsp;statement<br /></span><span style="color: #0000BB">mssql_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;And&nbsp;we&nbsp;can&nbsp;free&nbsp;it&nbsp;like&nbsp;so:<br /></span><span style="color: #0000BB">mssql_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_execute</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP 手册" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_data_seek" HREF="function.mssql-data-seek.html"><LINK  REL="NEXT" TITLE="mssql_fetch_array" HREF="function.mssql-fetch-array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP 手册</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-data-seek.html"  ACCESSKEY="P" >后退</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-fetch-array.html"  ACCESSKEY="N" >前进</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-execute" ></A
+>mssql_execute</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN58613" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>mssql_execute&nbsp;--&nbsp;
+     Executes a stored procedure on a MS SQL server database
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN58616" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >mssql_execute</B
+> ( resource stmt [, bool skip_results])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >警告</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >该函数目前尚无参考文档；仅参数列表可用。
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >注: </B
+>
+      If the stored procedure returns parameters or a return value these will
+      be available after the call to <B  CLASS="function" >mssql_execute()</B
+> unless
+      the stored procedure returns more than one result set. In that case
+      use <A  HREF="function.mssql-next-result.html"  ><B  CLASS="function" >mssql_next_result()</B
+></A
+> to shift through the results.
+      When the last result has been processed the output parameters and return
+      values will be available.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.mssql-bind.html"  ><B  CLASS="function" >mssql_bind()</B
+></A
+>,
+     <A  HREF="function.mssql-free-statement.html"  ><B  CLASS="function" >mssql_free_statement()</B
+></A
+>, and
+     <A  HREF="function.mssql-init.html"  ><B  CLASS="function" >mssql_init()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-data-seek.html"  ACCESSKEY="P" >后退</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >起点</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-fetch-array.html"  ACCESSKEY="N" >前进</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_data_seek</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >上一级</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_fetch_array</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.mssql-execute-notes">
-  <h3 class="title">娉ㄩ噴</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    If the stored procedure returns parameters or a return value these will
-    be available after the call to <span class="function"><strong>mssql_execute()</strong></span> unless
-    the stored procedure returns more than one result set. In that case
-    use <span class="function"><a href="function.mssql-next-result.html" class="function">mssql_next_result()</a></span> to shift through the results.
-    When the last result has been processed the output parameters and return
-    values will be available.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mssql-execute-seealso">
-  <h3 class="title">鍙傝</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mssql-bind.html" class="function" rel="rdfs-seeAlso">mssql_bind()</a> - Adds a parameter to a stored procedure or a remote stored procedure</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-free-statement.html" class="function" rel="rdfs-seeAlso">mssql_free_statement()</a> - Free statement memory</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-init.html" class="function" rel="rdfs-seeAlso">mssql_init()</a> - Initializes a stored procedure or a remote stored procedure</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-data-seek.html">mssql_data_seek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-fetch-array.html">mssql_fetch_array</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql 鍑芥暟</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

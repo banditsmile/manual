@@ -1,144 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get field information</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-fetch-batch.html">mssql_fetch_batch</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-fetch-object.html">mssql_fetch_object</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-fetch-field" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_fetch_field</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_fetch_field</span> &mdash; <span class="dc-title">Get field information</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mssql-fetch-field-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>mssql_fetch_field</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_offset</code><span class="initializer"> = -1</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mssql_fetch_field()</strong></span> can be used in order to
-   obtain information about fields in a certain query result. 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-fetch-field-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The result resource that is being evaluated. This result comes from a
-       call to <span class="function"><a href="function.mssql-query.html" class="function">mssql_query()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">field_offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The numerical field offset. If the field offset is not specified, the
-       next field that was not yet retrieved by this function is retrieved. The
-       <code class="parameter">field_offset</code> starts at 0.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mssql-fetch-field-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an object containing field information.
-  </p>
-  <p class="para">
-   The properties of the object are:
-  </p>
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">
-     name - column name.  if the column is a result of a function,
-     this property is set to computed#N, where #N is a serial
-     number.
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     column_source - the table from which the column was taken
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     max_length - maximum length of the column
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     numeric - 1 if the column is numeric
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     type - the column type.
-    </span>
-   </li>
-  </ul>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_fetch_field</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_fetch_batch" HREF="function.mssql-fetch-batch.html"><LINK  REL="NEXT" TITLE="mssql_fetch_object" HREF="function.mssql-fetch-object.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-fetch-batch.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-fetch-object.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-fetch-field" ></A
+>mssql_fetch_field</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN58694" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mssql_fetch_field&nbsp;--&nbsp;Get field information</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN58697" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >mssql_fetch_field</B
+> ( resource result [, int field_offset])<BR  ></BR
+><P  >&#13;     Returns an object containing field information.  
+    </P
+><P  >&#13;     <B  CLASS="function" >mssql_fetch_field()</B
+> can be used in order to
+     obtain information about fields in a certain query result. If
+     the field offset isn't specified, the next field that wasn't yet
+     retrieved by <B  CLASS="function" >mssql_fetch_field()</B
+> is retrieved.
+    </P
+><P  >&#13;     The properties of the object are:
+    </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;       name - column name.  if the column is a result of a function,
+       this property is set to computed#N, where #N is a serial
+       number.
+      </P
+></LI
+><LI  ><P  >&#13;       column_source - the table from which the column was taken
+      </P
+></LI
+><LI  ><P  >&#13;       max_length - maximum length of the column
+      </P
+></LI
+><LI  ><P  >&#13;       numeric - 1 if the column is numeric
+      </P
+></LI
+><LI  ><P  >&#13;       type - the column type.
+      </P
+></LI
+></UL
+><P  >&#13;     See also <A  HREF="function.mssql-field-seek.html"  ><B  CLASS="function" >mssql_field_seek()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-fetch-batch.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-fetch-object.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_fetch_batch</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_fetch_object</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.mssql-fetch-field-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1652">
-    <p><strong>Example #1 <span class="function"><strong>mssql_fetch_field()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Connect&nbsp;to&nbsp;MSSQL&nbsp;and&nbsp;select&nbsp;the&nbsp;database<br /></span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'MANGO\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Send&nbsp;a&nbsp;select&nbsp;query&nbsp;to&nbsp;MSSQL<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;[php].[dbo].[persons]'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Construct&nbsp;table<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;h3&gt;Table&nbsp;structure&nbsp;for&nbsp;\'persons\'&lt;/h3&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;table&nbsp;border="1"&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Table&nbsp;header<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;thead&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;tr&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;td&gt;Field&nbsp;name&lt;/td&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;td&gt;Data&nbsp;type&lt;/td&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;td&gt;Max&nbsp;length&lt;/td&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;/tr&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;/thead&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Dump&nbsp;all&nbsp;fields<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;tbody&gt;'</span><span style="color: #007700">;<br /><br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">mssql_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">);&nbsp;++</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fetch&nbsp;the&nbsp;field&nbsp;information<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$field&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_fetch_field</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Print&nbsp;the&nbsp;row<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;tr&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;td&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$field</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;td&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$field</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">type</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;td&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$field</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">max_length&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'&lt;/td&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/tr&gt;'</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">'&lt;/tbody&gt;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;/table&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Free&nbsp;the&nbsp;query&nbsp;result<br /></span><span style="color: #0000BB">mssql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mssql-fetch-field-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mssql-field-seek.html" class="function" rel="rdfs-seeAlso">mssql_field_seek()</a> - Seeks to the specified field offset</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-fetch-batch.html">mssql_fetch_batch</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-fetch-object.html">mssql_fetch_object</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

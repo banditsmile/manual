@@ -1,127 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦æ˜¯ä¸€ä¸ªç›®å½•</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.glob.html">glob</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-executable.html">is_executable</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.is-dir" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">is_dir</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">is_dir</span> &mdash; <span class="dc-title">åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦æ˜¯ä¸€ä¸ªç›®å½•</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.is-dir-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>is_dir</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦æ˜¯ä¸€ä¸ªç›®å½•ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.is-dir-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-      å¦‚æœæ–‡ä»¶åå­˜åœ¨å¹¶ä¸”ä¸ºç›®å½•åˆ™è¿”å› <strong><code>TRUE</code></strong>ã€‚å¦‚æœ <code class="parameter">filename</code> æ˜¯ä¸€ä¸ªç›¸å¯¹è·¯å¾„ï¼Œåˆ™æŒ‰ç…§å½“å‰å·¥ä½œç›®å½•æ£€æŸ¥å…¶ç›¸å¯¹è·¯å¾„ã€‚
-       If <code class="parameter">filename</code> is a symbolic or hard link 
-       then the link will be resolved and checked. If you have enabled <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">å®‰å…¨æ¨¡å¼</a>,
-       or <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> further
-       restrictions may apply.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.is-dir-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   å¦‚æœæ–‡ä»¶åå­˜åœ¨ï¼Œå¹¶ä¸”æ˜¯ä¸ªç›®å½•ï¼Œè¿”å› <strong><code>TRUE</code></strong>ï¼Œå¦åˆ™è¿”å›<strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.is-dir-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2496">
-    <p><strong>Example #1 <span class="function"><strong>is_dir()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_dir</span><span style="color: #007700">(</span><span style="color: #DD0000">'a_file.txt'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_dir</span><span style="color: #007700">(</span><span style="color: #DD0000">'bogus_dir/abc'</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_dir</span><span style="color: #007700">(</span><span style="color: #DD0000">'..'</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//one&nbsp;dir&nbsp;up<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-bool(false)
-bool(false)
-bool(true)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >is_dir</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="glob" HREF="function.glob.html"><LINK  REL="NEXT" TITLE="is_executable" HREF="function.is-executable.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.glob.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.is-executable.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.is-dir" ></A
+>is_dir</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29010" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>is_dir&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨ÎÄ¼şÃûÊÇ·ñÊÇÒ»¸öÄ¿Â¼</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29013" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >is_dir</B
+> ( string filename)<BR  ></BR
+><P  >&#13;     Èç¹ûÎÄ¼şÃû´æÔÚ²¢ÇÒÎªÄ¿Â¼Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>¡£Èç¹û
+     <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> ÊÇÒ»¸öÏà¶ÔÂ·¾¶£¬Ôò°´ÕÕµ±Ç°¹¤×÷Ä¿Â¼¼ì²éÆäÏà¶ÔÂ·¾¶¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯ÊıµÄ½á¹û»á±»»º´æ¡£ÏêÏ¸ĞÅÏ¢²Î¼û <A  HREF="function.clearstatcache.html"  ><B  CLASS="function" >clearstatcache()</B
+></A
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯Êı²»ÄÜ×÷ÓÃÓÚ<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>£¬±»¼ì²éµÄÎÄ¼ş±ØĞëÍ¨¹ı·şÎñÆ÷µÄÎÄ¼şÏµÍ³·ÃÎÊ¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.chdir.html"  ><B  CLASS="function" >chdir()</B
+></A
+>£¬<A  HREF="class.dir.html"  >dir</A
+>£¬<A  HREF="function.opendir.html"  ><B  CLASS="function" >opendir()</B
+></A
+>£¬<A  HREF="function.is-file.html"  ><B  CLASS="function" >is_file()</B
+></A
+>
+     ºÍ <A  HREF="function.is-link.html"  ><B  CLASS="function" >is_link()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.glob.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.is-executable.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >glob</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >is_executable</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 errors" id="refsect1-function.is-dir-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-å¤±è´¥æ—¶æŠ›å‡º<strong><code>E_WARNING</code></strong>è­¦å‘Šã€‚
-</p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.is-dir-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°çš„ç»“æœä¼šè¢«ç¼“å­˜ã€‚å‚è§
-<span class="function"><a href="function.clearstatcache.html" class="function">clearstatcache()</a></span> ä»¥è·å¾—æ›´å¤šç»†èŠ‚ã€‚</span></p></blockquote>
-  <div class="tip"><strong class="tip">Tip</strong><p class="simpara">è‡ª PHP 5.0.0 èµ·, æ­¤å‡½æ•°ä¹Ÿç”¨äº<em class="emphasis">æŸäº›</em>
-URL åŒ…è£…å™¨ã€‚è¯·å‚è§ <a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a>ä»¥è·å¾—æ”¯æŒ <span class="function"><a href="function.stat.html" class="function">stat()</a></span> ç³»åˆ—å‡½æ•°åŠŸèƒ½çš„åŒ…è£…å™¨åˆ—è¡¨ã€‚</p></div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.is-dir-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.chdir.html" class="function" rel="rdfs-seeAlso">chdir()</a> - æ”¹å˜ç›®å½•</span></li>
-    <li class="member"><span class="function"><a href="function.dir.html" class="function" rel="rdfs-seeAlso">dir()</a> - è¿”å›ä¸€ä¸ª Directory ç±»å®ä¾‹</span></li>
-    <li class="member"><span class="function"><a href="function.opendir.html" class="function" rel="rdfs-seeAlso">opendir()</a> - æ‰“å¼€ç›®å½•å¥æŸ„</span></li>
-    <li class="member"><span class="function"><a href="function.is-file.html" class="function" rel="rdfs-seeAlso">is_file()</a> - åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦ä¸ºä¸€ä¸ªæ­£å¸¸çš„æ–‡ä»¶</span></li>
-    <li class="member"><span class="function"><a href="function.is-link.html" class="function" rel="rdfs-seeAlso">is_link()</a> - åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦ä¸ºä¸€ä¸ªç¬¦å·è¿æ¥</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.glob.html">glob</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-executable.html">is_executable</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

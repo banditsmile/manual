@@ -1,113 +1,103 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>打开用于读取的目录实体</title>
+<HTML  ><HEAD  ><TITLE  >zip_entry_open</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Zip File Functions (Read Only Access)" HREF="ref.zip.html"><LINK  REL="PREVIOUS" TITLE="zip_entry_name" HREF="function.zip-entry-name.html"><LINK  REL="NEXT" TITLE="zip_entry_read" HREF="function.zip-entry-read.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.zip-entry-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.zip-entry-read.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.zip-entry-open" ></A
+>zip_entry_open</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN120803" ></A
+><P  >    (4.1.0 - 4.3.2 only)</P
+>zip_entry_open&nbsp;--&nbsp;Open a Directory Entry for Reading</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN120806" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >zip_entry_open</B
+> ( resource zip, resource zip_entry [, string mode])<BR  ></BR
+><P  >&#13;     Opens a directory entry in a zip file for reading.  The parameter
+     <TT  CLASS="parameter" ><I  >zip</I
+></TT
+> is a valid resource handle returned by
+     <A  HREF="function.zip-open.html"  ><B  CLASS="function" >zip_open()</B
+></A
+>.  The parameter
+     <TT  CLASS="parameter" ><I  >zip_entry</I
+></TT
+> is a directory entry resource
+     returned by <A  HREF="function.zip-read.html"  ><B  CLASS="function" >zip_read()</B
+></A
+>.  The optional
+     parameter <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> can be any of the modes
+     specified in the documentation for <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Currently, <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> is ignored and is always
+      <TT  CLASS="literal" >"rb"</TT
+>.  This is due to the fact that zip
+      support in PHP is read only access.  Please see
+      <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> for an explanation of various modes,
+      including <TT  CLASS="literal" >"rb"</TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ����ɹ��򷵻� <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>��ʧ���򷵻� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Unlike <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> and other similar functions,
+      the return value of <B  CLASS="function" >zip_entry_open()</B
+> only
+      indicates the result of the operation and is not needed for
+      reading or closing the directory entry.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.zip-entry-read.html"  ><B  CLASS="function" >zip_entry_read()</B
+></A
+> and
+     <A  HREF="function.zip-entry-close.html"  ><B  CLASS="function" >zip_entry_close()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.zip-entry-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.zip-entry-read.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >zip_entry_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.zip.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >zip_entry_read</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.zip-entry-name.html">zip_entry_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.zip-entry-read.html">zip_entry_read</a></div>
- <div class="up"><a href="ref.zip.html">Zip 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.zip-entry-open" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">zip_entry_open</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5 &gt;= 5.2.0, PECL zip &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">zip_entry_open</span> &mdash; <span class="dc-title">打开用于读取的目录实体</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.zip-entry-open-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>zip_entry_open</strong></span>      
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$zip</code></span>
-   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$zip_entry</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   打开ZIP文件中的目录实体以便后续读取。 
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.zip-entry-open-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">zip</code></dt>
-
-     <dd>
-
-      <p class="para">
-       由函数<span class="function"><a href="function.zip-open.html" class="function">zip_open()</a></span>返回的有效的资源句柄。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">zip_entry</code></dt>
-
-     <dd>
-
-      <p class="para">
-       由函数<span class="function"><a href="function.zip-read.html" class="function">zip_read()</a></span>返回的目录实体。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       任何在<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>处理文档中指定的模式。
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        由于ZIP在PHP中只支持读取模式，所以<code class="parameter">mode</code> 
-        实际上总是被设置为<em>&quot;rb&quot;</em>(其他模式会被忽略)。
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.zip-entry-open-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    与<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>和其他类似的方法不同，<span class="function"><strong>zip_entry_open()</strong></span>
-    的返回值只用于标示该操作结果，不需要读取或关闭该目录实体。
-   </p>
-  </p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.zip-entry-open-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.zip-entry-close.html" class="function" rel="rdfs-seeAlso">zip_entry_close()</a> - 关闭目录项</span></li>
-    <li class="member"><span class="function"><a href="function.zip-entry-read.html" class="function" rel="rdfs-seeAlso">zip_entry_read()</a> - 读取一个打开了的压缩目录实体</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.zip-entry-name.html">zip_entry_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.zip-entry-read.html">zip_entry_read</a></div>
- <div class="up"><a href="ref.zip.html">Zip 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

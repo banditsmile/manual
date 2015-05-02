@@ -1,145 +1,103 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å°†ä¸Šä¼ çš„æ–‡ä»¶ç§»åŠ¨åˆ°æ–°ä½ç½®</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mkdir.html">mkdir</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.parse-ini-file.html">parse_ini_file</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.move-uploaded-file" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">move_uploaded_file</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5)</p><p class="refpurpose"><span class="refname">move_uploaded_file</span> &mdash; <span class="dc-title">å°†ä¸Šä¼ çš„æ–‡ä»¶ç§»åŠ¨åˆ°æ–°ä½ç½®</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.move-uploaded-file-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>move_uploaded_file</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$destination</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   æœ¬å‡½æ•°æ£€æŸ¥å¹¶ç¡®ä¿ç”± <code class="parameter">filename</code>
-   æŒ‡å®šçš„æ–‡ä»¶æ˜¯åˆæ³•çš„ä¸Šä¼ æ–‡ä»¶ï¼ˆå³é€šè¿‡ PHP çš„ HTTP POST
-   ä¸Šä¼ æœºåˆ¶æ‰€ä¸Šä¼ çš„ï¼‰ã€‚å¦‚æœæ–‡ä»¶åˆæ³•ï¼Œåˆ™å°†å…¶ç§»åŠ¨ä¸ºç”±
-   <code class="parameter">destination</code> æŒ‡å®šçš„æ–‡ä»¶ã€‚
-  </p>
-  <p class="para">
-   è¿™ç§æ£€æŸ¥æ˜¾å¾—æ ¼å¤–é‡è¦ï¼Œå¦‚æœä¸Šä¼ çš„æ–‡ä»¶æœ‰å¯èƒ½ä¼šé€ æˆå¯¹ç”¨æˆ·æˆ–æœ¬ç³»ç»Ÿçš„å…¶ä»–ç”¨æˆ·æ˜¾ç¤ºå…¶å†…å®¹çš„è¯ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.move-uploaded-file-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ä¸Šä¼ çš„æ–‡ä»¶çš„æ–‡ä»¶åã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">destination</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ç§»åŠ¨æ–‡ä»¶åˆ°è¿™ä¸ªä½ç½®ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.move-uploaded-file-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ã€‚
-  </p>
-  <p class="para">
-   å¦‚æœ <code class="parameter">filename</code>
-   ä¸æ˜¯åˆæ³•çš„ä¸Šä¼ æ–‡ä»¶ï¼Œä¸ä¼šå‡ºç°ä»»ä½•æ“ä½œï¼Œ<span class="function"><strong>move_uploaded_file()</strong></span>
-   å°†è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
-  <p class="para">
-   å¦‚æœ <code class="parameter">filename</code>
-   æ˜¯åˆæ³•çš„ä¸Šä¼ æ–‡ä»¶ï¼Œä½†å‡ºäºæŸäº›åŸå› æ— æ³•ç§»åŠ¨ï¼Œä¸ä¼šå‡ºç°ä»»ä½•æ“ä½œï¼Œ<span class="function"><strong>move_uploaded_file()</strong></span>
-   å°†è¿”å› <strong><code>FALSE</code></strong>ã€‚æ­¤å¤–è¿˜ä¼šå‘å‡ºä¸€æ¡è­¦å‘Šã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.move-uploaded-file-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2510">
-    <p><strong>Example #1 Uploading multiple files</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$uploads_dir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/uploads'</span><span style="color: #007700">;<br />foreach&nbsp;(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">"pictures"</span><span style="color: #007700">][</span><span style="color: #DD0000">"error"</span><span style="color: #007700">]&nbsp;as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$error</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$error&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">UPLOAD_ERR_OK</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tmp_name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">"pictures"</span><span style="color: #007700">][</span><span style="color: #DD0000">"tmp_name"</span><span style="color: #007700">][</span><span style="color: #0000BB">$key</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">"pictures"</span><span style="color: #007700">][</span><span style="color: #DD0000">"name"</span><span style="color: #007700">][</span><span style="color: #0000BB">$key</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">move_uploaded_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$tmp_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$uploads_dir</span><span style="color: #DD0000">/</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >move_uploaded_file</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="mkdir" HREF="function.mkdir.html"><LINK  REL="NEXT" TITLE="parse_ini_file" HREF="function.parse-ini-file.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mkdir.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.parse-ini-file.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.move-uploaded-file" ></A
+>move_uploaded_file</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29309" ></A
+><P  >    (PHP 4 &#62;= 4.0.3)</P
+>move_uploaded_file&nbsp;--&nbsp;½«ÉÏ´«µÄÎÄ¼şÒÆ¶¯µ½ĞÂÎ»ÖÃ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29312" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >move_uploaded_file</B
+> ( string filename, string destination)<BR  ></BR
+><P  >&#13;     ±¾º¯Êı¼ì²é²¢È·±£ÓÉ <TT  CLASS="parameter" ><I  >filename</I
+></TT
+>
+     Ö¸¶¨µÄÎÄ¼şÊÇºÏ·¨µÄÉÏ´«ÎÄ¼ş£¨¼´Í¨¹ı PHP µÄ HTTP POST
+     ÉÏ´«»úÖÆËùÉÏ´«µÄ£©¡£Èç¹ûÎÄ¼şºÏ·¨£¬Ôò½«ÆäÒÆ¶¯ÎªÓÉ
+     <TT  CLASS="parameter" ><I  >destination</I
+></TT
+> Ö¸¶¨µÄÎÄ¼ş¡£
+    </P
+><P  >&#13;     Èç¹û <TT  CLASS="parameter" ><I  >filename</I
+></TT
+>
+     ²»ÊÇºÏ·¨µÄÉÏ´«ÎÄ¼ş£¬²»»á³öÏÖÈÎºÎ²Ù×÷£¬<B  CLASS="function" >move_uploaded_file()</B
+>
+     ½«·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     Èç¹û <TT  CLASS="parameter" ><I  >filename</I
+></TT
+>
+     ÊÇºÏ·¨µÄÉÏ´«ÎÄ¼ş£¬µ«³öÓÚÄ³Ğ©Ô­ÒòÎŞ·¨ÒÆ¶¯£¬²»»á³öÏÖÈÎºÎ²Ù×÷£¬<B  CLASS="function" >move_uploaded_file()</B
+>
+     ½«·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£´ËÍâ»¹»á·¢³öÒ»Ìõ¾¯¸æ¡£
+    </P
+><P  >&#13;     ÕâÖÖ¼ì²éÏÔµÃ¸ñÍâÖØÒª£¬Èç¹ûÉÏ´«µÄÎÄ¼şÓĞ¿ÉÄÜ»áÔì³É¶ÔÓÃ»§»ò±¾ÏµÍ³µÄÆäËûÓÃ»§ÏÔÊ¾ÆäÄÚÈİµÄ»°¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>µ± <A  HREF="features.safe-mode.html"  >°²È«Ä£Ê½£¨safe mode£©</A
+> ±»¼¤»î£¬PHP ½«¼ì²éÄú½«Òª²Ù×÷µÄÎÄ¼ş»òÕßÄ¿Â¼ÓëÕıÔÚÖ´ĞĞµÄ½Å±¾ÊÇ·ñÓĞÏàÍ¬µÄ UID¡£</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >move_uploaded_file()</B
+> ²»»áÊÜµ½Õı³£µÄ<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+> UID
+      ÏŞÖÆ¡£µ«Õâ²»»á²»°²È«£¬ÒòÎª
+      <B  CLASS="function" >move_uploaded_file()</B
+> ½ö×÷ÓÃÓÚÍ¨¹ı PHP
+      ÉÏ´«µÄÎÄ¼ş¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      Èç¹ûÄ¿±êÎÄ¼şÒÑ¾­´æÔÚ£¬½«»á±»¸²¸Ç¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.is-uploaded-file.html"  ><B  CLASS="function" >is_uploaded_file()</B
+></A
+>£¬ÒÔ¼°<A  HREF="http://shouce.jb51.net/php/features.file-upload.html"  >ÎÄ¼şÉÏ´«´¦Àí</A
+>Ò»ÕÂÖĞµÄ¼òµ¥Ê¹ÓÃÀı×Ó¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mkdir.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.parse-ini-file.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mkdir</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >parse_ini_file</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.move-uploaded-file-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>move_uploaded_file()</strong></span> å¯¹<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">å®‰å…¨æ¨¡å¼</a>å’Œ
-    <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> éƒ½æ˜¯æ•æ„Ÿçš„ã€‚ä¸è¿‡ï¼Œé™åˆ¶åªé’ˆå¯¹
-    <code class="parameter">destination</code> è·¯å¾„ï¼Œå› ä¸ºå…è®¸ç§»åŠ¨ä¸Šä¼ çš„æ–‡ä»¶å
-    <code class="parameter">filename</code>
-    å¯èƒ½ä¼šä¸è¿™äº›é™åˆ¶äº§ç”Ÿå†²çªã€‚<span class="function"><strong>move_uploaded_file()</strong></span>
-    ä»…ä½œç”¨äºé€šè¿‡ PHP ä¸Šä¼ çš„æ–‡ä»¶ä»¥ç¡®ä¿è¿™ä¸ªæ“ä½œçš„å®‰å…¨æ€§ã€‚
-   </p>
-  </p></blockquote>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    å¦‚æœç›®æ ‡æ–‡ä»¶å·²ç»å­˜åœ¨ï¼Œå°†ä¼šè¢«è¦†ç›–ã€‚
-   </p>
-  </div>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.move-uploaded-file-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.is-uploaded-file.html" class="function" rel="rdfs-seeAlso">is_uploaded_file()</a> - åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯é€šè¿‡ HTTP POST ä¸Šä¼ çš„</span></li>
-    <li class="member"><span class="function"><a href="function.rename.html" class="function" rel="rdfs-seeAlso">rename()</a> - é‡å‘½åä¸€ä¸ªæ–‡ä»¶æˆ–ç›®å½•</span></li>
-    <li class="member">å‚è§<a href="features.file-upload.html" class="link">æ–‡ä»¶ä¸Šä¼ å¤„ç†</a>ä¸€ç« ä¸­çš„ç®€å•ä½¿ç”¨ä¾‹å­ã€‚</li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mkdir.html">mkdir</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.parse-ini-file.html">parse_ini_file</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,93 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>执行一个cURL会话</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-escape.html">curl_escape</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-file-create.html">curl_file_create</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.curl-exec" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">curl_exec</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">curl_exec</span> &mdash; <span class="dc-title">执行一个cURL会话</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.curl-exec-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>curl_exec</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ch</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   执行给定的cURL会话。
-  </p>
-  <p class="para">
-   这个函数应该在初始化一个cURL会话并且全部的选项都被设置后被调用。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.curl-exec-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">ch</code>
-</dt>
-<dd>
-<p class="para">由 <span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span> 返回的 cURL 句柄。</p></dd>
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.curl-exec-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。 然而，如果 <strong><code>CURLOPT_RETURNTRANSFER</code></strong>选项被设置，函数执行成功时会返回执行的结果，失败时返回 <strong><code>FALSE</code></strong> 。
-  </p>
- </div>
-
-   
- <div class="refsect1 examples" id="refsect1-function.curl-exec-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4505">
-    <p><strong>Example #1 获取一个网页</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;创建一个cURL资源<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;设置URL和相应的选项<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_URL</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_HEADER</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;抓取URL并把它传递给浏览器<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;关闭cURL资源，并且释放系统资源<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.curl-exec-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.curl-multi-exec.html" class="function" rel="rdfs-seeAlso">curl_multi_exec()</a> - 运行当前 cURL 句柄的子连接</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >curl_exec</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="CURL, Client URL Library Functions" HREF="ref.curl.html"><LINK  REL="PREVIOUS" TITLE="curl_error" HREF="function.curl-error.html"><LINK  REL="NEXT" TITLE="curl_getinfo" HREF="function.curl-getinfo.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.curl-error.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.curl-getinfo.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.curl-exec" ></A
+>curl_exec</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN16262" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>curl_exec&nbsp;--&nbsp;Perform a CURL session</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN16265" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >curl_exec</B
+> ( resource ch)<BR  ></BR
+><P  >&#13;     This function should be called after you initialize a CURL
+     session and all the options for the session are set.  Its purpose
+     is simply to execute the predefined CURL session (given by the
+     <TT  CLASS="parameter" ><I  >ch</I
+></TT
+>).
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN16275" ></A
+><P  ><B  >���� 1. 
+       Initializing a new CURL session and fetching a webpage
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// create a new curl resource<br  /></font><font  color="#0000BB">$ch </font><font  color="#007700">= </font><font  color="#0000BB">curl_init</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// set URL and other appropriate options<br  /></font><font  color="#0000BB">curl_setopt</font><font  color="#007700">(</font><font  color="#0000BB">$ch</font><font  color="#007700">, </font><font  color="#0000BB">CURLOPT_URL</font><font  color="#007700">, </font><font  color="#DD0000">"http://www.example.com/"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">curl_setopt</font><font  color="#007700">(</font><font  color="#0000BB">$ch</font><font  color="#007700">, </font><font  color="#0000BB">CURLOPT_HEADER</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// grab URL and pass it to the browser<br  /></font><font  color="#0000BB">curl_exec</font><font  color="#007700">(</font><font  color="#0000BB">$ch</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// close curl resource, and free up system resources<br  /></font><font  color="#0000BB">curl_close</font><font  color="#007700">(</font><font  color="#0000BB">$ch</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      If you want to have the result returned instead of it being printed to the
+      browser directly, use the CURLOPT_RETURNTRANSFER option of
+      <A  HREF="function.curl-setopt.html"  ><B  CLASS="function" >curl_setopt()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.curl-error.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.curl-getinfo.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >curl_error</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.curl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >curl_getinfo</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-escape.html">curl_escape</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-file-create.html">curl_file_create</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

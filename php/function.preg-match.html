@@ -1,353 +1,169 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-match-all.html">preg_match_all</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.preg-quote.html">preg_quote</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.preg-match" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">preg_match</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">preg_match</span> &mdash; <span class="dc-title">æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.preg-match-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>preg_match</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$subject</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$matches</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = 0</span></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-  æœç´¢<code class="parameter">subject</code>ä¸<code class="parameter">pattern</code>ç»™å®šçš„æ­£åˆ™è¡¨è¾¾å¼çš„ä¸€ä¸ªåŒ¹é….
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.preg-match-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">pattern</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦æœç´¢çš„æ¨¡å¼ï¼Œå­—ç¬¦ä¸²ç±»å‹ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">subject</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¾“å…¥å­—ç¬¦ä¸²ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">matches</code></dt>
-
-     <dd>
-
-      <p class="para">
-      å¦‚æœæä¾›äº†å‚æ•°<code class="parameter">matches</code>ï¼Œå®ƒå°†è¢«å¡«å……ä¸ºæœç´¢ç»“æœã€‚
-      <var class="varname"><var class="varname">$matches[0]</var></var>å°†åŒ…å«å®Œæ•´æ¨¡å¼åŒ¹é…åˆ°çš„æ–‡æœ¬ï¼Œ <var class="varname"><var class="varname">$matches[1]</var></var>
-      å°†åŒ…å«ç¬¬ä¸€ä¸ªæ•è·å­ç»„åŒ¹é…åˆ°çš„æ–‡æœ¬ï¼Œä»¥æ­¤ç±»æ¨ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">flags</code>å¯ä»¥è¢«è®¾ç½®ä¸ºä»¥ä¸‹æ ‡è®°å€¼ï¼š
-       <dl>
-
-        
-         <dt>
-<strong><code>PREG_OFFSET_CAPTURE</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-          å¦‚æœä¼ é€’äº†è¿™ä¸ªæ ‡è®°ï¼Œå¯¹äºæ¯ä¸€ä¸ªå‡ºç°çš„åŒ¹é…è¿”å›æ—¶ä¼šé™„åŠ å­—ç¬¦ä¸²åç§»é‡(ç›¸å¯¹äºç›®æ ‡å­—ç¬¦ä¸²çš„)ã€‚
-          æ³¨æ„ï¼šè¿™ä¼šæ”¹å˜å¡«å……åˆ°<code class="parameter">matches</code>å‚æ•°çš„æ•°ç»„ï¼Œä½¿å…¶æ¯ä¸ªå…ƒç´ æˆä¸ºä¸€ä¸ªç”±
-          ç¬¬<em>0</em>ä¸ªå…ƒç´ æ˜¯åŒ¹é…åˆ°çš„å­—ç¬¦ä¸²ï¼Œç¬¬<em>1</em>ä¸ªå…ƒç´ æ˜¯è¯¥åŒ¹é…å­—ç¬¦ä¸²
-          åœ¨ç›®æ ‡å­—ç¬¦ä¸²<code class="parameter">subject</code>ä¸­çš„åç§»é‡ã€‚
-          </span>
-         </dd>
-
-        
-       </dl>
-
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-      é€šå¸¸ï¼Œæœç´¢ä»ç›®æ ‡å­—ç¬¦ä¸²çš„å¼€å§‹ä½ç½®å¼€å§‹ã€‚å¯é€‰å‚æ•° <code class="parameter">offset</code> ç”¨äº
-      æŒ‡å®šä»ç›®æ ‡å­—ç¬¦ä¸²çš„æŸä¸ªæœªçŸ¥å¼€å§‹æœç´¢(å•ä½æ˜¯å­—èŠ‚)ã€‚
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-       ä½¿ç”¨<code class="parameter">offset</code>å‚æ•°ä¸åŒäºå‘<span class="function"><strong>preg_match()</strong></span>
-       ä¼ é€’æŒ‰ç…§ä½ç½®é€šè¿‡<em>substr($subject, $offset)</em>æˆªå–ç›®æ ‡å­—ç¬¦ä¸²ç»“æœï¼Œ
-       å› ä¸º<code class="parameter">pattern</code>å¯ä»¥åŒ…å«æ–­è¨€æ¯”å¦‚<em class="emphasis">^</em>ï¼Œ <em class="emphasis">$</em>
-       æˆ–è€…<em class="emphasis">(?&lt;=x)</em>ã€‚ æ¯”è¾ƒï¼š
-        <div class="informalexample">
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$subject&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$pattern&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/^def/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #0000BB">$pattern</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$subject</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_OFFSET_CAPTURE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-         </div>
-
-         <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-         <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-)
-</pre></div>
-         </div>
-         <p class="para">
-          å½“è¿™ä¸ªç¤ºä¾‹ä½¿ç”¨æˆªå–åä¼ é€’æ—¶
-         </p>
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$subject&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$pattern&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/^def/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #0000BB">$pattern</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$subject</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_OFFSET_CAPTURE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-         </div>
-
-         <p class="para">
-          å°†ä¼šäº§ç”ŸåŒ¹é…
-         </p>
-         <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; Array
-        (
-            [0] =&gt; def
-            [1] =&gt; 0
-        )
-
-)
-</pre></div>
-         </div>
-        </div>
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >preg_match</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÕıÔò±í´ïÊ½º¯Êı¿â£¨Perl ¼æÈİ£©" HREF="ref.pcre.html"><LINK  REL="PREVIOUS" TITLE="preg_match_all" HREF="function.preg-match-all.html"><LINK  REL="NEXT" TITLE="preg_quote" HREF="function.preg-quote.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.preg-match-all.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.preg-quote.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.preg-match" ></A
+>preg_match</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN96047" ></A
+><P  >    (PHP 3&#62;= 3.0.9, PHP 4 )</P
+>preg_match&nbsp;--&nbsp;½øĞĞÕıÔò±í´ïÊ½Æ¥Åä</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN96050" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >preg_match</B
+> ( string pattern, string subject [, array matches [, int flags]])<BR  ></BR
+><P  >&#13;     ÔÚ <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ×Ö·û´®ÖĞËÑË÷Óë
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ¸ø³öµÄÕıÔò±í´ïÊ½ÏàÆ¥ÅäµÄÄÚÈİ¡£
+    </P
+><P  >&#13;     Èç¹ûÌá¹©ÁË
+     <TT  CLASS="parameter" ><I  >matches</I
+></TT
+>£¬ÔòÆä»á±»ËÑË÷µÄ½á¹ûËùÌî³ä¡£<TT  CLASS="varname" >$matches[0]</TT
+>
+     ½«°üº¬ÓëÕû¸öÄ£Ê½Æ¥ÅäµÄÎÄ±¾£¬<TT  CLASS="varname" >$matches[1]</TT
+>
+     ½«°üº¬ÓëµÚÒ»¸ö²¶»ñµÄÀ¨ºÅÖĞµÄ×ÓÄ£Ê½ËùÆ¥ÅäµÄÎÄ±¾£¬ÒÔ´ËÀàÍÆ¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> ¿ÉÒÔÊÇÏÂÁĞ±ê¼Ç£º
+     <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  >PREG_OFFSET_CAPTURE</DT
+><DD  ><P  >&#13;         Èç¹ûÉè¶¨±¾±ê¼Ç£¬¶ÔÃ¿¸ö³öÏÖµÄÆ¥Åä½á¹ûÒ²Í¬Ê±·µ»ØÆä¸½ÊôµÄ×Ö·û´®Æ«ÒÆÁ¿¡£×¢ÒâÕâ¸Ä±äÁË·µ»ØµÄÊı×éµÄÖµ£¬Ê¹ÆäÖĞµÄÃ¿¸öµ¥ÔªÒ²ÊÇÒ»¸öÊı×é£¬ÆäÖĞµÚÒ»ÏîÎªÆ¥Åä×Ö·û´®£¬µÚ¶şÏîÎªÆäÆ«ÒÆÁ¿¡£±¾±ê¼Ç×Ô
+         <TT  CLASS="literal" >PHP 4.3.0</TT
+> Æğ¿ÉÓÃ¡£
+        </P
+></DD
+></DL
+></DIV
+>
+     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> ²ÎÊı×Ô
+     <TT  CLASS="literal" >PHP</TT
+> 4.3.0 Æğ¿ÉÓÃ¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >preg_match()</B
+> ·µ»Ø
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ËùÆ¥ÅäµÄ´ÎÊı¡£ÒªÃ´ÊÇ
+     0 ´Î£¨Ã»ÓĞÆ¥Åä£©»ò 1 ´Î£¬ÒòÎª <B  CLASS="function" >preg_match()</B
+>
+     ÔÚµÚÒ»´ÎÆ¥ÅäÖ®ºó½«Í£Ö¹ËÑË÷¡£<A  HREF="function.preg-match-all.html"  ><B  CLASS="function" >preg_match_all()</B
+></A
+>
+     ÔòÏà·´£¬»áÒ»Ö±ËÑË÷µ½ <TT  CLASS="parameter" ><I  >subject</I
+></TT
+>
+     µÄ½áÎ²´¦¡£Èç¹û³ö´í <B  CLASS="function" >preg_match()</B
+> ·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >ÌáÊ¾: </B
+>
+      Èç¹ûÖ»Ïë²é¿´Ò»¸ö×Ö·û´®ÊÇ·ñ°üº¬ÔÚÁíÒ»¸ö×Ö·û´®ÖĞ£¬²»ÒªÓÃ
+      <B  CLASS="function" >preg_match()</B
+>¡£¿ÉÒÔÓÃ
+      <A  HREF="function.strpos.html"  ><B  CLASS="function" >strpos()</B
+></A
+> »ò <A  HREF="function.strstr.html"  ><B  CLASS="function" >strstr()</B
+></A
+>
+      Ìæ´ú£¬Òª¿ìµÃ¶à¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96098" ></A
+><P  ><B  >Àı×Ó 1. ÔÚÎÄ±¾ÖĞËÑË÷¡°php¡±</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// Ä£Ê½¶¨½ç·ûºóÃæµÄ "i" ±íÊ¾²»Çø·Ö´óĞ¡Ğ´×ÖÄ¸µÄËÑË÷<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">preg_match </font><font  color="#007700">(</font><font  color="#DD0000">"/php/i"</font><font  color="#007700">, </font><font  color="#DD0000">"PHP is the web scripting language of choice."</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"A match was found."</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"A match was not found."</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96102" ></A
+><P  ><B  >Àı×Ó 2. ËÑË÷µ¥´Ê¡°web¡±</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* Ä£Ê½ÖĞµÄ \b ±íÊ¾µ¥´ÊµÄ±ß½ç£¬Òò´ËÖ»ÓĞ¶ÀÁ¢µÄ "web" µ¥´Ê»á±»Æ¥Åä£¬<br  /> * ¶ø²»»áÆ¥ÅäÀıÈç "webbing" »ò "cobweb" ÖĞµÄÒ»²¿·Ö */<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">preg_match </font><font  color="#007700">(</font><font  color="#DD0000">"/\bweb\b/i"</font><font  color="#007700">, </font><font  color="#DD0000">"PHP is the web scripting language of choice."</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"A match was found."</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"A match was not found."</font><font  color="#007700">;<br  />}<br  /><br  />if (</font><font  color="#0000BB">preg_match </font><font  color="#007700">(</font><font  color="#DD0000">"/\bweb\b/i"</font><font  color="#007700">, </font><font  color="#DD0000">"PHP is the website scripting language of choice."</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"A match was found."</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"A match was not found."</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96106" ></A
+><P  ><B  >Àı×Ó 3. ´Ó URL ÖĞÈ¡³öÓòÃû</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ´Ó URL ÖĞÈ¡µÃÖ÷»úÃû<br  /></font><font  color="#0000BB">preg_match</font><font  color="#007700">(</font><font  color="#DD0000">"/^(http:\/\/)?([^\/]+)/i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"http://www.php.net/index.html"</font><font  color="#007700">, </font><font  color="#0000BB">$matches</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$host </font><font  color="#007700">= </font><font  color="#0000BB">$matches</font><font  color="#007700">[</font><font  color="#0000BB">2</font><font  color="#007700">];<br  /><br  /></font><font  color="#FF8000">// ´ÓÖ÷»úÃûÖĞÈ¡µÃºóÃæÁ½¶Î<br  /></font><font  color="#0000BB">preg_match</font><font  color="#007700">(</font><font  color="#DD0000">"/[^\.\/]+\.[^\.\/]+$/"</font><font  color="#007700">, </font><font  color="#0000BB">$host</font><font  color="#007700">, </font><font  color="#0000BB">$matches</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"domain name is: {$matches[0]}\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ±¾Àı½«Êä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >domain name is: php.net</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.preg-match-all.html"  ><B  CLASS="function" >preg_match_all()</B
+></A
+>£¬<A  HREF="function.preg-replace.html"  ><B  CLASS="function" >preg_replace()</B
+></A
+>
+     ºÍ <A  HREF="function.preg-split.html"  ><B  CLASS="function" >preg_split()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.preg-match-all.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.preg-quote.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >preg_match_all</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcre.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >preg_quote</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.preg-match-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-  <span class="function"><strong>preg_match()</strong></span>è¿”å› <code class="parameter">pattern</code> çš„åŒ¹é…æ¬¡æ•°ã€‚
-  å®ƒçš„å€¼å°†æ˜¯0æ¬¡ï¼ˆä¸åŒ¹é…ï¼‰æˆ–1æ¬¡ï¼Œå› ä¸º<span class="function"><strong>preg_match()</strong></span>åœ¨ç¬¬ä¸€æ¬¡åŒ¹é…å
-  å°†ä¼šåœæ­¢æœç´¢ã€‚<span class="function"><a href="function.preg-match-all.html" class="function">preg_match_all()</a></span>ä¸åŒäºæ­¤ï¼Œå®ƒä¼šä¸€ç›´æœç´¢<code class="parameter">subject</code>
-  ç›´åˆ°åˆ°è¾¾ç»“å°¾ã€‚
-   å¦‚æœå‘ç”Ÿé”™è¯¯<span class="function"><strong>preg_match()</strong></span>è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.preg-match-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.6</td>
-       <td>
-        å¦‚æœ <code class="parameter">offset</code> æ¯” <code class="parameter">subject</code> çš„é•¿åº¦è¿˜è¦å¤§åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.2.2</td>
-       <td>
-       å‘½åå­ç»„å¯ä»¥æ¥å—<em>(?&lt;name&gt;)</em>ï¼Œ <em>(?&#039;name&#039;)</em>
-       ä»¥åŠ<em>(?P&lt;name&gt;)</em>è¯­æ³•ã€‚ä¹‹å‰ç‰ˆæœ¬ä»…æ¥å—<em>(?P&lt;name&gt;)</em>è¯­æ³•ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.3</td>
-       <td>
-        å¢åŠ äº†å‚æ•°<code class="parameter">offset</code>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        å¢åŠ äº†æ ‡è®°<strong><code>PREG_OFFSET_CAPTURE</code></strong>ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        å¢åŠ äº†å‚æ•°<code class="parameter">flags</code>ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.preg-match-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5103">
-    <p><strong>Example #1 æŸ¥æ‰¾æ–‡æœ¬å­—ç¬¦ä¸²&quot;php&quot;</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//æ¨¡å¼åˆ†éš”ç¬¦åçš„"i"æ ‡è®°è¿™æ˜¯ä¸€ä¸ªå¤§å°å†™ä¸æ•æ„Ÿçš„æœç´¢<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">"/php/i"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;is&nbsp;the&nbsp;web&nbsp;scripting&nbsp;language&nbsp;of&nbsp;choice."</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;match&nbsp;was&nbsp;found."</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;match&nbsp;was&nbsp;not&nbsp;found."</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5104">
-    <p><strong>Example #2 æŸ¥æ‰¾å•è¯&quot;word&quot;</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;æ¨¡å¼ä¸­çš„\bæ ‡è®°ä¸€ä¸ªå•è¯è¾¹ç•Œï¼Œæ‰€ä»¥åªæœ‰ç‹¬ç«‹çš„å•è¯"web"ä¼šè¢«åŒ¹é…ï¼Œè€Œä¸ä¼šåŒ¹é…<br />&nbsp;*&nbsp;å•è¯çš„éƒ¨åˆ†å†…å®¹æ¯”å¦‚"webbing"&nbsp;æˆ–&nbsp;"cobweb"&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">"/\bweb\b/i"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;is&nbsp;the&nbsp;web&nbsp;scripting&nbsp;language&nbsp;of&nbsp;choice."</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;match&nbsp;was&nbsp;found."</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;match&nbsp;was&nbsp;not&nbsp;found."</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">"/\bweb\b/i"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;is&nbsp;the&nbsp;website&nbsp;scripting&nbsp;language&nbsp;of&nbsp;choice."</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;match&nbsp;was&nbsp;found."</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;match&nbsp;was&nbsp;not&nbsp;found."</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5105">
-    <p><strong>Example #3 è·å–URLä¸­çš„åŸŸå</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//ä»URLä¸­è·å–ä¸»æœºåç§°<br /></span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">'@^(?:http://)?([^/]+)@i'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"http://www.php.net/index.html"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$host&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//è·å–ä¸»æœºåç§°çš„åé¢ä¸¤éƒ¨åˆ†<br /></span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">'/[^.]+\.[^.]+$/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"domain&nbsp;name&nbsp;is:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$matches</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]}</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-domain name is: php.net
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5106">
-    <p><strong>Example #4 ä½¿ç”¨å‘½åå­ç»„</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foobar:&nbsp;2008'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">preg_match</span><span style="color: #007700">(</span><span style="color: #DD0000">'/(?P&lt;name&gt;\w+):&nbsp;(?P&lt;digit&gt;\d+)/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;ä¸‹é¢ä¾‹å­åœ¨php&nbsp;5.2.2(pcre&nbsp;7.0)æˆ–æ›´æ–°ç‰ˆæœ¬ä¸‹å·¥ä½œ,&nbsp;ç„¶è€Œ,&nbsp;ä¸ºäº†åå‘å…¼å®¹,&nbsp;ä¸Šé¢çš„æ–¹å¼æ˜¯æ¨èå†™æ³•.&nbsp;*/<br />//&nbsp;preg_match('/(?&lt;name&gt;\w+):&nbsp;(?&lt;digit&gt;\d+)/',&nbsp;$str,&nbsp;$matches);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; foobar: 2008
-    [name] =&gt; foobar
-    [1] =&gt; foobar
-    [digit] =&gt; 2008
-    [2] =&gt; 2008
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.preg-match-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="tip"><strong class="tip">Tip</strong>
-   <p class="para">
-   å¦‚æœä½ ä»…ä»…æƒ³è¦æ£€æŸ¥ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦åŒ…å«å¦å¤–ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œä¸è¦ä½¿ç”¨<span class="function"><strong>preg_match()</strong></span>ã€‚
-   ä½¿ç”¨<span class="function"><a href="function.strpos.html" class="function">strpos()</a></span>æˆ–<span class="function"><a href="function.strstr.html" class="function">strstr()</a></span>æ›¿ä»£å®Œæˆå·¥ä½œä¼šæ›´å¿«ã€‚
-   </p>
-  </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.preg-match-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="pcre.pattern.html" class="link">PCRE æ¨¡å¼</a></li>
-    <li class="member"><span class="function"><a href="function.preg-match-all.html" class="function" rel="rdfs-seeAlso">preg_match_all()</a> - æ‰§è¡Œä¸€ä¸ªå…¨å±€æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</span></li>
-    <li class="member"><span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼çš„æœç´¢å’Œæ›¿æ¢</span></li>
-    <li class="member"><span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - é€šè¿‡ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åˆ†éš”å­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - è¿”å›æœ€åä¸€ä¸ªPCREæ­£åˆ™æ‰§è¡Œäº§ç”Ÿçš„é”™è¯¯ä»£ç </span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-match-all.html">preg_match_all</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.preg-quote.html">preg_quote</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

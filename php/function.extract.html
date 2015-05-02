@@ -1,391 +1,241 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»æ•°ç»„ä¸­å°†å˜é‡å¯¼å…¥åˆ°å½“å‰çš„ç¬¦å·è¡¨</title>
+<HTML  ><HEAD  ><TITLE  >extract</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="end" HREF="function.end.html"><LINK  REL="NEXT" TITLE="in_array" HREF="function.in-array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.end.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.in-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.extract" ></A
+>extract</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN9849" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>extract&nbsp;--&nbsp;
+     ´ÓÊı×éÖĞ½«±äÁ¿µ¼Èëµ½µ±Ç°µÄ·ûºÅ±í
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN9852" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >extract</B
+> ( array var_array [, int extract_type [, string prefix]])<BR  ></BR
+><P  >&#13;     ±¾º¯ÊıÓÃÀ´½«±äÁ¿´ÓÊı×éÖĞµ¼Èëµ½µ±Ç°µÄ·ûºÅ±íÖĞ¡£½ÓÊÜ½áºÏÊı×é
+     <TT  CLASS="parameter" ><I  >var_array</I
+></TT
+> ×÷Îª²ÎÊı²¢½«¼üÃûµ±×÷±äÁ¿Ãû£¬Öµ×÷Îª±äÁ¿µÄÖµ¡£¶ÔÃ¿¸ö¼ü£¯Öµ¶Ô¶¼»áÔÚµ±Ç°µÄ·ûºÅ±íÖĞ½¨Á¢±äÁ¿£¬²¢ÊÜµ½
+     <TT  CLASS="parameter" ><I  >extract_type</I
+></TT
+> ºÍ <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+> ²ÎÊıµÄÓ°Ïì¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ×Ô°æ±¾ 4.0.5 Æğ±¾º¯Êı·µ»Ø±»ÌáÈ¡µÄ±äÁ¿ÊıÄ¿¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="constant" ><B  >EXTR_IF_EXISTS</B
+></TT
+> ºÍ <TT  CLASS="constant" ><B  >EXTR_PREFIX_IF_EXISTS</B
+></TT
+> ÊÇ°æ±¾ 4.2.0 ÖĞÒı½øµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="constant" ><B  >EXTR_REFS</B
+></TT
+> ÊÇ°æ±¾ 4.3.0 ÖĞÒı½øµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <B  CLASS="function" >extract()</B
+> ¼ì²éÃ¿¸ö¼üÃû¿´ÊÇ·ñ¿ÉÒÔ×÷ÎªÒ»¸öºÏ·¨µÄ±äÁ¿Ãû£¬Í¬Ê±Ò²¼ì²éºÍ·ûºÅ±íÖĞÒÑÓĞµÄ±äÁ¿ÃûµÄ³åÍ»¡£¶Ô´ı·Ç·¨£¯Êı×ÖºÍ³åÍ»µÄ¼üÃûµÄ·½·¨½«¸ù¾İ
+     <TT  CLASS="parameter" ><I  >extract_type</I
+></TT
+> ²ÎÊı¾ö¶¨¡£¿ÉÒÔÊÇÒÔÏÂÖµÖ®Ò»£º
+     <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >EXTR_OVERWRITE</B
+></TT
+></DT
+><DD  ><P  >&#13;         Èç¹ûÓĞ³åÍ»£¬¸²¸ÇÒÑÓĞµÄ±äÁ¿¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_SKIP</B
+></TT
+></DT
+><DD  ><P  >&#13;         Èç¹ûÓĞ³åÍ»£¬²»¸²¸ÇÒÑÓĞµÄ±äÁ¿¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_SAME</B
+></TT
+></DT
+><DD  ><P  >Èç¹ûÓĞ³åÍ»£¬ÔÚ±äÁ¿ÃûÇ°¼ÓÉÏÇ°×º <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+>¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_ALL</B
+></TT
+></DT
+><DD  ><P  >&#13;         ¸øËùÓĞ±äÁ¿Ãû¼ÓÉÏÇ°×º
+         <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+>¡£×Ô PHP 4.0.5 ÆğÕâÒ²°üÀ¨ÁË¶ÔÊı×ÖË÷ÒıµÄ´¦Àí¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_INVALID</B
+></TT
+></DT
+><DD  ><P  >&#13;         ½öÔÚ·Ç·¨£¯Êı×ÖµÄ±äÁ¿ÃûÇ°¼ÓÉÏÇ°×º
+         <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+>¡£±¾±ê¼ÇÊÇ PHP 4.0.5 ĞÂ¼ÓµÄ¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_IF_EXISTS</B
+></TT
+></DT
+><DD  ><P  >&#13;         ½öÔÚµ±Ç°·ûºÅ±íÖĞÒÑÓĞÍ¬Ãû±äÁ¿Ê±£¬¸²¸ÇËüÃÇµÄÖµ¡£ÆäËüµÄ¶¼²»´¦Àí¡£¿ÉÒÔÓÃÔÚÒÑ¾­¶¨ÒåÁËÒ»×éºÏ·¨µÄ±äÁ¿£¬È»ºóÒª´ÓÒ»¸öÊı×éÀıÈç
+         $_REQUEST ÖĞÌáÈ¡Öµ¸²¸ÇÕâĞ©±äÁ¿µÄ³¡ºÏ¡£±¾±ê¼ÇÊÇ PHP 4.2.0 ĞÂ¼ÓµÄ¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_IF_EXISTS</B
+></TT
+></DT
+><DD  ><P  >&#13;         ½öÔÚµ±Ç°·ûºÅ±íÖĞÒÑÓĞÍ¬Ãû±äÁ¿Ê±£¬½¨Á¢¸½¼ÓÁËÇ°×ºµÄ±äÁ¿Ãû£¬ÆäËüµÄ¶¼²»´¦Àí¡£±¾±ê¼ÇÊÇ
+         PHP 4.2.0 ĞÂ¼ÓµÄ¡£
+        </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_REFS</B
+></TT
+></DT
+><DD  ><P  >&#13;         ½«±äÁ¿×÷ÎªÒıÓÃÌáÈ¡¡£ÕâÓĞÁ¦µØ±íÃ÷ÁËµ¼ÈëµÄ±äÁ¿ÈÔÈ»ÒıÓÃÁË
+         <TT  CLASS="parameter" ><I  >var_array</I
+></TT
+> ²ÎÊıµÄÖµ¡£¿ÉÒÔµ¥¶ÀÊ¹ÓÃÕâ¸ö±êÖ¾»òÕßÔÚ
+         <TT  CLASS="parameter" ><I  >extract_type</I
+></TT
+> ÖĞÓÃ OR ÓëÆäËüÈÎºÎ±êÖ¾½áºÏÊ¹ÓÃ¡£±¾±ê¼ÇÊÇ
+         PHP 4.3.0 ĞÂ¼ÓµÄ¡£
+        </P
+></DD
+></DL
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹ûÃ»ÓĞÖ¸¶¨ <TT  CLASS="parameter" ><I  >extract_type</I
+></TT
+>£¬Ôò±»¼Ù¶¨Îª <TT  CLASS="constant" ><B  >EXTR_OVERWRITE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ×¢Òâ <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+> ½öÔÚ
+     <TT  CLASS="parameter" ><I  >extract_type</I
+></TT
+> µÄÖµÊÇ
+     <TT  CLASS="constant" ><B  >EXTR_PREFIX_SAME</B
+></TT
+>£¬<TT  CLASS="constant" ><B  >EXTR_PREFIX_ALL</B
+></TT
+>£¬<TT  CLASS="constant" ><B  >EXTR_PREFIX_INVALID</B
+></TT
+>
+     »ò <TT  CLASS="constant" ><B  >EXTR_PREFIX_IF_EXISTS</B
+></TT
+>
+     Ê±ĞèÒª¡£Èç¹û¸½¼ÓÁËÇ°×ººóµÄ½á¹û²»ÊÇºÏ·¨µÄ±äÁ¿Ãû£¬½«²»»áµ¼Èëµ½·ûºÅ±íÖĞ¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >extract()</B
+> ·µ»Ø³É¹¦µ¼Èëµ½·ûºÅ±íÖĞµÄ±äÁ¿ÊıÄ¿¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >extract()</B
+> µÄÒ»ÖÖ¿ÉÄÜÓÃ·¨ÊÇ½« <A  HREF="function.wddx-deserialize.html"  ><B  CLASS="function" >wddx_deserialize()</B
+></A
+>
+     ·µ»ØµÄ½áºÏÊı×éÖĞµÄÄÚÈİµ¼Èëµ½·ûºÅ±í±äÁ¿ÖĞÈ¥¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN9944" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >extract()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">/* ¼Ù¶¨ $var_array ÊÇ wddx_deserialize ·µ»ØµÄÊı×é*/<br  /><br  /></font><font  color="#0000BB">$size </font><font  color="#007700">= </font><font  color="#DD0000">"large"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$var_array </font><font  color="#007700">= array (</font><font  color="#DD0000">"color" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"blue"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"size"&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#DD0000">"medium"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"shape" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"sphere"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">extract </font><font  color="#007700">(</font><font  color="#0000BB">$var_array</font><font  color="#007700">, </font><font  color="#0000BB">EXTR_PREFIX_SAME</font><font  color="#007700">, </font><font  color="#DD0000">"wddx"</font><font  color="#007700">);<br  /><br  />print </font><font  color="#DD0000">"$color, $size, $shape, $wddx_size\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÒÔÉÏÀı×Ó½«²úÉú£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >blue, large, sphere, medium</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$size</TT
+> Ã»ÓĞ±»¸²¸Ç£¬ÒòÎªÖ¸¶¨ÁË
+     <TT  CLASS="constant" ><B  >EXTR_PREFIX_SAME</B
+></TT
+>£¬ÕâÊ¹µÃ <TT  CLASS="varname" >$wddx_size</TT
+>
+     ±»½¨Á¢¡£Èç¹ûÖ¸¶¨ÁË <TT  CLASS="constant" ><B  >EXTR_SKIP</B
+></TT
+>£¬Ôò $wddx_size
+     Ò²²»»á±»½¨Á¢¡£<TT  CLASS="constant" ><B  >EXTR_OVERWRITE</B
+></TT
+> ½«Ê¹ <TT  CLASS="varname" >$size</TT
+>
+     µÄÖµÎª¡°medium¡±£¬<TT  CLASS="constant" ><B  >EXTR_PREFIX_ALL</B
+></TT
+> ½«½¨Á¢ĞÂ±äÁ¿
+     <TT  CLASS="varname" >$wddx_color</TT
+>£¬<TT  CLASS="varname" >$wddx_size</TT
+> ºÍ
+     <TT  CLASS="varname" >$wddx_shape</TT
+>¡£
+    </P
+><P  >&#13;     ±ØĞëÊ¹ÓÃ½áºÏÊı×é£¬Êı×ÖË÷ÒıµÄÊı×é½«²»»á²úÉú½á¹û£¬³ı·ÇÓÃÁË
+     <TT  CLASS="constant" ><B  >EXTR_PREFIX_ALL</B
+></TT
+> »òÕß <TT  CLASS="constant" ><B  >EXTR_PREFIX_INVALID</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.compact.html"  ><B  CLASS="function" >compact()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.end.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.in-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >end</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >in_array</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.end.html">end</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.in-array.html">in_array</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.extract" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">extract</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">extract</span> &mdash; <span class="dc-title">ä»æ•°ç»„ä¸­å°†å˜é‡å¯¼å…¥åˆ°å½“å‰çš„ç¬¦å·è¡¨</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.extract-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>extract</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$var_array</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$extract_type</code><span class="initializer"> = EXTR_OVERWRITE</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   æœ¬å‡½æ•°ç”¨æ¥å°†å˜é‡ä»æ•°ç»„ä¸­å¯¼å…¥åˆ°å½“å‰çš„ç¬¦å·è¡¨ä¸­ã€‚
-  </p>
-  <p class="para">
-   æ£€æŸ¥æ¯ä¸ªé”®åçœ‹æ˜¯å¦å¯ä»¥ä½œä¸ºä¸€ä¸ªåˆæ³•çš„å˜é‡åï¼ŒåŒæ—¶ä¹Ÿæ£€æŸ¥å’Œç¬¦å·è¡¨ä¸­å·²æœ‰çš„å˜é‡åçš„å†²çªã€‚
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.extract-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">var_array</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ä¸€ä¸ªå…³è”æ•°ç»„ã€‚æ­¤å‡½æ•°ä¼šå°†é”®åå½“ä½œå˜é‡åï¼Œå€¼ä½œä¸ºå˜é‡çš„å€¼ã€‚
-       å¯¹æ¯ä¸ªé”®ï¼å€¼å¯¹éƒ½ä¼šåœ¨å½“å‰çš„ç¬¦å·è¡¨ä¸­å»ºç«‹å˜é‡ï¼Œå¹¶å—åˆ°
-   <code class="parameter">extract_type</code> å’Œ <code class="parameter">prefix</code> å‚æ•°çš„å½±å“ã€‚
-      </p>
-      <p class="para">
-        å¿…é¡»ä½¿ç”¨å…³è”æ•°ç»„ï¼Œæ•°å­—ç´¢å¼•çš„æ•°ç»„å°†ä¸ä¼šäº§ç”Ÿç»“æœï¼Œé™¤éç”¨äº†
-   <strong><code>EXTR_PREFIX_ALL</code></strong> æˆ–è€… <strong><code>EXTR_PREFIX_INVALID</code></strong>ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">extract_type</code></dt>
-
-     <dd>
-
-      <p class="para">
-        å¯¹å¾…éæ³•ï¼æ•°å­—å’Œå†²çªçš„é”®åçš„æ–¹æ³•å°†æ ¹æ®
-   <code class="parameter">extract_type</code> å‚æ•°å†³å®šã€‚å¯ä»¥æ˜¯ä»¥ä¸‹å€¼ä¹‹ä¸€ï¼š
-       <dl>
-
-        
-         <dt>
-<strong><code>EXTR_OVERWRITE</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           å¦‚æœæœ‰å†²çªï¼Œè¦†ç›–å·²æœ‰çš„å˜é‡ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_SKIP</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           å¦‚æœæœ‰å†²çªï¼Œä¸è¦†ç›–å·²æœ‰çš„å˜é‡ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_PREFIX_SAME</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">å¦‚æœæœ‰å†²çªï¼Œåœ¨å˜é‡åå‰åŠ ä¸Šå‰ç¼€ <code class="parameter">prefix</code>ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_PREFIX_ALL</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ç»™æ‰€æœ‰å˜é‡ååŠ ä¸Šå‰ç¼€
-       <code class="parameter">prefix</code>ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_PREFIX_INVALID</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ä»…åœ¨éæ³•ï¼æ•°å­—çš„å˜é‡åå‰åŠ ä¸Šå‰ç¼€ <code class="parameter">prefix</code>ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_IF_EXISTS</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ä»…åœ¨å½“å‰ç¬¦å·è¡¨ä¸­å·²æœ‰åŒåå˜é‡æ—¶ï¼Œè¦†ç›–å®ƒä»¬çš„å€¼ã€‚å…¶å®ƒçš„éƒ½ä¸å¤„ç†ã€‚
-           ä¸¾ä¸ªä¾‹å­ï¼Œä»¥ä¸‹æƒ…å†µéå¸¸æœ‰ç”¨ï¼šå®šä¹‰ä¸€äº›æœ‰æ•ˆå˜é‡ï¼Œç„¶åä» <var class="varname"><var class="varname"><a href="reserved.variables.request.html" class="classname">$_REQUEST</a></var></var> ä¸­ä»…å¯¼å…¥è¿™äº›å·²å®šä¹‰çš„å˜é‡ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_PREFIX_IF_EXISTS</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ä»…åœ¨å½“å‰ç¬¦å·è¡¨ä¸­å·²æœ‰åŒåå˜é‡æ—¶ï¼Œå»ºç«‹é™„åŠ äº†å‰ç¼€çš„å˜é‡åï¼Œå…¶å®ƒçš„éƒ½ä¸å¤„ç†ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>EXTR_REFS</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-           å°†å˜é‡ä½œä¸ºå¼•ç”¨æå–ã€‚è¿™æœ‰åŠ›åœ°è¡¨æ˜äº†å¯¼å…¥çš„å˜é‡ä»ç„¶å¼•ç”¨äº†
-       <code class="parameter">var_array</code> å‚æ•°çš„å€¼ã€‚å¯ä»¥å•ç‹¬ä½¿ç”¨è¿™ä¸ªæ ‡å¿—æˆ–è€…åœ¨
-       <code class="parameter">extract_type</code> ä¸­ç”¨ OR ä¸å…¶å®ƒä»»ä½•æ ‡å¿—ç»“åˆä½¿ç”¨ã€‚
-          </span>
-         </dd>
-
-        
-       </dl>
-
-      </p>
-      <p class="para">
-       å¦‚æœæ²¡æœ‰æŒ‡å®š <code class="parameter">extract_type</code>ï¼Œåˆ™è¢«å‡å®šä¸º <strong><code>EXTR_OVERWRITE</code></strong>ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">prefix</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ³¨æ„ <code class="parameter">prefix</code> ä»…åœ¨
-   <code class="parameter">extract_type</code> çš„å€¼æ˜¯
-   <strong><code>EXTR_PREFIX_SAME</code></strong>ï¼Œ<strong><code>EXTR_PREFIX_ALL</code></strong>ï¼Œ<strong><code>EXTR_PREFIX_INVALID</code></strong>
-   æˆ– <strong><code>EXTR_PREFIX_IF_EXISTS</code></strong>
-   æ—¶éœ€è¦ã€‚
-       å¦‚æœé™„åŠ äº†å‰ç¼€åçš„ç»“æœä¸æ˜¯åˆæ³•çš„å˜é‡åï¼Œå°†ä¸ä¼šå¯¼å…¥åˆ°ç¬¦å·è¡¨ä¸­ã€‚å‰ç¼€å’Œæ•°ç»„é”®åä¹‹é—´ä¼šè‡ªåŠ¨åŠ ä¸Šä¸€ä¸ªä¸‹åˆ’çº¿ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.extract-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›æˆåŠŸå¯¼å…¥åˆ°ç¬¦å·è¡¨ä¸­çš„å˜é‡æ•°ç›®ã€‚
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.extract-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        å¢åŠ äº† <strong><code>EXTR_REFS</code></strong>ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        å¼•è¿› <strong><code>EXTR_IF_EXISTS</code></strong> å’Œ <strong><code>EXTR_PREFIX_IF_EXISTS</code></strong> ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        å‡½æ•°å¯ä»¥è¿”å›è¢«æå–çš„å˜é‡æ•°ç›®ã€‚
-        å¢åŠ äº† <strong><code>EXTR_PREFIX_INVALID</code></strong>ã€‚
-        ä»è¿™æ—¶èµ· <strong><code>EXTR_PREFIX_ALL</code></strong> ä¹ŸåŒ…æ‹¬äº†å¯¹æ•°å­—ç´¢å¼•çš„å¤„ç†ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.extract-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5329">
-    <p><strong>Example #1 <span class="function"><strong>extract()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents"><p>
-     <span class="function"><strong>extract()</strong></span> çš„ä¸€ç§å¯èƒ½ç”¨æ³•æ˜¯å°† <span class="function"><a href="function.wddx-deserialize.html" class="function">wddx_deserialize()</a></span>
-   è¿”å›çš„ç»“åˆæ•°ç»„ä¸­çš„å†…å®¹å¯¼å…¥åˆ°ç¬¦å·è¡¨å˜é‡ä¸­å»ã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;å‡å®š&nbsp;$var_array&nbsp;æ˜¯&nbsp;wddx_deserialize&nbsp;è¿”å›çš„æ•°ç»„*/<br /><br /></span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"large"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$var_array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"color"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"size"&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"medium"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"shape"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"sphere"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">extract</span><span style="color: #007700">(</span><span style="color: #0000BB">$var_array</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">EXTR_PREFIX_SAME</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"wddx"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$size</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$shape</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$wddx_size</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-blue, large, sphere, medium
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-       <var class="varname"><var class="varname">$size</var></var> æ²¡æœ‰è¢«è¦†ç›–ï¼Œå› ä¸ºæŒ‡å®šäº†
-   <strong><code>EXTR_PREFIX_SAME</code></strong>ï¼Œè¿™ä½¿å¾— <var class="varname"><var class="varname">$wddx_size</var></var>
-     è¢«å»ºç«‹ã€‚å¦‚æœæŒ‡å®šäº† <strong><code>EXTR_SKIP</code></strong>ï¼Œåˆ™ <var class="varname"><var class="varname">$wddx_size</var></var>
-   ä¹Ÿä¸ä¼šè¢«å»ºç«‹ã€‚<strong><code>EXTR_OVERWRITE</code></strong> å°†ä½¿ <var class="varname"><var class="varname">$size</var></var>
-   çš„å€¼ä¸ºâ€œmediumâ€ï¼Œ<strong><code>EXTR_PREFIX_ALL</code></strong> å°†å»ºç«‹æ–°å˜é‡
-   <var class="varname"><var class="varname">$wddx_color</var></var>ï¼Œ<var class="varname"><var class="varname">$wddx_size</var></var> å’Œ
-   <var class="varname"><var class="varname">$wddx_shape</var></var>ã€‚
-    </p></div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.extract-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-        ä¸è¦å¯¹ä¸èƒ½ä¿¡ä»»çš„æ•°æ®ä½¿ç”¨
-    <span class="function"><strong>extract()</strong></span>ï¼Œä¾‹å¦‚ç”¨æˆ·çš„è¾“å…¥ï¼ˆ<var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var>ï¼Œ <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var>ï¼Œ...ï¼‰ã€‚å¦‚æœè¿™æ ·åšï¼Œä¸¾ä¾‹è¯´ï¼Œè¦ä¸´æ—¶è¿è¡Œä¾èµ–äº
-    <a href="security.globals.html" class="link">register_globals</a>
-    çš„è€ä»£ç ï¼Œè¦ç¡®ä¿ä½¿ç”¨ä¸ä¼šè¦†ç›–çš„
-    <code class="parameter">extract_type</code> å€¼ï¼Œä¾‹å¦‚
-    <strong><code>EXTR_SKIP</code></strong>ï¼Œå¹¶ä¸”è¦ç•™æ„åº”è¯¥æŒ‰ç…§ <a href="ini.core.html#ini.variables-order" class="link">variables_order</a> åœ¨ <a href="ini.html" class="link"><var class="filename">php.ini</var></a> é‡Œ
-    å®šä¹‰çš„é¡ºåºæ¥æå–ã€‚
-   </p>
-  </div>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    If you
-    have <a href="security.globals.html" class="link">register_globals</a>
-    turned on and you use <span class="function"><strong>extract()</strong></span>
-    on <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var> and
-    specify <strong><code>EXTR_SKIP</code></strong>, you may be surprised at
-    the results.
-   </p>
-   <div class="warning"><strong class="warning">Warning</strong>
-    <p class="para">
-     This is not recommended practice and is only documented here for
-     completeness. The use
-     of <a href="security.globals.html" class="link">register_globals</a> is
-     deprecated and calling <span class="function"><strong>extract()</strong></span> on untrusted
-     data such as <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var> is, as noted above, a
-     potential security risk. If you encounter this issue, it means
-     that you are using at least two poor coding practices.
-    </p>
-   </div>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;Suppose&nbsp;that&nbsp;$testfile&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;file&nbsp;upload&nbsp;input<br />&nbsp;&nbsp;&nbsp;and&nbsp;that&nbsp;register_globals&nbsp;is&nbsp;turned&nbsp;on.&nbsp;*/<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$testfile</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">extract</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">EXTR_SKIP</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$testfile</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$testfile</span><span style="color: #007700">[</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <span class="simpara">
-    You might expect to see something like the following:
-   </span>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-string(14) &quot;/tmp/phpgCCPX8&quot;
-array(5) {
-  [&quot;name&quot;]=&gt;
-  string(10) &quot;somefile.txt&quot;
-  [&quot;type&quot;]=&gt;
-  string(24) &quot;application/octet-stream&quot;
-  [&quot;tmp_name&quot;]=&gt;
-  string(14) &quot;/tmp/phpgCCPX8&quot;
-  [&quot;error&quot;]=&gt;
-  int(0)
-  [&quot;size&quot;]=&gt;
-  int(4208)
-}
-string(14) &quot;/tmp/phpgCCPX8&quot;
-</pre></div>
-   </div>
-   <span class="simpara">
-    However, you would instead see something like this:
-   </span>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-string(14) &quot;/tmp/phpgCCPX8&quot;
-string(14) &quot;/tmp/phpgCCPX8&quot;
-string(1) &quot;/&quot;
-</pre></div>
-   </div>
-   <p class="para">
-    This is due to the fact that
-    since <a href="security.globals.html" class="link">register_globals</a> is
-    turned on, <var class="varname"><var class="varname">$testfile</var></var> already exists in the
-    global scope when <span class="function"><strong>extract()</strong></span> is called. And
-    since <strong><code>EXTR_SKIP</code></strong> is
-    specified, <var class="varname"><var class="varname">$testfile</var></var> is not overwritten with
-    the contents of the <strong><code>$_FILES</code></strong> array
-    so <var class="varname"><var class="varname">$testfile</var></var> remains a string.
-    Because <a href="language.types.string.html#language.types.string.substr" class="link">strings may
-    be accessed using array syntax</a> and the non-numeric string
-    <em>tmp_name</em> is interpreted
-    as <em>0</em>, PHP
-    sees <var class="varname"><var class="varname">$testfile['tmp_name']</var></var>
-    as <var class="varname"><var class="varname">$testfile[0]</var></var>.
-   </p>
-  </p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.extract-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.compact.html" class="function" rel="rdfs-seeAlso">compact()</a> - å»ºç«‹ä¸€ä¸ªæ•°ç»„ï¼ŒåŒ…æ‹¬å˜é‡åå’Œå®ƒä»¬çš„å€¼</span></li>
-    <li class="member"><span class="function"><a href="function.list.html" class="function" rel="rdfs-seeAlso">list()</a> - æŠŠæ•°ç»„ä¸­çš„å€¼èµ‹ç»™ä¸€äº›å˜é‡</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.end.html">end</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.in-array.html">in_array</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

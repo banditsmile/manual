@@ -1,56 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新指令</title>
+<HTML  ><HEAD  ><TITLE  >New Directives</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Migrating from PHP 4 to PHP 5" HREF="migration5.html"><LINK  REL="PREVIOUS" TITLE="New Functions" HREF="migration5.functions.html"><LINK  REL="NEXT" TITLE="Databases" HREF="migration5.databases.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="migration5.functions.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ B. Migrating from PHP 4 to PHP 5</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration5.databases.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.newconf" ></A
+>New Directives</H1
+><P  >&#13;    There were some new <TT  CLASS="filename" >php.ini</TT
+> directives introduced in PHP 5. Here is a
+    list of them:
+   </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;     mail.force_extra_paramaters - Force the addition of the specified
+     parameters to be passed as extra parameters to the sendmail binary. These
+     parameters will always replace the value of the 5th parameter to
+     <A  HREF="function.mail.html"  ><B  CLASS="function" >mail()</B
+></A
+>, even in safe mode
+   </P
+></LI
+><LI  ><P  >&#13;     <A  HREF="configuration.directives.html#ini.register-long-arrays"  >register_long_arrays</A
+> -
+     allow/disallow PHP to register the deprecated long $HTTP_*_VARS
+   </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="ref.session.html#ini.session.hash-function"  >session.hash_function</A
+> -
+      select a hash function (MD5 or SHA-1)
+   </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="ref.session.html#ini.session.hash-bits-per-character"  >session.hash_bits_per_character</A
+>
+      - define how many bits are stored in each character when converting the
+      binary hash data to something readable (from 4 to 6)
+   </P
+></LI
+><LI  ><P  >&#13;     zend.ze2_compatibility_mode - Enable compatibility mode with Zend Engine 1 (PHP 4)
+   </P
+></LI
+></UL
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="migration5.functions.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration5.databases.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >New Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="migration5.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Databases</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.functions.html">新函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.databases.html">数据库</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5.newconf" class="section">
-   <h2 class="title">新指令</h2>
-   <p class="para">
-    PHP 5 在 <var class="filename">php.ini</var> 中引进了一些新指令。列表如下：
-   </p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      mail.force_extra_parameters -
-      强制指定的参数附加值作为额外的参数传递给 sendmail 库。这些参数总是会替换掉
-      <span class="function"><a href="function.mail.html" class="function">mail()</a></span> 的第 5 个参数，即使在安全模式下
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a> -
-      允许／禁止 PHP 注册已过时的 $HTTP_*_VARS 变量
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <a href="session.configuration.html#ini.session.hash-function" class="link">session.hash_function</a> -
-      选择一种散列函数（MD5 或 SHA-1）
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <a href="session.configuration.html#ini.session.hash-bits-per-character" class="link">session.hash_bits_per_character</a> -
-      定义将二进制散列数据转换为可读格式时每个字符中储存几个位（从 4 到 6）
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <a href="ini.core.html#ini.zend.ze1-compatibility-mode" class="link">zend.ze1_compatibility_mode</a> -
-      启用 Zend Engline 1 代（PHP 4）兼容模式
-     </span>
-    </li>
-   </ul>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.functions.html">新函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.databases.html">数据库</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

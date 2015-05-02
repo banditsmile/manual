@@ -1,288 +1,127 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>执行一个命令，并且打开用来输入/输出的文件指针。</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.proc-nice.html">proc_nice</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.proc-terminate.html">proc_terminate</a></div>
- <div class="up"><a href="ref.exec.html">程序执行 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.proc-open" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">proc_open</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">proc_open</span> &mdash; <span class="dc-title">
-     执行一个命令，并且打开用来输入/输出的文件指针。
-    </span></p>
-
-   </div>
-   <div class="refsect1 description" id="refsect1-function.proc-open-description">
-    <h3 class="title">说明</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">resource</span> <span class="methodname"><strong>proc_open</strong></span>
-       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$cmd</code></span>
-      , <span class="methodparam"><span class="type">array</span> <code class="parameter">$descriptorspec</code></span>
-      , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$pipes</code></span>
-      [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$cwd</code></span>
-      [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$env</code></span>
-      [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$other_options</code></span>
-     ]]] )</div>
-
-    <p class="para rdfs-comment">
-     类似 <span class="function"><a href="function.popen.html" class="function">popen()</a></span> 函数，
-     但是 <span class="function"><strong>proc_open()</strong></span> 提供了更加强大的控制程序执行的能力。
-    </p>
-
-
-
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.proc-open-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">cmd</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要执行的命令
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">descriptorspec</code></dt>
-
-     <dd>
-
-      <p class="para">
-        一个索引数组。
-        数组的键表示描述符，数组元素值表示 PHP 如何将这些描述符传送至子进程。
-        0 表示标准输入（stdin），1 表示标准输出（stdout），2 表示标准错误（stderr）。
-      </p>
-      <p class="para">
-       数组中的元素可以是：
-       <ul class="simplelist">
-        <li class="member">
-          包含了要传送至进程的管道的描述信息。
-          第一个元素为描述符类型，
-          第二个元素是针对该描述符的选项。
-          有效的类型有：<em>pipe</em> 
-          （第二个元素可以是： <em>r</em> 向进程传送该管道的读取端，<em>w</em> 向进程传送该管道的写入端），
-          以及 <em>file</em>（第二个元素为文件名）。
-        </li>
-        <li class="member">
-          表达一个真实文件描述符的流资源类型
-          （例如：已打开的文件，一个 socket 端口，<strong><code>STDIN</code></strong>）。
-        </li>
-       </ul>
-      </p>
-      <p class="para">
-        文件描述符的值不限于 0，1 和 2，你可以使用任何有效的文件描述符
-        并将其传送至子进程。
-        这使得你的脚本可以和其他脚本交互操作。
-        例如，可以通过指定文件描述符将密码以更加安全的方式
-        传送至诸如 PGP，GPG 和 openssl 程序，
-        同时也可以很方便的获取这些程序的状态信息。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">pipes</code></dt>
-
-     <dd>
-
-      <p class="para">
-        将被置为索引数组，
-        其中的元素是被执行程序创建的管道对应到 PHP 这一端的文件指针。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">cwd</code></dt>
-
-     <dd>
-
-      <p class="para">
-        要执行命令的初始工作目录。
-        必须是 <em class="emphasis">绝对</em> 路径，
-        设置此参数为 <strong><code>NULL</code></strong> 
-        表示使用默认值（当前 PHP 进程的工作目录）。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">env</code></dt>
-
-     <dd>
-
-      <p class="para">
-        要执行的命令所使用的环境变量。
-        设置此参数为 <strong><code>NULL</code></strong> 表示使用和当前 PHP 进程相同的环境变量。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">other_options</code></dt>
-
-     <dd>
-
-      <p class="para">
-        你还可以指定一些附加选项。
-        目前支持的选项包括：
-       <ul class="simplelist">
-        <li class="member">
-         <em>suppress_errors</em> （仅用于 Windows 平台）：
-         设置为 <strong><code>TRUE</code></strong> 表示抑制本函数产生的错误。
-        </li>
-        <li class="member">
-         <em>bypass_shell</em> （仅用于 Windows 平台）：
-         设置为 <strong><code>TRUE</code></strong> 表示绕过 <em>cmd.exe</em> shell。
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >proc_open</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Program Execution Functions" HREF="ref.exec.html"><LINK  REL="PREVIOUS" TITLE="proc_nice" HREF="function.proc-nice.html"><LINK  REL="NEXT" TITLE="proc_terminate" HREF="function.proc-terminate.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.proc-nice.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.proc-terminate.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.proc-open" ></A
+>proc_open</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93818" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>proc_open&nbsp;--&nbsp;
+     Execute a command and open file pointers for input/output
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93821" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >proc_open</B
+> ( string cmd, array descriptorspec, array pipes)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >proc_open()</B
+> is similar to <A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+>
+     but provides a much greater degree of control over the program execution.
+     <TT  CLASS="parameter" ><I  >cmd</I
+></TT
+> is the command to be executed by the shell.
+     <TT  CLASS="parameter" ><I  >descriptorspec</I
+></TT
+> is an indexed array where the
+     key represents the descriptor number and the value represents how PHP
+     will pass that descriptor to the child process.
+     <TT  CLASS="parameter" ><I  >pipes</I
+></TT
+> will be set to an indexed array of file
+     pointers that correspond to PHP's end of any pipes that are created.
+     The return value is a resource representing the process; you should
+     free it using <A  HREF="function.proc-close.html"  ><B  CLASS="function" >proc_close()</B
+></A
+> when you are finished
+     with it.
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN93843" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$descriptorspec </font><font  color="#007700">= array(<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">0 </font><font  color="#007700">=&gt; array(</font><font  color="#DD0000">"pipe"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">),&nbsp;&nbsp;</font><font  color="#FF8000">// stdin is a pipe that the child will read from<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">1 </font><font  color="#007700">=&gt; array(</font><font  color="#DD0000">"pipe"</font><font  color="#007700">, </font><font  color="#DD0000">"w"</font><font  color="#007700">),&nbsp;&nbsp;</font><font  color="#FF8000">// stdout is a pipe that the child will write to<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">2 </font><font  color="#007700">=&gt; array(</font><font  color="#DD0000">"file"</font><font  color="#007700">, </font><font  color="#DD0000">"/tmp/error-output.txt"</font><font  color="#007700">, </font><font  color="#DD0000">"a"</font><font  color="#007700">) </font><font  color="#FF8000">// stderr is a file to write to<br  /></font><font  color="#007700">);<br  /></font><font  color="#0000BB">$process </font><font  color="#007700">= </font><font  color="#0000BB">proc_open</font><font  color="#007700">(</font><font  color="#DD0000">"php"</font><font  color="#007700">, </font><font  color="#0000BB">$descriptorspec</font><font  color="#007700">, </font><font  color="#0000BB">$pipes</font><font  color="#007700">);<br  />if (</font><font  color="#0000BB">is_resource</font><font  color="#007700">(</font><font  color="#0000BB">$process</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $pipes now looks like this:<br  />&nbsp;&nbsp;&nbsp;&nbsp;// 0 =&gt; writeable handle connected to child stdin<br  />&nbsp;&nbsp;&nbsp;&nbsp;// 1 =&gt; readable handle connected to child stdout<br  />&nbsp;&nbsp;&nbsp;&nbsp;// Any error output will be appended to /tmp/error-output.txt<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$pipes</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">], </font><font  color="#DD0000">"&lt;?php echo \"Hello World!\"; ?&gt;"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$pipes</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;while (!</font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$pipes</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$pipes</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">], </font><font  color="#0000BB">1024</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$pipes</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">]);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// It is important that you close any pipes before calling<br  />&nbsp;&nbsp;&nbsp;&nbsp;// proc_close in order to avoid a deadlock<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$return_value </font><font  color="#007700">= </font><font  color="#0000BB">proc_close</font><font  color="#007700">(</font><font  color="#0000BB">$process</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"command returned $return_value\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     The file descriptor numbers in <TT  CLASS="parameter" ><I  >descriptorspec</I
+></TT
+> are
+     not limited to 0, 1 and 2 - you may specify any valid file descriptor
+     number and it will be passed to the child process. This allows your
+     script to interoperate with other scripts that run as "co-processes".
+     In particular, this is useful for passing passphrases to programs like
+     PGP, GPG and openssl in a more secure manner.  It is also useful for
+     reading status information provided by those programs on auxiliary
+     file descriptors.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Windows compatibility: Descriptors beyond 2 (stderr) are made
+      available to the child process as inheritable handles, but since
+      the Windows architecture does not associate file descriptor numbers
+      with low-level handles, the child process does not (yet) have a means
+      of accessing those handles.  Stdin, stdout and stderr work as expected.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      If you only need a uni-directional (one-way) process pipe, use
+      <A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+> instead, as it is much easier to use.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.stream-select.html"  ><B  CLASS="function" >stream_select()</B
+></A
+>, <A  HREF="function.exec.html"  ><B  CLASS="function" >exec()</B
+></A
+>,
+     <A  HREF="function.system.html"  ><B  CLASS="function" >system()</B
+></A
+>,
+     <A  HREF="function.passthru.html"  ><B  CLASS="function" >passthru()</B
+></A
+>, <A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+>,
+     <A  HREF="function.escapeshellcmd.html"  ><B  CLASS="function" >escapeshellcmd()</B
+></A
+>, and the <A  HREF="language.operators.execution.html"  >backtick operator</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.proc-nice.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.proc-terminate.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >proc_nice</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.exec.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >proc_terminate</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.proc-open-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-    返回表示进程的资源类型，
-    当使用完毕之后，请调用 <span class="function"><a href="function.proc-close.html" class="function">proc_close()</a></span> 函数来关闭此资源。
-    如果失败，返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.proc-open-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.1</td>
-       <td>
-        为 <code class="parameter">other_options</code> 参数增加 <em>bypass_shell</em> 选项。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        增加 <code class="parameter">cwd</code>， <code class="parameter">env</code> 和
-        <code class="parameter">other_options</code> 参数。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.proc-open-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-3952">
-    <p><strong>Example #1 <span class="function"><strong>proc_open()</strong></span> 例程</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$descriptorspec&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"pipe"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">),&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;标准输入，子进程从此管道中读取数据<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"pipe"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">),&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;标准输出，子进程向此管道中写入数据<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"file"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/tmp/error-output.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">)&nbsp;</span><span style="color: #FF8000">//&nbsp;标准错误，写入到一个文件<br /></span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$cwd&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/tmp'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$env&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'some_option'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'aeiou'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$process&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">proc_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$descriptorspec</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$cwd</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$env</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">is_resource</span><span style="color: #007700">(</span><span style="color: #0000BB">$process</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$pipes&nbsp;现在看起来是这样的：<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;0&nbsp;=&gt;&nbsp;可以向子进程标准输入写入的句柄<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;1&nbsp;=&gt;&nbsp;可以从子进程标准输出读取的句柄<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;错误输出将被追加到文件&nbsp;/tmp/error-output.txt<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'&lt;?php&nbsp;print_r($_ENV);&nbsp;?&gt;'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">stream_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;切记：在调用&nbsp;proc_close&nbsp;之前关闭所有的管道以避免死锁。<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$return_value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">proc_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$process</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"command&nbsp;returned&nbsp;</span><span style="color: #0000BB">$return_value</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [some_option] =&gt; aeiou
-    [PWD] =&gt; /tmp
-    [SHLVL] =&gt; 1
-    [_] =&gt; /usr/local/bin/php
-)
-command returned 0
-</pre></div>
-    </div>
-   </div>
-  </p>
-
-
-
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.proc-open-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Windows 兼容性：超过 2 的描述符也可以作为可继承的句柄传送到子进程。
-    但是，由于 Windows 的架构并不将文件描述符和底层句柄进行关联，
-    所以，子进程无法访问这样的句柄。
-    标准输入，标准输出和标注错误会按照预期工作。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    如果你只需要单向的进程管道，
-    使用 <span class="function"><a href="function.popen.html" class="function">popen()</a></span> 函数会更加简单。
-   </p>
-  </p></blockquote>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.proc-open-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - 打开进程文件指针</span></li>
-    <li class="member"><span class="function"><a href="function.exec.html" class="function" rel="rdfs-seeAlso">exec()</a> - 执行一个外部程序</span></li>
-    <li class="member"><span class="function"><a href="function.system.html" class="function" rel="rdfs-seeAlso">system()</a> - 执行外部程序，并且显示输出</span></li>
-    <li class="member"><span class="function"><a href="function.passthru.html" class="function" rel="rdfs-seeAlso">passthru()</a> - 执行外部程序并且显示原始输出</span></li>
-    <li class="member"><span class="function"><a href="function.stream-select.html" class="function" rel="rdfs-seeAlso">stream_select()</a> - Runs the equivalent of the select() system call on the given
-   arrays of streams with a timeout specified by tv_sec and tv_usec</span></li>
-    <li class="member">The <a href="language.operators.execution.html" class="link">执行操作符</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.proc-nice.html">proc_nice</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.proc-terminate.html">proc_terminate</a></div>
- <div class="up"><a href="ref.exec.html">程序执行 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

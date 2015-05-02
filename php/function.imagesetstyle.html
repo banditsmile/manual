@@ -1,111 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è®¾å®šç”»çº¿çš„é£æ ¼</title>
+<HTML  ><HEAD  ><TITLE  >imagesetstyle</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagesetpixel" HREF="function.imagesetpixel.html"><LINK  REL="NEXT" TITLE="imagesetthickness" HREF="function.imagesetthickness.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagesetpixel.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagesetthickness.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagesetstyle" ></A
+>imagesetstyle</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN40761" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>imagesetstyle&nbsp;--&nbsp;Éè¶¨»­ÏßµÄ·ç¸ñ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN40764" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >imagesetstyle</B
+> ( resource image, array style)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >imagesetstyle()</B
+> Éè¶¨ËùÓĞ»­ÏßµÄº¯Êı£¨ÀıÈç
+     <A  HREF="function.imageline.html"  ><B  CLASS="function" >imageline()</B
+></A
+>
+     ºÍ <A  HREF="function.imagepolygon.html"  ><B  CLASS="function" >imagepolygon()</B
+></A
+>£©ÔÚÊ¹ÓÃÌØÊâÑÕÉ«
+     <TT  CLASS="literal" >IMG_COLOR_STYLED</TT
+> »òÕßÓÃ
+     <TT  CLASS="literal" >IMG_COLOR_STYLEDBRUSHED</TT
+> »­Ò»ĞĞÍ¼ÏñÊ±ËùÊ¹ÓÃµÄ·ç¸ñ¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >style</I
+></TT
+>
+     ²ÎÊıÊÇÏñËØ×é³ÉµÄÊı×é¡£ÏÂÃæµÄÊ¾Àı½Å±¾ÔÚ»­²¼ÉÏ´Ó×óÉÏ½Çµ½ÓÒÏÂ½Ç»­Ò»ĞĞĞéÏß£º
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN40783" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imagesetstyle()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />header</font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: image/jpeg"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$im&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">imagecreate</font><font  color="#007700">(</font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$w&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$red </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* »­Ò»ÌõĞéÏß£¬5 ¸öºìÉ«ÏñËØ£¬5 ¸ö°×É«ÏñËØ */<br  /></font><font  color="#0000BB">$style </font><font  color="#007700">= array (</font><font  color="#0000BB">$red</font><font  color="#007700">,</font><font  color="#0000BB">$red</font><font  color="#007700">,</font><font  color="#0000BB">$red</font><font  color="#007700">,</font><font  color="#0000BB">$red</font><font  color="#007700">,</font><font  color="#0000BB">$red</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagesetstyle</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">$style</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imageline</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">IMG_COLOR_STYLED</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* ÓÃ imagesetbrush() ºÍ imagesetstyle() »­Ò»ĞĞĞ¦Á³ */<br  /></font><font  color="#0000BB">$style </font><font  color="#007700">= array (</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$w</font><font  color="#007700">,</font><font  color="#0000BB">$red</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagesetstyle</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">$style</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$brush </font><font  color="#007700">= </font><font  color="#0000BB">imagecreatefrompng</font><font  color="#007700">(</font><font  color="#DD0000">"http://www.libpng.org/pub/png/images/smile.happy.png"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$w2 </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$brush</font><font  color="#007700">,</font><font  color="#0000BB">255</font><font  color="#007700">,</font><font  color="#0000BB">255</font><font  color="#007700">,</font><font  color="#0000BB">255</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagecolortransparent</font><font  color="#007700">(</font><font  color="#0000BB">$brush</font><font  color="#007700">, </font><font  color="#0000BB">$w2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagesetbrush</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">$brush</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imageline</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">IMG_COLOR_STYLEDBRUSHED</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">imagejpeg</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagedestroy</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.imagesetbrush.html"  ><B  CLASS="function" >imagesetbrush()</B
+></A
+> ºÍ <A  HREF="function.imageline.html"  ><B  CLASS="function" >imageline()</B
+></A
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯ÊıÊÇ PHP 4.0.6 Ìí¼ÓµÄ¡£</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagesetpixel.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagesetthickness.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagesetpixel</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagesetthickness</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagesetpixel.html">imagesetpixel</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagesetthickness.html">imagesetthickness</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagesetstyle" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagesetstyle</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">imagesetstyle</span> &mdash; <span class="dc-title">è®¾å®šç”»çº¿çš„é£æ ¼</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imagesetstyle-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imagesetstyle</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$style</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>imagesetstyle()</strong></span> è®¾å®šæ‰€æœ‰ç”»çº¿çš„å‡½æ•°ï¼ˆä¾‹å¦‚
-   <span class="function"><a href="function.imageline.html" class="function">imageline()</a></span>
-   å’Œ <span class="function"><a href="function.imagepolygon.html" class="function">imagepolygon()</a></span>ï¼‰åœ¨ä½¿ç”¨ç‰¹æ®Šé¢œè‰²
-   <strong><code>IMG_COLOR_STYLED</code></strong> æˆ–è€…ç”¨
-   <strong><code>IMG_COLOR_STYLEDBRUSHED</code></strong> ç”»ä¸€è¡Œå›¾åƒæ—¶æ‰€ä½¿ç”¨çš„é£æ ¼ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.imagesetstyle-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">image</code></dt>
-
-<dd>
-<p class="para">ç”±å›¾è±¡åˆ›å»ºå‡½æ•°(ä¾‹å¦‚<span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>)è¿”å›çš„å›¾è±¡èµ„æºã€‚</p></dd>
-
-    
-     <dt>
-<code class="parameter">style</code></dt>
-
-     <dd>
-
-      <p class="para">
-       åƒç´ ç»„æˆçš„æ•°ç»„ã€‚ä½ å¯ä»¥é€šè¿‡å¸¸é‡ <strong><code>IMG_COLOR_TRANSPARENT</code></strong> æ¥æ·»åŠ ä¸€ä¸ªé€æ˜åƒç´ ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imagesetstyle-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imagesetstyle-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   ä¸‹é¢çš„ç¤ºä¾‹è„šæœ¬åœ¨ç”»å¸ƒä¸Šä»å·¦ä¸Šè§’åˆ°å³ä¸‹è§’ç”»ä¸€è¡Œè™šçº¿ï¼š
-   <div class="example" id="example-3354">
-    <p><strong>Example #1 <span class="function"><strong>imagesetstyle()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;image/jpeg"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$im&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$w&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$red&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;ç”»ä¸€æ¡è™šçº¿ï¼Œ5&nbsp;ä¸ªçº¢è‰²åƒç´ ï¼Œ5&nbsp;ä¸ªç™½è‰²åƒç´ &nbsp;*/<br /></span><span style="color: #0000BB">$style&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$red</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$red</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$red</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$red</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$red</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagesetstyle</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$style</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imageline</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IMG_COLOR_STYLED</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;ç”¨&nbsp;imagesetbrush()&nbsp;å’Œ&nbsp;imagesetstyle&nbsp;ç”»ä¸€è¡Œç¬‘è„¸&nbsp;*/<br /></span><span style="color: #0000BB">$style&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$red</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagesetstyle</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$style</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$brush&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefrompng</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.libpng.org/pub/png/images/smile.happy.png"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$w2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$brush</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagecolortransparent</span><span style="color: #007700">(</span><span style="color: #0000BB">$brush</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagesetbrush</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$brush</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imageline</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IMG_COLOR_STYLEDBRUSHED</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="mediaobject">
-     
-     <div class="imageobject">
-      <img src="images/21009b70229598c6a80eef8b45bf282b-imagesetstyle.jpg" alt="Output of example : imagesetstyle()" width="100" height="100" />
-     </div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imagesetstyle-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imagesetbrush.html" class="function" rel="rdfs-seeAlso">imagesetbrush()</a> - è®¾å®šç”»çº¿ç”¨çš„ç”»ç¬”å›¾åƒ</span></li>
-    <li class="member"><span class="function"><a href="function.imageline.html" class="function" rel="rdfs-seeAlso">imageline()</a> - ç”»ä¸€æ¡çº¿æ®µ</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagesetpixel.html">imagesetpixel</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagesetthickness.html">imagesetthickness</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

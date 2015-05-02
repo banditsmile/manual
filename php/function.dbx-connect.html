@@ -1,330 +1,185 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Open a connection/database</title>
+<HTML  ><HEAD  ><TITLE  >dbx_connect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="dbx Functions" HREF="ref.dbx.html"><LINK  REL="PREVIOUS" TITLE="dbx_compare" HREF="function.dbx-compare.html"><LINK  REL="NEXT" TITLE="dbx_error" HREF="function.dbx-error.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbx-compare.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dbx-error.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dbx-connect" ></A
+>dbx_connect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN19766" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>dbx_connect&nbsp;--&nbsp;Open a connection/database</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN19769" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >dbx_connect</B
+> ( mixed module, string host, string database, string username, string password [, int persistent])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >dbx_connect()</B
+> returns an object on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on
+     error. If a connection has been made but the database could not be 
+     selected, the connection is closed and <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> is returned. 
+     The <TT  CLASS="parameter" ><I  >persistent</I
+></TT
+> parameter can be set to 
+     <TT  CLASS="constant" ><B  >DBX_PERSISTENT</B
+></TT
+>, if so, a persistent connection will be
+     created.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >module</I
+></TT
+> parameter can be either a string or a
+     constant, though the latter form is preferred. The possible values are 
+     given below, but keep in mind that they only work if the module is 
+     actually loaded.
+    </P
+><P  >&#13;     <P  ></P
+><UL  ><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_MYSQL</B
+></TT
+> or "mysql"
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_ODBC</B
+></TT
+> or "odbc"
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_PGSQL</B
+></TT
+> or "pgsql"
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_MSSQL</B
+></TT
+> or "mssql"
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_FBSQL</B
+></TT
+> or "fbsql" (available from PHP 4.1.0)
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_SYBASECT</B
+></TT
+> or "sybase_ct" (available from PHP
+        4.2.0)
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_OCI8</B
+></TT
+> or "oci8" (available from PHP 4.3.0)
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >DBX_SQLITE</B
+></TT
+> or "sqlite" (CVS only)
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >host</I
+></TT
+>, <TT  CLASS="parameter" ><I  >database</I
+></TT
+>, 
+     <TT  CLASS="parameter" ><I  >username</I
+></TT
+> and <TT  CLASS="parameter" ><I  >password</I
+></TT
+> 
+     parameters are expected, but not always used depending on the connect
+     functions for the abstracted module.
+    </P
+><P  >&#13;     The returned <TT  CLASS="varname" >object</TT
+> has three properties:
+     <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><SPAN  CLASS="property" >database</SPAN
+></DT
+><DD  ><P  >&#13;         It is the name of the currently selected database. 
+        </P
+></DD
+><DT  ><SPAN  CLASS="property" >handle</SPAN
+></DT
+><DD  ><P  >&#13;         It is a valid handle for the connected database, and as such it can be
+         used in module-specific functions (if required).
+         <DIV  CLASS="informalexample" ><A  NAME="AEN19844" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$link </font><font  color="#007700">= </font><font  color="#0000BB">dbx_connect</font><font  color="#007700">(</font><font  color="#0000BB">DBX_MYSQL</font><font  color="#007700">, </font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"db"</font><font  color="#007700">, </font><font  color="#DD0000">"username"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">mysql_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">-&gt;</font><font  color="#0000BB">handle</font><font  color="#007700">); </font><font  color="#FF8000">// dbx_close($link) would be better here<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+        </P
+></DD
+><DT  ><SPAN  CLASS="property" >module</SPAN
+></DT
+><DD  ><P  >&#13;         It is used internally by dbx only, and is actually the module number
+         mentioned above.
+        </P
+></DD
+></DL
+></DIV
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN19852" ></A
+><P  ><B  >¿˝◊” 1. <B  CLASS="function" >dbx_connect()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$link </font><font  color="#007700">= </font><font  color="#0000BB">dbx_connect</font><font  color="#007700">(</font><font  color="#0000BB">DBX_ODBC</font><font  color="#007700">, </font><font  color="#DD0000">""</font><font  color="#007700">, </font><font  color="#DD0000">"db"</font><font  color="#007700">, </font><font  color="#DD0000">"username"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">, </font><font  color="#0000BB">DBX_PERSISTENT</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"Connected successfully"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">dbx_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+       Always refer to the module-specific documentation as well.
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.dbx-close.html"  ><B  CLASS="function" >dbx_close()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbx-compare.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dbx-error.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbx_compare</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dbx.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dbx_error</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-compare.html">dbx_compare</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbx-error.html">dbx_error</a></div>
- <div class="up"><a href="ref.dbx.html">dbx ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dbx-connect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dbx_connect</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5 &lt;= 5.0.5, PECL dbx &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">dbx_connect</span> &mdash; <span class="dc-title">Open a connection/database</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.dbx-connect-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>dbx_connect</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$module</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$host</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$persistent</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Opens a connection to a database.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.dbx-connect-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">module</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The <code class="parameter">module</code> parameter can be either a string or a
-       constant, though the latter form is preferred. The possible values are 
-       given below, but keep in mind that they only work if the module is 
-       actually loaded.
-      </p>
-      <p class="para">
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_MYSQL</code></strong> or <em>&quot;mysql&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_ODBC</code></strong> or <em>&quot;odbc&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_PGSQL</code></strong> or <em>&quot;pgsql&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_MSSQL</code></strong> or <em>&quot;mssql&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_FBSQL</code></strong> or <em>&quot;fbsql&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_SYBASECT</code></strong> or <em>&quot;sybase_ct&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_OCI8</code></strong> or <em>&quot;oci8&quot;</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>DBX_SQLITE</code></strong> or <em>&quot;sqlite&quot;</em>
-         </span>
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">host</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The SQL server host
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">database</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The database name
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">username</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The username
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">password</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The password
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">persistent</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The <code class="parameter">persistent</code> parameter can be set to 
-       <strong><code>DBX_PERSISTENT</code></strong>, if so, a persistent connection
-       will be created.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
-  <p class="para">
-   The <code class="parameter">host</code>, <code class="parameter">database</code>, 
-   <code class="parameter">username</code> and <code class="parameter">password</code> 
-   parameters are expected, but not always used depending on the connect
-   functions for the abstracted module.
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.dbx-connect-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an object on success, <strong><code>FALSE</code></strong> on error. If a connection has been
-   made but the database could not be selected, the connection is closed and
-   <strong><code>FALSE</code></strong> is returned. 
-  </p>
-  <p class="para">
-   The returned <var class="varname"><var class="varname">object</var></var> has three properties:
-   <dl>
-
-    
-     <dt>
-
-      <span class="property">database</span>
-     </dt>
-
-     <dd>
-
-      <span class="simpara">
-       It is the name of the currently selected database. 
-      </span>
-     </dd>
-
-    
-    
-     <dt>
-
-      <span class="property">handle</span>
-     </dt>
-
-     <dd>
-
-      <p class="para">
-       It is a valid handle for the connected database, and as such it can be
-       used in module-specific functions (if required).
-       <div class="informalexample">
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">DBX_MYSQL</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"db"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">handle</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;dbx_close($link)&nbsp;would&nbsp;be&nbsp;better&nbsp;here<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-
-      <span class="property">module</span>
-     </dt>
-
-     <dd>
-
-      <span class="simpara">
-       It is used internally by dbx only, and is actually the module number
-       mentioned above.
-      </span>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.dbx-connect-changelog">
-  <h3 class="title">Êõ¥Êñ∞Êó•Âøó</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ÁâàÊú¨</th>
-       <th>ËØ¥Êòé</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        Introduced <strong><code>DBX_SQLITE</code></strong>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        Introduced <strong><code>DBX_OCI8</code></strong>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        Introduced <strong><code>DBX_SYBASECT</code></strong>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.1.0</td>
-       <td>
-        Introduced <strong><code>DBX_FBSQL</code></strong>.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.dbx-connect-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-905">
-    <p><strong>Example #1 <span class="function"><strong>dbx_connect()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">DBX_ODBC</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"db"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DBX_PERSISTENT</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Connected&nbsp;successfully"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">dbx_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.dbx-connect-notes">
-  <h3 class="title">Ê≥®Èáä</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Always refer to the module-specific documentation as well.
-   </p>
-  </p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.dbx-connect-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dbx-close.html" class="function" rel="rdfs-seeAlso">dbx_close()</a> - Close an open connection/database</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-compare.html">dbx_compare</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbx-error.html">dbx_error</a></div>
- <div class="up"><a href="ref.dbx.html">dbx ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

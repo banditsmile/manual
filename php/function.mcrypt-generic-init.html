@@ -1,114 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>初始化加密所需的缓冲区</title>
+<HTML  ><HEAD  ><TITLE  >mcrypt_generic_init</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_generic_end" HREF="function.mcrypt-generic-end.html"><LINK  REL="NEXT" TITLE="mcrypt_generic" HREF="function.mcrypt-generic.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-generic-end.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mcrypt-generic.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mcrypt-generic-init" ></A
+>mcrypt_generic_init</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN54535" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>mcrypt_generic_init&nbsp;--&nbsp;This function initializes all buffers needed for encryption</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN54538" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >mcrypt_generic_init</B
+> ( resource td, string key, string iv)<BR  ></BR
+><P  >&#13;     The maximum length of the key should be the one obtained by
+     calling <A  HREF="function.mcrypt-enc-get-key-size.html"  ><B  CLASS="function" >mcrypt_enc_get_key_size()</B
+></A
+> and every
+     value smaller than this is legal. The IV should normally have
+     the size of the algorithms block size, but you must obtain the
+     size by calling <A  HREF="function.mcrypt-enc-get-iv-size.html"  ><B  CLASS="function" >mcrypt_enc_get_iv_size()</B
+></A
+>.
+     IV is ignored in ECB. IV MUST exist in CFB, CBC, STREAM, nOFB
+     and OFB modes. It needs to be random and unique (but not secret).
+     The same IV must be used for encryption/decryption. If you do not
+     want to use it you should set it to zeros, but this is not
+     recommended.
+    </P
+><P  >&#13;     The function returns a negative value on error, -3 when the key length
+     was incorrect, -4 when there was a memory allocation problem and any
+     other return value is an unknown error. If an error occurs a warning will
+     be displayed accordingly.
+    </P
+><P  >&#13;     You need to call this function before every call to
+     <A  HREF="function.mcrypt-generic.html"  ><B  CLASS="function" >mcrypt_generic()</B
+></A
+> or
+     <A  HREF="function.mdecrypt-generic.html"  ><B  CLASS="function" >mdecrypt_generic()</B
+></A
+>.
+    </P
+><P  >&#13;     See for an example <A  HREF="function.mcrypt-module-open.html"  ><B  CLASS="function" >mcrypt_module_open()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-generic-end.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mcrypt-generic.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_generic_end</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mcrypt_generic</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-generic-end.html">mcrypt_generic_end</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-generic.html">mcrypt_generic</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mcrypt-generic-init" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mcrypt_generic_init</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">mcrypt_generic_init</span> &mdash; <span class="dc-title">初始化加密所需的缓冲区</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.mcrypt-generic-init-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>mcrypt_generic_init</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$td</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$iv</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   在每次调用
-   <span class="function"><a href="function.mcrypt-generic.html" class="function">mcrypt_generic()</a></span> 或
-   <span class="function"><a href="function.mdecrypt-generic.html" class="function">mdecrypt_generic()</a></span> 函数之前必须调用本函数。
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.mcrypt-generic-init-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">td</code></dt>
-
-     <dd>
-
-      <p class="para">
-       加密描述符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">key</code></dt>
-
-     <dd>
-
-      <p class="para">
-       调用 <span class="function"><a href="function.mcrypt-enc-get-key-size.html" class="function">mcrypt_enc_get_key_size()</a></span>
-       函数获得的密钥最大长度。
-       小于最大长度的数值都被视为非法参数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">iv</code></dt>
-
-     <dd>
-
-      <p class="para">
-       通常情况下，向量大小等于算法的分组大小，
-       但是你应该通过 <span class="function"><a href="function.mcrypt-enc-get-iv-size.html" class="function">mcrypt_enc_get_iv_size()</a></span> 函数
-       来获得这个值。在 ECB 模式下，初始向量会被忽略，
-       在 CFB，CBC，STREAM，nOFB 和 OFB 模式下，必须提供初始向量。
-       初始向量要求是随机的，并且是唯一的（不需要是安全的）。
-       加密和解密必须使用相同的初始向量。
-       如果你不想使用初始向量，请将其设置为全 0 值，但是不建议你这么做。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-generic-init-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果发生错误，将会返回负数：
-   -3 表示密钥长度有误，-4 表示内存分配失败，
-   其他值表示未知错误，
-   同时会显示对应的警告信息。
-   如果传入参数不正确，返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.mcrypt-generic-init-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mcrypt-module-open.html" class="function" rel="rdfs-seeAlso">mcrypt_module_open()</a> - 打开算法和模式对应的模块</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-generic-end.html">mcrypt_generic_end</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-generic.html">mcrypt_generic</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

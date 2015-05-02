@@ -1,338 +1,175 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取一个cURL连接资源句柄的信息</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-file-create.html">curl_file_create</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-init.html">curl_init</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.curl-getinfo" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">curl_getinfo</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.4, PHP 5)</p><p class="refpurpose"><span class="refname">curl_getinfo</span> &mdash; <span class="dc-title">获取一个cURL连接资源句柄的信息</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.curl-getinfo-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>curl_getinfo</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ch</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$opt</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   获取最后一次传输的相关信息。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.curl-getinfo-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">ch</code>
-</dt>
-<dd>
-<p class="para">由 <span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span> 返回的 cURL 句柄。</p></dd>
-
-    
-     <dt>
-<code class="parameter">opt</code></dt>
-
-     <dd>
-
-      <p class="para">
-       这个参数可能是以下常量之一:
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_EFFECTIVE_URL</code></strong> - 最后一个有效的URL地址
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_HTTP_CODE</code></strong> - 最后一个收到的HTTP代码
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_FILETIME</code></strong> - 远程获取文档的时间，如果无法获取，则返回值为“-1”
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_TOTAL_TIME</code></strong> - 最后一次传输所消耗的时间
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_NAMELOOKUP_TIME</code></strong> - 名称解析所消耗的时间
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_CONNECT_TIME</code></strong> - 建立连接所消耗的时间
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_PRETRANSFER_TIME</code></strong> - 从建立连接到准备传输所使用的时间
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_STARTTRANSFER_TIME</code></strong> - 从建立连接到传输开始所使用的时间
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_REDIRECT_TIME</code></strong> - 在事务传输开始前重定向所使用的时间
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_SIZE_UPLOAD</code></strong> - 上传数据量的总值
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_SIZE_DOWNLOAD</code></strong> - 下载数据量的总值
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_SPEED_DOWNLOAD</code></strong> - 平均下载速度
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_SPEED_UPLOAD</code></strong> - 平均上传速度
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_HEADER_SIZE</code></strong> - header部分的大小
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_HEADER_OUT</code></strong> - 发送请求的字符串
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-        <strong><code>CURLINFO_REQUEST_SIZE</code></strong> - 在HTTP请求中有问题的请求的大小
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_SSL_VERIFYRESULT</code></strong> - 通过设置<strong><code>CURLOPT_SSL_VERIFYPEER</code></strong>返回的SSL证书验证请求的结果
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_CONTENT_LENGTH_DOWNLOAD</code></strong> - 从<em>Content-Length:</em> field中读取的下载内容长度
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_CONTENT_LENGTH_UPLOAD</code></strong> - 上传内容大小的说明
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>CURLINFO_CONTENT_TYPE</code></strong> - 下载内容的<em>Content-Type:</em>值，NULL表示服务器没有发送有效的<em>Content-Type:</em> header
-         </span>
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.curl-getinfo-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果 <code class="parameter">opt</code> 被设置，以字符串形式返回它的值。否则，返回返回一个包含下列元素的关联数组(它们分别对应于 <code class="parameter">opt</code>):
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      &quot;url&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;content_type&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;http_code&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;header_size&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;request_size&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;filetime&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;ssl_verify_result&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;redirect_count&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;total_time&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;namelookup_time&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;connect_time&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;pretransfer_time&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;size_upload&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;size_download&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;speed_download&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;speed_upload&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;download_content_length&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;upload_content_length&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;starttransfer_time&quot;
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      &quot;redirect_time&quot;
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >curl_getinfo</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="CURL, Client URL Library Functions" HREF="ref.curl.html"><LINK  REL="PREVIOUS" TITLE="curl_exec" HREF="function.curl-exec.html"><LINK  REL="NEXT" TITLE="curl_init" HREF="function.curl-init.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.curl-exec.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.curl-init.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.curl-getinfo" ></A
+>curl_getinfo</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN16282" ></A
+><P  >    (PHP 4 &#62;= 4.0.4)</P
+>curl_getinfo&nbsp;--&nbsp;
+     Get information regarding a specific transfer
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN16285" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >curl_getinfo</B
+> ( resource ch [, int opt])<BR  ></BR
+><P  >&#13;     Returns information about the last transfer, <TT  CLASS="parameter" ><I  >opt</I
+></TT
+> may be one of the following:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        "CURLINFO_EFFECTIVE_URL" - Last effective URL
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_HTTP_CODE" - Last received HTTP code
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_FILETIME" - Remote time of the retrieved document, if -1 is returned the time of the document is unknown
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_TOTAL_TIME" - Total transaction time in seconds for last transfer
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_NAMELOOKUP_TIME" - Time in seconds until name resolving was complete
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_CONNECT_TIME" - Time in seconds it took to establish the connection
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_PRETRANSFER_TIME" - Time in seconds from start until just before file transfer begins
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_STARTTRANSFER_TIME" - Time in seconds until the first byte is about to be transferred
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_REDIRECT_TIME" - Time in seconds of all redirection steps before final transaction was started
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_SIZE_UPLOAD" - Total number of bytes uploaded
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_SIZE_DOWNLOAD" - Total number of bytes downloaded
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_SPEED_DOWNLOAD" - Average download speed
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_SPEED_UPLOAD" - Average upload speed
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_HEADER_SIZE" - Total size of all headers received
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_REQUEST_SIZE" - Total size of issued requests, currently only for HTTP requests
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_SSL_VERIFYRESULT" - Result of SSL certification verification requested by setting CURLOPT_SSL_VERIFYPEER
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_CONTENT_LENGTH_DOWNLOAD" - content-length of download, read from Content-Length: field
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_CONTENT_LENGTH_UPLOAD" - Specified size of upload
+       </P
+></LI
+><LI  ><P  >&#13;        "CURLINFO_CONTENT_TYPE" - Content-type of downloaded object, NULL indicates server did not send valid Content-Type: header
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     If called without the optional parameter opt an associative array is returned with the following array elements which correspond to <TT  CLASS="parameter" ><I  >opt</I
+></TT
+> options:     
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        "url"
+       </P
+></LI
+><LI  ><P  >&#13;        "content_type"
+       </P
+></LI
+><LI  ><P  >&#13;        "http_encode"
+       </P
+></LI
+><LI  ><P  >&#13;        "header_size"
+       </P
+></LI
+><LI  ><P  >&#13;        "request_size"
+       </P
+></LI
+><LI  ><P  >&#13;        "filetime"
+       </P
+></LI
+><LI  ><P  >&#13;        "ssl_verify_result"
+       </P
+></LI
+><LI  ><P  >&#13;        "redirect_count"
+       </P
+></LI
+><LI  ><P  >&#13;        "total_time"
+       </P
+></LI
+><LI  ><P  >&#13;        "namelookup_time"
+       </P
+></LI
+><LI  ><P  >&#13;        "connect_time"
+       </P
+></LI
+><LI  ><P  >&#13;        "pretransfer_time"
+       </P
+></LI
+><LI  ><P  >&#13;        "size_upload"
+       </P
+></LI
+><LI  ><P  >&#13;        "size_download"
+       </P
+></LI
+><LI  ><P  >&#13;        "speed_download"
+       </P
+></LI
+><LI  ><P  >&#13;        "speed_upload"
+       </P
+></LI
+><LI  ><P  >&#13;        "download_content_length"
+       </P
+></LI
+><LI  ><P  >&#13;        "upload_content_length"
+       </P
+></LI
+><LI  ><P  >&#13;        "starttransfer_time"
+       </P
+></LI
+><LI  ><P  >&#13;        "redirect_time"
+       </P
+></LI
+></UL
+>                    
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.curl-exec.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.curl-init.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >curl_exec</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.curl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >curl_init</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 changelog" id="refsect1-function.curl-getinfo-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.3</td>
-       <td>
-        引入<strong><code>CURLINFO_HEADER_OUT</code></strong>.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.curl-getinfo-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4506">
-    <p><strong>Example #1 <span class="function"><strong>curl_getinfo()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;创建一个cURL句柄<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.yahoo.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;执行<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;检查是否有错误发生<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">curl_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">))<br />{<br />&nbsp;</span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_getinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br />&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Took&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'total_time'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'&nbsp;seconds&nbsp;to&nbsp;send&nbsp;a&nbsp;request&nbsp;to&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'url'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Close&nbsp;handle<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.curl-getinfo-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Information gathered by this function is kept if the handle is re-used. This means 
-    that unless a statistic is overridden internally by this function, the previous info 
-    is returned.
-   </p>
-  </p></blockquote>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-file-create.html">curl_file_create</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-init.html">curl_init</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

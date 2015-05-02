@@ -1,114 +1,62 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>运行当前 cURL 句柄的子连接</title>
+<HTML  ><HEAD  ><TITLE  >curl_multi_exec</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="CURL, Client URL Library Functions" HREF="ref.curl.html"><LINK  REL="PREVIOUS" TITLE="curl_multi_close" HREF="function.curl-multi-close.html"><LINK  REL="NEXT" TITLE="curl_multi_getcontent" HREF="function.curl-multi-getcontent.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.curl-multi-close.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.curl-multi-getcontent.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.curl-multi-exec" ></A
+>curl_multi_exec</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN16444" ></A
+><P  >    (PHP 5 CVS only)</P
+>curl_multi_exec&nbsp;--&nbsp;
+     Run the sub-connections of the current cURL handle
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN16447" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >curl_multi_exec</B
+> ( resource mh)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >�ú���Ŀǰ���޲ο��ĵ����������б����á�
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     See also
+     <A  HREF="function.curl-multi-init.html"  ><B  CLASS="function" >curl_multi_init()</B
+></A
+> and 
+     <A  HREF="function.curl-exec.html"  ><B  CLASS="function" >curl_exec()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.curl-multi-close.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.curl-multi-getcontent.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >curl_multi_close</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.curl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >curl_multi_getcontent</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-multi-close.html">curl_multi_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-multi-getcontent.html">curl_multi_getcontent</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.curl-multi-exec" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">curl_multi_exec</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">curl_multi_exec</span> &mdash; <span class="dc-title">运行当前 cURL 句柄的子连接</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.curl-multi-exec-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>curl_multi_exec</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$mh</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$still_running</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   处理在栈中的每一个句柄。无论该句柄需要读取或写入数据都可调用此方法。
-  </p> 
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.curl-multi-exec-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">mh</code>
-</dt>
-<dd>
-<p class="para">由 <span class="function"><a href="function.curl-multi-init.html" class="function">curl_multi_init()</a></span> 返回的 cURL 多个句柄。</p></dd>
-
-    
-     <dt>
-<code class="parameter">still_running</code></dt>
-
-     <dd>
-
-      <p class="para">
-       一个用来判断操作是否仍在执行的标识的引用。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.curl-multi-exec-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   一个定义于 cURL <a href="curl.constants.html" class="link">预定义常量</a>中的 cURL 代码。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    该函数仅返回关于整个批处理栈相关的错误。即使返回
-    <strong><code>CURLM_OK</code></strong> 时单个传输仍可能有问题。
-   </p>
-  </p></blockquote>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.curl-multi-exec-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4510">
-    <p><strong>Example #1 <span class="function"><strong>curl_multi_exec()</strong></span> example</strong></p>
-    <div class="example-contents"><p>
-     这个范例将会创建 2 个 cURL 句柄，把它们加到批处理句柄，然后并行地运行它们。
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;创建一对cURL资源<br /></span><span style="color: #0000BB">$ch1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$ch2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;设置URL和相应的选项<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_URL</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"http://lxr.php.net/"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_HEADER</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_URL</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"http://www.php.net/"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CURLOPT_HEADER</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;创建批处理cURL句柄<br /></span><span style="color: #0000BB">$mh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_multi_init</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;增加2个句柄<br /></span><span style="color: #0000BB">curl_multi_add_handle</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">,</span><span style="color: #0000BB">$ch1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_multi_add_handle</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">,</span><span style="color: #0000BB">$ch2</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$active&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;执行批处理句柄<br /></span><span style="color: #007700">do&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mrc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_multi_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$active</span><span style="color: #007700">);<br />}&nbsp;while&nbsp;(</span><span style="color: #0000BB">$mrc&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">CURLM_CALL_MULTI_PERFORM</span><span style="color: #007700">);<br /><br />while&nbsp;(</span><span style="color: #0000BB">$active&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">$mrc&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">CURLM_OK</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">curl_multi_select</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">)&nbsp;!=&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$mrc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_multi_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$active</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;while&nbsp;(</span><span style="color: #0000BB">$mrc&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">CURLM_CALL_MULTI_PERFORM</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;关闭全部句柄<br /></span><span style="color: #0000BB">curl_multi_remove_handle</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ch1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_multi_remove_handle</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ch2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">curl_multi_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$mh</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.curl-multi-exec-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.curl-multi-init.html" class="function" rel="rdfs-seeAlso">curl_multi_init()</a> - 返回一个新cURL批处理句柄</span></li>
-    <li class="member"><span class="function"><a href="function.curl-multi-select.html" class="function" rel="rdfs-seeAlso">curl_multi_select()</a> - 等待所有cURL批处理中的活动连接</span></li>
-    <li class="member"><span class="function"><a href="function.curl-exec.html" class="function" rel="rdfs-seeAlso">curl_exec()</a> - 执行一个cURL会话</span></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-multi-close.html">curl_multi_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-multi-getcontent.html">curl_multi_getcontent</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

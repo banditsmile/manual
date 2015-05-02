@@ -1,94 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回字符串的字符数统计</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.iconv-set-encoding.html">iconv_set_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.iconv-strpos.html">iconv_strpos</a></div>
- <div class="up"><a href="ref.iconv.html">iconv 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.iconv-strlen" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">iconv_strlen</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">iconv_strlen</span> &mdash; <span class="dc-title">返回字符串的字符数统计</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.iconv-strlen-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>iconv_strlen</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$charset</code><span class="initializer"> = ini_get(&quot;iconv.internal_encoding&quot;)</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   和 <span class="function"><a href="function.strlen.html" class="function">strlen()</a></span> 不同的是，<span class="function"><strong>iconv_strlen()</strong></span> 统计了给定的字节序列 <code class="parameter">str</code> 中出现字符数的统计，基于指定的字符集，其产生的结果不一定和字符字节数相等。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.iconv-strlen-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       该字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">charset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果省略了 <code class="parameter">charset</code> 参数，假设 <code class="parameter">str</code> 的编码为 <a href="iconv.configuration.html" class="link">iconv.internal_encoding</a>。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.iconv-strlen-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回 <code class="parameter">str</code> 字符数的统计，是整型。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >iconv_strlen</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="iconv Functions" HREF="ref.iconv.html"><LINK  REL="PREVIOUS" TITLE="iconv_set_encoding" HREF="function.iconv-set-encoding.html"><LINK  REL="NEXT" TITLE="iconv_strpos" HREF="function.iconv-strpos.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.iconv-set-encoding.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.iconv-strpos.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.iconv-strlen" ></A
+>iconv_strlen</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN37074" ></A
+><P  >    (PHP 5 CVS only)</P
+>iconv_strlen&nbsp;--&nbsp;
+     Returns the character count of string
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN37077" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >iconv_strlen</B
+> ( string str [, string charset])<BR  ></BR
+><P  >&#13;      Returns the character count of <TT  CLASS="parameter" ><I  >str</I
+></TT
+>.
+    </P
+><P  >&#13;      In contrast to <A  HREF="function.strlen.html"  ><B  CLASS="function" >strlen()</B
+></A
+>,
+      <B  CLASS="function" >iconv_strlen()</B
+> counts the occurrences of characters
+      in the given byte sequence <TT  CLASS="parameter" ><I  >str</I
+></TT
+> on the basis of
+      the specified character set, the result of which is not necessarily
+      identical to the length of the string in byte.
+    </P
+><P  >&#13;      If <TT  CLASS="parameter" ><I  >charset</I
+></TT
+> parameter is omitted,
+      <TT  CLASS="parameter" ><I  >str</I
+></TT
+> is assumed to be encoded in
+      <A  HREF="ref.iconv.html#iconv.configuration"  >iconv.internal_charset</A
+>.
+    </P
+><P  >&#13;      See also <A  HREF="function.strlen.html"  ><B  CLASS="function" >strlen()</B
+></A
+> and <A  HREF="function.mb-strlen.html"  ><B  CLASS="function" >mb_strlen()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.iconv-set-encoding.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.iconv-strpos.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >iconv_set_encoding</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.iconv.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >iconv_strpos</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.iconv-strlen-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.grapheme-strlen.html" class="function" rel="rdfs-seeAlso">grapheme_strlen()</a> - Get string length in grapheme units</span></li>
-    <li class="member"><span class="function"><a href="function.mb-strlen.html" class="function" rel="rdfs-seeAlso">mb_strlen()</a> - 获取字符串的长度</span></li>
-    <li class="member"><span class="function"><a href="function.strlen.html" class="function" rel="rdfs-seeAlso">strlen()</a> - 获取字符串长度</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.iconv-set-encoding.html">iconv_set_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.iconv-strpos.html">iconv_strpos</a></div>
- <div class="up"><a href="ref.iconv.html">iconv 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

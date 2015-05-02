@@ -1,184 +1,155 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Prepares for Z39.50 Item Order with an ILL-Request package</title>
+<HTML  ><HEAD  ><TITLE  >yaz_itemorder</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="YAZ Functions" HREF="ref.yaz.html"><LINK  REL="PREVIOUS" TITLE="yaz_hits" HREF="function.yaz-hits.html"><LINK  REL="NEXT" TITLE="yaz_present" HREF="function.yaz-present.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.yaz-hits.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.yaz-present.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.yaz-itemorder" ></A
+>yaz_itemorder</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN119862" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>yaz_itemorder&nbsp;--&nbsp;
+     Prepares for Z39.50 Item Order with an ILL-Request package
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN119865" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >yaz_itemorder</B
+> ( resource id, array args)<BR  ></BR
+><P  >&#13;     This function prepares for an Extended Services request using the
+     Profile for the Use of Z39.50 Item Order Extended Service to
+     Transport ILL (Profile/1). See
+     <A  href="http://www.nlc-bnc.ca/iso/ill/stanprf.htm"  TARGET="_top" >this</A
+>
+     and the
+     <A  href="http://www.nlc-bnc.ca/iso/ill/document/standard/z-ill-1a.pdf"  TARGET="_top" >&#13;     specification</A
+>.
+     The <TT  CLASS="parameter" ><I  >args</I
+></TT
+> parameter must be a hash array with
+     information about the Item Order request to be sent. The key of the hash is
+     the name of the corresponding ASN.1 tag path. For example, the ISBN below
+     the Item-ID has the key item-id,ISBN. 
+    </P
+><P  >&#13;    The ILL-Request parameters are:
+    </P
+><P  CLASS="literallayout" ><br >
+protocol-version-num<br >
+transaction-id,initial-requester-id,person-or-institution-symbol,person<br >
+transaction-id,initial-requester-id,person-or-institution-symbol,institution<br >
+transaction-id,initial-requester-id,name-of-person-or-institution,name-of-person<br >
+transaction-id,initial-requester-id,name-of-person-or-institution,name-of-institution<br >
+transaction-id,transaction-group-qualifier<br >
+transaction-id,transaction-qualifier<br >
+transaction-id,sub-transaction-qualifier<br >
+service-date-time,this,date<br >
+service-date-time,this,time<br >
+service-date-time,original,date<br >
+service-date-time,original,time<br >
+requester-id,person-or-institution-symbol,person<br >
+requester-id,person-or-institution-symbol,institution<br >
+requester-id,name-of-person-or-institution,name-of-person<br >
+requester-id,name-of-person-or-institution,name-of-institution<br >
+responder-id,person-or-institution-symbol,person<br >
+responder-id,person-or-institution-symbol,institution<br >
+responder-id,name-of-person-or-institution,name-of-person<br >
+responder-id,name-of-person-or-institution,name-of-institution<br >
+transaction-type<br >
+delivery-address,postal-address,name-of-person-or-institution,name-of-person<br >
+delivery-address,postal-address,name-of-person-or-institution,name-of-institution<br >
+delivery-address,postal-address,extended-postal-delivery-address<br >
+delivery-address,postal-address,street-and-number<br >
+delivery-address,postal-address,post-office-box<br >
+delivery-address,postal-address,city<br >
+delivery-address,postal-address,region<br >
+delivery-address,postal-address,country<br >
+delivery-address,postal-address,postal-code<br >
+delivery-address,electronic-address,telecom-service-identifier<br >
+delivery-address,electronic-address,telecom-service-addreess<br >
+billing-address,postal-address,name-of-person-or-institution,name-of-person<br >
+billing-address,postal-address,name-of-person-or-institution,name-of-institution<br >
+billing-address,postal-address,extended-postal-delivery-address<br >
+billing-address,postal-address,street-and-number<br >
+billing-address,postal-address,post-office-box<br >
+billing-address,postal-address,city<br >
+billing-address,postal-address,region<br >
+billing-address,postal-address,country<br >
+billing-address,postal-address,postal-code<br >
+billing-address,electronic-address,telecom-service-identifier<br >
+billing-address,electronic-address,telecom-service-addreess<br >
+ill-service-type<br >
+requester-optional-messages,can-send-RECEIVED<br >
+requester-optional-messages,can-send-RETURNED<br >
+requester-optional-messages,requester-SHIPPED<br >
+requester-optional-messages,requester-CHECKED-IN<br >
+search-type,level-of-service<br >
+search-type,need-before-date<br >
+search-type,expiry-date<br >
+search-type,expiry-flag<br >
+place-on-hold<br >
+client-id,client-name<br >
+client-id,client-status<br >
+client-id,client-identifier<br >
+item-id,item-type<br >
+item-id,call-number<br >
+item-id,author<br >
+item-id,title<br >
+item-id,sub-title<br >
+item-id,sponsoring-body<br >
+item-id,place-of-publication<br >
+item-id,publisher<br >
+item-id,series-title-number<br >
+item-id,volume-issue<br >
+item-id,edition<br >
+item-id,publication-date<br >
+item-id,publication-date-of-component<br >
+item-id,author-of-article<br >
+item-id,title-of-article<br >
+item-id,pagination<br >
+item-id,ISBN<br >
+item-id,ISSN<br >
+item-id,additional-no-letters<br >
+item-id,verification-reference-source<br >
+copyright-complicance<br >
+retry-flag<br >
+forward-flag<br >
+requester-note<br >
+forward-note<br >
+&nbsp;&nbsp;&nbsp;&nbsp;</P
+><P  >&#13;    There are also a few parameters that are part of the Extended
+    Services Request package and the ItemOrder package:
+    </P
+><P  CLASS="literallayout" ><br >
+package-name<br >
+user-id<br >
+contact-name<br >
+contact-phone<br >
+contact-email<br >
+itemorder-item<br >
+&nbsp;&nbsp;&nbsp;&nbsp;</P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.yaz-hits.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.yaz-present.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >yaz_hits</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.yaz.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >yaz_present</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-hits.html">yaz_hits</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-present.html">yaz_present</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.yaz-itemorder" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">yaz_itemorder</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PECL yaz &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">yaz_itemorder</span> &mdash; <span class="dc-title">
-   Prepares for Z39.50 Item Order with an ILL-Request package
-  </span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.yaz-itemorder-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>yaz_itemorder</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$id</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$args</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   This function prepares for an Extended Services request using the
-   Profile for the Use of Z39.50 Item Order Extended Service to
-   Transport ILL (Profile/1). See <a href="http://www.collectionscanada.ca/iso/ill/stanprf.htm" class="link external">&raquo;&nbsp;this</a>
-   and the <a href="http://www.collectionscanada.ca/iso/ill/document/standard/z-ill-1a.pdf" class="link external">&raquo;&nbsp;specification</a>.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.yaz-itemorder-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The connection resource returned by <span class="function"><a href="function.yaz-connect.html" class="function">yaz_connect()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">args</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Must be an associative array with information about the Item Order 
-       request to be sent. The key of the hash is the name of the 
-       corresponding ASN.1 tag path. For example, the ISBN below the Item-ID
-       has the key item-id,ISBN. 
-      </p>
-      <p class="para">
-       The ILL-Request parameters are:
-      </p>
-      <pre class="literallayout">
-protocol-version-num
-transaction-id,initial-requester-id,person-or-institution-symbol,person
-transaction-id,initial-requester-id,person-or-institution-symbol,institution
-transaction-id,initial-requester-id,name-of-person-or-institution,name-of-person
-transaction-id,initial-requester-id,name-of-person-or-institution,name-of-institution
-transaction-id,transaction-group-qualifier
-transaction-id,transaction-qualifier
-transaction-id,sub-transaction-qualifier
-service-date-time,this,date
-service-date-time,this,time
-service-date-time,original,date
-service-date-time,original,time
-requester-id,person-or-institution-symbol,person
-requester-id,person-or-institution-symbol,institution
-requester-id,name-of-person-or-institution,name-of-person
-requester-id,name-of-person-or-institution,name-of-institution
-responder-id,person-or-institution-symbol,person
-responder-id,person-or-institution-symbol,institution
-responder-id,name-of-person-or-institution,name-of-person
-responder-id,name-of-person-or-institution,name-of-institution
-transaction-type
-delivery-address,postal-address,name-of-person-or-institution,name-of-person
-delivery-address,postal-address,name-of-person-or-institution,name-of-institution
-delivery-address,postal-address,extended-postal-delivery-address
-delivery-address,postal-address,street-and-number
-delivery-address,postal-address,post-office-box
-delivery-address,postal-address,city
-delivery-address,postal-address,region
-delivery-address,postal-address,country
-delivery-address,postal-address,postal-code
-delivery-address,electronic-address,telecom-service-identifier
-delivery-address,electronic-address,telecom-service-addreess
-billing-address,postal-address,name-of-person-or-institution,name-of-person
-billing-address,postal-address,name-of-person-or-institution,name-of-institution
-billing-address,postal-address,extended-postal-delivery-address
-billing-address,postal-address,street-and-number
-billing-address,postal-address,post-office-box
-billing-address,postal-address,city
-billing-address,postal-address,region
-billing-address,postal-address,country
-billing-address,postal-address,postal-code
-billing-address,electronic-address,telecom-service-identifier
-billing-address,electronic-address,telecom-service-addreess
-ill-service-type
-requester-optional-messages,can-send-RECEIVED
-requester-optional-messages,can-send-RETURNED
-requester-optional-messages,requester-SHIPPED
-requester-optional-messages,requester-CHECKED-IN
-search-type,level-of-service
-search-type,need-before-date
-search-type,expiry-date
-search-type,expiry-flag
-place-on-hold
-client-id,client-name
-client-id,client-status
-client-id,client-identifier
-item-id,item-type
-item-id,call-number
-item-id,author
-item-id,title
-item-id,sub-title
-item-id,sponsoring-body
-item-id,place-of-publication
-item-id,publisher
-item-id,series-title-number
-item-id,volume-issue
-item-id,edition
-item-id,publication-date
-item-id,publication-date-of-component
-item-id,author-of-article
-item-id,title-of-article
-item-id,pagination
-item-id,ISBN
-item-id,ISSN
-item-id,additional-no-letters
-item-id,verification-reference-source
-copyright-complicance
-retry-flag
-forward-flag
-requester-note
-forward-note
-      </pre>
-      <p class="para">
-       There are also a few parameters that are part of the Extended
-       Services Request package and the ItemOrder package:
-      </p>
-      <pre class="literallayout">
-package-name
-user-id
-contact-name
-contact-phone
-contact-email
-itemorder-item
-      </pre>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.yaz-itemorder-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Ê≤°ÊúâËøîÂõûÂÄº„ÄÇ
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-hits.html">yaz_hits</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-present.html">yaz_present</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,100 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Switch autocommit on or off</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-autocommit-state.html">ingres_autocommit_state</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ingres-charset.html">ingres_charset</a></div>
- <div class="up"><a href="ref.ingres.html">Ingres å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ingres-autocommit" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ingres_autocommit</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5 &lt;= 5.0.5, PECL ingres &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">ingres_autocommit</span> &mdash; <span class="dc-title">Switch autocommit on or off</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ingres-autocommit-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>ingres_autocommit</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>ingres_autocommit()</strong></span> is called before opening a
-   transaction (before the first call to
-   <span class="function"><a href="function.ingres-query.html" class="function">ingres_query()</a></span> or just after a call to
-   <span class="function"><a href="function.ingres-rollback.html" class="function">ingres_rollback()</a></span> or
-   <span class="function"><a href="function.ingres-commit.html" class="function">ingres_commit()</a></span>) to switch the
-   autocommit mode of the server on or off (when the script begins
-   the autocommit mode is off).
-  </p>
-  <p class="para">
-   When autocommit mode is on, every query is automatically
-   committed by the server, as if <span class="function"><a href="function.ingres-commit.html" class="function">ingres_commit()</a></span>
-   was called after every call to <span class="function"><a href="function.ingres-query.html" class="function">ingres_query()</a></span>.
-   To see if autocommit is enabled use, 
-   <span class="function"><a href="function.ingres-autocommit-state.html" class="function">ingres_autocommit_state()</a></span>.
-  </p>
-  <p class="para">
-   By default Ingres will rollback any uncommitted transactions at the end of
-   a request. Use this function or <span class="function"><a href="function.ingres-commit.html" class="function">ingres_commit()</a></span> to
-   ensure your data is committed to the database.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ingres-autocommit-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">link</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The connection link identifier
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ingres-autocommit-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ingres-autocommit-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ingres-autocommit-state.html" class="function" rel="rdfs-seeAlso">ingres_autocommit_state()</a> - Test if the connection is using autocommit</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-query.html" class="function" rel="rdfs-seeAlso">ingres_query()</a> - Send an SQL query to Ingres</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-rollback.html" class="function" rel="rdfs-seeAlso">ingres_rollback()</a> - Roll back a transaction</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-commit.html" class="function" rel="rdfs-seeAlso">ingres_commit()</a> - Commit a transaction</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ingres_autocommit</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ingres II Functions" HREF="ref.ingres.html"><LINK  REL="PREVIOUS" TITLE="Ingres II Functions" HREF="ref.ingres.html"><LINK  REL="NEXT" TITLE="ingres_close" HREF="function.ingres-close.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.ingres.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ingres-close.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ingres-autocommit" ></A
+>ingres_autocommit</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45951" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>ingres_autocommit&nbsp;--&nbsp;Switch autocommit on or off</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45954" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >ingres_autocommit</B
+> ( [resource link])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <B  CLASS="function" >ingres_autocommit()</B
+> is called before opening a
+     transaction (before the first call to
+     <A  HREF="function.ingres-query.html"  ><B  CLASS="function" >ingres_query()</B
+></A
+> or just after a call to
+     <A  HREF="function.ingres-rollback.html"  ><B  CLASS="function" >ingres_rollback()</B
+></A
+> or
+     <A  HREF="function.ingres-commit.html"  ><B  CLASS="function" >ingres_commit()</B
+></A
+>) to switch the
+     "autocommit" mode of the server on or off (when the script begins
+     the autocommit mode is off).
+    </P
+><P  >&#13;     When the autocommit mode is on, every query is automatically
+     committed by the server, as if <A  HREF="function.ingres-commit.html"  ><B  CLASS="function" >ingres_commit()</B
+></A
+>
+     was called after every call to <A  HREF="function.ingres-query.html"  ><B  CLASS="function" >ingres_query()</B
+></A
+>.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ingres-query.html"  ><B  CLASS="function" >ingres_query()</B
+></A
+>,
+     <A  HREF="function.ingres-rollback.html"  ><B  CLASS="function" >ingres_rollback()</B
+></A
+>, and
+     <A  HREF="function.ingres-commit.html"  ><B  CLASS="function" >ingres_commit()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.ingres.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ingres-close.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Ingres II Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ingres.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ingres_close</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-autocommit-state.html">ingres_autocommit_state</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ingres-charset.html">ingres_charset</a></div>
- <div class="up"><a href="ref.ingres.html">Ingres å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,237 +1,105 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>执行一个正则表达式搜索并且使用一个回调进行替换</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-quote.html">preg_quote</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.preg-replace.html">preg_replace</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.preg-replace-callback" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">preg_replace_callback</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">preg_replace_callback</span> &mdash; <span class="dc-title">执行一个正则表达式搜索并且使用一个回调进行替换</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.preg-replace-callback-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>preg_replace_callback</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$pattern</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$callback</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$subject</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = -1</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$count</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-  这个函数的行为除了
-  可以指定一个 <code class="parameter">callback</code> 替代 <code class="parameter">replacement</code> 进行替换
-  字符串的计算，其他方面等同于 <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span>。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.preg-replace-callback-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">pattern</code></dt>
-
-     <dd>
-
-      <p class="para">
-      要搜索的模式，可以使字符串或一个字符串数组。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">callback</code></dt>
-
-     <dd>
-
-      <p class="para">
-      一个回调函数，在每次需要替换时调用，调用时函数得到的参数是从<code class="parameter">subject</code>
-      中匹配到的结果。回调函数返回真正参与替换的字符串。这是该回调函数的签名：
-      </p>
-      <p class="para">
-       <div class="methodsynopsis dc-description">
-        <span class="type">string</span> <span class="methodname"><span class="replaceable">handler</span></span>
-         ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$matches</code></span>
-        )</div>
-
-      </p>
-      <p class="para">
-      你可能经常会需要<code class="parameter">callback</code>函数而
-      仅用于<span class="function"><strong>preg_replace_callback()</strong></span>一个地方的调用。在这种情况下，你可以
-      使用<a href="functions.anonymous.html" class="link">匿名函数</a>来定义一个匿名函数作
-      为<span class="function"><strong>preg_replace_callback()</strong></span>调用时的回调。 这样做你可以保留所有
-      调用信息在同一个位置并且不会因为一个不在任何其他地方使用的回调函数名称而污染函数名称空间。
-      </p>
-      <p class="para">
-       <div class="example" id="example-5109">
-        <p><strong>Example #1 <span class="function"><strong>preg_replace_callback()</strong></span> 和 
-        匿名函数</strong></p>
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;一个unix样式的命令行过滤器，用于将段落开始部分的大写字母转换为小写。&nbsp;*/<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://stdin"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"can't&nbsp;read&nbsp;stdin"</span><span style="color: #007700">);<br />while&nbsp;(!</span><span style="color: #0000BB">feof</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$line&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$line&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'|&lt;p&gt;\s*\w|'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">strtolower</span><span style="color: #007700">(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$line<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">subject</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要搜索替换的目标字符串或字符串数组。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">limit</code></dt>
-
-     <dd>
-
-      <p class="para">
-      对于每个模式用于每个 <code class="parameter">subject</code> 字符串的最大可替换次数。
-      默认是<em>-1</em>（无限制）。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">count</code></dt>
-
-     <dd>
-
-      <p class="para">
-      如果指定，这个变量将被填充为替换执行的次数。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >preg_replace_callback</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�������ʽ�����⣨Perl ���ݣ�" HREF="ref.pcre.html"><LINK  REL="PREVIOUS" TITLE="preg_quote" HREF="function.preg-quote.html"><LINK  REL="NEXT" TITLE="preg_replace" HREF="function.preg-replace.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.preg-quote.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.preg-replace.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.preg-replace-callback" ></A
+>preg_replace_callback</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN96147" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>preg_replace_callback&nbsp;--&nbsp;�ûص�����ִ���������ʽ���������滻</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN96150" ></A
+><H2  >˵��</H2
+>mixed <B  CLASS="methodname" >preg_replace_callback</B
+> ( mixed pattern, callback callback, mixed subject [, int limit])<BR  ></BR
+><P  >&#13;     ����������Ϊ������
+     <A  HREF="function.preg-replace.html"  ><B  CLASS="function" >preg_replace()</B
+></A
+> һ�������˲����ṩһ��
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ����������ָ��һ��
+     <TT  CLASS="parameter" ><I  >callback</I
+></TT
+> �������ú�������Ŀ���ַ����е�ƥ��������Ϊ��������������������滻���ַ�����
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96171" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >preg_replace_callback()</B
+> ����</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;</font><font  color="#FF8000">// ���ı������� 2002 ��ģ�<br  />&nbsp;&nbsp;// ������ʹ�������� 2003 ��<br  />&nbsp;&nbsp;</font><font  color="#0000BB">$text </font><font  color="#007700">= </font><font  color="#DD0000">"April fools day is 04/01/2002\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;</font><font  color="#0000BB">$text</font><font  color="#007700">.= </font><font  color="#DD0000">"Last christmas was 12/24/2001\n"</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;</font><font  color="#FF8000">// �ص�����<br  />&nbsp;&nbsp;</font><font  color="#007700">function </font><font  color="#0000BB">next_year</font><font  color="#007700">(</font><font  color="#0000BB">$matches</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ͨ����$matches[0] ��������ƥ����<br  />&nbsp;&nbsp;&nbsp;&nbsp;// $matches[1] �ǵ�һ�������е���ģʽ��ƥ����<br  />&nbsp;&nbsp;&nbsp;&nbsp;// �Դ�����<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">return </font><font  color="#0000BB">$matches</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">].(</font><font  color="#0000BB">$matches</font><font  color="#007700">[</font><font  color="#0000BB">2</font><font  color="#007700">]+</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;echo </font><font  color="#0000BB">preg_replace_callback</font><font  color="#007700">(<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"|(\d{2}/\d{2}/)(\d{4})|"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"next_year"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$text</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;</font><font  color="#FF8000">// ���Ϊ��<br  />&nbsp;&nbsp;// April fools day is 04/01/2003<br  />&nbsp;&nbsp;// Last christmas was 12/24/2002<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     You'll often need the <TT  CLASS="parameter" ><I  >callback</I
+></TT
+> function
+     for a <B  CLASS="function" >preg_replace_callback()</B
+> in just one place.
+     In this case you can use <A  HREF="function.create-function.html"  ><B  CLASS="function" >create_function()</B
+></A
+> to
+     declare an anonymous function as callback within the call to
+     <B  CLASS="function" >preg_replace_callback()</B
+>. By doing it this way
+     you have all information for the call in one place and do not
+     clutter the function namespace with a callback functions name
+     not used anywhere else.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96180" ></A
+><P  ><B  >���� 2. <B  CLASS="function" >preg_replace_callback()</B
+> �� <A  HREF="function.create-function.html"  ><B  CLASS="function" >create_function()</B
+></A
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;</font><font  color="#FF8000">/* һ�� UNIX ���������й���������ÿ�����俪ͷ��<br  />&nbsp;&nbsp;&nbsp;* ��д��ĸת����Сд��ĸ */<br  /><br  />&nbsp;&nbsp;</font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"php://stdin"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">) or die(</font><font  color="#DD0000">"can't read stdin"</font><font  color="#007700">);<br  />&nbsp;&nbsp;while (!</font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$line </font><font  color="#007700">= </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$line </font><font  color="#007700">= </font><font  color="#0000BB">preg_replace_callback</font><font  color="#007700">(<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'|&lt;p&gt;\s*\w|'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">create_function</font><font  color="#007700">(<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ����ʹ�õ����źܹؼ���<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ����Ͱ����е� $ ���� \$<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'$matches'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'return strtolower($matches[0]);'<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$line<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$line</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  />&nbsp;&nbsp;</font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     �μ� <A  HREF="function.preg-replace.html"  ><B  CLASS="function" >preg_replace()</B
+></A
+> ��
+     <A  HREF="function.create-function.html"  ><B  CLASS="function" >create_function()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.preg-quote.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.preg-replace.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >preg_quote</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcre.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >preg_replace</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.preg-replace-callback-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-  如果<code class="parameter">subject</code>是一个数组，
-  <span class="function"><strong>preg_replace_callback()</strong></span>返回一个数组，其他情况返回字符串。
-  错误发生时返回 <strong><code>NULL</code></strong>。
-  </p>
-  <p class="para">
-  如果查找到了匹配，返回替换后的目标字符串（或字符串数组）， 其他情况<code class="parameter">subject</code>
-  将会无变化返回。 
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.preg-replace-callback-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        增加了参数<code class="parameter">count</code>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.preg-replace-callback-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5110">
-    <p><strong>Example #2 <span class="function"><strong>preg_replace_callback()</strong></span>示例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;将文本中的年份增加一年.<br /></span><span style="color: #0000BB">$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"April&nbsp;fools&nbsp;day&nbsp;is&nbsp;04/01/2002\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$text</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"Last&nbsp;christmas&nbsp;was&nbsp;12/24/2001\n"</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;回调函数<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">next_year</span><span style="color: #007700">(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;通常:&nbsp;$matches[0]是完成的匹配<br />&nbsp;&nbsp;//&nbsp;$matches[1]是第一个捕获子组的匹配<br />&nbsp;&nbsp;//&nbsp;以此类推<br />&nbsp;&nbsp;</span><span style="color: #007700">return&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">].(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]+</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"|(\d{2}/\d{2}/)(\d{4})|"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"next_year"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-April fools day is 04/01/2003
-Last christmas was 12/24/2002
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5111">
-    <p><strong>Example #3 <span class="function"><strong>preg_replace_callback()</strong></span>使用递归构造处理BB码的封装</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"plain&nbsp;[indent]&nbsp;deep&nbsp;[indent]&nbsp;deeper&nbsp;[/indent]&nbsp;deep&nbsp;[/indent]&nbsp;plain"</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">parseTagsRecursive</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;译注:&nbsp;对此正则表达式分段分析<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;首尾两个#是正则分隔符<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;\[indent]&nbsp;匹配一个原文的[indent]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;((?:[^[]|\[(?!/?indent])|(?R))+)分析:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;(?:[^[]|\[(?!/?indent])分析:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;首先它是一个非捕获子组<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;两个可选路径,&nbsp;一个是非[字符,&nbsp;另一个是[字符但后面紧跟着不是/indent或indent.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;(?R)&nbsp;正则表达式递归<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[/indent]&nbsp;匹配结束的[/indent]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;/<br />&nbsp;&nbsp;&nbsp;&nbsp;$regex&nbsp;=&nbsp;'#\[indent]((?:[^[]|\[(?!/?indent])|(?R))+)\[/indent]#';<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(is_array($input))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$input&nbsp;=&nbsp;'&lt;div&nbsp;style="margin-left:&nbsp;10px"&gt;'.$input[1].'&lt;/div&gt;';<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;preg_replace_callback($regex,&nbsp;'parseTagsRecursive',&nbsp;$input);<br />}<br /><br />$output&nbsp;=&nbsp;parseTagsRecursive($input);<br /><br />echo&nbsp;$output;<br />?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.preg-replace-callback-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="pcre.pattern.html" class="link">PCRE 模式</a></li>
-    <li class="member"><span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - 执行一个正则表达式的搜索和替换</span></li>
-    <li class="member"><span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - 返回最后一个PCRE正则执行产生的错误代码</span></li>
-    <li class="member"><a href="functions.anonymous.html" class="link">匿名函数</a></li>
-    <li class="member"><a href="language.pseudo-types.html#language.types.callback" class="link">callback</a> 类型的信息</li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-quote.html">preg_quote</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.preg-replace.html">preg_replace</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

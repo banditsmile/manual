@@ -1,156 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Send a Sybase query and do not block</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sybase-set-message-handler.html">sybase_set_message_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.tokyo-tyrant.html">tokyo_tyrant</a></div>
- <div class="up"><a href="ref.sybase.html">Sybase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.sybase-unbuffered-query" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">sybase_unbuffered_query</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">sybase_unbuffered_query</span> &mdash; <span class="dc-title">Send a Sybase query and do not block</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.sybase-unbuffered-query-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>sybase_unbuffered_query</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$store_result</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>sybase_unbuffered_query()</strong></span> sends a query to the
-   currently active database on the server that&#039;s associated with the specified
-   link identifier.  If the link identifier isn&#039;t specified, the last
-   opened link is assumed.  If no link is open, the function tries to
-   establish a link as if <span class="function"><a href="function.sybase-connect.html" class="function">sybase_connect()</a></span> was
-   called, and use it.
-  </p>
-  <p class="para">
-   Unlike <span class="function"><a href="function.sybase-query.html" class="function">sybase_query()</a></span>,
-   <span class="function"><strong>sybase_unbuffered_query()</strong></span> reads only the first
-   row of the result set. <span class="function"><a href="function.sybase-fetch-array.html" class="function">sybase_fetch_array()</a></span> and similar
-   function read more rows as needed.  <span class="function"><a href="function.sybase-data-seek.html" class="function">sybase_data_seek()</a></span>
-   reads up to the target row.  The behavior may produce better performance
-   for large result sets.
-  </p>
-  <p class="para">
-   <span class="function"><a href="function.sybase-num-rows.html" class="function">sybase_num_rows()</a></span> will only return the correct number
-   of rows if all result sets have been read. To Sybase, the number of rows
-   is not known and is therefore computed by the client implementation.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    If you don&#039;t read all of the resultsets prior to executing the next query,
-    PHP will raise a warning and cancel all of the pending results. To get rid of
-    this, use <span class="function"><a href="function.sybase-free-result.html" class="function">sybase_free_result()</a></span> which will cancel pending
-    results of an unbuffered query.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.sybase-unbuffered-query-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">query</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">store_result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The optional <code class="parameter">store_result</code> can be <strong><code>FALSE</code></strong> to
-       indicate the resultsets shouldn&#039;t be fetched into memory, thus
-       minimizing memory usage which is particularly interesting with very
-       large resultsets.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.sybase-unbuffered-query-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a positive Sybase result identifier on success, or <strong><code>FALSE</code></strong> on
-   error.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >sybase_unbuffered_query</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Sybase Functions" HREF="ref.sybase.html"><LINK  REL="PREVIOUS" TITLE="sybase_set_message_handler" HREF="function.sybase-set-message-handler.html"><LINK  REL="NEXT" TITLE="TCP Wrappers Functions" HREF="ref.tcpwrap.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sybase-set-message-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.tcpwrap.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.sybase-unbuffered-query" ></A
+>sybase_unbuffered_query</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN112343" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>sybase_unbuffered_query&nbsp;--&nbsp;Send a Sybase query and do not block</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN112346" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >sybase_unbuffered_query</B
+> ( string query, resource link_identifier [, bool store_result])<BR  ></BR
+><P  >&#13;     Returns a positive Sybase result identifier on success, or
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  > 
+     <B  CLASS="function" >sybase_unbuffered_query()</B
+> sends a query to the 
+     currently active database on the server that's associated with the specified 
+     link identifier.  If the link identifier isn't specified, the last
+     opened link is assumed.  If no link is open, the function tries to
+     establish a link as if <A  HREF="function.sybase-connect.html"  ><B  CLASS="function" >sybase_connect()</B
+></A
+> was
+     called, and use it.
+    </P
+><P  >&#13;     Unlike <A  HREF="function.sybase-query.html"  ><B  CLASS="function" >sybase_query()</B
+></A
+>,
+     <B  CLASS="function" >sybase_unbuffered_query()</B
+> reads only the first
+     row of the result set. <A  HREF="function.sybase-fetch-array.html"  ><B  CLASS="function" >sybase_fetch_array()</B
+></A
+> and similar
+     function read more rows as needed.  <A  HREF="function.sybase-data-seek.html"  ><B  CLASS="function" >sybase_data_seek()</B
+></A
+>
+     reads up to the target row.  The behavior may produce better performance
+     for large result sets.
+    </P
+><P  >&#13;     <A  HREF="function.sybase-num-rows.html"  ><B  CLASS="function" >sybase_num_rows()</B
+></A
+> will only return the correct number
+     of rows if all result sets have been read. To Sybase, the number of rows 
+     is not known and is therefore computed by the client implementation.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      If you don't read all of the resultsets prior to executing the next query,
+      PHP will raise a warning and cancel all of the pending results. To get rid of
+      this, use <A  HREF="function.sybase-free-result.html"  ><B  CLASS="function" >sybase_free_result()</B
+></A
+> which will cancel pending 
+      results of an unbuffered query.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     The optional <TT  CLASS="parameter" ><I  >store_result</I
+></TT
+> can be <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> to indicate
+     the resultsets shouldn't be fetched into memory, thus minimizing memory usage
+     which is particularly interesting with very large resultsets.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN112379" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >sybase_unbuffered_query()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$dbh </font><font  color="#007700">= </font><font  color="#0000BB">sybase_connect</font><font  color="#007700">(</font><font  color="#DD0000">'SYBASE'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$q </font><font  color="#007700">= </font><font  color="#0000BB">sybase_unbuffered_query</font><font  color="#007700">(</font><font  color="#DD0000">'select firstname, lastname from huge_table'</font><font  color="#007700">, </font><font  color="#0000BB">$dbh</font><font  color="#007700">, </font><font  color="#0000BB">false</font><font  color="#007700">);<br  /></font><font  color="#0000BB">sybase_data_seek</font><font  color="#007700">(</font><font  color="#0000BB">$q</font><font  color="#007700">, </font><font  color="#0000BB">10000</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  /><br  />while (</font><font  color="#0000BB">$row </font><font  color="#007700">= </font><font  color="#0000BB">sybase_fetch_row</font><font  color="#007700">(</font><font  color="#0000BB">$q</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">], </font><font  color="#DD0000">' '</font><font  color="#007700">, </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">], </font><font  color="#DD0000">'&lt;br /&gt;'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$i</font><font  color="#007700">++ &gt; </font><font  color="#0000BB">40000</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#0000BB">sybase_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$q</font><font  color="#007700">);<br  /></font><font  color="#0000BB">sybase_close</font><font  color="#007700">(</font><font  color="#0000BB">$dbh</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sybase-set-message-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.tcpwrap.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sybase_set_message_handler</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sybase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >TCP Wrappers Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.sybase-unbuffered-query-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2295">
-    <p><strong>Example #1 <span class="function"><strong>sybase_unbuffered_query()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sybase_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'SYBASE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$q&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sybase_unbuffered_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'select&nbsp;firstname,&nbsp;lastname&nbsp;from&nbsp;huge_table'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">sybase_data_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$q</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10000</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /><br />while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sybase_fetch_row</span><span style="color: #007700">(</span><span style="color: #0000BB">$q</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'&lt;br&nbsp;/&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">++&nbsp;&gt;&nbsp;</span><span style="color: #0000BB">40000</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">sybase_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$q</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">sybase_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.sybase-unbuffered-query-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°ä»…é€‚ç”¨äºå¯¹ Sybase ä½¿ç”¨ CT åº“æ¥å£ï¼Œè€Œä¸é€‚ç”¨äº DB åº“ã€‚</span></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.sybase-unbuffered-query-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.sybase-query.html" class="function" rel="rdfs-seeAlso">sybase_query()</a> - Sends a Sybase query</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sybase-set-message-handler.html">sybase_set_message_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.tokyo-tyrant.html">tokyo_tyrant</a></div>
- <div class="up"><a href="ref.sybase.html">Sybase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

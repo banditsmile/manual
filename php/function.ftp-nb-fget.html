@@ -1,150 +1,101 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>从 FTP 服务器获取文件并写入到一个打开的文件（非阻塞）</title>
+<HTML  ><HEAD  ><TITLE  >ftp_nb_fget</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="FTP ������" HREF="ref.ftp.html"><LINK  REL="PREVIOUS" TITLE="ftp_nb_continue" HREF="function.ftp-nb-continue.html"><LINK  REL="NEXT" TITLE="ftp_nb_fput" HREF="function.ftp-nb-fput.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftp-nb-continue.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-nb-fput.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftp-nb-fget" ></A
+>ftp_nb_fget</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN31611" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>ftp_nb_fget&nbsp;--&nbsp;Retrieves a file from the FTP server and writes it to an open file (non-blocking)</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN31614" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >ftp_nb_fget</B
+> ( resource ftp_stream, resource handle, string remote_file, int mode [, int resumepos])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >ftp_nb_fget()</B
+> retrieves <TT  CLASS="parameter" ><I  >remote_file</I
+></TT
+>
+     from the FTP server, and writes it to the given file pointer,
+     <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>. The transfer <TT  CLASS="parameter" ><I  >mode</I
+></TT
+>
+     specified must be either <TT  CLASS="constant" ><B  >FTP_ASCII</B
+></TT
+> or
+     <TT  CLASS="constant" ><B  >FTP_BINARY</B
+></TT
+>. The difference between this function and the
+     <A  HREF="function.ftp-fget.html"  ><B  CLASS="function" >ftp_fget()</B
+></A
+> is that this function retrieves the file
+     asynchronously, so your program can perform other operations while the
+     file is being downloaded.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31643" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >ftp_nb_fget()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// open some file for reading<br  /></font><font  color="#0000BB">$file </font><font  color="#007700">= </font><font  color="#DD0000">'index.php'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#DD0000">'w'</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$conn_id </font><font  color="#007700">= </font><font  color="#0000BB">ftp_connect</font><font  color="#007700">(</font><font  color="#0000BB">$ftp_server</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$login_result </font><font  color="#007700">= </font><font  color="#0000BB">ftp_login</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_name</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_pass</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Initate the download<br  /></font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_fget</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#0000BB">FTP_BINARY</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">$ret </font><font  color="#007700">== </font><font  color="#0000BB">FTP_MOREDATA</font><font  color="#007700">) {<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Do whatever you want<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"."</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Continue downloading...<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_continue</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">);<br  />}<br  />if (</font><font  color="#0000BB">$ret </font><font  color="#007700">!= </font><font  color="#0000BB">FTP_FINISHED</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"There was an error downloading the file..."</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;exit(</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#FF8000">// close filepointer<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Returns <TT  CLASS="constant" ><B  >FTP_FAILED</B
+></TT
+>, <TT  CLASS="constant" ><B  >FTP_FINISHED</B
+></TT
+>, or
+     <TT  CLASS="constant" ><B  >FTP_MOREDATA</B
+></TT
+>.
+    </P
+><P  >&#13;     See also <A  HREF="function.ftp-nb-get.html"  ><B  CLASS="function" >ftp_nb_get()</B
+></A
+>,
+     <A  HREF="function.ftp-nb-continue.html"  ><B  CLASS="function" >ftp_nb_continue()</B
+></A
+>, <A  HREF="function.ftp-fget.html"  ><B  CLASS="function" >ftp_fget()</B
+></A
+>, and
+     <A  HREF="function.ftp-get.html"  ><B  CLASS="function" >ftp_get()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftp-nb-continue.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-nb-fput.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftp_nb_continue</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ftp.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_nb_fput</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-nb-continue.html">ftp_nb_continue</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-nb-fput.html">ftp_nb_fput</a></div>
- <div class="up"><a href="ref.ftp.html">FTP 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftp-nb-fget" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ftp_nb_fget</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">ftp_nb_fget</span> &mdash; <span class="dc-title">从 FTP 服务器获取文件并写入到一个打开的文件（非阻塞）</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.ftp-nb-fget-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>ftp_nb_fget</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
-   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$remote_file</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$resumepos</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>ftp_nb_fget()</strong></span> 从远程 FTP 服务器获取一个文件
-  </p>
-  <p class="para">
-   本函数和 <span class="function"><a href="function.ftp-fget.html" class="function">ftp_fget()</a></span> 函数的区别是
-   本函数是异步方式获取文件的，
-   所以在下载文件的过程中你的程序还可以执行其他操作。
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.ftp-nb-fget-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">ftp_stream</code></dt>
-
-     <dd>
-
-      <p class="para">
-       FTP 连接标示符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       用来存储数据的一个已经打开的文件句柄。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">remote_file</code></dt>
-
-     <dd>
-
-      <p class="para">
-       远程文件路径。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       传输模式，必须是 <strong><code>FTP_ASCII</code></strong> 或者
-       <strong><code>FTP_BINARY</code></strong>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">resumepos</code></dt>
-
-     <dd>
-
-      <p class="para">远程文件开始下载的位置（即从远程文件的哪个字节开始下载）。</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.ftp-nb-fget-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-    返回 <strong><code>FTP_FAILED</code></strong> 或 <strong><code>FTP_FINISHED</code></strong>
-   或 <strong><code>FTP_MOREDATA</code></strong>。
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.ftp-nb-fget-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4581">
-    <p><strong>Example #1 <span class="function"><strong>ftp_nb_fget()</strong></span> 函数例程</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;打开要写入的文件<br /></span><span style="color: #0000BB">$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'index.php'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$conn_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$ftp_server</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$login_result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_login</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ftp_user_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ftp_user_pass</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;初始化下载<br /></span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_fget</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$file</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FTP_BINARY</span><span style="color: #007700">);<br />while&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">FTP_MOREDATA</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;其他要做的工作<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;继续下载...<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_continue</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">);<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">FTP_FINISHED</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"There&nbsp;was&nbsp;an&nbsp;error&nbsp;downloading&nbsp;the&nbsp;file..."</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;关闭文件句柄<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.ftp-nb-fget-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ftp-nb-get.html" class="function" rel="rdfs-seeAlso">ftp_nb_get()</a> - 从 FTP 服务器上获取文件并写入本地文件（non-blocking）</span></li>
-    <li class="member"><span class="function"><a href="function.ftp-nb-continue.html" class="function" rel="rdfs-seeAlso">ftp_nb_continue()</a> - 连续获取／发送文件（non-blocking）</span></li>
-    <li class="member"><span class="function"><a href="function.ftp-fget.html" class="function" rel="rdfs-seeAlso">ftp_fget()</a> - 从 FTP 服务器上下载一个文件并保存到本地一个已经打开的文件中</span></li>
-    <li class="member"><span class="function"><a href="function.ftp-get.html" class="function" rel="rdfs-seeAlso">ftp_get()</a> - 从 FTP 服务器上下载一个文件</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-nb-continue.html">ftp_nb_continue</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-nb-fput.html">ftp_nb_fput</a></div>
- <div class="up"><a href="ref.ftp.html">FTP 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

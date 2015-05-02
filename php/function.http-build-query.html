@@ -1,273 +1,125 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç”Ÿæˆ URL-encode ä¹‹åçš„è¯·æ±‚å­—ç¬¦ä¸²</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-meta-tags.html">get_meta_tags</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.parse-url.html">parse_url</a></div>
- <div class="up"><a href="ref.url.html">URL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.http-build-query" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">http_build_query</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">http_build_query</span> &mdash; <span class="dc-title">ç”Ÿæˆ URL-encode ä¹‹åçš„è¯·æ±‚å­—ç¬¦ä¸²</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.http-build-query-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>http_build_query</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$query_data</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$numeric_prefix</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$arg_separator</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$enc_type</code><span class="initializer"> = <strong><code>PHP_QUERY_RFC1738</code></strong></span></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   ä½¿ç”¨ç»™å‡ºçš„å…³è”ï¼ˆæˆ–ä¸‹æ ‡ï¼‰æ•°ç»„ç”Ÿæˆä¸€ä¸ªç»è¿‡
-   URL-encode çš„è¯·æ±‚å­—ç¬¦ä¸²ã€‚
-  </p>
- </div>
-
- 
-  <div class="refsect1 parameters" id="refsect1-function.http-build-query-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">query_data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¯ä»¥æ˜¯æ•°ç»„æˆ–åŒ…å«å±æ€§çš„å¯¹è±¡ã€‚
-      </p>
-      <p class="para">
-       ä¸€ä¸ª
-   <code class="parameter">query_data</code> 
-   æ•°ç»„å¯ä»¥æ˜¯ç®€å•çš„ä¸€ç»´ç»“æ„ï¼Œä¹Ÿå¯ä»¥æ˜¯ç”±æ•°ç»„ç»„æˆçš„æ•°ç»„ï¼ˆå…¶ä¾æ¬¡å¯ä»¥åŒ…å«å…¶å®ƒæ•°ç»„ï¼‰ã€‚
-      </p>
-      <p class="para">
-       å¦‚æœ <code class="parameter">query_data</code> æ˜¯ä¸€ä¸ªå¯¹è±¡ï¼Œåªæœ‰ public çš„å±æ€§ä¼šåŠ å…¥ç»“æœã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">numeric_prefix</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœåœ¨åŸºç¡€æ•°ç»„ä¸­ä½¿ç”¨äº†æ•°å­—ä¸‹æ ‡åŒæ—¶ç»™å‡ºäº†è¯¥å‚æ•°ï¼Œæ­¤å‚æ•°å€¼å°†ä¼šä½œä¸ºåŸºç¡€æ•°ç»„ä¸­çš„æ•°å­—ä¸‹æ ‡å…ƒç´ çš„å‰ç¼€ã€‚
-      </p>
-      <p class="para">
-       è¿™æ˜¯ä¸ºäº†è®©
-   PHP æˆ–å…¶å®ƒ CGI
-   ç¨‹åºåœ¨ç¨åå¯¹æ•°æ®è¿›è¡Œè§£ç æ—¶è·å–åˆæ³•çš„å˜é‡åã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">arg_separator</code></dt>
-
-     <dd>
-
-      <p class="para">
-       é™¤éæŒ‡å®šå¹¶ä½¿ç”¨äº†è¿™ä¸ªå‚æ•°ï¼Œå¦åˆ™ä¼šç”¨ <a href="ini.core.html#ini.arg-separator.output" class="link">arg_separator.output</a> æ¥åˆ†éš”å‚æ•°ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">enc_type</code></dt>
-
-     <dd>
-
-      <p class="para">
-       é»˜è®¤ä½¿ç”¨ <strong><code>PHP_QUERY_RFC1738</code></strong>ã€‚
-      </p>
-      <p class="para">
-       å¦‚æœ <code class="parameter">enc_type</code> æ˜¯
-       <strong><code>PHP_QUERY_RFC1738</code></strong>ï¼Œåˆ™ç¼–ç å°†ä¼šä»¥ <a href="http://www.faqs.org/rfcs/rfc1738" class="link external">&raquo;&nbsp;RFC 1738</a> æ ‡å‡†å’Œ <em>application/x-www-form-urlencoded</em> åª’ä½“ç±»å‹è¿›è¡Œç¼–ç ï¼Œç©ºæ ¼ä¼šè¢«ç¼–ç æˆåŠ å·ï¼ˆ<em>+</em>ï¼‰ã€‚
-      </p>
-      <p class="para">
-       å¦‚æœ <code class="parameter">enc_type</code> æ˜¯
-       <strong><code>PHP_QUERY_RFC3986</code></strong>ï¼Œå°†æ ¹æ® <a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a> ç¼–ç ï¼Œç©ºæ ¼ä¼šè¢«ç™¾åˆ†å·ç¼–ç ï¼ˆ<em>%20</em>ï¼‰ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
-  <div class="refsect1 returnvalues" id="refsect1-function.http-build-query-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ä¸€ä¸ª URL ç¼–ç åçš„å­—ç¬¦ä¸²ã€‚
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >http_build_query</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="URL º¯Êı¿â" HREF="ref.url.html"><LINK  REL="PREVIOUS" TITLE="get_meta_tags" HREF="function.get-meta-tags.html"><LINK  REL="NEXT" TITLE="parse_url" HREF="function.parse-url.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.get-meta-tags.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.parse-url.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.http-build-query" ></A
+>http_build_query</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115076" ></A
+><P  >    (no version information, might be only in CVS)</P
+>http_build_query&nbsp;--&nbsp;Éú³É url-encoded Ö®ºóµÄÇëÇó×Ö·û´®</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115079" ></A
+><H2  >ÃèÊö</H2
+>string <B  CLASS="methodname" >http_build_query</B
+> ( array formdata [, string numeric_prefix])<BR  ></BR
+><P  >&#13;     Ê¹ÓÃ¸ø³öµÄ¹ØÁª£¨»òÏÂ±ê£©Êı×éÉú³ÉÒ»¸ö 
+     url-encoded ÇëÇó×Ö·û´®¡£²ÎÊı
+     <TT  CLASS="parameter" ><I  >formdata</I
+></TT
+> ¿ÉÒÔÊÇÊı×é»ò°üº¬ÊôĞÔµÄ¶ÔÏó¡£Ò»¸ö
+     <TT  CLASS="parameter" ><I  >formdata</I
+></TT
+> 
+     Êı×é¿ÉÒÔÊÇ¼òµ¥µÄÒ»Î¬½á¹¹£¬Ò²¿ÉÒÔÊÇÓÉÊı×é×é³ÉµÄÊı×é£¨ÆäÒÀ´Î¿ÉÒÔ°üº¬ÆäËüÊı×é£©¡£Èç¹ûÔÚ»ù´¡Êı×éÖĞÊ¹ÓÃÁËÊı×ÖÏÂ±êÍ¬Ê±¸ø³öÁË
+     <TT  CLASS="parameter" ><I  >numeric_prefix</I
+></TT
+> ²ÎÊı£¬´Ë²ÎÊıÖµ½«»á×÷Îª»ù´¡Êı×éÖĞµÄÊı×ÖÏÂ±êÔªËØµÄÇ°×º¡£ÕâÊÇÎªÁËÈÃ
+     <TT  CLASS="literal" >PHP</TT
+> »òÆäËü CGI
+     ³ÌĞòÔÚÉÔºó¶ÔÊı¾İ½øĞĞ½âÂëÊ±»ñÈ¡ºÏ·¨µÄ±äÁ¿Ãû¡£
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115095" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >http_build_query()</B
+> Ê¹ÓÃÊ¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$data </font><font  color="#007700">= array(</font><font  color="#DD0000">'foo'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'bar'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'baz'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'boom'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'cow'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'milk'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'php'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'hypertext processor'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br  />echo </font><font  color="#0000BB">http_build_query</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  /></font><font  color="#FF8000">/* Êä³ö£º<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo=bar&amp;baz=boom&amp;cow=milk&amp;php=hypertext+processor<br  /> */<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115099" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >http_build_query()</B
+> Ê¹ÓÃÊı×ÖÏÂ±êµÄÔªËØ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$data </font><font  color="#007700">= array(</font><font  color="#DD0000">'foo'</font><font  color="#007700">, </font><font  color="#DD0000">'bar'</font><font  color="#007700">, </font><font  color="#DD0000">'baz'</font><font  color="#007700">, </font><font  color="#DD0000">'boom'</font><font  color="#007700">, </font><font  color="#DD0000">'cow' </font><font  color="#007700">=&gt; </font><font  color="#DD0000">'milk'</font><font  color="#007700">, </font><font  color="#DD0000">'php' </font><font  color="#007700">=&gt;</font><font  color="#DD0000">'hypertext processor'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br  />echo </font><font  color="#0000BB">http_build_query</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  /></font><font  color="#FF8000">/* Êä³ö£º<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0=foo&amp;1=bar&amp;2=baz&amp;3=boom&amp;cow=milk&amp;php=hypertext+processor<br  /> */<br  /> <br  /></font><font  color="#007700">echo </font><font  color="#0000BB">http_build_query</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#DD0000">'myvar_'</font><font  color="#007700">);<br  /></font><font  color="#FF8000">/* Êä³ö£º<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myvar_0=foo&amp;myvar_1=bar&amp;myvar_2=baz&amp;myvar_3=boom&amp;cow=milk&amp;php=hypertext+processor<br  /> */<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115103" ></A
+><P  ><B  >Àı×Ó 3. <B  CLASS="function" >http_build_query()</B
+> Ê¹ÓÃ¸´ÔÓµÄÊı×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$data </font><font  color="#007700">= array(</font><font  color="#DD0000">'user'</font><font  color="#007700">=&gt;array(</font><font  color="#DD0000">'name'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'Bob Smith'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'age'</font><font  color="#007700">=&gt;</font><font  color="#0000BB">47</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'sex'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'M'</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'dob'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'5/12/1956'</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'pastimes'</font><font  color="#007700">=&gt;array(</font><font  color="#DD0000">'golf'</font><font  color="#007700">, </font><font  color="#DD0000">'opera'</font><font  color="#007700">, </font><font  color="#DD0000">'poker'</font><font  color="#007700">, </font><font  color="#DD0000">'rap'</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'children'</font><font  color="#007700">=&gt;array(</font><font  color="#DD0000">'bobby'</font><font  color="#007700">=&gt;array(</font><font  color="#DD0000">'age'</font><font  color="#007700">=&gt;</font><font  color="#0000BB">12</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'sex'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'M'</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'sally'</font><font  color="#007700">=&gt;array(</font><font  color="#DD0000">'age'</font><font  color="#007700">=&gt;</font><font  color="#0000BB">8</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'sex'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'F'</font><font  color="#007700">)),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">'CEO'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br  />echo </font><font  color="#0000BB">http_build_query</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#DD0000">'flags_'</font><font  color="#007700">);<br  /></font><font  color="#FF8000">/* Êä³ö£º£¨ÎªÁË¿É¶ÁĞÔ¶ÔÆä½øĞĞÁËÕÛĞĞ£©<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user[name]=Bob+Smith&amp;user[age]=47&amp;user[sex]=M&amp;user[dob]=5%1F12%1F1956&amp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pastimes[0]=golf&amp;pastimes[1]=opera&amp;pastimes[2]=poker&amp;pastimes[3]=rap&amp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children[bobby][age]=12&amp;children[bobby][sex]=M&amp;children[sally][age]=8&amp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;children[sally][sex]=F&amp;flags_0=CEO<br  /><br  />&nbsp;&nbsp;&nbsp;×¢Òâ£ºÖ»ÓĞ»ù´¡Êı×éÖĞµÄÊı×ÖÏÂ±êÔªËØ¡°CEO¡±²Å»ñÈ¡ÁËÇ°×º£¬ÆäËüÊı×ÖÏÂ±êÔªËØ£¨Èç<br  />&nbsp;&nbsp;&nbsp;pastimes ÏÂµÄÔªËØ£©Ôò²»ĞèÒªÎªÁËºÏ·¨µÄ±äÁ¿Ãû¶ø¼ÓÉÏÇ°×º¡£<br  /> */<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115107" ></A
+><P  ><B  >Àı×Ó 4. <B  CLASS="function" >http_build_query()</B
+> Ê¹ÓÃ¶ÔÏó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">myClass </font><font  color="#007700">{<br  />&nbsp;&nbsp;var </font><font  color="#0000BB">$foo</font><font  color="#007700">;<br  />&nbsp;&nbsp;var </font><font  color="#0000BB">$baz</font><font  color="#007700">;<br  />&nbsp;&nbsp;<br  />&nbsp;&nbsp;function </font><font  color="#0000BB">myClass</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">foo </font><font  color="#007700">= </font><font  color="#DD0000">'bar'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">baz </font><font  color="#007700">= </font><font  color="#DD0000">'boom'</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#0000BB">$data </font><font  color="#007700">= new </font><font  color="#0000BB">myClass</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#0000BB">http_build_query</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  /></font><font  color="#FF8000">/* Êä³ö£º<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo=bar&amp;baz=boom<br  /> */<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     ²Î¼û£º<A  HREF="function.parse-str.html"  ><B  CLASS="function" >parse_str()</B
+></A
+>¡¢<A  HREF="function.parse-url.html"  ><B  CLASS="function" >parse_url()</B
+></A
+>¡¢<A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+>
+     ºÍ <A  HREF="function.array-walk.html"  ><B  CLASS="function" >array_walk()</B
+></A
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.get-meta-tags.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.parse-url.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >get_meta_tags</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.url.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >parse_url</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-  <div class="refsect1 changelog" id="refsect1-function.http-build-query-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.4.0</td>
-       <td>
-        åŠ å…¥äº† <code class="parameter">enc_type</code> å‚æ•°ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.3</td>
-       <td>
-        æ–¹æ‹¬å·ä¹Ÿä¼šè¢«è½¬ä¹‰ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.2</td>
-       <td>
-        åŠ å…¥äº†å‚æ•° <code class="parameter">arg_separator</code>ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.http-build-query-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <div class="example" id="example-4389">
-   <p><strong>Example #1 <span class="function"><strong>http_build_query()</strong></span> ä½¿ç”¨ç¤ºä¾‹</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'boom'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cow'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'milk'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'php'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'hypertext&nbsp;processor'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">http_build_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">http_build_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&amp;amp;'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-foo=bar&amp;baz=boom&amp;cow=milk&amp;php=hypertext+processor
-foo=bar&amp;amp;baz=boom&amp;amp;cow=milk&amp;amp;php=hypertext+processor
-</pre></div>
-   </div>
-  </div>
-
-  <div class="example" id="example-4390">
-   <p><strong>Example #2 <span class="function"><strong>http_build_query()</strong></span> ä½¿ç”¨æ•°å­—ä¸‹æ ‡çš„å…ƒç´ </strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'boom'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cow'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'milk'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'php'&nbsp;</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'hypertext&nbsp;processor'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">http_build_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">http_build_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'myvar_'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-0=foo&amp;1=bar&amp;2=baz&amp;3=boom&amp;cow=milk&amp;php=hypertext+processor
-myvar_0=foo&amp;myvar_1=bar&amp;myvar_2=baz&amp;myvar_3=boom&amp;cow=milk&amp;php=hypertext+processor
-</pre></div>
-   </div>
-  </div>
-  <div class="example" id="example-4391">
-   <p><strong>Example #3 <span class="function"><strong>http_build_query()</strong></span> ä½¿ç”¨å¤æ‚çš„æ•°ç»„</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'user'</span><span style="color: #007700">=&gt;array(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'Bob&nbsp;Smith'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'age'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">47</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'sex'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'M'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dob'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'5/12/1956'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'pastimes'</span><span style="color: #007700">=&gt;array(</span><span style="color: #DD0000">'golf'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'opera'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'poker'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'rap'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'children'</span><span style="color: #007700">=&gt;array(</span><span style="color: #DD0000">'bobby'</span><span style="color: #007700">=&gt;array(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">12</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'sex'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'M'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'sally'</span><span style="color: #007700">=&gt;array(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">8</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'sex'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'F'</span><span style="color: #007700">)),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'CEO'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">http_build_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'flags_'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>
-    è¿™ä¼šè¾“å‡ºï¼šï¼ˆä¸ºäº†å¯è¯»æ€§ï¼Œå­—å·²ç»æ¢è¡Œäº†ï¼‰
-   </p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-user%5Bname%5D=Bob+Smith&amp;user%5Bage%5D=47&amp;user%5Bsex%5D=M&amp;
-user%5Bdob%5D=5%2F12%2F1956&amp;pastimes%5B0%5D=golf&amp;pastimes%5B1%5D=opera&amp;
-pastimes%5B2%5D=poker&amp;pastimes%5B3%5D=rap&amp;children%5Bbobby%5D%5Bage%5D=12&amp;
-children%5Bbobby%5D%5Bsex%5D=M&amp;children%5Bsally%5D%5Bage%5D=8&amp;
-children%5Bsally%5D%5Bsex%5D=F&amp;flags_0=CEO
-</pre></div>
-   </div>
-   <div class="example-contents"><p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      åªæœ‰åŸºç¡€æ•°ç»„ä¸­çš„æ•°å­—ä¸‹æ ‡å…ƒç´ â€œCEOâ€æ‰è·å–äº†å‰ç¼€ï¼Œå…¶å®ƒæ•°å­—ä¸‹æ ‡å…ƒç´ ï¼ˆå¦‚
-      pastimes ä¸‹çš„å…ƒç´ ï¼‰åˆ™ä¸éœ€è¦ä¸ºäº†åˆæ³•çš„å˜é‡åè€ŒåŠ ä¸Šå‰ç¼€ã€‚
-     </p>
-    </p></blockquote>
-   </p></div>
-  </div>
-
-  <div class="example" id="example-4392">
-   <p><strong>Example #4 <span class="function"><strong>http_build_query()</strong></span> ä½¿ç”¨å¯¹è±¡</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">parentClass&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$pub&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'publicParent'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$prot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'protectedParent'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$priv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'privateParent'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$pub_bar&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Null</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$prot_bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Null</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$priv_bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">Null</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">(){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">pub_bar&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">childClass</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prot_bar&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">childClass</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">priv_bar&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">childClass</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">childClass&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$pub&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'publicChild'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$prot&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'protectedChild'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$priv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'privateChild'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$parent&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">parentClass</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #0000BB">http_build_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$parent</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-pub=publicParent&amp;pub_bar%5Bpub%5D=publicChild
-</pre></div>
-   </div>
-  </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.http-build-query-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.parse-str.html" class="function" rel="rdfs-seeAlso">parse_str()</a> - å°†å­—ç¬¦ä¸²è§£ææˆå¤šä¸ªå˜é‡</span></li>
-    <li class="member"><span class="function"><a href="function.parse-url.html" class="function" rel="rdfs-seeAlso">parse_url()</a> - è§£æ URLï¼Œè¿”å›å…¶ç»„æˆéƒ¨åˆ†</span></li>
-    <li class="member"><span class="function"><a href="function.urlencode.html" class="function" rel="rdfs-seeAlso">urlencode()</a> - ç¼–ç  URL å­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.array-walk.html" class="function" rel="rdfs-seeAlso">array_walk()</a> - ä½¿ç”¨ç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°å¯¹æ•°ç»„ä¸­çš„æ¯ä¸ªå…ƒç´ åšå›è°ƒå¤„ç†</span></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-meta-tags.html">get_meta_tags</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.parse-url.html">parse_url</a></div>
- <div class="up"><a href="ref.url.html">URL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

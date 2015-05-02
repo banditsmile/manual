@@ -1,171 +1,184 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>设置应该报告何种 PHP 错误</title>
+<HTML  ><HEAD  ><TITLE  >error_reporting</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Error Handling and Logging Functions" HREF="ref.errorfunc.html"><LINK  REL="PREVIOUS" TITLE="error_log" HREF="function.error-log.html"><LINK  REL="NEXT" TITLE="restore_error_handler" HREF="function.restore-error-handler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.error-log.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.restore-error-handler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.error-reporting" ></A
+>error_reporting</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN24989" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>error_reporting&nbsp;--&nbsp;Sets which PHP errors are reported</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN24992" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >error_reporting</B
+> ( [int level])<BR  ></BR
+><P  >&#13;     The <B  CLASS="function" >error_reporting()</B
+> function sets the 
+     <A  HREF="ref.errorfunc.html#ini.error-reporting"  >error_reporting</A
+> 
+     directive at runtime.  PHP has many levels of errors, using 
+     this function sets that level for the duration (runtime) of 
+     your script.
+    </P
+><P  >&#13;     <B  CLASS="function" >error_reporting()</B
+> sets PHP's error reporting level, 
+     and returns the old level.  The <TT  CLASS="parameter" ><I  >level</I
+></TT
+> parameter 
+     takes on either a bitmask, or named constants. Using named constants 
+     is strongly encouraged to ensure compatibility for future versions. As 
+     error levels are added, the range of integers increases, so older 
+     integer-based error levels will not always behave as expected.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN25007" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >error_reporting()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// Turn off all error reporting<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Report simple running errors<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ERROR </font><font  color="#007700">| </font><font  color="#0000BB">E_WARNING </font><font  color="#007700">| </font><font  color="#0000BB">E_PARSE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Reporting E_NOTICE can be good too (to report uninitialized <br  />// variables or catch variable name misspellings ...)<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ERROR </font><font  color="#007700">| </font><font  color="#0000BB">E_WARNING </font><font  color="#007700">| </font><font  color="#0000BB">E_PARSE </font><font  color="#007700">| </font><font  color="#0000BB">E_NOTICE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Report all errors except E_NOTICE<br  />// This is the default value set in php.ini<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL </font><font  color="#007700">^ </font><font  color="#0000BB">E_NOTICE</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Report all PHP errors (bitwise 63 may be used in PHP 3)<br  /></font><font  color="#0000BB">error_reporting</font><font  color="#007700">(</font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Same as error_reporting(E_ALL);<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'error_reporting'</font><font  color="#007700">, </font><font  color="#0000BB">E_ALL</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     The available error level constants are listed below. The actual
+     meanings of these error levels are described in the
+     <A  HREF="ref.errorfunc.html#errorfunc.constants"  >predefined constants</A
+>.
+     <DIV  CLASS="table" ><A  NAME="AEN25013" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >error_reporting()</B
+> level constants and bit values</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >value</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >constant</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-error"  >E_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-warning"  >E_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-parse"  >E_PARSE</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >8</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-notice"  >E_NOTICE</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >16</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-core-error"  >E_CORE_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >32</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-core-warning"  >E_CORE_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >64</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-compile-error"  >E_COMPILE_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >128</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-compile-warning"  >E_COMPILE_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >256</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-user-error"  >E_USER_ERROR</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >512</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-user-warning"  >E_USER_WARNING</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1024</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-user-error"  >E_USER_NOTICE</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2047</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         <A  HREF="ref.errorfunc.html#e-all"  >E_ALL</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2048</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          <A  HREF="ref.errorfunc.html#e-strict"  >E_STRICT</A
+>
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      With PHP &#62; 5.0.0 <TT  CLASS="constant" ><B  >E_STRICT</B
+></TT
+> with value 2048 is
+      available. <TT  CLASS="constant" ><B  >E_ALL</B
+></TT
+> does <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >NOT</I
+></SPAN
+>
+      include error level<TT  CLASS="constant" ><B  >E_STRICT</B
+></TT
+>.
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     See also the <A  HREF="ref.errorfunc.html#ini.display-errors"  >display_errors</A
+>
+     directive and <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.error-log.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.restore-error-handler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >error_log</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.errorfunc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >restore_error_handler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.error-log.html">error_log</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.restore-error-handler.html">restore_error_handler</a></div>
- <div class="up"><a href="ref.errorfunc.html">错误处理 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.error-reporting" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">error_reporting</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">error_reporting</span> &mdash; <span class="dc-title">设置应该报告何种 PHP 错误</span></p>
 
- </div>
-
- <div class="refsect1 description" id="refsect1-function.error-reporting-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>error_reporting</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$level</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>error_reporting()</strong></span> 函数能够在运行时设置 <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> 指令。
-   PHP 有诸多错误级别，使用该函数可以设置在脚本运行时的级别。
-   如果没有设置可选参数 <code class="parameter">level</code>，
-   <span class="function"><strong>error_reporting()</strong></span> 仅会返回当前的错误报告级别。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.error-reporting-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">level</code></dt>
-
-     <dd>
-
-      <p class="para">
-       新的 <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> 级别。
-       可以是一个位掩码也可以是一个已命名的常量。
-       强烈建议使用已命名的常量，以确保兼容将来的版本。
-       由于错误级别的添加、整数取值范围的增加，
-       较久的基于整数的错误级别不会总是和预期的表现一致。
-      </p>
-      <p class="para">
-       可用的错误级别常量及其实际含义描述在了 
-       <a href="errorfunc.constants.html" class="link">predefined constants</a> 中。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.error-reporting-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回旧的 <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> 级别，或者在 <code class="parameter">level</code> 参数未给出时返回当前的级别。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.error-reporting-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.4.0</td>
-       <td><strong><code>E_STRICT</code></strong> 成为 <strong><code>E_ALL</code></strong> 的一部分</td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>引入 <strong><code>E_DEPRECATED</code></strong> 和 <strong><code>E_USER_DEPRECATED</code></strong>。</td>
-      </tr>
-
-      <tr>
-       <td>5.2.0</td>
-       <td>引入 <strong><code>E_RECOVERABLE_ERROR</code></strong>。</td>
-      </tr>
-
-      <tr>
-       <td>5.0.0</td>
-       <td>引入 <strong><code>E_STRICT</code></strong> (但不包括在 <strong><code>E_ALL</code></strong> 之内)。</td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.error-reporting-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-447">
-    <p><strong>Example #1 <span class="function"><strong>error_reporting()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;关闭所有PHP错误报告<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Report&nbsp;simple&nbsp;running&nbsp;errors<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ERROR&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_WARNING&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_PARSE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;报告&nbsp;E_NOTICE也挺好&nbsp;(报告未初始化的变量<br />//&nbsp;或者捕获变量名的错误拼写)<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ERROR&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_WARNING&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_PARSE&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;除了&nbsp;E_NOTICE，报告其他所有错误<br />//&nbsp;这是在&nbsp;php.ini&nbsp;里的默认设置<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL&nbsp;</span><span style="color: #007700">^&nbsp;</span><span style="color: #0000BB">E_NOTICE</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;报告所有&nbsp;PHP&nbsp;错误&nbsp;(参见&nbsp;changelog)<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;报告所有&nbsp;PHP&nbsp;错误<br /></span><span style="color: #0000BB">error_reporting</span><span style="color: #007700">(-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;和&nbsp;error_reporting(E_ALL);&nbsp;一样<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'error_reporting'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.error-reporting-notes">
-  <h3 class="title">注释</h3>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="simpara">
-    虽然 <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> 增强了
-    包含 <strong><code>E_STRICT</code></strong> 错误的能力（反之亦然），但大多数 
-    <strong><code>E_STRICT</code></strong> 的错误是在编译时被评估的，
-    所以不会在文件中被报告。
-   </p>
-  </div>
-  <div class="tip"><strong class="tip">Tip</strong>
-   <p class="simpara">
-    传入 <em>-1</em> 的值将尽可能显示所有错误，
-    甚至包括将来 PHP 可能加入的新的错误级别和常量。
-    至 PHP 5.4，常量 <strong><code>E_ALL</code></strong> 有同样的行为。
-   </p>
-  </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.error-reporting-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="errorfunc.configuration.html#ini.display-errors" class="link">display_errors</a> 指令</li>
-    <li class="member"><a href="errorfunc.configuration.html#ini.html-errors" class="link">html_errors</a> 指令</li>
-    <li class="member"><a href="errorfunc.configuration.html#ini.xmlrpc-errors" class="link">xmlrpc_errors</a> 指令</li>
-    <li class="member"><span class="function"><a href="function.ini-set.html" class="function" rel="rdfs-seeAlso">ini_set()</a> - 为一个配置选项设置值</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.error-log.html">error_log</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.restore-error-handler.html">restore_error_handler</a></div>
- <div class="up"><a href="ref.errorfunc.html">错误处理 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

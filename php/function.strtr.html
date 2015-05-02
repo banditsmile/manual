@@ -1,210 +1,125 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>转换指定字符</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strtoupper.html">strtoupper</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.substr-compare.html">substr_compare</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.strtr" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">strtr</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">strtr</span> &mdash; <span class="dc-title">转换指定字符</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.strtr-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>strtr</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$from</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$to</code></span>
-   )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>strtr</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$replace_pairs</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   该函数返回 <code class="parameter">str</code> 的一个副本，并将在 <code class="parameter">from</code> 中指定的字符转换为 <code class="parameter">to</code> 中相应的字符。
-   比如， <em>$from[$n]</em>中每次的出现都会被替换为
-   <em>$to[$n]</em>，其中 <em>$n</em> 是两个参数都有效的位移(offset)。
-  </p>
-  <p class="para">
-   如果 <code class="parameter">from</code> 与 <code class="parameter">to</code> 长度不相等，那么多余的字符部分将被忽略。 <code class="parameter">str</code> 的长度将会和返回的值一样。
-  </p>
-  <p class="para">
-   If given two arguments, the second should be an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> in the
-   form <em>array(&#039;from&#039; =&gt; &#039;to&#039;, ...)</em>. The return value is
-   a <span class="type"><a href="language.types.string.html" class="type string">string</a></span> where all the occurrences of the array keys have been
-   replaced by the corresponding values. The longest keys will be tried first.
-   Once a substring has been replaced, its new value will not be searched
-   again.
-  </p>
-  <p class="para">
-   In this case, the keys and the values may have any length, provided that
-   there is no empty key; additionally, the length of the return value may
-   differ from that of <code class="parameter">str</code>.
-   However, this function will be the most efficient when all the keys have the
-   same size.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.strtr-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       待转换的<span class="type"><span class="type 字符串">字符串</span></span>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">from</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <span class="type"><span class="type 字符串">字符串</span></span>中与将要被转换的目的字符 <code class="parameter">to</code> 相对应的源字符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">to</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <span class="type"><span class="type 字符串">字符串</span></span>中与将要被转换的字符 <code class="parameter">from</code> 相对应的目的字符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">replace_pairs</code></dt>
-
-     <dd>
-
-      <p class="para">
-       参数 <code class="parameter">replace_pairs</code> 可以用来取代 <code class="parameter">to</code> 和 <code class="parameter">from</code> 参数，因为它是以  <em>array(&#039;from&#039; =&gt; &#039;to&#039;, ...)</em> 格式出现的数组。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.strtr-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回转换后的<span class="type"><span class="type 字符串">字符串</span></span>。
-  </p>
-  <p class="para">
-   如果 <code class="parameter">replace_pairs</code> 中包含一个空<span class="type"><span class="type 字符串">字符串</span></span>（<em>&quot;&quot;</em>）键，那么将返回 <strong><code>FALSE</code></strong>。
-   If the <code class="parameter">str</code> is not a scalar
-   then it is not typecasted into a string, instead a warning is raised and 
-   <strong><code>NULL</code></strong> is returned. 
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >strtr</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="strtoupper" HREF="function.strtoupper.html"><LINK  REL="NEXT" TITLE="substr_compare" HREF="function.substr-compare.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.strtoupper.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.substr-compare.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.strtr" ></A
+>strtr</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN111078" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>strtr&nbsp;--&nbsp;Translate certain characters</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN111081" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >strtr</B
+> ( string str, string from, string to)<BR  ></BR
+>string <B  CLASS="methodname" >strtr</B
+> ( string str, array replace_pairs)<BR  ></BR
+><P  >&#13;     This function returns a copy of <TT  CLASS="parameter" ><I  >str</I
+></TT
+>,
+     translating all occurrences of each character in
+     <TT  CLASS="parameter" ><I  >from</I
+></TT
+> to the corresponding character in
+     <TT  CLASS="parameter" ><I  >to</I
+></TT
+> and returning the result.
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >from</I
+></TT
+> and <TT  CLASS="parameter" ><I  >to</I
+></TT
+> are
+     different lengths, the extra characters in the longer of the two
+     are ignored.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111111" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >strtr()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$addr </font><font  color="#007700">= </font><font  color="#0000BB">strtr</font><font  color="#007700">(</font><font  color="#0000BB">$addr</font><font  color="#007700">, </font><font  color="#DD0000">"����, "</font><font  color="#0000BB">aao</font><font  color="#DD0000">");<br  />?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <B  CLASS="function" >strtr()</B
+> may be called with only two
+     arguments. If called with two arguments it behaves in a new way:
+     <TT  CLASS="parameter" ><I  >from</I
+></TT
+> then has to be an array that contains
+     string -&#62; string pairs that will be replaced in the source
+     string. <B  CLASS="function" >strtr()</B
+> will always look for the
+     longest possible match first and will *NOT* try to replace stuff
+     that it has already worked on.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111119" ></A
+><P  ><B  >���� 2. <B  CLASS="function" >strtr()</B
+> example with two arguments</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$trans </font><font  color="#007700">= array(</font><font  color="#DD0000">"hello" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"hi"</font><font  color="#007700">, </font><font  color="#DD0000">"hi" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"hello"</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">strtr</font><font  color="#007700">(</font><font  color="#DD0000">"hi all, I said hello"</font><font  color="#007700">, </font><font  color="#0000BB">$trans</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;     This will show: 
+    </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >hello all, I said hi</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      This optional <TT  CLASS="parameter" ><I  >to</I
+></TT
+> and 
+      <TT  CLASS="parameter" ><I  >from</I
+></TT
+> parameters were added in PHP 4.0.0
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.ereg-replace.html"  ><B  CLASS="function" >ereg_replace()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.strtoupper.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.substr-compare.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >strtoupper</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >substr_compare</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.strtr-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5227">
-    <p><strong>Example #1 <span class="function"><strong>strtr()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$addr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">$addr</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"äåö"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"aao"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   The next example shows the behavior of <span class="function"><strong>strtr()</strong></span> when
-   called with only two arguments. Note the preference of the replacements
-   (<em>&quot;h&quot;</em> is not picked because there are longer matches)
-   and how replaced text was not searched again.
-  </p>
-  <div class="example" id="example-5228">
-   <p><strong>Example #2 使用两个参数的 <span class="function"><strong>strtr()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"hello"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"hi"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hi"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"hello"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"hi&nbsp;all,&nbsp;I&nbsp;said&nbsp;hello"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-hello all, I said hi
-</pre></div>
-    </div>
-  </div>
-  <p class="para">
-   The two modes of behavior are substantially different. With three arguments,
-   <span class="function"><strong>strtr()</strong></span> will replace bytes; with two, it may replace
-   longer substrings.
-  </p>
-  <div class="example" id="example-5229">
-   <p><strong>Example #3 <span class="function"><strong>strtr()</strong></span> behavior comparison</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"baab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"01"</span><span style="color: #007700">),</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"ab"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"01"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"baab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-1001
-ba01
-</pre></div>
-    </div>
-  </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.strtr-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.str-replace.html" class="function" rel="rdfs-seeAlso">str_replace()</a> - 子字符串替换</span></li>
-    <li class="member"><span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - 执行一个正则表达式的搜索和替换</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strtoupper.html">strtoupper</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.substr-compare.html">substr_compare</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

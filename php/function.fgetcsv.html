@@ -1,221 +1,114 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å…¥ä¸€è¡Œå¹¶è§£æ CSV å­—æ®µ</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fgetc.html">fgetc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fgets.html">fgets</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fgetcsv" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fgetcsv</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">fgetcsv</span> &mdash; <span class="dc-title">ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å…¥ä¸€è¡Œå¹¶è§£æ CSV å­—æ®µ</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.fgetcsv-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>fgetcsv</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$delimiter</code><span class="initializer"> = &#039;,&#039;</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$enclosure</code><span class="initializer"> = &#039;&quot;&#039;</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$escape</code><span class="initializer"> = &#039;\\&#039;</span></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   å’Œ <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span> ç±»ä¼¼ï¼Œåªé™¤äº†
-   <span class="function"><strong>fgetcsv()</strong></span> è§£æè¯»å…¥çš„è¡Œå¹¶æ‰¾å‡º <acronym title="Comma Separated Value">CSV</acronym>
-   æ ¼å¼çš„å­—æ®µç„¶åè¿”å›ä¸€ä¸ªåŒ…å«è¿™äº›å­—æ®µçš„æ•°ç»„ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fgetcsv-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ä¸€ä¸ªç”± <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>ã€<span class="function"><a href="function.popen.html" class="function">popen()</a></span> æˆ–
-       <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> äº§ç”Ÿçš„æœ‰æ•ˆæ–‡ä»¶æŒ‡é’ˆã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¿…é¡»å¤§äº CVS æ–‡ä»¶å†…æœ€é•¿çš„ä¸€è¡Œã€‚åœ¨ PHP 5
-       ä¸­è¯¥å‚æ•°æ˜¯å¯é€‰çš„ã€‚å¦‚æœå¿½ç•¥ï¼ˆåœ¨ PHP 5.0.4 ä»¥åçš„ç‰ˆæœ¬ä¸­è®¾ä¸º
-       0ï¼‰è¯¥å‚æ•°çš„è¯ï¼Œé‚£ä¹ˆé•¿åº¦å°±æ²¡æœ‰é™åˆ¶ï¼Œä¸è¿‡å¯èƒ½ä¼šå½±å“æ‰§è¡Œæ•ˆç‡ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">delimiter</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è®¾ç½®å­—æ®µåˆ†ç•Œç¬¦ï¼ˆåªå…è®¸ä¸€ä¸ªå­—ç¬¦ï¼‰ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">enclosure</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è®¾ç½®å­—æ®µç¯ç»•ç¬¦ï¼ˆåªå…è®¸ä¸€ä¸ªå­—ç¬¦ï¼‰ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">escape</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è®¾ç½®è½¬ä¹‰å­—ç¬¦ï¼ˆåªå…è®¸ä¸€ä¸ªå­—ç¬¦ï¼‰ï¼Œé»˜è®¤æ˜¯ä¸€ä¸ªåæ–œæ ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fgetcsv</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fgetc" HREF="function.fgetc.html"><LINK  REL="NEXT" TITLE="fgets" HREF="function.fgets.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fgetc.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fgets.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fgetcsv" ></A
+>fgetcsv</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN27799" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>fgetcsv&nbsp;--&nbsp;´ÓÎÄ¼şÖ¸ÕëÖĞ¶ÁÈëÒ»ĞĞ²¢½âÎö CSV ×Ö¶Î</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN27802" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >fgetcsv</B
+> ( int handle, int length [, string delimiter [, string enclosure]])<BR  ></BR
+><P  >&#13;     ºÍ <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+> ÀàËÆ£¬Ö»³ıÁË
+     <B  CLASS="function" >fgetcsv()</B
+> ½âÎö¶ÁÈëµÄĞĞ²¢ÕÒ³ö <SPAN  CLASS="acronym" >CSV</SPAN
+>
+     ¸ñÊ½µÄ×Ö¶ÎÈ»ºó·µ»ØÒ»¸ö°üº¬ÕâĞ©×Ö¶ÎµÄÊı×é¡£¿ÉÑ¡µÄµÚÈı¸ö²ÎÊı
+     <TT  CLASS="parameter" ><I  >delimiter</I
+></TT
+> µÄÄ¬ÈÏÖµÊÇ¶ººÅ¡£¿ÉÑ¡²ÎÊı
+     <TT  CLASS="parameter" ><I  >enclosure</I
+></TT
+> µÄÄ¬ÈÏÖµÊÇË«ÒıºÅ¡£<TT  CLASS="parameter" ><I  >delimiter</I
+></TT
+>
+     ºÍ <TT  CLASS="parameter" ><I  >enclosure</I
+></TT
+>
+     ¶¼±»ÏŞÖÆÎªÒ»¸ö×Ö·û¡£Èç¹û¶àÓÚÒ»¸ö×Ö·û£¬ÔòÖ»Ê¹ÓÃµÚÒ»¸ö×Ö·û¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >enclosure</I
+></TT
+> ²ÎÊıÊÇ PHP 4.3.0 ĞÂ¼ÓµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TT  CLASS="parameter" ><I  >handle</I
+></TT
+> ±ØĞëÊÇÍ¨¹ı
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>£¬<A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+> »òÕß
+     <A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+> ³É¹¦´ò¿ªµÄÓĞĞ§ÎÄ¼şÖ¸Õë¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> ±ØĞë´óÓÚ CVS ÎÄ¼şÖĞ³¤¶È×î´óµÄĞĞ£¨ÒÔ±ãÓÚ´¦ÀíĞĞ½áÊø×Ö·û£©¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >fgetcsv()</B
+> ³ö´íÊ±·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>£¬°üÀ¨Åöµ½ÎÄ¼ş½áÊøÊ±¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      CSV ÎÄ¼şÖĞµÄ¿ÕĞĞ½«±»·µ»ØÎªÒ»¸ö°üº¬ÓĞµ¥¸ö <A  HREF="language.types.null.html"  ><B  CLASS="type" >null</B
+></A
+> ×Ö¶ÎµÄÊı×é£¬²»»á±»µ±³É´íÎó¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN27844" ></A
+><P  ><B  >Àı×Ó 1. ¶ÁÈ¡²¢ÏÔÊ¾ CSV ÎÄ¼şµÄÕû¸öÄÚÈİ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$row </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$handle </font><font  color="#007700">= </font><font  color="#0000BB">fopen </font><font  color="#007700">(</font><font  color="#DD0000">"test.csv"</font><font  color="#007700">,</font><font  color="#DD0000">"r"</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fgetcsv </font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">, </font><font  color="#0000BB">1000</font><font  color="#007700">, </font><font  color="#DD0000">","</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$num </font><font  color="#007700">= </font><font  color="#0000BB">count </font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&lt;p&gt; $num fields in line $row: &lt;br&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$row</font><font  color="#007700">++;<br  />&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$c</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$c </font><font  color="#007700">&lt; </font><font  color="#0000BB">$num</font><font  color="#007700">; </font><font  color="#0000BB">$c</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#0000BB">$data</font><font  color="#007700">[</font><font  color="#0000BB">$c</font><font  color="#007700">] . </font><font  color="#DD0000">"&lt;br&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /></font><font  color="#0000BB">fclose </font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fgetc.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fgets.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fgetc</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fgets</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.fgetcsv-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›åŒ…å«è¯»å–å­—æ®µçš„ç´¢å¼•æ•°ç»„ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">    
-    CSV æ–‡ä»¶ä¸­çš„ç©ºè¡Œå°†è¢«è¿”å›ä¸ºä¸€ä¸ªåŒ…å«æœ‰å•ä¸ª <span class="type"><a href="language.types.null.html" class="type null">null</a></span> å­—æ®µçš„æ•°ç»„ï¼Œä¸ä¼šè¢«å½“æˆé”™è¯¯ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">åœ¨è¯»å–åœ¨ Macintosh ç”µè„‘ä¸­æˆ–ç”±å…¶åˆ›å»ºçš„æ–‡ä»¶æ—¶ï¼Œ å¦‚æœ PHP
-ä¸èƒ½æ­£ç¡®çš„è¯†åˆ«è¡Œç»“æŸç¬¦ï¼Œå¯ç”¨è¿è¡Œæ—¶é…ç½®å¯é€‰é¡¹ <a href="filesystem.configuration.html#ini.auto-detect-line-endings" class="link">auto_detect_line_endings</a>
-ä¹Ÿè®¸å¯ä»¥è§£å†³æ­¤é—®é¢˜ã€‚</span></p></blockquote>
-  <p class="para">
-   å¦‚æœæä¾›äº†æ— æ•ˆçš„æ–‡ä»¶æŒ‡é’ˆï¼Œ<span class="function"><strong>fgetcsv()</strong></span> ä¼šè¿”å› <strong><code>NULL</code></strong>ã€‚
-   å…¶ä»–é”™è¯¯ï¼ŒåŒ…æ‹¬ç¢°åˆ°æ–‡ä»¶ç»“æŸæ—¶è¿”å› <strong><code>FALSE</code></strong>ï¼Œã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.fgetcsv-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        å¢åŠ äº† <code class="parameter">escape</code> å‚æ•°ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.5</td>
-       <td>
-        ç°åœ¨èµ· <span class="function"><strong>fgetcsv()</strong></span> çš„æ“ä½œæ˜¯äºŒè¿›åˆ¶å®‰å…¨çš„ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        å¢åŠ äº† <code class="parameter">enclosure</code> å‚æ•°ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.fgetcsv-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2458">
-    <p><strong>Example #1 è¯»å–å¹¶æ˜¾ç¤º CSV æ–‡ä»¶çš„æ•´ä¸ªå†…å®¹</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />if&nbsp;((</span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"test.csv"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">))&nbsp;!==&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;((</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fgetcsv</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1000</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">","</span><span style="color: #007700">))&nbsp;!==&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$num&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;p&gt;&nbsp;</span><span style="color: #0000BB">$num</span><span style="color: #DD0000">&nbsp;fields&nbsp;in&nbsp;line&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #DD0000">:&nbsp;&lt;br&nbsp;/&gt;&lt;/p&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$c</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$num</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #0000BB">$c</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.fgetcsv-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    è¯¥å‡½æ•°å¯¹åŒºåŸŸè®¾ç½®æ˜¯æ•æ„Ÿçš„ã€‚æ¯”å¦‚è¯´ <var class="varname"><var class="varname">LANG</var></var> è®¾ä¸º
-    <em>en_US.UTF-8</em> çš„è¯ï¼Œå•å­—èŠ‚ç¼–ç çš„æ–‡ä»¶å°±ä¼šå‡ºç°è¯»å–é”™è¯¯ã€‚
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fgetcsv-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.str-getcsv.html" class="function" rel="rdfs-seeAlso">str_getcsv()</a> - è§£æ CSV å­—ç¬¦ä¸²ä¸ºä¸€ä¸ªæ•°ç»„</span></li>
-    <li class="member"><span class="function"><a href="function.explode.html" class="function" rel="rdfs-seeAlso">explode()</a> - ä½¿ç”¨ä¸€ä¸ªå­—ç¬¦ä¸²åˆ†å‰²å¦ä¸€ä¸ªå­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.file.html" class="function" rel="rdfs-seeAlso">file()</a> - æŠŠæ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªæ•°ç»„ä¸­</span></li>
-    <li class="member"><span class="function"><a href="function.pack.html" class="function" rel="rdfs-seeAlso">pack()</a> - Pack data into binary string</span></li>
-    <li class="member"><span class="function"><a href="function.fputcsv.html" class="function" rel="rdfs-seeAlso">fputcsv()</a> - å°†è¡Œæ ¼å¼åŒ–ä¸º CSV å¹¶å†™å…¥æ–‡ä»¶æŒ‡é’ˆ</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fgetc.html">fgetc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fgets.html">fgets</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

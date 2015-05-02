@@ -1,418 +1,265 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Math å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="math.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.abs.html">abs</a></div>
- <div class="up"><a href="book.math.html">Math</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.math" class="reference">
- <h1 class="title">Math å‡½æ•°</h1>
-
- 
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.abs.html">abs</a> â€” ç»å¯¹å€¼</li><li><a href="function.acos.html">acos</a> â€” åä½™å¼¦</li><li><a href="function.acosh.html">acosh</a> â€” ååŒæ›²ä½™å¼¦</li><li><a href="function.asin.html">asin</a> â€” åæ­£å¼¦</li><li><a href="function.asinh.html">asinh</a> â€” ååŒæ›²æ­£å¼¦</li><li><a href="function.atan2.html">atan2</a> â€” ä¸¤ä¸ªå‚æ•°çš„åæ­£åˆ‡</li><li><a href="function.atan.html">atan</a> â€” åæ­£åˆ‡</li><li><a href="function.atanh.html">atanh</a> â€” ååŒæ›²æ­£åˆ‡</li><li><a href="function.base-convert.html">base_convert</a> â€” åœ¨ä»»æ„è¿›åˆ¶ä¹‹é—´è½¬æ¢æ•°å­—</li><li><a href="function.bindec.html">bindec</a> â€” äºŒè¿›åˆ¶è½¬æ¢ä¸ºåè¿›åˆ¶</li><li><a href="function.ceil.html">ceil</a> â€” è¿›ä¸€æ³•å–æ•´</li><li><a href="function.cos.html">cos</a> â€” ä½™å¼¦</li><li><a href="function.cosh.html">cosh</a> â€” åŒæ›²ä½™å¼¦</li><li><a href="function.decbin.html">decbin</a> â€” åè¿›åˆ¶è½¬æ¢ä¸ºäºŒè¿›åˆ¶</li><li><a href="function.dechex.html">dechex</a> â€” åè¿›åˆ¶è½¬æ¢ä¸ºåå…­è¿›åˆ¶</li><li><a href="function.decoct.html">decoct</a> â€” åè¿›åˆ¶è½¬æ¢ä¸ºå…«è¿›åˆ¶</li><li><a href="function.deg2rad.html">deg2rad</a> â€” å°†è§’åº¦è½¬æ¢ä¸ºå¼§åº¦</li><li><a href="function.exp.html">exp</a> â€” è®¡ç®— e çš„æŒ‡æ•°</li><li><a href="function.expm1.html">expm1</a> â€” è¿”å› exp(number) - 1ï¼Œç”šè‡³å½“ number çš„å€¼æ¥è¿‘é›¶ä¹Ÿèƒ½è®¡ç®—å‡ºå‡†ç¡®ç»“æœ</li><li><a href="function.floor.html">floor</a> â€” èˆå»æ³•å–æ•´</li><li><a href="function.fmod.html">fmod</a> â€” è¿”å›é™¤æ³•çš„æµ®ç‚¹æ•°ä½™æ•°</li><li><a href="function.getrandmax.html">getrandmax</a> â€” æ˜¾ç¤ºéšæœºæ•°æœ€å¤§çš„å¯èƒ½å€¼</li><li><a href="function.hexdec.html">hexdec</a> â€” åå…­è¿›åˆ¶è½¬æ¢ä¸ºåè¿›åˆ¶</li><li><a href="function.hypot.html">hypot</a> â€” è®¡ç®—ä¸€ç›´è§’ä¸‰è§’å½¢çš„æ–œè¾¹é•¿åº¦</li><li><a href="function.intdiv.html">intdiv</a> â€” Integer division</li><li><a href="function.is-finite.html">is_finite</a> â€” åˆ¤æ–­æ˜¯å¦ä¸ºæœ‰é™å€¼</li><li><a href="function.is-infinite.html">is_infinite</a> â€” åˆ¤æ–­æ˜¯å¦ä¸ºæ— é™å€¼</li><li><a href="function.is-nan.html">is_nan</a> â€” åˆ¤æ–­æ˜¯å¦ä¸ºåˆæ³•æ•°å€¼</li><li><a href="function.lcg-value.html">lcg_value</a> â€” ç»„åˆçº¿æ€§åŒä½™å‘ç”Ÿå™¨</li><li><a href="function.log10.html">log10</a> â€” ä»¥ 10 ä¸ºåº•çš„å¯¹æ•°</li><li><a href="function.log1p.html">log1p</a> â€” è¿”å› log(1 + number)ï¼Œç”šè‡³å½“ number çš„å€¼æ¥è¿‘é›¶ä¹Ÿèƒ½è®¡ç®—å‡ºå‡†ç¡®ç»“æœ</li><li><a href="function.log.html">log</a> â€” è‡ªç„¶å¯¹æ•°</li><li><a href="function.max.html">max</a> â€” æ‰¾å‡ºæœ€å¤§å€¼</li><li><a href="function.min.html">min</a> â€” æ‰¾å‡ºæœ€å°å€¼</li><li><a href="function.mt-getrandmax.html">mt_getrandmax</a> â€” æ˜¾ç¤ºéšæœºæ•°çš„æœ€å¤§å¯èƒ½å€¼</li><li><a href="function.mt-rand.html">mt_rand</a> â€” ç”Ÿæˆæ›´å¥½çš„éšæœºæ•°</li><li><a href="function.mt-srand.html">mt_srand</a> â€” æ’­ä¸‹ä¸€ä¸ªæ›´å¥½çš„éšæœºæ•°å‘ç”Ÿå™¨ç§å­</li><li><a href="function.octdec.html">octdec</a> â€” å…«è¿›åˆ¶è½¬æ¢ä¸ºåè¿›åˆ¶</li><li><a href="function.pi.html">pi</a> â€” å¾—åˆ°åœ†å‘¨ç‡å€¼</li><li><a href="function.pow.html">pow</a> â€” æŒ‡æ•°è¡¨è¾¾å¼</li><li><a href="function.rad2deg.html">rad2deg</a> â€” å°†å¼§åº¦æ•°è½¬æ¢ä¸ºç›¸åº”çš„è§’åº¦æ•°</li><li><a href="function.rand.html">rand</a> â€” äº§ç”Ÿä¸€ä¸ªéšæœºæ•´æ•°</li><li><a href="function.round.html">round</a> â€” å¯¹æµ®ç‚¹æ•°è¿›è¡Œå››èˆäº”å…¥</li><li><a href="function.sin.html">sin</a> â€” æ­£å¼¦</li><li><a href="function.sinh.html">sinh</a> â€” åŒæ›²æ­£å¼¦</li><li><a href="function.sqrt.html">sqrt</a> â€” å¹³æ–¹æ ¹</li><li><a href="function.srand.html">srand</a> â€” æ’­ä¸‹éšæœºæ•°å‘ç”Ÿå™¨ç§å­</li><li><a href="function.tan.html">tan</a> â€” æ­£åˆ‡</li><li><a href="function.tanh.html">tanh</a> â€” åŒæ›²æ­£åˆ‡</li></ul>
+<HTML  ><HEAD  ><TITLE  >ÊıÑ§º¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="mailparse_uudecode_all" HREF="function.mailparse-uudecode-all.html"><LINK  REL="NEXT" TITLE="abs" HREF="function.abs.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mailparse-uudecode-all.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.abs.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.math" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >LII. ÊıÑ§º¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN49361" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="math.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     ÕâĞ©ÊıÑ§º¯Êı½öÄÜ´¦ÀíÔÚÄã¼ÆËã»úÉÏÕûĞÍºÍ¸¡µãĞÍ·¶Î§ÄÚµÄÖµ£¨Õâµ±Ç°·ûºÏ
+     C ÀàĞÍÖĞµÄ long ºÍ double)¡£Èç¹ûÄãÒª´¦Àí¸ü´óµÄÊı×Ö£¬²Î¿´<A  HREF="ref.bc.html"  >ÈÎÒâ¾«¶ÈÊıÑ§º¯Êı¿â</A
+>¡£
+    </P
+><P  > 
+     Çë²ÎÔÄÊÖ²áÖĞ¡°<A  HREF="language.operators.arithmetic.html"  >ËãÊõ²Ù×÷·û</A
+>¡±µÄÓĞ¹ØÕÂ½Ú. 
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="math.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="math.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="math.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="math.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="math.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÕâÀïÁĞ³öµÄËùÓĞ³£Á¿½«×÷Îª PHP ºËĞÄµÄÒ»²¿·ÖÒ»Ö±ÓĞĞ§¡£
+</P
+><P  >&#13;  <DIV  CLASS="table" ><A  NAME="AEN49386" ></A
+><P  ><B  >±í¸ñ 1. ÊıÑ§³£Á¿</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >³£Á¿Ãû</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >³£Á¿Öµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÃèÊö</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_PI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >3.14159265358979323846</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Pi</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_E</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2.7182818284590452354</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >e</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_LOG2E</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.4426950408889634074</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_2 e</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_LOG10E</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.43429448190325182765</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_10 e</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_LN2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.69314718055994530942</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_e 2</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_LN10</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2.30258509299404568402</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_e 10</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_PI_2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.57079632679489661923</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pi/2</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_PI_4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.78539816339744830962</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >pi/4</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_1_PI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.31830988618379067154</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1/pi</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_2_PI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.63661977236758134308</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2/pi</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_SQRTPI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.77245385090551602729</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sqrt(pi) [4.0.2]</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_2_SQRTPI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.12837916709551257390</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2/sqrt(pi)</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_SQRT2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.41421356237309504880</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sqrt(2)</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_SQRT3</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.73205080756887729352</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >sqrt(3) [4.0.2]</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_SQRT1_2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.70710678118654752440</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1/sqrt(2)</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_LNPI</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1.14472988584940017414</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >log_e(pi) [4.0.2]</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >M_EULER</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0.57721566490153286061</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Euler constant [4.0.2]</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+  Ö»ÓĞ³£Á¿ M_PI ÔÚ PHP 4.0.0 Ö®Ç°¾Í´æÔÚ£¬ÆäËüËùÓĞ³£Á¿´Ó PHP 4.0.0
+  Æğ¿ªÊ¼´æÔÚ¡£ÓÃ [4.0.2] ±ê¼ÇµÄ³£Á¿ÊÇÔÚ PHP 4.0.2 ÖĞÔö¼ÓµÄ¡£
+ </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.abs.html"  >abs</A
+>&nbsp;--&nbsp;¾ø¶ÔÖµ</DT
+><DT  ><A  HREF="function.acos.html"  >acos</A
+>&nbsp;--&nbsp;·´ÓàÏÒ</DT
+><DT  ><A  HREF="function.acosh.html"  >acosh</A
+>&nbsp;--&nbsp;·´Ë«ÇúÓàÏÒ</DT
+><DT  ><A  HREF="function.asin.html"  >asin</A
+>&nbsp;--&nbsp;·´ÕıÏÒ</DT
+><DT  ><A  HREF="function.asinh.html"  >asinh</A
+>&nbsp;--&nbsp;·´Ë«ÇúÕıÏÒ</DT
+><DT  ><A  HREF="function.atan2.html"  >atan2</A
+>&nbsp;--&nbsp;Á½¸ö²ÎÊıµÄ·´ÕıÇĞ</DT
+><DT  ><A  HREF="function.atan.html"  >atan</A
+>&nbsp;--&nbsp;·´ÕıÇĞ</DT
+><DT  ><A  HREF="function.atanh.html"  >atanh</A
+>&nbsp;--&nbsp;·´Ë«ÇúÕıÇĞ</DT
+><DT  ><A  HREF="function.base-convert.html"  >base_convert</A
+>&nbsp;--&nbsp;ÔÚÈÎÒâ½øÖÆÖ®¼ä×ª»»Êı×Ö</DT
+><DT  ><A  HREF="function.bindec.html"  >bindec</A
+>&nbsp;--&nbsp;¶ş½øÖÆ×ª»»ÎªÊ®½øÖÆ</DT
+><DT  ><A  HREF="function.ceil.html"  >ceil</A
+>&nbsp;--&nbsp;½øÒ»·¨È¡Õû</DT
+><DT  ><A  HREF="function.cos.html"  >cos</A
+>&nbsp;--&nbsp;ÓàÏÒ</DT
+><DT  ><A  HREF="function.cosh.html"  >cosh</A
+>&nbsp;--&nbsp;Ë«ÇúÓàÏÒ</DT
+><DT  ><A  HREF="function.decbin.html"  >decbin</A
+>&nbsp;--&nbsp;Ê®½øÖÆ×ª»»Îª¶ş½øÖÆ</DT
+><DT  ><A  HREF="function.dechex.html"  >dechex</A
+>&nbsp;--&nbsp;Ê®½øÖÆ×ª»»ÎªÊ®Áù½øÖÆ</DT
+><DT  ><A  HREF="function.decoct.html"  >decoct</A
+>&nbsp;--&nbsp;Ê®½øÖÆ×ª»»Îª°Ë½øÖÆ</DT
+><DT  ><A  HREF="function.deg2rad.html"  >deg2rad</A
+>&nbsp;--&nbsp;
+     ½«½Ç¶È×ª»»Îª»¡¶È
+    </DT
+><DT  ><A  HREF="function.exp.html"  >exp</A
+>&nbsp;--&nbsp;¼ÆËã <TT  CLASS="constant" ><B  >e</B
+></TT
+>£¨×ÔÈ»¶ÔÊıµÄµ×£©µÄÖ¸Êı</DT
+><DT  ><A  HREF="function.expm1.html"  >expm1</A
+>&nbsp;--&nbsp;
+     ·µ»Ø exp(number) - 1£¬ÉõÖÁµ± number µÄÖµ½Ó½üÁãÒ²ÄÜ¼ÆËã³ö×¼È·½á¹û
+    </DT
+><DT  ><A  HREF="function.floor.html"  >floor</A
+>&nbsp;--&nbsp;ÉáÈ¥·¨È¡Õû</DT
+><DT  ><A  HREF="function.fmod.html"  >fmod</A
+>&nbsp;--&nbsp;·µ»Ø³ı·¨µÄ¸¡µãÊıÓàÊı</DT
+><DT  ><A  HREF="function.getrandmax.html"  >getrandmax</A
+>&nbsp;--&nbsp;ÏÔÊ¾Ëæ»úÊı×î´óµÄ¿ÉÄÜÖµ</DT
+><DT  ><A  HREF="function.hexdec.html"  >hexdec</A
+>&nbsp;--&nbsp;Ê®Áù½øÖÆ×ª»»ÎªÊ®½øÖÆ</DT
+><DT  ><A  HREF="function.hypot.html"  >hypot</A
+>&nbsp;--&nbsp;
+     ·µ»Ø sqrt( num1*num1 + num2*num2)
+    </DT
+><DT  ><A  HREF="function.is-finite.html"  >is_finite</A
+>&nbsp;--&nbsp;ÅĞ¶ÏÊÇ·ñÎªÓĞÏŞÖµ</DT
+><DT  ><A  HREF="function.is-infinite.html"  >is_infinite</A
+>&nbsp;--&nbsp;ÅĞ¶ÏÊÇ·ñÎªÎŞÏŞÖµ</DT
+><DT  ><A  HREF="function.is-nan.html"  >is_nan</A
+>&nbsp;--&nbsp;ÅĞ¶ÏÊÇ·ñÎªºÏ·¨ÊıÖµ</DT
+><DT  ><A  HREF="function.lcg-value.html"  >lcg_value</A
+>&nbsp;--&nbsp;×éºÏÏßĞÔÍ¬Óà·¢ÉúÆ÷</DT
+><DT  ><A  HREF="function.log10.html"  >log10</A
+>&nbsp;--&nbsp;ÒÔ 10 Îªµ×µÄ¶ÔÊı</DT
+><DT  ><A  HREF="function.log1p.html"  >log1p</A
+>&nbsp;--&nbsp;
+     ·µ»Ø log(1 + number)£¬ÉõÖÁµ± number µÄÖµ½Ó½üÁãÒ²ÄÜ¼ÆËã³ö×¼È·½á¹û
+    </DT
+><DT  ><A  HREF="function.log.html"  >log</A
+>&nbsp;--&nbsp;×ÔÈ»¶ÔÊı</DT
+><DT  ><A  HREF="function.max.html"  >max</A
+>&nbsp;--&nbsp;ÕÒ³ö×î´óÖµ</DT
+><DT  ><A  HREF="function.min.html"  >min</A
+>&nbsp;--&nbsp;ÕÒ³ö×îĞ¡Öµ</DT
+><DT  ><A  HREF="function.mt-getrandmax.html"  >mt_getrandmax</A
+>&nbsp;--&nbsp;ÏÔÊ¾Ëæ»úÊıµÄ×î´ó¿ÉÄÜÖµ</DT
+><DT  ><A  HREF="function.mt-rand.html"  >mt_rand</A
+>&nbsp;--&nbsp;Éú³É¸üºÃµÄËæ»úÊı</DT
+><DT  ><A  HREF="function.mt-srand.html"  >mt_srand</A
+>&nbsp;--&nbsp;²¥ÏÂÒ»¸ö¸üºÃµÄËæ»úÊı·¢ÉúÆ÷ÖÖ×Ó</DT
+><DT  ><A  HREF="function.octdec.html"  >octdec</A
+>&nbsp;--&nbsp;°Ë½øÖÆ×ª»»ÎªÊ®½øÖÆ</DT
+><DT  ><A  HREF="function.pi.html"  >pi</A
+>&nbsp;--&nbsp;µÃµ½Ô²ÖÜÂÊÖµ</DT
+><DT  ><A  HREF="function.pow.html"  >pow</A
+>&nbsp;--&nbsp;Ö¸Êı±í´ïÊ½</DT
+><DT  ><A  HREF="function.rad2deg.html"  >rad2deg</A
+>&nbsp;--&nbsp;
+     ½«»¡¶ÈÊı×ª»»ÎªÏàÓ¦µÄ½Ç¶ÈÊı
+    </DT
+><DT  ><A  HREF="function.rand.html"  >rand</A
+>&nbsp;--&nbsp;²úÉúÒ»¸öËæ»úÊı</DT
+><DT  ><A  HREF="function.round.html"  >round</A
+>&nbsp;--&nbsp;¶Ô¸¡µãÊı½øĞĞËÄÉáÎåÈë</DT
+><DT  ><A  HREF="function.sin.html"  >sin</A
+>&nbsp;--&nbsp;ÕıÏÒ</DT
+><DT  ><A  HREF="function.sinh.html"  >sinh</A
+>&nbsp;--&nbsp;Ë«ÇúÕıÏÒ</DT
+><DT  ><A  HREF="function.sqrt.html"  >sqrt</A
+>&nbsp;--&nbsp;Æ½·½¸ù</DT
+><DT  ><A  HREF="function.srand.html"  >srand</A
+>&nbsp;--&nbsp;²¥ÏÂËæ»úÊı·¢ÉúÆ÷ÖÖ×Ó</DT
+><DT  ><A  HREF="function.tan.html"  >tan</A
+>&nbsp;--&nbsp;ÕıÇĞ</DT
+><DT  ><A  HREF="function.tanh.html"  >tanh</A
+>&nbsp;--&nbsp;Ë«ÇúÕıÇĞ</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mailparse-uudecode-all.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.abs.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mailparse_uudecode_all</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >abs</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="math.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.abs.html">abs</a></div>
- <div class="up"><a href="book.math.html">Math</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

@@ -1,97 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>列出所有使用中的输出处理程序。</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ob-implicit-flush.html">ob_implicit_flush</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-start.html">ob_start</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ob-list-handlers" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ob_list_handlers</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">ob_list_handlers</span> &mdash; <span class="dc-title">列出所有使用中的输出处理程序。</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ob-list-handlers-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>ob_list_handlers</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   列出所有使用中的输出处理程序。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ob-list-handlers-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-    此函数将返回一个数组，数组元素是正在使用中输出处理程序名（如果存在的输出处理程序的话）。
-    如果启用了<a href="outcontrol.configuration.html#ini.output-buffering" class="link">output_buffering</a> 或者在
-     <span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span> 中创建了一个匿名函数，<span class="function"><strong>ob_list_handlers()</strong></span> 将返回   &quot;default output handler&quot;。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.ob-list-handlers-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-466">
-    <p><strong>Example #1 <span class="function"><strong>ob_list_handlers()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//using&nbsp;output_buffering=On<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">ob_list_handlers</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">ob_end_flush</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">ob_start</span><span style="color: #007700">(</span><span style="color: #DD0000">"ob_gzhandler"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">ob_list_handlers</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">ob_end_flush</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;anonymous&nbsp;functions<br /></span><span style="color: #0000BB">ob_start</span><span style="color: #007700">(</span><span style="color: #0000BB">create_function</span><span style="color: #007700">(</span><span style="color: #DD0000">'$string'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'return&nbsp;$string;'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">ob_list_handlers</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">ob_end_flush</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
+<HTML  ><HEAD  ><TITLE  >ob_list_handlers</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="������ƺ���" HREF="ref.outcontrol.html"><LINK  REL="PREVIOUS" TITLE="ob_implicit_flush" HREF="function.ob-implicit-flush.html"><LINK  REL="NEXT" TITLE="ob_start" HREF="function.ob-start.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ob-implicit-flush.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ob-start.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ob-list-handlers" ></A
+>ob_list_handlers</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN84229" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>ob_list_handlers&nbsp;--&nbsp;
+     List all output handlers in use
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN84232" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >ob_list_handlers</B
+> ( void )<BR  ></BR
+><P  >&#13;     This will return an array with the output handlers in use (if any). If
+     <A  HREF="ref.outcontrol.html#ini.output-buffering"  >output_buffering</A
+> is
+     enabled, <B  CLASS="function" >ob_list_handlers()</B
+> will return "default
+     output handler". 
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN84242" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >ob_list_handlers()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">//using output_buffering=On<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">ob_list_handlers</font><font  color="#007700">());<br  /></font><font  color="#0000BB">ob_end_flush</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">ob_start</font><font  color="#007700">(</font><font  color="#DD0000">"ob_gzhandler"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">ob_list_handlers</font><font  color="#007700">());<br  /></font><font  color="#0000BB">ob_end_flush</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       The above example will output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
+(
+    [0] =&#62; default output handler
+)
 Array
 (
-    [0] =&gt; default output handler
-)
+    [0] =&#62; ob_gzhandler
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.ob-end-clean.html"  ><B  CLASS="function" >ob_end_clean()</B
+></A
+>,
+     <A  HREF="function.ob-end-flush.html"  ><B  CLASS="function" >ob_end_flush()</B
+></A
+>,
+     <A  HREF="function.ob-get-flush.html"  ><B  CLASS="function" >ob_get_flush()</B
+></A
+>, and <A  HREF="function.ob-start.html"  ><B  CLASS="function" >ob_start()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ob-implicit-flush.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ob-start.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ob_implicit_flush</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.outcontrol.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ob_start</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-Array
-(
-    [0] =&gt; ob_gzhandler
-)
 
-Array
-(
-    [0] =&gt; default output handler
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ob-list-handlers-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ob-end-clean.html" class="function" rel="rdfs-seeAlso">ob_end_clean()</a> - 清空（擦除）缓冲区并关闭输出缓冲</span></li>
-    <li class="member"><span class="function"><a href="function.ob-end-flush.html" class="function" rel="rdfs-seeAlso">ob_end_flush()</a> - 冲刷出（送出）输出缓冲区内容并关闭缓冲</span></li>
-    <li class="member"><span class="function"><a href="function.ob-get-flush.html" class="function" rel="rdfs-seeAlso">ob_get_flush()</a> - 刷出（送出）缓冲区内容，以字符串形式返回内容，并关闭输出缓冲区。</span></li>
-    <li class="member"><span class="function"><a href="function.ob-start.html" class="function" rel="rdfs-seeAlso">ob_start()</a> - 打开输出控制缓冲</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ob-implicit-flush.html">ob_implicit_flush</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-start.html">ob_start</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

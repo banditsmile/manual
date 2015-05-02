@@ -1,174 +1,152 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç”¨ PHP è¿›è¡Œ HTTP è®¤è¯</title>
+<HTML  ><HEAD  ><TITLE  >ÓÃ PHP ½øĞĞ HTTP ÈÏÖ¤</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÌØµã" HREF="features.html"><LINK  REL="PREVIOUS" TITLE="ÌØµã" HREF="features.html"><LINK  REL="NEXT" TITLE="Cookies" HREF="http://shouce.jb51.net/php/features.cookies.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="chapter" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="features.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="http://shouce.jb51.net/php/features.cookies.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="chapter" ><H1  ><A  NAME="features.http-auth" >ÕÂ 16. ÓÃ PHP ½øĞĞ HTTP ÈÏÖ¤</A
+></H1
+><P  >&#13;   PHP µÄ HTTP ÈÏÖ¤»úÖÆ½öÔÚ PHP ÒÔ Apache Ä£¿é·½Ê½ÔËĞĞÊ±²ÅÓĞĞ§£¬Òò´Ë¸Ã¹¦ÄÜ²»ÊÊÓÃÓÚ CGI °æ±¾¡£ÔÚ Apache Ä£¿éµÄ PHP ½Å±¾ÖĞ£¬¿ÉÒÔÓÃ <A  HREF="function.header.html"  ><B  CLASS="function" >header()</B
+></A
+> º¯ÊıÀ´Ïò¿Í»§¶Ëä¯ÀÀÆ÷·¢ËÍ¡°Authentication Required¡±ĞÅÏ¢£¬Ê¹Æäµ¯³öÒ»¸öÓÃ»§Ãû/ÃÜÂëÊäÈë´°¿Ú¡£µ±ÓÃ»§ÊäÈëÓÃ»§ÃûºÍÃÜÂëºó£¬°üº¬ÓĞ URL µÄ PHP ½Å±¾½«»áÔÙ´ÎºÍ<A  HREF="reserved.variables.html"  >Ô¤¶¨Òå±äÁ¿</A
+> <TT  CLASS="varname" >PHP_AUTH_USER</TT
+>¡¢<TT  CLASS="varname" >PHP_AUTH_PW</TT
+> ºÍ <TT  CLASS="varname" >AUTH_TYPE</TT
+> Ò»Æğ±»µ÷ÓÃ£¬ÕâÈı¸ö±äÁ¿·Ö±ğ±»Éè¶¨ÎªÓÃ»§Ãû£¬ÃÜÂëºÍÈÏÖ¤ÀàĞÍ¡£Ô¤¶¨Òå±äÁ¿±£´æÔÚ <A  HREF="reserved.variables.html#reserved.variables.server"  >$_SERVER</A
+> »òÕß <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+> Êı×éÖĞ¡£ÏµÍ³½öÖ§³Ö¡°»ù±¾µÄ¡±ÈÏÖ¤¡£Çë²ÎÔÄ <A  HREF="function.header.html"  ><B  CLASS="function" >header()</B
+></A
+> º¯ÊıÒÔ»ñÈ¡¸ü¶àĞÅÏ¢¡£
+  </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >PHP °æ±¾ÎÊÌâ: </B
+>
+    <A  HREF="language.variables.predefined.html#language.variables.superglobals"  >Autoglobals</A
+> È«¾Ö±äÁ¿£¬°üÀ¨
+     <A  HREF="reserved.variables.html#reserved.variables.server"  >$_SERVER</A
+>µÈ£¬ÔÚ PHP <A  href="http://www.php.net/release_4_1_0.php"  TARGET="_top" >4.1.0</A
+> ÒÔºó°æ±¾ÓĞĞ§£¬ <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+> ´Ó PHP 3 ¿ªÊ¼ÓĞĞ§¡£
+   </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;   ÒÔÏÂÊÇÔÚÒ³ÃæÉÏÇ¿ÆÈ¿Í»§¶ËÈÏÖ¤µÄ½Å±¾·¶Àı£º
+  </P
+><P  >&#13;   <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6382" ></A
+><P  ><B  >Àı×Ó 16-1. HTTP ÈÏÖ¤·¶Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;</font><font  color="#007700">if (!isset(</font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_AUTH_USER'</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'WWW-Authenticate: Basic realm="My Realm"'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'HTTP/1.0 401 Unauthorized'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">'Text to send if user hits Cancel button'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br  />&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;p&gt;Hello {$_SERVER['PHP_AUTH_USER']}.&lt;/p&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;p&gt;You entered {$_SERVER['PHP_AUTH_PW']} as your password.&lt;/p&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+  </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >¼æÈİĞÔÎÊÌâ: </B
+>
+    ÔÚ±àĞ´ HTTP Í·ĞÅÏ¢´úÂëÊ±Çë¸ñÍâĞ¡ĞÄ¡£ÎªÁË¶ÔËùÓĞµÄ¿Í»§¶Ë±£Ö¤¼æÈİĞÔ£¬¹Ø¼ü×Ö¡°Basic¡±µÄµÚÒ»¸ö×ÖÄ¸±ØĞë´óĞ´Îª¡°B¡±£¬·Ö½ç×Ö·û´®±ØĞëÓÃË«ÒıºÅ£¨²»ÊÇµ¥ÒıºÅ£©ÒıÓÃ£»²¢ÇÒÔÚÍ·ĞÅÏ¢ĞĞ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >HTTP/1.0 401</I
+></SPAN
+> ÖĞ£¬ÔÚ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >401</I
+></SPAN
+> Ç°±ØĞëÓĞÇÒ½öÓĞÒ»¸ö¿Õ¸ñ¡£
+   </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;   ÔÚÒÔÉÏÀı³ÌÖĞ£¬ÎÒÃÇ½ö½öÖ»´òÓ¡³öÁË <TT  CLASS="varname" >PHP_AUTH_USER</TT
+> ºÍ <TT  CLASS="varname" >PHP_AUTH_PW</TT
+> µÄÖµ£¬µ«ÔÚÊµ¼ÊÔËÓÃÖĞ£¬Äú¿ÉÄÜĞèÒª¶ÔÓÃ»§ÃûºÍÃÜÂëµÄºÏ·¨ĞÔ½øĞĞ¼ì²é¡£»òĞí½øĞĞÊı¾İ¿âµÄ²éÑ¯£¬»òĞí´Ó dbm ÎÄ¼şÖĞ¼ìË÷¡£
+  </P
+><P  >&#13;   Çë×¢ÒâÓÉ Internet Explorer ä¯ÀÀÆ÷±¾ÉíµÄÎÊÌâ´øÀ´µÄ´íÎó¡£Ëü¶ÔÍ·ĞÅÏ¢µÄË³ĞòÏÔµÃËÆºõÓĞµã´µÃ«Çó´Ã¡£Ä¿Ç°ÔÚ <TT  CLASS="literal" >HTTP/1.0 401</TT
+> Í·Ö®Ç°·¢ËÍ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >WWW-Authenticate</I
+></SPAN
+> Í·ĞÅÏ¢ÄÜ½â¾ö¸ÃÎÊÌâ¡£
+  </P
+><P  >&#13;   ÔÚ PHP 4.3.0 ÖĞ£¬ÎªÁË·ÀÖ¹ÓĞÈËÍ¨¹ı±àĞ´½Å±¾À´´ÓÓÃ´«Í³Íâ²¿»úÖÆÈÏÖ¤µÄÒ³ÃæÉÏ»ñÈ¡ÃÜÂë£¬µ±Íâ²¿ÈÏÖ¤¶ÔÌØ¶¨Ò³ÃæÓĞĞ§£¬²¢ÇÒ <A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+> ±»¿ªÆôÊ±£¬PHP_AUTH ±äÁ¿½«²»»á±»ÉèÖÃ¡£µ«ÎŞÂÛÈçºÎ£¬<TT  CLASS="varname" >REMOTE_USER</TT
+> ¿ÉÒÔ±»ÓÃÀ´±æÈÏÍâ²¿ÈÏÖ¤µÄÓÃ»§£¬¼´Ê¹ÓÃ <TT  CLASS="varname" >$_SERVER['REMOTE_USER']</TT
+> ±äÁ¿¡£
+  </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ÉèÖÃÎÊÌâ: </B
+>
+    PHP ÓÃ <TT  CLASS="literal" >AuthType</TT
+> Ñ¡ÏîÀ´ÅĞ¶ÏÍâ²¿ÈÏÖ¤»úÖÆÊÇ·ñÓĞĞ§¡£
+   </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;   ×¢Òâ£¬ÕâÈÔÈ»²»ÄÜ·ÀÖ¹ÓĞÈËÍ¨¹ıÎ´ÈÏÖ¤µÄ URL À´´ÓÍ¬Ò»·şÎñÆ÷ÉÏÈÏÖ¤µÄ URL ÉÏÍµÈ¡ÃÜÂë¡£
+  </P
+><P  >&#13;   Netscape Navigator ºÍ Internet Explorer ä¯ÀÀÆ÷¶¼»áÔÚÊÕµ½ 401 µÄ·şÎñ¶Ë·µ»ØĞÅÏ¢Ê±Çå¿ÕËùÓĞµÄ±¾µØä¯ÀÀÆ÷Õû¸öÓòµÄ Windows ÈÏÖ¤»º´æ¡£ÕâÄÜ¹»ÓĞĞ§µÄ×¢ÏúÒ»¸öÓÃ»§£¬²¢ÆÈÊ¹ËûÃÇÖØĞÂÊäÈëËûÃÇµÄÓÃ»§ÃûºÍÃÜÂë¡£ÓĞĞ©ÈËÓÃÕâÖÖ·½·¨À´Ê¹µÇÂ¼×´Ì¬¡°¹ıÆÚ¡±£¬»òÕß×÷Îª¡°×¢Ïú¡±°´Å¥µÄÏìÓ¦ĞĞÎª¡£
+  </P
+><P  >&#13;   <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN6407" ></A
+><P  ><B  >Àı×Ó 16-2. Ç¿ÆÈÖØĞÂÊäÈëÓÃ»§ÃûºÍÃÜÂëµÄ HTTP ÈÏÖ¤µÄ·¶Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;</font><font  color="#007700">function </font><font  color="#0000BB">authenticate</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'WWW-Authenticate: Basic realm="Test Authentication System"'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'HTTP/1.0 401 Unauthorized'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"You must enter a valid login ID and password to access this resource\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br  />&nbsp;&nbsp;}<br  /> <br  />&nbsp;&nbsp;if (!isset(</font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_AUTH_USER'</font><font  color="#007700">]) ||<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'SeenBefore'</font><font  color="#007700">] == </font><font  color="#0000BB">1 </font><font  color="#007700">&amp;&amp; </font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'OldAuth'</font><font  color="#007700">] == </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_AUTH_USER'</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">authenticate</font><font  color="#007700">();<br  />&nbsp;&nbsp;} <br  />&nbsp;&nbsp;else {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;p&gt;Welcome: {$_SERVER['PHP_AUTH_USER']}&lt;br&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Old: {$_REQUEST['OldAuth']}"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;form action='{$_SERVER['PHP_SELF']}' METHOD='POST'&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;input type='hidden' name='SeenBefore' value='1'&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;input type='hidden' name='OldAuth' value='{$_SERVER['PHP_AUTH_USER']}'&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;input type='submit' value='Re Authenticate'&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;/form&gt;&lt;/p&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+  </P
+><P  >&#13;   ¸ÃĞĞÎª¶ÔÓÚ HTTP »ù±¾ÈÏÖ¤±ê×¼À´Ëµ²¢²»ÊÇ±ØĞëµÄ£¬Òò´ËÄú²»ÄÜÒÀ¿¿ÕâÖÖ·½·¨¡£¶Ô Lynx ä¯ÀÀÆ÷µÄ²âÊÔ±íÃ÷ Lynx ÔÚÊÕµ½ 401 µÄ·şÎñ¶Ë·µ»ØĞÅÏ¢Ê±²»»áÇå¿ÕÈÏÖ¤ÎÄ¼ş£¬Òò´ËÖ»Òª¶ÔÈÏÖ¤ÎÄ¼şµÄ¼ì²éÒªÇóÃ»ÓĞ±ä»¯£¬Ö»ÒªÓÃ»§µã»÷¡°ºóÍË¡±°´Å¥£¬ÔÙµã»÷¡°Ç°½ø¡±°´Å¥£¬ÆäÔ­ÓĞ×ÊÔ´ÈÔÈ»ÄÜ¹»±»·ÃÎÊ¡£²»¹ı£¬ÓÃ»§¿ÉÒÔÍ¨¹ı°´¡°_¡±¼üÀ´Çå¿ÕËûÃÇµÄÈÏÖ¤ĞÅÏ¢¡£
+  </P
+><P  >&#13;   Í¬Ê±Çë×¢Òâ£¬ÔÚ PHP 4.3.3 Ö®Ç°£¬ÓÉÓÚÎ¢Èí IIS µÄÏŞÖÆ£¬HTTP ÈÏÖ¤ÎŞ·¨¹¤×÷ÔÚ IIS ·şÎñÆ÷µÄ CGI Ä£Ê½ÏÂ¡£ÎªÁËÄÜ¹»Ê¹ÆäÔÚ PHP 4.3.3 ÒÔÉÏ°æ±¾ÄÜ¹»¹¤×÷£¬ÄúĞèÒª±à¼­ IIS µÄÉèÖÃ¡°Ä¿Â¼°²È«¡±¡£µã»÷¡°±à¼­¡±²¢ÇÒÖ»Ñ¡Ôñ¡°ÄäÃû·ÃÎÊ¡±£¬ÆäËüËùÓĞµÄ¸´Ñ¡¿ò¶¼Ó¦¸ÃÁô¿Õ¡£
+  </P
+><P  >&#13;   ÁíÒ»¸öÏŞÖÆ£¬ÔÚÄúÊ¹ÓÃ IIS µÄ ISAPI Ä£Ê½µÄÊ±ºò£¬ÄúÎŞ·¨Ê¹ÓÃ <TT  CLASS="literal" >PHP_AUTH_*</TT
+> ±äÁ¿£¬¶øÖ»ÄÜÊ¹ÓÃ <TT  CLASS="literal" >HTTP_AUTHORIZATION</TT
+>¡£ÀıÈç£¬¿¼ÂÇÈçÏÂ´úÂë£º<TT  CLASS="literal" >list($user, $pw) = explode(':',  
+   base64_decode(substr($_SERVER['HTTP_AUTHORIZATION'], 6)));</TT
+>¡£
+  </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >IIS ×¢ÒâÊÂÏî£º: </B
+>
+    Òª HTTP ÈÏÖ¤ÄÜ¹»ÔÚ IIS ÏÂ¹¤×÷£¬ PHP ÅäÖÃÑ¡Ïî <A  HREF="configuration.directives.html#ini.cgi.rfc2616-headers"  >cgi.rfc2616_headers</A
+> ±ØĞëÉèÖÃ³É <TT  CLASS="literal" >0</TT
+>£¨Ä¬ÈÏÖµ£©¡£
+   </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+    Èç¹û<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>±»¼¤»î£¬½Å±¾µÄ UID »á±»¼Óµ½ <TT  CLASS="literal" >WWW-Authenticate</TT
+> Í·ĞÅÏ¢µÄ <TT  CLASS="literal" >realm</TT
+> ²¿·Ö¡£
+   </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="features.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/features.cookies.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ÌØµã</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="features.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Cookies</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.html">ç‰¹ç‚¹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="features.cookies.html">Cookie</a></div>
- <div class="up"><a href="features.html">ç‰¹ç‚¹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="features.http-auth" class="chapter">
- <h1>ç”¨ PHP è¿›è¡Œ HTTP è®¤è¯</h1>
 
-
- <p class="simpara">
-  PHP çš„ <acronym title="Hypertext Transfer Protocol">HTTP</acronym> è®¤è¯æœºåˆ¶ä»…åœ¨ PHP ä»¥ Apache
-  æ¨¡å—æ–¹å¼è¿è¡Œæ—¶æ‰æœ‰æ•ˆï¼Œå› æ­¤è¯¥åŠŸèƒ½ä¸é€‚ç”¨äº CGI ç‰ˆæœ¬ã€‚åœ¨
-  Apache æ¨¡å—çš„ PHP è„šæœ¬ä¸­ï¼Œå¯ä»¥ç”¨
-  <span class="function"><a href="function.header.html" class="function">header()</a></span>
-  å‡½æ•°æ¥å‘å®¢æˆ·ç«¯æµè§ˆå™¨å‘é€â€œAuthentication
-  Requiredâ€ä¿¡æ¯ï¼Œä½¿å…¶å¼¹å‡ºä¸€ä¸ªç”¨æˆ·åï¼å¯†ç è¾“å…¥çª—å£ã€‚å½“ç”¨æˆ·è¾“å…¥ç”¨æˆ·åå’Œå¯†ç åï¼ŒåŒ…å«æœ‰
-  URL çš„ PHP è„šæœ¬å°†ä¼šåŠ ä¸Š<a href="reserved.variables.html" class="link">é¢„å®šä¹‰å˜é‡</a>
-  <var class="varname"><var class="varname">PHP_AUTH_USER</var></var>ï¼Œ<var class="varname"><var class="varname">PHP_AUTH_PW</var></var> å’Œ
-  <var class="varname"><var class="varname">AUTH_TYPE</var></var>
-  è¢«å†æ¬¡è°ƒç”¨ï¼Œè¿™ä¸‰ä¸ªå˜é‡åˆ†åˆ«è¢«è®¾å®šä¸ºç”¨æˆ·åï¼Œå¯†ç å’Œè®¤è¯ç±»å‹ã€‚é¢„å®šä¹‰å˜é‡ä¿å­˜åœ¨
-  <a href="reserved.variables.server.html" class="link">$_SERVER</a> æˆ–è€…
-  <var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var> æ•°ç»„ä¸­ã€‚æ”¯æŒâ€œBasicâ€å’Œâ€œDigestâ€ï¼ˆè‡ª
-  PHP 5.1.0 èµ·ï¼‰è®¤è¯æ–¹æ³•ã€‚è¯·å‚é˜… <span class="function"><a href="function.header.html" class="function">header()</a></span> å‡½æ•°ä»¥è·å–æ›´å¤šä¿¡æ¯ã€‚
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <strong>PHP ç‰ˆæœ¬é—®é¢˜</strong><br />
-  <p class="para">
-   <a href="language.variables.superglobals.html" class="link">Autoglobals</a> å…¨å±€å˜é‡ï¼ŒåŒ…æ‹¬
-   <a href="reserved.variables.server.html" class="link">$_SERVER</a>ç­‰ï¼Œè‡ª
-   PHP <a href="http://www.php.net/releases/4_1_0.php" class="link external">&raquo;&nbsp;4.1.0</a>
-   èµ·æœ‰æ•ˆï¼Œ<var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var> ä» PHP 3 å¼€å§‹æœ‰æ•ˆã€‚
-  </p>
- </p></blockquote>
-
- <p class="para">
-  ä»¥ä¸‹æ˜¯åœ¨é¡µé¢ä¸Šå¼ºè¿«å®¢æˆ·ç«¯è®¤è¯çš„è„šæœ¬èŒƒä¾‹ï¼š
- </p>
- <p class="para">
-  <div class="example" id="example-364">
-   <p><strong>Example #1 Basic HTTP è®¤è¯èŒƒä¾‹</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(!isset(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;Basic&nbsp;realm="My&nbsp;Realm"'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'HTTP/1.0&nbsp;401&nbsp;Unauthorized'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Text&nbsp;to&nbsp;send&nbsp;if&nbsp;user&nbsp;hits&nbsp;Cancel&nbsp;button'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;p&gt;Hello&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]}</span><span style="color: #DD0000">.&lt;/p&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;p&gt;You&nbsp;entered&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_PW'</span><span style="color: #007700">]}</span><span style="color: #DD0000">&nbsp;as&nbsp;your&nbsp;password.&lt;/p&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
-
- <p class="para">
-  <div class="example" id="example-365">
-   <p><strong>Example #2 Digest HTTP è®¤è¯èŒƒä¾‹</strong></p>
-   <div class="example-contents"><p>
-    æœ¬ä¾‹æ¼”ç¤ºæ€æ ·å®ç°ä¸€ä¸ªç®€å•çš„ Digest HTTP è®¤è¯è„šæœ¬ã€‚æ›´å¤šä¿¡æ¯è¯·å‚è€ƒ
-    <a href="http://www.faqs.org/rfcs/rfc2617" class="link external">&raquo;&nbsp;RFC 2617</a>ã€‚
-   </p></div>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$realm&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Restricted&nbsp;area'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//user&nbsp;=&gt;&nbsp;password<br /></span><span style="color: #0000BB">$users&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'admin'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'mypass'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'guest'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'guest'</span><span style="color: #007700">);<br /><br /><br />if&nbsp;(empty(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_DIGEST'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'HTTP/1.1&nbsp;401&nbsp;Unauthorized'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;Digest&nbsp;realm="'</span><span style="color: #007700">.</span><span style="color: #0000BB">$realm</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'"&nbsp;qop="auth"&nbsp;nonce="'</span><span style="color: #007700">.</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">().</span><span style="color: #DD0000">'"&nbsp;opaque="'</span><span style="color: #007700">.</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$realm</span><span style="color: #007700">).</span><span style="color: #DD0000">'"'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Text&nbsp;to&nbsp;send&nbsp;if&nbsp;user&nbsp;hits&nbsp;Cancel&nbsp;button'</span><span style="color: #007700">);<br />}<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;analyze&nbsp;the&nbsp;PHP_AUTH_DIGEST&nbsp;variable<br /></span><span style="color: #007700">if&nbsp;(!(</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">http_digest_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_DIGEST'</span><span style="color: #007700">]))&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;!isset(</span><span style="color: #0000BB">$users</span><span style="color: #007700">[</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">]]))<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Wrong&nbsp;Credentials!'</span><span style="color: #007700">);<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;generate&nbsp;the&nbsp;valid&nbsp;response<br /></span><span style="color: #0000BB">$A1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">':'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$realm&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">':'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$users</span><span style="color: #007700">[</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">]]);<br /></span><span style="color: #0000BB">$A2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REQUEST_METHOD'</span><span style="color: #007700">].</span><span style="color: #DD0000">':'</span><span style="color: #007700">.</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'uri'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">$valid_response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #0000BB">$A1</span><span style="color: #007700">.</span><span style="color: #DD0000">':'</span><span style="color: #007700">.</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'nonce'</span><span style="color: #007700">].</span><span style="color: #DD0000">':'</span><span style="color: #007700">.</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'nc'</span><span style="color: #007700">].</span><span style="color: #DD0000">':'</span><span style="color: #007700">.</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'cnonce'</span><span style="color: #007700">].</span><span style="color: #DD0000">':'</span><span style="color: #007700">.</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'qop'</span><span style="color: #007700">].</span><span style="color: #DD0000">':'</span><span style="color: #007700">.</span><span style="color: #0000BB">$A2</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'response'</span><span style="color: #007700">]&nbsp;!=&nbsp;</span><span style="color: #0000BB">$valid_response</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Wrong&nbsp;Credentials!'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ok,&nbsp;valid&nbsp;username&nbsp;&amp;&nbsp;password<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Your&nbsp;are&nbsp;logged&nbsp;in&nbsp;as:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">];<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;function&nbsp;to&nbsp;parse&nbsp;the&nbsp;http&nbsp;auth&nbsp;header<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">http_digest_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$txt</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;protect&nbsp;against&nbsp;missing&nbsp;data<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$needed_parts&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'nonce'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'nc'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cnonce'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'qop'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'username'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'uri'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'response'</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">preg_match_all</span><span style="color: #007700">(</span><span style="color: #DD0000">'@(\w+)=([\'"]?)([a-zA-Z0-9=./\_-]+)\2@'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$txt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_SET_ORDER</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$matches&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">[</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]]&nbsp;=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$needed_parts</span><span style="color: #007700">[</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]]);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$needed_parts&nbsp;</span><span style="color: #007700">?&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <strong>å…¼å®¹æ€§é—®é¢˜</strong><br />
-  <p class="para">
-   åœ¨ç¼–å†™ HTTP
-   æ ‡å¤´ä»£ç æ—¶è¯·æ ¼å¤–å°å¿ƒã€‚ä¸ºäº†å¯¹æ‰€æœ‰çš„å®¢æˆ·ç«¯ä¿è¯å…¼å®¹æ€§ï¼Œå…³é”®å­—â€œBasicâ€çš„ç¬¬ä¸€ä¸ªå­—æ¯å¿…é¡»å¤§å†™ä¸ºâ€œBâ€ï¼Œåˆ†ç•Œå­—ç¬¦ä¸²å¿…é¡»ç”¨åŒå¼•å·ï¼ˆä¸æ˜¯å•å¼•å·ï¼‰å¼•ç”¨ï¼›å¹¶ä¸”åœ¨æ ‡å¤´è¡Œ
-   <em class="emphasis">HTTP/1.0 401</em> ä¸­ï¼Œåœ¨ <em class="emphasis">401</em> å‰å¿…é¡»æœ‰ä¸”ä»…æœ‰ä¸€ä¸ªç©ºæ ¼ã€‚
-  </p>
- </p></blockquote>
-
- <p class="para">
-  åœ¨ä»¥ä¸Šä¾‹å­ä¸­ï¼Œä»…ä»…åªæ‰“å°å‡ºäº† <var class="varname"><var class="varname">PHP_AUTH_USER</var></var> å’Œ
-  <var class="varname"><var class="varname">PHP_AUTH_PW</var></var>
-  çš„å€¼ï¼Œä½†åœ¨å®é™…è¿ç”¨ä¸­ï¼Œå¯èƒ½éœ€è¦å¯¹ç”¨æˆ·åå’Œå¯†ç çš„åˆæ³•æ€§è¿›è¡Œæ£€æŸ¥ã€‚æˆ–è®¸è¿›è¡Œæ•°æ®åº“çš„æŸ¥è¯¢ï¼Œæˆ–è®¸ä» dbm æ–‡ä»¶ä¸­æ£€ç´¢ã€‚
- </p>
-
- <p class="para">
-  æ³¨æ„æœ‰äº› Internet Explorer
-  æµè§ˆå™¨æœ¬èº«æœ‰é—®é¢˜ã€‚å®ƒå¯¹æ ‡å¤´çš„é¡ºåºæ˜¾å¾—ä¼¼ä¹æœ‰ç‚¹å¹æ¯›æ±‚ç–µã€‚ç›®å‰çœ‹æ¥åœ¨å‘é€
-  <em>HTTP/1.0 401</em> ä¹‹å‰å…ˆå‘é€
-  <em class="emphasis">WWW-Authenticate</em> æ ‡å¤´ä¼¼ä¹å¯ä»¥è§£å†³æ­¤é—®é¢˜ã€‚
- </p>
-
- <p class="simpara">
-  è‡ª PHP 4.3.0
-  èµ·ï¼Œä¸ºäº†é˜²æ­¢æœ‰äººé€šè¿‡ç¼–å†™è„šæœ¬æ¥ä»ç”¨ä¼ ç»Ÿå¤–éƒ¨æœºåˆ¶è®¤è¯çš„é¡µé¢ä¸Šè·å–å¯†ç ï¼Œå½“å¤–éƒ¨è®¤è¯å¯¹ç‰¹å®šé¡µé¢æœ‰æ•ˆï¼Œå¹¶ä¸”<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">å®‰å…¨æ¨¡å¼</a>è¢«å¼€å¯æ—¶ï¼ŒPHP_AUTH
-  å˜é‡å°†ä¸ä¼šè¢«è®¾ç½®ã€‚ä½†æ— è®ºå¦‚ä½•ï¼Œ<var class="varname"><var class="varname">REMOTE_USER</var></var>
-  å¯ä»¥è¢«ç”¨æ¥è¾¨è®¤å¤–éƒ¨è®¤è¯çš„ç”¨æˆ·ï¼Œå› æ­¤å¯ä»¥ç”¨
-  <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER['REMOTE_USER']</a></var></var> å˜é‡ã€‚
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <strong>é…ç½®è¯´æ˜</strong><br />
-  <p class="para">
-   PHP ç”¨æ˜¯å¦æœ‰ <em>AuthType</em> æŒ‡ä»¤æ¥åˆ¤æ–­å¤–éƒ¨è®¤è¯æœºåˆ¶æ˜¯å¦æœ‰æ•ˆã€‚
-  </p>
- </p></blockquote>
-
- <p class="simpara">
-  æ³¨æ„ï¼Œè¿™ä»ç„¶ä¸èƒ½é˜²æ­¢æœ‰äººé€šè¿‡æœªè®¤è¯çš„ URL æ¥ä»åŒä¸€æœåŠ¡å™¨ä¸Šè®¤è¯çš„ URL ä¸Šå·å–å¯†ç ã€‚
- </p>
- <p class="simpara">
-  Netscape Navigator å’Œ Internet Explorer æµè§ˆå™¨éƒ½ä¼šåœ¨æ”¶åˆ° 401
-  çš„æœåŠ¡ç«¯è¿”å›ä¿¡æ¯æ—¶æ¸…ç©ºæ‰€æœ‰çš„æœ¬åœ°æµè§ˆå™¨æ•´ä¸ªåŸŸçš„ Windows
-  è®¤è¯ç¼“å­˜ã€‚è¿™èƒ½å¤Ÿæœ‰æ•ˆçš„æ³¨é”€ä¸€ä¸ªç”¨æˆ·ï¼Œå¹¶è¿«ä½¿ä»–ä»¬é‡æ–°è¾“å…¥ä»–ä»¬çš„ç”¨æˆ·åå’Œå¯†ç ã€‚æœ‰äº›äººç”¨è¿™ç§æ–¹æ³•æ¥ä½¿ç™»å½•çŠ¶æ€â€œè¿‡æœŸâ€ï¼Œæˆ–è€…ä½œä¸ºâ€œæ³¨é”€â€æŒ‰é’®çš„å“åº”è¡Œä¸ºã€‚
- </p>
- <p class="para">
-  <div class="example" id="example-366">
-    <p><strong>Example #3 å¼ºè¿«é‡æ–°è¾“å…¥ç”¨æˆ·åå’Œå¯†ç çš„ HTTP è®¤è¯çš„èŒƒä¾‹</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;</span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">authenticate</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'WWW-Authenticate:&nbsp;Basic&nbsp;realm="Test&nbsp;Authentication&nbsp;System"'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'HTTP/1.0&nbsp;401&nbsp;Unauthorized'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"You&nbsp;must&nbsp;enter&nbsp;a&nbsp;valid&nbsp;login&nbsp;ID&nbsp;and&nbsp;password&nbsp;to&nbsp;access&nbsp;this&nbsp;resource\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;if&nbsp;(!isset(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">])&nbsp;||<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'SeenBefore'</span><span style="color: #007700">]&nbsp;==&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'OldAuth'</span><span style="color: #007700">]&nbsp;==&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">authenticate</span><span style="color: #007700">();<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;p&gt;Welcome:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]}</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Old:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$_REQUEST</span><span style="color: #007700">[</span><span style="color: #DD0000">'OldAuth'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;form&nbsp;action='</span><span style="color: #007700">{</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]}</span><span style="color: #DD0000">'&nbsp;METHOD='post'&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;input&nbsp;type='hidden'&nbsp;name='SeenBefore'&nbsp;value='1'&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;input&nbsp;type='hidden'&nbsp;name='OldAuth'&nbsp;value='</span><span style="color: #007700">{</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]}</span><span style="color: #DD0000">'&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;input&nbsp;type='submit'&nbsp;value='Re&nbsp;Authenticate'&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/form&gt;&lt;/p&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="simpara">
-  è¯¥è¡Œä¸ºå¯¹äº HTTP çš„ Basic è®¤è¯æ ‡å‡†æ¥è¯´å¹¶ä¸æ˜¯å¿…é¡»çš„ï¼Œå› æ­¤ä¸èƒ½ä¾é è¿™ç§æ–¹æ³•ã€‚å¯¹
-  Lynx æµè§ˆå™¨çš„æµ‹è¯•è¡¨æ˜ Lynx åœ¨æ”¶åˆ° 401
-  çš„æœåŠ¡ç«¯è¿”å›ä¿¡æ¯æ—¶ä¸ä¼šæ¸…ç©ºè®¤è¯æ–‡ä»¶ï¼Œå› æ­¤åªè¦å¯¹è®¤è¯æ–‡ä»¶çš„æ£€æŸ¥è¦æ±‚æ²¡æœ‰å˜åŒ–ï¼Œåªè¦ç”¨æˆ·ç‚¹å‡»â€œåé€€â€æŒ‰é’®ï¼Œå†ç‚¹å‡»â€œå‰è¿›â€æŒ‰é’®ï¼Œå…¶åŸæœ‰èµ„æºä»ç„¶èƒ½å¤Ÿè¢«è®¿é—®ã€‚ä¸è¿‡ï¼Œç”¨æˆ·å¯ä»¥é€šè¿‡æŒ‰â€œ_â€é”®æ¥æ¸…ç©ºä»–ä»¬çš„è®¤è¯ä¿¡æ¯ã€‚
- </p>
- <p class="simpara">
-  åŒæ—¶è¯·æ³¨æ„ï¼Œåœ¨ PHP 4.3.3 ä¹‹å‰ï¼Œç”±äºå¾®è½¯ IIS çš„é™åˆ¶ï¼ŒHTTP
-  è®¤è¯æ— æ³•å·¥ä½œåœ¨ IIS æœåŠ¡å™¨çš„ CGI æ¨¡å¼ä¸‹ã€‚ä¸ºäº†èƒ½å¤Ÿä½¿å…¶åœ¨ PHP 4.3.3
-  ä»¥ä¸Šç‰ˆæœ¬èƒ½å¤Ÿå·¥ä½œï¼Œéœ€è¦ç¼–è¾‘ IIS
-  çš„è®¾ç½®â€œç›®å½•å®‰å…¨â€ã€‚ç‚¹å‡»â€œç¼–è¾‘â€å¹¶ä¸”åªé€‰æ‹©â€œåŒ¿åè®¿é—®â€ï¼Œå…¶å®ƒæ‰€æœ‰çš„å¤é€‰æ¡†éƒ½åº”è¯¥ç•™ç©ºã€‚
- </p>
- <p class="simpara">
-  å¦ä¸€ä¸ªé™åˆ¶æ˜¯åœ¨ IIS çš„ ISAPI æ¨¡å¼ä¸‹ä½¿ç”¨ PHP 4 çš„æ—¶å€™ï¼Œæ— æ³•ä½¿ç”¨
-  <em>PHP_AUTH_*</em> å˜é‡ï¼Œè€Œåªèƒ½ä½¿ç”¨
-  <em>HTTP_AUTHORIZATION</em>ã€‚ä¾‹å¦‚ï¼Œè€ƒè™‘å¦‚ä¸‹ä»£ç ï¼š<em>list($user, $pw)
-  = explode(&#039;:&#039;, base64_decode(substr($_SERVER[&#039;HTTP_AUTHORIZATION&#039;], 6)));</em>ã€‚
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <strong>IIS æ³¨æ„äº‹é¡¹</strong><br />
-  <span class="simpara">
-   è¦ HTTP è®¤è¯èƒ½å¤Ÿåœ¨ IIS ä¸‹å·¥ä½œï¼ŒPHP é…ç½®é€‰é¡¹
-   <a href="ini.core.html#ini.cgi.rfc2616-headers" class="link">cgi.rfc2616_headers</a>
-   å¿…é¡»è®¾ç½®æˆ <em>0</em>ï¼ˆé»˜è®¤å€¼ï¼‰ã€‚
-  </span>
- </p></blockquote>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <p class="para">
-   å¦‚æœ<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">å®‰å…¨æ¨¡å¼</a>è¢«æ¿€æ´»ï¼Œè„šæœ¬çš„
-   UID ä¼šè¢«åŠ åˆ° <em>WWW-Authenticate</em> æ ‡å¤´çš„
-   <em>realm</em> éƒ¨åˆ†ã€‚
-  </p>
- </p></blockquote>
-
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.html">ç‰¹ç‚¹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="features.cookies.html">Cookie</a></div>
- <div class="up"><a href="features.html">ç‰¹ç‚¹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

@@ -1,181 +1,118 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å°†ä¸€ä¸ªæ•°ç»„åˆ†å‰²æˆå¤šä¸ª</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-change-key-case.html">array_change_key_case</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-column.html">array_column</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-chunk" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">array_chunk</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">array_chunk</span> &mdash; <span class="dc-title">å°†ä¸€ä¸ªæ•°ç»„åˆ†å‰²æˆå¤šä¸ª</span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.array-chunk-description">
-  <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">array</span> <span class="methodname"><strong>array_chunk</strong></span>
-       ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$input</code></span>
-      , <span class="methodparam"><span class="type">int</span> <code class="parameter">$size</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$preserve_keys</code><span class="initializer"> = false</span></span>
-     ] )</div>
-
-    <p class="para rdfs-comment">
-     å°†ä¸€ä¸ªæ•°ç»„åˆ†å‰²æˆå¤šä¸ªæ•°ç»„ï¼Œå…¶ä¸­æ¯ä¸ªæ•°ç»„çš„å•å…ƒæ•°ç›®ç”±
-     <code class="parameter">size</code> å†³å®šã€‚æœ€åä¸€ä¸ªæ•°ç»„çš„å•å…ƒæ•°ç›®å¯èƒ½ä¼šå°‘äº <code class="parameter">size</code> ä¸ªã€‚
-     
-    </p>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.array-chunk-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-
-    
-     <dt>
-<code class="parameter">input</code></dt>
-
-     <dd>
-
-      <p class="para">
-       éœ€è¦æ“ä½œçš„æ•°ç»„
-      </p>
-     </dd>
-
-    
-
-    
-     <dt>
-<code class="parameter">size</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ¯ä¸ªæ•°ç»„çš„å•å…ƒæ•°ç›®
-      </p>
-     </dd>
-
-    
-
-    
-     <dt>
-<code class="parameter">preserve_keys</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è®¾ä¸º <strong><code>TRUE</code></strong>ï¼Œå¯ä»¥ä½¿ PHP
-     ä¿ç•™è¾“å…¥æ•°ç»„ä¸­åŸæ¥çš„é”®åã€‚å¦‚æœä½ æŒ‡å®šäº† <strong><code>FALSE</code></strong>ï¼Œé‚£æ¯ä¸ªç»“æœæ•°ç»„å°†ç”¨ä»é›¶å¼€å§‹çš„æ–°æ•°å­—ç´¢å¼•ã€‚é»˜è®¤å€¼æ˜¯ <strong><code>FALSE</code></strong>ã€‚
-      </p>
-     </dd>
-
-    
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.array-chunk-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   å¾—åˆ°çš„æ•°ç»„æ˜¯ä¸€ä¸ªå¤šç»´æ•°ç»„ä¸­çš„å•å…ƒï¼Œå…¶ç´¢å¼•ä»é›¶å¼€å§‹ï¼Œæ¯ä¸€ç»´åŒ…å«äº† <code class="parameter">size</code> ä¸ªå…ƒç´ ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 errors" id="refsect1-function.array-chunk-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-   å¦‚æœ <code class="parameter">size</code> å°äº 1ï¼Œä¼šæŠ›å‡ºä¸€ä¸ª
-   <strong><code>E_WARNING</code></strong> é”™è¯¯å¹¶è¿”å› <strong><code>NULL</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.array-chunk-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5249">
-    <p><strong>Example #1 <span class="function"><strong>array_chunk()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$input_array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'c'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'d'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'e'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_chunk</span><span style="color: #007700">(</span><span style="color: #0000BB">$input_array</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_chunk</span><span style="color: #007700">(</span><span style="color: #0000BB">$input_array</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >array_chunk</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_change_key_case" HREF="function.array-change-key-case.html"><LINK  REL="NEXT" TITLE="array_combine" HREF="function.array-combine.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-change-key-case.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-combine.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-chunk" ></A
+>array_chunk</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN8091" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>array_chunk&nbsp;--&nbsp;½«Ò»¸öÊı×é·Ö¸î³É¶à¸ö</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN8094" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >array_chunk</B
+> ( array input, int size [, bool preserve_keys])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_chunk()</B
+> ½«Ò»¸öÊı×é·Ö¸î³É¶à¸öÊı×é£¬ÆäÖĞÃ¿¸öÊı×éµÄµ¥ÔªÊıÄ¿ÓÉ
+     <TT  CLASS="parameter" ><I  >size</I
+></TT
+> ¾ö¶¨¡£×îºóÒ»¸öÊı×éµÄµ¥ÔªÊıÄ¿¿ÉÄÜ»áÉÙ¼¸¸ö¡£µÃµ½µÄÊı×éÊÇÒ»¸ö¶àÎ¬Êı×éÖĞµÄµ¥Ôª£¬ÆäË÷Òı´ÓÁã¿ªÊ¼¡£
+    </P
+><P  >&#13;     ½«¿ÉÑ¡²ÎÊı <TT  CLASS="parameter" ><I  >preserve_keys</I
+></TT
+> ÉèÎª <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬¿ÉÒÔÊ¹ PHP
+     ±£ÁôÊäÈëÊı×éÖĞÔ­À´µÄ¼üÃû¡£Èç¹ûÄãÖ¸¶¨ÁË <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>£¬ÄÇÃ¿¸ö½á¹ûÊı×é½«ÓÃ´ÓÁã¿ªÊ¼µÄĞÂÊı×ÖË÷Òı¡£Ä¬ÈÏÖµÊÇ <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8116" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >array_chunk()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$input_array </font><font  color="#007700">= array(</font><font  color="#DD0000">'a'</font><font  color="#007700">, </font><font  color="#DD0000">'b'</font><font  color="#007700">, </font><font  color="#DD0000">'c'</font><font  color="#007700">, </font><font  color="#DD0000">'d'</font><font  color="#007700">, </font><font  color="#DD0000">'e'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">array_chunk</font><font  color="#007700">(</font><font  color="#0000BB">$input_array</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">array_chunk</font><font  color="#007700">(</font><font  color="#0000BB">$input_array</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">TRUE</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;      ÒÔÉÏ³ÌĞòÊä³öÎª£º
+     </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [0] =&gt; Array
+    [0] =&#62; Array
         (
-            [0] =&gt; a
-            [1] =&gt; b
+            [0] =&#62; a
+            [1] =&#62; b
         )
 
-    [1] =&gt; Array
+    [1] =&#62; Array
         (
-            [0] =&gt; c
-            [1] =&gt; d
+            [0] =&#62; c
+            [1] =&#62; d
         )
 
-    [2] =&gt; Array
+    [2] =&#62; Array
         (
-            [0] =&gt; e
+            [0] =&#62; e
         )
 
 )
 Array
 (
-    [0] =&gt; Array
+    [0] =&#62; Array
         (
-            [0] =&gt; a
-            [1] =&gt; b
+            [0] =&#62; a
+            [1] =&#62; b
         )
 
-    [1] =&gt; Array
+    [1] =&#62; Array
         (
-            [2] =&gt; c
-            [3] =&gt; d
+            [2] =&#62; c
+            [3] =&#62; d
         )
 
-    [2] =&gt; Array
+    [2] =&#62; Array
         (
-            [4] =&gt; e
+            [4] =&#62; e
         )
 
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-change-key-case.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-combine.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_change_key_case</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_combine</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.array-chunk-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.array-slice.html" class="function" rel="rdfs-seeAlso">array_slice()</a> - ä»æ•°ç»„ä¸­å–å‡ºä¸€æ®µ</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-change-key-case.html">array_change_key_case</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-column.html">array_column</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

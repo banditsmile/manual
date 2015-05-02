@@ -1,277 +1,143 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>解析 URL，返回其组成部分</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.http-build-query.html">http_build_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.rawurldecode.html">rawurldecode</a></div>
- <div class="up"><a href="ref.url.html">URL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.parse-url" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">parse_url</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">parse_url</span> &mdash; <span class="dc-title">解析 URL，返回其组成部分</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.parse-url-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>parse_url</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$url</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$component</code><span class="initializer"> = -1</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   本函数解析一个 URL 并返回一个关联数组，包含在 URL 中出现的各种组成部分。
-  </p>
-  <p class="para">
-   本函数<em class="emphasis">不是</em>用来验证给定 URL
-   的合法性的，只是将其分解为下面列出的部分。不完整的 URL
-   也被接受，<span class="function"><strong>parse_url()</strong></span> 会尝试尽量正确地将其解析。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.parse-url-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">url</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要解析的 URL。无效字符将使用
-       <em>_</em> 来替换。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-   <dl>
-
-    
-     <dt>
-<code class="parameter">component</code></dt>
-
-     <dd>
-
-      <p class="para">
-       指定 <strong><code>PHP_URL_SCHEME</code></strong>、
-       <strong><code>PHP_URL_HOST</code></strong>、 <strong><code>PHP_URL_PORT</code></strong>、
-       <strong><code>PHP_URL_USER</code></strong>、 <strong><code>PHP_URL_PASS</code></strong>、
-       <strong><code>PHP_URL_PATH</code></strong>、 <strong><code>PHP_URL_QUERY</code></strong>
-       或 <strong><code>PHP_URL_FRAGMENT</code></strong> 的其中一个来获取 URL 中指定的部分的 <span class="type"><a href="language.types.string.html" class="type string">string</a></span>。 （除了指定为 <strong><code>PHP_URL_PORT</code></strong> 后，将返回一个 <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> 的值）。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.parse-url-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   对严重不合格的 URL，<span class="function"><strong>parse_url()</strong></span> 可能会返回
-   <strong><code>FALSE</code></strong>。 
-  </p>  
-   <p class="para">
-    如果省略了 <code class="parameter">component</code> 参数，将返回一个关联数组 <span class="type"><a href="language.types.array.html" class="type array">array</a></span>，在目前至少会有一个元素在该数组中。数组中可能的键有以下几种：
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">scheme</var></var> - 如 http
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">host</var></var> 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">port</var></var>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">user</var></var>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">pass</var></var>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">path</var></var>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">query</var></var>  - 在问号 <em>?</em> 之后
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <var class="varname"><var class="varname">fragment</var></var> -  在散列符号 <em>#</em> 之后
-     </span>
-    </li>
-   </ul>
-  </p>
-  <p class="para">
-   如果指定了 <code class="parameter">component</code> 参数，
-   <span class="function"><strong>parse_url()</strong></span> 返回一个 <span class="type"><a href="language.types.string.html" class="type string">string</a></span> （或在指定为 <strong><code>PHP_URL_PORT</code></strong> 时返回一个 <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>）而不是 <span class="type"><a href="language.types.array.html" class="type array">array</a></span>。如果 URL 中指定的组成部分不存在，将会返回 <strong><code>NULL</code></strong>。
-  </p>
- </div>
-
-
-
- <div class="refsect1 changelog" id="refsect1-function.parse-url-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.4.7</td>
-       <td>
-        修复了 <em class="emphasis">host</em> 在 <em class="emphasis">协议</em> 省略时的识别。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.3</td>
-       <td>
-        在 URL 解析失败时将不会产生 <strong><code>E_WARNING</code></strong> 级别的错误。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.2</td>
-       <td>增加了参数 <code class="parameter">component</code>。</td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.parse-url-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-  <div class="example" id="example-4393">
-   <p><strong>Example #1 <span class="function"><strong>parse_url()</strong></span> 例子</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'http://username:password@hostname/path?arg=value#anchor'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">));<br /><br />echo&nbsp;</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_URL_PATH</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
+<HTML  ><HEAD  ><TITLE  >parse_url</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="URL ������" HREF="ref.url.html"><LINK  REL="PREVIOUS" TITLE="http_build_query" HREF="function.http-build-query.html"><LINK  REL="NEXT" TITLE="rawurldecode" HREF="function.rawurldecode.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.http-build-query.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.rawurldecode.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.parse-url" ></A
+>parse_url</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115117" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>parse_url&nbsp;--&nbsp;���� URL����������ɲ���</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115120" ></A
+><H2  >����</H2
+>array <B  CLASS="methodname" >parse_url</B
+> ( string url)<BR  ></BR
+><P  >&#13;     �˺�������һ���������飬�������� URL �ĸ�����ɲ��֡����ȱ�������е�ĳһ�����򲻻�Ϊ�����ɲ��ִ����������ɲ���Ϊ��
+    <P  ></P
+><UL  ><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >scheme</I
+></TT
+> - �� http
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >host</I
+></TT
+> 
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >port</I
+></TT
+>
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >user</I
+></TT
+>
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >pass</I
+></TT
+>
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >path</I
+></TT
+>
+      </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="structfield" ><I  >query</I
+></TT
+>  - ���ʺ� <TT  CLASS="literal" >?</TT
+> ֮��
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="structfield" ><I  >fragment</I
+></TT
+> -  ��ɢ�з��� <TT  CLASS="literal" >#</TT
+> ֮��
+      </P
+></LI
+></UL
+>
+   </P
+><P  >&#13;     �˺����� <SPAN  CLASS="strong" ><B  CLASS="emphasis" >��</B
+></SPAN
+> ��ζ�Ÿ����� 
+     URL �ǺϷ��ģ���ֻ�ǽ��Ϸ��б��еĸ����ַֿ���<B  CLASS="function" >parse_url()</B
+>
+     �ɽ��ܲ������� URL�����������������ȷ��
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      �˺��������·���� URL �������á�
+     </P
+></BLOCKQUOTE
+></DIV
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115161" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >parse_url()</B
+> ʾ��</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -r 'print_r( parse_url("http://username:password@hostname/path?arg=value#anchor"));'
 Array
 (
-    [scheme] =&gt; http
-    [host] =&gt; hostname
-    [user] =&gt; username
-    [pass] =&gt; password
-    [path] =&gt; /path
-    [query] =&gt; arg=value
-    [fragment] =&gt; anchor
+    [scheme] =&#62; http
+    [host] =&#62; hostname
+    [user] =&#62; username
+    [pass] =&#62; password
+    [path] =&#62; /path
+    [query] =&#62; arg=value
+    [fragment] =&#62; anchor
 )
-/path
-</pre></div>
-   </div>
-  </div>
- </p>
-   <p class="para">
-   <div class="example" id="example-4394">
-    <p><strong>Example #2 <span class="function"><strong>parse_url()</strong></span> 解析丢失协议的例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'//www.example.com/path?googleguy=googley'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;在&nbsp;5.4.7&nbsp;之前这会输出路径&nbsp;"//www.example.com/path"<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">parse_url</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
 
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(3) {
-  [&quot;host&quot;]=&gt;
-  string(15) &quot;www.example.com&quot;
-  [&quot;path&quot;]=&gt;
-  string(5) &quot;/path&quot;
-  [&quot;query&quot;]=&gt;
-  string(17) &quot;googleguy=googley&quot;
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.parse-url-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    本函数不能用于相对 URL。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>parse_url()</strong></span> 是专门用来解析 URL 而不是 URI 的。不过为遵从 PHP
-    向后兼容的需要有个例外，对 file:// 协议允许三个斜线（file:///...）。其它任何协议都不能这样。
-   </p>
-  </p></blockquote>
- </div>
+$ php -r 'print_r( parse_url("http://invalid_host..name/"));'
+Array
+(
+    [scheme] =&#62; http
+    [host] =&#62; invalid_host..name
+    [path] =&#62; /
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     �μ� <A  HREF="function.pathinfo.html"  ><B  CLASS="function" >pathinfo()</B
+></A
+>��<A  HREF="function.parse-str.html"  ><B  CLASS="function" >parse_str()</B
+></A
+>��<A  HREF="function.dirname.html"  ><B  CLASS="function" >dirname()</B
+></A
+>
+     �� <A  HREF="function.basename.html"  ><B  CLASS="function" >basename()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.http-build-query.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.rawurldecode.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >http_build_query</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.url.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >rawurldecode</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.parse-url-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pathinfo.html" class="function" rel="rdfs-seeAlso">pathinfo()</a> - 返回文件路径的信息</span></li>
-    <li class="member"><span class="function"><a href="function.parse-str.html" class="function" rel="rdfs-seeAlso">parse_str()</a> - 将字符串解析成多个变量</span></li>
-    <li class="member"><span class="function"><a href="function.http-build-query.html" class="function" rel="rdfs-seeAlso">http_build_query()</a> - 生成 URL-encode 之后的请求字符串</span></li>
-    <li class="member"><span class="function"><a href="function.http-build-url.html" class="function" rel="rdfs-seeAlso">http_build_url()</a> - 产生一个 URL</span></li>
-    <li class="member"><span class="function"><a href="function.dirname.html" class="function" rel="rdfs-seeAlso">dirname()</a> - 返回路径中的目录部分</span></li>
-    <li class="member"><span class="function"><a href="function.basename.html" class="function" rel="rdfs-seeAlso">basename()</a> - 返回路径中的文件名部分</span></li>
-    <li class="member"><a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.http-build-query.html">http_build_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.rawurldecode.html">rawurldecode</a></div>
- <div class="up"><a href="ref.url.html">URL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

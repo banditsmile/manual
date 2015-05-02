@@ -1,136 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ‰“å°å˜é‡çš„ç›¸å…³ä¿¡æ¯</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.unset.html">unset</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.var-export.html">var_export</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.var-dump" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">var_dump</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">var_dump</span> &mdash; <span class="dc-title">æ‰“å°å˜é‡çš„ç›¸å…³ä¿¡æ¯</span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.var-dump-description">
-  <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>var_dump</strong></span>
-       ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$expression</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-     ] )</div>
-
-    <p class="simpara">
-     æ­¤å‡½æ•°æ˜¾ç¤ºå…³äºä¸€ä¸ªæˆ–å¤šä¸ªè¡¨è¾¾å¼çš„ç»“æ„ä¿¡æ¯ï¼ŒåŒ…æ‹¬è¡¨è¾¾å¼çš„ç±»å‹ä¸å€¼ã€‚æ•°ç»„å°†é€’å½’å±•å¼€å€¼ï¼Œé€šè¿‡ç¼©è¿›æ˜¾ç¤ºå…¶ç»“æ„ã€‚
-    </p>
-    <p class="simpara">
-   In PHP 5 all public, private and protected properties of objects will be
-   returned in the output.
-  </p>
-    <div class="tip"><strong class="tip">Tip</strong><p class="simpara">å’Œç›´æ¥å°†ç»“æœè¾“å‡ºåˆ°æµè§ˆå™¨ä¸€æ ·ï¼Œå¯ä½¿ç”¨<a href="book.outcontrol.html" class="link">è¾“å‡ºæ§åˆ¶å‡½æ•°</a>æ¥æ•è·å½“å‰å‡½æ•°çš„è¾“å‡ºï¼Œç„¶å(ä¾‹å¦‚)ä¿å­˜åˆ°ä¸€ä¸ª <span class="type"><a href="language.types.string.html" class="type string">string</a></span> ä¸­ã€‚</p></div>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.var-dump-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">expression</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ä½ è¦æ‰“å°çš„å˜é‡ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.var-dump-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æ²¡æœ‰è¿”å›å€¼ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.var-dump-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5576">
-    <p><strong>Example #1 <span class="function"><strong>var_dump()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"a"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(3) {
-  [0]=&gt;
-  int(1)
-  [1]=&gt;
-  int(2)
-  [2]=&gt;
-  array(3) {
-    [0]=&gt;
-    string(1) &quot;a&quot;
-    [1]=&gt;
-    string(1) &quot;b&quot;
-    [2]=&gt;
-    string(1) &quot;c&quot;
-  }
-}
-</pre></div>
-    </div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3.1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-float(3.1)
-bool(true)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >var_dump</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿º¯Êı¿â" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="unset" HREF="function.unset.html"><LINK  REL="NEXT" TITLE="var_export" HREF="function.var-export.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.unset.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.var-export.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.var-dump" ></A
+>var_dump</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN116253" ></A
+><P  >    (PHP 3&#62;= 3.0.5, PHP 4 )</P
+>var_dump&nbsp;--&nbsp;´òÓ¡±äÁ¿µÄÏà¹ØĞÅÏ¢</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN116256" ></A
+><H2  >ÃèÊö</H2
+>void <B  CLASS="methodname" >var_dump</B
+> ( mixed expression [, mixed expression [, ...]])<BR  ></BR
+><P  >&#13;     ´Ëº¯ÊıÏÔÊ¾¹ØÓÚÒ»¸ö»ò¶à¸ö±í´ïÊ½µÄ½á¹¹ĞÅÏ¢£¬°üÀ¨±í´ïÊ½µÄÀàĞÍÓëÖµ¡£Êı×é½«µİ¹éÕ¹¿ªÖµ£¬Í¨¹ıËõ½øÏÔÊ¾Æä½á¹¹¡£
+    </P
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >ÌáÊ¾: </B
+>ÎªÁË·ÀÖ¹³ÌĞòÖ±½Ó½«½á¹ûÊä³öµ½ä¯ÀÀÆ÷£¬Äú¿ÉÒÔÊ¹ÓÃ<A  HREF="ref.outcontrol.html"  >Êä³ö¿ØÖÆº¯Êı£¨output-control
+functions£©</A
+>À´²¶»ñº¯ÊıµÄÊä³ö£¬²¢°ÑËüÃÇ±£´æµ½Ò»¸ö <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+> ĞÍµÄ±äÁ¿ÖĞ¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ¿ÉÒÔ±È½ÏÒ»ÏÂ <B  CLASS="function" >var_dump()</B
+> Óë
+     <A  HREF="function.print-r.html"  ><B  CLASS="function" >print_r()</B
+></A
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116278" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >var_dump()</B
+> Ê¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+&lt;pre&gt;<br  /><font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, array (</font><font  color="#DD0000">"a"</font><font  color="#007700">, </font><font  color="#DD0000">"b"</font><font  color="#007700">, </font><font  color="#DD0000">"c"</font><font  color="#007700">));<br  /></font><font  color="#0000BB">var_dump </font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Êä³ö£º<br  />array(3) {<br  />&nbsp;&nbsp;[0]=&gt;<br  />&nbsp;&nbsp;int(1)<br  />&nbsp;&nbsp;[1]=&gt;<br  />&nbsp;&nbsp;int(2)<br  />&nbsp;&nbsp;[2]=&gt;<br  />&nbsp;&nbsp;array(3) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;[0]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(1) "a"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[1]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(1) "b"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[2]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(1) "c"<br  />&nbsp;&nbsp;}<br  />}<br  /><br  />*/<br  /><br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">3.1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$c </font><font  color="#007700">= </font><font  color="#0000BB">TRUE</font><font  color="#007700">;<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$b</font><font  color="#007700">,</font><font  color="#0000BB">$c</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Êä³ö£º<br  />float(3.1)<br  />bool(true)<br  /><br  />*/<br  /></font><font  color="#0000BB">?&gt;<br  /></font>&lt;/pre&gt;</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.unset.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.var-export.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >unset</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >var_export</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.var-dump-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.var-export.html" class="function" rel="rdfs-seeAlso">var_export()</a> - è¾“å‡ºæˆ–è¿”å›ä¸€ä¸ªå˜é‡çš„å­—ç¬¦ä¸²è¡¨ç¤º</span></li>
-    <li class="member"><span class="function"><a href="function.print-r.html" class="function" rel="rdfs-seeAlso">print_r()</a> - æ‰“å°å…³äºå˜é‡çš„æ˜“äºç†è§£çš„ä¿¡æ¯ã€‚</span></li>
-   </ul>
-  </p>  
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.unset.html">unset</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.var-export.html">var_export</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

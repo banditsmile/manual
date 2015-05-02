@@ -1,79 +1,69 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Create a new FDF document</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fdf-close.html">fdf_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fdf-enum-values.html">fdf_enum_values</a></div>
- <div class="up"><a href="ref.fdf.html">FDF å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fdf-create" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fdf_create</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">fdf_create</span> &mdash; <span class="dc-title">Create a new FDF document</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fdf-create-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>fdf_create</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Creates a new FDF document. 
-  </p>
-  <p class="para">
-   This function is needed if one would like to populate input fields in a
-   PDF document with data.
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fdf-create-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a FDF document handle, or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.fdf-create-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3763">
-    <p><strong>Example #1 Populating a PDF document</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$outfdf&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fdf_create</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">fdf_set_value</span><span style="color: #007700">(</span><span style="color: #0000BB">$outfdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"volume"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$volume</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fdf_set_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$outfdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"http:/testfdf/resultlabel.pdf"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fdf_save</span><span style="color: #007700">(</span><span style="color: #0000BB">$outfdf</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"outtest.fdf"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fdf_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$outfdf</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">Header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;application/vnd.fdf"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"outtest.fdf"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fpassthru</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">unlink</span><span style="color: #007700">(</span><span style="color: #DD0000">"outtest.fdf"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fdf-create-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fdf-close.html" class="function" rel="rdfs-seeAlso">fdf_close()</a> - Close an FDF document</span></li>
-    <li class="member"><span class="function"><a href="function.fdf-save.html" class="function" rel="rdfs-seeAlso">fdf_save()</a> - Save a FDF document</span></li>
-    <li class="member"><span class="function"><a href="function.fdf-open.html" class="function" rel="rdfs-seeAlso">fdf_open()</a> - Open a FDF document</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fdf_create</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Forms Data Format Functions" HREF="ref.fdf.html"><LINK  REL="PREVIOUS" TITLE="fdf_close" HREF="function.fdf-close.html"><LINK  REL="NEXT" TITLE="fdf_enum_values" HREF="function.fdf-enum-values.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fdf-close.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fdf-enum-values.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fdf-create" ></A
+>fdf_create</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN30220" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>fdf_create&nbsp;--&nbsp;Create a new FDF document</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN30223" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >fdf_create</B
+> ( void )<BR  ></BR
+><P  >&#13;     The <B  CLASS="function" >fdf_create()</B
+> creates a new
+     FDF document. This function is needed if one would like to
+     populate input fields in a PDF document with data.</P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN30232" ></A
+><P  ><B  >Àı×Ó 1. Populating a PDF document</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$outfdf </font><font  color="#007700">= </font><font  color="#0000BB">fdf_create</font><font  color="#007700">();<br  /></font><font  color="#0000BB">fdf_set_value</font><font  color="#007700">(</font><font  color="#0000BB">$outfdf</font><font  color="#007700">, </font><font  color="#DD0000">"volume"</font><font  color="#007700">, </font><font  color="#0000BB">$volume</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">fdf_set_file</font><font  color="#007700">(</font><font  color="#0000BB">$outfdf</font><font  color="#007700">, </font><font  color="#DD0000">"http:/testfdf/resultlabel.pdf"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fdf_save</font><font  color="#007700">(</font><font  color="#0000BB">$outfdf</font><font  color="#007700">, </font><font  color="#DD0000">"outtest.fdf"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fdf_close</font><font  color="#007700">(</font><font  color="#0000BB">$outfdf</font><font  color="#007700">);<br  /></font><font  color="#0000BB">Header</font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: application/vnd.fdf"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"outtest.fdf"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fpassthru</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /></font><font  color="#0000BB">unlink</font><font  color="#007700">(</font><font  color="#DD0000">"outtest.fdf"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></P
+><P  >&#13;     See also <A  HREF="function.fdf-close.html"  ><B  CLASS="function" >fdf_close()</B
+></A
+>,
+              <A  HREF="function.fdf-save.html"  ><B  CLASS="function" >fdf_save()</B
+></A
+>,
+              <A  HREF="function.fdf-open.html"  ><B  CLASS="function" >fdf_open()</B
+></A
+>.</P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fdf-close.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fdf-enum-values.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fdf_close</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fdf.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fdf_enum_values</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fdf-close.html">fdf_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fdf-enum-values.html">fdf_enum_values</a></div>
- <div class="up"><a href="ref.fdf.html">FDF å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

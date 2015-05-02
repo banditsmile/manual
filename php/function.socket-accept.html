@@ -1,106 +1,123 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Accepts a connection on a socket</title>
+<HTML  ><HEAD  ><TITLE  >socket_accept</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="PREVIOUS" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="NEXT" TITLE="socket_bind" HREF="function.socket-bind.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.sockets.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.socket-bind.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.socket-accept" ></A
+>socket_accept</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN103858" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>socket_accept&nbsp;--&nbsp;Accepts a connection on a socket</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN103861" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >socket_accept</B
+> ( resource socket)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     After the socket <TT  CLASS="parameter" ><I  >socket</I
+></TT
+> has been created
+     using <A  HREF="function.socket-create.html"  ><B  CLASS="function" >socket_create()</B
+></A
+>, bound to a name with
+     <A  HREF="function.socket-bind.html"  ><B  CLASS="function" >socket_bind()</B
+></A
+>, and told to listen for connections
+     with <A  HREF="function.socket-listen.html"  ><B  CLASS="function" >socket_listen()</B
+></A
+>, this function will accept
+     incoming connections on that socket. Once a successful connection
+     is made, a new socket resource is returned, which may be used
+     for communication. If there are multiple connections queued on
+     the socket, the first will be used. If there are no pending
+     connections, <B  CLASS="function" >socket_accept()</B
+> will block until
+     a connection becomes present. If <TT  CLASS="parameter" ><I  >socket</I
+></TT
+>
+     has been made non-blocking using
+     <A  HREF="function.socket-set-blocking.html"  ><B  CLASS="function" >socket_set_blocking()</B
+></A
+> or
+     <A  HREF="function.socket-set-nonblock.html"  ><B  CLASS="function" >socket_set_nonblock()</B
+></A
+>, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> will be returned.
+    </P
+><P  >&#13;     The socket resource returned by
+     <B  CLASS="function" >socket_accept()</B
+> may not be used to accept new
+     connections. The original listening socket
+     <TT  CLASS="parameter" ><I  >socket</I
+></TT
+>, however, remains open and may be
+     reused.
+    </P
+><P  >&#13;     Returns a new socket resource on success, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error. The actual
+     error code can be retrieved by calling
+     <A  HREF="function.socket-last-error.html"  ><B  CLASS="function" >socket_last_error()</B
+></A
+>. This error code may be passed to
+     <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+> to get a textual explanation of the
+     error.
+    </P
+><P  >&#13;     See also 
+     <A  HREF="function.socket-bind.html"  ><B  CLASS="function" >socket_bind()</B
+></A
+>,
+     <A  HREF="function.socket-connect.html"  ><B  CLASS="function" >socket_connect()</B
+></A
+>,
+     <A  HREF="function.socket-listen.html"  ><B  CLASS="function" >socket_listen()</B
+></A
+>,
+     <A  HREF="function.socket-create.html"  ><B  CLASS="function" >socket_create()</B
+></A
+>, and
+     <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.socket-bind.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Socket Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >socket_bind</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-bind.html">socket_bind</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.socket-accept" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">socket_accept</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">socket_accept</span> &mdash; <span class="dc-title">Accepts a connection on a socket</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.socket-accept-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>socket_accept</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   After the socket <code class="parameter">socket</code> has been created
-   using <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span>, bound to a name with
-   <span class="function"><a href="function.socket-bind.html" class="function">socket_bind()</a></span>, and told to listen for connections
-   with <span class="function"><a href="function.socket-listen.html" class="function">socket_listen()</a></span>, this function will accept
-   incoming connections on that socket. Once a successful connection
-   is made, a new socket resource is returned, which may be used
-   for communication. If there are multiple connections queued on
-   the socket, the first will be used. If there are no pending
-   connections, <span class="function"><strong>socket_accept()</strong></span> will block until
-   a connection becomes present. If <code class="parameter">socket</code>
-   has been made non-blocking using
-   <span class="function"><a href="function.socket-set-blocking.html" class="function">socket_set_blocking()</a></span> or
-   <span class="function"><a href="function.socket-set-nonblock.html" class="function">socket_set_nonblock()</a></span>, <strong><code>FALSE</code></strong> will be returned.
-  </p>
-  <p class="para">
-   The socket resource returned by
-   <span class="function"><strong>socket_accept()</strong></span> may not be used to accept new
-   connections. The original listening socket
-   <code class="parameter">socket</code>, however, remains open and may be
-   reused.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.socket-accept-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A valid socket resource created with <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.socket-accept-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a new socket resource on success, or <strong><code>FALSE</code></strong> on error. The actual
-   error code can be retrieved by calling
-   <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>. This error code may be passed to
-   <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> to get a textual explanation of the
-   error.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.socket-accept-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.socket-connect.html" class="function" rel="rdfs-seeAlso">socket_connect()</a> - å¼€å¯ä¸€ä¸ªå¥—æ¥å­—è¿æ¥</span></li>
-    <li class="member"><span class="function"><a href="function.socket-listen.html" class="function" rel="rdfs-seeAlso">socket_listen()</a> - Listens for a connection on a socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-create.html" class="function" rel="rdfs-seeAlso">socket_create()</a> - åˆ›å»ºä¸€ä¸ªå¥—æ¥å­—ï¼ˆé€šè®¯èŠ‚ç‚¹ï¼‰</span></li>
-    <li class="member"><span class="function"><a href="function.socket-bind.html" class="function" rel="rdfs-seeAlso">socket_bind()</a> - ç»™å¥—æ¥å­—ç»‘å®šåå­—</span></li>
-    <li class="member"><span class="function"><a href="function.socket-strerror.html" class="function" rel="rdfs-seeAlso">socket_strerror()</a> - Return a string describing a socket error</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-bind.html">socket_bind</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

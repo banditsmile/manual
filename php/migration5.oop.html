@@ -1,35 +1,41 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新对象模型</title>
+<HTML  ><HEAD  ><TITLE  >New Object Model</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Migrating from PHP 4 to PHP 5" HREF="migration5.html"><LINK  REL="PREVIOUS" TITLE="Databases" HREF="migration5.databases.html"><LINK  REL="NEXT" TITLE="�� PHP 3 ��ֲ�� PHP 4" HREF="migration4.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="migration5.databases.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ B. Migrating from PHP 4 to PHP 5</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration4.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.oop" ></A
+>New Object Model</H1
+><P  >&#13;    In PHP 5 there is a new Object Model. PHP's handling of objects has been
+    completely rewritten, allowing for better performance and more features.
+    Please read <A  href="http://www.php.net/zend-engine-2.php"  TARGET="_top" >http://www.php.net/zend-engine-2.php</A
+>
+    for more info.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="migration5.databases.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration4.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Databases</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="migration5.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >�� PHP 3 ��ֲ�� PHP 4</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.databases.html">数据库</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migrating5.errorrep.html">错误报告</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5.oop" class="section">
-   <h2 class="title">新对象模型</h2>
-   <p class="para">
-    PHP 5 中有个新对象模型（Object Model）。PHP
-    处理对象的方式完全重写了，允许更佳性能和更多特性。之前版本的
-    PHP，对象处理方式和原始类型（例如整型和字符串）相同。此方法的缺点是当变量被赋值或作为参数传递给方法时语义上整个对象都被拷贝。在新方法中，对象通过句柄引用，而不是值（可以将句柄当成是对象的标识符）。
-   </p>
-   <p class="para">
-    很多 PHP 程序员根本没意识到旧的对象模型的这种拷贝怪癖，因此大多数 PHP
-    应用程序拿来就能运行，或者只做很小的修改。
-   </p>
-   <p class="para">
-    新对象模型的文档见<a href="language.oop5.html" class="link">语言参考</a>。
-   </p>
-   <p class="para">
-    与 PHP 4 的兼容性参见 <a href="ini.core.html#ini.zend.ze1-compatibility-mode" class="link">zend.ze1_compatibility_mode</a>。
-   </p>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.databases.html">数据库</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migrating5.errorrep.html">错误报告</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

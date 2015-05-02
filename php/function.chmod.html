@@ -1,141 +1,111 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ”¹å˜æ–‡ä»¶æ¨¡å¼</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.chgrp.html">chgrp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.chown.html">chown</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.chmod" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">chmod</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">chmod</span> &mdash; <span class="dc-title">æ”¹å˜æ–‡ä»¶æ¨¡å¼</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.chmod-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>chmod</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   å°è¯•å°† <code class="parameter">filename</code> æ‰€æŒ‡å®šæ–‡ä»¶çš„æ¨¡å¼æ”¹æˆ
-   <code class="parameter">mode</code> æ‰€ç»™å®šçš„ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.chmod-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ–‡ä»¶çš„è·¯å¾„ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-   æ³¨æ„ <code class="parameter">mode</code> ä¸ä¼šè¢«è‡ªåŠ¨å½“æˆå…«è¿›åˆ¶æ•°å€¼ï¼Œè€Œä¸”ä¹Ÿä¸èƒ½ç”¨å­—ç¬¦ä¸²ï¼ˆä¾‹å¦‚ &quot;g+w&quot;ï¼‰ã€‚è¦ç¡®ä¿æ­£ç¡®æ“ä½œï¼Œéœ€è¦ç»™
-   <code class="parameter">mode</code> å‰é¢åŠ ä¸Š 0ï¼š
-      </p>
-      <p class="para">
-       <div class="informalexample">
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">755</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;åè¿›åˆ¶æ•°ï¼Œå¯èƒ½ä¸å¯¹<br /></span><span style="color: #0000BB">chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"u+rwx,go+rx"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;å­—ç¬¦ä¸²ï¼Œä¸å¯¹<br /></span><span style="color: #0000BB">chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0755</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å…«è¿›åˆ¶æ•°ï¼Œæ­£ç¡®çš„&nbsp;mode&nbsp;å€¼<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-      </p>
-      <p class="para">
-       <code class="parameter">mode</code> å‚æ•°åŒ…å«ä¸‰ä¸ªå…«è¿›åˆ¶æ•°æŒ‰é¡ºåºåˆ†åˆ«æŒ‡å®šäº†æ‰€æœ‰è€…ã€æ‰€æœ‰è€…æ‰€åœ¨çš„ç»„ä»¥åŠæ‰€æœ‰äººçš„è®¿é—®é™åˆ¶ã€‚æ¯ä¸€éƒ¨åˆ†éƒ½å¯ä»¥é€šè¿‡åŠ å…¥æ‰€éœ€çš„æƒé™æ¥è®¡ç®—å‡ºæ‰€è¦çš„æƒé™ã€‚æ•°å­— 1
-   è¡¨ç¤ºä½¿æ–‡ä»¶å¯æ‰§è¡Œï¼Œæ•°å­— 2 è¡¨ç¤ºä½¿æ–‡ä»¶å¯å†™ï¼Œæ•°å­— 4
-   è¡¨ç¤ºä½¿æ–‡ä»¶å¯è¯»ã€‚åŠ å…¥è¿™äº›æ•°å­—æ¥åˆ¶å®šæ‰€éœ€è¦çš„æƒé™ã€‚æœ‰å…³ UNIX ç³»ç»Ÿçš„æ–‡ä»¶æƒé™å¯ä»¥é˜…è¯»æ‰‹å†Œâ€œ<strong class="command">man 1
-   chmod</strong>â€å’Œâ€œ<strong class="command">man 2 chmod</strong>â€ã€‚
-      </p>
-      <p class="para">
-       <div class="informalexample">
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Read&nbsp;and&nbsp;write&nbsp;for&nbsp;owner,&nbsp;nothing&nbsp;for&nbsp;everybody&nbsp;else<br /></span><span style="color: #0000BB">chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0600</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Read&nbsp;and&nbsp;write&nbsp;for&nbsp;owner,&nbsp;read&nbsp;for&nbsp;everybody&nbsp;else<br /></span><span style="color: #0000BB">chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0644</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Everything&nbsp;for&nbsp;owner,&nbsp;read&nbsp;and&nbsp;execute&nbsp;for&nbsp;others<br /></span><span style="color: #0000BB">chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0755</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Everything&nbsp;for&nbsp;owner,&nbsp;read&nbsp;and&nbsp;execute&nbsp;for&nbsp;owner's&nbsp;group<br /></span><span style="color: #0000BB">chmod</span><span style="color: #007700">(</span><span style="color: #DD0000">"/somedir/somefile"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0750</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.chmod-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.chmod-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å½“å‰ç”¨æˆ·æŒ‡çš„æ˜¯æ‰§è¡Œ PHP çš„ç”¨æˆ·ã€‚å¾ˆå¯èƒ½å’Œé€šå¸¸çš„ shell æˆ–è€… FTP
-    ç”¨æˆ·ä¸æ˜¯åŒä¸€ä¸ªã€‚åœ¨å¤§å¤šæ•°ç³»ç»Ÿä¸‹æ–‡ä»¶æ¨¡å¼åªèƒ½è¢«æ–‡ä»¶æ‰€æœ‰è€…çš„ç”¨æˆ·æ”¹å˜ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°ä¸èƒ½ä½œç”¨äº<a href="features.remote-files.html" class="link">è¿œç¨‹æ–‡ä»¶</a>ï¼Œè¢«æ£€æŸ¥çš„æ–‡ä»¶å¿…é¡»æ˜¯å¯é€šè¿‡æœåŠ¡å™¨çš„æ–‡ä»¶ç³»ç»Ÿè®¿é—®çš„ã€‚</span></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å½“<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">å®‰å…¨æ¨¡å¼</a>æ‰“å¼€çš„æ—¶å€™ï¼ŒPHP ä¼šæ£€æŸ¥æ‰€æ“ä½œçš„æ–‡ä»¶æ˜¯å¦å’Œæ­£åœ¨æ‰§è¡Œçš„è„šæœ¬å…·æœ‰ç›¸åŒçš„
-    UID ï¼ˆæ‰€æœ‰è€…ï¼‰ã€‚è¦æ³¨æ„çš„æ˜¯ï¼Œä¸èƒ½ä¿®æ”¹ SUIDï¼ŒSGID å’Œ sticky bitsã€‚
-   </p>
-  </p></blockquote>
- </div>
+<HTML  ><HEAD  ><TITLE  >chmod</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="chgrp" HREF="function.chgrp.html"><LINK  REL="NEXT" TITLE="chown" HREF="function.chown.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.chgrp.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.chown.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.chmod" ></A
+>chmod</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN27449" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>chmod&nbsp;--&nbsp;¸Ä±äÎÄ¼şÄ£Ê½</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN27452" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >chmod</B
+> ( string filename, int mode)<BR  ></BR
+><P  >&#13;     ³¢ÊÔ½« <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> ËùÖ¸¶¨ÎÄ¼şµÄÄ£Ê½¸Ä³É
+     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> Ëù¸ø¶¨µÄ¡£
+    </P
+><P  >&#13;     ×¢Òâ <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> ²»»á±»×Ô¶¯µ±³É°Ë½øÖÆÊıÖµ£¬¶øÇÒÒ²²»ÄÜÓÃ×Ö·û´®£¨ÀıÈç "g+w"£©¡£ÒªÈ·±£ÕıÈ·²Ù×÷£¬ĞèÒª¸ø
+     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> Ç°Ãæ¼ÓÉÏ 0£º
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN27470" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#0000BB">755</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Ê®½øÖÆÊı£¬¿ÉÄÜ²»¶Ô<br  /></font><font  color="#0000BB">chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#DD0000">"u+rwx,go+rx"</font><font  color="#007700">); </font><font  color="#FF8000">// ×Ö·û´®£¬²»¶Ô<br  /></font><font  color="#0000BB">chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#0000BB">0755</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// °Ë½øÖÆÊı£¬ÕıÈ·µÄ mode Öµ<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> ²ÎÊı°üº¬Èı¸ö°Ë½øÖÆÊı°´Ë³Ğò·Ö±ğÖ¸¶¨ÁËËùÓĞÕß¡¢ËùÓĞÕßËùÔÚµÄ×éÒÔ¼°ËùÓĞÈËµÄ·ÃÎÊÏŞÖÆ¡£Ã¿Ò»²¿·Ö¶¼¿ÉÒÔÍ¨¹ı¼ÓÈëËùĞèµÄÈ¨ÏŞÀ´¼ÆËã³öËùÒªµÄÈ¨ÏŞ¡£Êı×Ö 1
+     ±íÊ¾Ê¹ÎÄ¼ş¿ÉÖ´ĞĞ£¬Êı×Ö 2 ±íÊ¾Ê¹ÎÄ¼ş¿ÉĞ´£¬Êı×Ö 4
+     ±íÊ¾Ê¹ÎÄ¼ş¿É¶Á¡£¼ÓÈëÕâĞ©Êı×ÖÀ´ÖÆ¶¨ËùĞèÒªµÄÈ¨ÏŞ¡£ÓĞ¹Ø UNIX ÏµÍ³µÄÎÄ¼şÈ¨ÏŞ¿ÉÒÔÔÄ¶ÁÊÖ²á¡°man 1
+     chmod¡±ºÍ¡°man 2 chmod¡±¡£
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN27475" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// Read and write for owner, nothing for everybody else<br  /></font><font  color="#0000BB">chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#0000BB">0600</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Read and write for owner, read for everybody else<br  /></font><font  color="#0000BB">chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#0000BB">0644</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Everything for owner, read and execute for others<br  /></font><font  color="#0000BB">chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#0000BB">0755</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Everything for owner, read and execute for owner's group<br  /></font><font  color="#0000BB">chmod </font><font  color="#007700">(</font><font  color="#DD0000">"/somedir/somefile"</font><font  color="#007700">, </font><font  color="#0000BB">0750</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      µ±Ç°ÓÃ»§Ö¸µÄÊÇÖ´ĞĞ PHP µÄÓÃ»§¡£ºÜ¿ÉÄÜºÍÍ¨³£µÄ shell »òÕß FTP ÓÃ»§²»ÊÇÍ¬Ò»¸ö¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯Êı²»ÄÜ×÷ÓÃÓÚ<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>£¬±»¼ì²éµÄÎÄ¼ş±ØĞëÍ¨¹ı·şÎñÆ÷µÄÎÄ¼şÏµÍ³·ÃÎÊ¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.chown.html"  ><B  CLASS="function" >chown()</B
+></A
+> ºÍ <A  HREF="function.chgrp.html"  ><B  CLASS="function" >chgrp()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.chgrp.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.chown.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >chgrp</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >chown</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.chmod-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.chown.html" class="function" rel="rdfs-seeAlso">chown()</a> - æ”¹å˜æ–‡ä»¶çš„æ‰€æœ‰è€…</span></li>
-    <li class="member"><span class="function"><a href="function.chgrp.html" class="function" rel="rdfs-seeAlso">chgrp()</a> - æ”¹å˜æ–‡ä»¶æ‰€å±çš„ç»„</span></li>
-    <li class="member"><span class="function"><a href="function.fileperms.html" class="function" rel="rdfs-seeAlso">fileperms()</a> - å–å¾—æ–‡ä»¶çš„æƒé™</span></li>
-    <li class="member"><span class="function"><a href="function.stat.html" class="function" rel="rdfs-seeAlso">stat()</a> - ç»™å‡ºæ–‡ä»¶çš„ä¿¡æ¯</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.chgrp.html">chgrp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.chown.html">chown</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

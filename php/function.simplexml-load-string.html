@@ -1,191 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Interprets a string of XML into an object</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.simplexml-load-file.html">simplexml_load_file</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.wddx.html">WDDX</a></div>
- <div class="up"><a href="ref.simplexml.html">SimpleXML ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.simplexml-load-string" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">simplexml_load_string</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">simplexml_load_string</span> &mdash; <span class="dc-title">
-   Interprets a string of XML into an object
-  </span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.simplexml-load-string-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="class.simplexmlelement.html" class="type SimpleXMLElement">SimpleXMLElement</a></span> <span class="methodname"><strong>simplexml_load_string</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code><span class="initializer"> = &quot;SimpleXMLElement&quot;</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code><span class="initializer"> = &quot;&quot;</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = false</span></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   Takes a well-formed XML string and returns it as an object.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.simplexml-load-string-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A well-formed XML string
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">class_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       You may use this optional parameter so that
-       <span class="function"><strong>simplexml_load_string()</strong></span> will return an object of 
-       the specified class. That class should extend the 
-       <span class="type"><a href="class.simplexmlelement.html" class="type SimpleXMLElement">SimpleXMLElement</a></span> class.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Since PHP 5.1.0 and Libxml 2.6.0, you may also use the
-       <code class="parameter">options</code> parameter to specify <a href="libxml.constants.html" class="link">additional Libxml parameters</a>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">ns</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Namespace prefix or URI.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">is_prefix</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <strong><code>TRUE</code></strong> if <code class="parameter">ns</code> is a prefix, <strong><code>FALSE</code></strong> if it&#039;s a URI;
-       defaults to <strong><code>FALSE</code></strong>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.simplexml-load-string-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an <span class="type"><a href="language.types.object.html" class="type object">object</a></span> of class <span class="type"><a href="class.simplexmlelement.html" class="type SimpleXMLElement">SimpleXMLElement</a></span> with
-   properties containing the data held within the xml document, ÊàñËÄÖÂú®Â§±Ë¥•Êó∂ËøîÂõû <strong><code>FALSE</code></strong>.
-  </p>
- </div>
-
-
- <div class="refsect1 errors" id="refsect1-function.simplexml-load-string-errors">
-  <h3 class="title">ÈîôËØØÔºèÂºÇÂ∏∏</h3>
-  <p class="para">
-   Produces an <strong><code>E_WARNING</code></strong> error message for each error
-   found in the XML data.
-  </p>
-  <div class="tip"><strong class="tip">Tip</strong>
-   <p class="para">
-    Use <span class="function"><a href="function.libxml-use-internal-errors.html" class="function">libxml_use_internal_errors()</a></span> to suppress all XML
-    errors, and <span class="function"><a href="function.libxml-get-errors.html" class="function">libxml_get_errors()</a></span> to iterate over them
-    afterwards.
-   </p>
-  </div>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.simplexml-load-string-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-5791">
-    <p><strong>Example #1 Interpret an XML string</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;XML<br /></span><span style="color: #DD0000">&lt;?xml&nbsp;version='1.0'?&gt;&nbsp;<br />&lt;document&gt;<br />&nbsp;&lt;title&gt;Forty&nbsp;What?&lt;/title&gt;<br />&nbsp;&lt;from&gt;Joe&lt;/from&gt;<br />&nbsp;&lt;to&gt;Jane&lt;/to&gt;<br />&nbsp;&lt;body&gt;<br />&nbsp;&nbsp;I&nbsp;know&nbsp;that's&nbsp;the&nbsp;answer&nbsp;--&nbsp;but&nbsp;what's&nbsp;the&nbsp;question?<br />&nbsp;&lt;/body&gt;<br />&lt;/document&gt;<br /></span><span style="color: #007700">XML;<br /><br /></span><span style="color: #0000BB">$xml&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">simplexml_load_string</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$xml</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>‰ª•‰∏ä‰æãÁ®ã‰ºöËæìÂá∫Ôºö</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-SimpleXMLElement Object
+<HTML  ><HEAD  ><TITLE  >simplexml_load_string</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="SimpleXML functions" HREF="ref.simplexml.html"><LINK  REL="PREVIOUS" TITLE="simplexml_load_file" HREF="function.simplexml-load-file.html"><LINK  REL="NEXT" TITLE="SOAP Functions" HREF="ref.soap.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.simplexml-load-file.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.soap.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.simplexml-load-string" ></A
+>simplexml_load_string</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99958" ></A
+><P  >    (no version information, might be only in CVS)</P
+>simplexml_load_string&nbsp;--&nbsp;
+     Interprets a string of XML into an object.
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99961" ></A
+><H2  >Description</H2
+>object simplexml_element <B  CLASS="methodname" >simplexml_load_string</B
+> ( string data)<BR  ></BR
+><P  >&#13;     This function will take the well-formed xml string 
+     <TT  CLASS="parameter" ><I  >data</I
+></TT
+> and return an object with properties
+     containing the data held within the xml document. If any errors
+     occur, it returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99973" ></A
+><P  ><B  >¿˝◊” 1. Interpret an XML string</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$string </font><font  color="#007700">= &lt;&lt;&lt;XML<br  /></font><font  color="#0000BB">&lt;?xml version='1.0'?&gt; <br  />&lt;document&gt;<br  /> &lt;title&gt;Forty What?&lt;/title&gt;<br  /> &lt;from&gt;Joe&lt;/from&gt;<br  /> &lt;to&gt;Jane&lt;/to&gt;<br  /> &lt;body&gt;<br  />&nbsp;&nbsp;I know that's the answer -- but what's the question?<br  /> &lt;/body&gt;<br  />&lt;/document&gt;<br  /></font><font  color="#007700">XML;<br  /></font><font  color="#0000BB">$xml </font><font  color="#007700">= </font><font  color="#0000BB">simplexml_load_string</font><font  color="#007700">(</font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$xml</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       This script will display:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >simplexml_element Object
 (
-  [title] =&gt; Forty What?
-  [from] =&gt; Joe
-  [to] =&gt; Jane
-  [body] =&gt;
-   I know that&#039;s the answer -- but what&#039;s the question?
-)
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     At this point, you can go about using <em>$xml-&gt;body</em>
-     and such.
-    </p></div>
-   </div>
-  </p>
- </div>
+  [title] =&#62; Forty What?
+  [from] =&#62; Joe
+  [to] =&#62; Jane
+  [body] =&#62;
+   I know that's the answer -- but what's the question?
+)</PRE
+></TD
+></TR
+></TABLE
+><P  >&#13;       At this point, you can go about using <TT  CLASS="literal" >$xml-&#62;body</TT
+>
+       and such.
+      </P
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.simplexml-load-file.html"  ><B  CLASS="function" >simplexml_load_file()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.simplexml-load-file.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.soap.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >simplexml_load_file</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.simplexml.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >SOAP Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.simplexml-load-string-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.simplexml-load-file.html" class="function" rel="rdfs-seeAlso">simplexml_load_file()</a> - Interprets an XML file into an object</span></li>
-    <li class="member"><span class="methodname"><a href="simplexmlelement.construct.html" class="methodname" rel="rdfs-seeAlso">SimpleXMLElement::__construct()</a> - Creates a new SimpleXMLElement object</span></li>
-    <li class="member"><a href="simplexml.examples-errors.html" class="xref">Dealing with XML errors</a></li>
-    <li class="member"><span class="function"><a href="function.libxml-use-internal-errors.html" class="function" rel="rdfs-seeAlso">libxml_use_internal_errors()</a> - Disable libxml errors and allow user to fetch error information as needed</span></li>
-    <li class="member"><a href="simplexml.examples-basic.html" class="xref">Basic SimpleXML usage</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.simplexml-load-file.html">simplexml_load_file</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.wddx.html">WDDX</a></div>
- <div class="up"><a href="ref.simplexml.html">SimpleXML ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

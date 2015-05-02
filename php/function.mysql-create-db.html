@@ -1,146 +1,98 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ–°å»ºä¸€ä¸ª MySQL æ•°æ®åº“</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-connect.html">mysql_connect</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-data-seek.html">mysql_data_seek</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-create-db" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mysql_create_db</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_create_db</span> &mdash; <span class="dc-title">æ–°å»ºä¸€ä¸ª MySQL æ•°æ®åº“</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.mysql-create-db-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>mysql_create_db</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$database name</code></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mysql_create_db()</strong></span> å°è¯•åœ¨æŒ‡å®šçš„è¿æ¥æ ‡è¯†æ‰€å…³è”çš„æœåŠ¡å™¨ä¸Šå»ºç«‹ä¸€ä¸ªæ–°æ•°æ®åº“ã€‚
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.mysql-create-db-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">database_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦åˆ›å»ºçš„æ•°æ®åº“åã€‚
-      </p>
-     </dd>
-
-    
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para">MySQL
-è¿æ¥ã€‚å¦‚ä¸æŒ‡å®šè¿æ¥æ ‡è¯†ï¼Œåˆ™ä½¿ç”¨ç”± <span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span>
-æœ€è¿‘æ‰“å¼€çš„è¿æ¥ã€‚å¦‚æœæ²¡æœ‰æ‰¾åˆ°è¯¥è¿æ¥ï¼Œä¼šå°è¯•ä¸å¸¦å‚æ•°è°ƒç”¨
-<span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span>
-æ¥åˆ›å»ºã€‚å¦‚æ²¡æœ‰æ‰¾åˆ°è¿æ¥æˆ–æ— æ³•å»ºç«‹è¿æ¥ï¼Œåˆ™ä¼šç”Ÿæˆ
-<strong><code>E_WARNING</code></strong> çº§åˆ«çš„é”™è¯¯ã€‚</p></dd>
-
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mysql-create-db-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mysql-create-db-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1693">
-    <p><strong>Example #1 æ›¿ä»£ <span class="function"><strong>mysql_create_db()</strong></span> çš„ä¾‹å­</strong></p>
-    <div class="example-contents"><p>
-     <span class="function"><strong>mysql_create_db()</strong></span> å‡½æ•°å·²åºŸå¼ƒã€‚æœ€å¥½ç”¨
-     <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span> æ¥æäº¤ä¸€æ¡ SQL çš„
-     <em>CREATE DATABASE</em> è¯­å¥æ¥ä»£æ›¿ã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /><br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'CREATE&nbsp;DATABASE&nbsp;my_db'</span><span style="color: #007700">;<br />if&nbsp;(</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Database&nbsp;my_db&nbsp;created&nbsp;successfully\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Error&nbsp;creating&nbsp;database:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Database my_db created successfully
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mysql_create_db</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_connect" HREF="function.mysql-connect.html"><LINK  REL="NEXT" TITLE="mysql_data_seek" HREF="function.mysql-data-seek.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-connect.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-data-seek.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-create-db" ></A
+>mysql_create_db</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65259" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_create_db&nbsp;--&nbsp;ĞÂ½¨Ò»¸ö MySQL Êı¾İ¿â</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65262" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >mysql_create_db</B
+> ( string database name [, resource link_identifier])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mysql_create_db()</B
+> ³¢ÊÔÔÚÖ¸¶¨µÄÁ¬½Ó±êÊ¶Ëù¹ØÁªµÄ·şÎñÆ÷ÉÏ½¨Á¢Ò»¸öĞÂÊı¾İ¿â¡£
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65279" ></A
+><P  ><B  >Àı×Ó 1. MySQL ĞÂ½¨Êı¾İ¿âÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_pconnect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">mysql_create_db</font><font  color="#007700">(</font><font  color="#DD0000">"my_db"</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print (</font><font  color="#DD0000">"Database created successfully\n"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf </font><font  color="#007700">(</font><font  color="#DD0000">"Error creating database: %s\n"</font><font  color="#007700">, </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÎªÏòÏÂ¼æÈİÒ²¿ÉÒÔÓÃ <B  CLASS="function" >mysql_createdb()</B
+>£¬µ«²¢²»Ìá³«¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ²»Ìá³«Ê¹ÓÃº¯Êı <B  CLASS="function" >mysql_create_db()</B
+>¡£×îºÃÓÃ
+      <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+> À´Ìá½»Ò»Ìõ
+      <TT  CLASS="literal" >SQL CREATE DATABASE</TT
+> Óï¾äÀ´Ìæ´ú¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      Èç¹û MySQL À©Õ¹¿âÊÇ»ùÓÚ MySQL 4.x ¿Í»§¶Ë¿â½¨Á¢µÄ£¬Ôò±¾º¯Êı²»¿ÉÓÃ¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.mysql-drop-db.html"  ><B  CLASS="function" >mysql_drop_db()</B
+></A
+> ºÍ
+     <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-connect.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-data-seek.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_connect</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_data_seek</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.mysql-create-db-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">æœ¬æ‰©å±•è‡ª PHP 5.5.0
-èµ·å·²åºŸå¼ƒï¼Œå¹¶åœ¨å°†æ¥ä¼šè¢«ç§»é™¤ã€‚åº”ä½¿ç”¨ <a href="book.mysqli.html" class="link">MySQLi</a> 
-æˆ– <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> æ‰©å±•æ¥æ›¿æ¢ä¹‹ã€‚å‚è§
-<a href="mysqlinfo.api.choosing.html" class="link">MySQLï¼šé€‰æ‹© API</a> æŒ‡å—ä»¥åŠ<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">ç›¸å…³ FAQ</a> ä»¥è·å–æ›´å¤šä¿¡æ¯ã€‚ç”¨ä»¥æ›¿ä»£æœ¬å‡½æ•°çš„æœ‰ï¼š</p>
-   <p class="para">
-    <ul class="simplelist">
-     <li class="member"><span class="function"><a href="mysqli.query.html" class="function">mysqli_query()</a></span></li>
-     <li class="member"><span class="methodname"><a href="pdo.query.html" class="methodname">PDO::query()</a></span></li>
-    </ul>
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    ä¸ºäº†å‘ä¸‹å…¼å®¹ï¼Œå¯ä»¥ä½¿ç”¨ä¸‹åˆ—å·²åºŸå¼ƒçš„åˆ«åï¼š
-    <span class="function"><strong>mysql_createdb()</strong></span>
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¦‚æœ MySQL æ‰©å±•æ˜¯åŸºäº MySQL 4.x å®¢æˆ·ç«¯åº“ç¼–è¯‘çš„è¯åˆ™æœ¬å‡½æ•°ä¸å¯ç”¨ã€‚
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mysql-create-db-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mysql-query.html" class="function" rel="rdfs-seeAlso">mysql_query()</a> - å‘é€ä¸€æ¡ MySQL æŸ¥è¯¢</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-select-db.html" class="function" rel="rdfs-seeAlso">mysql_select_db()</a> - é€‰æ‹© MySQL æ•°æ®åº“</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-connect.html">mysql_connect</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-data-seek.html">mysql_data_seek</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

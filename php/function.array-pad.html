@@ -1,134 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>用值将数组填补到指定长度</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-multisort.html">array_multisort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-pop.html">array_pop</a></div>
- <div class="up"><a href="ref.array.html">数组 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-pad" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">array_pad</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">array_pad</span> &mdash; <span class="dc-title">
-     用值将数组填补到指定长度
-    </span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.array-pad-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>array_pad</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$input</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$pad_size</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$pad_value</code></span>
-   )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>array_pad()</strong></span> 返回
-     <code class="parameter">input</code> 的一个拷贝，并用
-     <code class="parameter">pad_value</code> 将其填补到
-     <code class="parameter">pad_size</code> 指定的长度。如果
-     <code class="parameter">pad_size</code> 为正，则填补到数组的右侧，如果为负则从左侧开始填补。如果
-     <code class="parameter">pad_size</code> 的绝对值小于或等于
-     <code class="parameter">input</code> 数组的长度则没有任何填补。有可能一次最多填补
-     1048576 个单元。
-    </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.array-pad-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">input</code></dt>
-
-     <dd>
-
-      <p class="para">
-       需要被填充的原始数组。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">pad_size</code></dt>
-
-     <dd>
-
-      <p class="para">
-        新数组的长度。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">pad_value</code></dt>
-
-     <dd>
-
-      <p class="para">
-       将被填充的值，只有在 <code class="parameter">input</code> 的现有长度小于
-       <code class="parameter">pad_size</code> 的长度时才有效。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >array_pad</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="���麯����" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_multisort" HREF="function.array-multisort.html"><LINK  REL="NEXT" TITLE="array_pop" HREF="function.array-pop.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-multisort.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-pop.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-pad" ></A
+>array_pad</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN8765" ></A
+><P  >    (PHP 4 )</P
+>array_pad&nbsp;--&nbsp;
+     ��ֵ���������ָ������
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN8768" ></A
+><H2  >˵��</H2
+>array <B  CLASS="methodname" >array_pad</B
+> ( array input, int pad_size, mixed pad_value)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_pad()</B
+> ����
+     <TT  CLASS="parameter" ><I  >input</I
+></TT
+> ��һ������������
+     <TT  CLASS="parameter" ><I  >pad_value</I
+></TT
+> �������
+     <TT  CLASS="parameter" ><I  >pad_size</I
+></TT
+> ָ���ĳ��ȡ����
+     <TT  CLASS="parameter" ><I  >pad_size</I
+></TT
+> Ϊ���������鱻����Ҳ࣬���Ϊ�������࿪ʼ������
+     <TT  CLASS="parameter" ><I  >pad_size</I
+></TT
+> �ľ���ֵС�ڻ����
+     <TT  CLASS="parameter" ><I  >input</I
+></TT
+> ����ĳ�����û���κ����
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8791" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >array_pad()</B
+> ����</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$input </font><font  color="#007700">= array (</font><font  color="#0000BB">12</font><font  color="#007700">, </font><font  color="#0000BB">10</font><font  color="#007700">, </font><font  color="#0000BB">9</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">array_pad </font><font  color="#007700">(</font><font  color="#0000BB">$input</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// result is array (12, 10, 9, 0, 0)<br  /><br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">array_pad </font><font  color="#007700">(</font><font  color="#0000BB">$input</font><font  color="#007700">, -</font><font  color="#0000BB">7</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// result is array (-1, -1, -1, -1, 12, 10, 9)<br  /><br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">array_pad </font><font  color="#007700">(</font><font  color="#0000BB">$input</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#DD0000">"noop"</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// not padded<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     �μ� <A  HREF="function.array-fill.html"  ><B  CLASS="function" >array_fill()</B
+></A
+> �� <A  HREF="function.range.html"  ><B  CLASS="function" >range()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-multisort.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-pop.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_multisort</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_pop</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.array-pad-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回 <code class="parameter">input</code> 用  <code class="parameter">pad_value</code> 填充到 <code class="parameter">pad_size</code> 指定的长度之后的一个副本。
-   如果 <code class="parameter">pad_size</code> 为正，则填补到数组的右侧，如果为负则从左侧开始填补。
-   如果 <code class="parameter">pad_size</code> 的绝对值小于或等于 <code class="parameter">input</code> 数组的长度则没有任何填补。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.array-pad-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5288">
-    <p><strong>Example #1 <span class="function"><strong>array_pad()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">12</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">9</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;result&nbsp;is&nbsp;array(12,&nbsp;10,&nbsp;9,&nbsp;0,&nbsp;0)<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">7</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;result&nbsp;is&nbsp;array(-1,&nbsp;-1,&nbsp;-1,&nbsp;-1,&nbsp;12,&nbsp;10,&nbsp;9)<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"noop"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;not&nbsp;padded<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.array-pad-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.array-fill.html" class="function" rel="rdfs-seeAlso">array_fill()</a> - 用给定的值填充数组</span></li>
-    <li class="member"><span class="function"><a href="function.range.html" class="function" rel="rdfs-seeAlso">range()</a> - 建立一个包含指定范围单元的数组</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-multisort.html">array_multisort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-pop.html">array_pop</a></div>
- <div class="up"><a href="ref.array.html">数组 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

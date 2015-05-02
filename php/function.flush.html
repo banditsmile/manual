@@ -1,51 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>刷新输出缓冲</title>
+<HTML  ><HEAD  ><TITLE  >flush</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="������ƺ���" HREF="ref.outcontrol.html"><LINK  REL="PREVIOUS" TITLE="������ƺ���" HREF="ref.outcontrol.html"><LINK  REL="NEXT" TITLE="ob_clean" HREF="function.ob-clean.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.outcontrol.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ob-clean.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.flush" ></A
+>flush</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN83935" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>flush&nbsp;--&nbsp;Flush the output buffer</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN83938" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >flush</B
+> ( void )<BR  ></BR
+><P  >&#13;     Flushes the output buffers of PHP and whatever backend PHP is
+     using (CGI, a web server, etc).  This effectively tries to push
+     all the output so far to the user's browser.
+    </P
+><P  >&#13;     <B  CLASS="function" >flush()</B
+> has no effect on the buffering
+     scheme of your webserver or the browser on the client
+     side. 
+    </P
+><P  >&#13;     Several servers, especially on Win32, will still buffer
+     the output from your script until it terminates before
+     transmitting the results to the browser. 
+    </P
+><P  >&#13;     Server modules for Apache like mod_gzip may do buffering of their own
+     that will cause <B  CLASS="function" >flush()</B
+> to not result in data being
+     sent immediately to the client.
+    </P
+><P  >&#13;     Even the browser may buffer its input before displaying it. 
+     Netscape, for example, buffers text until it receives an
+     end-of-line or the beginning of a tag, and it won't render
+     tables until the &#60;/table&#62; tag of the outermost table is
+     seen.
+    </P
+><P  >&#13;     Some versions of Microsoft Internet Explorer will only start to display
+     the page after they have received 256 bytes of output, so you may need to
+     send extra whitespace before flushing to get those browsers to display the
+     page.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.outcontrol.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ob-clean.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >������ƺ���</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.outcontrol.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ob_clean</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-clean.html">ob_clean</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.flush" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">flush</h1> 
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">flush</span> &mdash; <span class="dc-title">刷新输出缓冲</span></p>
 
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.flush-unknown-seealsp">
-    <h3 class="title">说明</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>flush</strong></span>
-       ( <span class="methodparam">void</span>
-      )</div>
-
-    <p class="simpara">
-     刷新PHP程序的缓冲，而不论PHP执行在何种情况下（CGI ，web服务器等等）。该函数将当前为止程序的所有输出发送到用户的浏览器。
-    </p>
-    <p class="para">
-     <span class="function"><strong>flush()</strong></span> 函数不会对服务器或客户端浏览器的缓存模式产生影响。因此，必须同时使用 <span class="function"><a href="function.ob-flush.html" class="function">ob_flush()</a></span> 和<span class="function"><strong>flush()</strong></span> 函数来刷新输出缓冲。
-    </p>
-    <p class="para">
-     个别web服务器程序，特别是Win32下的web服务器程序，在发送结果到浏览器之前，仍然会缓存脚本的输出，直到程序结束为止。
-    </p>
-    <p class="para">
-     有些Apache的模块，比如mod_gzip，可能自己进行输出缓存，这将导致<span class="function"><strong>flush()</strong></span>函数产生的结果不会立即被发送到客户端浏览器。
-    </p>
-    <p class="para">
-     甚至浏览器也会在显示之前，缓存接收到的内容。例如 Netscape 浏览器会在接受到换行或 html 标记的开头之前缓存内容，并且在接受到 &lt;/table&gt; 标记之前，不会显示出整个表格。
-    </p>
-    <p class="para">
-     一些版本的 Microsoft Internet Explorer 只有当接受到的256个字节以后才开始显示该页面，所以必须发送一些额外的空格来让这些浏览器显示页面内容。
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-clean.html">ob_clean</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

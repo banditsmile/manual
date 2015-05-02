@@ -1,127 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ’­ä¸‹éšæœºæ•°å‘ç”Ÿå™¨ç§å­</title>
+<HTML  ><HEAD  ><TITLE  >srand</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÊıÑ§º¯Êı¿â" HREF="ref.math.html"><LINK  REL="PREVIOUS" TITLE="sqrt" HREF="function.sqrt.html"><LINK  REL="NEXT" TITLE="tan" HREF="function.tan.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sqrt.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.tan.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.srand" ></A
+>srand</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN50512" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>srand&nbsp;--&nbsp;²¥ÏÂËæ»úÊı·¢ÉúÆ÷ÖÖ×Ó</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN50515" ></A
+><H2  >ËµÃ÷</H2
+>void <B  CLASS="methodname" >srand</B
+> ( int seed)<BR  ></BR
+><P  >&#13;     ÓÃ <TT  CLASS="parameter" ><I  >seed</I
+></TT
+> ²¥ÏÂËæ»úÊı·¢ÉúÆ÷ÖÖ×Ó¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN50525" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// seed with microseconds<br  /></font><font  color="#007700">function </font><font  color="#0000BB">make_seed</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;list(</font><font  color="#0000BB">$usec</font><font  color="#007700">, </font><font  color="#0000BB">$sec</font><font  color="#007700">) = </font><font  color="#0000BB">explode</font><font  color="#007700">(</font><font  color="#DD0000">' '</font><font  color="#007700">, </font><font  color="#0000BB">microtime</font><font  color="#007700">());<br  />&nbsp;&nbsp;&nbsp;&nbsp;return (float) </font><font  color="#0000BB">$sec </font><font  color="#007700">+ ((float) </font><font  color="#0000BB">$usec </font><font  color="#007700">* </font><font  color="#0000BB">100000</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">srand</font><font  color="#007700">(</font><font  color="#0000BB">make_seed</font><font  color="#007700">());<br  /></font><font  color="#0000BB">$randval </font><font  color="#007700">= </font><font  color="#0000BB">rand</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>ÔÚ PHP 4.2.0 ÖĞ£¬ÎŞĞèÓÃº¯Êı <B  CLASS="function" >srand()</B
+> »ò
+<A  HREF="function.mt-srand.html"  ><B  CLASS="function" >mt_srand()</B
+></A
+>À´ËÑÑ°Ëæ»úÊıÉú³ÉÆ÷£¬Ëü½«±»×Ô¶¯Íê³É¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.rand.html"  ><B  CLASS="function" >rand()</B
+></A
+>£¬<A  HREF="function.getrandmax.html"  ><B  CLASS="function" >getrandmax()</B
+></A
+> ºÍ
+     <A  HREF="function.mt-srand.html"  ><B  CLASS="function" >mt_srand()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sqrt.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.tan.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sqrt</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.math.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >tan</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqrt.html">sqrt</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.tan.html">tan</a></div>
- <div class="up"><a href="ref.math.html">Math å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.srand" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">srand</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">srand</span> &mdash; <span class="dc-title">æ’­ä¸‹éšæœºæ•°å‘ç”Ÿå™¨ç§å­</span></p>
 
-   </div>
- <div class="refsect1 description" id="refsect1-function.srand-description">
-  <h3 class="title">è¯´æ˜</h3>
-   <div class="methodsynopsis dc-description">
-    <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>srand</strong></span>
-     ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$seed</code></span>
-   ] )</div>
-
-    <p class="para rdfs-comment">
-     ç”¨ <code class="parameter">seed</code> æ’­ä¸‹éšæœºæ•°å‘ç”Ÿå™¨ç§å­ã€‚<code class="parameter">seed</code> å‚æ•°æ²¡æœ‰ç»™å‡ºæ—¶ï¼Œä¼šè¢«è®¾ä¸ºéšæ—¶æ•°ã€‚
-    </p>
-  
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">è‡ª PHP 4.2.0 èµ·ï¼Œä¸å†éœ€è¦ç”¨
-<span class="function"><strong>srand()</strong></span> æˆ– <span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span>
-ç»™éšæœºæ•°å‘ç”Ÿå™¨æ’­ç§ ï¼Œå› ä¸ºç°åœ¨æ˜¯ç”±ç³»ç»Ÿè‡ªåŠ¨å®Œæˆçš„ã€‚</span></p></blockquote>
-  
-   </div>
-
- <div class="refsect1 parameters" id="refsect1-function.srand-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">seed</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¯é€‰çš„ç§å­å€¼
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.srand-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æ²¡æœ‰è¿”å›å€¼ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.srand-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>Since 4.2.0</td>
-       <td>
-        <code class="parameter">seed</code>  æˆä¸ºå¯é€‰ï¼Œçœç•¥æ—¶ä¼šé»˜è®¤ä½¿ç”¨éšæœºå€¼ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.srand-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3759">
-    <p><strong>Example #1 <span class="function"><strong>srand()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;seed&nbsp;with&nbsp;microseconds<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">make_seed</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;list(</span><span style="color: #0000BB">$usec</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sec</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">microtime</span><span style="color: #007700">());<br />&nbsp;&nbsp;return&nbsp;(float)&nbsp;</span><span style="color: #0000BB">$sec&nbsp;</span><span style="color: #007700">+&nbsp;((float)&nbsp;</span><span style="color: #0000BB">$usec&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">100000</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">srand</span><span style="color: #007700">(</span><span style="color: #0000BB">make_seed</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$randval&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">rand</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.srand-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.rand.html" class="function" rel="rdfs-seeAlso">rand()</a> - äº§ç”Ÿä¸€ä¸ªéšæœºæ•´æ•°</span></li>
-    <li class="member"><span class="function"><a href="function.getrandmax.html" class="function" rel="rdfs-seeAlso">getrandmax()</a> - æ˜¾ç¤ºéšæœºæ•°æœ€å¤§çš„å¯èƒ½å€¼</span></li>
-    <li class="member"><span class="function"><a href="function.mt-srand.html" class="function" rel="rdfs-seeAlso">mt_srand()</a> - æ’­ä¸‹ä¸€ä¸ªæ›´å¥½çš„éšæœºæ•°å‘ç”Ÿå™¨ç§å­</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqrt.html">sqrt</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.tan.html">tan</a></div>
- <div class="up"><a href="ref.math.html">Math å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

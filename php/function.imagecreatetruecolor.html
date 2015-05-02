@@ -1,123 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新建一个真彩色图像</title>
+<HTML  ><HEAD  ><TITLE  >imagecreatetruecolor</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="ͼ������" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagecreatefromxpm" HREF="function.imagecreatefromxpm.html"><LINK  REL="NEXT" TITLE="imagedashedline" HREF="function.imagedashedline.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagecreatefromxpm.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagedashedline.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagecreatetruecolor" ></A
+>imagecreatetruecolor</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN39537" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>imagecreatetruecolor&nbsp;--&nbsp;�½�һ�����ɫͼ��</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN39540" ></A
+><H2  >˵��</H2
+>resource <B  CLASS="methodname" >imagecreatetruecolor</B
+> ( int x_size, int y_size)<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >imagecreatetruecolor()</B
+> ����һ��ͼ���ʶ����������һ����СΪ
+    <TT  CLASS="parameter" ><I  >x_size</I
+></TT
+> �� <TT  CLASS="parameter" ><I  >y_size</I
+></TT
+> �ĺ�ɫͼ��
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN39556" ></A
+><P  ><B  >���� 1. �½�һ���µ� GD ͼ���������ͼ��</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />header </font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: image/png"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$im </font><font  color="#007700">= @</font><font  color="#0000BB">imagecreatetruecolor </font><font  color="#007700">(</font><font  color="#0000BB">50</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die (</font><font  color="#DD0000">"Cannot Initialize new GD image stream"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$text_color </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">233</font><font  color="#007700">, </font><font  color="#0000BB">14</font><font  color="#007700">, </font><font  color="#0000BB">91</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagestring </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">,&nbsp;&nbsp;</font><font  color="#DD0000">"A Simple Text String"</font><font  color="#007700">, </font><font  color="#0000BB">$text_color</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagepng </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagedestroy </font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+     ������������ PHP 4.0.6 ����Ҫ GD 2.0.1 ����߰汾��
+    </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+     �������������� GIF �ļ���ʽ��
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    �μ� <A  HREF="function.imagedestroy.html"  ><B  CLASS="function" >imagedestroy()</B
+></A
+> ��
+    <A  HREF="function.imagecreate.html"  ><B  CLASS="function" >imagecreate()</B
+></A
+>��
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagecreatefromxpm.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagedashedline.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagecreatefromxpm</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagedashedline</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagecreatefromxpm.html">imagecreatefromxpm</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecrop.html">imagecrop</a></div>
- <div class="up"><a href="ref.image.html">GD 和图像处理 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagecreatetruecolor" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagecreatetruecolor</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">imagecreatetruecolor</span> &mdash; <span class="dc-title">新建一个真彩色图像</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imagecreatetruecolor-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>imagecreatetruecolor</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$width</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$height</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>imagecreatetruecolor()</strong></span> 返回一个图像标识符，代表了一幅大小为
-   <code class="parameter">x_size</code> 和 <code class="parameter">y_size</code> 的黑色图像。
-  </p>
-  <p class="para">
-   是否定义了本函数取决于 PHP 和 GD 的版本。从 PHP 4.0.6 到 4.1.x
-   只要加载了 GD 模块本函数一直存在，但是在没有安装 GD2 的时候调用，PHP
-   将发出致命错误并退出。在 PHP 4.2.x 中此行为改为发出警告而不是错误。其它版本只在安装了正确的
-   GD 版本时定义了本函数。
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imagecreatetruecolor-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">width</code></dt>
-
-     <dd>
-
-      <p class="para">
-       图像宽度。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">height</code></dt>
-
-     <dd>
-
-      <p class="para">
-       图像高度。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imagecreatetruecolor-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">成功后返回图象资源,失败后返回 <strong><code>FALSE</code></strong> 。</p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imagecreatetruecolor-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-3311">
-    <p><strong>Example #1 
-     新建一个新的 GD 图像流并输出图像
-    </strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />header&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/png'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">'Cannot&nbsp;Initialize&nbsp;new&nbsp;GD&nbsp;image&nbsp;stream'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="mediaobject">
-     
-     <div class="imageobject">
-      <img src="images/21009b70229598c6a80eef8b45bf282b-imagecreatetruecolor.png" alt="例子的输出： 新建一个新的 GD 图像流并输出图像" width="120" height="20" />
-     </div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.imagecreatetruecolor-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">此函数需要 GD 2.0.1 或更高版本(推荐 2.0.28 及更高版本)。</span></p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imagecreatetruecolor-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imagedestroy.html" class="function" rel="rdfs-seeAlso">imagedestroy()</a> - 销毁一图像</span></li>
-    <li class="member"><span class="function"><a href="function.imagecreate.html" class="function" rel="rdfs-seeAlso">imagecreate()</a> - 新建一个基于调色板的图像</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagecreatefromxpm.html">imagecreatefromxpm</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecrop.html">imagecrop</a></div>
- <div class="up"><a href="ref.image.html">GD 和图像处理 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

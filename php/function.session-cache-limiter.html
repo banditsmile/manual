@@ -1,191 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>读取/设置缓存限制器</title>
+<HTML  ><HEAD  ><TITLE  >session_cache_limiter</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Session Handling Functions" HREF="ref.session.html"><LINK  REL="PREVIOUS" TITLE="session_cache_expire" HREF="function.session-cache-expire.html"><LINK  REL="NEXT" TITLE="session_commit" HREF="function.session-commit.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.session-cache-expire.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.session-commit.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.session-cache-limiter" ></A
+>session_cache_limiter</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99011" ></A
+><P  >    (PHP 4 &#62;= 4.0.3)</P
+>session_cache_limiter&nbsp;--&nbsp;Get and/or set the current cache limiter</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99014" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >session_cache_limiter</B
+> ( [string cache_limiter])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >session_cache_limiter()</B
+> returns the name of the
+     current cache limiter. If <TT  CLASS="parameter" ><I  >cache_limiter</I
+></TT
+>
+     is specified, the name of the current cache limiter is changed to the
+     new value.
+    </P
+><P  >&#13;     The cache limiter defines which cache control HTTP headers are sent to
+     the client.  These headers determine the rules by which the page content
+     may be cached by the client and intermediate proxies.  Setting the cache
+     limiter to <TT  CLASS="literal" >nocache</TT
+> disallows any client/proxy caching.
+     A value of <TT  CLASS="literal" >public</TT
+> permits caching by proxies and the
+     client, whereas <TT  CLASS="literal" >private</TT
+> disallows caching by proxies
+     and permits the client to cache the contents.
+    </P
+><P  >&#13;     In <TT  CLASS="literal" >private</TT
+> mode, the Expire header sent to the
+     client may cause confusion for some browsers, including Mozilla.
+     You can avoid this problem by using
+     <TT  CLASS="literal" >private_no_expire</TT
+> mode. The expire header is never
+     sent to the client in this mode.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      <TT  CLASS="literal" >private_no_expire</TT
+> was added in PHP 4.2.0.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     The cache limiter is reset to the default value stored in
+     <A  HREF="ref.session.html#ini.session.cache-limiter"  >session.cache_limiter</A
+>
+     at request startup time. Thus, you need to call
+     <B  CLASS="function" >session_cache_limiter()</B
+> for every
+     request (and before <A  HREF="function.session-start.html"  ><B  CLASS="function" >session_start()</B
+></A
+> is called).
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99039" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >session_cache_limiter()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">/* set the cache limiter to 'private' */<br  /><br  /></font><font  color="#0000BB">session_cache_limiter</font><font  color="#007700">(</font><font  color="#DD0000">'private'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$cache_limiter </font><font  color="#007700">= </font><font  color="#0000BB">session_cache_limiter</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#DD0000">"The cache limiter is now set to $cache_limiter&lt;p&gt;"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     Also see the <A  HREF="ref.session.html#ini.session.cache-limiter"  >session.cache_limiter</A
+>
+     configuration directive.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.session-cache-expire.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.session-commit.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >session_cache_expire</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.session.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >session_commit</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-cache-expire.html">session_cache_expire</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-commit.html">session_commit</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.session-cache-limiter" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">session_cache_limiter</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5)</p><p class="refpurpose"><span class="refname">session_cache_limiter</span> &mdash; <span class="dc-title">读取/设置缓存限制器</span></p>
 
- </div>
-
- <div class="refsect1 description" id="refsect1-function.session-cache-limiter-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>session_cache_limiter</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$cache_limiter</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>session_cache_limiter()</strong></span> 返回当前缓存限制器的名称。
-  </p>
-  <p class="para">
-    缓存限制器定义了向客户端发送的 HTTP 响应头中的缓存控制策略。
-    客户端或者代理服务器通过检测这个响应头信息来
-    确定对于页面内容的缓存规则。
-    设置缓存限制器为 <em>nocache</em> 会进制客户端或者代理服务器缓存内容，
-    <em>public</em> 表示允许客户端或代理服务器缓存内容，
-    <em>private</em> 表示允许客户端缓存，
-    但是不允许代理服务器缓存内容。
-  </p>
-  <p class="para">
-   在 <em>private</em> 模式下， 包括 <span class="productname">Mozilla</span> 
-   在内的一些浏览器可能无法正确处理 Expire 响应头，
-   通过使用 <em>private_no_expire</em> 模式可以解决这个问题：在这种模式下，
-   不会向客户端发送 <em>Expire</em> 响应头。
-  </p>
-  <p class="para">
-    设置为  <em>&#039;&#039;</em> 可以关闭
-    自动发送缓存策略响应头的功能。
-  </p>
-  <p class="para">
-    请求开始的时候，缓存限制器会被重置为默认值，并且存储在
-    <a href="session.configuration.html#ini.session.cache-limiter" class="link">session.cache_limiter</a> 
-    配置项中。
-    因此，如果要设置缓存限制器，对于每个请求，
-    都需要在调用 <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> 函数之前，
-    调用 <span class="function"><strong>session_cache_limiter()</strong></span> 函数来进行设置。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.session-cache-limiter-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">cache_limiter</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果指定了 <code class="parameter">cache_limiter</code> 参数，
-       将使用指定值作为缓存限制器的值。
-      </p>
-      <table class="doctable table">
-       <caption><strong>可选的值</strong></caption>
-       
-        <thead>
-         <tr>
-          <th>值</th>
-          <th>发送的响应头</th>
-         </tr>
-
-        </thead>
-
-        <tbody class="tbody">
-         <tr>
-          <td><em>public</em></td>
-          <td>
-           <div class="example-contents">
-<div class="headercode"><pre class="headercode">Expires：（根据 session.cache_expire 的设定计算得出）
-Cache-Control： public, max-age=（根据 session.cache_expire 的设定计算得出）
-Last-Modified：（会话最后保存时间）</pre>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-           </div>
-
-          </td>
-         </tr>
-
-         <tr>
-          <td><em>private_no_expire</em></td>
-          <td>
-           <div class="example-contents">
-<div class="headercode"><pre class="headercode">Cache-Control: private, max-age=（根据 session.cache_expire 的设定计算得出）, pre-check=（根据 session.cache_expire 的设定计算得出）
-Last-Modified: （会话最后保存时间）</pre>
-</div>
-           </div>
-
-          </td>
-         </tr>
-
-         <tr>
-          <td><em>private</em></td>
-          <td>
-           <div class="example-contents">
-<div class="headercode"><pre class="headercode">Expires: Thu, 19 Nov 1981 08:52:00 GMT
-Cache-Control: private, max-age=（根据 session.cache_expire 的设定计算得出）, pre-check=（根据 session.cache_expire 的设定计算得出）
-Last-Modified: （会话最后保存时间）</pre>
-</div>
-           </div>
-
-          </td>
-         </tr>
-
-         <tr>
-          <td><em>nocache</em></td>
-          <td>
-           <div class="example-contents">
-<div class="headercode"><pre class="headercode">Expires: Thu, 19 Nov 1981 08:52:00 GMT
-Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-Pragma: no-cache</pre>
-</div>
-           </div>
-
-          </td>
-         </tr>
-
-        </tbody>
-       
-      </table>
-
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.session-cache-limiter-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回当前所用的缓存限制器名称。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.session-cache-limiter-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5081">
-    <p><strong>Example #1 <span class="function"><strong>session_cache_limiter()</strong></span> 示例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;设置缓存限制器为&nbsp;'private'&nbsp;*/<br /><br /></span><span style="color: #0000BB">session_cache_limiter</span><span style="color: #007700">(</span><span style="color: #DD0000">'private'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cache_limiter&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">session_cache_limiter</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;cache&nbsp;limiter&nbsp;is&nbsp;now&nbsp;set&nbsp;to&nbsp;</span><span style="color: #0000BB">$cache_limiter</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.session-cache-limiter-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="session.configuration.html#ini.session.cache-limiter" class="link">session.cache_limiter</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-cache-expire.html">session_cache_expire</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-commit.html">session_commit</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

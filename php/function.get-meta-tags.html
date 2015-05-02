@@ -1,180 +1,116 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»ä¸€ä¸ªæ–‡ä»¶ä¸­æå–æ‰€æœ‰çš„ meta æ ‡ç­¾ content å±æ€§ï¼Œè¿”å›ä¸€ä¸ªæ•°ç»„</title>
+<HTML  ><HEAD  ><TITLE  >get_meta_tags</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="URL º¯Êı¿â" HREF="ref.url.html"><LINK  REL="PREVIOUS" TITLE="base64_encode" HREF="function.base64-encode.html"><LINK  REL="NEXT" TITLE="http_build_query" HREF="function.http-build-query.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.base64-encode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.http-build-query.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-meta-tags" ></A
+>get_meta_tags</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115037" ></A
+><P  >    (PHP 3&#62;= 3.0.4, PHP 4 )</P
+>get_meta_tags&nbsp;--&nbsp;
+     ´ÓÒ»¸öÎÄ¼şÖĞÌáÈ¡ËùÓĞµÄ meta ±êÇ© content ÊôĞÔ£¬·µ»ØÒ»¸öÊı×é
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115040" ></A
+><H2  >ÃèÊö</H2
+>array <B  CLASS="methodname" >get_meta_tags</B
+> ( string filename [, int use_include_path])<BR  ></BR
+><P  >&#13;     ´ò¿ª <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> ÖğĞĞ½âÎöÎÄ¼şÖĞµÄ 
+     &#60;meta&#62; ±êÇ©¡£´Ë²ÎÊı¿ÉÒÔÊÇ±¾µØÎÄ¼şÒ²¿ÉÒÔÊÇÒ»¸ö
+     <SPAN  CLASS="acronym" >URL</SPAN
+>¡£½âÎö¹¤×÷½«ÔÚ
+     <TT  CLASS="literal" >&#60;/head&#62;</TT
+> ´¦Í£Ö¹¡£
+    </P
+><P  >&#13;     ½« <TT  CLASS="parameter" ><I  >use_include_path</I
+></TT
+> ÉèÖÃÎª 1 ½«´ÙÊ¹ 
+     PHP ³¢ÊÔ°´ÕÕ <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>
+     ±ê×¼°üº¬Â·¾¶ÖĞµÄÃ¿¸öÖ¸ÏòÈ¥´ò¿ªÎÄ¼ş¡£ÕâÖ»ÓÃÓÚ±¾µØÎÄ¼ş£¬²»ÊÊÓÃÓÚ URL¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115059" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >get_meta_tags()</B
+> ½âÎöĞ©Ê²Ã´</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;meta name="author" content="name"&#62;
+&#60;meta name="keywords" content="php documentation"&#62;
+&#60;meta name="DESCRIPTION" content="a php manual"&#62;
+&#60;meta name="geo.position" content="49.33;-86.59"&#62;
+&#60;/head&#62; &#60;!-- ½âÎö¹¤×÷ÔÚ´Ë´¦Í£Ö¹ --&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     £¨×¢Òâ»Ø³µ»»ĞĞ £­ PHP Ê¹ÓÃÒ»¸ö±¾µØº¯ÊıÀ´½âÎöÊäÈë£¬ËùÒÔ Mac ÉÏµÄÎÄ¼ş½«²»ÄÜÔÚ Unix ÉÏÕı³£¹¤×÷£©¡£
+    </P
+><P  > 
+     ·µ»ØµÄ¹ØÁªÊı×éÒÔÊôĞÔ name µÄÖµ×÷Îª¼ü£¬ÊôĞÔ content 
+     µÄÖµ×÷ÎªÖµ£¬ËùÒÔÄã¿ÉÒÔºÜÈİÒ×µØÊ¹ÓÃ±ê×¼Êı×éº¯Êı±éÀú´Ë¹ØÁªÊı×é»ò·ÃÎÊÄ³¸öÖµ¡£ÊôĞÔ
+     name ÖĞµÄÌØÊâ×Ö·û½«Ê¹ÓÃ¡®_¡¯Ìæ»»£¬¶øÆäËü×Ö·ûÔò×ª»»³ÉĞ¡Ğ´¡£Èç¹ûÓĞÁ½¸ö
+     meta ±êÇ©ÓµÓĞÏàÍ¬µÄ name£¬ÔòÖ»·µ»Ø×îºó³öÏÖµÄÄÇÒ»¸ö¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN115065" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >get_meta_tags()</B
+> µÄ·µ»ØÖµ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ¼ÙÉèÉÏ±ßµÄ±êÇ©ÊÇÔÚ www.example.com ÖĞ<br  /></font><font  color="#0000BB">$tags </font><font  color="#007700">= </font><font  color="#0000BB">get_meta_tags</font><font  color="#007700">(</font><font  color="#DD0000">'http://www.example.com/'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ×¢ÒâËùÓĞµÄ¼ü£¨key£©¾ùÎªĞ¡Ğ´£¬¶ø¼üÖĞµÄ¡®.¡¯Ôò×ª»»³ÉÁË¡®_¡¯¡£<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$tags</font><font  color="#007700">[</font><font  color="#DD0000">'author'</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// name<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$tags</font><font  color="#007700">[</font><font  color="#DD0000">'keywords'</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// php documentation<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$tags</font><font  color="#007700">[</font><font  color="#DD0000">'description'</font><font  color="#007700">];&nbsp;&nbsp;</font><font  color="#FF8000">// a php manual<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$tags</font><font  color="#007700">[</font><font  color="#DD0000">'geo_position'</font><font  color="#007700">]; </font><font  color="#FF8000">// 49.33;-86.59<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ´Ó PHP 4.0.5 ¿ªÊ¼£¬<B  CLASS="function" >get_meta_tags()</B
+>
+      Ö§³ÖÃ»ÓĞÊ¹ÓÃÒıºÅÀ¨ÆğÀ´µÄ HTML ÊôĞÔ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.htmlentities.html"  ><B  CLASS="function" >htmlentities()</B
+></A
+> ºÍ
+     <A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.base64-encode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.http-build-query.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >base64_encode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.url.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >http_build_query</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-headers.html">get_headers</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.http-build-query.html">http_build_query</a></div>
- <div class="up"><a href="ref.url.html">URL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-meta-tags" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">get_meta_tags</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">get_meta_tags</span> &mdash; <span class="dc-title">
-   ä»ä¸€ä¸ªæ–‡ä»¶ä¸­æå–æ‰€æœ‰çš„ meta æ ‡ç­¾ content å±æ€§ï¼Œè¿”å›ä¸€ä¸ªæ•°ç»„
-  </span></p>
 
- </div>
- 
- 
-  <div class="refsect1 description" id="refsect1-function.get-meta-tags-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>get_meta_tags</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = false</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   æ‰“å¼€ <code class="parameter">filename</code> é€è¡Œè§£ææ–‡ä»¶ä¸­çš„ 
-   &lt;meta&gt; æ ‡ç­¾ã€‚è§£æå·¥ä½œå°†åœ¨
-   <em>&lt;/head&gt;</em> å¤„åœæ­¢ã€‚
-  </p>
- </div>
-
- 
-  <div class="refsect1 parameters" id="refsect1-function.get-meta-tags-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       HTML æ–‡ä»¶çš„è·¯å¾„å­—ç¬¦ä¸²ã€‚
-       æ­¤å‚æ•°å¯ä»¥æ˜¯æœ¬åœ°æ–‡ä»¶ä¹Ÿå¯ä»¥æ˜¯ä¸€ä¸ª
-   <acronym title="Uniform Resource Locator">URL</acronym>ã€‚
-      </p>
-      <p class="para">
-       <div class="example" id="example-4387">
-        <p><strong>Example #1 <span class="function"><strong>get_meta_tags()</strong></span> è§£æäº†ä»€ä¹ˆ</strong></p>
-        <div class="example-contents">
-<div class="htmlcode"><pre class="htmlcode">&lt;meta name=&quot;author&quot; content=&quot;name&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;php documentation&quot;&gt;
-&lt;meta name=&quot;DESCRIPTION&quot; content=&quot;a php manual&quot;&gt;
-&lt;meta name=&quot;geo.position&quot; content=&quot;49.33;-86.59&quot;&gt;
-&lt;/head&gt; &lt;!-- è§£æå·¥ä½œåœ¨æ­¤å¤„åœæ­¢ --&gt;</pre>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-        </div>
-
-       </div>
-          ï¼ˆæ³¨æ„å›è½¦æ¢è¡Œ ï¼ PHP ä½¿ç”¨ä¸€ä¸ªæœ¬åœ°å‡½æ•°æ¥è§£æè¾“å…¥ï¼Œæ‰€ä»¥ Mac ä¸Šçš„æ–‡ä»¶å°†ä¸èƒ½åœ¨ Unix ä¸Šæ­£å¸¸å·¥ä½œï¼‰ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">use_include_path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å°† <code class="parameter">use_include_path</code> è®¾ç½®ä¸º <strong><code>TRUE</code></strong> å°†ä½¿ 
-   PHP å°è¯•æŒ‰ç…§ <a href="ini.core.html#ini.include-path" class="link">include_path</a>
-   æ ‡å‡†åŒ…å«è·¯å¾„ä¸­çš„æ¯ä¸ªæŒ‡å‘å»æ‰“å¼€æ–‡ä»¶ã€‚è¿™åªç”¨äºæœ¬åœ°æ–‡ä»¶ï¼Œä¸é€‚ç”¨äº URLã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
-  <div class="refsect1 returnvalues" id="refsect1-function.get-meta-tags-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ä¸€ä¸ªæ•°ç»„ï¼ŒåŒ…å«æ‰€æœ‰è§£æè¿‡çš„ meta æ ‡ç­¾ã€‚
-  </p>
-  <p class="para">
-   è¿”å›çš„å…³è”æ•°ç»„ä»¥å±æ€§ name çš„å€¼ä½œä¸ºé”®ï¼Œå±æ€§ content 
-   çš„å€¼ä½œä¸ºå€¼ï¼Œæ‰€ä»¥ä½ å¯ä»¥å¾ˆå®¹æ˜“åœ°ä½¿ç”¨æ ‡å‡†æ•°ç»„å‡½æ•°éå†æ­¤å…³è”æ•°ç»„æˆ–è®¿é—®æŸä¸ªå€¼ã€‚
-   å±æ€§
-   name ä¸­çš„ç‰¹æ®Šå­—ç¬¦å°†ä½¿ç”¨â€˜_â€™æ›¿æ¢ï¼Œè€Œå…¶å®ƒå­—ç¬¦åˆ™è½¬æ¢æˆå°å†™ã€‚å¦‚æœæœ‰ä¸¤ä¸ª
-   meta æ ‡ç­¾æ‹¥æœ‰ç›¸åŒçš„ nameï¼Œåˆ™åªè¿”å›æœ€åå‡ºç°çš„é‚£ä¸€ä¸ªã€‚
-  </p>
- </div>
-
- 
- 
- <div class="refsect1 changelog" id="refsect1-function.get-meta-tags-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        å¼€å§‹æ”¯æŒæ²¡æœ‰ä½¿ç”¨å¼•å·æ‹¬èµ·æ¥çš„ HTML å±æ€§ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.get-meta-tags-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-4388">
-    <p><strong>Example #2 <span class="function"><strong>get_meta_tags()</strong></span> è¿”å›ä»€ä¹ˆäº›</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å‡è®¾ä¸Šè¾¹çš„æ ‡ç­¾æ˜¯åœ¨&nbsp;www.example.com&nbsp;ä¸­<br /></span><span style="color: #0000BB">$tags&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_meta_tags</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;æ³¨æ„æ‰€æœ‰çš„é”®ï¼ˆkeyï¼‰å‡ä¸ºå°å†™ï¼Œè€Œé”®ä¸­çš„â€˜.â€™åˆ™è½¬æ¢æˆäº†â€˜_â€™ã€‚<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'author'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;name<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'keywords'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;php&nbsp;documentation<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'description'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;a&nbsp;php&nbsp;manual<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'geo_position'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;49.33;-86.59<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.get-meta-tags-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    åªæœ‰åŒ…å« name å±æ€§çš„ meta æ ‡ç­¾æ‰ä¼šè¢«è§£æã€‚
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.get-meta-tags-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.htmlentities.html" class="function" rel="rdfs-seeAlso">htmlentities()</a> - Convert all applicable characters to HTML entities</span></li>
-    <li class="member"><span class="function"><a href="function.urlencode.html" class="function" rel="rdfs-seeAlso">urlencode()</a> - ç¼–ç  URL å­—ç¬¦ä¸²</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-headers.html">get_headers</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.http-build-query.html">http_build_query</a></div>
- <div class="up"><a href="ref.url.html">URL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

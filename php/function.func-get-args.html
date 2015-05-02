@@ -1,212 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回一个包含函数参数列表的数组</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.func-get-arg.html">func_get_arg</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.func-num-args.html">func_num_args</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.func-get-args" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">func_get_args</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">func_get_args</span> &mdash; <span class="dc-title">返回一个包含函数参数列表的数组</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.func-get-args-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>func_get_args</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   获取函数参数列表的数组。
-  </p>
-  <p class="para">
-   该函数可以配合
-   <span class="function"><a href="function.func-get-arg.html" class="function">func_get_arg()</a></span> 和 <span class="function"><a href="function.func-num-args.html" class="function">func_num_args()</a></span>
-   一起使用，从而使得用户自定义函数可以接受自定义个数的参数列表。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.func-get-args-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回一个数组，其中每个元素都是目前用户自定义函数的参数列表的相应元素的副本。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.func-get-args-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-         该函数可以在参数列表中使用。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        If this function is called from the outermost scope of a file
-        which has been included by calling <span class="function"><a href="function.include.html" class="function">include</a></span>
-        or <span class="function"><a href="function.require.html" class="function">require</a></span> from within a function in the
-        calling file, it now generates a warning and returns <strong><code>FALSE</code></strong>.
-           （不知道如何翻译跟好，直接参考例2即可明白）
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >func_get_args</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Function Handling Functions" HREF="ref.funchand.html"><LINK  REL="PREVIOUS" TITLE="func_get_arg" HREF="function.func-get-arg.html"><LINK  REL="NEXT" TITLE="func_num_args" HREF="function.func-num-args.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.func-get-arg.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.func-num-args.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.func-get-args" ></A
+>func_get_args</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN32336" ></A
+><P  >    (PHP 4 )</P
+>func_get_args&nbsp;--&nbsp;
+     Returns an array comprising a function's argument list
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN32339" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >func_get_args</B
+> ( void )<BR  ></BR
+><P  >&#13;     Returns an array in which each element is the corresponding
+     member of the current user-defined function's argument
+     list. <B  CLASS="function" >func_get_args()</B
+> will generate a warning
+     if called from outside of a function definition.
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN32348" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() <br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$numargs </font><font  color="#007700">= </font><font  color="#0000BB">func_num_args</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Number of arguments: $numargs&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$numargs </font><font  color="#007700">&gt;= </font><font  color="#0000BB">2</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Second argument is: " </font><font  color="#007700">. </font><font  color="#0000BB">func_get_arg</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$arg_list </font><font  color="#007700">= </font><font  color="#0000BB">func_get_args</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">$numargs</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Argument $i is: " </font><font  color="#007700">. </font><font  color="#0000BB">$arg_list</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">] . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />} <br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     <B  CLASS="function" >func_get_args()</B
+> may be used in conjunction
+     with <A  HREF="function.func-num-args.html"  ><B  CLASS="function" >func_num_args()</B
+></A
+> and
+     <A  HREF="function.func-get-arg.html"  ><B  CLASS="function" >func_get_arg()</B
+></A
+> to allow user-defined functions
+     to accept variable-length argument lists.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      This function was added in PHP 4.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.func-get-arg.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.func-num-args.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >func_get_arg</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.funchand.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >func_num_args</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 errors" id="refsect1-function.func-get-args-errors">
-  <h3 class="title">错误／异常</h3>
-  <p class="para">
-   在用户自定义函数外调用则会出现错误警告。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.func-get-args-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5430">
-    <p><strong>Example #1 <span class="function"><strong>func_get_args()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$numargs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_num_args</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Number&nbsp;of&nbsp;arguments:&nbsp;</span><span style="color: #0000BB">$numargs</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$numargs&nbsp;</span><span style="color: #007700">&gt;=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Second&nbsp;argument&nbsp;is:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">func_get_arg</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arg_list&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$numargs</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Argument&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">&nbsp;is:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$arg_list</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Number of arguments: 3&lt;br /&gt;
-Second argument is: 2&lt;br /&gt;
-Argument 0 is: 1&lt;br /&gt;
-Argument 1 is: 2&lt;br /&gt;
-Argument 2 is: 3&lt;br /&gt;
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5431">
-    <p><strong>Example #2  PHP 5.3 前后使用 <span class="function"><strong>func_get_args()</strong></span> 在的对比</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-test.php<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;</span><span style="color: #DD0000">'./fga.inc'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #DD0000">'First&nbsp;arg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Second&nbsp;arg'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span><br />fga.inc<br /><span style="color: #0000BB">&lt;?php<br /><br />$args&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$args</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     PHP 5.3 版本之前的输出：
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array (
-  0 =&gt; &#039;First arg&#039;,
-  1 =&gt; &#039;Second arg&#039;,
-)
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     PHP 5.3 和之后的版本的输出:
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Warning: func_get_args():  Called from the global scope - no function
-context in /home/torben/Desktop/code/ml/fga.inc on line 3
-false
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5432">
-    <p><strong>Example #3 <span class="function"><strong>func_get_args()</strong></span> example of byref and byval arguments</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">byVal</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'As&nbsp;passed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">()),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'After&nbsp;change&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">()),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">byRef</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$arg</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'As&nbsp;passed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">()),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'After&nbsp;change&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">()),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">byVal</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">byRef</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-     <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen"><br />
-As passed     : array (<br />
-  0 =&gt; &#039;bar&#039;,<br />
-)<br />
-After change  : array (<br />
-  0 =&gt; &#039;bar&#039;,<br />
-)<br />
-As passed     : array (<br />
-  0 =&gt; &#039;bar&#039;,<br />
-)<br />
-After change  : array (<br />
-  0 =&gt; &#039;baz&#039;,<br />
-)<br />
-    </div>
-   </div>
-  </p>
-
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.func-get-args-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">因为函数依赖于当前作用域以确定参数的细节，所以在
-5.3.0 以前的版本中不能用作函数的参数。如必须传递此值时，可将结果赋与一个变量，然后用此变量进行传递。</p></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">如果参数以引用方式传递，函数对该参数的任何改变将在函数返回后保留。</p></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    该函数仅仅是返回传递参数的一个副本，并且不包含没有传入的默认参数。
-   </span>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.func-get-args-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.func-get-arg.html" class="function" rel="rdfs-seeAlso">func_get_arg()</a> - 返回参数列表的某一项</span></li>
-    <li class="member"><span class="function"><a href="function.func-num-args.html" class="function" rel="rdfs-seeAlso">func_num_args()</a> - Returns the number of arguments passed to the function</span></li>
-    <li class="member"><span class="methodname"><a href="reflectionfunctionabstract.getparameters.html" class="methodname" rel="rdfs-seeAlso">ReflectionFunctionAbstract::getParameters()</a> - 获取参数</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.func-get-arg.html">func_get_arg</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.func-num-args.html">func_num_args</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

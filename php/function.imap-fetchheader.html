@@ -1,118 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns header for a message</title>
+<HTML  ><HEAD  ><TITLE  >imap_fetchheader</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_fetchbody" HREF="function.imap-fetchbody.html"><LINK  REL="NEXT" TITLE="imap_fetchstructure" HREF="function.imap-fetchstructure.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-fetchbody.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-fetchstructure.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-fetchheader" ></A
+>imap_fetchheader</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN42218" ></A
+><P  >    (PHP 3&#62;= 3.0.3, PHP 4 )</P
+>imap_fetchheader&nbsp;--&nbsp;Returns header for a message</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN42221" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >imap_fetchheader</B
+> ( resource imap_stream, int msgno [, int options])<BR  ></BR
+><P  >&#13;     This function causes a fetch of the complete, unfiltered 
+     <A  href="http://www.faqs.org/rfcs/rfc2822/"  TARGET="_top" >RFC2822</A
+>
+     format header of the specified message as a text string and
+     returns that text string.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >options</I
+></TT
+> are:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >FT_UID</B
+></TT
+> - The <TT  CLASS="parameter" ><I  >msgno</I
+></TT
+>
+        argument is a UID
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >FT_INTERNAL</B
+></TT
+> - The return string
+        is in "internal" format, without any attempt to 
+        canonicalize to CRLF newlines
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >FT_PREFETCHTEXT</B
+></TT
+> - The RFC822.TEXT
+        should be pre-fetched at the same time.  This avoids an
+        extra RTT on an IMAP connection if a full message text is
+        desired (e.g. in a "save to local file" operation)
+       </P
+></LI
+></UL
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-fetchbody.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-fetchstructure.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_fetchbody</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_fetchstructure</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-fetchbody.html">imap_fetchbody</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-fetchmime.html">imap_fetchmime</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-fetchheader" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_fetchheader</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_fetchheader</span> &mdash; <span class="dc-title">Returns header for a message</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-fetchheader-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>imap_fetchheader</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$msg_number</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   This function causes a fetch of the complete, unfiltered <a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC2822</a> format header of the specified
-   message.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-fetchheader-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">ç”± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> è¿”å›çš„ IMAP æµã€‚</p></dd>
-
-    
-     <dt>
-<code class="parameter">msg_number</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The message number
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The possible <code class="parameter">options</code> are:
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>FT_UID</code></strong> - The <code class="parameter">msgno</code>
-          argument is a UID
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>FT_INTERNAL</code></strong> - The return string
-          is in &quot;internal&quot; format, without any attempt to
-          canonicalize to CRLF newlines
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>FT_PREFETCHTEXT</code></strong> - The RFC822.TEXT
-          should be pre-fetched at the same time.  This avoids an
-          extra RTT on an <acronym title="Internet Message Access Protocol">IMAP</acronym> connection if a full message text is
-          desired (e.g. in a &quot;save to local file&quot; operation)
-         </span>
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-fetchheader-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns the header of the specified message as a text string.
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imap-fetchheader-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imap-fetch-overview.html" class="function" rel="rdfs-seeAlso">imap_fetch_overview()</a> - Read an overview of the information in the headers of the given message</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-fetchbody.html">imap_fetchbody</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-fetchmime.html">imap_fetchmime</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

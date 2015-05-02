@@ -1,159 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>读取资源流到一个字符串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-filter-remove.html">stream_filter_remove</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-get-filters.html">stream_get_filters</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-get-contents" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_get_contents</h1> 
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">stream_get_contents</span> &mdash; <span class="dc-title">读取资源流到一个字符串</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.stream-get-contents-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>stream_get_contents</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$maxlength</code><span class="initializer"> = -1</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = -1</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   与 <span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span> 一样，但是
-    <span class="function"><strong>stream_get_contents()</strong></span> 是对一个已经打开的资源流进行操作，并将其内容写入一个字符串返回。
-   返回的内容取决于 <code class="parameter">maxlength</code> 字节长度和 <code class="parameter">offset</code> 指定的起始位置。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.stream-get-contents-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code> (<span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>)</dt>
-
-     <dd>
-
-      <p class="para">
-       一个资源流（例如 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> 操作之后返回的结果）
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">maxlength</code> (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</dt>
-
-     <dd>
-
-      <p class="para">
-       需要读取的最大的字节数。默认是-1（读取全部的缓冲数据）。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">offset</code> (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)</dt>
-
-     <dd>
-
-      <p class="para">
-       在读取数据之前先查找指定的偏移量。如果这个数字是负数，就不进行查找，直接从当前位置开始读取。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stream_get_contents</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_filter_register" HREF="function.stream-filter-register.html"><LINK  REL="NEXT" TITLE="stream_get_filters" HREF="function.stream-get-filters.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-filter-register.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-get-filters.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-get-contents" ></A
+>stream_get_contents</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN106485" ></A
+><P  >    (no version information, might be only in CVS)</P
+>stream_get_contents&nbsp;--&nbsp;Reads remainder of a stream into a string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN106488" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_get_contents</B
+> ( resource handle [, int maxlength])<BR  ></BR
+><P  > 
+     Identical to <A  HREF="function.file-get-contents.html"  ><B  CLASS="function" >file_get_contents()</B
+></A
+>, except that
+     <B  CLASS="function" >stream_get_contents()</B
+> operates on an already open
+     file resource and returns the remaining contents, up to
+     <TT  CLASS="parameter" ><I  >maxlength</I
+></TT
+> bytes, in a string.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>�ú��������ڶ����ƶ���</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also: 
+     <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>, 
+     <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+>, and
+     <A  HREF="function.fpassthru.html"  ><B  CLASS="function" >fpassthru()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-filter-register.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-get-filters.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_filter_register</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_get_filters</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.stream-get-contents-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回一个字符串  或者在失败时返回 <strong><code>FALSE</code></strong>.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.stream-get-contents-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        增加参数 <code class="parameter">offset</code> 。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.stream-get-contents-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4325">
-    <p><strong>Example #1 <span class="function"><strong>stream_get_contents()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$stream&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;print&nbsp;all&nbsp;the&nbsp;page&nbsp;starting&nbsp;at&nbsp;the&nbsp;offset&nbsp;10<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">stream_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">);<br />}<br /><br /><br />if&nbsp;(</span><span style="color: #0000BB">$stream&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.net'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;print&nbsp;the&nbsp;first&nbsp;5&nbsp;bytes<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">stream_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.stream-get-contents-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">此函数可安全用于二进制对象。</span></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.stream-get-contents-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - 从文件指针中读取一行</span></li>
-    <li class="member"><span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - 读取文件（可安全用于二进制文件）</span></li>
-    <li class="member"><span class="function"><a href="function.fpassthru.html" class="function" rel="rdfs-seeAlso">fpassthru()</a> - 输出文件指针处的所有剩余数据</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-filter-remove.html">stream_filter_remove</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-get-filters.html">stream_get_filters</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

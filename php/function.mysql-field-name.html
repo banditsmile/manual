@@ -1,158 +1,96 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—ç»“æœä¸­æŒ‡å®šå­—æ®µçš„å­—æ®µå</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-field-len.html">mysql_field_len</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-field-seek.html">mysql_field_seek</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-field-name" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_field_name</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_field_name</span> &mdash; <span class="dc-title">
-     å–å¾—ç»“æœä¸­æŒ‡å®šå­—æ®µçš„å­—æ®µå
-    </span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.mysql-field-name-description">
-  <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">string</span> <span class="methodname"><strong>mysql_field_name</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_index</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>mysql_field_name()</strong></span>
-     è¿”å›æŒ‡å®šå­—æ®µç´¢å¼•çš„å­—æ®µåã€‚<code class="parameter">result</code>
-     å¿…é¡»æ˜¯ä¸€ä¸ªåˆæ³•çš„ç»“æœæ ‡è¯†ç¬¦ï¼Œ<code class="parameter">field_index</code>
-     æ˜¯è¯¥å­—æ®µçš„æ•°å­—åç§»é‡ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      <code class="parameter">field_index</code> ä» 0 å¼€å§‹ã€‚
-     </p>
-     <p class="para">
-      ä¾‹å¦‚ï¼Œç¬¬ä¸‰ä¸ªå­—æ®µçš„ç´¢å¼•å€¼å…¶å®æ˜¯ 2ï¼Œç¬¬å››ä¸ªå­—æ®µçš„ç´¢å¼•å€¼æ˜¯ 3ï¼Œä»¥æ­¤ç±»æ¨ã€‚
-     </p>
-    </p></blockquote>
-    <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°è¿”å›çš„å­—æ®µå<em class="emphasis">å¤§å°å†™æ•æ„Ÿ</em>ã€‚</span></p></blockquote>
-    <p class="para">
-     <div class="example" id="example-1715">
-      <p><strong>Example #1 <span class="function"><strong>mysql_field_name()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;The&nbsp;users&nbsp;table&nbsp;consists&nbsp;of&nbsp;three&nbsp;fields:<br />&nbsp;*&nbsp;&nbsp;&nbsp;user_id<br />&nbsp;*&nbsp;&nbsp;&nbsp;username<br />&nbsp;*&nbsp;&nbsp;&nbsp;password.<br />&nbsp;*/<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mysql_user"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mysql_password"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$dbname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"mydb"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbname</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;set&nbsp;</span><span style="color: #0000BB">$dbname</span><span style="color: #DD0000">:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;users"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">mysql_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">mysql_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>
-       ä»¥ä¸Šä¾‹å­å°†äº§ç”Ÿå¦‚ä¸‹è¾“å‡ºï¼š
-      </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-user_id
-password
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     ä¸ºå‘ä¸‹å…¼å®¹ä»ç„¶å¯ä»¥ä½¿ç”¨ <span class="function"><strong>mysql_fieldname()</strong></span>ï¼Œä½†åå¯¹è¿™æ ·åšã€‚
-    </p>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mysql-field-name-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-result</code></dt>
-<dd>
-<p class="para"><span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>
-å‹çš„ç»“æœé›†ã€‚æ­¤ç»“æœé›†æ¥è‡ªå¯¹ <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>
-çš„è°ƒç”¨ã€‚</p></dd>
-
-    <dt>
-<code class="parameter">
-field_offset</code></dt>
-<dd>
-<p class="para">æ•°å€¼å‹å­—æ®µåç§»é‡ã€‚
-<code class="parameter">field_offset</code> ä» <em>0</em> å¼€å§‹ã€‚å¦‚æœ
-<code class="parameter">field_offset</code> ä¸å­˜åœ¨ï¼Œåˆ™ä¼šå‘å‡ºä¸€ä¸ª
-<strong><code>E_WARNING</code></strong> çº§åˆ«çš„é”™è¯¯</p></dd>
-
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mysql_field_name</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_field_len" HREF="function.mysql-field-len.html"><LINK  REL="NEXT" TITLE="mysql_field_seek" HREF="function.mysql-field-seek.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-field-len.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-field-seek.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-field-name" ></A
+>mysql_field_name</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65798" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_field_name&nbsp;--&nbsp;
+     È¡µÃ½á¹ûÖĞÖ¸¶¨×Ö¶ÎµÄ×Ö¶ÎÃû
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65801" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >mysql_field_name</B
+> ( resource result, int field_index)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mysql_field_name()</B
+>
+     ·µ»ØÖ¸¶¨×Ö¶ÎË÷ÒıµÄ×Ö¶ÎÃû¡£<TT  CLASS="parameter" ><I  >result</I
+></TT
+>
+     ±ØĞëÊÇÒ»¸öºÏ·¨µÄ½á¹û±êÊ¶·û£¬<TT  CLASS="parameter" ><I  >field_index</I
+></TT
+>
+     ÊÇ¸Ã×Ö¶ÎµÄÊı×ÖÆ«ÒÆÁ¿¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >field_index</I
+></TT
+> ´Ó 0 ¿ªÊ¼¡£
+     </P
+><P  >&#13;      ÀıÈç£¬µÚÈı¸ö×Ö¶ÎµÄË÷ÒıÖµÆäÊµÊÇ 2£¬µÚËÄ¸ö×Ö¶ÎµÄË÷ÒıÖµÊÇ 3£¬ÒÔ´ËÀàÍÆ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>¸Ãº¯Êı·µ»ØµÄ×Ö¶ÎÃûÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >´óĞ¡Ğ´Ãô¸ĞµÄ</I
+></SPAN
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65824" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mysql_field_name()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* The users table consists of three fields:<br  /> *&nbsp;&nbsp;&nbsp;user_id<br  /> *&nbsp;&nbsp;&nbsp;username<br  /> *&nbsp;&nbsp;&nbsp;password.<br  /> */<br  /></font><font  color="#0000BB">$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">'localhost'</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$dbname </font><font  color="#007700">= </font><font  color="#DD0000">"mydb"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">mysql_select_db</font><font  color="#007700">(</font><font  color="#0000BB">$dbname</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not set $dbname: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /></font><font  color="#0000BB">$res </font><font  color="#007700">= </font><font  color="#0000BB">mysql_query</font><font  color="#007700">(</font><font  color="#DD0000">"select * from users"</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">mysql_field_name</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">mysql_field_name</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÒÔÉÏÀı×Ó½«²úÉúÈçÏÂÊä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >user_id
+password</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÎªÏòÏÂ¼æÈİÈÔÈ»¿ÉÒÔÊ¹ÓÃ <B  CLASS="function" >mysql_fieldname()</B
+>£¬µ«·´¶ÔÕâÑù×ö¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-field-len.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-field-seek.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_field_len</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_field_seek</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.mysql-field-name-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   The name of the specified field index on success æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mysql-field-name-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1716">
-    <p><strong>Example #2 <span class="function"><strong>mysql_field_name()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;The&nbsp;users&nbsp;table&nbsp;consists&nbsp;of&nbsp;three&nbsp;fields:<br />&nbsp;*&nbsp;&nbsp;&nbsp;user_id<br />&nbsp;*&nbsp;&nbsp;&nbsp;username<br />&nbsp;*&nbsp;&nbsp;&nbsp;password.<br />&nbsp;*/<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect&nbsp;to&nbsp;MySQL&nbsp;server:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">$dbname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mydb'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$db_selected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbname</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$db_selected</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;set&nbsp;</span><span style="color: #0000BB">$dbname</span><span style="color: #DD0000">:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'select&nbsp;*&nbsp;from&nbsp;users'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">mysql_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">mysql_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-user_id
-password
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.mysql-field-name-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°è¿”å›çš„å­—æ®µå<em class="emphasis">å¤§å°å†™æ•æ„Ÿ</em>ã€‚</span></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    ä¸ºäº†å‘ä¸‹å…¼å®¹ï¼Œå¯ä»¥ä½¿ç”¨ä¸‹åˆ—å·²åºŸå¼ƒçš„åˆ«åï¼š
-    <span class="function"><strong>mysql_fieldname()</strong></span>
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mysql-field-name-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mysql-field-type.html" class="function" rel="rdfs-seeAlso">mysql_field_type()</a> - å–å¾—ç»“æœé›†ä¸­æŒ‡å®šå­—æ®µçš„ç±»å‹</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-field-len.html" class="function" rel="rdfs-seeAlso">mysql_field_len()</a> - è¿”å›æŒ‡å®šå­—æ®µçš„é•¿åº¦</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-field-len.html">mysql_field_len</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-field-seek.html">mysql_field_seek</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

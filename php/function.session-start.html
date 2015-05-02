@@ -1,188 +1,156 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>启动新会话或者重用现有会话</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-set-save-handler.html">session_set_save_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-status.html">session_status</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.session-start" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">session_start</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">session_start</span> &mdash; <span class="dc-title">启动新会话或者重用现有会话</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.session-start-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>session_start</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>session_start()</strong></span> 会创建新会话或者重用现有会话。
-   如果通过 GET 或者 POST 方式，或者使用 cookie 提交了会话 ID，
-   则会重用现有会话。
-  </p>
-  <p class="para">
-   当会话自动开始或者通过 <span class="function"><strong>session_start()</strong></span> 手动开始的时候，
-   PHP 内部会调用会话管理器的 open 和 read 回调函数。
-   会话管理器可能是 PHP 默认的，
-   也可能是扩展提供的（SQLite 或者 Memcached 扩展），
-   也可能是通过 <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span> 设定的用户自定义会话管理器。
-   通过 read 回调函数返回的现有会话数据（使用特殊的序列化格式存储），
-   PHP 会自动反序列化数据并且填充 $_SESSION 超级全局变量。
-  </p>
-  <p class="para">
-   要想使用命名会话，请在调用 <span class="function"><strong>session_start()</strong></span> 函数
-   之前调用 <span class="function"><a href="function.session-name.html" class="function">session_name()</a></span> 函数。
-  </p>
-  <p class="para">
-   如果启用了 <a href="session.configuration.html#ini.session.use-trans-sid" class="link">session.use_trans_sid</a> 选项，
-   <span class="function"><strong>session_start()</strong></span> 函数会注册一个内部输出管理器，
-   该输出管理器完成 URL 重写的工作。
-  </p>
-  <p class="para">
-   如果用户联合使用 <span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span> 
-   和 <em>ob_gzhandler</em> 函数，
-   那么函数的调用顺序会影响输出结果。
-   例如，必须在开始会话之前调用 <em>ob_gzhandler</em> 函数完成注册。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.session-start-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功开始会话返回 <strong><code>TRUE</code></strong> ，反之返回 <strong><code>FALSE</code></strong>
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.session-start-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        如果函数调用失败返回 <strong><code>FALSE</code></strong>，
-        之前版本返回了 <strong><code>TRUE</code></strong>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.3</td>
-       <td>
-        在 PHP 4.3.3 中，
-        会话开始之后调用 <span class="function"><strong>session_start()</strong></span> 函数
-        会引发 <strong><code>E_NOTICE</code></strong> 级别的错误，
-        并且第二次请求开始会话的调用会被忽略。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.session-start-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5087">
-    <p><strong>Example #1 会话示例： <var class="filename">page1.php</var></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;page1.php<br /><br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Welcome&nbsp;to&nbsp;page&nbsp;#1'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'favcolor'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'green'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'animal'</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #DD0000">'cat'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'time'</span><span style="color: #007700">]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;如果使用&nbsp;cookie&nbsp;方式传送会话&nbsp;ID<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;br&nbsp;/&gt;&lt;a&nbsp;href="page2.php"&gt;page&nbsp;2&lt;/a&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;如果不是使用&nbsp;cookie&nbsp;方式传送会话&nbsp;ID，则使用&nbsp;URL&nbsp;改写的方式传送会话&nbsp;ID<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;br&nbsp;/&gt;&lt;a&nbsp;href="page2.php?'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">SID&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'"&gt;page&nbsp;2&lt;/a&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   请求 <var class="filename">page1.php</var> 页面之后，
-   第二个页面 <var class="filename">page2.php</var> 
-   会包含会话数据。
-   请查阅 <a href="ref.session.html" class="link">会话参考</a>
-   获取更多关于 <a href="session.idpassing.html" class="link">会话 ID 传送</a>的信息，
-   在该参考页面中有关于常量 <strong><code>SID</code></strong> 的详细说明。
-  </p>
-  <p class="para">
-   <div class="example" id="example-5088">
-    <p><strong>Example #2 会话示例： <var class="filename">page2.php</var></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;page2.php<br /><br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Welcome&nbsp;to&nbsp;page&nbsp;#2&lt;br&nbsp;/&gt;'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'favcolor'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;green<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'animal'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;cat<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y&nbsp;m&nbsp;d&nbsp;H:i:s'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">'time'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;类似&nbsp;page1.php&nbsp;中的代码，你可能需要在这里处理使用&nbsp;SID&nbsp;的场景<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;br&nbsp;/&gt;&lt;a&nbsp;href="page1.php"&gt;page&nbsp;1&lt;/a&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.session-start-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    要使用基于 cookie 的会话，
-    必须在输出开始之前调用 <span class="function"><strong>session_start()</strong></span> 函数。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    建议使用 <a href="zlib.configuration.html#ini.zlib.output-compression" class="link">zlib.output_compression</a>
-    来替代 <span class="function"><a href="function.ob-gzhandler.html" class="function">ob_gzhandler()</a></span>。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    根据配置不同，本函数会发送几个 HTTP 响应头。
-    参考 <span class="function"><a href="function.session-cache-limiter.html" class="function">session_cache_limiter()</a></span>
-    来自定义 HTTP 响应头。
-   </p>
-  </p></blockquote>
- </div>
+<HTML  ><HEAD  ><TITLE  >session_start</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Session Handling Functions" HREF="ref.session.html"><LINK  REL="PREVIOUS" TITLE="session_set_save_handler" HREF="function.session-set-save-handler.html"><LINK  REL="NEXT" TITLE="session_unregister" HREF="function.session-unregister.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.session-set-save-handler.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.session-unregister.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.session-start" ></A
+>session_start</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99428" ></A
+><P  >    (PHP 4 )</P
+>session_start&nbsp;--&nbsp;Initialize session data</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99431" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >session_start</B
+> ( void )<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >session_start()</B
+> creates a session or resumes
+     the current one based on the current session id that's being 
+     passed via a request, such as GET, POST, or a cookie.
+    </P
+><P  >&#13;     This function always returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      If you are using cookie-based sessions, you must call
+      <B  CLASS="function" >session_start()</B
+> before anything is outputted to the
+      browser.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99445" ></A
+><P  ><B  >���� 1. A session example: <TT  CLASS="filename" >page1.php</TT
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// page1.php<br  /><br  /></font><font  color="#0000BB">session_start</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#DD0000">'Welcome to page #1'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$_SESSION</font><font  color="#007700">[</font><font  color="#DD0000">'favcolor'</font><font  color="#007700">] = </font><font  color="#DD0000">'green'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$_SESSION</font><font  color="#007700">[</font><font  color="#DD0000">'animal'</font><font  color="#007700">]&nbsp;&nbsp;&nbsp;= </font><font  color="#DD0000">'cat'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$_SESSION</font><font  color="#007700">[</font><font  color="#DD0000">'time'</font><font  color="#007700">]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= </font><font  color="#0000BB">time</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// Works if session cookie was accepted<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'&lt;br /&gt;&lt;a href="page2.php"&gt;page 2&lt;/a&gt;'</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Or maybe pass along the session id, if needed<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'&lt;br /&gt;&lt;a href="page2.php?' </font><font  color="#007700">. </font><font  color="#0000BB">SID </font><font  color="#007700">. </font><font  color="#DD0000">'"&gt;page 2&lt;/a&gt;'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     After viewing <TT  CLASS="filename" >page1.php</TT
+>, the second page
+     <TT  CLASS="filename" >page2.php</TT
+> will magically contain the session
+     data.  Read the <A  HREF="ref.session.html"  >session reference</A
+>
+     for information on <A  HREF="ref.session.html#session.idpassing"  >propagating
+     session ids</A
+> as it, for example, explains what the constant
+     <TT  CLASS="constant" ><B  >SID</B
+></TT
+> is all about.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99456" ></A
+><P  ><B  >���� 2. A session example: <TT  CLASS="filename" >page2.php</TT
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// page2.php<br  /><br  /></font><font  color="#0000BB">session_start</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#DD0000">'Welcome to page #2&lt;br /&gt;'</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#0000BB">$_SESSION</font><font  color="#007700">[</font><font  color="#DD0000">'favcolor'</font><font  color="#007700">]; </font><font  color="#FF8000">// green<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$_SESSION</font><font  color="#007700">[</font><font  color="#DD0000">'animal'</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// cat<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date</font><font  color="#007700">(</font><font  color="#DD0000">'Y m d H:i:s'</font><font  color="#007700">, </font><font  color="#0000BB">$_SESSION</font><font  color="#007700">[</font><font  color="#DD0000">'time'</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// You may want to use SID here, like we did in page1.php<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'&lt;br /&gt;&lt;a href="page1.php"&gt;page 1&lt;/a&gt;'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     If you want to use a named session, you must call
+     <A  HREF="function.session-name.html"  ><B  CLASS="function" >session_name()</B
+></A
+> before calling
+     <B  CLASS="function" >session_start()</B
+>.
+    </P
+><P  >&#13;     <B  CLASS="function" >session_start()</B
+> will register internal output
+     handler for URL rewriting when <TT  CLASS="literal" >trans-sid</TT
+> is
+     enabled. If a user uses <TT  CLASS="literal" >ob_gzhandler</TT
+> or like
+     with <A  HREF="function.ob-start.html"  ><B  CLASS="function" >ob_start()</B
+></A
+>, the order of output handler
+     is important for proper output. For example, user must register
+     <TT  CLASS="literal" >ob_gzhandler</TT
+> before session start.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Use of <A  HREF="ref.zlib.html#ini.zlib.output-compression"  >zlib.output_compression</A
+>
+      is recommended rather than <A  HREF="function.ob-gzhandler.html"  ><B  CLASS="function" >ob_gzhandler()</B
+></A
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      As of PHP 4.3.3, calling <B  CLASS="function" >session_start()</B
+> while the
+      session has already been started will result in an error of level 
+      <TT  CLASS="constant" ><B  >E_NOTICE</B
+></TT
+>.  Also, the second session start will
+      simply be ignored.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also
+     <A  HREF="reserved.variables.html#reserved.variables.session"  >$_SESSION</A
+>,
+     <A  HREF="ref.session.html#ini.session.auto-start"  >session.auto_start</A
+>, and 
+     <A  HREF="function.session-id.html"  ><B  CLASS="function" >session_id()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.session-set-save-handler.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.session-unregister.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >session_set_save_handler</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.session.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >session_unregister</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.session-start-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var></li>
-    <li class="member">
-     <a href="session.configuration.html#ini.session.auto-start" class="link">session.auto_start</a>
-     配置指示
-    </li>
-    <li class="member"><span class="function"><a href="function.session-id.html" class="function" rel="rdfs-seeAlso">session_id()</a> - 获取/设置当前会话 ID</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-set-save-handler.html">session_set_save_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-status.html">session_status</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

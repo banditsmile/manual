@@ -1,41 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>parent</title>
+<HTML  ><HEAD  ><TITLE  >parent</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÀàÓë¶ÔÏó" HREF="language.oop.html"><LINK  REL="PREVIOUS" TITLE="::" HREF="keyword.paamayim-nekudotayim.html"><LINK  REL="NEXT" TITLE="ĞòÁĞ»¯¶ÔÏó £­ »á»°ÖĞµÄ¶ÔÏó" HREF="language.oop.serialization.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="keyword.paamayim-nekudotayim.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 13. ÀàÓë¶ÔÏó</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="language.oop.serialization.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="keyword.parent" ></A
+><TT  CLASS="literal" >parent</TT
+></H1
+><P  >&#13;   Äã¿ÉÄÜ»á·¢ÏÖ×Ô¼ºĞ´µÄ´úÂë·ÃÎÊÁË»ùÀàµÄ±äÁ¿ºÍº¯Êı¡£Èç¹ûÅÉÉúÀà·Ç³£¾«Á¶»òÕß»ùÀà·Ç³£×¨Òµ»¯µÄÊ±ºòÓÈÆäÊÇÕâÑù¡£
+  </P
+><P  >&#13;   ²»ÒªÓÃ´úÂëÖĞ»ùÀàÎÄ×ÖÉÏµÄÃû×Ö£¬Ó¦¸ÃÓÃÌØÊâµÄÃû×Ö
+   <TT  CLASS="literal" >parent</TT
+>£¬ËüÖ¸µÄ¾ÍÊÇÅÉÉúÀàÔÚ
+   <TT  CLASS="literal" >extends</TT
+> ÉùÃ÷ÖĞËùÖ¸µÄ»ùÀàµÄÃû×Ö¡£ÕâÑù×ö¿ÉÒÔ±ÜÃâÔÚ¶à¸öµØ·½Ê¹ÓÃ»ùÀàµÄÃû×Ö¡£
+   Èç¹û¼Ì³ĞÊ÷ÔÚÊµÏÖµÄ¹ı³ÌÖĞÒªĞŞ¸Ä£¬Ö»Òª¼òµ¥µØĞŞ¸ÄÀàÖĞ
+   <TT  CLASS="literal" >extends</TT
+> ÉùÃ÷µÄ²¿·Ö¡£
+  </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN5804" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">A<br  /></font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">example</font><font  color="#007700">()<br  />&nbsp;&nbsp;&nbsp;&nbsp;{<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"I am A::example() and provide basic functionality.&lt;br&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />class </font><font  color="#0000BB">B </font><font  color="#007700">extends </font><font  color="#0000BB">A<br  /></font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">example</font><font  color="#007700">()<br  />&nbsp;&nbsp;&nbsp;&nbsp;{<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"I am B::example() and provide additional functionality.&lt;br&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">parent</font><font  color="#007700">::</font><font  color="#0000BB">example</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= new </font><font  color="#0000BB">B</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Õâ½«µ÷ÓÃ B::example()£¬¶øËü»áÈ¥µ÷ÓÃ A::example()¡£<br  /></font><font  color="#0000BB">$b</font><font  color="#007700">-&gt;</font><font  color="#0000BB">example</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="keyword.paamayim-nekudotayim.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="language.oop.serialization.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><TT  CLASS="literal" >::</TT
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="language.oop.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ĞòÁĞ»¯¶ÔÏó £­ »á»°ÖĞµÄ¶ÔÏó</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="keyword.paamayim-nekudotayim.html">èŒƒå›´è§£ææ“ä½œç¬¦ï¼ˆ::ï¼‰</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="oop4.serialization.html">åºåˆ—åŒ–å¯¹è±¡ ï¼ ä¼šè¯ä¸­çš„å¯¹è±¡</a></div>
- <div class="up"><a href="oop4.html">ç±»ä¸å¯¹è±¡ï¼ˆPHP 4ï¼‰</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="keyword.parent" class="sect1">
-   <h2 class="title"><em>parent</em></h2>
 
-  <p class="para">
-   ç”¨æˆ·å¯èƒ½ä¼šå‘ç°è‡ªå·±å†™çš„ä»£ç è®¿é—®äº†åŸºç±»çš„å˜é‡å’Œå‡½æ•°ã€‚å¦‚æœæ´¾ç”Ÿç±»éå¸¸ç²¾ç‚¼æˆ–è€…åŸºç±»éå¸¸ä¸“ä¸šåŒ–çš„æ—¶å€™å°¤å…¶æ˜¯è¿™æ ·ã€‚
-  </p>
-
-  <p class="para">
-   ä¸è¦ç”¨ä»£ç ä¸­åŸºç±»æ–‡å­—ä¸Šçš„åå­—ï¼Œåº”è¯¥ç”¨ç‰¹æ®Šçš„åå­—
-   <em>parent</em>ï¼Œå®ƒæŒ‡çš„å°±æ˜¯æ´¾ç”Ÿç±»åœ¨ <em>extends</em>
-   å£°æ˜ä¸­æ‰€æŒ‡çš„åŸºç±»çš„åå­—ã€‚è¿™æ ·åšå¯ä»¥é¿å…åœ¨å¤šä¸ªåœ°æ–¹ä½¿ç”¨åŸºç±»çš„åå­—ã€‚å¦‚æœç»§æ‰¿æ ‘åœ¨å®ç°çš„è¿‡ç¨‹ä¸­è¦ä¿®æ”¹ï¼Œåªè¦ç®€å•åœ°ä¿®æ”¹ç±»ä¸­
-   <em>extends</em> å£°æ˜çš„éƒ¨åˆ†ã€‚
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">example</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;am&nbsp;A::example()&nbsp;and&nbsp;provide&nbsp;basic&nbsp;functionality.&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">example</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;am&nbsp;B::example()&nbsp;and&nbsp;provide&nbsp;additional&nbsp;functionality.&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">example</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;è¿™å°†è°ƒç”¨&nbsp;B::example()ï¼Œè€Œå®ƒä¼šå»è°ƒç”¨&nbsp;A::example()ã€‚<br /></span><span style="color: #0000BB">$b</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">example</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="keyword.paamayim-nekudotayim.html">èŒƒå›´è§£ææ“ä½œç¬¦ï¼ˆ::ï¼‰</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="oop4.serialization.html">åºåˆ—åŒ–å¯¹è±¡ ï¼ ä¼šè¯ä¸­çš„å¯¹è±¡</a></div>
- <div class="up"><a href="oop4.html">ç±»ä¸å¯¹è±¡ï¼ˆPHP 4ï¼‰</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

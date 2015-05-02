@@ -1,134 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetches a column from the current row of a result set</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqlite-close.html">sqlite_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sqlite-create-aggregate.html">sqlite_create_aggregate</a></div>
- <div class="up"><a href="ref.sqlite.html">SQLite 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.sqlite-column" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">sqlite_column</h1>
-  <h1 class="refname">SQLiteResult::column</h1>
-  <h1 class="refname">SQLiteUnbuffered::column</h1>
-  <p class="verinfo">(PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">sqlite_column</span> -- <span class="refname">SQLiteResult::column</span> -- <span class="refname">SQLiteUnbuffered::column</span> &mdash; <span class="dc-title">Fetches a column from the current row of a result set</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.sqlite-column-description">
-  <h3 class="title">说明</h3> 
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>sqlite_column</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$index_or_name</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$decode_binary</code><span class="initializer"> = true</span></span>
-  ] )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>SQLiteResult::column</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$index_or_name</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$decode_binary</code><span class="initializer"> = true</span></span>
-  ] )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>SQLiteUnbuffered::column</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$index_or_name</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$decode_binary</code><span class="initializer"> = true</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Fetches the value of a column named <code class="parameter">index_or_name</code>
+<HTML  ><HEAD  ><TITLE  >sqlite_column</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="SQLite" HREF="ref.sqlite.html"><LINK  REL="PREVIOUS" TITLE="sqlite_close" HREF="function.sqlite-close.html"><LINK  REL="NEXT" TITLE="sqlite_create_aggregate" HREF="function.sqlite-create-aggregate.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sqlite-close.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sqlite-create-aggregate.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.sqlite-column" ></A
+>sqlite_column</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN101110" ></A
+><P  >    (no version information, might be only in CVS)</P
+>sqlite_column&nbsp;--&nbsp;Fetches a column from the current row of a result set.</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN101113" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >sqlite_column</B
+> ( resource result, mixed index_or_name [, bool decode_binary])<BR  ></BR
+><P  >&#13;   Fetches the value of a column named <TT  CLASS="parameter" ><I  >index_or_name</I
+></TT
+>
    (if it is a string), or of the ordinal column numbered
-   <code class="parameter">index_or_name</code> (if it is an integer) from the
-   current row of the query result handle <code class="parameter">result</code>.
-  </p>
- </div>
+   <TT  CLASS="parameter" ><I  >index_or_name</I
+></TT
+> (if it is an integer) from the
+   current row of the query result handle <TT  CLASS="parameter" ><I  >result</I
+></TT
+>.
+   The decode binary flag operates in the same way as described under
+   <A  HREF="function.sqlite-fetch-array.html"  ><B  CLASS="function" >sqlite_fetch_array()</B
+></A
+>.
+  </P
+><P  >&#13;   Use this function when you are iterating a large result set with many
+   columns, or with columns that contain large amounts of data.
+  </P
+><P  >&#13;   See also <A  HREF="function.sqlite-fetch-string.html"  ><B  CLASS="function" >sqlite_fetch_string()</B
+></A
+>.
+  </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sqlite-close.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sqlite-create-aggregate.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sqlite_close</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sqlite.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sqlite_create_aggregate</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 parameters" id="refsect1-function.sqlite-column-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The SQLite result resource.  This parameter is not required when using
-       the object-oriented method.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">index_or_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The column index or name to fetch.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">decode_binary</code></dt>
-
-     <dd>
-
-      <p class="para">当
-<code class="parameter">decode_binary</code> 参数设置为 <strong><code>TRUE</code></strong>（默认值）时，PHP 会解码那些由
-<span class="function"><a href="function.sqlite-escape-string.html" class="function">sqlite_escape_string()</a></span>
-编码后的二进制数据。通常应保留此值为其默认值，除非要与其他使用 SQLlite 的应用程序建立的数据交互。</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.sqlite-column-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns the column value.
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.sqlite-column-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Use this function when you are iterating a large result set with many
-    columns, or with columns that contain large amounts of data.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.sqlite-column-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.sqlite-fetch-string.html" class="function" rel="rdfs-seeAlso">sqlite_fetch_string()</a> - 别名 sqlite_fetch_single</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqlite-close.html">sqlite_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sqlite-create-aggregate.html">sqlite_create_aggregate</a></div>
- <div class="up"><a href="ref.sqlite.html">SQLite 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

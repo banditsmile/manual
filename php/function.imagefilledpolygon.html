@@ -1,60 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç”»ä¸€å¤šè¾¹å½¢å¹¶å¡«å……</title>
+<HTML  ><HEAD  ><TITLE  >imagefilledpolygon</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagefilledellipse" HREF="function.imagefilledellipse.html"><LINK  REL="NEXT" TITLE="imagefilledrectangle" HREF="function.imagefilledrectangle.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagefilledellipse.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagefilledrectangle.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagefilledpolygon" ></A
+>imagefilledpolygon</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN39793" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imagefilledpolygon&nbsp;--&nbsp;»­Ò»¶à±ßĞÎ²¢Ìî³ä</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN39796" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >imagefilledpolygon</B
+> ( resource image, array points, int num_points, int color)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >imagefilledpolygon()</B
+> ÔÚ <TT  CLASS="parameter" ><I  >image</I
+></TT
+>
+     Í¼ÏñÖĞ»­Ò»¸öÌî³äÁËµÄ¶à±ßĞÎ¡£<TT  CLASS="parameter" ><I  >points</I
+></TT
+>
+     ÊÇÒ»¸ö PHP µÄÊı×é£¬°üº¬ÁË¶à±ßĞÎµÄ¸÷¸ö¶¥µã×ø±ê£¬¼´ points[0]
+     = x0£¬points[1] = y0£¬points[2]
+     = x1£¬points[3] = y1£¬ÒÔ´ËÀàÍÆ¡£<TT  CLASS="parameter" ><I  >num_points</I
+></TT
+> ÊÇ¶¥µãµÄ×ÜÊı¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN39819" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imagefilledpolygon()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// this example is provided by ecofarm at mullum dot com dot au<br  /><br  />// set up array of points for polygon<br  /></font><font  color="#0000BB">$values </font><font  color="#007700">= array(<br  />&nbsp;&nbsp;</font><font  color="#0000BB">0&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">40</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// x1<br  />&nbsp;&nbsp;</font><font  color="#0000BB">1&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">50</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// y1<br  />&nbsp;&nbsp;</font><font  color="#0000BB">2&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">20</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// x2<br  />&nbsp;&nbsp;</font><font  color="#0000BB">3&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">240</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// y2<br  />&nbsp;&nbsp;</font><font  color="#0000BB">4&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">60</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// x3<br  />&nbsp;&nbsp;</font><font  color="#0000BB">5&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">60</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// y3<br  />&nbsp;&nbsp;</font><font  color="#0000BB">6&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">240</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// x4<br  />&nbsp;&nbsp;</font><font  color="#0000BB">7&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">20</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// y4<br  />&nbsp;&nbsp;</font><font  color="#0000BB">8&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">50</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// x5<br  />&nbsp;&nbsp;</font><font  color="#0000BB">9&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#0000BB">40</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// y5<br  />&nbsp;&nbsp;</font><font  color="#0000BB">10 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">10</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// x6<br  />&nbsp;&nbsp;</font><font  color="#0000BB">11 </font><font  color="#007700">=&gt; </font><font  color="#0000BB">10</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// y6<br  /></font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// create image<br  /></font><font  color="#0000BB">$im </font><font  color="#007700">= </font><font  color="#0000BB">imagecreate</font><font  color="#007700">(</font><font  color="#0000BB">250</font><font  color="#007700">, </font><font  color="#0000BB">250</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// some colors<br  /></font><font  color="#0000BB">$bg&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$blue </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// draw a polygon<br  /></font><font  color="#0000BB">imagefilledpolygon</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">$values</font><font  color="#007700">, </font><font  color="#0000BB">6</font><font  color="#007700">, </font><font  color="#0000BB">$blue </font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// flush image<br  /></font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'Content-type: image/png'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagepng</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagedestroy</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagefilledellipse.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagefilledrectangle.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagefilledellipse</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagefilledrectangle</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagefilledellipse.html">imagefilledellipse</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagefilledrectangle.html">imagefilledrectangle</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagefilledpolygon" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagefilledpolygon</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagefilledpolygon</span> &mdash; <span class="dc-title">ç”»ä¸€å¤šè¾¹å½¢å¹¶å¡«å……</span></p>
 
- </div>
- <div class="refsect1 unknown-seealsp" id="refsect1-function.imagefilledpolygon-unknown-seealsp">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imagefilledpolygon</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$points</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$num_points</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$color</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>imagefilledpolygon()</strong></span> åœ¨ <code class="parameter">image</code>
-   å›¾åƒä¸­ç”»ä¸€ä¸ªå¡«å……äº†çš„å¤šè¾¹å½¢ã€‚
-  </p>
-  <p class="para">
-   <code class="parameter">points</code> å‚æ•°æ˜¯ä¸€ä¸ªæŒ‰é¡ºåºåŒ…å«æœ‰å¤šè¾¹å½¢å„é¡¶ç‚¹çš„
-   <em>x</em> å’Œ <em>y</em>
-   åæ ‡çš„æ•°ç»„ã€‚
-  </p>
-  <p class="para">
-   <code class="parameter">num_points</code> å‚æ•°æ˜¯é¡¶ç‚¹çš„æ€»æ•°ï¼Œå¿…é¡»å¤§äº 3ã€‚
-  </p>
-  <p class="para">
-   <div class="example" id="example-3316">
-    <p><strong>Example #1 <span class="function"><strong>imagefilledpolygon()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å»ºç«‹å¤šè¾¹å½¢å„é¡¶ç‚¹åæ ‡çš„æ•°ç»„<br /></span><span style="color: #0000BB">$values&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">50</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Point&nbsp;1&nbsp;(x,&nbsp;y)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">240</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;Point&nbsp;2&nbsp;(x,&nbsp;y)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Point&nbsp;3&nbsp;(x,&nbsp;y)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">240</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Point&nbsp;4&nbsp;(x,&nbsp;y)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">50</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Point&nbsp;5&nbsp;(x,&nbsp;y)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">10&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Point&nbsp;6&nbsp;(x,&nbsp;y)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;åˆ›å»ºå›¾åƒ<br /></span><span style="color: #0000BB">$image&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">250</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">250</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;è®¾å®šé¢œè‰²<br /></span><span style="color: #0000BB">$bg&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$blue&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ç”»ä¸€ä¸ªå¤šè¾¹å½¢<br /></span><span style="color: #0000BB">imagefilledpolygon</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$values</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$blue</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;è¾“å‡ºå›¾åƒ<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-type:&nbsp;image/png'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagefilledellipse.html">imagefilledellipse</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagefilledrectangle.html">imagefilledrectangle</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

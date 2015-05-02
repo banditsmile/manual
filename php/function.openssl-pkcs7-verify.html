@@ -1,187 +1,81 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Verifies the signature of an S/MIME signed message</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.openssl-pkcs7-sign.html">openssl_pkcs7_sign</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.openssl-pkey-export-to-file.html">openssl_pkey_export_to_file</a></div>
- <div class="up"><a href="ref.openssl.html">OpenSSL ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.openssl-pkcs7-verify" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">openssl_pkcs7_verify</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">openssl_pkcs7_verify</span> &mdash; <span class="dc-title">Verifies the signature of an S/MIME signed message</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.openssl-pkcs7-verify-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>openssl_pkcs7_verify</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$outfilename</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$cainfo</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$extracerts</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$content</code></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>openssl_pkcs7_verify()</strong></span> reads the S/MIME message
-   contained in the given file and examines the digital signature.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.openssl-pkcs7-verify-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Path to the message.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">flags</code> can be used to affect how the signature is
-       verified - see <a href="openssl.pkcs7.flags.html" class="link">PKCS7 constants</a>
-       for more information.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">outfilename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If the <code class="parameter">outfilename</code> is specified, it should be a
-       string holding the name of a file into which the certificates of the
-       persons that signed the messages will be stored in PEM format.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">cainfo</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If the <code class="parameter">cainfo</code> is specified, it should hold
-       information about the trusted CA certificates to use in the verification
-       process - see <a href="openssl.cert.verification.html" class="link">certificate
-       verification</a> for more information about this parameter.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">extracerts</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If the <code class="parameter">extracerts</code> is specified, it is the filename
-       of a file containing a bunch of certificates to use as untrusted CAs.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">content</code></dt>
-
-     <dd>
-
-      <p class="para">
-       You can specify a filename with <code class="parameter">content</code> that will
-       be filled with the verified data, but with the signature information
-       stripped.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >openssl_pkcs7_verify</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="OpenSSL Functions" HREF="ref.openssl.html"><LINK  REL="PREVIOUS" TITLE="openssl_pkcs7_sign" HREF="function.openssl-pkcs7-sign.html"><LINK  REL="NEXT" TITLE="openssl_pkey_export_to_file" HREF="function.openssl-pkey-export-to-file.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.openssl-pkcs7-sign.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.openssl-pkey-export-to-file.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.openssl-pkcs7-verify" ></A
+>openssl_pkcs7_verify</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN82210" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>openssl_pkcs7_verify&nbsp;--&nbsp;Verifies the signature of an S/MIME signed message</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN82213" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >openssl_pkcs7_verify</B
+> ( string filename, int flags [, string outfilename [, array cainfo [, string extracerts]]])<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >openssl_pkcs7_verify()</B
+> reads the S/MIME message
+    contained in the filename specified by <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> and
+    examines the digital signature.  It returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the signature is
+    verified, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if it is not correct (the message has been tampered with,
+    or the signing certificate is invalid), or -1 on error.
+   </P
+><P  >&#13;    <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> can be used to affect how the signature is
+    verified - see <A  HREF="ref.openssl.html#openssl.pkcs7.flags"  >PKCS7 constants</A
+>
+    for more information.
+   </P
+><P  >&#13;    If the <TT  CLASS="parameter" ><I  >outfilename</I
+></TT
+> is specified, it should be a
+    string holding the name of a file into which the certificates of the
+    persons that signed the messages will be stored in PEM format.
+   </P
+><P  >&#13;    If the <TT  CLASS="parameter" ><I  >cainfo</I
+></TT
+> is specified, it should hold
+    information about the trusted CA certificates to use in the verification
+    process - see <A  HREF="ref.openssl.html#openssl.cert.verification"  >certificate
+    verification</A
+> for more information about this parameter.
+   </P
+><P  >&#13;    If the <TT  CLASS="parameter" ><I  >extracerts</I
+></TT
+> is specified, it is the filename
+    of a file containing a bunch of certificates to use as untrusted CAs.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.openssl-pkcs7-sign.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.openssl-pkey-export-to-file.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >openssl_pkcs7_sign</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.openssl.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >openssl_pkey_export_to_file</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.openssl-pkcs7-verify-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns <strong><code>TRUE</code></strong> if the signature is verified, <strong><code>FALSE</code></strong> if it is not correct
-   (the message has been tampered with, or the signing certificate is invalid),
-   or -1 on error.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.openssl-pkcs7-verify-changelog">
-  <h3 class="title">Êõ¥Êñ∞Êó•Âøó</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ÁâàÊú¨</th>
-       <th>ËØ¥Êòé</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        The <code class="parameter">content</code> parameter was added.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.openssl-pkcs7-verify-notes">
-  <h3 class="title">Ê≥®Èáä</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    As specified in RFC 2045, lines may not be longer than 76 characters 
-    in the <code class="parameter">filename</code> parameter.
-   </span>
-  </p></blockquote>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.openssl-pkcs7-sign.html">openssl_pkcs7_sign</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.openssl-pkey-export-to-file.html">openssl_pkey_export_to_file</a></div>
- <div class="up"><a href="ref.openssl.html">OpenSSL ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,337 +1,128 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—ä¸€ä¸ªæ—¥æœŸçš„ Unix æ—¶é—´æˆ³</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.microtime.html">microtime</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strftime.html">strftime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mktime" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mktime</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mktime</span> &mdash; <span class="dc-title">å–å¾—ä¸€ä¸ªæ—¥æœŸçš„ Unix æ—¶é—´æˆ³</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mktime-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>mktime</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$hour</code><span class="initializer"> = date(&quot;H&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$minute</code><span class="initializer"> = date(&quot;i&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$second</code><span class="initializer"> = date(&quot;s&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$month</code><span class="initializer"> = date(&quot;n&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$day</code><span class="initializer"> = date(&quot;j&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$year</code><span class="initializer"> = date(&quot;Y&quot;)</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$is_dst</code><span class="initializer"> = -1</span></span>
-  ]]]]]]] )</div>
-
-  <p class="para rdfs-comment">
-   æ ¹æ®ç»™å‡ºçš„å‚æ•°è¿”å› Unix æ—¶é—´æˆ³ã€‚æ—¶é—´æˆ³æ˜¯ä¸€ä¸ªé•¿æ•´æ•°ï¼ŒåŒ…å«äº†ä»
-   Unix çºªå…ƒï¼ˆJanuary 1 1970 00:00:00 GMTï¼‰åˆ°ç»™å®šæ—¶é—´çš„ç§’æ•°ã€‚
-  </p>
-  <p class="para">
-   å‚æ•°å¯ä»¥ä»å³å‘å·¦çœç•¥ï¼Œä»»ä½•çœç•¥çš„å‚æ•°ä¼šè¢«è®¾ç½®æˆæœ¬åœ°æ—¥æœŸå’Œæ—¶é—´çš„å½“å‰å€¼ã€‚
-  </p>
- </div>
-
-
-  <div class="refsect1 notes" id="refsect1-function.mktime-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    As of PHP 5.1, when called with no arguments, <span class="function"><strong>mktime()</strong></span>
-    throws an <strong><code>E_STRICT</code></strong> notice: use the 
-    <span class="function"><a href="function.time.html" class="function">time()</a></span> function instead.
-   </p>
-  </p></blockquote>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.mktime-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">hour</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å°æ—¶æ•°ã€‚
-       The number of the hour relative to the start of the day determined by
-       <code class="parameter">month</code>, <code class="parameter">day</code> and <code class="parameter">year</code>.
-       Negative values reference the hour before midnight of the day in question.
-       Values greater than 23 reference the appropriate hour in the following day(s).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">minute</code></dt>
-
-     <dd>
-
-      <p class="para">
-       åˆ†é’Ÿæ•°ã€‚
-       The number of the minute relative to the start of the <code class="parameter">hour</code>.
-       Negative values reference the minute in the previous hour.
-       Values greater than 59 reference the appropriate minute in the following hour(s).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">second</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ç§’æ•°ï¼ˆä¸€åˆ†é’Ÿä¹‹å†…ï¼‰ã€‚
-       The number of seconds relative to the start of the <code class="parameter">minute</code>.
-       Negative values reference the second in the previous minute.
-       Values greater than 59 reference the appropriate second in the following minute(s).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">month</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æœˆä»½æ•°ã€‚
-       The number of the month relative to the end of the previous year.
-       Values 1 to 12 reference the normal calendar months of the year in question.
-       Values less than 1 (including negative values) reference the months in the previous year in reverse order, so 0 is December, -1 is November, etc.
-       Values greater than 12 reference the appropriate month in the following year(s).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">day</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¤©æ•°ã€‚
-       The number of the day relative to the end of the previous month.
-       Values 1 to 28, 29, 30 or 31 (depending upon the month) reference the normal days in the relevant month.
-       Values less than 1 (including negative values) reference the days in the previous month, so 0 is the last day of the previous month, -1 is the day before that, etc.
-       Values greater than the number of days in the relevant month reference the appropriate day in the following month(s).
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">year</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¹´ä»½æ•°ï¼Œå¯ä»¥æ˜¯ä¸¤ä½æˆ–å››ä½æ•°å­—ï¼Œ0-69 å¯¹åº”äº 2000-2069ï¼Œ70-100
-       å¯¹åº”äº 1970-2000ã€‚åœ¨å¦‚ä»Šç³»ç»Ÿä¸­æ™®éæŠŠ time_t ä½œä¸ºä¸€ä¸ª 32
-       ä½æœ‰ç¬¦å·æ•´æ•°çš„æƒ…å†µä¸‹ï¼Œ<code class="parameter">year</code>
-       çš„åˆæ³•èŒƒå›´æ˜¯ 1901 åˆ° 2038 ä¹‹é—´ï¼Œä¸è¿‡æ­¤é™åˆ¶è‡ª
-       PHP 5.1.0 èµ·å·²è¢«å…‹æœäº†ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">is_dst</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æœ¬å‚æ•°å¯ä»¥è®¾ä¸º 1ï¼Œè¡¨ç¤ºæ­£å¤„äºå¤æ—¶åˆ¶æ—¶é—´ï¼ˆDSTï¼‰ï¼Œ0
-       è¡¨ç¤ºä¸æ˜¯å¤æ—¶åˆ¶ï¼Œæˆ–è€… -1ï¼ˆé»˜è®¤å€¼ï¼‰è¡¨ç¤ºä¸çŸ¥é“æ˜¯å¦æ˜¯å¤æ—¶åˆ¶ã€‚å¦‚æœæœªçŸ¥ï¼ŒPHP
-       ä¼šå°è¯•è‡ªå·±ææ˜ç™½ã€‚è¿™å¯èƒ½äº§ç”Ÿä¸å¯é¢„çŸ¥ï¼ˆä½†å¹¶éä¸æ­£ç¡®ï¼‰çš„ç»“æœã€‚å¦‚æœ
-       PHP è¿è¡Œçš„ç³»ç»Ÿä¸­å¯ç”¨äº† DST æˆ–è€… <code class="parameter">is_dst</code>
-       è®¾ä¸º 1ï¼ŒæŸäº›æ—¶é—´æ˜¯æ— æ•ˆçš„ã€‚ä¾‹å¦‚ DST è‡ª 2:00 ç”Ÿæ•ˆï¼Œåˆ™æ‰€æœ‰å¤„äº
-       2:00 åˆ° 3:00 ä¹‹é—´çš„æ—¶é—´éƒ½æ— æ•ˆï¼Œ<span class="function"><strong>mktime()</strong></span>
-       ä¼šè¿”å›ä¸€ä¸ªæœªå®šä¹‰ï¼ˆé€šå¸¸ä¸ºè´Ÿï¼‰çš„å€¼ã€‚æŸäº›ç³»ç»Ÿï¼ˆä¾‹å¦‚
-       Solaris 8ï¼‰çš„ DST åœ¨åˆå¤œç”Ÿæ•ˆï¼Œåˆ™ DST ç”Ÿæ•ˆå½“å¤©çš„ 0:30
-       ä¼šè¢«è®¡ç®—ä¸ºå‰ä¸€å¤©çš„ 23:30ã€‚
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        è‡ª PHP 5.1.0 èµ·ï¼Œæœ¬å‚æ•°å·²è¢«åºŸå¼ƒã€‚åº”è¯¥ä½¿ç”¨æ–°çš„æ—¶åŒºå¤„ç†ç‰¹æ€§æ¥æ›¿ä»£ã€‚
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mktime</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ê±¼äÈÕÆÚº¯Êı¿â" HREF="ref.datetime.html"><LINK  REL="PREVIOUS" TITLE="microtime" HREF="function.microtime.html"><LINK  REL="NEXT" TITLE="strftime" HREF="function.strftime.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.microtime.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.strftime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mktime" ></A
+>mktime</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN18726" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mktime&nbsp;--&nbsp;È¡µÃÒ»¸öÈÕÆÚµÄ UNIX Ê±¼ä´Á</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN18729" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >mktime</B
+> ( [int hour [, int minute [, int second [, int month [, int day [, int year [, int is_dst]]]]]]])<BR  ></BR
+><P  >&#13;     <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >¾¯¸æ£º</I
+></SPAN
+>×¢Òâ²ÎÊıµÄÆæ¹ÖË³Ğò£¬ÕâºÍ±ê×¼µÄ UNIX mktime()
+     µ÷ÓÃÖĞµÄ²ÎÊıË³Ğò²»Í¬¡£ÔÚ½Å±¾¾­³£»á»ìÏıÕâĞ©Öµ¶ø³ö´í¡£
+     
+    </P
+><P  >&#13;     ¸ù¾İ¸ø³öµÄ²ÎÊı·µ»Ø Unix Ê±¼ä´Á¡£Ê±¼ä´ÁÊÇÒ»¸ö³¤ÕûÊı£¬°üº¬ÁË´Ó
+     Unix ĞÂ¼ÍÔª£¨1970 Äê 1 ÔÂ 1 ÈÕ£©µ½¸ø¶¨Ê±¼äµÄÃëÊı¡£
+    </P
+><P  >&#13;     ²ÎÊı¿ÉÒÔ´ÓÓÒÏò×óÊ¡ÂÔ£¬ÈÎºÎÊ¡ÂÔµÄ²ÎÊı»á±»ÉèÖÃ³É±¾µØÈÕÆÚºÍÊ±¼äµÄµ±Ç°Öµ¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >is_dst</I
+></TT
+> ÔÚÏÄÁîÊ±¿ÉÒÔ±»ÉèÎª 1£¬Èç¹û²»ÊÇÔòÉèÎª
+     0£¬»òÕß²»ÖªµÀÊÇ·ñÎªÏÄÁîÊ±µÄ»°ÉèÎª -1£¨Ä¬ÈÏÖµ£©¡£Èç¹û²»ÖªµÀ£¬PHP
+     »á³¢ÊÔ×Ô¼ºÅĞ¶Ï¡£Õâ¿ÉÄÜ»á²úÉúÎ´Ô¤ÆÚ£¨µ«²»ÊÇ´íÎó£©µÄ½á¹û¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >is_dst</I
+></TT
+> ÊÇ 3.0.10 °æĞÂ¼ÓµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <B  CLASS="function" >mktime()</B
+> ¿ÉÒÔÓÃÀ´×öÈÕÆÚ¼ÆËãºÍÑéÖ¤£¬¶ÔÓÚ³¬³ö·¶Î§µÄÊäÈëËü¿ÉÒÔ×Ô¶¯¼ÆËã³öÕıÈ·µÄÖµÀ´¡£ÀıÈç£¬ÏÂÃæµÄÃ¿Ò»ĞĞ¶¼»áÊä³ö×Ö·û´®¡°Jan-01-1998¡±¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18766" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mktime()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">12</font><font  color="#007700">,</font><font  color="#0000BB">32</font><font  color="#007700">,</font><font  color="#0000BB">1997</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">13</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1997</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1998</font><font  color="#007700">));<br  />echo </font><font  color="#0000BB">date </font><font  color="#007700">(</font><font  color="#DD0000">"M-d-Y"</font><font  color="#007700">, </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">98</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TT  CLASS="parameter" ><I  >Year</I
+></TT
+> ¿ÉÒÔÊÇÁ½Î»»òËÄÎ»Êı×Ö£¬È¡Öµ´Ó
+     0-69 ±íÊ¾ 2000-2069 ÒÔ¼° 70-99 ±íÊ¾ 1970-1999£¨ÔÚÈç½ñºÜ³£¼ûµÄ
+     time_t ÊÇ 32 Î»ÓĞ·ûºÅÕûÊıµÄÏµÍ³ÖĞ£¬<TT  CLASS="parameter" ><I  >year</I
+></TT
+>
+     µÄÓĞĞ§·¶Î§ÊÇ 1901 µ½ 2038£©¡£
+    </P
+><P  >&#13;     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >Windows: </B
+>
+       Ä¿Ç°ËùÓĞµÄ Windows ÏµÍ³¶¼²»Ö§³Ö¸ºµÄÊ±¼ä´Á¡£Òò´ËºÏ·¨µÄÄê·İ·¶Î§Ö»°üÀ¨´Ó
+       1970 µ½ 2038¡£
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >&#13;     ¸ø¶¨ÔÂ·İµÄ×îºóÒ»Ìì¿ÉÒÔ±í´ïÎªÏÂ¸öÔÂµÄµÚ "0" Ìì£¬¶ø²»ÊÇ -1
+     Ìì¡£ÏÂÃæÁ½¸öÀı×Ó¶¼½«²úÉú×Ö·û´®¡°The last day in Feb 2000 is: 29¡±¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18777" ></A
+><P  ><B  >Àı×Ó 2. Ã¿¸öÔÂµÄ×îºóÒ»Ìì</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$lastday </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">3</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"Last day in Feb 2000 is: %d"</font><font  color="#007700">, </font><font  color="#0000BB">$lastday</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br  /></font><font  color="#0000BB">$lastday </font><font  color="#007700">= </font><font  color="#0000BB">mktime </font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">0</font><font  color="#007700">,</font><font  color="#0000BB">4</font><font  color="#007700">,-</font><font  color="#0000BB">31</font><font  color="#007700">,</font><font  color="#0000BB">2000</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">strftime </font><font  color="#007700">(</font><font  color="#DD0000">"Last day in Feb 2000 is: %d"</font><font  color="#007700">, </font><font  color="#0000BB">$lastday</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;    Äê£¬ÔÂ£¬ÈÕ¶¼µÈÓÚÁãµÄÈÕÆÚ±»ÈÏÎªÊÇ·Ç·¨µÄ£¨·ñÔò»á±»µ±×÷
+    30.11.1999£¬ÕâÊÇºÜ¹ÖµÄĞĞÎª£©¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.date.html"  ><B  CLASS="function" >date()</B
+></A
+> ºÍ <A  HREF="function.time.html"  ><B  CLASS="function" >time()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.microtime.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.strftime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >microtime</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.datetime.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >strftime</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-
- <div class="refsect1 returnvalues" id="refsect1-function.mktime-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   <span class="function"><strong>mktime()</strong></span> æ ¹æ®ç»™å‡ºçš„å‚æ•°è¿”å› Unix
-   æ—¶é—´æˆ³ã€‚å¦‚æœå‚æ•°éæ³•ï¼Œæœ¬å‡½æ•°è¿”å›
-   <strong><code>FALSE</code></strong>ï¼ˆåœ¨ PHP 5.1 ä¹‹å‰è¿”å› <em>-1</em>ï¼‰ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 errors" id="refsect1-function.mktime-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-åœ¨æ¯ æ¬¡è°ƒç”¨æ—¥æœŸ/æ—¶é—´å‡½æ•°æ—¶ï¼Œå¦‚æœæ—¶åŒºæ— æ•ˆåˆ™ä¼šå¼•å‘ <strong><code>E_NOTICE</code></strong> é”™è¯¯ï¼Œå¦‚æœä½¿ç”¨ç³»ç»Ÿè®¾å®šå€¼æˆ– <var class="varname"><var class="varname">TZ</var></var>
-ç¯å¢ƒå˜é‡ï¼Œåˆ™ä¼šå¼•å‘ <strong><code>E_STRICT</code></strong> æˆ– <strong><code>E_WARNING</code></strong> æ¶ˆæ¯ã€‚å‚è§
-<span class="function"><a href="function.date-default-timezone-set.html" class="function">date_default_timezone_set()</a></span>ã€‚</p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.mktime-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        <span class="function"><strong>mktime()</strong></span> now throws <strong><code>E_DEPRECATED</code></strong> notice 
-        if the <code class="parameter">is_dst</code> parameter is used.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        <code class="parameter">is_dst</code> å‚æ•°è¢«åºŸå¼ƒã€‚å‡ºé”™æ—¶å‡½æ•°è¿”å›
-        <strong><code>FALSE</code></strong> è€Œä¸å†æ˜¯ <em>-1</em>ã€‚ä¿®æ­£äº†æœ¬å‡½æ•°å¯ä»¥æ¥å—å¹´æœˆæ—¥å‚æ•°å…¨ä¸ºé›¶ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        When called with no arguments, <span class="function"><strong>mktime()</strong></span> throws 
-        <strong><code>E_STRICT</code></strong> notice. Use the 
-        <span class="function"><a href="function.time.html" class="function">time()</a></span> function instead.
-       </td>
-      </tr>
-
-            <tr><td>5.1.0</td><td><p class="para">
-ç°åœ¨å‘å¸ƒ <strong><code>E_STRICT</code></strong> å’Œ <strong><code>E_NOTICE</code></strong>
-æ—¶åŒºé”™è¯¯ã€‚</p></td></tr>
-
-      
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mktime-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-    <p class="para">
-   <div class="example" id="example-2411">
-<p><strong>Example #1 åŸºæœ¬ä¾‹å­ </strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Set&nbsp;the&nbsp;default&nbsp;timezone&nbsp;to&nbsp;use.&nbsp;Available&nbsp;as&nbsp;of&nbsp;PHP&nbsp;5.1<br /></span><span style="color: #0000BB">date_default_timezone_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'UTC'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Prints:&nbsp;July&nbsp;1,&nbsp;2000&nbsp;is&nbsp;on&nbsp;a&nbsp;Saturday<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"July&nbsp;1,&nbsp;2000&nbsp;is&nbsp;on&nbsp;a&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"l"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2000</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Prints&nbsp;something&nbsp;like:&nbsp;2006-04-05T01:02:03+00:00<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2006</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2412">
-    <p><strong>Example #2 <span class="function"><strong>mktime()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents"><p>
-     <span class="function"><strong>mktime()</strong></span>
-     åœ¨åšæ—¥æœŸè®¡ç®—å’ŒéªŒè¯æ–¹é¢å¾ˆæœ‰ç”¨ï¼Œå®ƒä¼šè‡ªåŠ¨è®¡ç®—è¶…å‡ºèŒƒå›´çš„è¾“å…¥çš„æ­£ç¡®å€¼ã€‚ä¾‹å¦‚ä¸‹é¢ä¾‹å­ä¸­æ¯ä¸€è¡Œéƒ½ä¼šäº§ç”Ÿå­—ç¬¦ä¸²
-     &quot;Jan-01-1998&quot;ã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">32</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1997</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">13</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1997</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1998</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">"M-d-Y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">98</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2413">
-    <p><strong>Example #3 ä¸‹ä¸ªæœˆçš„æœ€åä¸€å¤©</strong></p>
-    <div class="example-contents"><p>
-     ä»»ä½•ç»™å®šæœˆä»½çš„æœ€åä¸€å¤©éƒ½å¯ä»¥è¢«è¡¨ç¤ºä¸ºä¸‹ä¸ªæœˆçš„ç¬¬ &quot;0&quot;
-     å¤©ï¼Œè€Œä¸æ˜¯ -1 å¤©ã€‚ä¸‹é¢ä¸¤ä¸ªä¾‹å­éƒ½ä¼šäº§ç”Ÿå­—ç¬¦ä¸²
-     &quot;The last day in Feb 2000 is: 29&quot;ã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$lastday&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2000</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strftime</span><span style="color: #007700">(</span><span style="color: #DD0000">"Last&nbsp;day&nbsp;in&nbsp;Feb&nbsp;2000&nbsp;is:&nbsp;%d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$lastday</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$lastday&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">31</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2000</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strftime</span><span style="color: #007700">(</span><span style="color: #DD0000">"Last&nbsp;day&nbsp;in&nbsp;Feb&nbsp;2000&nbsp;is:&nbsp;%d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$lastday</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.mktime-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="caution"><strong class="caution">Caution</strong>
-   <p class="para">
-    åœ¨ PHP 5.1.0 ä¹‹å‰ï¼Œåœ¨ä»»ä½•å·²çŸ¥ Windows
-    ç‰ˆæœ¬ä»¥åŠä¸€äº›å…¶å®ƒç³»ç»Ÿä¸‹ä¸æ”¯æŒè´Ÿçš„æ—¶é—´æˆ³ã€‚å› æ­¤å¹´ä»½çš„æœ‰æ•ˆèŒƒå›´é™åˆ¶ä¸º
-    1970 åˆ° 2038ã€‚
-   </p>
-  </div>
- </div>
-
-
-  <div class="refsect1 seealso" id="refsect1-function.mktime-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.checkdate.html" class="function" rel="rdfs-seeAlso">checkdate()</a> - éªŒè¯ä¸€ä¸ªæ ¼é‡Œé«˜é‡Œæ—¥æœŸ</span></li>
-    <li class="member"><span class="function"><a href="function.gmmktime.html" class="function" rel="rdfs-seeAlso">gmmktime()</a> - å–å¾— GMT æ—¥æœŸçš„ UNIX æ—¶é—´æˆ³</span></li>
-    <li class="member"><span class="function"><a href="function.date.html" class="function" rel="rdfs-seeAlso">date()</a> - æ ¼å¼åŒ–ä¸€ä¸ªæœ¬åœ°æ—¶é—´ï¼æ—¥æœŸ</span></li> 
-    <li class="member"><span class="function"><a href="function.time.html" class="function" rel="rdfs-seeAlso">time()</a> - è¿”å›å½“å‰çš„ Unix æ—¶é—´æˆ³</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.microtime.html">microtime</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strftime.html">strftime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

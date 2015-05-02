@@ -1,222 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—æœ¬åœ°æ—¶é—´</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.idate.html">idate</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.microtime.html">microtime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.localtime" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">localtime</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">localtime</span> &mdash; <span class="dc-title">å–å¾—æœ¬åœ°æ—¶é—´</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.localtime-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>localtime</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$timestamp</code><span class="initializer"> = time()</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_associative</code><span class="initializer"> = false</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>localtime()</strong></span> å‡½æ•°è¿”å›ä¸€ä¸ªæ•°ç»„ï¼Œå…¶ç»“æ„å’Œ
-   C å‡½æ•°è°ƒç”¨è¿”å›çš„å®Œå…¨ä¸€æ ·ã€‚
-  </p>
- </div>
-
-
-   <div class="refsect1 parameters" id="refsect1-function.localtime-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-    <dt>
-<code class="parameter">timestamp</code></dt>
-<dd>
-<p class="para">
-å¯é€‰çš„ <code class="parameter">timestamp</code> å‚æ•°æ˜¯ä¸€ä¸ª <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> çš„ Unix
-æ—¶é—´æˆ³ï¼Œå¦‚æœªæŒ‡å®šï¼Œå‚æ•°å€¼é»˜è®¤ä¸ºå½“å‰æœ¬åœ°æ—¶é—´ã€‚ä¹Ÿå°±æ˜¯è¯´ï¼Œå…¶å€¼é»˜è®¤ä¸º
-<span class="function"><a href="function.time.html" class="function">time()</a></span> çš„è¿”å›å€¼ã€‚</p></dd>
-
-   
-    
-     <dt>
-<code class="parameter">is_associative</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœè®¾ä¸º <strong><code>FALSE</code></strong>
-          æˆ–æœªæä¾›åˆ™è¿”å›çš„æ˜¯æ™®é€šçš„æ•°å­—ç´¢å¼•æ•°ç»„ã€‚å¦‚æœè¯¥å‚æ•°è®¾ä¸º <strong><code>TRUE</code></strong> åˆ™
-          <span class="function"><strong>localtime()</strong></span> å‡½æ•°è¿”å›åŒ…å«æœ‰æ‰€æœ‰ä»
-          C çš„ localtime å‡½æ•°è°ƒç”¨æ‰€è¿”å›çš„ä¸åŒå•å…ƒçš„å…³è”æ•°ç»„ã€‚å…³è”æ•°ç»„ä¸­ä¸åŒçš„é”®åä¸ºï¼š
-      </p>
-      <p class="para">
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_sec&quot; - ç§’æ•°ï¼Œ <em>0</em> åˆ° <em>59</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_min&quot; - åˆ†é’Ÿæ•°ï¼Œ <em>0</em> åˆ° <em>59</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_hour&quot; - å°æ—¶ï¼Œ <em>0</em> åˆ° <em>23</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_mday&quot; - æœˆä»½ä¸­çš„ç¬¬å‡ æ—¥ï¼Œ <em>1</em> åˆ° <em>31</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_mon&quot; - å¹´ä»½ä¸­çš„ç¬¬å‡ ä¸ªæœˆï¼Œ <em>0</em> (Jan) åˆ° <em>11</em> (Dec)
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_year&quot; - å¹´ä»½ï¼Œä» 1900 å¼€å§‹
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_wday&quot; - æ˜ŸæœŸä¸­çš„ç¬¬å‡ å¤©ï¼Œ <em>0</em> (Sun) åˆ° <em>6</em> (Sat)
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_yday&quot; - ä¸€å¹´ä¸­çš„ç¬¬å‡ å¤©ï¼Œ <em>0</em> åˆ° <em>365</em>
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          &quot;tm_isdst&quot; - å¤ä»¤æ—¶å½“å‰æ˜¯å¦ç”Ÿæ•ˆï¼Ÿ
-         </span>
-         <span class="simpara">
-          å¦‚æœæ˜¯ç”Ÿæ•ˆçš„æ˜¯æ­£æ•°ï¼Œ <em>0</em> ä»£è¡¨æœªç”Ÿæ•ˆï¼Œè´Ÿæ•°ä»£è¡¨æœªçŸ¥ã€‚
-         </span>
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-   
-  <div class="refsect1 errors" id="refsect1-function.localtime-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-   
-   <p class="para">
-åœ¨æ¯ æ¬¡è°ƒç”¨æ—¥æœŸ/æ—¶é—´å‡½æ•°æ—¶ï¼Œå¦‚æœæ—¶åŒºæ— æ•ˆåˆ™ä¼šå¼•å‘ <strong><code>E_NOTICE</code></strong> é”™è¯¯ï¼Œå¦‚æœä½¿ç”¨ç³»ç»Ÿè®¾å®šå€¼æˆ– <var class="varname"><var class="varname">TZ</var></var>
-ç¯å¢ƒå˜é‡ï¼Œåˆ™ä¼šå¼•å‘ <strong><code>E_STRICT</code></strong> æˆ– <strong><code>E_WARNING</code></strong> æ¶ˆæ¯ã€‚å‚è§
-<span class="function"><a href="function.date-default-timezone-set.html" class="function">date_default_timezone_set()</a></span>ã€‚</p>
- 
- </div>
-  
-   
- <div class="refsect1 changelog" id="refsect1-function.localtime-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      
-      <tr><td>5.1.0</td><td><p class="para">
-ç°åœ¨å‘å¸ƒ <strong><code>E_STRICT</code></strong> å’Œ <strong><code>E_NOTICE</code></strong>
-æ—¶åŒºé”™è¯¯ã€‚</p></td></tr>
-
-     
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >localtime</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ê±¼äÈÕÆÚº¯Êı¿â" HREF="ref.datetime.html"><LINK  REL="PREVIOUS" TITLE="gmstrftime" HREF="function.gmstrftime.html"><LINK  REL="NEXT" TITLE="microtime" HREF="function.microtime.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.gmstrftime.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.microtime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.localtime" ></A
+>localtime</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN18668" ></A
+><P  >    (PHP 4 )</P
+>localtime&nbsp;--&nbsp;È¡µÃ±¾µØÊ±¼ä</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN18671" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >localtime</B
+> ( [int timestamp [, bool is_associative]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >localtime()</B
+> º¯Êı·µ»ØÒ»¸öÊı×é£¬Æä½á¹¹ºÍ
+     C º¯Êıµ÷ÓÃ·µ»ØµÄÍêÈ«Ò»Ñù¡£<B  CLASS="function" >localtime()</B
+>
+     µÄµÚÒ»¸ö²ÎÊıÊÇÊ±¼ä´Á£¬Èç¹ûÃ»ÓĞ¸ø³öÔòÊ¹ÓÃ´Ó
+     <A  HREF="function.time.html"  ><B  CLASS="function" >time()</B
+></A
+> ·µ»ØµÄµ±Ç°Ê±¼ä¡£µÚ¶ş¸ö²ÎÊıÊÇ
+     <TT  CLASS="parameter" ><I  >is_associative</I
+></TT
+>£¬Èç¹ûÉèÎª 0
+     »òÎ´Ìá¹©Ôò·µ»ØµÄÊÇÆÕÍ¨µÄÊı×ÖË÷ÒıÊı×é¡£Èç¹û¸Ã²ÎÊıÉèÎª 1 Ôò
+     <B  CLASS="function" >localtime()</B
+> º¯Êı·µ»Ø°üº¬ÓĞËùÓĞ´Ó
+     C µÄ localtime º¯Êıµ÷ÓÃËù·µ»ØµÄ²»Í¬µ¥ÔªµÄ½áºÏÊı×é¡£½áºÏÊı×éÖĞ²»Í¬µÄ¼üÃûÎª£º
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        "tm_sec" - ÃëÊı
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_min" - ·ÖÖÓÊı
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_hour" - Ğ¡Ê±
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_mday" - ÔÂ·İÖĞµÄµÚ¼¸ÈÕ
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_mon" - Äê·İÖĞµÄµÚ¼¸¸öÔÂ£¬´Ó 0 ¿ªÊ¼±íÊ¾Ò»ÔÂ
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_year" - Äê·İ£¬´Ó 1900 ¿ªÊ¼
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_wday" - ĞÇÆÚÖĞµÄµÚ¼¸Ìì
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_yday" - Ò»ÄêÖĞµÄµÚ¼¸Ìì
+       </P
+></LI
+><LI  ><P  >&#13;        "tm_isdst" - ÏÄÁîÊ±µ±Ç°ÊÇ·ñÉúĞ§
+       </P
+></LI
+></UL
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.gmstrftime.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.microtime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >gmstrftime</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.datetime.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >microtime</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.localtime-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2409">
-    <p><strong>Example #1 <span class="function"><strong>localtime()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$localtime&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">localtime</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$localtime_assoc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">localtime</span><span style="color: #007700">(</span><span style="color: #0000BB">time</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$localtime</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$localtime_assoc</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; 24
-    [1] =&gt; 3
-    [2] =&gt; 19
-    [3] =&gt; 3
-    [4] =&gt; 3
-    [5] =&gt; 105
-    [6] =&gt; 0
-    [7] =&gt; 92
-    [8] =&gt; 1
-)
-
-Array
-(
-    [tm_sec] =&gt; 24
-    [tm_min] =&gt; 3
-    [tm_hour] =&gt; 19
-    [tm_mday] =&gt; 3
-    [tm_mon] =&gt; 3
-    [tm_year] =&gt; 105
-    [tm_wday] =&gt; 0
-    [tm_yday] =&gt; 92
-    [tm_isdst] =&gt; 1
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.localtime-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.getdate.html" class="function" rel="rdfs-seeAlso">getdate()</a> - å–å¾—æ—¥æœŸï¼æ—¶é—´ä¿¡æ¯</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.idate.html">idate</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.microtime.html">microtime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

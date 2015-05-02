@@ -1,117 +1,73 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Divide two arbitrary precision numbers</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.bccomp.html">bccomp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.bcmod.html">bcmod</a></div>
- <div class="up"><a href="ref.bc.html">BC 数学 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.bcdiv" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">bcdiv</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">bcdiv</span> &mdash; <span class="dc-title">Divide two arbitrary precision numbers</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.bcdiv-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>bcdiv</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$left_operand</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$right_operand</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$scale</code><span class="initializer"> = int</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Divides the <code class="parameter">left_operand</code> by the
-   <code class="parameter">right_operand</code>.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.bcdiv-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">left_operand</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The left operand, as a string.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">right_operand</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The right operand, as a string.
-      </p>
-     </dd>
-
-    
-    <dt>
-<code class="parameter">
-scale</code></dt>
-<dd>
-<p class="para">此可选参数用于设置结果中小数点后的小数位数。也可通过使用
-<span class="function"><a href="function.bcscale.html" class="function">bcscale()</a></span> 来设置全局默认的小数位数，用于所有函数。
-</p></dd>
-
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >bcdiv</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="BCMath Arbitrary Precision Mathematics Functions" HREF="ref.bc.html"><LINK  REL="PREVIOUS" TITLE="bccomp" HREF="function.bccomp.html"><LINK  REL="NEXT" TITLE="bcmod" HREF="function.bcmod.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.bccomp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.bcmod.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.bcdiv" ></A
+>bcdiv</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN10833" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>bcdiv&nbsp;--&nbsp;Divide two arbitrary precision numbers</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN10836" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bcdiv</B
+> ( string left_operand, string right_operand [, int scale])<BR  ></BR
+><P  >&#13;     Divides the <TT  CLASS="parameter" ><I  >left_operand</I
+></TT
+> by the
+     <TT  CLASS="parameter" ><I  >right_operand</I
+></TT
+> and returns the result.  The
+     optional <TT  CLASS="parameter" ><I  >scale</I
+></TT
+> sets the number of digits
+     after the decimal place in the result.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10855" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >bcdiv()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">bcdiv</font><font  color="#007700">(</font><font  color="#0000BB">105</font><font  color="#007700">, </font><font  color="#0000BB">6.55957</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// 16.007<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.bcmul.html"  ><B  CLASS="function" >bcmul()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.bccomp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.bcmod.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >bccomp</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.bc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >bcmod</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.bcdiv-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns the result of the division as a string, or <strong><code>NULL</code></strong> if 
-   <code class="parameter">right_operand</code> is 0.
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.bcdiv-examples">
-  <h3 class="title">范例</h3>
-  <div class="example" id="example-3667">
-   <p><strong>Example #1 <span class="function"><strong>bcdiv()</strong></span> example</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bcdiv</span><span style="color: #007700">(</span><span style="color: #DD0000">'105'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'6.55957'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;16.007<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.bcdiv-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.bcmul.html" class="function" rel="rdfs-seeAlso">bcmul()</a> - Multiply two arbitrary precision numbers</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.bccomp.html">bccomp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.bcmod.html">bcmod</a></div>
- <div class="up"><a href="ref.bc.html">BC 数学 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

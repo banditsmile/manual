@@ -1,194 +1,196 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>等待或返回fork的子进程状态</title>
+<HTML  ><HEAD  ><TITLE  >pcntl_waitpid</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Process Control Functions" HREF="ref.pcntl.html"><LINK  REL="PREVIOUS" TITLE="pcntl_wait" HREF="function.pcntl-wait.html"><LINK  REL="NEXT" TITLE="pcntl_wexitstatus" HREF="function.pcntl-wexitstatus.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pcntl-wait.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pcntl-wexitstatus.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pcntl-waitpid" ></A
+>pcntl_waitpid</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93296" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>pcntl_waitpid&nbsp;--&nbsp;Waits on or returns the status of a forked child</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93299" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pcntl_waitpid</B
+> ( int pid, int &#38;status, int options)<BR  ></BR
+><P  >&#13;    The <B  CLASS="function" >pcntl_waitpid()</B
+> function suspends execution
+    of the current process until a child as specified by the
+    <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> argument has exited, or until a signal
+    is delivered whose action is to terminate the current process or
+    to call a signal handling function.  If a child as requested by
+    <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> has already exited by the time of the
+    call (a so-called "zombie" process), the function returns
+    immediately.  Any system resources used by the child are
+    freed. Please see your system's waitpid(2) man page for specific
+    details as to how waitpid works on your system.
+   </P
+><P  >&#13;    <B  CLASS="function" >pcntl_waitpid()</B
+> returns the process ID of the
+    child which exited, -1 on error or zero if WNOHANG was used and no
+    child was available
+   </P
+><P  >&#13;    The value of <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> can be one of the following:
+    <DIV  CLASS="table" ><A  NAME="AEN93321" ></A
+><P  ><B  >���� 1. possible values for <TT  CLASS="parameter" ><I  >pid</I
+></TT
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >&#60; -1</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         wait for any child process whose process group ID is equal to
+         the absolute value of <TT  CLASS="parameter" ><I  >pid</I
+></TT
+>.
+        </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >-1</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         wait for any child process; this is the same behaviour that
+         the wait function exhibits.
+        </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         wait for any child process whose process group ID is equal to
+         that of the calling process.
+        </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >&#62; 0</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         wait for the child whose process ID is equal to the value of
+         <TT  CLASS="parameter" ><I  >pid</I
+></TT
+>.
+        </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+     Specifying <TT  CLASS="literal" >-1</TT
+> as the <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> is
+     equivalent to the functionality <A  HREF="function.pcntl-wait.html"  ><B  CLASS="function" >pcntl_wait()</B
+></A
+> provides
+     (minus <TT  CLASS="parameter" ><I  >options</I
+></TT
+>).
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    <B  CLASS="function" >pcntl_waitpid()</B
+> will store status information
+    in the <TT  CLASS="parameter" ><I  >status</I
+></TT
+> parameter which can be
+    evaluated using the following functions:
+    <A  HREF="function.pcntl-wifexited.html"  ><B  CLASS="function" >pcntl_wifexited()</B
+></A
+>,
+    <A  HREF="function.pcntl-wifstopped.html"  ><B  CLASS="function" >pcntl_wifstopped()</B
+></A
+>,
+    <A  HREF="function.pcntl-wifsignaled.html"  ><B  CLASS="function" >pcntl_wifsignaled()</B
+></A
+>,
+    <A  HREF="function.pcntl-wexitstatus.html"  ><B  CLASS="function" >pcntl_wexitstatus()</B
+></A
+>,
+    <A  HREF="function.pcntl-wtermsig.html"  ><B  CLASS="function" >pcntl_wtermsig()</B
+></A
+> and
+    <A  HREF="function.pcntl-wstopsig.html"  ><B  CLASS="function" >pcntl_wstopsig()</B
+></A
+>.
+   </P
+><P  >&#13;    The value of <TT  CLASS="parameter" ><I  >options</I
+></TT
+> is the value of zero
+    or more of the following two global constants
+    <TT  CLASS="literal" >OR</TT
+>'ed together:
+    <DIV  CLASS="table" ><A  NAME="AEN93362" ></A
+><P  ><B  >���� 2. possible values for <TT  CLASS="parameter" ><I  >options</I
+></TT
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >WNOHANG</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         return immediately if no child has exited.
+        </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >WUNTRACED</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         return for children which are stopped, and whose status has
+         not been reported.
+        </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+   </P
+><P  >&#13;    See also <A  HREF="function.pcntl-fork.html"  ><B  CLASS="function" >pcntl_fork()</B
+></A
+>,
+    <A  HREF="function.pcntl-signal.html"  ><B  CLASS="function" >pcntl_signal()</B
+></A
+>,
+    <A  HREF="function.pcntl-wifexited.html"  ><B  CLASS="function" >pcntl_wifexited()</B
+></A
+>,
+    <A  HREF="function.pcntl-wifstopped.html"  ><B  CLASS="function" >pcntl_wifstopped()</B
+></A
+>,
+    <A  HREF="function.pcntl-wifsignaled.html"  ><B  CLASS="function" >pcntl_wifsignaled()</B
+></A
+>,
+    <A  HREF="function.pcntl-wexitstatus.html"  ><B  CLASS="function" >pcntl_wexitstatus()</B
+></A
+>,
+    <A  HREF="function.pcntl-wtermsig.html"  ><B  CLASS="function" >pcntl_wtermsig()</B
+></A
+> and
+    <A  HREF="function.pcntl-wstopsig.html"  ><B  CLASS="function" >pcntl_wstopsig()</B
+></A
+>.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pcntl-wait.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pcntl-wexitstatus.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pcntl_wait</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcntl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pcntl_wexitstatus</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-wait.html">pcntl_wait</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pcntl-waitpid" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pcntl_waitpid</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">pcntl_waitpid</span> &mdash; <span class="dc-title">等待或返回fork的子进程状态</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pcntl-waitpid-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>pcntl_waitpid</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$pid</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$status</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-  挂起当前进程的执行直到参数<code class="parameter">pid</code>指定的进程号的进程退出，
-  或接收到一个信号要求中断当前进程或调用一个信号处理函数。
-  </p>
-  <p class="para">
-  如果<code class="parameter">pid</code>指定的子进程在此函数调用时已经退出（俗称僵尸进程），此函数
-  将立刻返回。关于waitpid更详细的规范请参见您系统的waitpid（2）手册。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pcntl-waitpid-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">pid</code></dt>
-
-     <dd>
-
-      <p class="para">
-       参数<code class="parameter">pid</code>的值可以是以下之一：
-       <table class="doctable table">
-        <caption><strong><code class="parameter">pid</code>可选值</strong></caption>
-        
-         <tbody class="tbody">
-          <tr>
-           <td><em>&lt; -1</em></td>
-           <td>
-           等待任意进程组ID等于参数<code class="parameter">pid</code>给定值的绝对值的进程。
-           </td>
-          </tr>
-
-          <tr>
-           <td><em>-1</em></td>
-           <td>
-           等待任意子进程;与pcntl_wait函数行为一致。
-           </td>
-          </tr>
-
-          <tr>
-           <td><em>0</em></td>
-           <td>
-           等待任意与调用进程组ID相同的子进程。
-           </td>
-          </tr>
-
-          <tr>
-           <td><em>&gt; 0</em></td>
-           <td>
-            等待进程号等于参数<code class="parameter">pid</code>值的子进程。
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-       指定<em>-1</em>作为<code class="parameter">pid</code>的值等同于<span class="function"><a href="function.pcntl-wait.html" class="function">pcntl_wait()</a></span>
-       提供(负的<code class="parameter">options</code>)。
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">status</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <span class="function"><strong>pcntl_waitpid()</strong></span>将会存储状态信息到<code class="parameter">status</code>
-       参数上，这个通过<code class="parameter">status</code>参数返回的状态信息可以用以下函数
-       <span class="function"><a href="function.pcntl-wifexited.html" class="function">pcntl_wifexited()</a></span>,
-       <span class="function"><a href="function.pcntl-wifstopped.html" class="function">pcntl_wifstopped()</a></span>,
-       <span class="function"><a href="function.pcntl-wifsignaled.html" class="function">pcntl_wifsignaled()</a></span>,
-       <span class="function"><a href="function.pcntl-wexitstatus.html" class="function">pcntl_wexitstatus()</a></span>,
-       <span class="function"><a href="function.pcntl-wtermsig.html" class="function">pcntl_wtermsig()</a></span>以及
-       <span class="function"><a href="function.pcntl-wstopsig.html" class="function">pcntl_wstopsig()</a></span>获取其具体的值。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果您的操作系统（多数BSD类系统）允许使用wait3，您可以提供可选的<code class="parameter">options</code>
-      参数。如果这个参数没有提供，wait将会被用作系统调用。如果wait3不可用，提供参数
-      <code class="parameter">options</code>不会有任何效果。<code class="parameter">options</code>的值可以是0
-      或者以下两个常量或两个常量“或运算”结果（即两个常量代表意义都有效）。
-       <table class="doctable table">
-        <caption><strong><code class="parameter">options</code>可用的值</strong></caption>
-        
-         <tbody class="tbody">
-          <tr>
-           <td><em>WNOHANG</em></td>
-           <td>
-            如果没有子进程退出立刻返回。
-           </td>
-          </tr>
-
-          <tr>
-           <td><em>WUNTRACED</em></td>
-           <td>
-            子进程已经退出并且其状态未报告时返回。
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.pcntl-waitpid-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   <span class="function"><strong>pcntl_waitpid()</strong></span>返回退出的子进程进程号，发生错误时返回-1,如果提供了
-   <strong><code>WNOHANG</code></strong>作为option（wait3可用的系统）并且没有可用子进程时返回0。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.pcntl-waitpid-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pcntl-fork.html" class="function" rel="rdfs-seeAlso">pcntl_fork()</a> - 在当前进程当前位置产生分支（子进程）。译注：fork是创建了一个子进程，父进程和子进程
-  都从fork的位置开始向下继续执行，不同的是父进程执行过程中，得到的fork返回值为子进程
-  号，而子进程得到的是0。</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-signal.html" class="function" rel="rdfs-seeAlso">pcntl_signal()</a> - 安装一个信号处理器</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-wifexited.html" class="function" rel="rdfs-seeAlso">pcntl_wifexited()</a> - 检查状态代码是否代表一个正常的退出。</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-wifstopped.html" class="function" rel="rdfs-seeAlso">pcntl_wifstopped()</a> - 检查子进程当前是否已经停止</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-wifsignaled.html" class="function" rel="rdfs-seeAlso">pcntl_wifsignaled()</a> - 检查子进程状态码是否代表由于某个信号而中断</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-wexitstatus.html" class="function" rel="rdfs-seeAlso">pcntl_wexitstatus()</a> - 返回一个中断的子进程的返回代码</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-wtermsig.html" class="function" rel="rdfs-seeAlso">pcntl_wtermsig()</a> - 返回导致子进程中断的信号</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-wstopsig.html" class="function" rel="rdfs-seeAlso">pcntl_wstopsig()</a> - 返回导致子进程停止的信号</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-wait.html">pcntl_wait</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-wexitstatus.html">pcntl_wexitstatus</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

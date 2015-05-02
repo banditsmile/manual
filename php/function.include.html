@@ -1,193 +1,234 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>include</title>
+<HTML  ><HEAD  ><TITLE  >include</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Á÷³Ì¿ØÖÆ" HREF="control-structures.html"><LINK  REL="PREVIOUS" TITLE="require" HREF="function.require.html"><LINK  REL="NEXT" TITLE="require_once" HREF="function.require-once.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.require.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 11. Á÷³Ì¿ØÖÆ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.require-once.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="function.include" ></A
+><A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+></H1
+><P  >&#13;    <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> Óï¾ä°üÀ¨²¢ÔËĞĞÖ¸¶¨ÎÄ¼ş¡£
+   </P
+><P  >&#13;     ÒÔÏÂÎÄµµÒ²ÊÊÓÃÓÚ
+     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>¡£ÕâÁ½ÖÖ½á¹¹³ıÁËÔÚÈçºÎ´¦ÀíÊ§°ÜÖ®ÍâÍêÈ«Ò»Ñù¡£<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>
+     ²úÉúÒ»¸ö<A  HREF="phpdevel-errors.html#internal.e-warning"  >¾¯¸æ</A
+>¶ø <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> Ôòµ¼ÖÂÒ»¸ö<A  HREF="phpdevel-errors.html#internal.e-error"  >ÖÂÃü´íÎó</A
+>¡£»»¾ä»°Ëµ£¬Èç¹ûÄãÏëÔÚÓöµ½¶ªÊ§ÎÄ¼şÊ±Í£Ö¹´¦ÀíÒ³Ãæ¾ÍÓÃ
+     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>¡£<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>
+     ¾Í²»ÊÇÕâÑù£¬½Å±¾»á¼ÌĞøÔËĞĞ¡£Í¬Ê±Ò²ÒªÈ·ÈÏÉèÖÃÁËºÏÊÊµÄ <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>¡£
+   </P
+><P  >&#13;     µ±Ò»¸öÎÄ¼ş±»°üÀ¨Ê±£¬ÆäÖĞËù°üº¬µÄ´úÂë¼Ì³ĞÁË include ËùÔÚĞĞµÄ<A  HREF="language.variables.scope.html"  >±äÁ¿·¶Î§</A
+>¡£´Ó¸Ã´¦¿ªÊ¼£¬µ÷ÓÃÎÄ¼şÔÚ¸ÃĞĞ´¦¿ÉÓÃµÄÈÎºÎ±äÁ¿ÔÚ±»µ÷ÓÃµÄÎÄ¼şÖĞÒ²¶¼¿ÉÓÃ¡£
+   </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5374" ></A
+><P  ><B  >Àı×Ó 11-3. »ù±¾µÄ <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+vars.php<br  /><font  color="#0000BB">&lt;?php<br  /><br  />$color </font><font  color="#007700">= </font><font  color="#DD0000">'green'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$fruit </font><font  color="#007700">= </font><font  color="#DD0000">'apple'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?&gt;<br  /></font><br  />test.php<br  /><font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"A $color $fruit"</font><font  color="#007700">; </font><font  color="#FF8000">// A<br  /><br  /></font><font  color="#007700">include </font><font  color="#DD0000">'vars.php'</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#DD0000">"A $color $fruit"</font><font  color="#007700">; </font><font  color="#FF8000">// A green apple<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;     Èç¹û include ³öÏÖÓÚµ÷ÓÃÎÄ¼şÖĞµÄÒ»¸öº¯ÊıÀï£¬Ôò±»µ÷ÓÃµÄÎÄ¼şÖĞËù°üº¬µÄËùÓĞ´úÂë½«±íÏÖµÃÈçÍ¬ËüÃÇÊÇÔÚ¸Ãº¯ÊıÄÚ²¿¶¨ÒåµÄÒ»Ñù¡£ËùÒÔËü½«×ñÑ­¸Ãº¯ÊıµÄ±äÁ¿·¶Î§¡£
+   </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5380" ></A
+><P  ><B  >Àı×Ó 11-4. º¯ÊıÖĞµÄ°üÀ¨</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$color</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;include </font><font  color="#DD0000">'vars.php'</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"A $color $fruit"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">/* vars.php is in the scope of foo() so&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br  /> * $fruit is NOT available outside of this&nbsp;&nbsp;*<br  /> * scope.&nbsp;&nbsp;$color is because we declared it *<br  /> * as global.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// A green apple<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"A $color $fruit"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// A green<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;     µ±Ò»¸öÎÄ¼ş±»°üÀ¨Ê±£¬Óï·¨½âÎöÆ÷ÔÚÄ¿±êÎÄ¼şµÄ¿ªÍ·ÍÑÀë PHP Ä£Ê½²¢½øÈë HTML Ä£Ê½£¬µ½ÎÄ¼ş½áÎ²´¦»Ö¸´¡£ÓÉÓÚ´ËÔ­Òò£¬Ä¿±êÎÄ¼şÖĞÓ¦±»µ±×÷ PHP ´úÂëÖ´ĞĞµÄÈÎºÎ´úÂë¶¼±ØĞë±»°üÀ¨ÔÚ<A  HREF="language.basic-syntax.html#language.basic-syntax.phpmode"  >ÓĞĞ§µÄ PHP ÆğÊ¼ºÍ½áÊø±ê¼Ç</A
+>Ö®ÖĞ¡£
+   </P
+><P  >&#13;    Èç¹û¡°<A  HREF="ref.filesystem.html#ini.allow-url-fopen"  >URL fopen wrappers</A
+>¡±ÔÚ
+    PHP ÖĞ±»¼¤»î£¨Ä¬ÈÏÅäÖÃ£©£¬¿ÉÒÔÓÃ URL£¨Í¨¹ı HTTP »òÕßÆäËüÖ§³ÖµÄ·â×°Ğ­Òé £­
+    ËùÖ§³ÖµÄĞ­Òé¼û <A  HREF="wrappers.html"  >¸½Â¼ J</A
+>£©¶ø²»ÊÇ±¾µØÎÄ¼şÀ´Ö¸¶¨Òª±»°üÀ¨µÄÎÄ¼ş¡£Èç¹ûÄ¿±ê·şÎñÆ÷½«Ä¿±êÎÄ¼ş×÷Îª PHP ´úÂë½âÊÍ£¬Ôò¿ÉÒÔÓÃÊÊÓÃÓÚ HTTP GET µÄ URL ÇëÇó×Ö·û´®À´Ïò±»°üÀ¨µÄÎÄ¼ş´«µİ±äÁ¿¡£ÑÏ¸ñµÄËµÕâºÍ°üÀ¨Ò»¸öÎÄ¼ş²¢¼Ì³Ğ¸¸ÎÄ¼şµÄ±äÁ¿¿Õ¼ä²¢²»ÊÇÒ»»ØÊÂ£»¸Ã½Å±¾ÎÄ¼şÊµ¼ÊÉÏÒÑ¾­ÔÚÔ¶³Ì·şÎñÆ÷ÉÏÔËĞĞÁË£¬¶ø±¾µØ½Å±¾Ôò°üÀ¨ÁËÆä½á¹û¡£
+   </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >Windows °æ±¾µÄ PHP
+ÔÚ 4.3.0 °æÖ®Ç°²»Ö§³Ö¸Ãº¯ÊıµÄÔ¶³ÌÎÄ¼ş·ÃÎÊ£¬¼´Ê¹
+<A  HREF="ref.filesystem.html#ini.allow-url-fopen"  >allow_url_fopen</A
+> Ñ¡ÏîÒÑ±»¼¤»î¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5392" ></A
+><P  ><B  >Àı×Ó 11-5. Í¨¹ı HTTP ½øĞĞµÄ <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">/* This example assumes that www.example.com is configured to parse .php *<br  /> * files and not .txt files. Also, 'Works' here means that the variables *<br  /> * $foo and $bar are available within the included file.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br  /><br  />// Won't work; file.txt wasn't handled by www.example.com as PHP<br  /></font><font  color="#007700">include </font><font  color="#DD0000">'http://www.example.com/file.txt?foo=1&amp;bar=2'</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Won't work; looks for a file named 'file.php?foo=1&amp;bar=2' on the<br  />// local filesystem.<br  /></font><font  color="#007700">include </font><font  color="#DD0000">'file.php?foo=1&amp;bar=2'</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Works.<br  /></font><font  color="#007700">include </font><font  color="#DD0000">'http://www.example.com/file.php?foo=1&amp;bar=2'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#0000BB">2</font><font  color="#007700">;<br  />include </font><font  color="#DD0000">'file.txt'</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// Works.<br  /></font><font  color="#007700">include </font><font  color="#DD0000">'file.php'</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// Works.<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     Ïà¹ØĞÅÏ¢²Î¼û<A  HREF="features.remote-files.html"  >Ê¹ÓÃÔ¶³ÌÎÄ¼ş</A
+>£¬<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> ºÍ <A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+>¡£
+   </P
+><P  >&#13;     ÒòÎª <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> ºÍ <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> ÊÇÌØÊâµÄÓïÑÔ½á¹¹£¬ÔÚÌõ¼şÓï¾äÖĞÊ¹ÓÃ±ØĞë½«Æä·ÅÔÚÓï¾ä×éÖĞ£¨»¨À¨ºÅÖĞ£©¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5403" ></A
+><P  ><B  >Àı×Ó 11-6. include() ÓëÌõ¼şÓï¾ä×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// This is WRONG and will not work as desired.<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$condition</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;include </font><font  color="#0000BB">$file</font><font  color="#007700">;<br  />else<br  />&nbsp;&nbsp;&nbsp;&nbsp;include </font><font  color="#0000BB">$other</font><font  color="#007700">;<br  /><br  /><br  /></font><font  color="#FF8000">// This is CORRECT.<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$condition</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;include </font><font  color="#0000BB">$file</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;include </font><font  color="#0000BB">$other</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ´¦Àí·µ»ØÖµ£º¿ÉÒÔÔÚ±»°üÀ¨µÄÎÄ¼şÖĞÊ¹ÓÃ <A  HREF="function.return.html"  ><B  CLASS="function" >return()</B
+></A
+>
+    Óï¾äÀ´ÖÕÖ¹¸ÃÎÄ¼şÖĞ³ÌĞòµÄÖ´ĞĞ²¢·µ»Øµ÷ÓÃËüµÄ½Å±¾¡£Í¬ÑùÒ²¿ÉÒÔ´Ó±»°üÀ¨µÄÎÄ¼şÖĞ·µ»ØÖµ¡£¿ÉÒÔÏñÆÕÍ¨º¯ÊıÒ»Ñù»ñµÃ
+    include ºô½ĞµÄ·µ»ØÖµ¡£
+   </P
+><P  >&#13;    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 3 ÖĞ£¬³ı·ÇÊÇÔÚº¯ÊıÖĞµ÷ÓÃ·ñÔò±»°üÀ¨µÄÎÄ¼şÖĞ²»ÄÜ³öÏÖ
+      return¡£ÔÚ´ËÇé¿öÏÂ <A  HREF="function.return.html"  ><B  CLASS="function" >return()</B
+></A
+> ×÷ÓÃÓÚ¸Ãº¯Êı¶ø²»ÊÇÕû¸öÎÄ¼ş¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5413" ></A
+><P  ><B  >Àı×Ó 11-7. <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> ºÍ <A  HREF="function.return.html"  ><B  CLASS="function" >return()</B
+></A
+> Óï¾ä</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+return.php<br  /><font  color="#0000BB">&lt;?php<br  /><br  />$var </font><font  color="#007700">= </font><font  color="#DD0000">'PHP'</font><font  color="#007700">;<br  /><br  />return </font><font  color="#0000BB">$var</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?&gt;<br  /></font><br  />noreturn.php<br  /><font  color="#0000BB">&lt;?php<br  /><br  />$var </font><font  color="#007700">= </font><font  color="#DD0000">'PHP'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?&gt;<br  /></font><br  />testreturns.php<br  /><font  color="#0000BB">&lt;?php<br  /><br  />$foo </font><font  color="#007700">= include </font><font  color="#DD0000">'return.php'</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#0000BB">$foo</font><font  color="#007700">; </font><font  color="#FF8000">// prints 'PHP'<br  /><br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= include </font><font  color="#DD0000">'noreturn.php'</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#0000BB">$bar</font><font  color="#007700">; </font><font  color="#FF8000">// prints 1<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    <TT  CLASS="literal" >$bar</TT
+> µÄÖµÎª <TT  CLASS="literal" >1</TT
+> ÊÇÒòÎª include ³É¹¦ÔËĞĞÁË¡£×¢ÒâÒÔÉÏÀı×ÓÖĞµÄÇø±ğ¡£µÚÒ»¸öÔÚ±»°üÀ¨µÄÎÄ¼şÖĞÓÃÁË <A  HREF="function.return.html"  ><B  CLASS="function" >return()</B
+></A
+> ¶øÁíÒ»¸öÃ»ÓĞ¡£ÆäËü¼¸ÖÖ°ÑÎÄ¼ş¡°°üÀ¨¡±µ½±äÁ¿µÄ·½·¨ÊÇÓÃ <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>£¬<A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+> »òÕß <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> Á¬Í¬<A  HREF="ref.outcontrol.html"  >Êä³ö¿ØÖÆº¯Êı</A
+>Ò»ÆğÊ¹ÓÃ¡£
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>ÓÉÓÚÕâÊÇÒ»¸öÓïÑÔ½á¹¹¶ø·Çº¯Êı£¬Òò´ËËüÎŞ·¨±»¡°<A  HREF="functions.variable-functions.html"  >±äÁ¿º¯Êı</A
+>¡±µ÷ÓÃ¡£</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    ²Î¼û <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>£¬<A  HREF="function.require-once.html"  ><B  CLASS="function" >require_once()</B
+></A
+>£¬<A  HREF="function.include-once.html"  ><B  CLASS="function" >include_once()</B
+></A
+>£¬<A  HREF="function.readfile.html"  ><B  CLASS="function" >readfile()</B
+></A
+>£¬<A  HREF="function.virtual.html"  ><B  CLASS="function" >virtual()</B
+></A
+> ºÍ <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.require.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.require-once.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="control-structures.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.require-once.html"  ><B  CLASS="function" >require_once()</B
+></A
+></TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.require.html">require</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.require-once.html">require_once</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.include" class="sect1">
- <h2 class="title"><span class="function"><strong>include</strong></span></h2>
- <p class="verinfo">(PHP 4, PHP 5)</p>
- <p class="simpara">
-  <em>include</em> è¯­å¥åŒ…å«å¹¶è¿è¡ŒæŒ‡å®šæ–‡ä»¶ã€‚
- </p>
- <p class="simpara">
-  ä»¥ä¸‹æ–‡æ¡£ä¹Ÿé€‚ç”¨äº <span class="function"><a href="function.require.html" class="function">require</a></span>ã€‚
- </p>
- <p class="simpara">
-  è¢«åŒ…å«æ–‡ä»¶å…ˆæŒ‰å‚æ•°ç»™å‡ºçš„è·¯å¾„å¯»æ‰¾ï¼Œå¦‚æœæ²¡æœ‰ç»™å‡ºç›®å½•ï¼ˆåªæœ‰æ–‡ä»¶åï¼‰æ—¶åˆ™æŒ‰ç…§
-  <a href="ini.core.html#ini.include-path" class="link">include_path</a> æŒ‡å®šçš„ç›®å½•å¯»æ‰¾ã€‚å¦‚æœåœ¨
-  <a href="ini.core.html#ini.include-path" class="link">include_path</a> ä¸‹æ²¡æ‰¾åˆ°è¯¥æ–‡ä»¶åˆ™
-  <em>include</em> æœ€åæ‰åœ¨è°ƒç”¨è„šæœ¬æ–‡ä»¶æ‰€åœ¨çš„ç›®å½•å’Œå½“å‰å·¥ä½œç›®å½•ä¸‹å¯»æ‰¾ã€‚å¦‚æœæœ€åä»æœªæ‰¾åˆ°æ–‡ä»¶åˆ™
-  <em>include</em> ç»“æ„ä¼šå‘å‡ºä¸€æ¡<a href="errorfunc.constants.html#errorfunc.constants.errorlevels" class="link">è­¦å‘Š</a>ï¼›è¿™ä¸€ç‚¹å’Œ
-  <span class="function"><a href="function.require.html" class="function">require</a></span> ä¸åŒï¼Œåè€…ä¼šå‘å‡ºä¸€ä¸ª<a href="errorfunc.constants.html#errorfunc.constants.errorlevels" class="link">è‡´å‘½é”™è¯¯</a>ã€‚
- </p>
- <p class="simpara">
-  å¦‚æœå®šä¹‰äº†è·¯å¾„â€”â€”ä¸ç®¡æ˜¯ç»å¯¹è·¯å¾„ï¼ˆåœ¨ Windows
-  ä¸‹ä»¥ç›˜ç¬¦æˆ–è€… <em>\</em> å¼€å¤´ï¼Œåœ¨ Unix/Linux
-  ä¸‹ä»¥ <em>/</em> å¼€å¤´ï¼‰è¿˜æ˜¯å½“å‰ç›®å½•çš„ç›¸å¯¹è·¯å¾„ï¼ˆä»¥
-  <em>.</em> æˆ–è€… <em>..</em> å¼€å¤´ï¼‰â€”â€”<a href="ini.core.html#ini.include-path" class="link">include_path</a> éƒ½ä¼šè¢«å®Œå…¨å¿½ç•¥ã€‚ä¾‹å¦‚ä¸€ä¸ªæ–‡ä»¶ä»¥
-  <em>../</em> å¼€å¤´ï¼Œåˆ™è§£æå™¨ä¼šåœ¨å½“å‰ç›®å½•çš„çˆ¶ç›®å½•ä¸‹å¯»æ‰¾è¯¥æ–‡ä»¶ã€‚
- </p>
- <p class="simpara">
-  æœ‰å…³ PHP æ€æ ·å¤„ç†åŒ…å«æ–‡ä»¶å’ŒåŒ…å«è·¯å¾„çš„æ›´å¤šä¿¡æ¯å‚è§
-  <a href="ini.core.html#ini.include-path" class="link">include_path</a> éƒ¨åˆ†çš„æ–‡æ¡£ã€‚
- </p>
- <p class="simpara">
-  å½“ä¸€ä¸ªæ–‡ä»¶è¢«åŒ…å«æ—¶ï¼Œå…¶ä¸­æ‰€åŒ…å«çš„ä»£ç ç»§æ‰¿äº† include æ‰€åœ¨è¡Œçš„<a href="language.variables.scope.html" class="link">å˜é‡èŒƒå›´</a>ã€‚ä»è¯¥å¤„å¼€å§‹ï¼Œè°ƒç”¨æ–‡ä»¶åœ¨è¯¥è¡Œå¤„å¯ç”¨çš„ä»»ä½•å˜é‡åœ¨è¢«è°ƒç”¨çš„æ–‡ä»¶ä¸­ä¹Ÿéƒ½å¯ç”¨ã€‚ä¸è¿‡æ‰€æœ‰åœ¨åŒ…å«æ–‡ä»¶ä¸­å®šä¹‰çš„å‡½æ•°å’Œç±»éƒ½å…·æœ‰å…¨å±€ä½œç”¨åŸŸã€‚
- </p>
- <p class="para">
-  <div class="example" id="example-150">
-   <p><strong>Example #1 åŸºæœ¬çš„ <em>include</em> ä¾‹å­</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-vars.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'green'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$fruit&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br />test.php<br /><span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">&nbsp;</span><span style="color: #0000BB">$fruit</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;A<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'vars.php'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">&nbsp;</span><span style="color: #0000BB">$fruit</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;A&nbsp;green&nbsp;apple<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
 
-  </div>
- </p>
- <p class="simpara">
-  å¦‚æœ include å‡ºç°äºè°ƒç”¨æ–‡ä»¶ä¸­çš„ä¸€ä¸ªå‡½æ•°é‡Œï¼Œåˆ™è¢«è°ƒç”¨çš„æ–‡ä»¶ä¸­æ‰€åŒ…å«çš„æ‰€æœ‰ä»£ç å°†è¡¨ç°å¾—å¦‚åŒå®ƒä»¬æ˜¯åœ¨è¯¥å‡½æ•°å†…éƒ¨å®šä¹‰çš„ä¸€æ ·ã€‚æ‰€ä»¥å®ƒå°†éµå¾ªè¯¥å‡½æ•°çš„å˜é‡èŒƒå›´ã€‚æ­¤è§„åˆ™çš„ä¸€ä¸ªä¾‹å¤–æ˜¯<a href="language.constants.predefined.html" class="link">é­”æœ¯å¸¸é‡</a>ï¼Œå®ƒä»¬æ˜¯åœ¨å‘ç”ŸåŒ…å«ä¹‹å‰å°±å·²è¢«è§£æå™¨å¤„ç†çš„ã€‚
- </p>
- <p class="para">
-  <div class="example" id="example-151">
-   <p><strong>Example #2 å‡½æ•°ä¸­çš„åŒ…å«</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;</span><span style="color: #DD0000">'vars.php'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">&nbsp;</span><span style="color: #0000BB">$fruit</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;vars.php&nbsp;is&nbsp;in&nbsp;the&nbsp;scope&nbsp;of&nbsp;foo()&nbsp;so&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*<br />&nbsp;*&nbsp;$fruit&nbsp;is&nbsp;NOT&nbsp;available&nbsp;outside&nbsp;of&nbsp;this&nbsp;&nbsp;*<br />&nbsp;*&nbsp;scope.&nbsp;&nbsp;$color&nbsp;is&nbsp;because&nbsp;we&nbsp;declared&nbsp;it&nbsp;*<br />&nbsp;*&nbsp;as&nbsp;global.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;A&nbsp;green&nbsp;apple<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"A&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #DD0000">&nbsp;</span><span style="color: #0000BB">$fruit</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;A&nbsp;green<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="simpara">
-  å½“ä¸€ä¸ªæ–‡ä»¶è¢«åŒ…å«æ—¶ï¼Œè¯­æ³•è§£æå™¨åœ¨ç›®æ ‡æ–‡ä»¶çš„å¼€å¤´è„±ç¦» PHP æ¨¡å¼å¹¶è¿›å…¥ HTML
-  æ¨¡å¼ï¼Œåˆ°æ–‡ä»¶ç»“å°¾å¤„æ¢å¤ã€‚ç”±äºæ­¤åŸå› ï¼Œç›®æ ‡æ–‡ä»¶ä¸­éœ€è¦ä½œä¸º
-  PHP ä»£ç æ‰§è¡Œçš„ä»»ä½•ä»£ç éƒ½å¿…é¡»è¢«åŒ…æ‹¬åœ¨<a href="language.basic-syntax.phpmode.html" class="link">æœ‰æ•ˆçš„ PHP èµ·å§‹å’Œç»“æŸæ ‡è®°</a>ä¹‹ä¸­ã€‚
- </p>
- <p class="simpara">
-  å¦‚æœâ€œ<a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">URL fopen wrappers</a>â€åœ¨
-  PHP ä¸­è¢«æ¿€æ´»ï¼ˆé»˜è®¤é…ç½®ï¼‰ï¼Œå¯ä»¥ç”¨ URLï¼ˆé€šè¿‡ HTTP
-  æˆ–è€…å…¶å®ƒæ”¯æŒçš„å°è£…åè®®â€”â€”è§<a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a>ï¼‰è€Œä¸æ˜¯æœ¬åœ°æ–‡ä»¶æ¥æŒ‡å®šè¦è¢«åŒ…å«çš„æ–‡ä»¶ã€‚å¦‚æœç›®æ ‡æœåŠ¡å™¨å°†ç›®æ ‡æ–‡ä»¶ä½œä¸º
-  PHP ä»£ç è§£é‡Šï¼Œåˆ™å¯ä»¥ç”¨é€‚ç”¨äº HTTP GET çš„ URL
-  è¯·æ±‚å­—ç¬¦ä¸²æ¥å‘è¢«åŒ…æ‹¬çš„æ–‡ä»¶ä¼ é€’å˜é‡ã€‚ä¸¥æ ¼çš„è¯´è¿™å’ŒåŒ…å«ä¸€ä¸ªæ–‡ä»¶å¹¶ç»§æ‰¿çˆ¶æ–‡ä»¶çš„å˜é‡ç©ºé—´å¹¶ä¸æ˜¯ä¸€å›äº‹ï¼›è¯¥è„šæœ¬æ–‡ä»¶å®é™…ä¸Šå·²ç»åœ¨è¿œç¨‹æœåŠ¡å™¨ä¸Šè¿è¡Œäº†ï¼Œè€Œæœ¬åœ°è„šæœ¬åˆ™åŒ…æ‹¬äº†å…¶ç»“æœã€‚
- </p>
- <div class="warning"><strong class="warning">Warning</strong><p class="para">Windows ç‰ˆæœ¬çš„ PHP åœ¨ 4.3.0
-ç‰ˆä¹‹å‰ä¸æ”¯æŒé€šè¿‡æ­¤å‡½æ•°è®¿é—®è¿œç¨‹æ–‡ä»¶ï¼Œå³ä½¿å·²ç»å¯ç”¨ <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a>.
-</p></div>
- <p class="para">
-  <div class="example" id="example-152">
-   <p><strong>Example #3 é€šè¿‡ HTTP è¿›è¡Œçš„ <em>include</em></strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;This&nbsp;example&nbsp;assumes&nbsp;that&nbsp;www.example.com&nbsp;is&nbsp;configured&nbsp;to&nbsp;parse&nbsp;.php&nbsp;*<br />&nbsp;*&nbsp;files&nbsp;and&nbsp;not&nbsp;.txt&nbsp;files.&nbsp;Also,&nbsp;'Works'&nbsp;here&nbsp;means&nbsp;that&nbsp;the&nbsp;variables&nbsp;*<br />&nbsp;*&nbsp;$foo&nbsp;and&nbsp;$bar&nbsp;are&nbsp;available&nbsp;within&nbsp;the&nbsp;included&nbsp;file.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/<br /><br />//&nbsp;Won't&nbsp;work;&nbsp;file.txt&nbsp;wasn't&nbsp;handled&nbsp;by&nbsp;www.example.com&nbsp;as&nbsp;PHP<br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'http://www.example.com/file.txt?foo=1&amp;bar=2'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Won't&nbsp;work;&nbsp;looks&nbsp;for&nbsp;a&nbsp;file&nbsp;named&nbsp;'file.php?foo=1&amp;bar=2'&nbsp;on&nbsp;the<br />//&nbsp;local&nbsp;filesystem.<br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'file.php?foo=1&amp;bar=2'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Works.<br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'http://www.example.com/file.php?foo=1&amp;bar=2'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />include&nbsp;</span><span style="color: #DD0000">'file.txt'</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Works.<br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'file.php'</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Works.<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <div class="warning"><strong class="warning">Warning</strong>
-  <h1 class="title">å®‰å…¨è­¦å‘Š</h1>
-  <p class="para">
-   è¿œç¨‹æ–‡ä»¶å¯èƒ½ä¼šç»è¿œç¨‹æœåŠ¡å™¨å¤„ç†ï¼ˆæ ¹æ®æ–‡ä»¶åç¼€ä»¥åŠè¿œç¨‹æœåŠ¡å™¨æ˜¯å¦åœ¨è¿è¡Œ
-   PHP è€Œå®šï¼‰ï¼Œä½†å¿…é¡»äº§ç”Ÿå‡ºä¸€ä¸ªåˆæ³•çš„ PHP
-   è„šæœ¬ï¼Œå› ä¸ºå…¶å°†è¢«æœ¬åœ°æœåŠ¡å™¨å¤„ç†ã€‚å¦‚æœæ¥è‡ªè¿œç¨‹æœåŠ¡å™¨çš„æ–‡ä»¶åº”è¯¥åœ¨è¿œç«¯è¿è¡Œè€Œåªè¾“å‡ºç»“æœï¼Œé‚£ç”¨
-   <span class="function"><a href="function.readfile.html" class="function">readfile()</a></span>
-   å‡½æ•°æ›´å¥½ã€‚å¦å¤–è¿˜è¦æ ¼å¤–å°å¿ƒä»¥ç¡®ä¿è¿œç¨‹çš„è„šæœ¬äº§ç”Ÿå‡ºåˆæ³•å¹¶ä¸”æ˜¯æ‰€éœ€çš„ä»£ç ã€‚
-  </p>
- </div>
- <p class="para">
-  ç›¸å…³ä¿¡æ¯å‚è§<a href="features.remote-files.html" class="link">ä½¿ç”¨è¿œç¨‹æ–‡ä»¶</a>ï¼Œ<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
-  å’Œ <span class="function"><a href="function.file.html" class="function">file()</a></span>ã€‚
- </p>
- <p class="simpara">
-  å¤„ç†è¿”å›å€¼ï¼šåœ¨å¤±è´¥æ—¶ <em>include</em> è¿”å› <em>FALSE</em>
-  å¹¶ä¸”å‘å‡ºè­¦å‘Šã€‚æˆåŠŸçš„åŒ…å«åˆ™è¿”å›
-  <em>1</em>ï¼Œé™¤éåœ¨åŒ…å«æ–‡ä»¶ä¸­å¦å¤–ç»™å‡ºäº†è¿”å›å€¼ã€‚å¯ä»¥åœ¨è¢«åŒ…æ‹¬çš„æ–‡ä»¶ä¸­ä½¿ç”¨ <span class="function"><a href="function.return.html" class="function">return</a></span>
-  è¯­å¥æ¥ç»ˆæ­¢è¯¥æ–‡ä»¶ä¸­ç¨‹åºçš„æ‰§è¡Œå¹¶è¿”å›è°ƒç”¨å®ƒçš„è„šæœ¬ã€‚åŒæ ·ä¹Ÿå¯ä»¥ä»è¢«åŒ…å«çš„æ–‡ä»¶ä¸­è¿”å›å€¼ã€‚å¯ä»¥åƒæ™®é€šå‡½æ•°ä¸€æ ·è·å¾—
-  include è°ƒç”¨çš„è¿”å›å€¼ã€‚ä¸è¿‡è¿™åœ¨åŒ…å«è¿œç¨‹æ–‡ä»¶æ—¶å´ä¸è¡Œï¼Œé™¤éè¿œç¨‹æ–‡ä»¶çš„è¾“å‡ºå…·æœ‰<a href="language.basic-syntax.phpmode.html" class="link">åˆæ³•çš„ PHP
-  å¼€å§‹å’Œç»“æŸæ ‡è®°</a>ï¼ˆå¦‚åŒä»»ä½•æœ¬åœ°æ–‡ä»¶ä¸€æ ·ï¼‰ã€‚å¯ä»¥åœ¨æ ‡è®°å†…å®šä¹‰æ‰€éœ€çš„å˜é‡ï¼Œè¯¥å˜é‡åœ¨æ–‡ä»¶è¢«åŒ…å«çš„ä½ç½®ä¹‹åå°±å¯ç”¨äº†ã€‚
- </p>
- <p class="para">
-  å› ä¸º <em>include</em> æ˜¯ä¸€ä¸ªç‰¹æ®Šçš„è¯­è¨€ç»“æ„ï¼Œå…¶å‚æ•°ä¸éœ€è¦æ‹¬å·ã€‚åœ¨æ¯”è¾ƒå…¶è¿”å›å€¼æ—¶è¦æ³¨æ„ã€‚
-  <div class="example" id="example-153">
-   <p><strong>Example #4 æ¯”è¾ƒ include çš„è¿”å›å€¼</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;won't&nbsp;work,&nbsp;evaluated&nbsp;as&nbsp;include(('vars.php')&nbsp;==&nbsp;'OK'),&nbsp;i.e.&nbsp;include('')<br /></span><span style="color: #007700">if&nbsp;(include(</span><span style="color: #DD0000">'vars.php'</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #DD0000">'OK'</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'OK'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;works<br /></span><span style="color: #007700">if&nbsp;((include&nbsp;</span><span style="color: #DD0000">'vars.php'</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #DD0000">'OK'</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'OK'</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  <div class="example" id="example-154">
-   <p><strong>Example #5 <em>include</em> å’Œ <span class="function"><a href="function.return.html" class="function">return</a></span> è¯­å¥</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-return.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'PHP'</span><span style="color: #007700">;<br /><br />return&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br />noreturn.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'PHP'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br />testreturns.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;include&nbsp;</span><span style="color: #DD0000">'return.php'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;'PHP'<br /><br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;include&nbsp;</span><span style="color: #DD0000">'noreturn.php'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;1<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="simpara">
-  <em>$bar</em> çš„å€¼ä¸º <em>1</em> æ˜¯å› ä¸º include
-  æˆåŠŸè¿è¡Œäº†ã€‚æ³¨æ„ä»¥ä¸Šä¾‹å­ä¸­çš„åŒºåˆ«ã€‚ç¬¬ä¸€ä¸ªåœ¨è¢«åŒ…å«çš„æ–‡ä»¶ä¸­ç”¨äº†
-  <span class="function"><a href="function.return.html" class="function">return</a></span> è€Œå¦ä¸€ä¸ªæ²¡æœ‰ã€‚å¦‚æœæ–‡ä»¶ä¸èƒ½è¢«åŒ…å«ï¼Œåˆ™è¿”å›
-  <strong><code>FALSE</code></strong> å¹¶å‘å‡ºä¸€ä¸ª <strong><code>E_WARNING</code></strong> è­¦å‘Šã€‚
- </p>
- <p class="para">
-  å¦‚æœåœ¨åŒ…å«æ–‡ä»¶ä¸­å®šä¹‰æœ‰å‡½æ•°ï¼Œè¿™äº›å‡½æ•°ä¸ç®¡æ˜¯åœ¨ <span class="function"><a href="function.return.html" class="function">return</a></span>
-  ä¹‹å‰è¿˜æ˜¯ä¹‹åå®šä¹‰çš„ï¼Œéƒ½å¯ä»¥ç‹¬ç«‹åœ¨ä¸»æ–‡ä»¶ä¸­ä½¿ç”¨ã€‚å¦‚æœæ–‡ä»¶è¢«åŒ…å«ä¸¤æ¬¡ï¼ŒPHP 5
-  å‘å‡ºè‡´å‘½é”™è¯¯å› ä¸ºå‡½æ•°å·²ç»è¢«å®šä¹‰ï¼Œä½†æ˜¯ PHP 4 ä¸ä¼šå¯¹åœ¨
-  <span class="function"><a href="function.return.html" class="function">return</a></span> ä¹‹åå®šä¹‰çš„å‡½æ•°æŠ¥é”™ã€‚æ¨èä½¿ç”¨
-  <span class="function"><a href="function.include-once.html" class="function">include_once</a></span> è€Œä¸æ˜¯æ£€æŸ¥æ–‡ä»¶æ˜¯å¦å·²åŒ…å«å¹¶åœ¨åŒ…å«æ–‡ä»¶ä¸­æœ‰æ¡ä»¶è¿”å›ã€‚
- </p>
- <p class="simpara">
-  å¦ä¸€ä¸ªå°† PHP æ–‡ä»¶â€œåŒ…å«â€åˆ°ä¸€ä¸ªå˜é‡ä¸­çš„æ–¹æ³•æ˜¯ç”¨<a href="ref.outcontrol.html" class="link">è¾“å‡ºæ§åˆ¶å‡½æ•°</a>ç»“åˆ
-  <span class="function"><strong>include</strong></span> æ¥æ•è·å…¶è¾“å‡ºï¼Œä¾‹å¦‚ï¼š
- </p>
- <p class="para">
-  <div class="example" id="example-155">
-   <p><strong>Example #6 ä½¿ç”¨è¾“å‡ºç¼“å†²æ¥å°† PHP æ–‡ä»¶åŒ…å«å…¥ä¸€ä¸ªå­—ç¬¦ä¸²</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_include_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'somefile.php'</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">get_include_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">is_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ob_start</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;</span><span style="color: #0000BB">$filename</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$contents&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ob_get_contents</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ob_end_clean</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$contents</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  è¦åœ¨è„šæœ¬ä¸­è‡ªåŠ¨åŒ…å«æ–‡ä»¶ï¼Œå‚è§ <var class="filename">php.ini</var> ä¸­çš„
-  <a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a> å’Œ
-  <a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a>
-  é…ç½®é€‰é¡¹ã€‚
- </p>
- <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">å› ä¸ºæ˜¯ä¸€ä¸ªè¯­è¨€æ„é€ å™¨è€Œä¸æ˜¯ä¸€ä¸ªå‡½æ•°ï¼Œä¸èƒ½è¢«
-<a href="functions.variable-functions.html" class="link">å¯å˜å‡½æ•°</a> è°ƒç”¨ã€‚
-</span>
-</p></blockquote>
- <p class="simpara">
-  å‚è§ <span class="function"><a href="function.require.html" class="function">require</a></span>ï¼Œ<span class="function"><a href="function.require-once.html" class="function">require_once</a></span>ï¼Œ<span class="function"><a href="function.include-once.html" class="function">include_once</a></span>ï¼Œ<span class="function"><a href="function.get-included-files.html" class="function">get_included_files()</a></span>ï¼Œ<span class="function"><a href="function.readfile.html" class="function">readfile()</a></span>ï¼Œ<span class="function"><a href="function.virtual.html" class="function">virtual()</a></span>
-  å’Œ <a href="ini.core.html#ini.include-path" class="link">include_path</a>ã€‚
- </p>
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.require.html">require</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.require-once.html">require_once</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

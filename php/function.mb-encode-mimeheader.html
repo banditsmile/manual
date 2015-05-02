@@ -1,164 +1,91 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>为 MIME 头编码字符串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-detect-order.html">mb_detect_order</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-encode-numericentity.html">mb_encode_numericentity</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mb-encode-mimeheader" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mb_encode_mimeheader</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">mb_encode_mimeheader</span> &mdash; <span class="dc-title">为 MIME 头编码字符串</span></p>
-
- </div>
-   
- <div class="refsect1 description" id="refsect1-function.mb-encode-mimeheader-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mb_encode_mimeheader</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$charset</code><span class="initializer"> = mb_internal_encoding()</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$transfer_encoding</code><span class="initializer"> = &quot;B&quot;</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$linefeed</code><span class="initializer"> = &quot;\r\n&quot;</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$indent</code><span class="initializer"> = 0</span></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   按 MIME 头编码方案将指定的<span class="type"><span class="type 字符串">字符串</span></span> <code class="parameter">str</code> 进行编码。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mb-encode-mimeheader-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要编码的 <span class="type"><a href="language.types.string.html" class="type string">string</a></span>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">charset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">charset</code> 指定了 <code class="parameter">str</code> 的字符集名。
-       其默认值由当前的 NLS 设置（<em>mbstring.language</em>）来确定。
-       <span class="function"><a href="function.mb-internal-encoding.html" class="function">mb_internal_encoding()</a></span> 应当设置为同样的编码。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">transfer_encoding</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">transfer_encoding</code> 指定了 MIME 的编码方案。
-       它可以是 <em>&quot;B&quot;</em>（Base64）也可以是 <em>&quot;Q&quot;</em>（Quoted-Printable）。
-       如果未设置，将回退为 <em>&quot;B&quot;</em>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">linefeed</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">linefeed</code> 指定了 EOL（行尾）标记，使 <span class="function"><strong>mb_encode_mimeheader()</strong></span> 执行了一个换行（<a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC</a> 文档中规定，超过长度的一行将换成多行，当前该长度硬式编码为 74 个字符）。
-       如果没有设定，则回退为 <em>&quot;\r\n&quot;</em> (CRLF)。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">indent</code></dt>
-
-     <dd>
-
-      <p class="para">
-       首行缩进（header 里 <code class="parameter">str</code> 前的字符数目）。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.mb-encode-mimeheader-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   转换后的<span class="type"><span class="type 字符串">字符串</span></span>版本以 ASCII 形式表达。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mb_encode_mimeheader</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Multi-Byte String Functions" HREF="ref.mbstring.html"><LINK  REL="PREVIOUS" TITLE="mb_detect_order" HREF="function.mb-detect-order.html"><LINK  REL="NEXT" TITLE="mb_encode_numericentity" HREF="function.mb-encode-numericentity.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mb-detect-order.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mb-encode-numericentity.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mb-encode-mimeheader" ></A
+>mb_encode_mimeheader</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN51412" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>mb_encode_mimeheader&nbsp;--&nbsp;Encode string for MIME header</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN51415" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mb_encode_mimeheader</B
+> ( string str [, string charset [, string transfer-encoding [, string linefeed]]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mb_encode_mimeheader()</B
+> converts string
+     <TT  CLASS="parameter" ><I  >str</I
+></TT
+> to encoded-word for header field.
+     It returns converted string in ASCII encoding.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >charset</I
+></TT
+> is character encoding
+     name. Default is <TT  CLASS="literal" >ISO-2022-JP</TT
+>.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >transfer-encoding</I
+></TT
+> is transfer encoding. It
+     should be one of <TT  CLASS="literal" >"B"</TT
+> (Base64) or
+     <TT  CLASS="literal" >"Q"</TT
+> (Quoted-Printable). Default is
+     <TT  CLASS="literal" >"B"</TT
+>.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >linefeed</I
+></TT
+> is end of line marker. Default is
+     <TT  CLASS="literal" >"\r\n"</TT
+> (CRLF).
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN51447" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >mb_encode_mimeheader()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$name </font><font  color="#007700">= </font><font  color="#DD0000">""</font><font  color="#007700">; </font><font  color="#FF8000">// kanji<br  /></font><font  color="#0000BB">$mbox </font><font  color="#007700">= </font><font  color="#DD0000">"kru"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$doma </font><font  color="#007700">= </font><font  color="#DD0000">"gtinn.mon"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$addr </font><font  color="#007700">= </font><font  color="#0000BB">mb_encode_mimeheader</font><font  color="#007700">(</font><font  color="#0000BB">$name</font><font  color="#007700">, </font><font  color="#DD0000">"UTF-7"</font><font  color="#007700">, </font><font  color="#DD0000">"Q"</font><font  color="#007700">) . </font><font  color="#DD0000">" &lt;" </font><font  color="#007700">. </font><font  color="#0000BB">$mbox </font><font  color="#007700">. </font><font  color="#DD0000">"@" </font><font  color="#007700">. </font><font  color="#0000BB">$doma </font><font  color="#007700">. </font><font  color="#DD0000">"&gt;"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$addr</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.mb-decode-mimeheader.html"  ><B  CLASS="function" >mb_decode_mimeheader()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mb-detect-order.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mb-encode-numericentity.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mb_detect_order</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mbstring.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mb_encode_numericentity</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.mb-encode-mimeheader-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2805">
-    <p><strong>Example #1 <span class="function"><strong>mb_encode_mimeheader()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;kanji<br /></span><span style="color: #0000BB">$mbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"kru"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$doma&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"gtinn.mon"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$addr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mb_encode_mimeheader</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"UTF-7"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Q"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$mbox&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"@"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$doma&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$addr</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.mb-encode-mimeheader-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    这个函数没有设计成据更高级上下文的中断点来换行（单词边界等）。
-    这个特性将导致意外的空格可能会让原始字符串看上去很乱。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mb-encode-mimeheader-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mb-decode-mimeheader.html" class="function" rel="rdfs-seeAlso">mb_decode_mimeheader()</a> - 解码 MIME 头字段中的字符串</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-detect-order.html">mb_detect_order</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-encode-numericentity.html">mb_encode_numericentity</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

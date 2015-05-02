@@ -1,181 +1,127 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>以 C 语言风格使用反斜线转义字符串中的字符</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.addslashes.html">addslashes</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.addcslashes" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">addcslashes</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">addcslashes</span> &mdash; <span class="dc-title">以 C 语言风格使用反斜线转义字符串中的字符</span></p>
-
- </div>
- 
-  <div class="refsect1 description" id="refsect1-function.addcslashes-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>addcslashes</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$charlist</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   返回字符串，该字符串在属于参数 <code class="parameter">charlist</code>
-   列表中的字符前都加上了反斜线。
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.addcslashes-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要转义的字符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">charlist</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果 <code class="parameter">charlist</code>
-   中包含有 <em>\n</em>，<em>\r</em>
-   等字符，将以 C 语言风格转换，而其它非字母数字且 ASCII 码低于 32 以及高于 126 
-   的字符均转换成使用八进制表示。
-      </p>
-      <p class="para">
-       当定义 charlist
-   参数中的字符序列时，需要确实知道介于自己设置的开始及结束范围之内的都是些什么字符。
-       <div class="informalexample">
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">addcslashes</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo[&nbsp;]'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'A..z'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;输出：\f\o\o\[&nbsp;\]<br />//&nbsp;所有大小写字母均被转义<br />//&nbsp;...&nbsp;但&nbsp;[\]^_`&nbsp;以及分隔符、换行符、回车符等也一并被转义了。<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-       另外，如果设置范围中的结束字符 ASCII 
-   码高于开始字符，则不会创建范围，只是将开始字符、结束字符以及其间的字符逐个转义。可使用
-   <span class="function"><a href="function.ord.html" class="function">ord()</a></span> 函数获取字符的 ASCII 码值。
-       <div class="informalexample">
-        <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">addcslashes</span><span style="color: #007700">(</span><span style="color: #DD0000">"zoo['.']"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'z..A'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;输出：\zoo['\.']<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-      </p>
-      <p class="para">
-       当选择对字符 0，a，b，f，n，r，t
-   和 v 进行转义时需要小心，它们将被转换成
-   \0，\a，\b，\f，\n，\r，\t 和 
-   \v。在 PHP 中，只有 \0（NULL），\r（回车符），\n（换行符）和
-   \t（制表符）是预定义的转义序列， 而在
-   C 语言中，上述的所有转换后的字符都是预定义的转义序列。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
-  <div class="refsect1 returnvalues" id="refsect1-function.addcslashes-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回转义后的字符。
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.addcslashes-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.5</td>
-       <td>
-        The escape sequences \v and \f were added.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
-  <div class="refsect1 examples" id="refsect1-function.addcslashes-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-    <code class="parameter">charlist</code> 参数，如“\0..\37”，将转义所有
-   ASCII 码介于 0 和 31 之间的字符。
-   <div class="example" id="example-5131">
-    <p><strong>Example #1 <span class="function"><strong>addcslashes()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$escaped&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">addcslashes</span><span style="color: #007700">(</span><span style="color: #0000BB">$not_escaped</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\0..\37!@\177..\377"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >addcslashes</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="NEXT" TITLE="addslashes" HREF="function.addslashes.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.strings.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.addslashes.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.addcslashes" ></A
+>addcslashes</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN107639" ></A
+><P  >    (PHP 4 )</P
+>addcslashes&nbsp;--&nbsp;Quote string with slashes in a C style</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN107642" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >addcslashes</B
+> ( string str, string charlist)<BR  ></BR
+><P  >&#13;     Returns a string with backslashes before characters that are
+     listed in <TT  CLASS="parameter" ><I  >charlist</I
+></TT
+> parameter. It escapes
+     <TT  CLASS="literal" >\n</TT
+>, <TT  CLASS="literal" >\r</TT
+> etc. in C-like
+     style, characters with ASCII code lower than 32 and higher than
+     126 are converted to octal representation. 
+    </P
+><P  >&#13;     Be careful if you choose to escape characters 0, a, b, f, n, r, 
+     t and v. They will be converted to \0, \a, \b, \f, \n, \r, \t 
+     and \v. 
+     In PHP \0 (<TT  CLASS="constant" ><B  >NULL</B
+></TT
+>), \r (carriage return), \n (newline) and \t (tab) 
+     are predefined escape sequences, while in C all of these are 
+     predefined escape sequences.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >charlist</I
+></TT
+> like "\0..\37", which would
+     escape all characters with ASCII code between 0 and 37.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107661" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >addcslashes()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$escaped </font><font  color="#007700">= </font><font  color="#0000BB">addcslashes</font><font  color="#007700">(</font><font  color="#0000BB">$not_escaped</font><font  color="#007700">, </font><font  color="#DD0000">"\0..\37!@\177..\377"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     When you define a sequence of characters in the charlist argument
+     make sure that you know what characters come between the
+     characters that you set as the start and end of the range.
+     <DIV  CLASS="informalexample" ><A  NAME="AEN107666" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">addcslashes</font><font  color="#007700">(</font><font  color="#DD0000">'foo[ ]'</font><font  color="#007700">, </font><font  color="#DD0000">'A..z'</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// output:&nbsp;&nbsp;\f\o\o\[ \]<br  />// All upper and lower-case letters will be escaped<br  />// ... but so will the [\]^_` and any tabs, line<br  />// feeds, carriage returns, etc.<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     Also, if the first character in a range has a higher ASCII value
+     than the second character in the range, no range will be
+     constructed.  Only the start, end and period characters will be
+     escaped. Use the <A  HREF="function.ord.html"  ><B  CLASS="function" >ord()</B
+></A
+> function to find the
+     ASCII value for a character.
+     <DIV  CLASS="informalexample" ><A  NAME="AEN107669" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">addcslashes</font><font  color="#007700">(</font><font  color="#DD0000">"zoo['.']"</font><font  color="#007700">, </font><font  color="#DD0000">'z..A'</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// output:&nbsp;&nbsp;\zoo['\.']<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.stripcslashes.html"  ><B  CLASS="function" >stripcslashes()</B
+></A
+>, 
+     <A  HREF="function.stripslashes.html"  ><B  CLASS="function" >stripslashes()</B
+></A
+>, 
+     <A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+>, and 
+     <A  HREF="function.quotemeta.html"  ><B  CLASS="function" >quotemeta()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.addslashes.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >�ַ�������������</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >addslashes</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.addcslashes-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.stripcslashes.html" class="function" rel="rdfs-seeAlso">stripcslashes()</a> - 反引用一个使用 addcslashes 转义的字符串</span></li>
-    <li class="member"><span class="function"><a href="function.stripslashes.html" class="function" rel="rdfs-seeAlso">stripslashes()</a> - 反引用一个引用字符串</span></li>
-    <li class="member"><span class="function"><a href="function.addslashes.html" class="function" rel="rdfs-seeAlso">addslashes()</a> - 使用反斜线引用字符串</span></li>
-    <li class="member"><span class="function"><a href="function.htmlspecialchars.html" class="function" rel="rdfs-seeAlso">htmlspecialchars()</a> - Convert special characters to HTML entities</span></li>
-    <li class="member"><span class="function"><a href="function.quotemeta.html" class="function" rel="rdfs-seeAlso">quotemeta()</a> - 转义元字符集</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.addslashes.html">addslashes</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

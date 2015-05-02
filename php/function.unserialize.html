@@ -1,174 +1,134 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»å·²å­˜å‚¨çš„è¡¨ç¤ºä¸­åˆ›å»º PHP çš„å€¼</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strval.html">strval</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.unset.html">unset</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.unserialize" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">unserialize</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">unserialize</span> &mdash; <span class="dc-title">
-     ä»å·²å­˜å‚¨çš„è¡¨ç¤ºä¸­åˆ›å»º PHP çš„å€¼
-    </span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.unserialize-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>unserialize</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   )</div>
-
-    <p class="simpara">
-     <span class="function"><strong>unserialize()</strong></span> å¯¹å•ä¸€çš„å·²åºåˆ—åŒ–çš„å˜é‡è¿›è¡Œæ“ä½œï¼Œå°†å…¶è½¬æ¢å› 
-     PHP çš„å€¼ã€‚
-    </p>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.unserialize-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       åºåˆ—åŒ–åçš„å­—ç¬¦ä¸²ã€‚
-      </p>
-      <p class="para">
-       è‹¥è¢«è§£åºåˆ—åŒ–çš„å˜é‡æ˜¯ä¸€ä¸ªå¯¹è±¡ï¼Œåœ¨æˆåŠŸåœ°é‡æ–°æ„é€ å¯¹è±¡ä¹‹åï¼ŒPHP
-     ä¼šè‡ªåŠ¨åœ°è¯•å›¾å»è°ƒç”¨ <a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup()</a>
-     æˆå‘˜å‡½æ•°ï¼ˆå¦‚æœå­˜åœ¨çš„è¯ï¼‰ã€‚
-      </p>
-      <p class="para">
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <strong>unserialize_callback_func æŒ‡ä»¤</strong><br />
-        <p class="para">
-        å¦‚æœåœ¨è§£åºåˆ—åŒ–çš„æ—¶å€™éœ€è¦å®ä¾‹åŒ–ä¸€ä¸ªæœªå®šä¹‰ç±»ï¼Œåˆ™å¯ä»¥è®¾ç½®å›è°ƒå‡½æ•°ä»¥ä¾›è°ƒç”¨ï¼ˆä»¥å…å¾—åˆ°çš„æ˜¯ä¸å®Œæ•´çš„
-      <span class="type"><a href="language.types.object.html" class="type object">object</a></span> â€œ__PHP_Incomplete_Classâ€ï¼‰ã€‚å¯é€šè¿‡
-      <var class="filename">php.ini</var>ã€<span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span> æˆ– <var class="filename">.htaccess</var> 
-      å®šä¹‰â€˜unserialize_callback_funcâ€™ã€‚æ¯æ¬¡å®ä¾‹åŒ–ä¸€ä¸ªæœªå®šä¹‰ç±»æ—¶å®ƒéƒ½ä¼šè¢«è°ƒç”¨ã€‚è‹¥è¦ç¦æ­¢è¿™ä¸ªç‰¹æ€§ï¼Œåªéœ€ç½®ç©ºæ­¤è®¾å®šã€‚
-        </p>
-       </p></blockquote>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.unserialize-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›çš„æ˜¯è½¬æ¢ä¹‹åçš„å€¼ï¼Œå¯ä¸º 
-     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>ã€<span class="type"><a href="language.types.float.html" class="type float">float</a></span>ã€<span class="type"><a href="language.types.string.html" class="type string">string</a></span>ã€<span class="type"><a href="language.types.array.html" class="type array">array</a></span>
-     æˆ– <span class="type"><a href="language.types.object.html" class="type object">object</a></span>ã€‚
-     </p>
-  <p class="para">
-   å¦‚æœä¼ é€’çš„å­—ç¬¦ä¸²ä¸å¯è§£åºåˆ—åŒ–ï¼Œåˆ™è¿”å› <strong><code>FALSE</code></strong>ï¼Œå¹¶äº§ç”Ÿä¸€ä¸ª <strong><code>E_NOTICE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.unserialize-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        æ·»åŠ äº† unserialize_callback_func æŒ‡ä»¤ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.unserialize-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5572">
-    <p><strong>Example #1 <span class="function"><strong>unserialize()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;è¿™é‡Œï¼Œæˆ‘ä»¬ä½¿ç”¨&nbsp;unserialize()&nbsp;è£…è½½æ¥è‡ªæ•°æ®åº“çš„&nbsp;$session_data&nbsp;æ•°ç»„ä¸­çš„ä¼šè¯æ•°æ®ã€‚<br />//&nbsp;æ­¤ä¾‹æ˜¯æè¿°&nbsp;serialize()&nbsp;çš„é‚£ä¸ªä¾‹å­çš„è¡¥å……ã€‚<br /><br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"webdb"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"php"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"chicken"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;data&nbsp;FROM&nbsp;sessions&nbsp;WHERE&nbsp;id&nbsp;=&nbsp;?"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sqldata&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_AUTH_USER'</span><span style="color: #007700">]);<br />if&nbsp;(!</span><span style="color: #0000BB">odbc_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sqldata</span><span style="color: #007700">)&nbsp;||&nbsp;!</span><span style="color: #0000BB">odbc_fetch_into</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$tmp</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å¦‚æœæ‰§è¡Œå‡ºé”™æˆ–è¿”å›é”™è¯¯ï¼Œåˆ™åˆå§‹åŒ–ä¸ºç©ºæ•°ç»„<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$session_data&nbsp;</span><span style="color: #007700">=&nbsp;array();<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ç°åœ¨æˆ‘ä»¬éœ€è¦çš„æ˜¯&nbsp;$tmp[0]&nbsp;ä¸­å·²åºåˆ—åŒ–çš„æ•°æ®ã€‚<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$session_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$tmp</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$session_data</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å‡ºé”™ï¼Œåˆå§‹åŒ–ä¸ºç©ºæ•°ç»„<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$session_data&nbsp;</span><span style="color: #007700">=&nbsp;array();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5573">
-    <p><strong>Example #2 unserialize_callback_func ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$serialized_object</span><span style="color: #007700">=</span><span style="color: #DD0000">'O:1:"a":1:{s:5:"value";s:3:"100";}'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;unserialize_callback_func&nbsp;ä»&nbsp;PHP&nbsp;4.2.0&nbsp;èµ·å¯ç”¨<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'unserialize_callback_func'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mycallback'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;è®¾ç½®æ‚¨çš„å›è°ƒå‡½æ•°<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">mycallback</span><span style="color: #007700">(</span><span style="color: #0000BB">$classname</span><span style="color: #007700">)&nbsp;<br />{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;åªéœ€åŒ…å«å«æœ‰ç±»å®šä¹‰çš„æ–‡ä»¶<br />&nbsp;&nbsp;&nbsp;//&nbsp;$classname&nbsp;æŒ‡å‡ºéœ€è¦çš„æ˜¯å“ªä¸€ä¸ªç±»<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >unserialize</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿º¯Êı¿â" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="strval" HREF="function.strval.html"><LINK  REL="NEXT" TITLE="unset" HREF="function.unset.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.strval.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.unset.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.unserialize" ></A
+>unserialize</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN116142" ></A
+><P  >    (PHP 3&#62;= 3.0.5, PHP 4 )</P
+>unserialize&nbsp;--&nbsp;
+     ´ÓÒÑ´æ´¢µÄ±íÊ¾ÖĞ´´½¨ PHP µÄÖµ
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN116145" ></A
+><H2  >ÃèÊö</H2
+>mixed <B  CLASS="methodname" >unserialize</B
+> ( string str [, string callback])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >unserialize()</B
+> ¶Ôµ¥Ò»µÄÒÑĞòÁĞ»¯µÄ±äÁ¿½øĞĞ²Ù×÷£¬½«Æä×ª»»»Ø 
+     PHP µÄÖµ¡£·µ»ØµÄÊÇ×ª»»Ö®ºóµÄÖµ£¬¿ÉÎª 
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>¡¢<A  HREF="language.types.float.html"  ><B  CLASS="type" >float</B
+></A
+>¡¢<A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+>¡¢<A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+>
+     »ò <A  HREF="language.types.object.html"  ><B  CLASS="type" >object</B
+></A
+>¡£Èç¹û´«µİµÄ×Ö·û´®²»¿É½âĞòÁĞ»¯£¬Ôò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >unserialize_callback_func Ö¸Áî: </B
+>
+      Èç¹ûÔÚ½âĞòÁĞ»¯µÄÊ±ºòĞèÒªÊµÀı»¯Ò»¸öÎ´¶¨ÒåÀà£¬Ôò¿ÉÒÔÉèÖÃ»Øµ÷º¯ÊıÒÔ¹©µ÷ÓÃ£¨ÒÔÃâµÃµ½µÄÊÇ²»ÍêÕûµÄ
+      <A  HREF="language.types.object.html"  ><B  CLASS="type" >object</B
+></A
+> ¡°__PHP_Incomplete_Class¡±£©¡£¿ÉÍ¨¹ı
+      <TT  CLASS="filename" >php.ini</TT
+>¡¢<A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+> »ò <TT  CLASS="filename" >.htaccess</TT
+> 
+      ¶¨Òå¡®unserialize_callback_func¡¯¡£Ã¿´ÎÊµÀı»¯Ò»¸öÎ´¶¨ÒåÀàÊ±Ëü¶¼»á±»µ÷ÓÃ¡£ÈôÒª½ûÖ¹Õâ¸öÌØĞÔ£¬Ö»ĞèÖÃ¿Õ´ËÉè¶¨¡£»¹ĞèÒª×¢ÒâµÄÊÇ
+      unserialize_callback_func Ö¸ÁîÊÇ´Ó PHP 4.2.0 ¿ªÊ¼Ìá¹©Ê¹ÓÃµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     <TT  CLASS="parameter" ><I  >callback</I
+></TT
+> ²ÎÊıÊÇÔÚ PHP 4.2.0 ÖĞÌí¼ÓµÄ
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Èô±»½âĞòÁĞ»¯µÄ±äÁ¿ÊÇÒ»¸ö¶ÔÏó£¬ÔÚ³É¹¦µØÖØĞÂ¹¹Ôì¶ÔÏóÖ®ºó£¬PHP
+     »á×Ô¶¯µØÊÔÍ¼È¥µ÷ÓÃ <B  CLASS="function" >__wakeup()</B
+>
+     ³ÉÔ±º¯Êı£¨Èç¹û´æÔÚµÄ»°£©¡£ 
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116176" ></A
+><P  ><B  >Àı×Ó 1. unserialize_callback_func Ê¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$serialized_object</font><font  color="#007700">=</font><font  color="#DD0000">'O:1:"a":1:{s:5:"value";s:3:"100";}'</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// unserialize_callback_func ´Ó PHP 4.2.0 Æğ¿ÉÓÃ<br  /></font><font  color="#0000BB">ini_set</font><font  color="#007700">(</font><font  color="#DD0000">'unserialize_callback_func'</font><font  color="#007700">,</font><font  color="#DD0000">'mycallback'</font><font  color="#007700">); </font><font  color="#FF8000">// ÉèÖÃÄúµÄ»Øµ÷º¯Êı<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">mycallback</font><font  color="#007700">(</font><font  color="#0000BB">$classname</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Ö»Ğè°üº¬º¬ÓĞÀà¶¨ÒåµÄÎÄ¼ş<br  />&nbsp;&nbsp;&nbsp;&nbsp;// $classname Ö¸³öĞèÒªµÄÊÇÄÄÒ»¸öÀà<br  /></font><font  color="#007700">}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 3 ÖĞ£¬½âĞòÁĞ»¯Ò»¸ö¶ÔÏóÊ±ÊÇ²»±£´æ·½·¨µÄ¡£¶ø
+      PHP 4 ´òÆÆÁËÕâ¸öÏŞÖÆ£¬Í¬Ê±±£´æÁËÊôĞÔºÍ·½·¨¡£Çë²Î¼û<A  HREF="language.oop.html"  >ÀàÓë¶ÔÏó</A
+>ÖĞµÄ<A  HREF="language.oop.serialization.html"  >ĞòÁĞ»¯¶ÔÏó</A
+>²¿·Ö»ñÈ¡¸ü¶àĞÅÏ¢¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116184" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >unserialize()</B
+> Ê¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ÕâÀï£¬ÎÒÃÇÊ¹ÓÃ unserialize() ×°ÔØÀ´×ÔÊı¾İ¿âµÄ $session_data Êı×éÖĞµÄ»á»°Êı¾İ¡£<br  />// ´ËÀıÊÇÃèÊö serialize() µÄÄÇ¸öÀı×ÓµÄ²¹³ä¡£<br  /><br  /></font><font  color="#0000BB">$conn </font><font  color="#007700">= </font><font  color="#0000BB">odbc_connect </font><font  color="#007700">(</font><font  color="#DD0000">"webdb"</font><font  color="#007700">, </font><font  color="#DD0000">"php"</font><font  color="#007700">, </font><font  color="#DD0000">"chicken"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$stmt </font><font  color="#007700">= </font><font  color="#0000BB">odbc_prepare </font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#DD0000">"SELECT data FROM sessions WHERE id = ?"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$sqldata </font><font  color="#007700">= array (</font><font  color="#0000BB">$PHP_AUTH_USER</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">odbc_execute </font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, &amp;</font><font  color="#0000BB">$sqldata</font><font  color="#007700">) || !</font><font  color="#0000BB">odbc_fetch_into </font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, &amp;</font><font  color="#0000BB">$tmp</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Èç¹ûÖ´ĞĞ³ö´í»ò·µ»Ø´íÎó£¬Ôò³õÊ¼»¯Îª¿ÕÊı×é<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$session_data </font><font  color="#007700">= array();<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ÏÖÔÚÎÒÃÇĞèÒªµÄÊÇ $tmp[0] ÖĞÒÑĞòÁĞ»¯µÄÊı¾İ¡£<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$session_data </font><font  color="#007700">= </font><font  color="#0000BB">unserialize </font><font  color="#007700">(</font><font  color="#0000BB">$tmp</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">is_array </font><font  color="#007700">(</font><font  color="#0000BB">$session_data</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ³ö´í£¬³õÊ¼»¯Îª¿ÕÊı×é<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$session_data </font><font  color="#007700">= array();<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;    ²Î¼û <A  HREF="function.serialize.html"  ><B  CLASS="function" >serialize()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.strval.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.unset.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >strval</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >unset</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.unserialize-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    å¦‚æœååºåˆ—åŒ–äº† <strong><code>FALSE</code></strong> çš„å€¼ï¼Œæˆ–è€…åœ¨è¿‡ç¨‹ä¸­å‘ç”Ÿäº†é”™è¯¯ï¼Œéƒ½ä¼šè¿”å› <strong><code>FALSE</code></strong>ã€‚
-    å¯ä»¥é€šè¿‡ <code class="parameter">str</code> å’Œ <em>serialize(false)</em> è¿›è¡Œæ¯”è¾ƒï¼Œæˆ–è€…æ•æ‰ <strong><code>E_NOTICE</code></strong> é”™è¯¯æ¥åˆ¤æ–­è¿™ç§ç‰¹æ®Šæƒ…å†µã€‚
-   </p>
-  </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.unserialize-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.serialize.html" class="function" rel="rdfs-seeAlso">serialize()</a> - äº§ç”Ÿä¸€ä¸ªå¯å­˜å‚¨çš„å€¼çš„è¡¨ç¤º</span></li>
-    <li class="member"><a href="language.oop5.autoload.html" class="link">è‡ªåŠ¨åŠ è½½å¯¹è±¡</a></li>
-    <li class="member"><a href="var.configuration.html#unserialize-callback-func" class="link">unserialize_callback_func</a></li>
-    <li class="member"><a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup()</a></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strval.html">strval</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.unset.html">unset</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

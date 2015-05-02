@@ -1,126 +1,117 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>使用反斜线引用字符串</title>
+<HTML  ><HEAD  ><TITLE  >addslashes</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="addcslashes" HREF="function.addcslashes.html"><LINK  REL="NEXT" TITLE="bin2hex" HREF="function.bin2hex.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.addcslashes.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.bin2hex.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.addslashes" ></A
+>addslashes</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN107677" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>addslashes&nbsp;--&nbsp;Quote string with slashes</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN107680" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >addslashes</B
+> ( string str)<BR  ></BR
+><P  >&#13;     Returns a string with backslashes before characters that need
+     to be quoted in database queries etc.  These characters are
+     single quote (<TT  CLASS="literal" >'</TT
+>), double quote
+     (<TT  CLASS="literal" >"</TT
+>), backslash (<TT  CLASS="literal" >\</TT
+>)
+     and NUL (the <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> byte).
+    </P
+><P  >&#13;     An example use of <B  CLASS="function" >addslashes()</B
+> is when you're
+     entering data into a database.  For example, to insert the name 
+     <TT  CLASS="literal" >O'reilly</TT
+> into a database, you will need to escape
+     it.  Most databases do this with a <TT  CLASS="literal" >\</TT
+> which would
+     mean <TT  CLASS="literal" >O\'reilly</TT
+>.  This would only be to get the data
+     into the database, the extra <TT  CLASS="literal" >\</TT
+> will not be inserted.
+     Having the PHP directive <A  HREF="ref.sybase.html#ini.magic-quotes-sybase"  >&#13;     magic_quotes_sybase</A
+> set to <TT  CLASS="literal" >on</TT
+> will mean 
+     <TT  CLASS="literal" >'</TT
+> is instead escaped with another 
+     <TT  CLASS="literal" >'</TT
+>.
+    </P
+><P  >&#13;     The PHP directive <A  HREF="ref.info.html#ini.magic-quotes-gpc"  >&#13;     magic_quotes_gpc</A
+> is <TT  CLASS="literal" >on</TT
+> by default, and it 
+     essentially runs <B  CLASS="function" >addslashes()</B
+> on all GET, POST,
+     and COOKIE data.  Do not use <B  CLASS="function" >addslashes()</B
+> on
+     strings that have already been escaped with 
+     <A  HREF="ref.info.html#ini.magic-quotes-gpc"  >magic_quotes_gpc</A
+> as you'll
+     then do double escaping.  The function
+     <A  HREF="function.get-magic-quotes-gpc.html"  ><B  CLASS="function" >get_magic_quotes_gpc()</B
+></A
+> may come in handy for 
+     checking this.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107711" ></A
+><P  ><B  >���� 1. An <B  CLASS="function" >addslashes()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$str </font><font  color="#007700">= </font><font  color="#DD0000">"Is your name O'reilly?"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: Is your name O\'reilly?<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">addslashes</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.stripslashes.html"  ><B  CLASS="function" >stripslashes()</B
+></A
+>, 
+     <A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+>,
+     <A  HREF="function.quotemeta.html"  ><B  CLASS="function" >quotemeta()</B
+></A
+>, and 
+     <A  HREF="function.get-magic-quotes-gpc.html"  ><B  CLASS="function" >get_magic_quotes_gpc()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.addcslashes.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.bin2hex.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >addcslashes</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >bin2hex</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.addcslashes.html">addcslashes</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.bin2hex.html">bin2hex</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.addslashes" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">addslashes</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">addslashes</span> &mdash; <span class="dc-title">使用反斜线引用字符串</span></p>
 
- </div>
- 
-  <div class="refsect1 description" id="refsect1-function.addslashes-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>addslashes</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   返回字符串，该字符串为了数据库查询语句等的需要在某些字符前加上了反斜线。这些字符是单引号（<em>&#039;</em>）、双引号（<em>&quot;</em>）、反斜线（<em>\</em>）与
-   NUL（<strong><code>NULL</code></strong> 字符）。
-  </p>
-  <p class="para">
-   一个使用 <span class="function"><strong>addslashes()</strong></span>
-   的例子是当你要往数据库中输入数据时。
-   例如，将名字
-   <em>O&#039;reilly</em> 插入到数据库中，这就需要对其进行转义。
-   强烈建议使用 DBMS 指定的转义函数
-   （比如 MySQL 是  <span class="function"><a href="mysqli.real-escape-string.html" class="function">mysqli_real_escape_string()</a></span>，PostgreSQL 是 <span class="function"><a href="function.pg-escape-string.html" class="function">pg_escape_string()</a></span>），但是如果你使用的 DBMS 没有一个转义函数，并且使用 <em>\</em> 来转义特殊字符，你可以使用这个函数。
-   仅仅是为了获取插入数据库的数据，额外的 <em>\</em> 并不会插入。
-   当 PHP
-   指令 <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">magic_quotes_sybase</a>
-   被设置成 <em>on</em> 时，意味着插入
-   <em>&#039;</em> 时将使用
-   <em>&#039;</em> 进行转义。
-  </p>
-  <p class="para">
-   PHP 5.4 之前 PHP 指令 <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">
-   magic_quotes_gpc</a> 默认是 <em>on</em>， 实际上所有的 GET、POST 和 COOKIE 数据都用被 <span class="function"><strong>addslashes()</strong></span> 了。 不要对已经被
-   <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a>
-   转义过的字符串使用
-   <span class="function"><strong>addslashes()</strong></span>，因为这样会导致双层转义。 遇到这种情况时可以使用函数
-   <span class="function"><a href="function.get-magic-quotes-gpc.html" class="function">get_magic_quotes_gpc()</a></span>
-   进行检测。
-  </p>
- </div>
-
-
-  <div class="refsect1 parameters" id="refsect1-function.addslashes-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要转义的字符。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- 
-  <div class="refsect1 returnvalues" id="refsect1-function.addslashes-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回转义后的字符。
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.addslashes-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5132">
-    <p><strong>Example #1 一个 <span class="function"><strong>addslashes()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Is&nbsp;your&nbsp;name&nbsp;O'reilly?"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;输出：&nbsp;Is&nbsp;your&nbsp;name&nbsp;O\'reilly?<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">addslashes</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-  
- <div class="refsect1 seealso" id="refsect1-function.addslashes-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.stripcslashes.html" class="function" rel="rdfs-seeAlso">stripcslashes()</a> - 反引用一个使用 addcslashes 转义的字符串</span></li>
-    <li class="member"><span class="function"><a href="function.stripslashes.html" class="function" rel="rdfs-seeAlso">stripslashes()</a> - 反引用一个引用字符串</span></li>
-    <li class="member"><span class="function"><a href="function.addcslashes.html" class="function" rel="rdfs-seeAlso">addcslashes()</a> - 以 C 语言风格使用反斜线转义字符串中的字符</span></li>
-    <li class="member"><span class="function"><a href="function.htmlspecialchars.html" class="function" rel="rdfs-seeAlso">htmlspecialchars()</a> - Convert special characters to HTML entities</span></li>
-    <li class="member"><span class="function"><a href="function.quotemeta.html" class="function" rel="rdfs-seeAlso">quotemeta()</a> - 转义元字符集</span></li>
-    <li class="member"><span class="function"><a href="function.get-magic-quotes-gpc.html" class="function" rel="rdfs-seeAlso">get_magic_quotes_gpc()</a> - 获取当前 magic_quotes_gpc 的配置选项设置</span></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.addcslashes.html">addcslashes</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.bin2hex.html">bin2hex</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

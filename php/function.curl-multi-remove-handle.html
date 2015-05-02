@@ -1,82 +1,65 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>移除curl批处理句柄资源中的某个句柄资源</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-multi-init.html">curl_multi_init</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-multi-select.html">curl_multi_select</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.curl-multi-remove-handle" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">curl_multi_remove_handle</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">curl_multi_remove_handle</span> &mdash; <span class="dc-title">移除curl批处理句柄资源中的某个句柄资源</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.curl-multi-remove-handle-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>curl_multi_remove_handle</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$mh</code></span>
-   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ch</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   从给定的批处理句柄<code class="parameter">mh</code>中移除<code class="parameter">ch</code>句柄。当<code class="parameter">ch</code>句柄被移除以后，仍然可以合法地用<span class="function"><a href="function.curl-exec.html" class="function">curl_exec()</a></span>执行这个句柄。当正在移除的句柄正在被使用，在处理的过程中所有的传输任务会被终止。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.curl-multi-remove-handle-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">mh</code>
-</dt>
-<dd>
-<p class="para">由 <span class="function"><a href="function.curl-multi-init.html" class="function">curl_multi_init()</a></span> 返回的 cURL 多个句柄。</p></dd>
-
-    <dt>
-<code class="parameter">ch</code>
-</dt>
-<dd>
-<p class="para">由 <span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span> 返回的 cURL 句柄。</p></dd>
-
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.curl-multi-remove-handle-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回一个cURL句柄，失败时返回<strong><code>FALSE</code></strong>。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >curl_multi_remove_handle</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="CURL, Client URL Library Functions" HREF="ref.curl.html"><LINK  REL="PREVIOUS" TITLE="curl_multi_init" HREF="function.curl-multi-init.html"><LINK  REL="NEXT" TITLE="curl_multi_select" HREF="function.curl-multi-select.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.curl-multi-init.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.curl-multi-select.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.curl-multi-remove-handle" ></A
+>curl_multi_remove_handle</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN16508" ></A
+><P  >    (PHP 5 CVS only)</P
+>curl_multi_remove_handle&nbsp;--&nbsp;
+     Remove a multi handle from a set of cURL handles
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN16511" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >curl_multi_remove_handle</B
+> ( resource mh, resource ch)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >�ú���Ŀǰ���޲ο��ĵ����������б����á�
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     See also
+     <A  HREF="function.curl-multi-init.html"  ><B  CLASS="function" >curl_multi_init()</B
+></A
+>,
+     <A  HREF="function.curl-init.html"  ><B  CLASS="function" >curl_init()</B
+></A
+>, and
+     <A  HREF="function.curl-multi-add-handle.html"  ><B  CLASS="function" >curl_multi_add_handle()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.curl-multi-init.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.curl-multi-select.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >curl_multi_init</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.curl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >curl_multi_select</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.curl-multi-remove-handle-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.curl-init.html" class="function" rel="rdfs-seeAlso">curl_init()</a> - 初始化一个cURL会话</span></li>
-    <li class="member"><span class="function"><a href="function.curl-multi-init.html" class="function" rel="rdfs-seeAlso">curl_multi_init()</a> - 返回一个新cURL批处理句柄</span></li>
-    <li class="member"><span class="function"><a href="function.curl-multi-add-handle.html" class="function" rel="rdfs-seeAlso">curl_multi_add_handle()</a> - 向curl批处理会话中添加单独的curl句柄</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.curl-multi-init.html">curl_multi_init</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.curl-multi-select.html">curl_multi_select</a></div>
- <div class="up"><a href="ref.curl.html">cURL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,280 +1,226 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>创建一个套接字（通讯节点）</title>
+<HTML  ><HEAD  ><TITLE  >socket_create</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="PREVIOUS" TITLE="socket_create_pair" HREF="function.socket-create-pair.html"><LINK  REL="NEXT" TITLE="socket_get_option" HREF="function.socket-get-option.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.socket-create-pair.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.socket-get-option.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.socket-create" ></A
+>socket_create</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN104186" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>socket_create&nbsp;--&nbsp;Create a socket (endpoint for communication)</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN104189" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >socket_create</B
+> ( int domain, int type, int protocol)<BR  ></BR
+><P  >&#13;     Creates and returns a socket resource, also referred to as an endpoint
+     of communication. A typical network connection is made up of 2 sockets, one
+     performing the role of the client, and another performing the role of the server.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >domain</I
+></TT
+> parameter specifies the protocol
+     family to be used by the socket.
+    </P
+><DIV  CLASS="table" ><A  NAME="AEN104206" ></A
+><P  ><B  >���� 1. Available address/protocol families</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Domain</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >AF_INET</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        IPv4 Internet based protocols. TCP and UDP are common protocols of 
+        this protocol family.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >AF_INET6</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        IPv6 Internet based protocols. TCP and UDP are common protocols of 
+        this protocol family. Support added in <TT  CLASS="literal" >PHP 5.0.0</TT
+>.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >AF_UNIX</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        Local communication protocol family. High efficiency and low
+        overhead make it a great form of IPC (Interprocess Communication).
+       </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >type</I
+></TT
+> parameter selects the type of communication
+     to be used by the socket.
+    </P
+><DIV  CLASS="table" ><A  NAME="AEN104226" ></A
+><P  ><B  >���� 2. Available socket types</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Type</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SOCK_STREAM</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         Provides sequenced, reliable, full-duplex, connection-based byte streams.  
+         An out-of-band data transmission mechanism may be supported.
+         The TCP protocol is based on this socket type.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SOCK_DGRAM</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         Supports datagrams (connectionless, unreliable messages of a fixed maximum length).
+         The UDP protocol is based on this socket type.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SOCK_SEQPACKET</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         Provides a sequenced, reliable, two-way connection-based data transmission path for 
+         datagrams of fixed maximum length;  a consumer is required to read an
+         entire packet with each read call. 
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SOCK_RAW</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         Provides raw network protocol access. This special type of socket
+         can be used to manually construct any type of protocol. A common use
+         for this socket type is to perform ICMP requests (like ping,
+         traceroute, etc).
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >SOCK_RDM</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         Provides a reliable datagram layer that does not guarantee ordering. 
+         This is most likely not implemented on your operating system.
+       </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >protocol</I
+></TT
+> parameter sets the specific
+     protocol within the specified <TT  CLASS="parameter" ><I  >domain</I
+></TT
+> to be used
+     when communicating on the returned socket. The proper value can be retrieved by 
+     name by using <A  HREF="function.getprotobyname.html"  ><B  CLASS="function" >getprotobyname()</B
+></A
+>. If 
+     the desired protocol is TCP, or UDP the corresponding constants 
+     <TT  CLASS="constant" ><B  >SOL_TCP</B
+></TT
+>, and <TT  CLASS="constant" ><B  >SOL_UDP</B
+></TT
+> 
+     can also be used.
+    </P
+><DIV  CLASS="table" ><A  NAME="AEN104255" ></A
+><P  ><B  >���� 3. Common protocols</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >icmp</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        The Internet Control Message Protocol is used primarily by gateways
+        and hosts to report errors in datagram communication. The "ping"
+        command (present in most modern operating systems) is an example 
+        application of ICMP.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >udp</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        The User Datagram Protocol is a connectionless, unreliable,
+        protocol with fixed record lengths. Due to these aspects, UDP 
+        requires a minimum amount of protocol overhead.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >tcp</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        The Transmission Control Protocol is a reliable, connection based, 
+        stream oriented, full duplex protocol. TCP guarantees that all data packets 
+        will be received in the order in which they were sent. If any packet is somehow
+        lost during communication, TCP will automatically retransmit the packet until
+        the destination host acknowledges that packet. For reliability and performance 
+        reasons, the TCP implementation itself decides the appropriate octet boundaries 
+        of the underlying datagram communication layer. Therefore, TCP applications must 
+        allow for the possibility of partial record transmission.
+       </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><P  >&#13;     <B  CLASS="function" >socket_create()</B
+> Returns a socket resource on success, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> 
+     on error. The actual error code can be retrieved by calling <A  HREF="function.socket-last-error.html"  ><B  CLASS="function" >socket_last_error()</B
+></A
+>.
+     This error code may be passed to <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+> to get a textual 
+     explanation of the error.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      If an invalid <TT  CLASS="parameter" ><I  >domain</I
+></TT
+> or
+      <TT  CLASS="parameter" ><I  >type</I
+></TT
+> is given, <B  CLASS="function" >socket_create()</B
+>
+      defaults to <TT  CLASS="constant" ><B  >AF_INET</B
+></TT
+> and
+      <TT  CLASS="constant" ><B  >SOCK_STREAM</B
+></TT
+> respectively and additionally emits an
+      <TT  CLASS="constant" ><B  >E_WARNING</B
+></TT
+> message.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also 
+     <A  HREF="function.socket-accept.html"  ><B  CLASS="function" >socket_accept()</B
+></A
+>,
+     <A  HREF="function.socket-bind.html"  ><B  CLASS="function" >socket_bind()</B
+></A
+>,
+     <A  HREF="function.socket-connect.html"  ><B  CLASS="function" >socket_connect()</B
+></A
+>,
+     <A  HREF="function.socket-listen.html"  ><B  CLASS="function" >socket_listen()</B
+></A
+>,
+     <A  HREF="function.socket-last-error.html"  ><B  CLASS="function" >socket_last_error()</B
+></A
+>, and
+     <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.socket-create-pair.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.socket-get-option.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >socket_create_pair</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >socket_get_option</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-create-pair.html">socket_create_pair</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-get-option.html">socket_get_option</a></div>
- <div class="up"><a href="ref.sockets.html">Socket 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.socket-create" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">socket_create</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">socket_create</span> &mdash; <span class="dc-title">创建一个套接字（通讯节点）</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.socket-create-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>socket_create</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$domain</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$protocol</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   创建并返回一个套接字，也称作一个通讯节点。一个典型的网络连接由 2 个套接字构成，一个运行在客户端，另一个运行在服务器端。
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.socket-create-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">domain</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">domain</code> 参数指定哪个协议用在当前套接字上。
-      </p>
-      <table class="doctable table">
-       <caption><strong>可用的地址/协议</strong></caption>
-       
-        <thead>
-         <tr>
-          <th>Domain</th>
-          <th>描述</th>
-         </tr>
-
-        </thead>
-
-        <tbody class="tbody">
-         <tr>
-          <td><strong><code>AF_INET</code></strong></td>
-          <td>
-           IPv4 网络协议。TCP 和 UDP 都可使用此协议。
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>AF_INET6</code></strong></td>
-          <td>
-           IPv6 网络协议。TCP 和 UDP 都可使用此协议。
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>AF_UNIX</code></strong></td>
-          <td>
-           本地通讯协议。具有高性能和低成本的 IPC（进程间通讯）。
-          </td>
-         </tr>
-
-        </tbody>
-       
-      </table>
-
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">type</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">type</code> 参数用于选择套接字使用的类型。
-      </p>
-      <table class="doctable table">
-       <caption><strong>可用的套接字类型</strong></caption>
-       
-        <thead>
-         <tr>
-          <th>类型</th>
-          <th>描述</th>
-         </tr>
-
-        </thead>
-
-        <tbody class="tbody">
-         <tr>
-          <td><strong><code>SOCK_STREAM</code></strong></td>
-          <td>
-           提供一个顺序化的、可靠的、全双工的、基于连接的字节流。支持数据传送流量控制机制。TCP 协议即基于这种流式套接字。
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>SOCK_DGRAM</code></strong></td>
-          <td>
-           提供数据报文的支持。(无连接，不可靠、固定最大长度).UDP协议即基于这种数据报文套接字。
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>SOCK_SEQPACKET</code></strong></td>
-          <td>
-           提供一个顺序化的、可靠的、全双工的、面向连接的、固定最大长度的数据通信；数据端通过接收每一个数据段来读取整个数据包。
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>SOCK_RAW</code></strong></td>
-          <td>
-           提供读取原始的网络协议。这种特殊的套接字可用于手工构建任意类型的协议。一般使用这个套接字来实现 ICMP 请求（例如 ping）。
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>SOCK_RDM</code></strong></td>
-          <td>
-           提供一个可靠的数据层，但不保证到达顺序。一般的操作系统都未实现此功能。
-          </td>
-         </tr>
-
-        </tbody>
-       
-      </table>
-
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">protocol</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">protocol</code> 参数，是设置指定 <code class="parameter">domain</code> 
-       套接字下的具体协议。这个值可以使用 <span class="function"><a href="function.getprotobyname.html" class="function">getprotobyname()</a></span>
-       函数进行读取。如果所需的协议是 TCP 或 UDP，可以直接使用常量 <strong><code>SOL_TCP</code></strong> 和 <strong><code>SOL_UDP</code></strong> 。
-      </p>
-      <table class="doctable table">
-       <caption><strong>常见协议</strong></caption>
-       
-        <thead>
-         <tr>
-          <th>名称</th>
-          <th>描述</th>
-         </tr>
-
-        </thead>
-
-        <tbody class="tbody">
-         <tr>
-          <td>icmp</td>
-          <td>
-           Internet Control Message Protocol
-           主要用于网关和主机报告错误的数据通信。例如“ping”命令（在目前大部分的操作系统中）就是使用 ICMP 协议实现的。
-          </td>
-         </tr>
-
-         <tr>
-          <td>udp</td>
-          <td>
-           User Datagram Protocol 是一个无连接的、不可靠的、具有固定最大长度的报文协议。由于这些特性，UDP 协议拥有最小的协议开销。
-          </td>
-         </tr>
-
-         <tr>
-          <td>tcp</td>
-          <td>
-           Transmission Control Protocol 是一个可靠的、基于连接的、面向数据流的全双工协议。TCP
-           能够保障所有的数据包是按照其发送顺序而接收的。如果任意数据包在通讯时丢失，TCP
-           将自动重发数据包直到目标主机应答已接收。因为可靠性和性能的原因，TCP 在数据传输层使用 8bit 字节边界。因此，TCP 应用程序必须允许传送部分报文的可能。
-          </td>
-         </tr>
-
-        </tbody>
-       
-      </table>
-
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.socket-create-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   <span class="function"><strong>socket_create()</strong></span> 正确时返回一个套接字，失败时返回
-   <strong><code>FALSE</code></strong>。要读取错误代码，可以调用 <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>。这个错误代码可以通过 <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> 读取文字的错误说明。
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.socket-create-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        增加 <strong><code>AF_INET6</code></strong> 支持。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 errors" id="refsect1-function.socket-create-errors">
-  <h3 class="title">错误／异常</h3>
-  <p class="para">
-   如果使用一个无效的 <code class="parameter">domain</code> 或 <code class="parameter">type</code>，<span class="function"><strong>socket_create()</strong></span>
-   会使用 <strong><code>AF_INET</code></strong> 和
-   <strong><code>SOCK_STREAM</code></strong> 替代无效参数，同时会发出 <strong><code>E_WARNING</code></strong> 警告信息。
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.socket-create-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.socket-accept.html" class="function" rel="rdfs-seeAlso">socket_accept()</a> - Accepts a connection on a socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-bind.html" class="function" rel="rdfs-seeAlso">socket_bind()</a> - 给套接字绑定名字</span></li>
-    <li class="member"><span class="function"><a href="function.socket-connect.html" class="function" rel="rdfs-seeAlso">socket_connect()</a> - 开启一个套接字连接</span></li>
-    <li class="member"><span class="function"><a href="function.socket-listen.html" class="function" rel="rdfs-seeAlso">socket_listen()</a> - Listens for a connection on a socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-last-error.html" class="function" rel="rdfs-seeAlso">socket_last_error()</a> - Returns the last error on the socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-strerror.html" class="function" rel="rdfs-seeAlso">socket_strerror()</a> - Return a string describing a socket error</span></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-create-pair.html">socket_create_pair</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-get-option.html">socket_get_option</a></div>
- <div class="up"><a href="ref.sockets.html">Socket 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,140 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>移动内部结果的指针</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-create-db.html">mysql_create_db</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-db-name.html">mysql_db_name</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-data-seek" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mysql_data_seek</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_data_seek</span> &mdash; <span class="dc-title">移动内部结果的指针</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.mysql-data-seek-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>mysql_data_seek</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$row_number</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mysql_data_seek()</strong></span> 将指定的结果标识所关联的
-   MySQL 结果内部的行指针移动到指定的行号。接着调用
-   <span class="function"><a href="function.mysql-fetch-row.html" class="function">mysql_fetch_row()</a></span> 将返回那一行。
-  </p>
-  <p class="para">
-   <code class="parameter">row_number</code> 从 0 开始。<code class="parameter">row_number</code>
-   的取值范围应该从 0 到 mysql_num_rows - 1。但是如果结果集为空（<span class="function"><a href="function.mysql-num-rows.html" class="function">mysql_num_rows()</a></span>
-   == 0），要将指针移动到 0 会失败并发出 <a href="" class="link">E_WARNING</a>
-   级的错误，<span class="function"><strong>mysql_data_seek()</strong></span> 将返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mysql-data-seek-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-result</code></dt>
-<dd>
-<p class="para"><span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>
-型的结果集。此结果集来自对 <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>
-的调用。</p></dd>
-
-     
-     <dt>
-<code class="parameter">row_number</code></dt>
- 
-     <dd>
-
-      <p class="para">
-       想要设定的新的结果集指针的行数。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mysql-data-seek-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mysql-data-seek-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-1694">
-    <p><strong>Example #1 <span class="function"><strong>mysql_data_seek()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">$db_selected&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'sample_db'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$db_selected</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;select&nbsp;database:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;last_name,&nbsp;first_name&nbsp;FROM&nbsp;friends'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Query&nbsp;failed:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #FF8000">/*&nbsp;fetch&nbsp;rows&nbsp;in&nbsp;reverse&nbsp;order&nbsp;*/<br /></span><span style="color: #007700">for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_num_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&gt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">--)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">mysql_data_seek</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Cannot&nbsp;seek&nbsp;to&nbsp;row&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_fetch_assoc</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'last_name'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'first_name'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mysql_data_seek</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL ������" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_create_db" HREF="function.mysql-create-db.html"><LINK  REL="NEXT" TITLE="mysql_db_name" HREF="function.mysql-db-name.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-create-db.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-db-name.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-data-seek" ></A
+>mysql_data_seek</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65295" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_data_seek&nbsp;--&nbsp;�ƶ��ڲ������ָ��</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65298" ></A
+><H2  >˵��</H2
+>bool <B  CLASS="methodname" >mysql_data_seek</B
+> ( resource result_identifier, int row_number)<BR  ></BR
+><P  >&#13;     ����ɹ��򷵻� <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>��ʧ���򷵻� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+    </P
+><P  >&#13;     <B  CLASS="function" >mysql_data_seek()</B
+> ��ָ���Ľ����ʶ��������
+     MySQL ����ڲ�����ָ���ƶ���ָ�����кš����ŵ���
+     <A  HREF="function.mysql-fetch-row.html"  ><B  CLASS="function" >mysql_fetch_row()</B
+></A
+> ��������һ�С�
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >row_number</I
+></TT
+> �� 0 ��ʼ��<TT  CLASS="parameter" ><I  >row_number</I
+></TT
+>
+     ��ȡֵ��ΧӦ�ô� 0 �� mysql_num_rows - 1��
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      <B  CLASS="function" >mysql_data_seek()</B
+> ֻ�ܺ�
+      <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+> �������ʹ�ã�����������
+      <A  HREF="function.mysql-unbuffered-query.html"  ><B  CLASS="function" >mysql_unbuffered_query()</B
+></A
+>��
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65324" ></A
+><P  ><B  >���� 1. MySQL ���ݼ�������</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_pconnect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_select_db</font><font  color="#007700">(</font><font  color="#DD0000">"samp_db"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not select database: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$query </font><font  color="#007700">= </font><font  color="#DD0000">"SELECT last_name, first_name FROM friends"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">mysql_query</font><font  color="#007700">(</font><font  color="#0000BB">$query</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Query failed: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* fetch rows in reverse order */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">mysql_num_rows</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">) - </font><font  color="#0000BB">1</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&gt;= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">--) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">mysql_data_seek</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">, </font><font  color="#0000BB">$i</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Cannot seek to row $i: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">() . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!(</font><font  color="#0000BB">$row </font><font  color="#007700">= </font><font  color="#0000BB">mysql_fetch_object</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)))<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$row-&gt;last_name $row-&gt;first_name&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     �μ� <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+> ��
+     <A  HREF="function.mysql-num-rows.html"  ><B  CLASS="function" >mysql_num_rows()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-create-db.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-db-name.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_create_db</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_db_name</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.mysql-data-seek-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">本扩展自 PHP 5.5.0
-起已废弃，并在将来会被移除。应使用 <a href="book.mysqli.html" class="link">MySQLi</a> 
-或 <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> 扩展来替换之。参见
-<a href="mysqlinfo.api.choosing.html" class="link">MySQL：选择 API</a> 指南以及<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">相关 FAQ</a> 以获取更多信息。用以替代本函数的有：</p>
-   <p class="para">
-    <ul class="simplelist">
-     <li class="member"><span class="function"><a href="mysqli-result.data-seek.html" class="function">mysqli_data_seek()</a></span></li>
-     <li class="member"><strong><code>PDO::FETCH_ORI_ABS</code></strong></li>
-    </ul>
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>mysql_data_seek()</strong></span> 只能和
-    <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span> 结合起来使用，而不能用于
-    <span class="function"><a href="function.mysql-unbuffered-query.html" class="function">mysql_unbuffered_query()</a></span>。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mysql-data-seek-seealso"> 
-  <h3 class="title">参见</h3> 
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mysql-query.html" class="function" rel="rdfs-seeAlso">mysql_query()</a> - 发送一条 MySQL 查询</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-num-rows.html" class="function" rel="rdfs-seeAlso">mysql_num_rows()</a> - 取得结果集中行的数目</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-fetch-row.html" class="function" rel="rdfs-seeAlso">mysql_fetch_row()</a> - 从结果集中取得一行作为枚举数组</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-fetch-assoc.html" class="function" rel="rdfs-seeAlso">mysql_fetch_assoc()</a> - 从结果集中取得一行作为关联数组</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-fetch-array.html" class="function" rel="rdfs-seeAlso">mysql_fetch_array()</a> - 从结果集中取得一行作为关联数组，或数字数组，或二者兼有</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-fetch-object.html" class="function" rel="rdfs-seeAlso">mysql_fetch_object()</a> - 从结果集中取得一行作为对象</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-create-db.html">mysql_create_db</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-db-name.html">mysql_db_name</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

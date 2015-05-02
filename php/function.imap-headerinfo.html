@@ -1,322 +1,139 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Read the header of the message</title>
+<HTML  ><HEAD  ><TITLE  >imap_headerinfo</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_header" HREF="function.imap-header.html"><LINK  REL="NEXT" TITLE="imap_headers" HREF="function.imap-headers.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-header.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-headers.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-headerinfo" ></A
+>imap_headerinfo</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN42568" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imap_headerinfo&nbsp;--&nbsp;Read the header of the message</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN42571" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >imap_headerinfo</B
+> ( resource imap_stream, int msg_number [, int fromlength [, int subjectlength [, string defaulthost]]])<BR  ></BR
+><P  >&#13;     This function returns an object of various header elements.
+    </P
+><P  >  
+     <DIV  CLASS="informalexample" ><A  NAME="AEN42593" ></A
+><P  ></P
+><P  CLASS="literallayout" ><br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remail,&nbsp;date,&nbsp;Date,&nbsp;subject,&nbsp;Subject,&nbsp;in_reply_to,&nbsp;message_id,<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newsgroups,&nbsp;followup_to,&nbsp;references<br >
+<br >
+message&nbsp;flags:<br >
+&nbsp;&nbsp;&nbsp;Recent&nbsp;-&nbsp;&nbsp;'R'&nbsp;if&nbsp;recent&nbsp;and&nbsp;seen,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'N'&nbsp;if&nbsp;recent&nbsp;and&nbsp;not&nbsp;seen,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;if&nbsp;not&nbsp;recent<br >
+&nbsp;&nbsp;&nbsp;Unseen&nbsp;-&nbsp;&nbsp;'U'&nbsp;if&nbsp;not&nbsp;seen&nbsp;AND&nbsp;not&nbsp;recent,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;if&nbsp;seen&nbsp;OR&nbsp;not&nbsp;seen&nbsp;and&nbsp;recent<br >
+&nbsp;&nbsp;&nbsp;Answered&nbsp;-'A'&nbsp;if&nbsp;answered,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;if&nbsp;unanswered<br >
+&nbsp;&nbsp;&nbsp;Deleted&nbsp;-&nbsp;'D'&nbsp;if&nbsp;deleted,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;if&nbsp;not&nbsp;deleted<br >
+&nbsp;&nbsp;&nbsp;Draft&nbsp;-&nbsp;&nbsp;&nbsp;'X'&nbsp;if&nbsp;draft,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;if&nbsp;not&nbsp;draft<br >
+&nbsp;&nbsp;&nbsp;Flagged&nbsp;-&nbsp;'F'&nbsp;if&nbsp;flagged,&nbsp;<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;'&nbsp;if&nbsp;not&nbsp;flagged<br >
+<br >
+NOTE&nbsp;that&nbsp;the&nbsp;Recent/Unseen&nbsp;behavior&nbsp;is&nbsp;a&nbsp;little&nbsp;odd.&nbsp;If&nbsp;you&nbsp;want&nbsp;to<br >
+know&nbsp;if&nbsp;a&nbsp;message&nbsp;is&nbsp;Unseen,&nbsp;you&nbsp;must&nbsp;check&nbsp;for<br >
+<br >
+Unseen&nbsp;==&nbsp;'U'&nbsp;||&nbsp;Recent&nbsp;==&nbsp;'N'<br >
+<br >
+toaddress&nbsp;(full&nbsp;to:&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+<br >
+to[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;To&nbsp;line,&nbsp;containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+fromaddress&nbsp;(full&nbsp;from:&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+<br >
+from[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;From&nbsp;line,&nbsp;containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+ccaddress&nbsp;(full&nbsp;cc:&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+cc[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;Cc&nbsp;line,&nbsp;containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+bccaddress&nbsp;(full&nbsp;bcc&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+bcc[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;Bcc&nbsp;line,&nbsp;containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+reply_toaddress&nbsp;(full&nbsp;reply_to:&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+reply_to[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;Reply_to&nbsp;line,<br >
+containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+senderaddress&nbsp;(full&nbsp;sender:&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+sender[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;sender&nbsp;line,&nbsp;containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+return_path&nbsp;(full&nbsp;return-path:&nbsp;line,&nbsp;up&nbsp;to&nbsp;1024&nbsp;characters)<br >
+return_path[]&nbsp;(returns&nbsp;an&nbsp;array&nbsp;of&nbsp;objects&nbsp;from&nbsp;the&nbsp;return_path&nbsp;line,<br >
+containing):<br >
+&nbsp;&nbsp;&nbsp;personal<br >
+&nbsp;&nbsp;&nbsp;adl<br >
+&nbsp;&nbsp;&nbsp;mailbox<br >
+&nbsp;&nbsp;&nbsp;host<br >
+<br >
+udate&nbsp;(mail&nbsp;message&nbsp;date&nbsp;in&nbsp;unix&nbsp;time)<br >
+<br >
+fetchfrom&nbsp;(from&nbsp;line&nbsp;formatted&nbsp;to&nbsp;fit&nbsp;<TT  CLASS="parameter" ><I  >fromlength</I
+></TT
+>&nbsp;<br >
+characters)<br >
+<br >
+fetchsubject&nbsp;(subject&nbsp;line&nbsp;formatted&nbsp;to&nbsp;fit&nbsp;<TT  CLASS="parameter" ><I  >subjectlength</I
+></TT
+>&nbsp;characters)<br >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P
+><P  ></P
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-header.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-headers.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_header</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_headers</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-header.html">imap_header</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-headers.html">imap_headers</a></div>
- <div class="up"><a href="ref.imap.html">IMAP ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-headerinfo" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_headerinfo</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_headerinfo</span> &mdash; <span class="dc-title">Read the header of the message</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-headerinfo-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>imap_headerinfo</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$msg_number</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$fromlength</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$subjectlength</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$defaulthost</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   Gets information about the given message number by reading its headers.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-headerinfo-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">Áî± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> ËøîÂõûÁöÑ IMAP ÊµÅ„ÄÇ</p></dd>
-
-    
-     <dt>
-<code class="parameter">msg_number</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The message number
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">fromlength</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Number of characters for the <em>fetchfrom</em> property.
-       Must be greater than or equal to zero.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">subjectlength</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Number of characters for the <em>fetchsubject</em> property
-       Must be greater than or equal to zero.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">defaulthost</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-headerinfo-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns the information in an object with following properties:
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      toaddress - full to: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      to - an array of objects from the To: line, with the following 
-      properties: <em>personal</em>, <em>adl</em>,
-      <em>mailbox</em>, and <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      fromaddress - full from: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      from - an array of objects from the From: line, with the following 
-      properties: <em>personal</em>, <em>adl</em>,
-      <em>mailbox</em>, and <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      ccaddress - full cc: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      cc - an array of objects from the Cc: line, with the following 
-      properties: <em>personal</em>, <em>adl</em>,
-      <em>mailbox</em>, and <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      bccaddress - full bcc: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      bcc - an array of objects from the Bcc: line, with the following 
-      properties: <em>personal</em>, <em>adl</em>,
-      <em>mailbox</em>, and <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      reply_toaddress - full Reply-To: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      reply_to - an array of objects from the Reply-To: line, with the following
-      properties: <em>personal</em>, <em>adl</em>,
-      <em>mailbox</em>, and <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      senderaddress - full sender: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      sender - an array of objects from the Sender: line, with the following 
-      properties: <em>personal</em>, <em>adl</em>,
-      <em>mailbox</em>, and <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      return_pathaddress - full Return-Path: line, up to 1024 characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      return_path - an array of objects from the Return-Path: line, with the
-      following properties: <em>personal</em>, 
-      <em>adl</em>, <em>mailbox</em>, and 
-      <em>host</em>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      remail - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      date - The message date as found in its headers
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Date - Same as date
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      subject - The message subject
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Subject - Same as subject 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      in_reply_to - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      message_id - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      newsgroups - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      followup_to - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      references - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Recent - <em>R</em> if recent and seen, <em>N</em>
-      if recent and not seen, &#039; &#039; if not recent.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Unseen - <em>U</em> if not seen AND not recent, &#039; &#039; if seen
-      OR not seen and recent
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Flagged - <em>F</em> if flagged, &#039; &#039; if not flagged
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Answered - <em>A</em> if answered, &#039; &#039; if unanswered
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Deleted - <em>D</em> if deleted, &#039; &#039; if not deleted
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Draft - <em>X</em> if draft, &#039; &#039; if not draft
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Msgno - The message number
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      MailDate - 
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      Size - The message size
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      udate - mail message date in Unix time
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      fetchfrom - from line formatted to fit <code class="parameter">fromlength</code>
-      characters
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      fetchsubject - subject line formatted to fit 
-      <code class="parameter">subjectlength</code> characters
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imap-headerinfo-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imap-fetch-overview.html" class="function" rel="rdfs-seeAlso">imap_fetch_overview()</a> - Read an overview of the information in the headers of the given message</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-header.html">imap_header</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-headers.html">imap_headers</a></div>
- <div class="up"><a href="ref.imap.html">IMAP ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

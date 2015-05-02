@@ -1,264 +1,121 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»ç»“æœé›†ä¸­å–å¾—åˆ—ä¿¡æ¯å¹¶ä½œä¸ºå¯¹è±¡è¿”å›</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-fetch-assoc.html">mysql_fetch_assoc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-fetch-lengths.html">mysql_fetch_lengths</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-fetch-field" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_fetch_field</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_fetch_field</span> &mdash; <span class="dc-title">
-     ä»ç»“æœé›†ä¸­å–å¾—åˆ—ä¿¡æ¯å¹¶ä½œä¸ºå¯¹è±¡è¿”å›
-    </span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.mysql-fetch-field-description">
-  <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">object</span> <span class="methodname"><strong>mysql_fetch_field</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_offset</code></span>
-     ] )</div>
-
-    <p class="para rdfs-comment">
-     è¿”å›ä¸€ä¸ªåŒ…å«å­—æ®µä¿¡æ¯çš„å¯¹è±¡ã€‚
-    </p>
-    <p class="para">
-     <span class="function"><strong>mysql_fetch_field()</strong></span>
-     å¯ä»¥ç”¨æ¥ä»æŸä¸ªæŸ¥è¯¢ç»“æœä¸­å–å¾—å­—æ®µçš„ä¿¡æ¯ã€‚å¦‚æœæ²¡æœ‰æŒ‡å®šå­—æ®µåç§»é‡ï¼Œåˆ™ä¸‹ä¸€ä¸ªå°šæœªè¢«
-     <span class="function"><strong>mysql_fetch_field()</strong></span> å–å¾—çš„å­—æ®µè¢«æå–ã€‚
-    </p>
-    <p class="para">
-     å¯¹è±¡çš„å±æ€§ä¸ºï¼š
-     <ul class="itemizedlist">
-      <li class="listitem">
-       <span class="simpara">
-        name - åˆ—å
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        table - è¯¥åˆ—æ‰€åœ¨çš„è¡¨å
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        max_length - è¯¥åˆ—æœ€å¤§é•¿åº¦
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        not_null - 1ï¼Œå¦‚æœè¯¥åˆ—ä¸èƒ½ä¸º <strong><code>NULL</code></strong>
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        primary_key - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯ primary key
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        unique_key - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯ unique key
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        multiple_key - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯ non-unique key
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        numeric - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯ numeric
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        blob - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯ BLOB
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        type - è¯¥åˆ—çš„ç±»å‹
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        unsigned - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯æ— ç¬¦å·æ•°
-       </span>
-      </li>
-      <li class="listitem">
-       <span class="simpara">
-        zerofill - 1ï¼Œå¦‚æœè¯¥åˆ—æ˜¯ zero-filled
-       </span>
-      </li>
-     </ul>
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°è¿”å›çš„å­—æ®µå<em class="emphasis">å¤§å°å†™æ•æ„Ÿ</em>ã€‚</span></p></blockquote>
-    <p class="para">
-     <div class="example" id="example-1709">
-      <p><strong>Example #1 <span class="function"><strong>mysql_fetch_field()</strong></span></strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost:3306'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">"database"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;table"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Query&nbsp;failed:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #FF8000">/*&nbsp;get&nbsp;column&nbsp;metadata&nbsp;*/<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">mysql_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Information&nbsp;for&nbsp;column&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">:&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_fetch_field</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$meta</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"No&nbsp;information&nbsp;available&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;pre&gt;<br />blob:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">blob</span><span style="color: #DD0000"><br />max_length:&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">max_length</span><span style="color: #DD0000"><br />multiple_key:&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">multiple_key</span><span style="color: #DD0000"><br />name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #DD0000"><br />not_null:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">not_null</span><span style="color: #DD0000"><br />numeric:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">numeric</span><span style="color: #DD0000"><br />primary_key:&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">primary_key</span><span style="color: #DD0000"><br />table:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table</span><span style="color: #DD0000"><br />type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">type</span><span style="color: #DD0000"><br />unique_key:&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unique_key</span><span style="color: #DD0000"><br />unsigned:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unsigned</span><span style="color: #DD0000"><br />zerofill:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">zerofill</span><span style="color: #DD0000"><br />&lt;/pre&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;<br />}<br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.mysql-field-seek.html" class="function">mysql_field_seek()</a></span>ã€‚
-    </p>
-   </div>
+<HTML  ><HEAD  ><TITLE  >mysql_fetch_field</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_fetch_assoc" HREF="function.mysql-fetch-assoc.html"><LINK  REL="NEXT" TITLE="mysql_fetch_lengths" HREF="function.mysql-fetch-lengths.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-fetch-assoc.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-fetch-lengths.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-fetch-field" ></A
+>mysql_fetch_field</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65618" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_fetch_field&nbsp;--&nbsp;
+     ´Ó½á¹û¼¯ÖĞÈ¡µÃÁĞĞÅÏ¢²¢×÷Îª¶ÔÏó·µ»Ø
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65621" ></A
+><H2  >ËµÃ÷</H2
+>object <B  CLASS="methodname" >mysql_fetch_field</B
+> ( resource result [, int field_offset])<BR  ></BR
+><P  >&#13;     ·µ»ØÒ»¸ö°üº¬×Ö¶ÎĞÅÏ¢µÄ¶ÔÏó¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >mysql_fetch_field()</B
+>
+     ¿ÉÒÔÓÃÀ´´ÓÄ³¸ö²éÑ¯½á¹ûÖĞÈ¡µÃ×Ö¶ÎµÄĞÅÏ¢¡£Èç¹ûÃ»ÓĞÖ¸¶¨×Ö¶ÎÆ«ÒÆÁ¿£¬ÔòÏÂÒ»¸öÉĞÎ´±»
+     <B  CLASS="function" >mysql_fetch_field()</B
+> È¡µÃµÄ×Ö¶Î±»ÌáÈ¡¡£
+    </P
+><P  >&#13;     ¶ÔÏóµÄÊôĞÔÎª£º
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        name - ÁĞÃû
+       </P
+></LI
+><LI  ><P  >&#13;        table - ¸ÃÁĞËùÔÚµÄ±íÃû
+       </P
+></LI
+><LI  ><P  >&#13;        max_length - ¸ÃÁĞ×î´ó³¤¶È
+       </P
+></LI
+><LI  ><P  >&#13;        not_null - 1£¬Èç¹û¸ÃÁĞ²»ÄÜÎª <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>
+       </P
+></LI
+><LI  ><P  >&#13;        primary_key - 1£¬Èç¹û¸ÃÁĞÊÇ primary key
+       </P
+></LI
+><LI  ><P  >&#13;        unique_key - 1£¬Èç¹û¸ÃÁĞÊÇ unique key
+       </P
+></LI
+><LI  ><P  >&#13;        multiple_key - 1£¬Èç¹û¸ÃÁĞÊÇ non-unique key
+       </P
+></LI
+><LI  ><P  >&#13;        numeric - 1£¬Èç¹û¸ÃÁĞÊÇ numeric
+       </P
+></LI
+><LI  ><P  >&#13;        blob - 1£¬Èç¹û¸ÃÁĞÊÇ BLOB
+       </P
+></LI
+><LI  ><P  >&#13;        type - ¸ÃÁĞµÄÀàĞÍ
+       </P
+></LI
+><LI  ><P  >&#13;        unsigned - 1£¬Èç¹û¸ÃÁĞÊÇÎŞ·ûºÅÊı
+       </P
+></LI
+><LI  ><P  >&#13;        zerofill - 1£¬Èç¹û¸ÃÁĞÊÇ zero-filled
+       </P
+></LI
+></UL
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>¸Ãº¯Êı·µ»ØµÄ×Ö¶ÎÃûÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >´óĞ¡Ğ´Ãô¸ĞµÄ</I
+></SPAN
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65667" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mysql_fetch_field()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">'localhost:3306'</font><font  color="#007700">, </font><font  color="#0000BB">$user</font><font  color="#007700">, </font><font  color="#0000BB">$password</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /></font><font  color="#0000BB">mysql_select_db</font><font  color="#007700">(</font><font  color="#DD0000">"database"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">mysql_query</font><font  color="#007700">(</font><font  color="#DD0000">"select * from table"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Query failed: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  /></font><font  color="#FF8000">/* get column metadata */<br  /></font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />while (</font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">mysql_num_fields</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Information for column $i:&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$meta </font><font  color="#007700">= </font><font  color="#0000BB">mysql_fetch_field</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">$meta</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"No information available&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;pre&gt;<br  />blob:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;blob<br  />max_length:&nbsp;&nbsp;&nbsp;$meta-&gt;max_length<br  />multiple_key: $meta-&gt;multiple_key<br  />name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;name<br  />not_null:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;not_null<br  />numeric:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;numeric<br  />primary_key:&nbsp;&nbsp;$meta-&gt;primary_key<br  />table:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;table<br  />type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;type<br  />unique_key:&nbsp;&nbsp;&nbsp;$meta-&gt;unique_key<br  />unsigned:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;unsigned<br  />zerofill:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;zerofill<br  />&lt;/pre&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$i</font><font  color="#007700">++;<br  />}<br  /></font><font  color="#0000BB">mysql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.mysql-field-seek.html"  ><B  CLASS="function" >mysql_field_seek()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-fetch-assoc.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-fetch-lengths.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_fetch_assoc</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_fetch_lengths</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 parameters" id="refsect1-function.mysql-fetch-field-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-result</code></dt>
-<dd>
-<p class="para"><span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>
-å‹çš„ç»“æœé›†ã€‚æ­¤ç»“æœé›†æ¥è‡ªå¯¹ <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>
-çš„è°ƒç”¨ã€‚</p></dd>
-
-    
-     <dt>
-<code class="parameter">field_offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The numerical field offset. If the field offset is not specified, the 
-       next field that was not yet retrieved by this function is retrieved. 
-       The <code class="parameter">field_offset</code> starts at <em>0</em>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mysql-fetch-field-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an <span class="type"><a href="language.types.object.html" class="type object">object</a></span> containing field information. The properties 
-   of the object are:
-  </p>
-  <p class="para">
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      name - column name
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      table - name of the table the column belongs to
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      max_length - maximum length of the column
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      not_null - 1 if the column cannot be <strong><code>NULL</code></strong>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      primary_key - 1 if the column is a primary key
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      unique_key - 1 if the column is a unique key
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      multiple_key - 1 if the column is a non-unique key
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      numeric - 1 if the column is numeric
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      blob - 1 if the column is a BLOB
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      type - the type of the column
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      unsigned - 1 if the column is unsigned
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      zerofill - 1 if the column is zero-filled
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mysql-fetch-field-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1710">
-    <p><strong>Example #2 <span class="function"><strong>mysql_fetch_field()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'database'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'select&nbsp;*&nbsp;from&nbsp;table'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Query&nbsp;failed:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br /></span><span style="color: #FF8000">/*&nbsp;get&nbsp;column&nbsp;metadata&nbsp;*/<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">mysql_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Information&nbsp;for&nbsp;column&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">:&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_fetch_field</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$meta</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"No&nbsp;information&nbsp;available&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;pre&gt;<br />blob:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">blob</span><span style="color: #DD0000"><br />max_length:&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">max_length</span><span style="color: #DD0000"><br />multiple_key:&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">multiple_key</span><span style="color: #DD0000"><br />name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #DD0000"><br />not_null:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">not_null</span><span style="color: #DD0000"><br />numeric:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">numeric</span><span style="color: #DD0000"><br />primary_key:&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">primary_key</span><span style="color: #DD0000"><br />table:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table</span><span style="color: #DD0000"><br />type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">type</span><span style="color: #DD0000"><br />unique_key:&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unique_key</span><span style="color: #DD0000"><br />unsigned:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">unsigned</span><span style="color: #DD0000"><br />zerofill:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">zerofill</span><span style="color: #DD0000"><br />&lt;/pre&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;<br />}<br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.mysql-fetch-field-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°è¿”å›çš„å­—æ®µå<em class="emphasis">å¤§å°å†™æ•æ„Ÿ</em>ã€‚</span></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mysql-fetch-field-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mysql-field-seek.html" class="function" rel="rdfs-seeAlso">mysql_field_seek()</a> - å°†ç»“æœé›†ä¸­çš„æŒ‡é’ˆè®¾å®šä¸ºåˆ¶å®šçš„å­—æ®µåç§»é‡</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-fetch-assoc.html">mysql_fetch_assoc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-fetch-lengths.html">mysql_fetch_lengths</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

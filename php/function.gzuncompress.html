@@ -1,111 +1,73 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Uncompress a compressed string</title>
+<HTML  ><HEAD  ><TITLE  >gzuncompress</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Zlib Compression Functions" HREF="ref.zlib.html"><LINK  REL="PREVIOUS" TITLE="gztell" HREF="function.gztell.html"><LINK  REL="NEXT" TITLE="gzwrite" HREF="function.gzwrite.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.gztell.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.gzwrite.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.gzuncompress" ></A
+>gzuncompress</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN121449" ></A
+><P  >    (PHP 4 &#62;= 4.0.1)</P
+>gzuncompress&nbsp;--&nbsp;Uncompress a deflated string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN121452" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >gzuncompress</B
+> ( string data [, int length])<BR  ></BR
+><P  >   
+     This function takes <TT  CLASS="parameter" ><I  >data</I
+></TT
+> compressed by
+     <A  HREF="function.gzcompress.html"  ><B  CLASS="function" >gzcompress()</B
+></A
+> and returns the original
+     uncompressed data or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.  The function will return an
+     error if the uncompressed data is more than 32768 times the length
+     of the compressed input <TT  CLASS="parameter" ><I  >data</I
+></TT
+> or more than
+     the optional parameter <TT  CLASS="parameter" ><I  >length</I
+></TT
+>.
+    </P
+><P  >&#13;     See also <A  HREF="function.gzdeflate.html"  ><B  CLASS="function" >gzdeflate()</B
+></A
+>, 
+     <A  HREF="function.gzinflate.html"  ><B  CLASS="function" >gzinflate()</B
+></A
+>,
+     <A  HREF="function.gzcompress.html"  ><B  CLASS="function" >gzcompress()</B
+></A
+>,
+     <A  HREF="function.gzencode.html"  ><B  CLASS="function" >gzencode()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.gztell.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.gzwrite.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >gztell</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.zlib.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >gzwrite</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gztell.html">gztell</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gzwrite.html">gzwrite</a></div>
- <div class="up"><a href="ref.zlib.html">Zlib å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.gzuncompress" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">gzuncompress</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5)</p><p class="refpurpose"><span class="refname">gzuncompress</span> &mdash; <span class="dc-title">Uncompress a compressed string</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.gzuncompress-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>gzuncompress</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">   
-   This function uncompress a compressed string.  
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.gzuncompress-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The data compressed by <span class="function"><a href="function.gzcompress.html" class="function">gzcompress()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The maximum length of data to decode.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.gzuncompress-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   The original uncompressed data or <strong><code>FALSE</code></strong> on error.
-  </p>
-  <p class="para">
-   The function will return an error if the uncompressed data is more than
-   32768 times the length of the compressed input <code class="parameter">data</code> 
-   or more than the optional parameter <code class="parameter">length</code>.
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.gzuncompress-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-836">
-    <p><strong>Example #1 <span class="function"><strong>gzuncompress()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$compressed&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gzcompress</span><span style="color: #007700">(</span><span style="color: #DD0000">'Compress&nbsp;me'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">9</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$uncompressed&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gzuncompress</span><span style="color: #007700">(</span><span style="color: #0000BB">$compressed</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$uncompressed</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.gzuncompress-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.gzcompress.html" class="function" rel="rdfs-seeAlso">gzcompress()</a> - Compress a string</span></li>
-    <li class="member"><span class="function"><a href="function.gzinflate.html" class="function" rel="rdfs-seeAlso">gzinflate()</a> - Inflate a deflated string</span></li>
-    <li class="member"><span class="function"><a href="function.gzdeflate.html" class="function" rel="rdfs-seeAlso">gzdeflate()</a> - Deflate a string</span></li>
-    <li class="member"><span class="function"><a href="function.gzencode.html" class="function" rel="rdfs-seeAlso">gzencode()</a> - Create a gzip compressed string</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gztell.html">gztell</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gzwrite.html">gzwrite</a></div>
- <div class="up"><a href="ref.zlib.html">Zlib å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

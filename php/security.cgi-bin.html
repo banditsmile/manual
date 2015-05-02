@@ -1,34 +1,157 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»¥ CGI æ¨¡å¼å®‰è£…æ—¶</title>
+<HTML  ><HEAD  ><TITLE  >°²×°Îª CGI ³ÌÐò</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="°²È«" HREF="http://shouce.jb51.net/php/security.index.html"><LINK  REL="PREVIOUS" TITLE="°²È«" HREF="http://shouce.jb51.net/php/security.index.html"><LINK  REL="NEXT" TITLE="°²×°Îª Apache Ä£¿é" HREF="security.apache.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="http://shouce.jb51.net/php/security.index.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 15. °²È«</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="security.apache.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="security.cgi-bin" ></A
+>°²×°Îª CGI ³ÌÐò</H1
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.cgi-bin.attacks" ></A
+>¿ÉÄÜÊÜµ½µÄ¹¥»÷</H2
+><P  >&#13;	 Èç¹ûÄú²»Ï£Íû½« PHP ÒÔÄ£¿éµÄ·½Ê½¼¯³Éµ½·þÎñÆ÷Èí¼þ£¨ÀýÈç Apache£©ÖÐ£¬»òÕßÏ£Íû½« PHP ÓÃÓÚ²»Í¬µÄ CGI Íâ¿ÇÀ´½¨Á¢°²È«µÄ chroot ºÍ setuid ½Å±¾»·¾³£¬½« PHP ÓÃ×÷ <SPAN  CLASS="acronym" >CGI</SPAN
+> ³ÌÐòÊÇ°²×°Ê±µÄÒ»ÖÖÑ¡Ôñ¡£ÕâÑùµÄ°²×°Í¨³£¶¼ÐèÒª½«¿ÉÖ´ÐÐµÄ PHP ³ÌÐò·ÅÖÃµ½ cgi-bin Ä¿Â¼¡£CERT ¹ËÎÊ <A  href="http://www.cert.org/advisories/CA-1996-11.html"  TARGET="_top" >CA-96.11</A
+> µÄ½¨Òé·´¶Ô½«ÈÎºÎ½âÊÍÆ÷·ÅÈë cgi-bin Ä¿Â¼¡£¾¡¹Ü PHP µÄ¿ÉÖ´ÐÐ³ÌÐòÄÜ¹»±»ÓÃ×÷¶ÀÁ¢µÄ½âÊÍÆ÷£¬PHP µÄ°²È«»úÖÆÒ²ÄÜ·ÀÖ¹ÓÉÕâÑùµÄ°²×°Ëùµ¼ÖÂµÄ¿ÉÄÜµÄ¹¥»÷£º
+    </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;       ·ÃÎÊÏµÍ³ÎÄ¼þ£º<TT  CLASS="filename" >http://my.host/cgi-bin/php?/etc/passwd</TT
+>
+      </P
+><P  >&#13;	   ÔÚ URL ÖÐÎÊºÅ£¨?£©ºóÃæµÄ²éÑ¯ÐÅÏ¢½«±» CGI ½Ó¿Ú×÷ÎªÃüÁîÐÐ²ÎÊý´«¸ø½âÊÍÆ÷¡£Í¨³£Çé¿öÏÂ£¬½âÊÍÆ÷»á´ò¿ª²¢ÔËÐÐÓÉÃüÁîÐÐµÚÒ»¸ö²ÎÊýËùÖ¸Ã÷µÄÎÄ¼þ¡£
+      </P
+><P  >&#13;	   µ± PHP ÒÔ CGI ³ÌÐòµÄ·½Ê½±»¼¤»îÊ±£¬Ëü½«¾Ü¾ø½âÊÍ¸ÃÃüÁîÐÐ²ÎÊý¡£
+      </P
+></LI
+><LI  ><P  >&#13;	   ·ÃÎÊ·þÎñÆ÷ÉÏµÄÈÎºÎ WEB ÎÄµµ£º<TT  CLASS="filename" >http://my.host/cgi-bin/php/secret/doc.html</TT
+>
+      </P
+><P  >&#13;	   URL ÖÐ PHP ³ÌÐòÃû³ÆºóÃæµÄÂ·¾¶ÐÅÏ¢ <TT  CLASS="filename" >/secret/doc.html</TT
+> Ï°¹ßÉÏÊÇÓÃÀ´Ö¸Ã÷ÓÉ <SPAN  CLASS="acronym" >CGI</SPAN
+> ³ÌÐò´ò¿ª²¢½âÊÍµÄÎÄ¼þÃû¡£Í¨³£ WEB ·þÎñÆ÷»áÍ¨¹ýÒ»Ð©µÄÅäÖÃÑ¡Ïî£¨Apache: Action£©½«¶ÔÀàËÆÓÚ <TT  CLASS="filename" >http://my.host/secret/script.php</TT
+> ÎÄµµµÄÇëÇóÖØ¶¨Ïòµ½ PHP ½âÊÍÆ÷¡£WEB ·þÎñÆ÷ÏÈ¼ì²éÄ¿Â¼ <TT  CLASS="filename" >/secret</TT
+> µÄ·ÃÎÊÈ¨ÏÞ£¬È»ºóÔÙ½¨Á¢ÇëÇóµÄÖØ¶¨Ïò <TT  CLASS="filename" >http://my.host/cgi-bin/php/secret/script.php</TT
+>¡£µ«²»ÐÒµÄÊÇ£¬Èç¹ûÇëÇóÖ±½ÓÒÔÕâÖÖÐÎÊ½¸ø³ö£¬ÄÇÃ´ WEB ·þÎñÆ÷¾Í²»»áÖ´ÐÐ¶ÔÎÄ¼þ <TT  CLASS="filename" >/secret/script.php</TT
+> µÄ·ÃÎÊÈ¨ÏÞ¼ì²é£¬¶ø½ö½öÖ»¼ì²éÎÄ¼þ <TT  CLASS="filename" >/cgi-bin/php</TT
+> µÄ·ÃÎÊÈ¨ÏÞ¡£ÕâÑùÒ»À´£¬ÈÎºÎ¿ÉÒÔ·ÃÎÊ <TT  CLASS="filename" >/cgi-bin/php</TT
+> µÄÓÃ»§¶¼¿ÉÒÔ·ÃÎÊÈÎºÎ WEB ·þÎñÆ÷ÉÏÊÕµ½±£»¤µÄÎÄµµ¡£
+      </P
+><P  >&#13;	   ÔÚ PHP ÖÐ£¬±àÒëÊ±ÉèÖÃÑ¡Ïî <A  HREF="install.configure.html#install.configure.enable-force-cgi-redirect"  >--enable-force-cgi-redirect</A
+> ÒÔ¼°ÔËÐÐÊ±ÉèÖÃÑ¡Ïî <A  HREF="configuration.directives.html#ini.doc-root"  >doc_root</A
+> ºÍ <A  HREF="configuration.directives.html#ini.user-dir"  >user_dir</A
+> ÄÜ¹»ÓÃÀ´·ÀÖ¹ÕâÖÖ¹¥»÷£¬Èç¹û·þÎñ¶ËµÄÄ¿Â¼Ê÷´æÔÚÓÐ·ÃÎÊÏÞÖÆµÄÄ¿Â¼¡£ÒÔÏÂ½«ÏêÏ¸½âÊÍ¸÷ÖÖ²»Í¬µÄ×éºÏ¡£
+      </P
+></LI
+></UL
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.cgi-bin.default" ></A
+>·½·¨Ò»£º½ö¾Í¹«ÖÚÎÄ¼þÌá¹©·þÎñ</H2
+><P  >&#13;	 Èç¹ûÄúµÄ·þÎñÆ÷ÉÏÃ»ÓÐÈÎºÎ²»±»ÃÜÂë»òÕß»ùÓÚ IP ·ÃÎÊÏÞÖÆ¿ØÖÆµÄÄÚÈÝ£¬ÔòÕâÐ©Ñ¡ÏîÅäÖÃ¶ÔÄú²¢Ã»ÓÐ×÷ÓÃ¡£Èç¹ûÄúµÄ WEB ·þÎñÆ÷²»ÔÊÐíÄú½øÐÐÖØ¶¨Ïò£¬»òÕß·þÎñÆ÷ÎÞ·¨ºÍ PHP ³ÌÐòÍ¨ÐÅÒÔÊ¶±ð°²È«µÄÖØ¶¨ÏòÇëÇó£¬Äú¿ÉÒÔÔÚÔËÐÐÅäÖÃ½Å±¾µÄÊ±ºòÊ¹ÓÃ <A  HREF="install.configure.html#install.configure.enable-force-cgi-redirect"  >--enable-force-cgi-redirect</A
+> ²ÎÊý¡£Äú»¹ÐèÒªÈ·ÈÏÄúµÄ PHP ½Å±¾²»½ö½öÖ»ÒÀÀµÄ³Ò»ÖÖ·½·¨À´µ÷ÓÃ½Å±¾£¬²»¹ÜÊÇÖ±½Óµ÷ÓÃ <TT  CLASS="filename" >http://my.host/cgi-bin/php/dir/script.php</TT
+>£¬»¹ÊÇÖØ¶¨Ïòµ½ <TT  CLASS="filename" >http://my.host/dir/script.php</TT
+>¡£
+    </P
+><P  >&#13;	 ÔÚ Apache ÖÐÖØ¶¨Ïò¿ÉÒÔÊ¹ÓÃÑ¡Ïî AddHandler ºÍ Action À´ÅäÖÃ£¨Çë²Î¿¼ÏÂÎÄ£©¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.cgi-bin.force-redirect" ></A
+>·½·¨¶þ£ºÊ¹ÓÃ --enable-force-cgi-redirect ²ÎÊý</H2
+><P  >&#13;	 ¸Ã±àÒëÊ±²ÎÊý·ÀÖ¹ÈÎºÎÈËÍ¨¹ýÖ±½Ó·ÃÎÊÀàËÆÓÚ <TT  CLASS="filename" >http://my.host/cgi-bin/php/secretdir/script.php</TT
+> µÄ URL À´µ÷ÓÃ PHP¡£Ò²¾ÍÊÇËµ£¬Ö»ÓÐµ±½Å±¾»ùÓÚºÏ·¨µÄÖØ¶¨Ïò¹æÔò±»·ÃÎÊÊ±£¬PHP ²Å¶ÔËüÃÇ½øÐÐ½âÎö¡£
+    </P
+><P  >&#13;	 Í¨³£ Apache µÄÖØ¶¨ÏòÉèÖÃÊÇÍ¨¹ýÒÔÏÂÑ¡ÏîÍê³ÉµÄ£º
+    </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="apache-conf" >Action php-script /cgi-bin/php
+AddHandler php-script .php</PRE
+></TD
+></TR
+></TABLE
+><P  >&#13;	 ¸ÃÑ¡Ïî½ö½öÔÚ Apache WEB ·þÎñÆ÷ÏÂ×ö¹ý²âÊÔ£¬²¢ÇÒÒÀÀµ Apache Îª±»ÖØ¶¨ÏòµÄÇëÇóÉèÖÃ·Ç±ê×¼µÄ CGI »·¾³±äÁ¿ <TT  CLASS="envar" >REDIRECT_STATUS</TT
+>¡£Èç¹ûÄúµÄ WEB ·þÎñÆ÷²»Ö§³ÖÈÎºÎ·½Ê½ÒÔ»ñÏ¤ÇëÇóÊÇÖ±½ÓµÄ»¹ÊÇ±»ÖØ¶¨ÏòµÄ£¬Äú½«ÎÞ·¨Ê¹ÓÃ¸ÃÑ¡Ïî¡£Äú±ØÐëÊ¹ÓÃ±¾ÎÄÌá¼°µÄÆäËüÔËÐÐ CGI °æ±¾µÄ·½·¨¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.cgi-bin.doc-root" ></A
+>·½·¨Èý£ºÉèÖÃ doc_root »òÕß user_dir</H2
+><P  >&#13;	 ÔÚ WEB ·þÎñÆ÷µÄÎÄµµÄ¿Â¼ÖÐ·ÅÖÃÖîÈç½Å±¾ºÍ¿ÉÖ´ÐÐ³ÌÐòµÈÖ÷¶¯µÄÄÚÈÝ£¬³£³£±»ÈÏÎªÊÇÒ»ÖÖ²»°²È«µÄ×ö·¨¡£Èç¹ûÓÉÓÚÒ»Ð©ÉèÖÃµÄ´íÎó£¬ÕâÐ©½Å±¾Ã»ÓÐ±»Ö´ÐÐ¶øÏñÍ¨³£µÄ HTML ÎÄµµÒ»Ñù±»ÏÔÊ¾£¬Õâ½«¿ÉÄÜµ¼ÖÂÖªÊ¶²úÈ¨»òÕßÖîÈçÃÜÂëµÈ°²È«ÐÅÏ¢µÄÐ¹Â©¡£Òò´ËºÜ¶àÏµÍ³¹ÜÀíÔ±ÄþÔ¸Îª½Å±¾½¨Á¢ÁíÍâÒ»¸öÖ»ÄÜ±» PHP CGI ·ÃÎÊµÄÄ¿Â¼½á¹¹£¬Ê¹µÃËüÃÇÄÜ¹»±»ÕýÈ·½âÎö£¬ÓÖ²»»á³öÏÖÉÏÊöµÄÎÊÌâ¡£
+    </P
+><P  >&#13;	 Í¬Ñù£¬Èç¹ûÈçÇ°ÃæÕÂ½ÚÃèÊöµÄÈ·±£ÇëÇó²»±»ÖØ¶¨ÏòµÄ·½·¨ÎÞÐ§£¬ÄÇÃ´ÎÒÃÇ¾ÍÓÐ±ØÒª½¨Á¢Ò»¸öÇø±ðÓÚ WEB ÎÄµµ¸ùÄ¿Â¼½Å±¾µÄ doc_root Ä¿Â¼¡£
+    </P
+><P  >&#13;	 Äú¿ÉÒÔÍ¨¹ý<A  HREF="configuration.html#configuration.file"  >ÅäÖÃÎÄ¼þ</A
+>ÖÐµÄÑ¡Ïî <A  HREF="configuration.directives.html#ini.doc-root"  >doc_root</A
+> »òÕß»·¾³±äÁ¿ <TT  CLASS="envar" >PHP_DOCUMENT_ROOT</TT
+> À´ÉèÖÃ PHP ½Å±¾ÎÄµµµÄ¸ùÄ¿Â¼¡£Èç¹û¸ÃÑ¡Ïî±»ÉèÖÃ£¬ÄÇÃ´ PHP µÄ CGI °æ±¾½«×ÜÊÇÖ»Í¨¹ý <TT  CLASS="parameter" ><I  >doc_root</I
+></TT
+> ºÍÇëÇóµÄÂ·¾¶ÐÅÏ¢À´´ò¿ªÎÄµµ£¬ÕâÑùÄú¾Í¿ÉÒÔÈ·±£½Å±¾²»»áÔÚ¸ÃÄ¿Â¼ÒÔÍâÖ´ÐÐ£¨³ýÁËÒÔÏÂ½«Ìá¼°µÄ <TT  CLASS="parameter" ><I  >user_dir</I
+></TT
+> Ä¿Â¼£©¡£
+    </P
+><P  >&#13;	 ÁíÍâÒ»¸öÕâÀï¿ÉÄÜÓÃµÃµ½µÄÑ¡ÏîÊÇ <A  HREF="configuration.directives.html#ini.user-dir"  >user_dir</A
+>¡£Èç¹û user_dir Ã»ÓÐ±»ÉèÖÃ£¬ÄÇÃ´Î¨Ò»¿ØÖÆ±»´ò¿ªµÄÎÄ¼þÃûµÄÑ¡Ïî¾ÍÊÇ <TT  CLASS="parameter" ><I  >doc_root</I
+></TT
+>¡£´ò¿ªÒ»¸öÀàËÆÓÚ <TT  CLASS="filename" >http://my.host/~user/doc.php</TT
+> ½«²»»áµ¼ÖÂ´ò¿ªÒ»¸öÓÃ»§Ö÷Ä¿Â¼ÖÐµÄÎÄ¼þ£¬¶øÊÇ doc_root ÏÂÒ»¸öÃûÎª <TT  CLASS="filename" >~user/doc.php</TT
+> µÄÎÄ¼þ£¨¼´Ò»¸öÒÔ²¨ÀËºÅ[<TT  CLASS="literal" >~</TT
+>]¿ªÍ·µÄÄ¿Â¼Ãû£©¡£
+    </P
+><P  >&#13;	 Èç¹û user_dir ±»ÉèÖÃÎª£¬ÀýÈç£¬ <TT  CLASS="filename" >public_php</TT
+>£¬ÄÇÃ´ÀàËÆÓÚ <TT  CLASS="filename" >http://my.host/~user/doc.php</TT
+> µØÇëÇó½«´ò¿ªÒ»¸ö¸ÃÓÃ»§Ö÷Ä¿Â¼ÏÂÃûÎª <TT  CLASS="filename" >public_php</TT
+> µÄÄ¿Â¼ÏÂµÄÃûÎª <TT  CLASS="filename" >doc.php</TT
+> µÄÎÄ¼þ¡£Èç¹ûÓÃ»§µÄÖ÷Ä¿Â¼ÊÇ <TT  CLASS="filename" >/home/user</TT
+>£¬ÄÇÃ´±»Ö´ÐÐµÄÎÄ¼þÊÇ <TT  CLASS="filename" >/home/user/public_php/doc.php</TT
+>¡£
+    </P
+><P  >&#13;	 <TT  CLASS="parameter" ><I  >user_dir</I
+></TT
+> À©Õ¹²¢²»ÒÀÀµÓÚ <TT  CLASS="parameter" ><I  >doc_root</I
+></TT
+> Ñ¡ÏîµÄÉè¶¨£¬Òò´ËÄú¿ÉÒÔ¶ÀÁ¢¿ØÖÆÎÄµµ¸ùÄ¿Â¼ºÍÓÃ»§·ÃÎÊÄ¿Â¼¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="security.cgi-bin.shell" ></A
+>·½·¨ËÄ£ºÔÚ WEB Ä¿Â¼Ê÷ÒÔÍâ½øÐÐ PHP ½âÎö</H2
+><P  >&#13;	 Ò»ÖÖ°²È«ÐÔ·Ç³£¸ßµÄ·½·¨ÊÇ°Ñ PHP ½âÎö³ÌÐò·ÅÖÃµ½ WEB ÎÄ¼þÄ¿Â¼Ê÷ÒÔÍâµÄÄ³¸öµØ·½£¬ÀýÈç£¬·ÅÖÃµ½ <TT  CLASS="filename" >/usr/local/bin</TT
+>¡£ÕâÖÖ×ö·¨Î¨Ò»µÄ±×²¡¾ÍÊÇÄúÏÖÔÚÐèÒªÔÚËùÓÐº¬ÓÐ PHP ±ê¼Ç·ûÎÄ¼þµÄµÚÒ»ÐÐÌí¼ÓÀàËÆÓÚÒÔÏÂµÄÄÚÈÝ£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN6103" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >#!/usr/local/bin/php</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     ÄúÐèÒªÊ¹µÃÕâÐ©ÎÄ¼þ³ÉÎª¿ÉÖ´ÐÐÎÄ¼þ¡£Ò²¾ÍÊÇËµ£¬Ïñ¶Ô´ýÈÎºÎÆäËü CGI ½Å±¾Ò»ÑùÀ´¶Ô´ýËüÃÇ¡£ÕâÐ© CGI ½Å±¾¿ÉÄÜÊÇÓÃ Perl¡¢sh »òÕßÈÎºÎÆäËüÊ¹ÓÃµÄ <TT  CLASS="literal" >#!</TT
+> shell-escape »úÖÆÀ´Æô¶¯ËüÃÇ×ÔÉíµÄ½Å±¾ÓïÑÔÀ´±àÐ´µÄ¡£
+    </P
+><P  >&#13;	 ÒªÊ¹Õâ¸ö·½·¨ÖÐ PHP ÄÜ¹»ÕýÈ·´¦Àí <TT  CLASS="envar" >PATH_INFO</TT
+> ºÍ <TT  CLASS="envar" >PATH_TRANSLATED</TT
+> ÐÅÏ¢£¬ÔÚ±àÒë PHP ½âÎöÆ÷Ê±±ØÐëÊ¹ÓÃÅäÖÃ²ÎÊý <A  HREF="install.configure.html#install.configure.enable-discard-path"  >--enable-discard-path</A
+>¡£
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/security.index.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æðµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="security.apache.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >°²È«</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/security.index.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >°²×°Îª Apache Ä£¿é</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.general.html">æ€»åˆ™</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.cgi-bin.attacks.html">å¯èƒ½å—åˆ°çš„æ”»å‡»</a></div>
- <div class="up"><a href="security.html">å®‰å…¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="security.cgi-bin" class="chapter">
-   <h1>ä»¥ CGI æ¨¡å¼å®‰è£…æ—¶</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="security.cgi-bin.attacks.html">å¯èƒ½å—åˆ°çš„æ”»å‡»</a></li><li><a href="security.cgi-bin.default.html">æƒ…å½¢ä¸€ï¼šåªè¿è¡Œå…¬å¼€çš„æ–‡ä»¶</a></li><li><a href="security.cgi-bin.force-redirect.html">æƒ…å½¢äºŒï¼šä½¿ç”¨ --enable-force-cgi-redirect é€‰é¡¹</a></li><li><a href="security.cgi-bin.doc-root.html">æƒ…å½¢ä¸‰ï¼šè®¾ç½® doc_root æˆ– user_dir</a></li><li><a href="security.cgi-bin.shell.html">æƒ…å½¢å››ï¼šPHP è§£é‡Šå™¨æ”¾åœ¨ web ç›®å½•ä»¥å¤–</a></li></ul>
 
-
-   
-
-   
-
-   
-
-   
-
-   
-
-  </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="security.general.html">æ€»åˆ™</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="security.cgi-bin.attacks.html">å¯èƒ½å—åˆ°çš„æ”»å‡»</a></div>
- <div class="up"><a href="security.html">å®‰å…¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

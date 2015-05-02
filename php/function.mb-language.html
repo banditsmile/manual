@@ -1,84 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>设置/获取当前的语言</title>
+<HTML  ><HEAD  ><TITLE  >mb_language</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Multi-Byte String Functions" HREF="ref.mbstring.html"><LINK  REL="PREVIOUS" TITLE="mb_internal_encoding" HREF="function.mb-internal-encoding.html"><LINK  REL="NEXT" TITLE="mb_output_handler" HREF="function.mb-output-handler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mb-internal-encoding.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mb-output-handler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mb-language" ></A
+>mb_language</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN51978" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>mb_language&nbsp;--&nbsp;
+     Set/Get current language
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN51981" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mb_language</B
+> ( [string language])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mb_language()</B
+> sets language. If
+     <TT  CLASS="parameter" ><I  >language</I
+></TT
+> is omitted, it returns current
+     language as string.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >language</I
+></TT
+> setting is used for encoding
+     e-mail messages. Valid languages are "Japanese",
+     "ja","English","en" and "uni"
+     (UTF-8). <A  HREF="function.mb-send-mail.html"  ><B  CLASS="function" >mb_send_mail()</B
+></A
+> uses this setting to
+     encode e-mail.
+    </P
+><P  > Language and its setting is ISO-2022-JP/Base64 for
+    Japanese, UTF-8/Base64 for uni, ISO-8859-1/quoted printable for
+    English.
+    </P
+><P  >&#13;     Return Value: If <TT  CLASS="parameter" ><I  >language</I
+></TT
+> is set and
+     <TT  CLASS="parameter" ><I  >language</I
+></TT
+> is valid, it returns
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>. Otherwise, it returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>. When
+     <TT  CLASS="parameter" ><I  >language</I
+></TT
+> is omitted, it returns language
+     name as string. If no language is set previously, it returns
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>.
+    </P
+><P  >&#13;     See also <A  HREF="function.mb-send-mail.html"  ><B  CLASS="function" >mb_send_mail()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mb-internal-encoding.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mb-output-handler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mb_internal_encoding</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mbstring.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mb_output_handler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-internal-encoding.html">mb_internal_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-list-encodings.html">mb_list_encodings</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mb-language" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mb_language</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">mb_language</span> &mdash; <span class="dc-title">设置/获取当前的语言</span></p>
 
- </div>
-   
- <div class="refsect1 description" id="refsect1-function.mb-language-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>mb_language</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$language</code><span class="initializer"> = mb_language()</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   设置/获取当前的语言。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mb-language-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">language</code></dt>
-
-     <dd>
-
-      <p class="para">
-       用于编码邮件信息。有效的语言有：&quot;Japanese&quot;,&quot;ja&quot;,&quot;English&quot;,&quot;en&quot; 和 &quot;uni&quot;（UTF-8）。
-       <span class="function"><a href="function.mb-send-mail.html" class="function">mb_send_mail()</a></span> 使用了该设置来对邮件进行编码。
-      </p>
-      <p class="para"> 
-       语言和它的设置，日文是 ISO-2022-JP/Base64，uni 是 UTF-8/Base64，英文是 ISO-8859-1/quoted。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.mb-language-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果设置了 <code class="parameter">language</code>，并且 <code class="parameter">language</code> 是有效的，它将返回 <strong><code>TRUE</code></strong>。否则将返回 <strong><code>FALSE</code></strong>。
-   当省略了 <code class="parameter">language</code> 参数，它将返回语言名称的 <span class="type"><a href="language.types.string.html" class="type string">string</a></span>。如果之前没有设置过语言，则将返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mb-language-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mb-send-mail.html" class="function" rel="rdfs-seeAlso">mb_send_mail()</a> - 发送编码过的邮件</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-internal-encoding.html">mb_internal_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-list-encodings.html">mb_list_encodings</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

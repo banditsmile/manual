@@ -1,77 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetch all HTTP request headers</title>
+<HTML  ><HEAD  ><TITLE  >nsapi_request_headers</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="NSAPI-specific Functions" HREF="ref.nsapi.html"><LINK  REL="PREVIOUS" TITLE="NSAPI-specific Functions" HREF="ref.nsapi.html"><LINK  REL="NEXT" TITLE="nsapi_response_headers" HREF="function.nsapi-response-headers.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.nsapi.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.nsapi-response-headers.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.nsapi-request-headers" ></A
+>nsapi_request_headers</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN77131" ></A
+><P  >    (no version information, might be only in CVS)</P
+>nsapi_request_headers&nbsp;--&nbsp;Fetch all HTTP request headers</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN77134" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >nsapi_request_headers</B
+> ( void )<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >nsapi_request_headers()</B
+> returns an associative
+     array of all the HTTP headers in the current request.  This is only
+     supported when PHP runs as a <SPAN  CLASS="productname" >NSAPI</SPAN
+>
+     module.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN77144" ></A
+><P  ><B  >Àý×Ó 1. <B  CLASS="function" >nsapi_request_headers()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$headers </font><font  color="#007700">= </font><font  color="#0000BB">nsapi_request_headers</font><font  color="#007700">();<br  /><br  />foreach (</font><font  color="#0000BB">$headers </font><font  color="#007700">as </font><font  color="#0000BB">$header </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$value</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$header: $value &lt;br /&gt;\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Prior to PHP 4.3.3, <A  HREF="function.getallheaders.html"  ><B  CLASS="function" >getallheaders()</B
+></A
+> was only available for the Apache servers.  After PHP 4.3.3,
+      <A  HREF="function.getallheaders.html"  ><B  CLASS="function" >getallheaders()</B
+></A
+> is an alias for
+      <B  CLASS="function" >nsapi_request_headers()</B
+> if you use the NSAPI module.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      You can also get at the value of the common CGI variables by
+      reading them from the <TT  CLASS="literal" >$_SERVER</TT
+> superglobal, which works whether or not
+      you are using PHP as a <SPAN  CLASS="productname" >NSAPI</SPAN
+> module.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.nsapi.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æðµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.nsapi-response-headers.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >NSAPI-specific Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.nsapi.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >nsapi_response_headers</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.nsapi.html">NSAPI å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.nsapi-response-headers.html">nsapi_response_headers</a></div>
- <div class="up"><a href="ref.nsapi.html">NSAPI å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.nsapi-request-headers" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">nsapi_request_headers</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.3, PHP 5)</p><p class="refpurpose"><span class="refname">nsapi_request_headers</span> &mdash; <span class="dc-title">Fetch all HTTP request headers</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.nsapi-request-headers-description">
-  <h3 class="title">è¯´æ˜Ž</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>nsapi_request_headers</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>nsapi_request_headers()</strong></span> gets all the HTTP headers in
-   the current request. This is only supported when PHP runs as a 
-   <span class="productname">NSAPI</span> module.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Prior to PHP 4.3.3, <span class="function"><a href="function.getallheaders.html" class="function">getallheaders()</a></span> was only 
-    available for the Apache servers.  After PHP 4.3.3,
-    <span class="function"><a href="function.getallheaders.html" class="function">getallheaders()</a></span> is an alias for
-    <span class="function"><strong>nsapi_request_headers()</strong></span> if you use the NSAPI module.
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    You can also get at the value of the common CGI variables by
-    reading them from the <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER</a></var></var> superglobal, which 
-    works whether or not you are using PHP as a 
-    <span class="productname">NSAPI</span> module.
-   </p>
-  </p></blockquote>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.nsapi-request-headers-returnvalues">
-  <h3 class="title">è¿”å›žå€¼</h3>
-  <p class="para">
-   Returns an associative array with all the HTTP headers.
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.nsapi-request-headers-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5075">
-    <p><strong>Example #1 <span class="function"><strong>nsapi_request_headers()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$headers&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">nsapi_request_headers</span><span style="color: #007700">();<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$headers&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$header&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$header</span><span style="color: #DD0000">:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">&nbsp;&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.nsapi.html">NSAPI å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.nsapi-response-headers.html">nsapi_response_headers</a></div>
- <div class="up"><a href="ref.nsapi.html">NSAPI å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,664 +1,483 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ•°ç»„ å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="array.sorting.html">å¯¹æ•°ç»„è¿›è¡Œæ’åº</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-change-key-case.html">array_change_key_case</a></div>
- <div class="up"><a href="book.array.html">æ•°ç»„</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.array" class="reference">
- <h1 class="title">æ•°ç»„ å‡½æ•°</h1>
- <div class="partintro">
-   <h1 class="title">å‚è§</h1>
-   <p class="para">
-    å‚è€ƒ <span class="function"><a href="function.is-array.html" class="function">is_array()</a></span>, <span class="function"><a href="function.explode.html" class="function">explode()</a></span>,
-    <span class="function"><a href="function.implode.html" class="function">implode()</a></span>, <span class="function"><a href="function.split.html" class="function">split()</a></span>,
-    <span class="function"><a href="function.preg-split.html" class="function">preg_split()</a></span>, and <span class="function"><a href="function.unset.html" class="function">unset()</a></span>.
-   </p>
- </div>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.array-change-key-case.html">array_change_key_case</a> â€” è¿”å›å­—ç¬¦ä¸²é”®åå…¨ä¸ºå°å†™æˆ–å¤§å†™çš„æ•°ç»„</li><li><a href="function.array-chunk.html">array_chunk</a> â€” å°†ä¸€ä¸ªæ•°ç»„åˆ†å‰²æˆå¤šä¸ª</li><li><a href="function.array-column.html">array_column</a> â€” è¿”å›æ•°ç»„ä¸­æŒ‡å®šçš„ä¸€åˆ—</li><li><a href="function.array-combine.html">array_combine</a> â€” åˆ›å»ºä¸€ä¸ªæ•°ç»„ï¼Œç”¨ä¸€ä¸ªæ•°ç»„çš„å€¼ä½œä¸ºå…¶é”®åï¼Œå¦ä¸€ä¸ªæ•°ç»„çš„å€¼ä½œä¸ºå…¶å€¼</li><li><a href="function.array-count-values.html">array_count_values</a> â€” ç»Ÿè®¡æ•°ç»„ä¸­æ‰€æœ‰çš„å€¼å‡ºç°çš„æ¬¡æ•°</li><li><a href="function.array-diff-assoc.html">array_diff_assoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„å·®é›†</li><li><a href="function.array-diff-key.html">array_diff_key</a> â€” ä½¿ç”¨é”®åæ¯”è¾ƒè®¡ç®—æ•°ç»„çš„å·®é›†</li><li><a href="function.array-diff-uassoc.html">array_diff_uassoc</a> â€” ç”¨ç”¨æˆ·æä¾›çš„å›è°ƒå‡½æ•°åšç´¢å¼•æ£€æŸ¥æ¥è®¡ç®—æ•°ç»„çš„å·®é›†</li><li><a href="function.array-diff-ukey.html">array_diff_ukey</a> â€” ç”¨å›è°ƒå‡½æ•°å¯¹é”®åæ¯”è¾ƒè®¡ç®—æ•°ç»„çš„å·®é›†</li><li><a href="function.array-diff.html">array_diff</a> â€” è®¡ç®—æ•°ç»„çš„å·®é›†</li><li><a href="function.array-fill-keys.html">array_fill_keys</a> â€” ä½¿ç”¨æŒ‡å®šçš„é”®å’Œå€¼å¡«å……æ•°ç»„</li><li><a href="function.array-fill.html">array_fill</a> â€” ç”¨ç»™å®šçš„å€¼å¡«å……æ•°ç»„</li><li><a href="function.array-filter.html">array_filter</a> â€” ç”¨å›è°ƒå‡½æ•°è¿‡æ»¤æ•°ç»„ä¸­çš„å•å…ƒ</li><li><a href="function.array-flip.html">array_flip</a> â€” äº¤æ¢æ•°ç»„ä¸­çš„é”®å’Œå€¼</li><li><a href="function.array-intersect-assoc.html">array_intersect_assoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†</li><li><a href="function.array-intersect-key.html">array_intersect_key</a> â€” ä½¿ç”¨é”®åæ¯”è¾ƒè®¡ç®—æ•°ç»„çš„äº¤é›†</li><li><a href="function.array-intersect-uassoc.html">array_intersect_uassoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒç´¢å¼•</li><li><a href="function.array-intersect-ukey.html">array_intersect_ukey</a> â€” ç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒé”®åæ¥è®¡ç®—æ•°ç»„çš„äº¤é›†</li><li><a href="function.array-intersect.html">array_intersect</a> â€” è®¡ç®—æ•°ç»„çš„äº¤é›†</li><li><a href="function.array-key-exists.html">array_key_exists</a> â€” æ£€æŸ¥ç»™å®šçš„é”®åæˆ–ç´¢å¼•æ˜¯å¦å­˜åœ¨äºæ•°ç»„ä¸­</li><li><a href="function.array-keys.html">array_keys</a> â€” è¿”å›æ•°ç»„ä¸­éƒ¨åˆ†çš„æˆ–æ‰€æœ‰çš„é”®å</li><li><a href="function.array-map.html">array_map</a> â€” å°†å›è°ƒå‡½æ•°ä½œç”¨åˆ°ç»™å®šæ•°ç»„çš„å•å…ƒä¸Š</li><li><a href="function.array-merge-recursive.html">array_merge_recursive</a> â€” é€’å½’åœ°åˆå¹¶ä¸€ä¸ªæˆ–å¤šä¸ªæ•°ç»„</li><li><a href="function.array-merge.html">array_merge</a> â€” åˆå¹¶ä¸€ä¸ªæˆ–å¤šä¸ªæ•°ç»„</li><li><a href="function.array-multisort.html">array_multisort</a> â€” å¯¹å¤šä¸ªæ•°ç»„æˆ–å¤šç»´æ•°ç»„è¿›è¡Œæ’åº</li><li><a href="function.array-pad.html">array_pad</a> â€” ç”¨å€¼å°†æ•°ç»„å¡«è¡¥åˆ°æŒ‡å®šé•¿åº¦</li><li><a href="function.array-pop.html">array_pop</a> â€” å°†æ•°ç»„æœ€åä¸€ä¸ªå•å…ƒå¼¹å‡ºï¼ˆå‡ºæ ˆï¼‰</li><li><a href="function.array-product.html">array_product</a> â€” è®¡ç®—æ•°ç»„ä¸­æ‰€æœ‰å€¼çš„ä¹˜ç§¯</li><li><a href="function.array-push.html">array_push</a> â€” å°†ä¸€ä¸ªæˆ–å¤šä¸ªå•å…ƒå‹å…¥æ•°ç»„çš„æœ«å°¾ï¼ˆå…¥æ ˆï¼‰</li><li><a href="function.array-rand.html">array_rand</a> â€” ä»æ•°ç»„ä¸­éšæœºå–å‡ºä¸€ä¸ªæˆ–å¤šä¸ªå•å…ƒ</li><li><a href="function.array-reduce.html">array_reduce</a> â€” ç”¨å›è°ƒå‡½æ•°è¿­ä»£åœ°å°†æ•°ç»„ç®€åŒ–ä¸ºå•ä¸€çš„å€¼</li><li><a href="function.array-replace-recursive.html">array_replace_recursive</a> â€” ä½¿ç”¨ä¼ é€’çš„æ•°ç»„é€’å½’æ›¿æ¢ç¬¬ä¸€ä¸ªæ•°ç»„çš„å…ƒç´ </li><li><a href="function.array-replace.html">array_replace</a> â€” ä½¿ç”¨ä¼ é€’çš„æ•°ç»„æ›¿æ¢ç¬¬ä¸€ä¸ªæ•°ç»„çš„å…ƒç´ </li><li><a href="function.array-reverse.html">array_reverse</a> â€” è¿”å›ä¸€ä¸ªå•å…ƒé¡ºåºç›¸åçš„æ•°ç»„</li><li><a href="function.array-search.html">array_search</a> â€” åœ¨æ•°ç»„ä¸­æœç´¢ç»™å®šçš„å€¼ï¼Œå¦‚æœæˆåŠŸåˆ™è¿”å›ç›¸åº”çš„é”®å</li><li><a href="function.array-shift.html">array_shift</a> â€” å°†æ•°ç»„å¼€å¤´çš„å•å…ƒç§»å‡ºæ•°ç»„</li><li><a href="function.array-slice.html">array_slice</a> â€” ä»æ•°ç»„ä¸­å–å‡ºä¸€æ®µ</li><li><a href="function.array-splice.html">array_splice</a> â€” æŠŠæ•°ç»„ä¸­çš„ä¸€éƒ¨åˆ†å»æ‰å¹¶ç”¨å…¶å®ƒå€¼å–ä»£</li><li><a href="function.array-sum.html">array_sum</a> â€” è®¡ç®—æ•°ç»„ä¸­æ‰€æœ‰å€¼çš„å’Œ</li><li><a href="function.array-udiff-assoc.html">array_udiff_assoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„å·®é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®</li><li><a href="function.array-udiff-uassoc.html">array_udiff_uassoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„å·®é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®å’Œç´¢å¼•</li><li><a href="function.array-udiff.html">array_udiff</a> â€” ç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®æ¥è®¡ç®—æ•°ç»„çš„å·®é›†</li><li><a href="function.array-uintersect-assoc.html">array_uintersect_assoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®</li><li><a href="function.array-uintersect-uassoc.html">array_uintersect_uassoc</a> â€” å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®å’Œç´¢å¼•</li><li><a href="function.array-uintersect.html">array_uintersect</a> â€” è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®</li><li><a href="function.array-unique.html">array_unique</a> â€” ç§»é™¤æ•°ç»„ä¸­é‡å¤çš„å€¼</li><li><a href="function.array-unshift.html">array_unshift</a> â€” åœ¨æ•°ç»„å¼€å¤´æ’å…¥ä¸€ä¸ªæˆ–å¤šä¸ªå•å…ƒ</li><li><a href="function.array-values.html">array_values</a> â€” è¿”å›æ•°ç»„ä¸­æ‰€æœ‰çš„å€¼</li><li><a href="function.array-walk-recursive.html">array_walk_recursive</a> â€” å¯¹æ•°ç»„ä¸­çš„æ¯ä¸ªæˆå‘˜é€’å½’åœ°åº”ç”¨ç”¨æˆ·å‡½æ•°</li><li><a href="function.array-walk.html">array_walk</a> â€” ä½¿ç”¨ç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°å¯¹æ•°ç»„ä¸­çš„æ¯ä¸ªå…ƒç´ åšå›è°ƒå¤„ç†</li><li><a href="function.array.html">array</a> â€” æ–°å»ºä¸€ä¸ªæ•°ç»„</li><li><a href="function.arsort.html">arsort</a> â€” å¯¹æ•°ç»„è¿›è¡Œé€†å‘æ’åºå¹¶ä¿æŒç´¢å¼•å…³ç³»</li><li><a href="function.asort.html">asort</a> â€” å¯¹æ•°ç»„è¿›è¡Œæ’åºå¹¶ä¿æŒç´¢å¼•å…³ç³»</li><li><a href="function.compact.html">compact</a> â€” å»ºç«‹ä¸€ä¸ªæ•°ç»„ï¼ŒåŒ…æ‹¬å˜é‡åå’Œå®ƒä»¬çš„å€¼</li><li><a href="function.count.html">count</a> â€” è®¡ç®—æ•°ç»„ä¸­çš„å•å…ƒæ•°ç›®æˆ–å¯¹è±¡ä¸­çš„å±æ€§ä¸ªæ•°</li><li><a href="function.current.html">current</a> â€” è¿”å›æ•°ç»„ä¸­çš„å½“å‰å•å…ƒ</li><li><a href="function.each.html">each</a> â€” è¿”å›æ•°ç»„ä¸­å½“å‰çš„é”®ï¼å€¼å¯¹å¹¶å°†æ•°ç»„æŒ‡é’ˆå‘å‰ç§»åŠ¨ä¸€æ­¥</li><li><a href="function.end.html">end</a> â€” å°†æ•°ç»„çš„å†…éƒ¨æŒ‡é’ˆæŒ‡å‘æœ€åä¸€ä¸ªå•å…ƒ</li><li><a href="function.extract.html">extract</a> â€” ä»æ•°ç»„ä¸­å°†å˜é‡å¯¼å…¥åˆ°å½“å‰çš„ç¬¦å·è¡¨</li><li><a href="function.in-array.html">in_array</a> â€” æ£€æŸ¥æ•°ç»„ä¸­æ˜¯å¦å­˜åœ¨æŸä¸ªå€¼</li><li><a href="function.key-exists.html">key_exists</a> â€” åˆ«å array_key_exists</li><li><a href="function.key.html">key</a> â€” ä»å…³è”æ•°ç»„ä¸­å–å¾—é”®å</li><li><a href="function.krsort.html">krsort</a> â€” å¯¹æ•°ç»„æŒ‰ç…§é”®åé€†å‘æ’åº</li><li><a href="function.ksort.html">ksort</a> â€” å¯¹æ•°ç»„æŒ‰ç…§é”®åæ’åº</li><li><a href="function.list.html">list</a> â€” æŠŠæ•°ç»„ä¸­çš„å€¼èµ‹ç»™ä¸€äº›å˜é‡</li><li><a href="function.natcasesort.html">natcasesort</a> â€” ç”¨&ldquo;è‡ªç„¶æ’åº&rdquo;ç®—æ³•å¯¹æ•°ç»„è¿›è¡Œä¸åŒºåˆ†å¤§å°å†™å­—æ¯çš„æ’åº</li><li><a href="function.natsort.html">natsort</a> â€” ç”¨&ldquo;è‡ªç„¶æ’åº&rdquo;ç®—æ³•å¯¹æ•°ç»„æ’åº</li><li><a href="function.next.html">next</a> â€” å°†æ•°ç»„ä¸­çš„å†…éƒ¨æŒ‡é’ˆå‘å‰ç§»åŠ¨ä¸€ä½</li><li><a href="function.pos.html">pos</a> â€” current çš„åˆ«å</li><li><a href="function.prev.html">prev</a> â€” å°†æ•°ç»„çš„å†…éƒ¨æŒ‡é’ˆå€’å›ä¸€ä½</li><li><a href="function.range.html">range</a> â€” å»ºç«‹ä¸€ä¸ªåŒ…å«æŒ‡å®šèŒƒå›´å•å…ƒçš„æ•°ç»„</li><li><a href="function.reset.html">reset</a> â€” å°†æ•°ç»„çš„å†…éƒ¨æŒ‡é’ˆæŒ‡å‘ç¬¬ä¸€ä¸ªå•å…ƒ</li><li><a href="function.rsort.html">rsort</a> â€” å¯¹æ•°ç»„é€†å‘æ’åº</li><li><a href="function.shuffle.html">shuffle</a> â€” å°†æ•°ç»„æ‰“ä¹±</li><li><a href="function.sizeof.html">sizeof</a> â€” count çš„åˆ«å</li><li><a href="function.sort.html">sort</a> â€” å¯¹æ•°ç»„æ’åº</li><li><a href="function.uasort.html">uasort</a> â€” ä½¿ç”¨ç”¨æˆ·è‡ªå®šä¹‰çš„æ¯”è¾ƒå‡½æ•°å¯¹æ•°ç»„ä¸­çš„å€¼è¿›è¡Œæ’åºå¹¶ä¿æŒç´¢å¼•å…³è”</li><li><a href="function.uksort.html">uksort</a> â€” ä½¿ç”¨ç”¨æˆ·è‡ªå®šä¹‰çš„æ¯”è¾ƒå‡½æ•°å¯¹æ•°ç»„ä¸­çš„é”®åè¿›è¡Œæ’åº</li><li><a href="function.usort.html">usort</a> â€” ä½¿ç”¨ç”¨æˆ·è‡ªå®šä¹‰çš„æ¯”è¾ƒå‡½æ•°å¯¹æ•°ç»„ä¸­çš„å€¼è¿›è¡Œæ’åº</li></ul>
+<HTML  ><HEAD  ><TITLE  >Êı×éº¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="virtual" HREF="function.virtual.html"><LINK  REL="NEXT" TITLE="array_change_key_case" HREF="function.array-change-key-case.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.virtual.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-change-key-case.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.array" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >II. Êı×éº¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN7908" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     ÕâĞ©º¯ÊıÔÊĞíÄãÓÃ¶àÖÖ·½·¨À´²Ù×÷Êı×éºÍÓëÖ®½»»¥¡£Êı×éµÄ±¾ÖÊÊÇ´¢´æ£¬¹ÜÀíºÍ²Ù×÷Ò»×é±äÁ¿¡£
+    </P
+><P  >&#13;     PHP Ö§³ÖÒ»Î¬ºÍ¶àÎ¬Êı×é£¬²»ÂÛÊÇÓÃ»§´´½¨»òÓÉÁíÒ»¸öº¯Êı´´½¨¡£ÓĞÒ»Ğ©ÌØ¶¨µÄÊı¾İ¿â´¦Àíº¯Êı¿ÉÒÔ´ÓÊı¾İ¿â²éÑ¯ÖĞÉú³ÉÊı×é£¬»¹ÓĞÒ»Ğ©º¯Êı·µ»ØÊı×é¡£
+    </P
+><P  >&#13;     ²Î¼ûÊÖ²áÖĞµÄ<A  HREF="language.types.array.html"  >Êı×é</A
+>Ò»½Ú¹ØÓÚ
+     PHP ÊÇÔõÑùÊµÏÖºÍÊ¹ÓÃÊı×éµÄÏêÏ¸½âÊÍ¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÕâÀïÁĞ³öµÄËùÓĞ³£Á¿½«×÷Îª PHP ºËĞÄµÄÒ»²¿·ÖÒ»Ö±ÓĞĞ§¡£
+</P
+><P  >&#13; <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >CASE_LOWER</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     <TT  CLASS="constant" ><B  >CASE_LOWER</B
+></TT
+> ÓÃÔÚ
+     <A  HREF="function.array-change-key-case.html"  ><B  CLASS="function" >array_change_key_case()</B
+></A
+> ÖĞ½«Êı×éµÄ¼üÃû×ª»»³ÉĞ¡Ğ´×ÖÄ¸¡£ÕâÒ²ÊÇ
+     <A  HREF="function.array-change-key-case.html"  ><B  CLASS="function" >array_change_key_case()</B
+></A
+> µÄÄ¬ÈÏÖµ¡£
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CASE_UPPER</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     <TT  CLASS="constant" ><B  >CASE_UPPER</B
+></TT
+> ÓÃÔÚ
+     <A  HREF="function.array-change-key-case.html"  ><B  CLASS="function" >array_change_key_case()</B
+></A
+> ÖĞ½«Êı×éµÄ¼üÃû×ª»»³É´óĞ´×ÖÄ¸¡£
+    </P
+></DD
+></DL
+></DIV
+>
+ </P
+><P  > ÅÅĞòË³Ğò±êÊ¶£º
+ <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >SORT_ASC</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     <TT  CLASS="constant" ><B  >SORT_ASC</B
+></TT
+> ÓÃÔÚ <A  HREF="function.array-multisort.html"  ><B  CLASS="function" >array_multisort()</B
+></A
+>
+     º¯ÊıÖĞ£¬Ê¹ÆäÉıĞòÅÅÁĞ¡£
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >SORT_DESC</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     <TT  CLASS="constant" ><B  >SORT_DESC</B
+></TT
+> ÓÃÔÚ <A  HREF="function.array-multisort.html"  ><B  CLASS="function" >array_multisort()</B
+></A
+>
+     º¯ÊıÖĞ£¬Ê¹Æä½µĞòÅÅÁĞ¡£
+    </P
+></DD
+></DL
+></DIV
+>
+ </P
+><P  >&#13;  ÅÅĞòÀàĞÍ±êÊ¶£ºÓÃÓÚ¸÷ÖÖÅÅĞòº¯Êı
+ <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >SORT_REGULAR</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     <TT  CLASS="constant" ><B  >SORT_REGULAR</B
+></TT
+> ÓÃÓÚ¶Ô¶ÔÏó½øĞĞÍ¨³£±È½Ï¡£
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >SORT_NUMERIC</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     <TT  CLASS="constant" ><B  >SORT_NUMERIC</B
+></TT
+> ÓÃÓÚ¶Ô¶ÔÏó½øĞĞÊıÖµ±È½Ï¡£
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >SORT_STRING</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;    <TT  CLASS="constant" ><B  >SORT_STRING</B
+></TT
+> ÓÃÓÚ¶Ô¶ÔÏó½øĞĞ×Ö·û´®±È½Ï¡£
+    </P
+></DD
+></DL
+></DIV
+>
+ </P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >COUNT_NORMAL</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >COUNT_RECURSIVE</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_OVERWRITE</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_SKIP</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_SAME</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_ALL</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_INVALID</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_PREFIX_IF_EXISTS</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_IF_EXISTS</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >EXTR_REFS</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="array.seealso" ></A
+>Ïà¹Ø²Î¿¼</H1
+><P  >&#13;     ²Î¼û <A  HREF="function.is-array.html"  ><B  CLASS="function" >is_array()</B
+></A
+>£¬<A  HREF="function.explode.html"  ><B  CLASS="function" >explode()</B
+></A
+>£¬<A  HREF="function.implode.html"  ><B  CLASS="function" >implode()</B
+></A
+>£¬<A  HREF="function.split.html"  ><B  CLASS="function" >split()</B
+></A
+>£¬<A  HREF="function.preg-split.html"  ><B  CLASS="function" >preg_split()</B
+></A
+> ºÍ <A  HREF="function.unset.html"  ><B  CLASS="function" >unset()</B
+></A
+>¡£
+    </P
+><P  >&#13;     ¡¾ÒëÕß×¢¡¿±¾½ÚÖĞ³öÏÖµÄ¡°½áºÏÊı×é¡±Ö¸µÄÊÇ¼üÃûÎª×Ö·û´®µÄÊı×é£¬¡°Ë÷Òı¡±ºÍ¡°¼üÃû¡±Ö¸µÄÊÇÍ¬Ò»Ñù¶«Î÷¡£¡°Ë÷Òı¡±¶àÖ¸Êı×éµÄÊı×ÖĞÎÊ½µÄÏÂ±ê¡£
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.array-change-key-case.html"  >array_change_key_case</A
+>&nbsp;--&nbsp;·µ»Ø×Ö·û´®¼üÃûÈ«ÎªĞ¡Ğ´»ò´óĞ´µÄÊı×é</DT
+><DT  ><A  HREF="function.array-chunk.html"  >array_chunk</A
+>&nbsp;--&nbsp;½«Ò»¸öÊı×é·Ö¸î³É¶à¸ö</DT
+><DT  ><A  HREF="function.array-combine.html"  >array_combine</A
+>&nbsp;--&nbsp;
+     ´´½¨Ò»¸öÊı×é£¬ÓÃÒ»¸öÊı×éµÄÖµ×÷ÎªÆä¼üÃû£¬ÁíÒ»¸öÊı×éµÄÖµ×÷ÎªÆäÖµ
+    </DT
+><DT  ><A  HREF="function.array-count-values.html"  >array_count_values</A
+>&nbsp;--&nbsp;Í³¼ÆÊı×éÖĞËùÓĞµÄÖµ³öÏÖµÄ´ÎÊı</DT
+><DT  ><A  HREF="function.array-diff-assoc.html"  >array_diff_assoc</A
+>&nbsp;--&nbsp;´øË÷Òı¼ì²é¼ÆËãÊı×éµÄ²î¼¯</DT
+><DT  ><A  HREF="function.array-diff-uassoc.html"  >array_diff_uassoc</A
+>&nbsp;--&nbsp;Computes the difference of arrays with additional index check which is performed by a user supplied callback function.</DT
+><DT  ><A  HREF="function.array-diff.html"  >array_diff</A
+>&nbsp;--&nbsp;¼ÆËãÊı×éµÄ²î¼¯</DT
+><DT  ><A  HREF="function.array-fill.html"  >array_fill</A
+>&nbsp;--&nbsp;ÓÃ¸ø¶¨µÄÖµÌî³äÊı×é</DT
+><DT  ><A  HREF="function.array-filter.html"  >array_filter</A
+>&nbsp;--&nbsp;
+     ÓÃ»Øµ÷º¯Êı¹ıÂËÊı×éÖĞµÄµ¥Ôª
+    </DT
+><DT  ><A  HREF="function.array-flip.html"  >array_flip</A
+>&nbsp;--&nbsp;½»»»Êı×éÖĞµÄ¼üºÍÖµ</DT
+><DT  ><A  HREF="function.array-intersect-assoc.html"  >array_intersect_assoc</A
+>&nbsp;--&nbsp;´øË÷Òı¼ì²é¼ÆËãÊı×éµÄ½»¼¯</DT
+><DT  ><A  HREF="function.array-intersect.html"  >array_intersect</A
+>&nbsp;--&nbsp;¼ÆËãÊı×éµÄ½»¼¯</DT
+><DT  ><A  href="http://www.jb51.net/manual/php/function.array-key-exists.html"  >array_key_exists</A
+>&nbsp;--&nbsp;¼ì²é¸ø¶¨µÄ¼üÃû»òË÷ÒıÊÇ·ñ´æÔÚÓÚÊı×éÖĞ</DT
+><DT  ><A  HREF="function.array-keys.html"  >array_keys</A
+>&nbsp;--&nbsp;·µ»ØÊı×éÖĞËùÓĞµÄ¼üÃû</DT
+><DT  ><A  HREF="function.array-map.html"  >array_map</A
+>&nbsp;--&nbsp;
+     ½«»Øµ÷º¯Êı×÷ÓÃµ½¸ø¶¨Êı×éµÄµ¥ÔªÉÏ
+    </DT
+><DT  ><A  HREF="function.array-merge-recursive.html"  >array_merge_recursive</A
+>&nbsp;--&nbsp;µİ¹éµØºÏ²¢Á½¸ö»ò¶à¸öÊı×é</DT
+><DT  ><A  HREF="function.array-merge.html"  >array_merge</A
+>&nbsp;--&nbsp;ºÏ²¢Á½¸ö»ò¶à¸öÊı×é</DT
+><DT  ><A  HREF="function.array-multisort.html"  >array_multisort</A
+>&nbsp;--&nbsp;¶Ô¶à¸öÊı×é»ò¶àÎ¬Êı×é½øĞĞÅÅĞò</DT
+><DT  ><A  HREF="function.array-pad.html"  >array_pad</A
+>&nbsp;--&nbsp;
+     ÓÃÖµ½«Êı×éÌî²¹µ½Ö¸¶¨³¤¶È
+    </DT
+><DT  ><A  HREF="function.array-pop.html"  >array_pop</A
+>&nbsp;--&nbsp;½«Êı×é×îºóÒ»¸öµ¥Ôªµ¯³ö£¨³öÕ»£©</DT
+><DT  ><A  HREF="function.array-push.html"  >array_push</A
+>&nbsp;--&nbsp;
+     ½«Ò»¸ö»ò¶à¸öµ¥ÔªÑ¹ÈëÊı×éµÄÄ©Î²£¨ÈëÕ»£©
+    </DT
+><DT  ><A  HREF="function.array-rand.html"  >array_rand</A
+>&nbsp;--&nbsp;
+     ´ÓÊı×éÖĞËæ»úÈ¡³öÒ»¸ö»ò¶à¸öµ¥Ôª
+    </DT
+><DT  ><A  HREF="function.array-reduce.html"  >array_reduce</A
+>&nbsp;--&nbsp;
+     ÓÃ»Øµ÷º¯Êıµü´úµØ½«Êı×é¼ò»¯Îªµ¥Ò»µÄÖµ
+    </DT
+><DT  ><A  HREF="function.array-reverse.html"  >array_reverse</A
+>&nbsp;--&nbsp;
+     ·µ»ØÒ»¸öµ¥ÔªË³ĞòÏà·´µÄÊı×é
+    </DT
+><DT  ><A  HREF="function.array-search.html"  >array_search</A
+>&nbsp;--&nbsp;
+     ÔÚÊı×éÖĞËÑË÷¸ø¶¨µÄÖµ£¬Èç¹û³É¹¦Ôò·µ»ØÏàÓ¦µÄ¼üÃû
+    </DT
+><DT  ><A  HREF="function.array-shift.html"  >array_shift</A
+>&nbsp;--&nbsp;
+     ½«Êı×é¿ªÍ·µÄµ¥ÔªÒÆ³öÊı×é
+    </DT
+><DT  ><A  HREF="function.array-slice.html"  >array_slice</A
+>&nbsp;--&nbsp;´ÓÊı×éÖĞÈ¡³öÒ»¶Î</DT
+><DT  ><A  HREF="function.array-splice.html"  >array_splice</A
+>&nbsp;--&nbsp;
+     °ÑÊı×éÖĞµÄÒ»²¿·ÖÈ¥µô²¢ÓÃÆäËüÖµÈ¡´ú
+    </DT
+><DT  ><A  HREF="function.array-sum.html"  >array_sum</A
+>&nbsp;--&nbsp;
+     ¼ÆËãÊı×éÖĞËùÓĞÖµµÄºÍ
+    </DT
+><DT  ><A  HREF="function.array-udiff-assoc.html"  >array_udiff_assoc</A
+>&nbsp;--&nbsp;Computes the difference of arrays with additional index check. The data is compared by using a callback function.</DT
+><DT  ><A  HREF="function.array-udiff-uassoc.html"  >array_udiff_uassoc</A
+>&nbsp;--&nbsp;Computes the difference of arrays with additional index check. The data is compared by using a callback function. The index check is done by a callback function also</DT
+><DT  ><A  HREF="function.array-udiff.html"  >array_udiff</A
+>&nbsp;--&nbsp;Computes the difference of arrays by using a callback function for data comparison.</DT
+><DT  ><A  HREF="function.array-unique.html"  >array_unique</A
+>&nbsp;--&nbsp;ÒÆ³ıÊı×éÖĞÖØ¸´µÄÖµ</DT
+><DT  ><A  HREF="function.array-unshift.html"  >array_unshift</A
+>&nbsp;--&nbsp;
+     ÔÚÊı×é¿ªÍ·²åÈëÒ»¸ö»ò¶à¸öµ¥Ôª
+    </DT
+><DT  ><A  HREF="function.array-values.html"  >array_values</A
+>&nbsp;--&nbsp;·µ»ØÊı×éÖĞËùÓĞµÄÖµ</DT
+><DT  ><A  HREF="function.array-walk.html"  >array_walk</A
+>&nbsp;--&nbsp;
+     ¶ÔÊı×éÖĞµÄÃ¿¸ö³ÉÔ±Ó¦ÓÃÓÃ»§º¯Êı
+    </DT
+><DT  ><A  HREF="function.array.html"  >array</A
+>&nbsp;--&nbsp;
+     ĞÂ½¨Ò»¸öÊı×é
+    </DT
+><DT  ><A  HREF="function.arsort.html"  >arsort</A
+>&nbsp;--&nbsp;
+     ¶ÔÊı×é½øĞĞÄæÏòÅÅĞò²¢±£³ÖË÷Òı¹ØÏµ
+    </DT
+><DT  ><A  HREF="function.asort.html"  >asort</A
+>&nbsp;--&nbsp;¶ÔÊı×é½øĞĞÅÅĞò²¢±£³ÖË÷Òı¹ØÏµ</DT
+><DT  ><A  HREF="function.compact.html"  >compact</A
+>&nbsp;--&nbsp;
+     ½¨Á¢Ò»¸öÊı×é£¬°üÀ¨±äÁ¿ÃûºÍËüÃÇµÄÖµ
+    </DT
+><DT  ><A  HREF="function.count.html"  >count</A
+>&nbsp;--&nbsp;Í³¼Æ±äÁ¿ÖĞµÄµ¥ÔªÊıÄ¿</DT
+><DT  ><A  HREF="function.current.html"  >current</A
+>&nbsp;--&nbsp;·µ»ØÊı×éÖĞµÄµ±Ç°µ¥Ôª</DT
+><DT  ><A  HREF="function.each.html"  >each</A
+>&nbsp;--&nbsp;
+     ·µ»ØÊı×éÖĞµ±Ç°µÄ¼ü£¯Öµ¶Ô²¢½«Êı×éÖ¸ÕëÏòÇ°ÒÆ¶¯Ò»²½
+    </DT
+><DT  ><A  HREF="function.end.html"  >end</A
+>&nbsp;--&nbsp;
+     ½«Êı×éµÄÄÚ²¿Ö¸ÕëÖ¸Ïò×îºóÒ»¸öµ¥Ôª
+    </DT
+><DT  ><A  HREF="function.extract.html"  >extract</A
+>&nbsp;--&nbsp;
+     ´ÓÊı×éÖĞ½«±äÁ¿µ¼Èëµ½µ±Ç°µÄ·ûºÅ±í
+    </DT
+><DT  ><A  HREF="function.in-array.html"  >in_array</A
+>&nbsp;--&nbsp;¼ì²éÊı×éÖĞÊÇ·ñ´æÔÚÄ³¸öÖµ</DT
+><DT  ><A  HREF="function.key.html"  >key</A
+>&nbsp;--&nbsp;´Ó½áºÏÊı×éÖĞÈ¡µÃ¼üÃû</DT
+><DT  ><A  HREF="function.krsort.html"  >krsort</A
+>&nbsp;--&nbsp;¶ÔÊı×é°´ÕÕ¼üÃûÄæÏòÅÅĞò</DT
+><DT  ><A  HREF="function.ksort.html"  >ksort</A
+>&nbsp;--&nbsp;¶ÔÊı×é°´ÕÕ¼üÃûÅÅĞò</DT
+><DT  ><A  HREF="function.list.html"  >list</A
+>&nbsp;--&nbsp;
+      °ÑÊı×éÖĞµÄÖµ¸³¸øÒ»Ğ©±äÁ¿
+    </DT
+><DT  ><A  HREF="function.natcasesort.html"  >natcasesort</A
+>&nbsp;--&nbsp;
+     ÓÃ¡°×ÔÈ»ÅÅĞò¡±Ëã·¨¶ÔÊı×é½øĞĞ²»Çø·Ö´óĞ¡Ğ´×ÖÄ¸µÄÅÅĞò
+    </DT
+><DT  ><A  HREF="function.natsort.html"  >natsort</A
+>&nbsp;--&nbsp;
+     ÓÃ¡°×ÔÈ»ÅÅĞò¡±Ëã·¨¶ÔÊı×éÅÅĞò
+    </DT
+><DT  ><A  HREF="function.next.html"  >next</A
+>&nbsp;--&nbsp;
+     ½«Êı×éÖĞµÄÄÚ²¿Ö¸ÕëÏòÇ°ÒÆ¶¯Ò»Î»
+    </DT
+><DT  ><A  HREF="function.pos.html"  >pos</A
+>&nbsp;--&nbsp;µÃµ½Êı×éµ±Ç°µÄµ¥Ôª</DT
+><DT  ><A  HREF="function.prev.html"  >prev</A
+>&nbsp;--&nbsp;½«Êı×éµÄÄÚ²¿Ö¸Õëµ¹»ØÒ»Î»</DT
+><DT  ><A  HREF="function.range.html"  >range</A
+>&nbsp;--&nbsp;
+     ½¨Á¢Ò»¸ö°üº¬Ö¸¶¨·¶Î§µ¥ÔªµÄÊı×é
+    </DT
+><DT  ><A  HREF="function.reset.html"  >reset</A
+>&nbsp;--&nbsp;
+     ½«Êı×éµÄÄÚ²¿Ö¸ÕëÖ¸ÏòµÚÒ»¸öµ¥Ôª
+    </DT
+><DT  ><A  HREF="function.rsort.html"  >rsort</A
+>&nbsp;--&nbsp;¶ÔÊı×éÄæÏòÅÅĞò</DT
+><DT  ><A  HREF="function.shuffle.html"  >shuffle</A
+>&nbsp;--&nbsp;½«Êı×é´òÂÒ</DT
+><DT  ><A  HREF="function.sizeof.html"  >sizeof</A
+>&nbsp;--&nbsp;<A  HREF="function.count.html"  ><B  CLASS="function" >count()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.sort.html"  >sort</A
+>&nbsp;--&nbsp;¶ÔÊı×éÅÅĞò</DT
+><DT  ><A  HREF="function.uasort.html"  >uasort</A
+>&nbsp;--&nbsp;
+     Ê¹ÓÃÓÃ»§×Ô¶¨ÒåµÄ±È½Ïº¯Êı¶ÔÊı×éÖĞµÄÖµ½øĞĞÅÅĞò²¢±£³ÖË÷Òı¹ØÁª
+    </DT
+><DT  ><A  HREF="function.uksort.html"  >uksort</A
+>&nbsp;--&nbsp;
+     Ê¹ÓÃÓÃ»§×Ô¶¨ÒåµÄ±È½Ïº¯Êı¶ÔÊı×éÖĞµÄ¼üÃû½øĞĞÅÅĞò
+    </DT
+><DT  ><A  HREF="function.usort.html"  >usort</A
+>&nbsp;--&nbsp;
+     Ê¹ÓÃÓÃ»§×Ô¶¨ÒåµÄ±È½Ïº¯Êı¶ÔÊı×éÖĞµÄÖµ½øĞĞÅÅĞò
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.virtual.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-change-key-case.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >virtual</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_change_key_case</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="array.sorting.html">å¯¹æ•°ç»„è¿›è¡Œæ’åº</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-change-key-case.html">array_change_key_case</a></div>
- <div class="up"><a href="book.array.html">æ•°ç»„</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

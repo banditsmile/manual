@@ -1,129 +1,74 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns the matched line</title>
+<HTML  ><HEAD  ><TITLE  >yp_match</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="YP/NIS Functions" HREF="ref.nis.html"><LINK  REL="PREVIOUS" TITLE="yp_master" HREF="function.yp-master.html"><LINK  REL="NEXT" TITLE="yp_next" HREF="function.yp-next.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.yp-master.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.yp-next.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.yp-match" ></A
+>yp_match</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN120573" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>yp_match&nbsp;--&nbsp;Returns the matched line</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN120576" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >yp_match</B
+> ( string domain, string map, string key)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >yp_match()</B
+> returns the value associated with
+     the passed key out of the specified map or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>. This key must
+     be exact.</P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN120594" ></A
+><P  ><B  >Àı×Ó 1. Example for NIS match</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$entry </font><font  color="#007700">= </font><font  color="#0000BB">yp_match</font><font  color="#007700">(</font><font  color="#0000BB">$domain</font><font  color="#007700">, </font><font  color="#DD0000">"passwd.byname"</font><font  color="#007700">, </font><font  color="#DD0000">"joe"</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Matched entry is: " </font><font  color="#007700">. </font><font  color="#0000BB">$entry</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       The above code will produce :
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >joe:##joe:11111:100:Joe User:/home/j/joe:/usr/local/bin/bash</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.yp-get-default-domain.html"  ><B  CLASS="function" >yp_get_default_domain()</B
+></A
+>.
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yp-master.html">yp_master</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yp-next.html">yp_next</a></div>
- <div class="up"><a href="ref.nis.html">YP/NIS å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.yp-match" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">yp_match</h1>
-  <p class="verinfo">(PHP 4, PHP 5 &lt;= 5.0.5)</p><p class="refpurpose"><span class="refname">yp_match</span> &mdash; <span class="dc-title">Returns the matched line</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.yp-match-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>yp_match</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$map</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Returns the value associated with the passed <code class="parameter">key</code>
-   out of the specified <code class="parameter">map</code>. 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.yp-match-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">domain</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The NIS domain name.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">map</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The NIS map.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">key</code></dt>
-
-     <dd>
-
-      <p class="para">
-       This key must be exact.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.yp-master.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.yp-next.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >yp_master</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.nis.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >yp_next</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.yp-match-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns the value, or <strong><code>FALSE</code></strong> on errors.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.yp-match-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-4975">
-    <p><strong>Example #1 Example for NIS match</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$entry&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">yp_match</span><span style="color: #007700">(</span><span style="color: #0000BB">$domain</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"passwd.byname"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"joe"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Matched&nbsp;entry&nbsp;is:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$entry</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-joe:##joe:11111:100:Joe User:/home/j/joe:/usr/local/bin/bash
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.yp-match-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.yp-get-default-domain.html" class="function" rel="rdfs-seeAlso">yp_get_default_domain()</a> - Fetches the machine's default NIS domain</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yp-master.html">yp_master</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yp-next.html">yp_next</a></div>
- <div class="up"><a href="ref.nis.html">YP/NIS å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

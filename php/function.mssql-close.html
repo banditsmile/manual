@@ -1,105 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>关闭MS SQL Server链接</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-bind.html">mssql_bind</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-connect.html">mssql_connect</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-close" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_close</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_close</span> &mdash; <span class="dc-title">关闭MS SQL Server链接</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mssql-close-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>mssql_close</strong></span>
-    ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   关闭指定的链接标识符相关联的MS SQL Server数据库链接。如果链接不存在，则试图关闭最后产生的链接。
-  </p>
-  <p class="para">
-   注：这个操作通常不是必要的，在非持久打开的链接在程序执行结束后会自动关闭链接。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-close-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       一个SQL Server链接, <span class="function"><a href="function.mssql-connect.html" class="function">mssql_connect()</a></span>
-       的返回值。
-      </p>
-      <p class="para">
-       这个方法不能关闭由<span class="function"><a href="function.mssql-pconnect.html" class="function">mssql_pconnect()</a></span>
-       产生的长链接。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mssql-close-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mssql-close-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-1645">
-    <p><strong>Example #1 <span class="function"><strong>mssql_close()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Connect&nbsp;to&nbsp;MSSQL<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'KALLESPC\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Do&nbsp;any&nbsp;related&nbsp;operations&nbsp;here<br /><br />//&nbsp;Close&nbsp;the&nbsp;link&nbsp;to&nbsp;MSSQL<br /></span><span style="color: #0000BB">mssql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_close</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_bind" HREF="function.mssql-bind.html"><LINK  REL="NEXT" TITLE="mssql_connect" HREF="function.mssql-connect.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-bind.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-connect.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-close" ></A
+>mssql_close</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN58537" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mssql_close&nbsp;--&nbsp;Close MS SQL Server connection</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN58540" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >mssql_close</B
+> ( [resource link_identifier])<BR  ></BR
+><P  > 
+     <B  CLASS="function" >mssql_close()</B
+> closes the link to a MS SQL
+     Server database that's associated with the specified link
+     identifier.  If the link identifier isn't specified, the last
+     opened link is assumed.
+    </P
+><P  >&#13;     ����ɹ��򷵻� <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>��ʧ���򷵻� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+    </P
+><P  > 
+     Note that this isn't usually necessary, as non-persistent open
+     links are automatically closed at the end of the script's
+     execution.
+    </P
+><P  > 
+     <B  CLASS="function" >mssql_close()</B
+> will not close persistent links
+     generated by <A  HREF="function.mssql-pconnect.html"  ><B  CLASS="function" >mssql_pconnect()</B
+></A
+>.
+    </P
+><P  > 
+     See also 
+     <A  HREF="function.mssql-connect.html"  ><B  CLASS="function" >mssql_connect()</B
+></A
+>, and
+     <A  HREF="function.mssql-pconnect.html"  ><B  CLASS="function" >mssql_pconnect()</B
+></A
+>.  
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-bind.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-connect.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_bind</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_connect</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.mssql-close-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mssql-connect.html" class="function" rel="rdfs-seeAlso">mssql_connect()</a> - 打开MS SQL server链接</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-pconnect.html" class="function" rel="rdfs-seeAlso">mssql_pconnect()</a> - Open persistent MS SQL connection</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-bind.html">mssql_bind</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-connect.html">mssql_connect</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

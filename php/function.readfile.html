@@ -1,159 +1,86 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¾“å‡ºä¸€ä¸ªæ–‡ä»¶</title>
+<HTML  ><HEAD  ><TITLE  >readfile</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="popen" HREF="function.popen.html"><LINK  REL="NEXT" TITLE="readlink" HREF="function.readlink.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.popen.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.readlink.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.readfile" ></A
+>readfile</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29492" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>readfile&nbsp;--&nbsp;Êä³öÒ»¸öÎÄ¼ş</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29495" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >readfile</B
+> ( string filename [, bool use_include_path [, resource context]])<BR  ></BR
+><P  >&#13;     ¶ÁÈëÒ»¸öÎÄ¼ş²¢Ğ´Èëµ½Êä³ö»º³å¡£
+    </P
+><P  >&#13;     ·µ»Ø´ÓÎÄ¼şÖĞ¶ÁÈëµÄ×Ö½ÚÊı¡£Èç¹û³ö´í·µ»Ø
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ²¢ÇÒ³ı·ÇÊÇÒÔ
+     @<B  CLASS="function" >readfile()</B
+> ĞÎÊ½µ÷ÓÃ£¬·ñÔò»áÏÔÊ¾´íÎóĞÅÏ¢¡£
+    </P
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >ÌáÊ¾: </B
+>Èç¹û<A  HREF="ref.filesystem.html#ini.allow-url-fopen"  >¡°fopen wrappers¡±</A
+>ÒÑ¾­±»¼¤»î£¬ÔòÄúÔÚÊ¹ÓÃ¸Ãº¯ÊıµÄÊ±ºò£¬¿ÉÒÔ°Ñ
+URL ×÷ÎªÎÄ¼şÃûÀ´Ê¹ÓÃ¡£Çë²ÎÔÄ <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>
+»ñÈ¡ÔõÑùÖ¸¶¨ÎÄ¼şÃûµÄÏêÏ¸ĞÅÏ¢ÒÔ¼°Ö§³ÖµÄ URL Ğ­ÒéµÄÁĞ±í<A  HREF="wrappers.html"  >¸½Â¼ J</A
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Èç¹ûÒ²ÏëÔÚ
+     <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>
+     ÖĞËÑË÷ÎÄ¼ş£¬¿ÉÒÔÊ¹ÓÃ¿ÉÑ¡µÄµÚ¶ş¸ö²ÎÊı²¢½«ÆäÉèÎª <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.fpassthru.html"  ><B  CLASS="function" >fpassthru()</B
+></A
+>£¬<A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+>£¬<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>£¬<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>£¬<A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>£¬<A  HREF="function.virtual.html"  ><B  CLASS="function" >virtual()</B
+></A
+>£¬<A  HREF="function.file-get-contents.html"  ><B  CLASS="function" >file_get_contents()</B
+></A
+>
+     ºÍ<A  HREF="wrappers.html"  >¸½Â¼ J</A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.popen.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.readlink.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >popen</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >readlink</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.popen.html">popen</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.readlink.html">readlink</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.readfile" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">readfile</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">readfile</span> &mdash; <span class="dc-title">è¾“å‡ºä¸€ä¸ªæ–‡ä»¶</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.readfile-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>readfile</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   è¯»å…¥ä¸€ä¸ªæ–‡ä»¶å¹¶å†™å…¥åˆ°è¾“å‡ºç¼“å†²ã€‚
-  </p>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-
- 
-   <div class="refsect1 parameters" id="refsect1-function.readfile-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦è¯»å–çš„æ–‡ä»¶åã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">use_include_path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœä¹Ÿæƒ³åœ¨
-   <a href="ini.core.html#ini.include-path" class="link">include_path</a>
-   ä¸­æœç´¢æ–‡ä»¶ï¼Œå¯ä»¥ä½¿ç”¨å¯é€‰çš„ç¬¬äºŒä¸ªå‚æ•°å¹¶å°†å…¶è®¾ä¸º <strong><code>TRUE</code></strong>ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">context</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A context stream <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.readfile-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ä»æ–‡ä»¶ä¸­è¯»å…¥çš„å­—èŠ‚æ•°ã€‚å¦‚æœå‡ºé”™è¿”å›
-   <strong><code>FALSE</code></strong> å¹¶ä¸”é™¤éæ˜¯ä»¥
-   @<span class="function"><strong>readfile()</strong></span> å½¢å¼è°ƒç”¨ï¼Œå¦åˆ™ä¼šæ˜¾ç¤ºé”™è¯¯ä¿¡æ¯ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.readfile-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2519">
-    <p><strong>Example #1 Forcing a download using <span class="function"><strong>readfile()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'monkey.gif'</span><span style="color: #007700">;<br /><br />if&nbsp;(</span><span style="color: #0000BB">file_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Description:&nbsp;File&nbsp;Transfer'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;application/octet-stream'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Disposition:&nbsp;attachment;&nbsp;filename='</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Transfer-Encoding:&nbsp;binary'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Expires:&nbsp;0'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Cache-Control:&nbsp;must-revalidate'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Pragma:&nbsp;public'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Length:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ob_clean</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">flush</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="mediaobject">
-     
-     <div class="imageobject">
-      <img src="images/e88cefb5c3fca5060e2490b9763c4433-readfile.png" alt="Open / Save dialogue" width="319" height="245" />
-     </div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.readfile-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>readfile()</strong></span> will not present any memory issues, 
-    even when sending large files, on its own. If you encounter an 
-    out of memory error ensure that output buffering is off with 
-    <span class="function"><a href="function.ob-get-level.html" class="function">ob_get_level()</a></span>.
-   </p>
-  </p></blockquote>
-  
-  <div class="tip"><strong class="tip">Tip</strong><p class="simpara">å¦‚å·²å¯ç”¨<a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">fopen åŒ…è£…å™¨</a>ï¼Œåœ¨æ­¤å‡½æ•°ä¸­ï¼Œ URL å¯ä½œä¸ºæ–‡ä»¶åã€‚å…³äºå¦‚ä½•æŒ‡å®šæ–‡ä»¶åè¯¦è§ <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>ã€‚å„ç§
-wapper çš„ä¸åŒåŠŸèƒ½è¯·å‚è§ <a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a>ï¼Œæ³¨æ„å…¶ç”¨æ³•åŠå…¶å¯æä¾›çš„é¢„å®šä¹‰å˜é‡ã€‚</p></div>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">åœ¨ PHP 5.0.0
-ä¸­å¢åŠ äº†å¯¹ä¸Šä¸‹æ–‡ï¼ˆContextï¼‰çš„æ”¯æŒã€‚æœ‰å…³<em>ä¸Šä¸‹æ–‡ï¼ˆContextï¼‰</em>çš„è¯´æ˜å‚è§
-<a href="book.stream.html" class="xref">Streams</a>ã€‚</span></p></blockquote>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.readfile-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fpassthru.html" class="function" rel="rdfs-seeAlso">fpassthru()</a> - è¾“å‡ºæ–‡ä»¶æŒ‡é’ˆå¤„çš„æ‰€æœ‰å‰©ä½™æ•°æ®</span></li>
-    <li class="member"><span class="function"><a href="function.file.html" class="function" rel="rdfs-seeAlso">file()</a> - æŠŠæ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªæ•°ç»„ä¸­</span></li>
-    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - æ‰“å¼€æ–‡ä»¶æˆ–è€… URL</span></li>
-    <li class="member"><span class="function"><a href="function.include.html" class="function" rel="rdfs-seeAlso">include</a> - include</span></li>
-    <li class="member"><span class="function"><a href="function.require.html" class="function" rel="rdfs-seeAlso">require</a> - require</span></li>
-    <li class="member"><span class="function"><a href="function.virtual.html" class="function" rel="rdfs-seeAlso">virtual()</a> - æ‰§è¡Œ Apache å­è¯·æ±‚</span></li>
-    <li class="member"><span class="function"><a href="function.file-get-contents.html" class="function" rel="rdfs-seeAlso">file_get_contents()</a> - å°†æ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªå­—ç¬¦ä¸²</span></li>
-    <li class="member"><a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.popen.html">popen</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.readlink.html">readlink</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

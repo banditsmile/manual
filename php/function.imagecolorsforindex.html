@@ -1,68 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—æŸç´¢å¼•çš„é¢œè‰²</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagecolorset.html">imagecolorset</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecolorstotal.html">imagecolorstotal</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagecolorsforindex" class="refentry">
-  <div class="refnamediv">
-   <h1 class="refname">imagecolorsforindex</h1>
-   <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagecolorsforindex</span> &mdash; <span class="dc-title">å–å¾—æŸç´¢å¼•çš„é¢œè‰²</span></p>
-
-  </div>
-  <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.imagecolorsforindex-unknown-unknown-seealsq">
-   <h3 class="title">è¯´æ˜</h3>
-   <div class="methodsynopsis dc-description">
-    <span class="type">array</span> <span class="methodname"><strong>imagecolorsforindex</strong></span>
-     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$index</code></span>
-    )</div>
-
-   <p class="para rdfs-comment">
-    æœ¬å‡½æ•°è¿”å›ä¸€ä¸ªå…·æœ‰ redï¼Œgreenï¼Œblue å’Œ alpha
-    çš„é”®åçš„å…³è”æ•°ç»„ï¼ŒåŒ…å«äº†æŒ‡å®šé¢œè‰²ç´¢å¼•çš„ç›¸åº”çš„å€¼ã€‚
-   </p>
-   <p class="para">
-    <div class="example" id="example-3293">
-     <p><strong>Example #1 <span class="function"><strong>imagecolorsforindex()</strong></span> ä¾‹å­</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å¼€ä¸€å¹…å›¾åƒ<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefrompng</span><span style="color: #007700">(</span><span style="color: #DD0000">'nexen.png'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;å–å¾—ä¸€ç‚¹çš„é¢œè‰²<br /></span><span style="color: #0000BB">$start_x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$start_y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">50</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$color_index&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorat</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$start_x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$start_y</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ä½¿å…¶å¯è¯»<br /></span><span style="color: #0000BB">$color_tran&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorsforindex</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$color_index</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;æ˜¾ç¤ºè¯¥é¢œè‰²çš„å€¼<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'&lt;pre&gt;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$color_tran</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">'&lt;/pre&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-     <div class="example-contents"><p>
-      æœ¬ä¾‹å°†è¾“å‡ºï¼š
-     </p></div>
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >imagecolorsforindex</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagecolorset" HREF="function.imagecolorset.html"><LINK  REL="NEXT" TITLE="imagecolorstotal" HREF="function.imagecolorstotal.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagecolorset.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagecolorstotal.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagecolorsforindex" ></A
+>imagecolorsforindex</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38938" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imagecolorsforindex&nbsp;--&nbsp;È¡µÃÄ³Ë÷ÒıµÄÑÕÉ«</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38941" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >imagecolorsforindex</B
+> ( resource image, int index)<BR  ></BR
+><P  >&#13;    ±¾º¯Êı·µ»ØÒ»¸ö¾ßÓĞ red£¬green£¬blue ºÍ alpha
+    µÄ¼üÃûµÄ¹ØÁªÊı×é£¬°üº¬ÁËÖ¸¶¨ÑÕÉ«Ë÷ÒıµÄÏàÓ¦µÄÖµ¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38954" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imagecolorsforindex()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// ´ò¿ªÒ»·ùÍ¼Ïñ<br  /></font><font  color="#0000BB">$im </font><font  color="#007700">= </font><font  color="#0000BB">imagecreatefrompng</font><font  color="#007700">(</font><font  color="#DD0000">'nexen.png'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// È¡µÃÒ»µãµÄÑÕÉ«<br  /></font><font  color="#0000BB">$start_x </font><font  color="#007700">= </font><font  color="#0000BB">40</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$start_y </font><font  color="#007700">= </font><font  color="#0000BB">50</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$color_index </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorat</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">$start_x</font><font  color="#007700">, </font><font  color="#0000BB">$start_y</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Ê¹Æä¿É¶Á<br  /></font><font  color="#0000BB">$color_tran </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorsforindex</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">$color_index</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ÏÔÊ¾¸ÃÑÕÉ«µÄÖµ<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">'&lt;pre&gt;'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$color_tran</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">'&lt;/pre&gt;'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;      ±¾Àı½«Êä³ö£º
+     </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [red] =&gt; 226
-    [green] =&gt; 222
-    [blue] =&gt; 252
-    [alpha] =&gt; 0
-)
-</pre></div>
-     </div>
-    </div>
-   </p>
-   <p class="para">
-    å‚è§ <span class="function"><a href="function.imagecolorat.html" class="function">imagecolorat()</a></span> å’Œ
-    <span class="function"><a href="function.imagecolorexact.html" class="function">imagecolorexact()</a></span>ã€‚
-   </p>
-  </div>
+    [red] =&#62; 226
+    [green] =&#62; 222
+    [blue] =&#62; 252
+    [alpha] =&#62; 0
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ²Î¼û <A  HREF="function.imagecolorat.html"  ><B  CLASS="function" >imagecolorat()</B
+></A
+> ºÍ
+    <A  HREF="function.imagecolorexact.html"  ><B  CLASS="function" >imagecolorexact()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagecolorset.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagecolorstotal.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagecolorset</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagecolorstotal</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagecolorset.html">imagecolorset</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecolorstotal.html">imagecolorstotal</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

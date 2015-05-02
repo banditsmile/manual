@@ -1,48 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å¯åŠ¨ä¸€ä¸ª PostgreSQL è¿æ¥çš„è¿½è¸ªåŠŸèƒ½</title>
+<HTML  ><HEAD  ><TITLE  >pg_trace</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_set_client_encoding" HREF="function.pg-set-client-encoding.html"><LINK  REL="NEXT" TITLE="pg_tty" HREF="function.pg-tty.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-set-client-encoding.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-tty.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-trace" ></A
+>pg_trace</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN92653" ></A
+><P  >    (PHP 4 &#62;= 4.0.1)</P
+>pg_trace&nbsp;--&nbsp;Æô¶¯Ò»¸ö PostgreSQL Á¬½ÓµÄ×·×Ù¹¦ÄÜ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN92656" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >pg_trace</B
+> ( string pathname [, string mode [, resource connection]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_trace()</B
+> Æô¶¯ PostgreSQL Ç°¶Ë£¯ºó¶ËÍ¨Ñ¶µÄ×·×Ù²¢¼ÇÂ¼µ½ <TT  CLASS="parameter" ><I  >pathname</I
+></TT
+> Ö¸¶¨µÄÎÄ¼şÖĞ¡£ÒªÍêÈ«Àí½â½á¹û£¬ÓÃ»§ĞèÒªÊìÏ¤ PostgreSQL Í¨Ñ¶Ğ­ÒéµÄ±¾ÖÊ¡£¶Ô²»ÊìÏ¤µÄÓÃ»§À´Ëµ£¬×·×Ù·¢ËÍµ½·şÎñÆ÷µÄ²éÑ¯´íÎóÒÀÈ»ÓĞÓÃ£¬ÀıÈç¿ÉÒÔÓÃ <B  CLASS="command" >grep '^To backend' trace.log</B
+> À´²é¿´ÄÄĞ©²éÑ¯Êµ¼ÊÉÏ±»·¢ËÍµ½ÁË PostgreSQL ·şÎñÆ÷¡£¸ü¶àĞÅÏ¢²Î¿¼ PostgreSQL ÊÖ²á¡£
+    </P
+><P  >&#13;     ²ÎÊı <TT  CLASS="parameter" ><I  >pathname</I
+></TT
+> ºÍ <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> ºÍ <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>(<TT  CLASS="parameter" ><I  >mode</I
+></TT
+> Ä¬ÈÏÎª 'w') ÖĞµÄÒ»Ñù¡£<TT  CLASS="parameter" ><I  >connection</I
+></TT
+> Ö¸¶¨ÁËÒª×·×ÙµÄÁ¬½Ó£¬Ä¬ÈÏÎªÉÏÒ»¸ö´ò¿ªµÄÁ¬½Ó¡£
+    </P
+><P  >&#13;     Èç¹û <TT  CLASS="parameter" ><I  >pathname</I
+></TT
+> ¿ÉÒÔ×÷ÎªÈÕÖ¾ÎÄ¼ş´ò¿ª£¬Ôò
+     <B  CLASS="function" >pg_trace()</B
+> ·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬·ñÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> ºÍ <A  HREF="function.pg-untrace.html"  ><B  CLASS="function" >pg_untrace()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-set-client-encoding.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-tty.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_set_client_encoding</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_tty</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-socket.html">pg_socket</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-transaction-status.html">pg_transaction_status</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-trace" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_trace</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5)</p><p class="refpurpose"><span class="refname">pg_trace</span> &mdash; <span class="dc-title">å¯åŠ¨ä¸€ä¸ª PostgreSQL è¿æ¥çš„è¿½è¸ªåŠŸèƒ½</span></p>
 
-   </div>
-   <div class="refsect1 unknown-returnvaluet" id="refsect1-function.pg-trace-unknown-returnvaluet">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">bool</span> <span class="methodname"><strong>pg_trace</strong></span>
-       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pathname</code></span>
-      [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-      [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-     ]] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_trace()</strong></span> å¯åŠ¨ PostgreSQL å‰ç«¯ï¼åç«¯é€šè®¯çš„è¿½è¸ªå¹¶è®°å½•åˆ° <code class="parameter">pathname</code> æŒ‡å®šçš„æ–‡ä»¶ä¸­ã€‚è¦å®Œå…¨ç†è§£ç»“æœï¼Œç”¨æˆ·éœ€è¦ç†Ÿæ‚‰ PostgreSQL é€šè®¯åè®®çš„æœ¬è´¨ã€‚å¯¹ä¸ç†Ÿæ‚‰çš„ç”¨æˆ·æ¥è¯´ï¼Œè¿½è¸ªå‘é€åˆ°æœåŠ¡å™¨çš„æŸ¥è¯¢é”™è¯¯ä¾ç„¶æœ‰ç”¨ï¼Œä¾‹å¦‚å¯ä»¥ç”¨ <strong class="command">grep &#039;^To backend&#039; trace.log</strong> æ¥æŸ¥çœ‹å“ªäº›æŸ¥è¯¢å®é™…ä¸Šè¢«å‘é€åˆ°äº† PostgreSQL æœåŠ¡å™¨ã€‚æ›´å¤šä¿¡æ¯å‚è€ƒ PostgreSQL æ‰‹å†Œã€‚
-    </p>
-    <p class="para">
-     å‚æ•° <code class="parameter">pathname</code> å’Œ <code class="parameter">mode</code> å’Œ <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>(<code class="parameter">mode</code> é»˜è®¤ä¸º &#039;w&#039;) ä¸­çš„ä¸€æ ·ã€‚<code class="parameter">connection</code> æŒ‡å®šäº†è¦è¿½è¸ªçš„è¿æ¥ï¼Œé»˜è®¤ä¸ºä¸Šä¸€ä¸ªæ‰“å¼€çš„è¿æ¥ã€‚
-    </p>
-    <p class="para">
-     å¦‚æœ <code class="parameter">pathname</code> å¯ä»¥ä½œä¸ºæ—¥å¿—æ–‡ä»¶æ‰“å¼€ï¼Œåˆ™
-     <span class="function"><strong>pg_trace()</strong></span> è¿”å› <strong><code>TRUE</code></strong>ï¼Œå¦åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> å’Œ <span class="function"><a href="function.pg-untrace.html" class="function">pg_untrace()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-socket.html">pg_socket</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-transaction-status.html">pg_transaction_status</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

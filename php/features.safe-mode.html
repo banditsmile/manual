@@ -1,72 +1,361 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å®‰å…¨æ¨¡å¼</title>
+<HTML  ><HEAD  ><TITLE  >°²È«Ä£Ê½</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÌØµã" HREF="features.html"><LINK  REL="PREVIOUS" TITLE="Êý¾Ý¿âÓÀ¾ÃÁ¬½Ó" HREF="features.persistent-connections.html"><LINK  REL="NEXT" TITLE="±»°²È«Ä£Ê½ÏÞÖÆ»òÆÁ±ÎµÄº¯Êý" HREF="features.safe-mode.functions.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="chapter" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="features.persistent-connections.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="features.safe-mode.functions.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="chapter" ><H1  ><A  NAME="features.safe-mode" >ÕÂ 22. °²È«Ä£Ê½</A
+></H1
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="features.safe-mode.html#ini.sect.safe-mode"  >±£°²´ëÊ©ºÍ°²È«Ä£Ê½</A
+></DT
+><DT  ><A  HREF="features.safe-mode.functions.html"  >±»°²È«Ä£Ê½ÏÞÖÆ»òÆÁ±ÎµÄº¯Êý</A
+></DT
+></DL
+></DIV
+><P  >&#13;  PHP µÄ°²È«Ä£Ê½ÊÇÎªÁËÊÔÍ¼½â¾ö¹²Ïí·þÎñÆ÷£¨shared-server£©°²È«ÎÊÌâ¶øÉèÁ¢µÄ¡£ÔÚ½á¹¹ÉÏ£¬ÊÔÍ¼ÔÚ
+  PHP ²ãÉÏ½â¾öÕâ¸öÎÊÌâÊÇ²»ºÏÀíµÄ£¬µ«ÐÞ¸Ä WEB
+  ·þÎñÆ÷²ãºÍ²Ù×÷ÏµÍ³²ãÏÔµÃ·Ç³£²»ÏÖÊµ¡£Òò´ËÐí¶àÈË£¬ÌØ±ðÊÇ ISP£¬Ä¿Ç°Ê¹ÓÃ°²È«Ä£Ê½¡£
+ </P
+><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="ini.sect.safe-mode" ></A
+>±£°²´ëÊ©ºÍ°²È«Ä£Ê½</H1
+><P  >&#13;   <DIV  CLASS="table" ><A  NAME="AEN6763" ></A
+><P  ><B  >±í¸ñ 22-1. ±£°²´ëÊ©ºÍ°²È«Ä£Ê½ÅäÖÃÖ¸Áî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ãû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×÷ÓÃ·¶Î§</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_gid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_include_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_exec_dir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_allowed_env_vars</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >safe_mode_protected_env_vars</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >LD_LIBRARY_PATH</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >open_basedir</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >disable_functions</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >disable_classes</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+   PHP_INI_* ³£Á¿µÄ½øÒ»²½ÏêÏ¸ËµÃ÷Óë¶¨Òå¼û <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>¡£
+  </P
+><P  >ÒÔÏÂÊÇ¸ÃÅäÖÃÑ¡ÏîµÄ¼òÒª½âÊÍ¡£</P
+><P  >&#13;   <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><A  NAME="ini.safe-mode" ></A
+><TT  CLASS="parameter" ><I  >safe_mode</I
+></TT
+>
+      <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+></DT
+><DD  ><P  >&#13;       ÊÇ·ñÆôÓÃ PHP µÄ°²È«Ä£Ê½¡£¸ü¶àÐÅÏ¢ÇëÔÄ¶Á<A  HREF="http://shouce.jb51.net/php/security.index.html"  >°²È«</A
+>Ò»ÕÂ¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.safe-mode-gid" ></A
+><TT  CLASS="parameter" ><I  >safe_mode_gid</I
+></TT
+>
+      <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+></DT
+><DD  ><P  >&#13;       Ä¬ÈÏÇé¿öÏÂ£¬°²È«Ä£Ê½ÔÚ´ò¿ªÎÄ¼þÊ±»á×ö UID ±È½Ï¼ì²é¡£Èç¹ûÄãÏë½«Æä·Å¿íµ½
+       GID ±È½Ï£¬Ôò´ò¿ª safe_mode_gid¡£ÊÇ·ñÔÚÎÄ¼þ·ÃÎÊÊ±Ê¹ÓÃ
+       <TT  CLASS="literal" >UID</TT
+>£¨<TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>£©»òÕß
+       <TT  CLASS="literal" >GID</TT
+>£¨<TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£©À´×ö¼ì²é¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.safe-mode-include-dir" ></A
+><TT  CLASS="parameter" ><I  >safe_mode_include_dir</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       µ±´Ó´ËÄ¿Â¼¼°Æä×ÓÄ¿Â¼£¨Ä¿Â¼±ØÐëÔÚ <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>
+       ÖÐ»òÕßÓÃÍêÕûÂ·¾¶À´°üº¬£©°üº¬ÎÄ¼þÊ±Ô½¹ý
+       <TT  CLASS="literal" >UID</TT
+>/<TT  CLASS="literal" >GID</TT
+> ¼ì²é¡£
+      </P
+><P  >&#13;       ´Ó PHP 4.2.0 ¿ªÊ¼£¬±¾Ö¸Áî¿ÉÒÔ½ÓÊÜºÍ <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>
+       Ö¸ÁîÀàËÆµÄ·ç¸ñÓÃ·ÖºÅ¸ô¿ªµÄÂ·¾¶£¬¶ø²»Ö»ÊÇÒ»¸öÄ¿Â¼¡£
+      </P
+><P  >&#13;       Ö¸¶¨µÄÏÞÖÆÊµ¼ÊÉÏÊÇÒ»¸öÇ°×º£¬¶ø·ÇÒ»¸öÄ¿Â¼Ãû¡£ÕâÒ²¾ÍÊÇËµ¡°safe_mode_include_dir = /dir/incl¡±½«ÔÊÐí·ÃÎÊ¡°/dir/include¡±ºÍ¡°/dir/incls¡±£¬Èç¹ûËüÃÇ´æÔÚ¡£Èç¹ûÄúÏ£Íû½«·ÃÎÊ¿ØÖÆÔÚÒ»¸öÖ¸¶¨µÄÄ¿Â¼£¬ÄÇÃ´ÇëÔÚ½áÎ²¼ÓÉÏÒ»¸öÐ±Ïß£¬ÀýÈç£º¡°safe_mode_include_dir = /dir/incl/¡±¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.safe-mode-exec-dir" ></A
+><TT  CLASS="parameter" ><I  >safe_mode_exec_dir</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       Èç¹û PHP Ê¹ÓÃÁË°²È«Ä£Ê½£¬<A  HREF="function.system.html"  ><B  CLASS="function" >system()</B
+></A
+> ºÍÆäËü<A  HREF="ref.exec.html"  >Ö´ÐÐÏµÍ³³ÌÐòµÄº¯Êý</A
+>½«¾Ü¾øÆô¶¯²»ÔÚ´ËÄ¿Â¼ÖÐµÄ³ÌÐò¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.safe-mode-allowed-env-vars" ></A
+><TT  CLASS="parameter" ><I  >safe_mode_allowed_env_vars</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       ÉèÖÃÄ³Ð©»·¾³±äÁ¿¿ÉÄÜÊÇÇ±ÔÚµÄ°²È«È±¿Ú¡£±¾Ö¸Áî°üº¬ÓÐÒ»¸ö¶ººÅ·Ö¸ôµÄÇ°×ºÁÐ±í¡£ÔÚ°²È«Ä£Ê½ÏÂ£¬ÓÃ»§Ö»ÄÜ¸Ä±äÄÇÐ©Ãû×Ö¾ßÓÐÔÚÕâÀïÌá¹©µÄÇ°×ºµÄ»·¾³±äÁ¿¡£Ä¬ÈÏÇé¿öÏÂ£¬ÓÃ»§Ö»ÄÜÉèÖÃÒÔ
+       PHP_ ¿ªÍ·µÄ»·¾³±äÁ¿£¨ÀýÈç PHP_FOO = BAR£©¡£
+      </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        Èç¹û±¾Ö¸ÁîÎª¿Õ£¬PHP ½«Ê¹ÓÃ»§¿ÉÒÔÐÞ¸ÄÈÎºÎ»·¾³±äÁ¿£¡
+       </P
+></BLOCKQUOTE
+></DIV
+></DD
+><DT  ><A  NAME="ini.safe-mode-protected-env-vars" ></A
+><TT  CLASS="parameter" ><I  >safe_mode_protected_env_vars</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       ±¾Ö¸Áî°üº¬ÓÐÒ»¸ö¶ººÅ·Ö¸ôµÄ»·¾³±äÁ¿µÄÁÐ±í£¬×îÖÕÓÃ»§²»ÄÜÓÃ
+       <A  HREF="function.putenv.html"  ><B  CLASS="function" >putenv()</B
+></A
+> À´¸Ä±äÕâÐ©»·¾³±äÁ¿¡£ÉõÖÁÔÚ
+       safe_mode_allowed_env_vars ÖÐÉèÖÃÁËÔÊÐíÐÞ¸ÄÊ±Ò²²»ÄÜ¸Ä±äÕâÐ©±äÁ¿¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.open-basedir" ></A
+><TT  CLASS="parameter" ><I  >open_basedir</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       ½« PHP ËùÄÜ´ò¿ªµÄÎÄ¼þÏÞÖÆÔÚÖ¸¶¨µÄÄ¿Â¼Ê÷£¬°üÀ¨ÎÄ¼þ±¾Éí¡£±¾Ö¸Áî<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >²»ÊÜ</I
+></SPAN
+>°²È«Ä£Ê½´ò¿ª»òÕß¹Ø±ÕµÄÓ°Ïì¡£
+      </P
+><P  >&#13;       µ±Ò»¸ö½Å±¾ÊÔÍ¼ÓÃÀýÈç <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> »òÕß <A  HREF="function.gzopen.html"  ><B  CLASS="function" >gzopen()</B
+></A
+>
+       ´ò¿ªÒ»¸öÎÄ¼þÊ±£¬¸ÃÎÄ¼þµÄÎ»ÖÃ½«±»¼ì²é¡£µ±ÎÄ¼þÔÚÖ¸¶¨µÄÄ¿Â¼Ê÷Ö®ÍâÊ±
+       PHP ½«¾Ü¾ø´ò¿ªËü¡£ËùÓÐµÄ·ûºÅÁ¬½Ó¶¼»á±»½âÎö£¬ËùÒÔ²»¿ÉÄÜÍ¨¹ý·ûºÅÁ¬½ÓÀ´±Ü¿ª´ËÏÞÖÆ¡£
+      </P
+><P  >&#13;       ÌØÊâÖµ <SPAN  CLASS="systemitem" >.</SPAN
+>
+       Ö¸¶¨ÁË´æ·Å¸Ã½Å±¾µÄÄ¿Â¼½«±»µ±×ö»ù×¼Ä¿Â¼¡£
+      </P
+><P  >&#13;       ÔÚ Windows ÖÐ£¬ÓÃ·ÖºÅ·Ö¸ôÄ¿Â¼¡£ÔÚÈÎºÎÆäËüÏµÍ³ÖÐÓÃÃ°ºÅ·Ö¸ôÄ¿Â¼¡£×÷Îª
+       Apache Ä£¿éÊ±£¬¸¸Ä¿Â¼ÖÐµÄ open_basedir Â·¾¶×Ô¶¯±»¼Ì³Ð¡£
+      </P
+><P  >&#13;       ÓÃ open_basedir Ö¸¶¨µÄÏÞÖÆÊµ¼ÊÉÏÊÇÇ°×º£¬²»ÊÇÄ¿Â¼Ãû¡£Ò²¾ÍÊÇËµ
+       "open_basedir = /dir/incl" Ò²»áÔÊÐí·ÃÎÊ "/dir/include" ºÍ
+        "/dir/incls"£¬Èç¹ûËüÃÇ´æÔÚµÄ»°¡£Èç¹ûÒª½«·ÃÎÊÏÞÖÆÔÚ½öÎªÖ¸¶¨µÄÄ¿Â¼£¬ÓÃÐ±Ïß½áÊøÂ·¾¶Ãû¡£ÀýÈç£º"open_basedir = /dir/incl/"¡£
+      </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        Ö§³Ö¶à¸öÄ¿Â¼ÊÇ 3.0.7 ¼ÓÈëµÄ¡£
+       </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;       Ä¬ÈÏÊÇÔÊÐí´ò¿ªËùÓÐÎÄ¼þ¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.disable-functions" ></A
+><TT  CLASS="parameter" ><I  >disable_functions</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       ±¾Ö¸ÁîÔÊÐíÄã»ùÓÚ<A  HREF="http://shouce.jb51.net/php/security.index.html"  >°²È«</A
+>Ô­Òò½ûÖ¹Ä³Ð©º¯Êý¡£½ÓÊÜ¶ººÅ·Ö¸ôµÄº¯ÊýÃûÁÐ±í×÷Îª²ÎÊý¡£
+       disable_functions ²»ÊÜ<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>µÄÓ°Ïì¡£
+      </P
+><P  >&#13;       ±¾Ö¸ÁîÖ»ÄÜÉèÖÃÔÚ <TT  CLASS="filename" >php.ini</TT
+> ÖÐ¡£ÀýÈçÄã²»ÄÜ½«ÆäÉèÖÃÔÚ <TT  CLASS="filename" >httpd.conf</TT
+>¡£
+      </P
+></DD
+><DT  ><A  NAME="ini.disable-classes" ></A
+><TT  CLASS="parameter" ><I  >disable_classes</I
+></TT
+>
+      <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;       ±¾Ö¸Áî¿ÉÒÔÊ¹Äã³öÓÚ<A  HREF="http://shouce.jb51.net/php/security.index.html"  >°²È«</A
+>µÄÀíÓÉ½ûÓÃÄ³Ð©Àà¡£ÓÃ¶ººÅ·Ö¸ôÀàÃû¡£disable_classes
+       ²»ÊÜ<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>µÄÓ°Ïì¡£
+      </P
+><P  >&#13;       ±¾Ö¸ÁîÖ»ÄÜÉèÖÃÔÚ <TT  CLASS="filename" >php.ini</TT
+> ÖÐ¡£ÀýÈçÄã²»ÄÜ½«ÆäÉèÖÃÔÚ <TT  CLASS="filename" >httpd.conf</TT
+>¡£
+      </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >¿ÉÓÃÐÔËµÃ÷: </B
+>
+        ±¾Ö¸Áî×Ô PHP 4.3.2 Æð¿ÉÓÃ¡£
+       </P
+></BLOCKQUOTE
+></DIV
+></DD
+></DL
+></DIV
+>
+  </P
+><P  >&#13;   ²Î¼û <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+>£¬<A  HREF="ref.errorfunc.html#ini.display-errors"  >display_errors</A
+> ºÍ <A  HREF="ref.errorfunc.html#ini.log-errors"  >log_errors</A
+>¡£
+  </P
+><P  >&#13;   µ± <A  HREF="features.safe-mode.html#ini.safe-mode"  >safe_mode</A
+> ÉèÖÃÎª on£¬PHP ½«¼ì²éµ±Ç°½Å±¾µÄÓµÓÐÕßÊÇ·ñºÍ½«±»ÎÄ¼þº¯Êý²Ù×÷µÄÎÄ¼þµÄÓµÓÐÕßÏàÆ¥Åä¡£ÀýÈç£º
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="ls" >-rw-rw-r--    1 rasmus   rasmus       33 Jul  1 19:20 script.php
+-rw-r--r--    1 root     root       1116 May 26 18:01 /etc/passwd</PRE
+></TD
+></TR
+></TABLE
+>
+   ÔËÐÐ script.php
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /> readfile</font><font  color="#007700">(</font><font  color="#DD0000">'/etc/passwd'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+   Èç¹û°²È«Ä£Ê½±»¼¤»î£¬Ôò½«»áµ¼ÖÂÒÔÏÂ´íÎó£º
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Warning: SAFE MODE Restriction in effect. The script whose uid is 500 is not
+allowed to access /etc/passwd owned by uid 0 in /docroot/script.php on line 2</PRE
+></TD
+></TR
+></TABLE
+>
+  </P
+><P  >&#13;   Í¬Ê±£¬»òÐí»á´æÔÚÕâÑùµÄ»·¾³£¬ÔÚ¸Ã»·¾³ÏÂ£¬¿íËÉµÄ <TT  CLASS="literal" >GID</TT
+> ¼ì²éÒÑ¾­×ã¹»£¬µ«ÑÏ¸ñµÄ <TT  CLASS="literal" >UID</TT
+> ¼ì²é·´¶øÊÇ²»ÊÊºÏµÄ¡£Äú¿ÉÒÔÓÃ <A  HREF="features.safe-mode.html#ini.safe-mode-gid"  >safe_mode_gid</A
+> Ñ¡ÏîÀ´¿ØÖÆÕâÖÖ¼ì²é¡£Èç¹ûÉèÖÃÎª <TT  CLASS="literal" >On</TT
+> Ôò½øÐÐ¿íËÉµÄ <TT  CLASS="literal" >GID</TT
+> ¼ì²é£»ÉèÖÃÎª <TT  CLASS="literal" >Off</TT
+>£¨Ä¬ÈÏÖµ£©Ôò½øÐÐ <TT  CLASS="literal" >UID</TT
+> ¼ì²é¡£
+  </P
+><P  >&#13;   ³ýÁË <A  HREF="features.safe-mode.html#ini.safe-mode"  >safe_mode</A
+> ÒÔÍâ£¬Èç¹ûÄúÉèÖÃÁË <A  HREF="features.safe-mode.html#ini.open-basedir"  >open_basedir</A
+> Ñ¡Ïî£¬ÔòËùÓÐµÄÎÄ¼þ²Ù×÷½«±»ÏÞÖÆÔÚÄúÖ¸¶¨µÄÄ¿Â¼ÏÂ¡£ÀýÈç£º
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="ini" >&#60;Directory /docroot&#62;
+  php_admin_value open_basedir /docroot
+&#60;/Directory&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+   Èç¹ûÄúÔÚÉèÖÃÁË <A  HREF="features.safe-mode.html#ini.open-basedir"  >open_basedir</A
+> Ñ¡ÏîºóÔËÐÐÍ¬ÑùµÄ script.php£¬ÔòÆä½á¹û»áÊÇ£º
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Warning: open_basedir restriction in effect. File is in wrong directory in
+/docroot/script.php on line 2</PRE
+></TD
+></TR
+></TABLE
+>
+  </P
+><P  >&#13;   ÄúÒ²¿ÉÒÔµ¥¶ÀµØÆÁ±ÎÄ³Ð©º¯Êý¡£Çë×¢Òâ
+   <A  HREF="features.safe-mode.html#ini.disable-functions"  >disable_functions</A
+>
+   Ñ¡Ïî²»ÄÜÔÚ <TT  CLASS="filename" >php.ini</TT
+> ÎÄ¼þÍâ²¿Ê¹ÓÃ£¬Ò²¾ÍÊÇËµÄúÎÞ·¨ÔÚ <TT  CLASS="filename" >httpd.conf</TT
+>
+   ÎÄ¼þµÄ°´²»Í¬ÐéÄâÖ÷»ú»ò²»Í¬Ä¿Â¼µÄ·½Ê½À´ÆÁ±Îº¯Êý¡£
+   Èç¹ûÎÒÃÇ½«ÈçÏÂÄÚÈÝ¼ÓÈëµ½ <TT  CLASS="filename" >php.ini</TT
+> ÎÄ¼þ£º
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="ini" >disable_functions readfile,system</PRE
+></TD
+></TR
+></TABLE
+>
+   ÔòÎÒÃÇ»áµÃµ½ÈçÏÂµÄÊä³ö£º
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Warning: readfile() has been disabled for security reasons in
+/docroot/script.php on line 2</PRE
+></TD
+></TR
+></TABLE
+>
+  </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="features.persistent-connections.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æðµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="features.safe-mode.functions.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Êý¾Ý¿âÓÀ¾ÃÁ¬½Ó</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="features.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >±»°²È«Ä£Ê½ÏÞÖÆ»òÆÁ±ÎµÄº¯Êý</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.persistent-connections.html">æ•°æ®åº“æŒä¹…è¿žæŽ¥</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="ini.sect.safe-mode.html">ä¿å®‰æŽªæ–½å’Œå®‰å…¨æ¨¡å¼</a></div>
- <div class="up"><a href="features.html">ç‰¹ç‚¹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="features.safe-mode" class="chapter">
- <h1>å®‰å…¨æ¨¡å¼</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="ini.sect.safe-mode.html">ä¿å®‰æŽªæ–½å’Œå®‰å…¨æ¨¡å¼</a></li><li><a href="features.safe-mode.functions.html">è¢«å®‰å…¨æ¨¡å¼é™åˆ¶æˆ–å±è”½çš„å‡½æ•°</a></li></ul>
 
-
- <p class="para">
-  PHP çš„å®‰å…¨æ¨¡å¼æ˜¯ä¸ºäº†è¯•å›¾è§£å†³å…±äº«æœåŠ¡å™¨ï¼ˆshared-serverï¼‰å®‰å…¨é—®é¢˜è€Œè®¾ç«‹çš„ã€‚åœ¨ç»“æž„ä¸Šï¼Œè¯•å›¾åœ¨
-  PHP å±‚ä¸Šè§£å†³è¿™ä¸ªé—®é¢˜æ˜¯ä¸åˆç†çš„ï¼Œä½†ä¿®æ”¹ web
-  æœåŠ¡å™¨å±‚å’Œæ“ä½œç³»ç»Ÿå±‚æ˜¾å¾—éžå¸¸ä¸çŽ°å®žã€‚å› æ­¤è®¸å¤šäººï¼Œç‰¹åˆ«æ˜¯ ISPï¼Œç›®å‰ä½¿ç”¨å®‰å…¨æ¨¡å¼ã€‚
- </p>
-
- <div class="warning"><strong class="warning">Warning</strong><p class="simpara">æœ¬ç‰¹æ€§å·²è‡ª
-PHP 5.3.0 èµ·<em class="emphasis">åºŸå¼ƒ</em>å¹¶å°†è‡ª PHP 5.4.0
-èµ·<em class="emphasis">ç§»é™¤</em>ã€‚</p></div>
- 
-  <p class="para">
-   <table class="doctable table">
-    <caption><strong>Changelog for <em>safe mode</em></strong></caption>
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜Ž</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.4.0</td>
-       <td>
-        Removed from PHP, and generates a fatal <strong><code>E_CORE_ERROR</code></strong>
-        level error when enabled.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        Deprecated, and <strong><code>E_DEPRECATED</code></strong> errors were added.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
-
- 
-
- 
-
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.persistent-connections.html">æ•°æ®åº“æŒä¹…è¿žæŽ¥</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="ini.sect.safe-mode.html">ä¿å®‰æŽªæ–½å’Œå®‰å…¨æ¨¡å¼</a></div>
- <div class="up"><a href="features.html">ç‰¹ç‚¹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

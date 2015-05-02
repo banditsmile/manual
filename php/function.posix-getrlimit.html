@@ -1,219 +1,54 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Return info about system resource limits</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.posix-getpwuid.html">posix_getpwuid</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.posix-getsid.html">posix_getsid</a></div>
- <div class="up"><a href="ref.posix.html">POSIX å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.posix-getrlimit" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">posix_getrlimit</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">posix_getrlimit</span> &mdash; <span class="dc-title">Return info about system resource limits</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.posix-getrlimit-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>posix_getrlimit</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>posix_getrlimit()</strong></span> returns an <span class="type"><a href="language.types.array.html" class="type array">array</a></span>
-   of information about the current resource&#039;s soft and hard limits.
-  </p>
-  <p class="para">
-    Each resource has an associated soft and hard limit.  The soft
-    limit is the value that the kernel enforces for the corresponding
-    resource.  The hard limit acts as a ceiling for the soft limit.
-    An unprivileged process may only set its soft limit to a value
-    from 0 to the hard limit, and irreversibly lower its hard limit.
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.posix-getrlimit-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an associative <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of elements for each
-   limit that is defined. Each limit has a soft and a hard limit.
-   <table class="doctable table">
-    <caption><strong>List of possible limits returned</strong></caption>
-    
-     <thead>
-      <tr>
-       <th>Limit name</th>
-       <th>Limit description</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>core</td>
-       <td>
-        The maximum size of the core file.  When 0, not core files are
-        created.  When core files are larger than this size, they will
-        be truncated at this size.
-       </td>
-      </tr>
-
-      <tr>
-       <td>totalmem</td>
-       <td>
-        The maximum size of the memory of the process, in bytes.
-       </td>
-      </tr>
-
-      <tr>
-       <td>virtualmem</td>
-       <td>
-        The maximum size of the virtual memory for the process, in bytes.
-       </td>
-      </tr>
- 
-      <tr>
-       <td>data</td>
-       <td>
-        The maximum size of the data segment for the process, in bytes.
-       </td>
-      </tr>
-
-      <tr>
-       <td>stack</td>
-       <td>
-        The maximum size of the process stack, in bytes.
-       </td>
-      </tr>
-
-      <tr>
-       <td>rss</td>
-       <td>
-        The maximum number of virtual pages resident in RAM
-       </td>
-      </tr>
-
-      <tr>
-       <td>maxproc</td>
-       <td>
-        The maximum number of processes that can be created for the
-        real user ID of the calling process.
-       </td>
-      </tr>
-
-      <tr>
-       <td>memlock</td>
-       <td>
-        The maximum number of bytes of memory that may be locked into RAM.
-       </td>
-      </tr>
-
-      <tr>
-       <td>cpu</td>
-       <td>
-        The amount of time the process is allowed to use the CPU.
-       </td>
-      </tr>
-
-      <tr>
-       <td>filesize</td>
-       <td>
-        The maximum size of the data segment for the process, in bytes.
-       </td>
-      </tr>
-
-      <tr>
-       <td>openfiles</td>
-       <td>
-        One more than the maximum number of open file descriptors.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >posix_getrlimit</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="POSIX Functions" HREF="ref.posix.html"><LINK  REL="PREVIOUS" TITLE="posix_getpwuid" HREF="function.posix-getpwuid.html"><LINK  REL="NEXT" TITLE="posix_getsid" HREF="function.posix-getsid.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.posix-getpwuid.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.posix-getsid.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.posix-getrlimit" ></A
+>posix_getrlimit</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN90234" ></A
+><P  >    (PHP 3&#62;= 3.0.10, PHP 4 )</P
+>posix_getrlimit&nbsp;--&nbsp;Return info about system resource limits</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN90237" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getrlimit</B
+> ( void )<BR  ></BR
+><P  >&#13;     <DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >¸Ãº¯ÊıÄ¿Ç°ÉĞÎŞ²Î¿¼ÎÄµµ£»½ö²ÎÊıÁĞ±í¿ÉÓÃ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.posix-getpwuid.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.posix-getsid.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >posix_getpwuid</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.posix.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >posix_getsid</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.posix-getrlimit-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3939">
-    <p><strong>Example #1 Example use of <span class="function"><strong>posix_getrlimit()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$limits&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">posix_getrlimit</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$limits</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [soft core] =&gt; 0
-    [hard core] =&gt; unlimited
-    [soft data] =&gt; unlimited
-    [hard data] =&gt; unlimited
-    [soft stack] =&gt; 8388608
-    [hard stack] =&gt; unlimited
-    [soft totalmem] =&gt; unlimited
-    [hard totalmem] =&gt; unlimited
-    [soft rss] =&gt; unlimited
-    [hard rss] =&gt; unlimited
-    [soft maxproc] =&gt; unlimited
-    [hard maxproc] =&gt; unlimited
-    [soft memlock] =&gt; unlimited
-    [hard memlock] =&gt; unlimited
-    [soft cpu] =&gt; unlimited
-    [hard cpu] =&gt; unlimited
-    [soft filesize] =&gt; unlimited
-    [hard filesize] =&gt; unlimited
-    [soft openfiles] =&gt; 1024
-    [hard openfiles] =&gt; 1024
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.posix-getrlimit-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    This is a not POSIX function, but is common on BSD and System V
-    systems. If the system does not support this function, then it
-    will not be included at compile time.  This may be checked with
-    <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span>.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.posix-getrlimit-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member">man page GETRLIMIT(2)</li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.posix-getpwuid.html">posix_getpwuid</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.posix-getsid.html">posix_getsid</a></div>
- <div class="up"><a href="ref.posix.html">POSIX å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

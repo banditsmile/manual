@@ -1,170 +1,118 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å»ºç«‹ä¸€ä¸ªåŒ…å«æŒ‡å®šèŒƒå›´å•å…ƒçš„æ•°ç»„</title>
+<HTML  ><HEAD  ><TITLE  >range</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="prev" HREF="function.prev.html"><LINK  REL="NEXT" TITLE="reset" HREF="function.reset.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.prev.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.reset.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.range" ></A
+>range</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN10300" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>range&nbsp;--&nbsp;
+     ½¨Á¢Ò»¸ö°üº¬Ö¸¶¨·¶Î§µ¥ÔªµÄÊı×é
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN10303" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >range</B
+> ( int low, int high [, int step])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >range()</B
+> ·µ»ØÊı×éÖĞ´Ó
+     <TT  CLASS="parameter" ><I  >low</I
+></TT
+> µ½ <TT  CLASS="parameter" ><I  >high</I
+></TT
+> µÄµ¥Ôª£¬°üÀ¨ËüÃÇ±¾Éí¡£Èç¹û
+     low &#62; high£¬ÔòĞòÁĞ½«´Ó high µ½ low¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ĞÂ²ÎÊı: </B
+>
+      ¿ÉÑ¡µÄ <TT  CLASS="parameter" ><I  >step</I
+></TT
+> ²ÎÊıÊÇ PHP 5.0.0 ĞÂ¼ÓµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Èç¹û¸ø³öÁË <TT  CLASS="parameter" ><I  >step</I
+></TT
+> µÄÖµ£¬Ëü½«±»×÷Îªµ¥ÔªÖ®¼äµÄ²½½øÖµ¡£<TT  CLASS="parameter" ><I  >step</I
+></TT
+>
+     Ó¦¸ÃÎªÕıÖµ¡£Èç¹ûÎ´Ö¸¶¨£¬<TT  CLASS="parameter" ><I  >step</I
+></TT
+> ÔòÄ¬ÈÏÎª 1¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10330" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >range()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// array(0,1,2,3,4,5,6,7,8,9,10,11,12)<br  /></font><font  color="#007700">foreach(</font><font  color="#0000BB">range</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">12</font><font  color="#007700">) as </font><font  color="#0000BB">$number</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$number</font><font  color="#007700">;<br  />}<br  /></font><font  color="#FF8000">// The step parameter was introduced in 5.0.0<br  />// array(0,10,20,30,40,50,60,70,80,90,100)<br  /></font><font  color="#007700">foreach(</font><font  color="#0000BB">range</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">10</font><font  color="#007700">) as </font><font  color="#0000BB">$number</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$number</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// Use of character sequences introduced in 4.1.0<br  />// array('a','b','c','d','e','f','g','h','i');<br  /></font><font  color="#007700">foreach(</font><font  color="#0000BB">range</font><font  color="#007700">(</font><font  color="#DD0000">'a'</font><font  color="#007700">, </font><font  color="#DD0000">'i'</font><font  color="#007700">) as </font><font  color="#0000BB">$letter</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$letter</font><font  color="#007700">;<br  />}<br  /></font><font  color="#FF8000">// array('c','b','a');<br  /></font><font  color="#007700">foreach(</font><font  color="#0000BB">range</font><font  color="#007700">(</font><font  color="#DD0000">'c'</font><font  color="#007700">, </font><font  color="#DD0000">'a'</font><font  color="#007700">) as </font><font  color="#0000BB">$letter</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$letter</font><font  color="#007700">;<br  />}</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ°æ±¾ 4.1.0 Ö®Ç° <B  CLASS="function" >range()</B
+>
+      º¯ÊıÖ»²úÉúµİÔöµÄÕûÊıÊı×é¡£¶ÔÓÚ×Ö·ûĞòÁĞºÍµİ¼õÊı×éµÄÖ§³ÖÊÇ 4.1.0
+      ¼ÓÈëµÄ¡£×Ö·ûĞòÁĞÖµµÄ³¤¶ÈÏŞ¶¨ÎªÒ»¡£Èç¹ûÊäÈëµÄ³¤¶È³¬¹ıÒ»£¬ÔòÖ»Ê¹ÓÃµÚÒ»¸ö×Ö·û¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="caution" ><P  ></P
+><TABLE  CLASS="caution" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >×¢Òâ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      ÔÚ PHP °æ±¾ 4.1.0 µ½ 4.3.2 ÖĞ£¬<B  CLASS="function" >range()</B
+>
+      ½«Êı×Ö×Ö·û´®¿´×÷×Ö·û´®¶ø²»ÊÇÕûÊı£¬Òò´Ë½«»á±»×÷Îª×Ö·ûĞòÁĞÊ¹ÓÃ¡£ÀıÈç£¬<TT  CLASS="literal" >"4242"</TT
+>
+      »á±»µ±×÷ <TT  CLASS="literal" >"4"</TT
+> À´¶Ô´ı¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.shuffle.html"  ><B  CLASS="function" >shuffle()</B
+></A
+>£¬<A  HREF="function.array-fill.html"  ><B  CLASS="function" >array_fill()</B
+></A
+>
+     ºÍ <A  HREF="control-structures.foreach.html"  >foreach</A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.prev.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.reset.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >prev</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >reset</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.prev.html">prev</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.reset.html">reset</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.range" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">range</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">range</span> &mdash; <span class="dc-title">
-     å»ºç«‹ä¸€ä¸ªåŒ…å«æŒ‡å®šèŒƒå›´å•å…ƒçš„æ•°ç»„
-    </span></p>
 
-   </div>
- <div class="refsect1 description" id="refsect1-function.range-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>range</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$start</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$limit</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.number" class="type number">number</a></span> <code class="parameter">$step</code><span class="initializer"> = 1</span></span>
-  ] )</div>
-
-    <p class="para rdfs-comment">
-   å»ºç«‹ä¸€ä¸ªåŒ…å«æŒ‡å®šèŒƒå›´å•å…ƒçš„æ•°ç»„ã€‚
-  </p>
- </div>
-
-   
-  <div class="refsect1 parameters" id="refsect1-function.range-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">start</code></dt>
-
-     <dd>
-
-      <p class="para">
-       åºåˆ—çš„ç¬¬ä¸€ä¸ªå€¼ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">limit</code></dt>
-
-     <dd>
-
-      <p class="para">
-       åºåˆ—ç»“æŸäº <code class="parameter">limit</code> çš„å€¼ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">step</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœç»™å‡ºäº† <code class="parameter">step</code> çš„å€¼ï¼Œå®ƒå°†è¢«ä½œä¸ºå•å…ƒä¹‹é—´çš„æ­¥è¿›å€¼ã€‚<code class="parameter">step</code>
-     åº”è¯¥ä¸ºæ­£å€¼ã€‚å¦‚æœæœªæŒ‡å®šï¼Œ<code class="parameter">step</code> åˆ™é»˜è®¤ä¸º 1ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.range-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›çš„æ•°ç»„ä¸­ä»
-     <code class="parameter">start</code> åˆ° <code class="parameter">limit</code> çš„å•å…ƒï¼ŒåŒ…æ‹¬å®ƒä»¬æœ¬èº«ã€‚
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.range-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        æ·»åŠ äº†å¯é€‰å‚æ•°  <code class="parameter">step</code>ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.1.0 to 4.3.2</td>
-       <td>
-        åœ¨ PHP ç‰ˆæœ¬ 4.1.0 åˆ° 4.3.2 ä¸­ï¼Œ<span class="function"><strong>range()</strong></span>
-      å°†æ•°å­—å­—ç¬¦ä¸²çœ‹ä½œå­—ç¬¦ä¸²è€Œä¸æ˜¯æ•´æ•°ï¼Œå› æ­¤å°†ä¼šè¢«ä½œä¸ºå­—ç¬¦åºåˆ—ä½¿ç”¨ã€‚ä¾‹å¦‚ï¼Œ<em>&quot;4242&quot;</em>
-      ä¼šè¢«å½“ä½œ <em>&quot;4&quot;</em> æ¥å¯¹å¾…ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.1.0</td>
-       <td>
-        åœ¨ç‰ˆæœ¬ 4.1.0 ä¹‹å‰ <span class="function"><strong>range()</strong></span>
-      å‡½æ•°åªäº§ç”Ÿé€’å¢çš„æ•´æ•°æ•°ç»„ã€‚å¯¹äºå­—ç¬¦åºåˆ—å’Œé€’å‡æ•°ç»„çš„æ”¯æŒæ˜¯ 4.1.0
-      åŠ å…¥çš„ã€‚å­—ç¬¦åºåˆ—å€¼çš„é•¿åº¦é™å®šä¸ºä¸€ã€‚å¦‚æœè¾“å…¥çš„é•¿åº¦è¶…è¿‡ä¸€ï¼Œåˆ™åªä½¿ç”¨ç¬¬ä¸€ä¸ªå­—ç¬¦ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.range-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5345">
-    <p><strong>Example #1 <span class="function"><strong>range()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;array(0,&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9,&nbsp;10,&nbsp;11,&nbsp;12)<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;step&nbsp;parameter&nbsp;was&nbsp;introduced&nbsp;in&nbsp;5.0.0<br />//&nbsp;array(0,&nbsp;10,&nbsp;20,&nbsp;30,&nbsp;40,&nbsp;50,&nbsp;60,&nbsp;70,&nbsp;80,&nbsp;90,&nbsp;100)<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Use&nbsp;of&nbsp;character&nbsp;sequences&nbsp;introduced&nbsp;in&nbsp;4.1.0<br />//&nbsp;array('a',&nbsp;'b',&nbsp;'c',&nbsp;'d',&nbsp;'e',&nbsp;'f',&nbsp;'g',&nbsp;'h',&nbsp;'i');<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'i'</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;array('c',&nbsp;'b',&nbsp;'a');<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'a'</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.range-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.shuffle.html" class="function" rel="rdfs-seeAlso">shuffle()</a> - å°†æ•°ç»„æ‰“ä¹±</span></li>
-    <li class="member"><span class="function"><a href="function.array-fill.html" class="function" rel="rdfs-seeAlso">array_fill()</a> - ç”¨ç»™å®šçš„å€¼å¡«å……æ•°ç»„</span></li>
-    <li class="member"><a href="control-structures.foreach.html" class="link">foreach</a></li>
-   </ul>
-  </p>
- </div>
-  
-   
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.prev.html">prev</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.reset.html">reset</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

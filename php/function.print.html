@@ -1,111 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>输出字符串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.parse-str.html">parse_str</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.printf.html">printf</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.print" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">print</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">print</span> &mdash; <span class="dc-title">输出字符串</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.print-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>print</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$arg</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   输出 <code class="parameter">arg</code>。
-  </p>
-  <p class="para">
-   <span class="function"><strong>print</strong></span> 实际上不是一个函数（它是一个语言结构），因此你可以不必使用圆括号来括起它的参数列表。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.print-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">arg</code></dt>
-
-     <dd>
-
-      <p class="para">
-       输入数据。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.print-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   总是返回 <em>1</em>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.print-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5171">
-    <p><strong>Example #1 <span class="function"><strong>print</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">print(</span><span style="color: #DD0000">"Hello&nbsp;World"</span><span style="color: #007700">);<br /><br />print&nbsp;</span><span style="color: #DD0000">"print()&nbsp;also&nbsp;works&nbsp;without&nbsp;parentheses."</span><span style="color: #007700">;<br /><br />print&nbsp;</span><span style="color: #DD0000">"This&nbsp;spans<br />multiple&nbsp;lines.&nbsp;The&nbsp;newlines&nbsp;will&nbsp;be<br />output&nbsp;as&nbsp;well"</span><span style="color: #007700">;<br /><br />print&nbsp;</span><span style="color: #DD0000">"This&nbsp;spans\nmultiple&nbsp;lines.&nbsp;The&nbsp;newlines&nbsp;will&nbsp;be\noutput&nbsp;as&nbsp;well."</span><span style="color: #007700">;<br /><br />print&nbsp;</span><span style="color: #DD0000">"escaping&nbsp;characters&nbsp;is&nbsp;done&nbsp;\"Like&nbsp;this\"."</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;可以在打印语句中使用变量<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"foobar"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"barbaz"</span><span style="color: #007700">;<br /><br />print&nbsp;</span><span style="color: #DD0000">"foo&nbsp;is&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;is&nbsp;foobar<br /><br />//&nbsp;也可以使用数组<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"value"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">);<br /><br />print&nbsp;</span><span style="color: #DD0000">"this&nbsp;is&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$bar</span><span style="color: #007700">[</span><span style="color: #DD0000">'value'</span><span style="color: #007700">]}</span><span style="color: #DD0000">&nbsp;!"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;this&nbsp;is&nbsp;foo&nbsp;!<br /><br />//&nbsp;使用单引号将打印变量名，而不是变量的值<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #DD0000">'foo&nbsp;is&nbsp;$foo'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;is&nbsp;$foo<br /><br />//&nbsp;如果没有使用任何其他字符，可以仅打印变量<br /></span><span style="color: #007700">print&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;foobar<br /><br /></span><span style="color: #007700">print&nbsp;&lt;&lt;&lt;END<br /></span><span style="color: #DD0000">This&nbsp;uses&nbsp;the&nbsp;"here&nbsp;document"&nbsp;syntax&nbsp;to&nbsp;output<br />multiple&nbsp;lines&nbsp;with&nbsp;</span><span style="color: #0000BB">$variable</span><span style="color: #DD0000">&nbsp;interpolation.&nbsp;Note<br />that&nbsp;the&nbsp;here&nbsp;document&nbsp;terminator&nbsp;must&nbsp;appear&nbsp;on&nbsp;a<br />line&nbsp;with&nbsp;just&nbsp;a&nbsp;semicolon&nbsp;no&nbsp;extra&nbsp;whitespace!<br /></span><span style="color: #007700">END;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.print-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">因为是一个语言构造器而不是一个函数，不能被
-<a href="functions.variable-functions.html" class="link">可变函数</a> 调用。
-</span>
-</p></blockquote>
- </div>
+<HTML  ><HEAD  ><TITLE  >print</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="parse_str" HREF="function.parse-str.html"><LINK  REL="NEXT" TITLE="printf" HREF="function.printf.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.parse-str.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.printf.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.print" ></A
+>print</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN109440" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>print&nbsp;--&nbsp;Output a string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN109443" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >print</B
+> ( string arg)<BR  ></BR
+><P  >&#13;     Outputs <TT  CLASS="parameter" ><I  >arg</I
+></TT
+>. Returns <TT  CLASS="literal" >1</TT
+>,
+     always.
+    </P
+><P  >&#13;     <B  CLASS="function" >print()</B
+> is not actually a real function (it is a
+     language construct) so you are not required to use parentheses
+     with its argument list. 
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN109457" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >print()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">print(</font><font  color="#DD0000">"Hello World"</font><font  color="#007700">);<br  /><br  />print </font><font  color="#DD0000">"print() also works without parentheses."</font><font  color="#007700">;<br  /><br  />print </font><font  color="#DD0000">"This spans<br  />multiple lines. The newlines will be <br  />output as well"</font><font  color="#007700">;<br  /><br  />print </font><font  color="#DD0000">"This spans\nmultiple lines. The newlines will be\noutput as well."</font><font  color="#007700">;<br  /><br  />print </font><font  color="#DD0000">"escaping characters is done \"Like this\"."</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// You can use variables inside of a print statement<br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#DD0000">"foobar"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">"barbaz"</font><font  color="#007700">;<br  /><br  />print </font><font  color="#DD0000">"foo is $foo"</font><font  color="#007700">; </font><font  color="#FF8000">// foo is foobar<br  /><br  />// You can also use arrays<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= array(</font><font  color="#DD0000">"value" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"foo"</font><font  color="#007700">);<br  /><br  />print </font><font  color="#DD0000">"this is {$bar['value']} !"</font><font  color="#007700">; </font><font  color="#FF8000">// this is foo !<br  /><br  />// Using single quotes will print the variable name, not the value<br  /></font><font  color="#007700">print </font><font  color="#DD0000">'foo is $foo'</font><font  color="#007700">; </font><font  color="#FF8000">// foo is $foo<br  /><br  />// If you are not using any other characters, you can just print variables<br  /></font><font  color="#007700">print </font><font  color="#0000BB">$foo</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// foobar<br  /><br  /></font><font  color="#007700">print &lt;&lt;&lt;END<br  /></font><font  color="#0000BB">This uses the "here document" syntax to output<br  />multiple lines with $variable interpolation. Note<br  />that the here document terminator must appear on a<br  />line with just a semicolon no extra whitespace!<br  /></font><font  color="#007700">END;</font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     For a short discussion about the differences between 
+     <B  CLASS="function" >print()</B
+> and <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+>, see this FAQTs
+     Knowledge Base Article: <A  href="http://www.faqts.com/knowledge_base/view.phtml/aid/1/fid/40/"  TARGET="_top" >http://www.faqts.com/knowledge_base/view.phtml/aid/1/fid/40
+     </A
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>��������һ�����Խṹ���Ǻ�����������޷�����<A  HREF="functions.variable-functions.html"  >��������</A
+>�����á�</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+>, <A  HREF="function.printf.html"  ><B  CLASS="function" >printf()</B
+></A
+>,
+     and <A  HREF="function.flush.html"  ><B  CLASS="function" >flush()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.parse-str.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.printf.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >parse_str</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >printf</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.print-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.echo.html" class="function" rel="rdfs-seeAlso">echo</a> - 输出一个或多个字符串</span></li>
-    <li class="member"><span class="function"><a href="function.printf.html" class="function" rel="rdfs-seeAlso">printf()</a> - 输出格式化字符串</span></li>
-    <li class="member"><span class="function"><a href="function.flush.html" class="function" rel="rdfs-seeAlso">flush()</a> - 刷新输出缓冲</span></li>
-    <li class="member"><a href="language.types.string.html#language.types.string.syntax.heredoc" class="link">Heredoc syntax</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.parse-str.html">parse_str</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.printf.html">printf</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

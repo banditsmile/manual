@@ -1,188 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>设置会话 cookie 参数</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-save-path.html">session_save_path</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-set-save-handler.html">session_set_save_handler</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.session-set-cookie-params" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">session_set_cookie_params</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">session_set_cookie_params</span> &mdash; <span class="dc-title">设置会话 cookie 参数</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.session-set-cookie-params-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>session_set_cookie_params</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$lifetime</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$secure</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$httponly</code><span class="initializer"> = false</span></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   Cookie 参数可以在 <var class="filename">php.ini</var> 文件中定义，本函数仅在当前脚本执行过程中有效。
-   因此，如果要通过函数修改 cookie 参数，需要对每个请求都要
-   在调用 <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> 函数之前调用
-   <span class="function"><strong>session_set_cookie_params()</strong></span> 函数。
-  </p>
-  <p class="para">
-   本函数会修改运行期 ini 设置值，
-   可以通过 <span class="function"><a href="function.ini-get.html" class="function">ini_get()</a></span> 函数获取这些值。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.session-set-cookie-params-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">lifetime</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Cookie 的 <a href="session.configuration.html#ini.session.cookie-lifetime" class="link">生命周期</a>，以秒为单位。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       此 cookie 的有效 <a href="session.configuration.html#ini.session.cookie-path" class="link">路径</a>。 on the domain where
-       设置为“/”表示对于本域上所有的路径此 cookie 都可用。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">domain</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Cookie 的作用 <a href="session.configuration.html#ini.session.cookie-domain" class="link">域</a>。
-       例如：“www.php.net”。
-       如果要让 cookie 在所有的子域中都可用，此参数必须以点（.）开头，例如：“.php.net”。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">secure</code></dt>
-
-     <dd>
-
-      <p class="para">
-       设置为 <strong><code>TRUE</code></strong> 表示 cookie 仅在使用
-       <a href="session.configuration.html#ini.session.cookie-secure" class="link">安全</a> 链接时可用。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">httponly</code></dt>
-
-     <dd>
-
-      <p class="para">
-       设置为 <strong><code>TRUE</code></strong> 表示 PHP 发送 cookie 的时候会使用
-       <a href="session.configuration.html#ini.session.cookie-httponly" class="link">httponly</a>
-       标记。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >session_set_cookie_params</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Session Handling Functions" HREF="ref.session.html"><LINK  REL="PREVIOUS" TITLE="session_save_path" HREF="function.session-save-path.html"><LINK  REL="NEXT" TITLE="session_set_save_handler" HREF="function.session-set-save-handler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.session-save-path.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.session-set-save-handler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.session-set-cookie-params" ></A
+>session_set_cookie_params</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99349" ></A
+><P  >    (PHP 4 )</P
+>session_set_cookie_params&nbsp;--&nbsp;
+     Set the session cookie parameters
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99352" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >session_set_cookie_params</B
+> ( int lifetime [, string path [, string domain [, bool secure]]])<BR  ></BR
+><P  >&#13;     Set cookie parameters defined in the <TT  CLASS="filename" >php.ini</TT
+> file.  The effect of this
+     function only lasts for the duration of the script.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+       The <TT  CLASS="parameter" ><I  >secure</I
+></TT
+> parameter was added in PHP
+       4.0.4.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also the configuration directives
+     <A  HREF="ref.session.html#ini.session.cookie-lifetime"  >session.cookie_lifetime</A
+>,
+     <A  HREF="ref.session.html#ini.session.cookie-path"  >session.cookie_path</A
+>,
+     <A  HREF="ref.session.html#ini.session.cookie-domain"  >session.cookie_domain</A
+>,
+     <A  HREF="ref.session.html#ini.session.cookie-secure"  >session.cookie_secure</A
+>, and
+     <A  HREF="function.session-get-cookie-params.html"  ><B  CLASS="function" >session_get_cookie_params()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.session-save-path.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.session-set-save-handler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >session_save_path</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.session.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >session_set_save_handler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.session-set-cookie-params-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   没有返回值。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.session-set-cookie-params-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.0</td>
-       <td>
-        加入 <code class="parameter">httponly</code> 参数。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.session-set-cookie-params-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member">
-     <a href="session.configuration.html#ini.session.cookie-lifetime" class="link">session.cookie_lifetime</a>
-    </li>
-    <li class="member">
-     <a href="session.configuration.html#ini.session.cookie-path" class="link">session.cookie_path</a>
-    </li>
-    <li class="member">
-     <a href="session.configuration.html#ini.session.cookie-domain" class="link">session.cookie_domain</a>
-    </li>
-    <li class="member">
-     <a href="session.configuration.html#ini.session.cookie-secure" class="link">session.cookie_secure</a>
-    </li>
-    <li class="member">
-     <a href="session.configuration.html#ini.session.cookie-httponly" class="link">session.cookie_httponly</a>
-    </li>
-    <li class="member"><span class="function"><a href="function.session-get-cookie-params.html" class="function" rel="rdfs-seeAlso">session_get_cookie_params()</a> - 获取会话 cookie 参数</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-save-path.html">session_save_path</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-set-save-handler.html">session_set_save_handler</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,133 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>为资源流设置阻塞或者阻塞模式</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-select.html">stream_select</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-set-chunk-size.html">stream_set_chunk_size</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-set-blocking" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_set_blocking</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">stream_set_blocking</span> &mdash; <span class="dc-title">为资源流设置阻塞或者阻塞模式</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.stream-set-blocking-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>stream_set_blocking</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$stream</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   为 <code class="parameter">stream</code> 设置阻塞或者阻塞模。
-  </p>
-  <p class="para">
-   此函数适用于支持非阻塞模式的任何资源流（常规文件，套接字资源流等）。 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.stream-set-blocking-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">stream</code></dt>
-
-     <dd>
-
-      <p class="para">
-       资源流。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果 <code class="parameter">mode</code> 为0，资源流将会被转换为非阻塞模式；如果是1，资源流将会被转换为阻塞模式。
-       该参数的设置将会影响到像 <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span> 和 <span class="function"><a href="function.fread.html" class="function">fread()</a></span> 这样的函数从资源流里读取数据。
-       在非阻塞模式下，调用 <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span> 总是会立即返回；而在阻塞模式下，将会一直等到从资源流里面获取到数据才能返回。 
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.stream-set-blocking-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.stream-set-blocking-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        在PHP 4.3.0之前，该函数只支持套接字资源流。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stream_set_blocking</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_select" HREF="function.stream-select.html"><LINK  REL="NEXT" TITLE="stream_set_timeout" HREF="function.stream-set-timeout.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-select.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-set-timeout.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-set-blocking" ></A
+>stream_set_blocking</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN106770" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>stream_set_blocking&nbsp;--&nbsp;Set blocking/non-blocking mode on a stream</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN106773" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >stream_set_blocking</B
+> ( resource stream, int mode)<BR  ></BR
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> is <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>, the given stream
+     will be switched to non-blocking mode, and if <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>, it
+     will be switched to blocking mode.  This affects calls like
+     <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+> and <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+>
+     that read from the stream.  In non-blocking mode an
+     <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+> call will always return right away
+     while in blocking mode it will wait for data to become available
+     on the stream.
+    </P
+><P  >&#13;     ����ɹ��򷵻� <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>��ʧ���򷵻� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+    </P
+><P  >&#13;     This function was previously called as
+     <B  CLASS="function" >set_socket_blocking()</B
+> and later
+     <A  HREF="function.socket-set-blocking.html"  ><B  CLASS="function" >socket_set_blocking()</B
+></A
+> but this usage is deprecated.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Prior to PHP 4.3, this function only worked on socket based streams.
+      Since PHP 4.3, this function works for any stream that supports
+      non-blocking mode (currently, regular files and socket streams).
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also
+     <A  HREF="function.stream-select.html"  ><B  CLASS="function" >stream_select()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-select.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-set-timeout.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_select</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_set_timeout</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.stream-set-blocking-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    该函数之前叫作 <span class="function"><a href="function.set-socket-blocking.html" class="function">set_socket_blocking()</a></span> 后来又叫做 <span class="function"><a href="function.socket-set-blocking.html" class="function">socket_set_blocking()</a></span> ，但是这种用法都已经被废弃。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.stream-set-blocking-seealso">
-  <h3 class="title">参见</h3>
-  <ul class="simplelist">
-   <li class="member"><span class="function"><a href="function.stream-select.html" class="function" rel="rdfs-seeAlso">stream_select()</a> - Runs the equivalent of the select() system call on the given
-   arrays of streams with a timeout specified by tv_sec and tv_usec</span></li>
-  </ul>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-select.html">stream_select</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-set-chunk-size.html">stream_set_chunk_size</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

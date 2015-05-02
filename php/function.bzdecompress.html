@@ -1,106 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>解压经 bzip2 编码过的数据</title>
+<HTML  ><HEAD  ><TITLE  >bzdecompress</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Bzip2 Compression Functions" HREF="ref.bzip2.html"><LINK  REL="PREVIOUS" TITLE="bzcompress" HREF="function.bzcompress.html"><LINK  REL="NEXT" TITLE="bzerrno" HREF="function.bzerrno.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.bzcompress.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.bzerrno.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.bzdecompress" ></A
+>bzdecompress</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN11146" ></A
+><P  >    (4.0.4 - 4.3.2 only)</P
+>bzdecompress&nbsp;--&nbsp;Decompresses bzip2 encoded data</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN11149" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >bzdecompress</B
+> ( string source [, int small])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >bzdecompress()</B
+> decompresses the
+     <TT  CLASS="parameter" ><I  >source</I
+></TT
+> string containing bzip2 encoded
+     data and returns it.  If the optional parameter
+     <TT  CLASS="parameter" ><I  >small</I
+></TT
+> is <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>, an alternative
+     decompression algorithm will be used which uses less memory (the
+     maximum memory requirement drops to around 2300K) but works at
+     roughly half the speed.  See the <A  href="http://sources.redhat.com/bzip2/"  TARGET="_top" >bzip2
+     documentation</A
+> for more information about this feature.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11167" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >bzdecompress()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$start_str </font><font  color="#007700">= </font><font  color="#DD0000">"This is not an honest face?"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$bzstr </font><font  color="#007700">= </font><font  color="#0000BB">bzcompress</font><font  color="#007700">(</font><font  color="#0000BB">$start_str</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"Compressed String: "</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$bzstr</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"\n&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$str </font><font  color="#007700">= </font><font  color="#0000BB">bzdecompress</font><font  color="#007700">(</font><font  color="#0000BB">$bzstr</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Decompressed String: "</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$str</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"\n&lt;br /&gt;\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.bzcompress.html"  ><B  CLASS="function" >bzcompress()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.bzcompress.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.bzerrno.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >bzcompress</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.bzip2.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >bzerrno</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.bzcompress.html">bzcompress</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.bzerrno.html">bzerrno</a></div>
- <div class="up"><a href="ref.bzip2.html">Bzip2 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.bzdecompress" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">bzdecompress</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.4, PHP 5)</p><p class="refpurpose"><span class="refname">bzdecompress</span> &mdash; <span class="dc-title">解压经 bzip2 编码过的数据</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.bzdecompress-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>bzdecompress</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$source</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$small</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>bzdecompress()</strong></span> 解压了包含 bzip2 压缩数据的指定字符串。
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.bzdecompress-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">source</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要解压的字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">small</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果为 <strong><code>TRUE</code></strong>，将会使用一种内存开销更小的替代算法（最大内存需求降低至大约 2300K）但速度会降低约一半。
-      </p>
-      <p class="para">
-       寻找该功能的更多信息可参见 <a href="http://www.bzip.org/" class="link external">&raquo;&nbsp;bzip2 文档</a>。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.bzdecompress-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   解压后的字符串，如果发生了一个错误则返回一个错误码。
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.bzdecompress-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-655">
-    <p><strong>Example #1 解压一个字符串</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$start_str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;not&nbsp;an&nbsp;honest&nbsp;face?"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bzstr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">bzcompress</span><span style="color: #007700">(</span><span style="color: #0000BB">$start_str</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Compressed&nbsp;String:&nbsp;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$bzstr</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"\n&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">bzdecompress</span><span style="color: #007700">(</span><span style="color: #0000BB">$bzstr</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Decompressed&nbsp;String:&nbsp;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"\n&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.bzdecompress-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.bzcompress.html" class="function" rel="rdfs-seeAlso">bzcompress()</a> - 把一个字符串压缩成 bzip2 编码数据</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.bzcompress.html">bzcompress</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.bzerrno.html">bzerrno</a></div>
- <div class="up"><a href="ref.bzip2.html">Bzip2 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

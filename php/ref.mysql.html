@@ -1,426 +1,494 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>MySQL å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mysql.examples-basic.html">MySQL æ‰©å±•æ¦‚è¿°èŒƒä¾‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-affected-rows.html">mysql_affected_rows</a></div>
- <div class="up"><a href="book.mysql.html">Mysql</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.mysql" class="reference">
-  <h1 class="title">MySQL å‡½æ•°</h1>
-
-  <div class="partintro">
-   <div class="section" id="mysql.notes">
-   <h2 class="title">æ³¨é‡Š</h2>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      å¤§å¤šæ•° MySQL å‡½æ•°çš„æœ€åä¸€ä¸ªå¯é€‰å‚æ•°æ˜¯ <code class="parameter">link_identifier</code>ã€‚
-      å¦‚æœæ²¡æœ‰æä¾›è¿™ä¸ªå‚æ•°ï¼Œåˆ™ä¼šä½¿ç”¨æœ€åä¸€ä¸ªæ‰“å¼€çš„è¿æ¥ã€‚
-      è‹¥ä¸å­˜åœ¨è¿™ä¸ªæœ€åæ‰“å¼€çš„è¿æ¥ï¼Œåˆ™ä¼šå°è¯•ç”¨ <var class="filename">php.ini</var> é‡Œå®šä¹‰çš„é»˜è®¤å‚æ•°æ¥è¿æ¥ã€‚
-      å¦‚æœæ²¡æœ‰æˆåŠŸè¿æ¥ï¼Œå‡½æ•°ä¼šè¿”å› <strong><code>FALSE</code></strong>ã€‚
-     </p>
-    </p></blockquote>
-   </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
- <h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.mysql-affected-rows.html">mysql_affected_rows</a> â€” å–å¾—å‰ä¸€æ¬¡ MySQL æ“ä½œæ‰€å½±å“çš„è®°å½•è¡Œæ•°</li><li><a href="function.mysql-client-encoding.html">mysql_client_encoding</a> â€” è¿”å›å­—ç¬¦é›†çš„åç§°</li><li><a href="function.mysql-close.html">mysql_close</a> â€” å…³é—­ MySQL è¿æ¥</li><li><a href="function.mysql-connect.html">mysql_connect</a> â€” æ‰“å¼€ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„è¿æ¥</li><li><a href="function.mysql-create-db.html">mysql_create_db</a> â€” æ–°å»ºä¸€ä¸ª MySQL æ•°æ®åº“</li><li><a href="function.mysql-data-seek.html">mysql_data_seek</a> â€” ç§»åŠ¨å†…éƒ¨ç»“æœçš„æŒ‡é’ˆ</li><li><a href="function.mysql-db-name.html">mysql_db_name</a> â€” å–å¾—ç»“æœæ•°æ®</li><li><a href="function.mysql-db-query.html">mysql_db_query</a> â€” å‘é€ä¸€æ¡ MySQL æŸ¥è¯¢</li><li><a href="function.mysql-drop-db.html">mysql_drop_db</a> â€” ä¸¢å¼ƒï¼ˆåˆ é™¤ï¼‰ä¸€ä¸ª MySQL æ•°æ®åº“</li><li><a href="function.mysql-errno.html">mysql_errno</a> â€” è¿”å›ä¸Šä¸€ä¸ª MySQL æ“ä½œä¸­çš„é”™è¯¯ä¿¡æ¯çš„æ•°å­—ç¼–ç </li><li><a href="function.mysql-error.html">mysql_error</a> â€” è¿”å›ä¸Šä¸€ä¸ª MySQL æ“ä½œäº§ç”Ÿçš„æ–‡æœ¬é”™è¯¯ä¿¡æ¯</li><li><a href="function.mysql-escape-string.html">mysql_escape_string</a> â€” è½¬ä¹‰ä¸€ä¸ªå­—ç¬¦ä¸²ç”¨äº mysql_query</li><li><a href="function.mysql-fetch-array.html">mysql_fetch_array</a> â€” ä»ç»“æœé›†ä¸­å–å¾—ä¸€è¡Œä½œä¸ºå…³è”æ•°ç»„ï¼Œæˆ–æ•°å­—æ•°ç»„ï¼Œæˆ–äºŒè€…å…¼æœ‰</li><li><a href="function.mysql-fetch-assoc.html">mysql_fetch_assoc</a> â€” ä»ç»“æœé›†ä¸­å–å¾—ä¸€è¡Œä½œä¸ºå…³è”æ•°ç»„</li><li><a href="function.mysql-fetch-field.html">mysql_fetch_field</a> â€” ä»ç»“æœé›†ä¸­å–å¾—åˆ—ä¿¡æ¯å¹¶ä½œä¸ºå¯¹è±¡è¿”å›</li><li><a href="function.mysql-fetch-lengths.html">mysql_fetch_lengths</a> â€” å–å¾—ç»“æœé›†ä¸­æ¯ä¸ªè¾“å‡ºçš„é•¿åº¦</li><li><a href="function.mysql-fetch-object.html">mysql_fetch_object</a> â€” ä»ç»“æœé›†ä¸­å–å¾—ä¸€è¡Œä½œä¸ºå¯¹è±¡</li><li><a href="function.mysql-fetch-row.html">mysql_fetch_row</a> â€” ä»ç»“æœé›†ä¸­å–å¾—ä¸€è¡Œä½œä¸ºæšä¸¾æ•°ç»„</li><li><a href="function.mysql-field-flags.html">mysql_field_flags</a> â€” ä»ç»“æœä¸­å–å¾—å’ŒæŒ‡å®šå­—æ®µå…³è”çš„æ ‡å¿—</li><li><a href="function.mysql-field-len.html">mysql_field_len</a> â€” è¿”å›æŒ‡å®šå­—æ®µçš„é•¿åº¦</li><li><a href="function.mysql-field-name.html">mysql_field_name</a> â€” å–å¾—ç»“æœä¸­æŒ‡å®šå­—æ®µçš„å­—æ®µå</li><li><a href="function.mysql-field-seek.html">mysql_field_seek</a> â€” å°†ç»“æœé›†ä¸­çš„æŒ‡é’ˆè®¾å®šä¸ºåˆ¶å®šçš„å­—æ®µåç§»é‡</li><li><a href="function.mysql-field-table.html">mysql_field_table</a> â€” å–å¾—æŒ‡å®šå­—æ®µæ‰€åœ¨çš„è¡¨å</li><li><a href="function.mysql-field-type.html">mysql_field_type</a> â€” å–å¾—ç»“æœé›†ä¸­æŒ‡å®šå­—æ®µçš„ç±»å‹</li><li><a href="function.mysql-free-result.html">mysql_free_result</a> â€” é‡Šæ”¾ç»“æœå†…å­˜</li><li><a href="function.mysql-get-client-info.html">mysql_get_client_info</a> â€” å–å¾— MySQL å®¢æˆ·ç«¯ä¿¡æ¯</li><li><a href="function.mysql-get-host-info.html">mysql_get_host_info</a> â€” å–å¾— MySQL ä¸»æœºä¿¡æ¯</li><li><a href="function.mysql-get-proto-info.html">mysql_get_proto_info</a> â€” å–å¾— MySQL åè®®ä¿¡æ¯</li><li><a href="function.mysql-get-server-info.html">mysql_get_server_info</a> â€” å–å¾— MySQL æœåŠ¡å™¨ä¿¡æ¯</li><li><a href="function.mysql-info.html">mysql_info</a> â€” å–å¾—æœ€è¿‘ä¸€æ¡æŸ¥è¯¢çš„ä¿¡æ¯</li><li><a href="function.mysql-insert-id.html">mysql_insert_id</a> â€” å–å¾—ä¸Šä¸€æ­¥ INSERT æ“ä½œäº§ç”Ÿçš„ ID</li><li><a href="function.mysql-list-dbs.html">mysql_list_dbs</a> â€” åˆ—å‡º MySQL æœåŠ¡å™¨ä¸­æ‰€æœ‰çš„æ•°æ®åº“</li><li><a href="function.mysql-list-fields.html">mysql_list_fields</a> â€” åˆ—å‡º MySQL ç»“æœä¸­çš„å­—æ®µ</li><li><a href="function.mysql-list-processes.html">mysql_list_processes</a> â€” åˆ—å‡º MySQL è¿›ç¨‹</li><li><a href="function.mysql-list-tables.html">mysql_list_tables</a> â€” åˆ—å‡º MySQL æ•°æ®åº“ä¸­çš„è¡¨</li><li><a href="function.mysql-num-fields.html">mysql_num_fields</a> â€” å–å¾—ç»“æœé›†ä¸­å­—æ®µçš„æ•°ç›®</li><li><a href="function.mysql-num-rows.html">mysql_num_rows</a> â€” å–å¾—ç»“æœé›†ä¸­è¡Œçš„æ•°ç›®</li><li><a href="function.mysql-pconnect.html">mysql_pconnect</a> â€” æ‰“å¼€ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„æŒä¹…è¿æ¥</li><li><a href="function.mysql-ping.html">mysql_ping</a> â€” Ping ä¸€ä¸ªæœåŠ¡å™¨è¿æ¥ï¼Œå¦‚æœæ²¡æœ‰è¿æ¥åˆ™é‡æ–°è¿æ¥</li><li><a href="function.mysql-query.html">mysql_query</a> â€” å‘é€ä¸€æ¡ MySQL æŸ¥è¯¢</li><li><a href="function.mysql-real-escape-string.html">mysql_real_escape_string</a> â€” è½¬ä¹‰ SQL è¯­å¥ä¸­ä½¿ç”¨çš„å­—ç¬¦ä¸²ä¸­çš„ç‰¹æ®Šå­—ç¬¦ï¼Œå¹¶è€ƒè™‘åˆ°è¿æ¥çš„å½“å‰å­—ç¬¦é›†</li><li><a href="function.mysql-result.html">mysql_result</a> â€” å–å¾—ç»“æœæ•°æ®</li><li><a href="function.mysql-select-db.html">mysql_select_db</a> â€” é€‰æ‹© MySQL æ•°æ®åº“</li><li><a href="function.mysql-set-charset.html">mysql_set_charset</a> â€” è®¾ç½®å®¢æˆ·ç«¯çš„å­—ç¬¦é›†</li><li><a href="function.mysql-stat.html">mysql_stat</a> â€” å–å¾—å½“å‰ç³»ç»ŸçŠ¶æ€</li><li><a href="function.mysql-tablename.html">mysql_tablename</a> â€” å–å¾—è¡¨å</li><li><a href="function.mysql-thread-id.html">mysql_thread_id</a> â€” è¿”å›å½“å‰çº¿ç¨‹çš„ ID</li><li><a href="function.mysql-unbuffered-query.html">mysql_unbuffered_query</a> â€” å‘ MySQL å‘é€ä¸€æ¡ SQL æŸ¥è¯¢ï¼Œå¹¶ä¸è·å–å’Œç¼“å­˜ç»“æœçš„è¡Œ</li></ul>
+<HTML  ><HEAD  ><TITLE  >MySQL º¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="msql" HREF="function.msql.html"><LINK  REL="NEXT" TITLE="mysql_affected_rows" HREF="function.mysql-affected-rows.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.msql.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-affected-rows.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.mysql" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >LXIV. MySQL º¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN64876" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     Äã¿ÉÒÔÊ¹ÓÃ¸Ãº¯Êı¿â·ÃÎÊ MySQL Êı¾İ¿â·şÎñÆ÷¡£ÓĞ¹Ø MySQL µÄÏêÏ¸ĞÅÏ¢¿ÉÒÔµ½ <A  href="http://www.mysql.com/"  TARGET="_top" >http://www.mysql.com/</A
+> ²éÑ¯¡£
+    </P
+><P  >&#13;     MySQL µÄÎÄµµ¿ÉÒÔÔÚ <A  href="http://www.mysql.com/documentation/"  TARGET="_top" >http://www.mysql.com/documentation/</A
+> ÕÒµ½¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.requirements" ></A
+>ĞèÇó</H1
+><P  >&#13;     ÎªÁËÄÜ¹»Ë³ÀûµÄÊ¹ÓÃ¸Ãº¯Êı¿â£¬Äã±ØĞëÔÚ±àÒë PHP µÄÊ±ºòÌí¼Ó MySQL µÄÖ§³Ö¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.installation" ></A
+>°²×°</H1
+><P  >&#13;     µ±ÄãÑ¡ÔñÁË <TT  CLASS="option" >--with-mysql[=DIR]</TT
+>
+     ÅäÖÃÑ¡ÏîµÄÊ±ºò£¬Äã´ò¿ªÁË PHP ·ÃÎÊ MySQL
+     Êı¾İ¿âµÄ¹¦ÄÜ¡£
+    </P
+><P  >&#13;     PHP 4 Ä¬ÈÏÊ¹ÓÃÁË
+     <TT  CLASS="option" >--with-mysql</TT
+> Ñ¡Ïî£¬Òò´ËÒª½ûÓÃ
+     MySQL ±ØĞëÊ¹ÓÃ
+     <TT  CLASS="option" >--without-mysql</TT
+>¡£ÔÚ PHP 4 ÖĞ£¬Èç¹ûÄãÃ»ÓĞÔÚÅäÖÃÑ¡ÏîÖĞÖ¸¶¨
+     MySQL µÄÂ·¾¶ĞÅÏ¢£¬PHP »áÊ¹ÓÃ°ó¶¨µÄ MySQL ¿Í»§¶Ë¿â¡£ÔÚ Windows ÏÂ£¬Ã»ÓĞÏà¹ØµÄ DLL ÎÄ¼ş£¬¸ÃÄ£¿éÒÑ¾­ÄÚ½¨ÔÚÁË PHP ÄÚºËÖĞ¡£ÓÃ»§Èç¹ûÔËĞĞÆäËüÊ¹ÓÃ
+     MySQL µÄÓ¦ÓÃ£¨ÀıÈçÍ¬Ê±Ê¹ÓÃ Apache Ä£¿é»¯·½Ê½ÔËĞĞµÄ
+     PHP 3 ºÍ PHP 4£¬»òÕß auth-mysql Ä£¿é£©ĞèÒªÖ¸¶¨ MySQLµÄÂ·¾¶£º<TT  CLASS="option" >--with-mysql=/path/to/mysql</TT
+>¡£Õâ»áÇ¿ÆÈ
+     PHP Ê¹ÓÃ MySQL °²×°µÄ¿Í»§¶Ë¿âº¯ÊıÀ´±ÜÃâÈÎºÎ³åÍ»¡£
+    </P
+><P  >  
+     ÔÚ PHP 5 ÖĞ£¬MySQL ²»ÔÙÄ¬ÈÏµÄ¿ªÆô£¬MySQL ¿âÒ²²»ÔÙºÍ PHP °ó¶¨£¬ÇëÔÄ¶Á¸Ã <A  HREF="faq.databases.html#faq.databases.mysql.php5"  >FAQ</A
+> ÒÔ»ñÈ¡¸üÏêÏ¸µÄĞÅÏ¢¡£
+    </P
+><P  > 
+    ¸Ã MySQL À©Õ¹¿âÎŞ·¨ºÍ 4.1.0 ÒÔÉÏ°æ±¾µÄ MySQL Ò»Æğ¹¤×÷¡£ÕâÊ±£¬ÄúĞèÒªÊ¹ÓÃ <A  HREF="ref.mysqli.html"  >MySQLi</A
+>¡£
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      µ±¸ÃÀ©Õ¹Ä£¿éÓë recode À©Õ¹Ä£¿é¹²Í¬Ê¹ÓÃµÄÊ±ºò£¬¿ÉÄÜ»áÔì³É
+      <TT  CLASS="literal" >PHP</TT
+> µÄ±ÀÀ£ºÍÆô¶¯Ê±³öÏÖÎÊÌâ¡£Çë²éÑ¯
+      <A  HREF="ref.recode.html"  >recode</A
+> À©Õ¹»ñµÃ¸ü¶àµÄĞÅÏ¢¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+> 
+      Èç¹ûÄúĞèÒª³ı <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >latin</I
+></SPAN
+>£¨Ä¬ÈÏ£©ÒÔÍâÆäËüµÄ×Ö·û¼¯£¬ÄúĞèÒª°²×°ÓĞÒÑ±àÒë×Ö·û¼¯Ö§³ÖµÄÍâÖÃ£¨Î´¼¯³É£©libmysql¡£
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >ÕâĞ©º¯ÊıµÄĞĞÎªÊÜµ½È«¾Ö<A  HREF="configuration.html#configuration.file"  >ÅäÖÃÎÄ¼ş</A
+> <TT  CLASS="filename" >php.ini</TT
+> µÄÓ°Ïì¡£</P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN64911" ></A
+><P  ><B  >±í¸ñ 1. MySQL ÅäÖÃÑ¡Ïî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ñ¡ÏîÃû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >¿É±äµÄ</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.allow_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"On"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.max_persistent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.max_links</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"-1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_port</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_socket</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_host</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_user</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.default_password</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >mysql.connect_timeout</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+     ¸üÏêÏ¸µÄĞÅÏ¢ÒÔ¼° PHP_INI_* ³£Á¿µÄ¶¨Òå£¬Çë²Î¿¼
+     <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>¡£
+   </P
+><P  >ÒÔÏÂÊÇ¸ÃÅäÖÃÑ¡ÏîµÄ¼òÒª½âÊÍ¡£</P
+><P  >&#13;    <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><A  NAME="ini.mysql.allow-persistent" ></A
+><TT  CLASS="parameter" ><I  >mysql.allow_persistent</I
+></TT
+>
+       <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+></DT
+><DD  ><P  >&#13;        ÊÇ·ñÔÊĞí 
+        <A  HREF="features.persistent-connections.html"  >±£³ÖÁ¬½Ó</A
+>
+        µ½ MySQL¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.max-persistent" ></A
+><TT  CLASS="parameter" ><I  >mysql.max_persistent</I
+></TT
+>
+       <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;        Ã¿¸ö½ø³ÌÖĞ×î´ó±£³ÖÁ¬½ÓÊı¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.max-links" ></A
+><TT  CLASS="parameter" ><I  >mysql.max_links</I
+></TT
+>
+       <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;        Ã¿¸ö½ø³ÌÖĞ×î´óµÄÁ¬½ÓÊı£¬°üÀ¨±£³ÖÁ¬½Ó¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.default-port" ></A
+><TT  CLASS="parameter" ><I  >mysql.default_port</I
+></TT
+>
+       <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;        Ö¸¶¨Ä¬ÈÏÁ¬½ÓÊı¾İ¿âµÄ TCP ¶Ë¿ÚºÅ¡£Èç¹ûÃ»ÓĞÖ¸¶¨Ä¬ÈÏ¶Ë¿ÚºÅ£¬²àË³Ğò´Ó <TT  CLASS="literal" >MYSQL_TCP_PORT</TT
+> 
+		»·¾³±äÁ¿£¬<TT  CLASS="filename" >/etc/services</TT
+> ÎÄ¼şÖĞµÄ <TT  CLASS="literal" >mysql-tcp</TT
+> 
+		Ïî»òÕß±àÒëÊ±Ö¸¶¨µÄ <TT  CLASS="literal" >MYSQL_PORT</TT
+> ³£Á¿ÖĞ»ñµÃ¡£Win32 »·¾³ÏÂÖ»»áÊ¹ÓÃ 
+		<TT  CLASS="literal" >MYSQL_PORT</TT
+> ³£Á¿¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.default-socket" ></A
+><TT  CLASS="parameter" ><I  >mysql.default_socket</I
+></TT
+>
+       <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;        µ±Ê¹ÓÃ±¾µØÁ¬½ÓµÄÊ±ºò£¬Ä¬ÈÏµÄ socket Ãû³Æ¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.default-host" ></A
+><TT  CLASS="parameter" ><I  >mysql.default_host</I
+></TT
+>
+       <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;        Ä¬ÈÏÁ¬½ÓµÄÊı¾İ¿â·şÎñÆ÷µØÖ·¡£¸Ã²ÎÊı²»ÄÜÓÃÓÚ<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.default-user" ></A
+><TT  CLASS="parameter" ><I  >mysql.default_user</I
+></TT
+>
+       <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;        Ä¬ÈÏÁ¬½ÓÊı¾İ¿âÊ±Ê¹ÓÃµÄÓÃ»§Ãû¡£¸Ã²ÎÊı²»ÄÜÓÃÓÚ<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.default-password" ></A
+><TT  CLASS="parameter" ><I  >mysql.default_password</I
+></TT
+>
+       <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;        Ä¬ÈÏÁ¬½ÓÊı¾İ¿âÊ±Ê¹ÓÃµÄÃÜÂë¡£¸Ã²ÎÊı²»ÄÜÓÃÓÚ<A  HREF="features.safe-mode.html#ini.safe-mode"  >°²È«Ä£Ê½</A
+>¡£
+       </P
+></DD
+><DT  ><A  NAME="ini.mysql.connect-timeout" ></A
+><TT  CLASS="parameter" ><I  >mysql.connect_timeout</I
+></TT
+>
+       <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;        Á¬½Ó³¬Ê±ÃëÊı¡£ÔÚ Linux ÖĞ£¬Õâ¸ö²ÎÊıÉè¶¨ÁËµÈºòÀ´×Ô·şÎñÆ÷µÄÏìÓ¦µÄÊ±³¤¡£
+       </P
+></DD
+></DL
+></DIV
+>
+   </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >&#13;	   ÔÚ MySQL Ä£¿éÖĞÊ¹ÓÃÁËÁ½ÖÖ×ÊÔ´ÀàĞÍ¡£µÚÒ»ÖÖÊÇÊı¾İ¿âµÄÁ¬½Ó¾ä±ú£¬µÚ¶şÖÖÊÇ SQL ²éÑ¯·µ»ØµÄ½á¹û¼¯¡£
+      </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  >&#13;  ÔÚ PHP 4.3.0 ÒÔºóµÄ°æ±¾ÖĞ£¬ÔÊĞíÔÚ 
+  <A  HREF="function.mysql-connect.html"  ><B  CLASS="function" >mysql_connect()</B
+></A
+> º¯ÊıºÍ <A  HREF="function.mysql-pconnect.html"  ><B  CLASS="function" >mysql_pconnect()</B
+></A
+> 
+  º¯ÊıÖĞÖ¸¶¨¸ü¶àµÄ¿Í»§¶Ë±ê¼Ç¡£ÏÂÃæÁĞ³öËù¶¨ÒåµÄ³£Á¿£º
+  <DIV  CLASS="table" ><A  NAME="AEN65032" ></A
+><P  ><B  >±í¸ñ 2. MySQL ¿Í»§¶Ë³£Á¿</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >³£Á¿</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÃèÊö</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >MYSQL_CLIENT_COMPRESS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Ê¹ÓÃÑ¹ËõµÄÍ¨Ñ¶Ğ­Òé</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >MYSQL_CLIENT_IGNORE_SPACE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÔÊĞíÔÚº¯ÊıÃûºóÁô¿Õ¸ñÎ»</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >MYSQL_CLIENT_INTERACTIVE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÔÊĞíÉèÖÃ¶Ï¿ªÁ¬½ÓÖ®Ç°Ëù¿ÕÏĞµÈºòµÄ interactive_timeout Ê±¼ä¡££¨´úÌæ wait_timeout£©</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ </P
+><P  >&#13;  <A  HREF="function.mysql-fetch-array.html"  ><B  CLASS="function" >mysql_fetch_array()</B
+></A
+> º¯ÊıÊ¹ÓÃÒ»¸ö³£Á¿À´±íÊ¾Ëù·µ»ØÊı×éµÄÀàĞÍ¡£ÏÂÃæÊÇ³£Á¿µÄ¶¨Òå£º
+  <DIV  CLASS="table" ><A  NAME="AEN65051" ></A
+><P  ><B  >±í¸ñ 3. MySQL fetch ³£Á¿</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >³£Á¿</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÃèÊö</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >MYSQL_ASSOC</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       ·µ»ØµÄÊı¾İÁĞÊ¹ÓÃ×Ö¶ÎÃû×÷ÎªÊı×éµÄË÷ÒıÃû¡£
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >MYSQL_BOTH</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       ·µ»ØµÄÊı¾İÁĞÊ¹ÓÃ×Ö¶ÎÃû¼°Êı×ÖË÷Òı×÷ÎªÊı×éµÄË÷ÒıÃû¡£
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >MYSQL_NUM</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       ·µ»ØµÄÊı¾İÁĞÊ¹ÓÃÊı×ÖË÷Òı×÷ÎªÊı×éµÄË÷ÒıÃû¡£Ë÷Òı´Ó 0 ¿ªÊ¼£¬±íÊ¾·µ»Ø½á¹ûµÄµÚÒ»¸ö×Ö¶Î¡£
+      </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="mysql.examples" ></A
+>·¶Àı</H1
+><P  >&#13;     Õâ¸ö¼òµ¥µÄÀı×ÓÑİÊ¾ÈçºÎÁ¬½ÓÊı¾İ¿â£¬Ö´ĞĞ²éÑ¯Óï¾ä£¬´òÓ¡·µ»Ø½á¹û¼¯ºÍ¶Ï¿ªÊı¾İ¿âµÈÒ»ÏµÁĞ»ù±¾µÄ MySQL ²Ù×÷¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65071" ></A
+><P  ><B  >Àı×Ó 1. MySQL À©Õ¹·¶Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Á¬½ÓÑ¡ÔñÊı¾İ¿â */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">"mysql_host"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect : " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">()); <br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"Connected successfully"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_select_db</font><font  color="#007700">(</font><font  color="#DD0000">"my_database"</font><font  color="#007700">) or die(</font><font  color="#DD0000">"Could not select database"</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Ö´ĞĞ SQL ²éÑ¯ */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$query </font><font  color="#007700">= </font><font  color="#DD0000">"SELECT * FROM my_table"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">mysql_query</font><font  color="#007700">(</font><font  color="#0000BB">$query</font><font  color="#007700">) or die(</font><font  color="#DD0000">"Query failed : " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">()); <br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* ÔÚ HTML ÖĞ´òÓ¡½á¹û */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">print </font><font  color="#DD0000">"&lt;table&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;while (</font><font  color="#0000BB">$line </font><font  color="#007700">= </font><font  color="#0000BB">mysql_fetch_array</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">, </font><font  color="#0000BB">MYSQL_ASSOC</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"\t&lt;tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach (</font><font  color="#0000BB">$line </font><font  color="#007700">as </font><font  color="#0000BB">$col_value</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"\t\t&lt;td&gt;$col_value&lt;/td&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"\t&lt;/tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&lt;/table&gt;\n"</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* ÊÍ·Å×ÊÔ´ */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* ¶Ï¿ªÁ¬½Ó */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.mysql-affected-rows.html"  >mysql_affected_rows</A
+>&nbsp;--&nbsp;È¡µÃÇ°Ò»´Î MySQL ²Ù×÷ËùÓ°ÏìµÄ¼ÇÂ¼ĞĞÊı</DT
+><DT  ><A  HREF="function.mysql-change-user.html"  >mysql_change_user</A
+>&nbsp;--&nbsp;
+     ¸Ä±ä»î¶¯Á¬½ÓÖĞµÇÂ¼µÄÓÃ»§
+    </DT
+><DT  ><A  HREF="function.mysql-client-encoding.html"  >mysql_client_encoding</A
+>&nbsp;--&nbsp;·µ»Ø×Ö·û¼¯µÄÃû³Æ</DT
+><DT  ><A  HREF="function.mysql-close.html"  >mysql_close</A
+>&nbsp;--&nbsp;¹Ø±Õ MySQL Á¬½Ó</DT
+><DT  ><A  HREF="function.mysql-connect.html"  >mysql_connect</A
+>&nbsp;--&nbsp;´ò¿ªÒ»¸öµ½ MySQL ·şÎñÆ÷µÄÁ¬½Ó</DT
+><DT  ><A  HREF="function.mysql-create-db.html"  >mysql_create_db</A
+>&nbsp;--&nbsp;ĞÂ½¨Ò»¸ö MySQL Êı¾İ¿â</DT
+><DT  ><A  HREF="function.mysql-data-seek.html"  >mysql_data_seek</A
+>&nbsp;--&nbsp;ÒÆ¶¯ÄÚ²¿½á¹ûµÄÖ¸Õë</DT
+><DT  ><A  HREF="function.mysql-db-name.html"  >mysql_db_name</A
+>&nbsp;--&nbsp;È¡µÃ½á¹ûÊı¾İ</DT
+><DT  ><A  HREF="function.mysql-db-query.html"  >mysql_db_query</A
+>&nbsp;--&nbsp;·¢ËÍÒ»Ìõ MySQL ²éÑ¯</DT
+><DT  ><A  HREF="function.mysql-drop-db.html"  >mysql_drop_db</A
+>&nbsp;--&nbsp;¶ªÆú£¨É¾³ı£©Ò»¸ö MySQL Êı¾İ¿â</DT
+><DT  ><A  HREF="function.mysql-errno.html"  >mysql_errno</A
+>&nbsp;--&nbsp;
+     ·µ»ØÉÏÒ»¸ö MySQL ²Ù×÷ÖĞµÄ´íÎóĞÅÏ¢µÄÊı×Ö±àÂë
+    </DT
+><DT  ><A  HREF="function.mysql-error.html"  >mysql_error</A
+>&nbsp;--&nbsp;
+     ·µ»ØÉÏÒ»¸ö MySQL ²Ù×÷²úÉúµÄÎÄ±¾´íÎóĞÅÏ¢
+    </DT
+><DT  ><A  HREF="function.mysql-escape-string.html"  >mysql_escape_string</A
+>&nbsp;--&nbsp;
+     ×ªÒåÒ»¸ö×Ö·û´®ÓÃÓÚ mysql_query
+    </DT
+><DT  ><A  HREF="function.mysql-fetch-array.html"  >mysql_fetch_array</A
+>&nbsp;--&nbsp;
+     ´Ó½á¹û¼¯ÖĞÈ¡µÃÒ»ĞĞ×÷Îª¹ØÁªÊı×é£¬»òÊı×ÖÊı×é£¬»ò¶şÕß¼æÓĞ
+    </DT
+><DT  ><A  HREF="function.mysql-fetch-assoc.html"  >mysql_fetch_assoc</A
+>&nbsp;--&nbsp;
+     ´Ó½á¹û¼¯ÖĞÈ¡µÃÒ»ĞĞ×÷Îª¹ØÁªÊı×é
+    </DT
+><DT  ><A  HREF="function.mysql-fetch-field.html"  >mysql_fetch_field</A
+>&nbsp;--&nbsp;
+     ´Ó½á¹û¼¯ÖĞÈ¡µÃÁĞĞÅÏ¢²¢×÷Îª¶ÔÏó·µ»Ø
+    </DT
+><DT  ><A  HREF="function.mysql-fetch-lengths.html"  >mysql_fetch_lengths</A
+>&nbsp;--&nbsp;
+     È¡µÃ½á¹û¼¯ÖĞÃ¿¸öÊä³öµÄ³¤¶È
+    </DT
+><DT  ><A  HREF="function.mysql-fetch-object.html"  >mysql_fetch_object</A
+>&nbsp;--&nbsp;´Ó½á¹û¼¯ÖĞÈ¡µÃÒ»ĞĞ×÷Îª¶ÔÏó</DT
+><DT  ><A  HREF="function.mysql-fetch-row.html"  >mysql_fetch_row</A
+>&nbsp;--&nbsp;´Ó½á¹û¼¯ÖĞÈ¡µÃÒ»ĞĞ×÷ÎªÃ¶¾ÙÊı×é</DT
+><DT  ><A  HREF="function.mysql-field-flags.html"  >mysql_field_flags</A
+>&nbsp;--&nbsp;
+     ´Ó½á¹ûÖĞÈ¡µÃºÍÖ¸¶¨×Ö¶Î¹ØÁªµÄ±êÖ¾
+    </DT
+><DT  ><A  HREF="function.mysql-field-len.html"  >mysql_field_len</A
+>&nbsp;--&nbsp;
+     ·µ»ØÖ¸¶¨×Ö¶ÎµÄ³¤¶È
+    </DT
+><DT  ><A  HREF="function.mysql-field-name.html"  >mysql_field_name</A
+>&nbsp;--&nbsp;
+     È¡µÃ½á¹ûÖĞÖ¸¶¨×Ö¶ÎµÄ×Ö¶ÎÃû
+    </DT
+><DT  ><A  HREF="function.mysql-field-seek.html"  >mysql_field_seek</A
+>&nbsp;--&nbsp;
+     ½«½á¹û¼¯ÖĞµÄÖ¸ÕëÉè¶¨ÎªÖÆ¶¨µÄ×Ö¶ÎÆ«ÒÆÁ¿
+    </DT
+><DT  ><A  HREF="function.mysql-field-table.html"  >mysql_field_table</A
+>&nbsp;--&nbsp;
+     È¡µÃÖ¸¶¨×Ö¶ÎËùÔÚµÄ±íÃû
+    </DT
+><DT  ><A  HREF="function.mysql-field-type.html"  >mysql_field_type</A
+>&nbsp;--&nbsp;
+     È¡µÃ½á¹û¼¯ÖĞÖ¸¶¨×Ö¶ÎµÄÀàĞÍ
+    </DT
+><DT  ><A  HREF="function.mysql-free-result.html"  >mysql_free_result</A
+>&nbsp;--&nbsp;ÊÍ·Å½á¹ûÄÚ´æ</DT
+><DT  ><A  HREF="function.mysql-get-client-info.html"  >mysql_get_client_info</A
+>&nbsp;--&nbsp;È¡µÃ MySQL ¿Í»§¶ËĞÅÏ¢</DT
+><DT  ><A  HREF="function.mysql-get-host-info.html"  >mysql_get_host_info</A
+>&nbsp;--&nbsp;È¡µÃ MySQL Ö÷»úĞÅÏ¢</DT
+><DT  ><A  HREF="function.mysql-get-proto-info.html"  >mysql_get_proto_info</A
+>&nbsp;--&nbsp;È¡µÃ MySQL Ğ­ÒéĞÅÏ¢</DT
+><DT  ><A  HREF="function.mysql-get-server-info.html"  >mysql_get_server_info</A
+>&nbsp;--&nbsp;È¡µÃ MySQL ·şÎñÆ÷ĞÅÏ¢</DT
+><DT  ><A  HREF="function.mysql-info.html"  >mysql_info</A
+>&nbsp;--&nbsp;
+     È¡µÃ×î½üÒ»Ìõ²éÑ¯µÄĞÅÏ¢
+    </DT
+><DT  ><A  HREF="function.mysql-insert-id.html"  >mysql_insert_id</A
+>&nbsp;--&nbsp;
+     È¡µÃÉÏÒ»²½ INSERT ²Ù×÷²úÉúµÄ ID
+    </DT
+><DT  ><A  HREF="function.mysql-list-dbs.html"  >mysql_list_dbs</A
+>&nbsp;--&nbsp;
+     ÁĞ³ö MySQL ·şÎñÆ÷ÖĞËùÓĞµÄÊı¾İ¿â
+    </DT
+><DT  ><A  HREF="function.mysql-list-fields.html"  >mysql_list_fields</A
+>&nbsp;--&nbsp;ÁĞ³ö MySQL ½á¹ûÖĞµÄ×Ö¶Î</DT
+><DT  ><A  HREF="function.mysql-list-processes.html"  >mysql_list_processes</A
+>&nbsp;--&nbsp;ÁĞ³ö MySQL ½ø³Ì</DT
+><DT  ><A  HREF="function.mysql-list-tables.html"  >mysql_list_tables</A
+>&nbsp;--&nbsp;ÁĞ³ö MySQL Êı¾İ¿âÖĞµÄ±í</DT
+><DT  ><A  HREF="function.mysql-num-fields.html"  >mysql_num_fields</A
+>&nbsp;--&nbsp;È¡µÃ½á¹û¼¯ÖĞ×Ö¶ÎµÄÊıÄ¿</DT
+><DT  ><A  HREF="function.mysql-num-rows.html"  >mysql_num_rows</A
+>&nbsp;--&nbsp;È¡µÃ½á¹û¼¯ÖĞĞĞµÄÊıÄ¿</DT
+><DT  ><A  HREF="function.mysql-pconnect.html"  >mysql_pconnect</A
+>&nbsp;--&nbsp;
+     ´ò¿ªÒ»¸öµ½ MySQL ·şÎñÆ÷µÄ³Ö¾ÃÁ¬½Ó
+    </DT
+><DT  ><A  HREF="function.mysql-ping.html"  >mysql_ping</A
+>&nbsp;--&nbsp;Ping Ò»¸ö·şÎñÆ÷Á¬½Ó£¬Èç¹ûÃ»ÓĞÁ¬½ÓÔòÖØĞÂÁ¬½Ó</DT
+><DT  ><A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  >mysql_query</A
+>&nbsp;--&nbsp;·¢ËÍÒ»Ìõ MySQL ²éÑ¯</DT
+><DT  ><A  HREF="function.mysql-real-escape-string.html"  >mysql_real_escape_string</A
+>&nbsp;--&nbsp;
+     ×ªÒå SQL Óï¾äÖĞÊ¹ÓÃµÄ×Ö·û´®ÖĞµÄÌØÊâ×Ö·û£¬²¢¿¼ÂÇµ½Á¬½ÓµÄµ±Ç°×Ö·û¼¯
+    </DT
+><DT  ><A  HREF="function.mysql-result.html"  >mysql_result</A
+>&nbsp;--&nbsp;È¡µÃ½á¹ûÊı¾İ</DT
+><DT  ><A  HREF="function.mysql-select-db.html"  >mysql_select_db</A
+>&nbsp;--&nbsp;Ñ¡Ôñ MySQL Êı¾İ¿â</DT
+><DT  ><A  HREF="function.mysql-stat.html"  >mysql_stat</A
+>&nbsp;--&nbsp;È¡µÃµ±Ç°ÏµÍ³×´Ì¬</DT
+><DT  ><A  HREF="function.mysql-tablename.html"  >mysql_tablename</A
+>&nbsp;--&nbsp;È¡µÃ±íÃû</DT
+><DT  ><A  HREF="function.mysql-thread-id.html"  >mysql_thread_id</A
+>&nbsp;--&nbsp;·µ»Øµ±Ç°Ïß³ÌµÄ ID</DT
+><DT  ><A  HREF="function.mysql-unbuffered-query.html"  >mysql_unbuffered_query</A
+>&nbsp;--&nbsp;
+     Ïò MySQL ·¢ËÍÒ»Ìõ SQL ²éÑ¯£¬²¢²»»ñÈ¡ºÍ»º´æ½á¹ûµÄĞĞ
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.msql.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-affected-rows.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >msql</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_affected_rows</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mysql.examples-basic.html">MySQL æ‰©å±•æ¦‚è¿°èŒƒä¾‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-affected-rows.html">mysql_affected_rows</a></div>
- <div class="up"><a href="book.mysql.html">Mysql</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

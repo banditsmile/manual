@@ -1,411 +1,239 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>访问各个输入/输出流（I/O streams）</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="wrappers.ftp.html">ftp://</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="wrappers.compression.html">zlib://</a></div>
- <div class="up"><a href="wrappers.html">支持的协议和封装协议</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="wrappers.php" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">php://</h1>
-  <p class="refpurpose"><span class="refname">php://</span> &mdash; <span class="dc-title">访问各个输入/输出流（I/O streams）</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-wrappers.php-description">
-  <h3 class="title">说明</h3>
-  <p class="para">
-   PHP 提供了一些杂项输入/输出（IO）流，允许访问 PHP 的输入输出流、标准输入输出和错误描述符，
-   内存中、磁盘备份的临时文件流以及可以操作其他读取写入文件资源的过滤器。
-  </p>
-
-  <div class="refsect2 unknown-descriptioo" id="refsect2-wrappers.php-unknown-descriptioo">
-   <h4 class="title">php://stdin, php://stdout 和 php://stderr</h4>
-   <p class="simpara">
-    <var class="filename">php://stdin</var>、<var class="filename">php://stdout</var> 和
-    <var class="filename">php://stderr</var> 允许直接访问 PHP 进程相应的输入或者输出流。
-    数据流引用了复制的文件描述符，所以如果你打开 <var class="filename">php://stdin</var> 并在之后关了它，
-    仅是关闭了复制品，真正被引用的  <strong><code>STDIN</code></strong> 并不受影响。
-    注意 PHP 在这方面的行为有很多 BUG 直到 PHP 5.2.1。
-    推荐你简单使用常量 <strong><code>STDIN</code></strong>、
-    <strong><code>STDOUT</code></strong> 和 <strong><code>STDERR</code></strong> 来代替手工打开这些封装器。
-   </p>
-   <p class="simpara">
-    <var class="filename">php://stdin</var> 是只读的，
-    <var class="filename">php://stdout</var> 和 <var class="filename">php://stderr</var> 是只写的。
-   </p>
-  </div>
-
-
-  <div class="refsect2 unknown-unknown-descriptiop" id="wrappers.php.input">
-   <h4 class="title">php://input</h4>
-   <p class="simpara">
-    <var class="filename">php://input</var> 是个可以访问请求的原始数据的只读流。
-    POST 请求的情况下，最好使用 <var class="filename">php://input</var> 来代替 <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var>，因为它不依赖于特定的 <var class="filename">php.ini</var> 指令。
-    而且，这样的情况下 <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> 默认没有填充，
-    比激活 <a href="ini.core.html#ini.always-populate-raw-post-data" class="link">always_populate_raw_post_data</a> 
-    潜在需要更少的内存。
-    <em>enctype=&quot;multipart/form-data&quot;</em> 的时候
-    <var class="filename">php://input</var> 是无效的。
-   </p>
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <span class="simpara">
-     在 PHP 5.6 之前 <var class="filename">php://input</var> 打开的数据流只能读取一次；
-     数据流不支持 seek 操作。
-     不过，依赖于 SAPI 的实现，请求体数据被保存的时候，
-     它可以打开另一个 <var class="filename">php://input</var> 数据流并重新读取。
-     通常情况下，这种情况只是针对 POST 请求，而不是其他请求方式，比如 PUT 或者 PROPFIND。
-    </span>
-   </p></blockquote>
-  </div>
-
-
-  <div class="refsect2 unknown-unknown-unknown-descriptioq" id="refsect2-wrappers.php-unknown-unknown-unknown-descriptioq">
-   <h4 class="title">php://output</h4>
-   <p class="para">
-    <var class="filename">php://output</var> 是一个只写的数据流，
-    允许你以 <span class="function"><a href="function.print.html" class="function">print</a></span> 和 <span class="function"><a href="function.echo.html" class="function">echo</a></span> 一样的方式
-    写入到输出缓冲区。
-   </p>
-  </div>
-
-
-  <div class="refsect2 unknown-unknown-unknown-unknown-descriptior" id="refsect2-wrappers.php-unknown-unknown-unknown-unknown-descriptior">
-   <h4 class="title">php://fd</h4>
-   <p class="simpara">
-    <var class="filename">php://fd</var> 允许直接访问指定的文件描述符。
-    例如 <var class="filename">php://fd/3</var> 引用了文件描述符 3。
-   </p>
-  </div>
-
-
-  <div class="refsect2 unknown-unknown-unknown-unknown-unknown-descriptios" id="refsect2-wrappers.php-unknown-unknown-unknown-unknown-unknown-descriptios">
-   <h4 class="title">php://memory 和 php://temp</h4>
-   <p class="simpara">
-    <var class="filename">php://memory</var> 和 <var class="filename">php://temp</var> 是一个类似文件
-    包装器的数据流，允许读写临时数据。
-     
-    两者的唯一区别是 <var class="filename">php://memory</var> 总是把数据储存在内存中，
-    而 <var class="filename">php://temp</var> 会在内存量达到预定义的限制后（默认是 2MB）存入临时文件中。
-    临时文件位置的决定和 <span class="function"><a href="function.sys-get-temp-dir.html" class="function">sys_get_temp_dir()</a></span> 的方式一致。
-   </p>
-   <p class="simpara">
-    <var class="filename">php://temp</var> 的内存限制可通过添加 <em>/maxmemory:NN</em> 
-    来控制，<em>NN</em> 是以字节为单位、保留在内存的最大数据量，超过则使用临时文件。
-   </p>
-  </div>
-
-
-  <div class="refsect2 unknown-unknown-unknown-unknown-unknown-unknown-descriptiot" id="refsect2-wrappers.php-unknown-unknown-unknown-unknown-unknown-unknown-descriptiot">
-   <h4 class="title">php://filter</h4>
-   <p class="simpara">
-    <var class="filename">php://filter</var> 是一种元封装器，
-    设计用于数据流打开时的<a href="filters.html" class="link">筛选过滤</a>应用。
-    这对于一体式（all-in-one）的文件函数非常有用，类似 <span class="function"><a href="function.readfile.html" class="function">readfile()</a></span>、
-    <span class="function"><a href="function.file.html" class="function">file()</a></span> 和 <span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span>，
-    在数据流内容读取之前没有机会应用其他过滤器。
-   </p>
-   <p class="para">
-    <var class="filename">php://filter</var> 目标使用以下的参数作为它路径的一部分。
-    复合过滤链能够在一个路径上指定。详细使用这些参数可以参考具体范例。
-   </p>
-   <p class="para">
-    <table class="doctable table">
-     <caption><strong>php://filter 参数</strong></caption>
-     
-      <thead>
-       <tr>
-        <th>名称</th>
-        <th>描述</th>
-       </tr>
-
-      </thead>
-
-      <tbody class="tbody">
-       <tr>
-        <td>
-         <em>resource=&lt;要过滤的数据流&gt;</em>
-        </td>
-        <td>
-         这个参数是必须的。它指定了你要筛选过滤的数据流。
-        </td>
-       </tr>
-
-       <tr>
-        <td>
-         <em>read=&lt;读链的筛选列表&gt;</em>
-        </td>
-        <td>
-         该参数可选。可以设定一个或多个过滤器名称，以管道符（<em>|</em>）分隔。
-        </td>
-       </tr>
-
-       <tr>
-        <td>
-         <em>write=&lt;写链的筛选列表&gt;</em>
-        </td>
-        <td>
-         该参数可选。可以设定一个或多个过滤器名称，以管道符（<em>|</em>）分隔。
-        </td>
-       </tr>
-
-       <tr>
-        <td>
-         <em>&lt;；两个链的筛选列表&gt;</em>
-        </td>
-        <td>
-         任何没有以 <em>read=</em> 或 <em>write=</em> 作前缀
-         的筛选器列表会视情况应用于读或写链。
-        </td>
-       </tr>
-
-      </tbody>
-     
-    </table>
-
-   </p>
-  </div>
-
- </div>
-
-
- <div class="refsect1 options" id="refsect1-wrappers.php-options">
-  <h3 class="title">可选项</h3>
-  <p class="para">
-   <table class="doctable table">
-    <caption><strong>
-     封装协议摘要（针对 <em>php://filter</em>，参考被筛选的封装器。）
-    </strong></caption>
-    
-     <thead>
-      <tr>
-       <th>属性</th>
-       <th>支持</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>首先于 <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a></td>
-       <td>No</td>
-      </tr>
-
-      <tr>
-       <td>首先于 <a href="filesystem.configuration.html#ini.allow-url-include" class="link">allow_url_include</a></td>
-       <td>仅
-        <em>php://input</em>、
-        <em>php://stdin</em>、
-        <em>php://memory</em> 和 
-        <em>php://temp</em>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>允许读取</td>
-       <td>仅
-        <em>php://stdin</em>、
-        <em>php://input</em>、
-        <em>php://fd</em>、
-        <em>php://memory</em> 和
-        <em>php://temp</em>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>允许写入</td>
-       <td>仅
-        <em>php://stdout</em>、
-        <em>php://stderr</em>、
-        <em>php://output</em>、
-        <em>php://fd</em>、
-        <em>php://memory</em> 和
-        <em>php://temp</em>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>允许追加</td>
-       <td> 仅
-        <em>php://stdout</em>、
-        <em>php://stderr</em>、
-        <em>php://output</em>、
-        <em>php://fd</em>、
-        <em>php://memory</em> 和
-        <em>php://temp</em>（等于写入）
-       </td>
-      </tr>
-
-      <tr>
-       <td>允许同时读写</td>
-       <td>仅
-        <em>php://fd</em>、
-        <em>php://memory</em> 和
-        <em>php://temp</em>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>支持 <span class="function"><a href="function.stat.html" class="function">stat()</a></span></td>
-       <td>仅
-        <em>php://memory</em> 和
-        <em>php://temp</em>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>支持 <span class="function"><a href="function.unlink.html" class="function">unlink()</a></span></td>
-       <td>No</td>
-      </tr>
-
-      <tr>
-       <td>支持 <span class="function"><a href="function.rename.html" class="function">rename()</a></span></td>
-       <td>No</td>
-      </tr>
-
-      <tr>
-       <td>支持 <span class="function"><a href="function.mkdir.html" class="function">mkdir()</a></span></td>
-       <td>No</td>
-      </tr>
-
-      <tr>
-       <td>支持 <span class="function"><a href="function.rmdir.html" class="function">rmdir()</a></span></td>
-       <td>No</td>
-      </tr>
-
-      <tr>
-       <td>仅仅支持 <span class="function"><a href="function.stream-select.html" class="function">stream_select()</a></span></td>
-       <td>
-        <em>php://stdin</em>、
-        <em>php://stdout</em>、
-        <em>php://stderr</em>、
-        <em>php://fd</em> 和 
-        <em>php://temp</em>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
- 
-
- <div class="refsect1 changelog" id="refsect1-wrappers.php-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.6.0</td>
-       <td>
-        <var class="filename">php://input</var> 可反复使用。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.6</td>
-       <td>
-        增加 <var class="filename">php://fd</var>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        增加 <var class="filename">php://memory</var> 和 <var class="filename">php://temp</var>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        增加 <var class="filename">php://filter</var>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >PHP ���룯�����</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="֧�ֵ�Э�飯��װЭ���б�" HREF="wrappers.html"><LINK  REL="PREVIOUS" TITLE="FTP �� FTPS" HREF="wrappers.ftp.html"><LINK  REL="NEXT" TITLE="ѹ����" HREF="wrappers.compression.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="wrappers.ftp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ J. ֧�ֵ�Э�飯��װЭ���б�</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="wrappers.compression.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="wrappers.php" ></A
+>PHP ���룯�����</H1
+><P  >&#13;   <TT  CLASS="literal" >PHP 3.0.13</TT
+> �����ϰ汾����
+   <TT  CLASS="literal" >PHP 4.3.0</TT
+> ��֧�� <TT  CLASS="filename" >php://output</TT
+>
+   �� <TT  CLASS="filename" >php://input</TT
+>����
+   <TT  CLASS="literal" >PHP 5.0.0</TT
+> ��֧�� <TT  CLASS="filename" >php://filter</TT
+>��
+  </P
+><P  ></P
+><UL  ><LI  ><P  ><TT  CLASS="filename" >php://stdin</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="filename" >php://stdout</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="filename" >php://stderr</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="filename" >php://output</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="filename" >php://input</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="filename" >php://filter</TT
+></P
+></LI
+></UL
+><P  >&#13;   <TT  CLASS="filename" >php://stdin</TT
+>��<TT  CLASS="filename" >php://stdout</TT
+> �� <TT  CLASS="filename" >php://stderr</TT
+> ��������
+   PHP ������Ӧ����������������
+  </P
+><P  >&#13;   <TT  CLASS="filename" >php://output</TT
+> ����������������д�����ݣ���
+   <A  HREF="function.print.html"  ><B  CLASS="function" >print()</B
+></A
+> �� <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+> �ķ�ʽ��ͬ��
+  </P
+><P  >&#13;   <TT  CLASS="filename" >php://input</TT
+> ��������ȡ POST ��ԭʼ���ݡ�
+   �� <TT  CLASS="varname" >$HTTP_RAW_POST_DATA</TT
+> �������������ڴ������ѹ����С�����Ҳ���Ҫ�κ������ <TT  CLASS="filename" >php.ini</TT
+> ���á�
+  </P
+><P  >&#13;   <TT  CLASS="filename" >php://stdin</TT
+> ��
+   <TT  CLASS="filename" >php://input</TT
+> ��ֻ���ģ�ͬʱ��<TT  CLASS="filename" >php://stdout</TT
+>��<TT  CLASS="filename" >php://stderr</TT
+> ��
+   <TT  CLASS="filename" >php://output</TT
+> ��ֻд�ġ�
+  </P
+><P  >&#13;   <TT  CLASS="filename" >php://filter</TT
+>
+   ��һ������������������������ڴ�ʱ��Ϊ���ķ�װЭ�顣����ڵ��������������ܵ��ļ���������
+   <A  HREF="function.readfile.html"  ><B  CLASS="function" >readfile()</B
+></A
+>��<A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+>
+   �� <A  HREF="function.file-get-contents.html"  ><B  CLASS="function" >file_get_contents()</B
+></A
+> �����ã������û�л����ڶ�ȡ����֮ǰ��������Ӧ������֮�ϡ�
+  </P
+><P  >&#13;   <TT  CLASS="filename" >php://filter</TT
+> ��Ŀ���������'����'��Ϊ��'·��'��һ���֡�
+  </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;    <TT  CLASS="literal" >/resource=&#60;stream to be filtered&#62;</TT
+>
+     (<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >required</I
+></SPAN
+>)  �˲�������λ��
+     <TT  CLASS="filename" >php://filter</TT
+> ��ĩβ������Ҫָ����Ҫ���˵�����
+     <DIV  CLASS="informalexample" ><A  NAME="AEN133557" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* This is equivalent to simply:<br  />&nbsp;&nbsp;&nbsp;readfile("http://www.example.com");<br  />&nbsp;&nbsp;&nbsp;since no filters are actually specified */<br  /><br  /></font><font  color="#0000BB">readfile</font><font  color="#007700">(</font><font  color="#DD0000">"php://filter/resource=http://www.example.com"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></LI
+><LI  ><P  >&#13;     <TT  CLASS="literal" >/read=&#60;filter list to apply to read chain&#62;</TT
+>
+     (<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >optional</I
+></SPAN
+>)  ����������һ�����������������֣��ùܵ��ַ� <TT  CLASS="literal" >|</TT
+> �ָ���
+     <DIV  CLASS="informalexample" ><A  NAME="AEN133564" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* This will output the contents of<br  />&nbsp;&nbsp;&nbsp;www.example.com entirely in uppercase */<br  /></font><font  color="#0000BB">readfile</font><font  color="#007700">(</font><font  color="#DD0000">"php://filter/read=string.toupper/resource=http://www.example.com"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* This will do the same as above<br  />&nbsp;&nbsp;&nbsp;but will also ROT13 encode it */<br  /></font><font  color="#0000BB">readfile</font><font  color="#007700">(</font><font  color="#DD0000">"php://filter/read=string.toupper|string.rot13/resource=http://www.example.com"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></LI
+><LI  ><P  >&#13;     <TT  CLASS="literal" >/write=&#60;filter list to apply to write chain&#62;</TT
+>
+     (<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >optional</I
+></SPAN
+>)  ����������һ�����������������֣��ùܵ��ַ� <TT  CLASS="literal" >|</TT
+> �ָ���
+     <DIV  CLASS="informalexample" ><A  NAME="AEN133571" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* This will filter the string "Hello World"<br  />&nbsp;&nbsp;&nbsp;through the rot13 filter, then write to<br  />&nbsp;&nbsp;&nbsp;example.txt in the current directory */<br  /></font><font  color="#0000BB">file_set_contents</font><font  color="#007700">(</font><font  color="#DD0000">"php://filter/write=string.rot13/resource=example.txt"</font><font  color="#007700">,</font><font  color="#DD0000">"Hello World"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+></LI
+><LI  ><P  >&#13;     <TT  CLASS="literal" >/&#60;filter list to apply to both chains&#62;</TT
+>
+     (<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >optional</I
+></SPAN
+>)  �κ�û�б�
+     <TT  CLASS="literal" >read=</TT
+> ��
+     <TT  CLASS="literal" >write=</TT
+> ָ���Ĺ������ᱻͬʱӦ���ڶ�д����
+    </P
+></LI
+></UL
+><P  >&#13;   <DIV  CLASS="table" ><A  NAME="AEN133580" ></A
+><P  ><B  >���� J-5. 
+     Wrapper Summary (For <TT  CLASS="literal" >php://filter</TT
+>,
+     refer to summary of wrapper being filtered.)
+    </B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >����</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >֧��</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Restricted by <TT  CLASS="literal" >allow_url_fopen</TT
+>.</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >No</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Allows Reading</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        <TT  CLASS="literal" >php://stdin</TT
+> and
+        <TT  CLASS="literal" >php://input</TT
+> only.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Allows Writing</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        <TT  CLASS="literal" >php://stdout</TT
+>,
+        <TT  CLASS="literal" >php://stderr</TT
+>, and
+        <TT  CLASS="literal" >php://output</TT
+> only.
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Allows Appending</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        <TT  CLASS="literal" >php://stdout</TT
+>,
+        <TT  CLASS="literal" >php://stderr</TT
+>, and
+        <TT  CLASS="literal" >php://output</TT
+> only. (Equivalent to writing)
+       </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Allows Simultaneous Reading and Writing</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >No.  These wrappers are unidirectional.</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Supports <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >No</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Supports <A  HREF="function.unlink.html"  ><B  CLASS="function" >unlink()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >No</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+  </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="wrappers.ftp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="wrappers.compression.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >FTP �� FTPS</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="wrappers.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ѹ����</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-wrappers.php-examples">
-  <h3 class="title">范例</h3>
-  <div class="example" id="example-329">
-   <p><strong>Example #1 php://temp/maxmemory</strong></p>
-   <div class="example-contents"><p>
-    这个可选选项允许设置 <var class="filename">php://temp</var> 开始使用临时文件前的最大内存限制。
-   </p></div>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Set&nbsp;the&nbsp;limit&nbsp;to&nbsp;5&nbsp;MB.<br /></span><span style="color: #0000BB">$fiveMBs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">1024&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">1024</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://temp/maxmemory:</span><span style="color: #0000BB">$fiveMBs</span><span style="color: #DD0000">"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r+'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fputs</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hello\n"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Read&nbsp;what&nbsp;we&nbsp;have&nbsp;written.<br /></span><span style="color: #0000BB">rewind</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">stream_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-  <div class="example" id="example-330">
-   <p><strong>Example #2 php://filter/resource=&lt;待过滤的数据流&gt;</strong></p>
-   <div class="example-contents"><p>
-    这个参数必须位于 <var class="filename">php://filter</var> 的末尾，并且指向需要过滤筛选的数据流。
-   </p></div>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;这简单等同于：<br />&nbsp;&nbsp;readfile("http://www.example.com");<br />&nbsp;&nbsp;实际上没有指定过滤器&nbsp;*/<br /><br /></span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://filter/resource=http://www.example.com"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-  <div class="example" id="example-331">
-   <p><strong>Example #3 php://filter/read=&lt;读链需要应用的过滤器列表&gt;</strong></p>
-   <div class="example-contents"><p>
-    这个参数采用一个或以管道符 <em>|</em> 分隔的多个过滤器名称。
-   </p></div>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;这会以大写字母输出&nbsp;www.example.com&nbsp;的全部内容&nbsp;*/<br /></span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://filter/read=string.toupper/resource=http://www.example.com"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;这会和以上所做的一样，但还会用&nbsp;ROT13&nbsp;加密。&nbsp;*/<br /></span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://filter/read=string.toupper|string.rot13/resource=http://www.example.com"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-  <div class="example" id="example-332">
-   <p><strong>Example #4 php://filter/write=&lt;写链需要应用的过滤器列表&gt;</strong></p>
-   <div class="example-contents"><p>
-    这个参数采用一个或以管道符 <em>|</em> 分隔的多个过滤器名称。
-   </p></div>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;这会通过&nbsp;rot13&nbsp;过滤器筛选出字符&nbsp;"Hello&nbsp;World"<br />&nbsp;&nbsp;然后写入当前目录下的&nbsp;example.txt&nbsp;*/<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"php://filter/write=string.rot13/resource=example.txt"</span><span style="color: #007700">,</span><span style="color: #DD0000">"Hello&nbsp;World"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="wrappers.ftp.html">ftp://</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="wrappers.compression.html">zlib://</a></div>
- <div class="up"><a href="wrappers.html">支持的协议和封装协议</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

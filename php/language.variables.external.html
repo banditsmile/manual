@@ -1,259 +1,289 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ¥è‡ª PHP ä¹‹å¤–çš„å˜é‡</title>
+<HTML  ><HEAD  ><TITLE  >PHP µÄÍâ²¿±äÁ¿</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿" HREF="language.variables.html"><LINK  REL="PREVIOUS" TITLE="¿É±ä±äÁ¿" HREF="language.variables.variable.html"><LINK  REL="NEXT" TITLE="³£Á¿" HREF="language.constants.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="language.variables.variable.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 7. ±äÁ¿</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="language.constants.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="language.variables.external" ></A
+>PHP µÄÍâ²¿±äÁ¿</H1
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.external.form" ></A
+>HTML ±íµ¥£¨GET ºÍ POST£©</H2
+><P  >&#13;     µ±Ò»¸ö±íµ¥Ìå½»¸ø PHP
+     ½Å±¾Ê±£¬±íµ¥ÖĞµÄĞÅÏ¢»á×Ô¶¯ÔÚ½Å±¾ÖĞ¿ÉÓÃ¡£ÓĞºÜ¶à·½·¨·ÃÎÊ´ËĞÅÏ¢£¬ÀıÈç£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4339" ></A
+><P  ><B  >Àı×Ó 7-8. Ò»¸ö¼òµ¥µÄ HTML ±íµ¥</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;form action="foo.php" method="POST"&#62;
+    Name:  &#60;input type="text" name="username"&#62;&#60;br&#62;
+    Email: &#60;input type="text" name="email"&#62;&#60;br&#62;
+    &#60;input type="submit" name="submit" value="Submit me!"&#62;
+&#60;/form&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ¸ù¾İÌØ¶¨µÄÉèÖÃºÍ¸öÈËµÄÏ²ºÃ£¬ÓĞºÜ¶àÖÖ·½·¨·ÃÎÊ HTML
+     ±íµ¥ÖĞµÄÊı¾İ¡£ÀıÈç£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4344" ></A
+><P  ><B  >Àı×Ó 7-9. ´ÓÒ»¸ö¼òµ¥µÄ POST HTML ±íµ¥·ÃÎÊÊı¾İ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;?php
+// ×Ô PHP 4.1.0 Æğ¿ÉÓÃ
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.variables.variable.html">å¯å˜å˜é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.constants.html">å¸¸é‡</a></div>
- <div class="up"><a href="language.variables.html">å˜é‡</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="language.variables.external" class="sect1">
-   <h2 class="title">æ¥è‡ª PHP ä¹‹å¤–çš„å˜é‡</h2>
+   print $_POST['username'];
+   print $_REQUEST['username'];
 
-   <div class="sect2" id="language.variables.external.form">
-    <h3 class="title">HTML è¡¨å•ï¼ˆGET å’Œ POSTï¼‰</h3>
+   import_request_variables('p', 'p_');
+   print $p_username;
 
-    <p class="simpara">
-     å½“ä¸€ä¸ªè¡¨å•æäº¤ç»™ PHP
-     è„šæœ¬æ—¶ï¼Œè¡¨å•ä¸­çš„ä¿¡æ¯ä¼šè‡ªåŠ¨åœ¨è„šæœ¬ä¸­å¯ç”¨ã€‚æœ‰å¾ˆå¤šæ–¹æ³•è®¿é—®æ­¤ä¿¡æ¯ï¼Œä¾‹å¦‚ï¼š
-    </p>
+// ×Ô PHP 3 Æğ¿ÉÓÃ¡£×Ô PHP 5.0.0 Æğ£¬ÕâĞ©½Ï³¤µÄÔ¤¶¨Òå±äÁ¿
+// ¿ÉÓÃ register_long_arrays Ö¸Áî¹Ø±Õ¡£
 
-    <p class="para">
-     <div class="example" id="example-120">
-      <p><strong>Example #1 ä¸€ä¸ªç®€å•çš„ HTML è¡¨å•</strong></p>
-      <div class="example-contents">
-<div class="htmlcode"><pre class="htmlcode">&lt;form action=&quot;foo.php&quot; method=&quot;POST&quot;&gt;
-    Name:  &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br /&gt;
-    Email: &lt;input type=&quot;text&quot; name=&quot;email&quot;&gt;&lt;br /&gt;
-    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit me!&quot; /&gt;
-&lt;/form&gt;</pre>
+   print $HTTP_POST_VARS['username'];
+
+// Èç¹û PHP Ö¸Áî register_globals = on Ê±¿ÉÓÃ¡£²»¹ı×Ô
+// PHP 4.2.0 ÆğÄ¬ÈÏÖµÎª register_globals = off¡£
+// ²»Ìá³«Ê¹ÓÃ/ÒÀÀµ´ËÖÖ·½·¨¡£
+
+   print $username;
+?&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Ê¹ÓÃ GET ±íµ¥Ò²ÀàËÆ£¬Ö»²»¹ıÒªÓÃÊÊµ±µÄ GET Ô¤¶¨Òå±äÁ¿¡£GET
+     Ò²ÊÊÓÃÓÚ
+     QUERY_STRING£¨URL ÖĞÔÚ¡°?¡±Ö®ºóµÄĞÅÏ¢£©¡£Òò´Ë£¬¾ÙÀıËµ£¬<TT  CLASS="literal" >http://www.example.com/test.php?id=3</TT
+>
+     °üº¬ÓĞ¿ÉÓÃ <TT  CLASS="varname" >$_GET['id']</TT
+>
+     ·ÃÎÊµÄ GET Êı¾İ¡£²Î¼û
+     <A  HREF="reserved.variables.html#reserved.variables.request"  >$_REQUEST</A
+> ºÍ
+     <A  HREF="function.import-request-variables.html"  ><B  CLASS="function" >import_request_variables()</B
+></A
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <A  HREF="language.variables.predefined.html#language.variables.superglobals"  >³¬È«¾Ö±äÁ¿Êı×é</A
+>£¬ºÍ
+      <TT  CLASS="varname" >$_POST</TT
+> ÒÔ¼° <TT  CLASS="varname" >$_GET</TT
+> Ò»Ñù£¬×Ô
+      PHP 4.1.0 Æğ¿ÉÓÃ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ÈçÍ¬ËùÊ¾£¬ÔÚ PHP 4.2.0 Ö®Ç° <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+>
+     µÄÄ¬ÈÏÖµÊÇ
+     <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >on</I
+></SPAN
+>¡£ÔÚ PHP 3 ÖĞÆäÖµ×ÜÊÇ on¡£PHP
+     ÉçÇø¹ÄÀø´ó¼Ò²»ÒªÒÀÀµ´ËÖ¸Áî£¬½¨ÒéÔÚ±àÂëÊ±¼Ù¶¨ÆäÎª
+     <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >off</I
+></SPAN
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <A  HREF="ref.info.html#ini.magic-quotes-gpc"  >magic_quotes_gpc</A
+>
+      ÅäÖÃÖ¸ÁîÓ°Ïìµ½
+      Get£¬Post ºÍ Cookie µÄÖµ¡£Èç¹û´ò¿ª£¬Öµ (It's "PHP!")
+      »á×Ô¶¯×ª»»³É (It\'s \"PHP!\")¡£Êı¾İ¿âµÄ²åÈë¾ÍĞèÒª×ªÒå¡£²Î¼û
+      <A  HREF="function.addslashes.html"  ><B  CLASS="function" >addslashes()</B
+></A
+>£¬<A  HREF="function.stripslashes.html"  ><B  CLASS="function" >stripslashes()</B
+></A
+> ºÍ
+      <A  HREF="ref.sybase.html#ini.magic-quotes-sybase"  >magic_quotes_sybase</A
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     PHP Ò²¶®µÃ±íµ¥±äÁ¿ÉÏÏÂÎÄÖĞµÄÊı×é£¨²Î¼û<A  HREF="faq.html.html"  >Ïà¹Ø³£¼ûÎÊÌâ</A
+>£©¡£ÀıÈç¿ÉÒÔ½«Ïà¹ØµÄ±äÁ¿±à³É×é£¬»òÕßÓÃ´ËÌØĞÔ´Ó¶àÑ¡ÊäÈë¿òÖĞÈ¡µÃÖµ¡£ÀıÈç£¬½«Ò»¸ö±íµ¥ POST ¸ø×Ô¼º²¢ÔÚÌá½»Ê±ÏÔÊ¾Êı¾İ£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4370" ></A
+><P  ><B  >Àı×Ó 7-10. ¸ü¸´ÔÓµÄ±íµ¥±äÁ¿</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">if (isset(</font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'action'</font><font  color="#007700">]) &amp;&amp; </font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'action'</font><font  color="#007700">] == </font><font  color="#DD0000">'submitted'</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">'&lt;pre&gt;'</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$_POST</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">'&lt;a href="'</font><font  color="#007700">. </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_SELF'</font><font  color="#007700">] .</font><font  color="#DD0000">'"&gt;Please try again&lt;/a&gt;'</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">'&lt;/pre&gt;'</font><font  color="#007700">;<br  />} else {<br  /></font><font  color="#0000BB">?&gt;<br  /></font>&lt;form action="<font  color="#0000BB">&lt;?php </font><font  color="#007700">echo </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'PHP_SELF'</font><font  color="#007700">]; </font><font  color="#0000BB">?&gt;</font>" method="POST"&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&lt;input type="text" name="personal[name]"&gt;&lt;br&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;Email: &lt;input type="text" name="personal[email]"&gt;&lt;br&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;Beer: &lt;br&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&lt;select multiple name="beer[]"&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="warthog"&gt;Warthog&lt;/option&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="guinness"&gt;Guinness&lt;/option&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="stuttgarter"&gt;Stuttgarter Schwabenbräõ&lt;/option&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;&lt;br&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="hidden" name="action" value="submitted"&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="submit" name="submit" value="submit me!"&gt;<br  />&lt;/form&gt;<br  /><font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÔÚ PHP 3 ÖĞ£¬±äÁ¿Ê¹ÓÃÖĞµÄÊı×é½öÏŞÓÚÒ»Î¬Êı×é¡£ÔÚ
+     PHP 4 ÖĞ£¬Ã»ÓĞ´ËÖÖÏŞÖÆ¡£
+    </P
+><DIV  CLASS="sect3" ><H3  CLASS="sect3" ><A  NAME="language.variables.external.form.submit" ></A
+>IMAGE SUBMIT ±äÁ¿Ãû</H3
+><P  >&#13;      µ±Ìá½»±íµ¥Ê±£¬¿ÉÒÔÓÃÒ»·ùÍ¼Ïñ´úÌæ±ê×¼µÄÌá½»°´Å¥£¬ÓÃÀàËÆÕâÑùµÄ±ê¼Ç£º
+     </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN4377" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;input type="image" src="image.gif" name="sub"&#62;</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;      µ±ÓÃ»§µã»÷µ½Í¼ÏñÖĞµÄÄ³´¦Ê±£¬ÏàÓ¦µÄ±íµ¥»á±»´«ËÍµ½·şÎñÆ÷£¬²¢¼ÓÉÏÁ½¸ö±äÁ¿
+      sub_x ºÍ sub_y¡£ËüÃÇ°üº¬ÁËÓÃ»§µã»÷Í¼ÏñµÄ×ø±ê¡£ÓĞ¾­ÑéµÄÓÃ»§¿ÉÄÜ»á×¢Òâµ½±»ä¯ÀÀÆ÷·¢ËÍµÄÊµ¼Ê±äÁ¿Ãû°üº¬µÄÊÇÒ»¸öµã¶ø²»ÊÇÏÂ»®Ïß£¬µ«
+      PHP ×Ô¶¯½«µã×ª»»³ÉÁËÏÂ»®Ïß¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.external.cookies" ></A
+>HTTP Cookies</H2
+><P  >&#13;     PHP Í¸Ã÷µØÖ§³Ö <A  href="http://www.netscape.com/newsref/std/cookie_spec.html"  TARGET="_top" >Netscape ¹æ·¶</A
+>¶¨ÒåÖĞµÄ
+     HTTP cookies¡£Cookies
+     ÊÇÒ»ÖÖÔÚÔ¶¶Ëä¯ÀÀÆ÷¶Ë´æ´¢Êı¾İ²¢ÄÜ×·×Ù»òÊ¶±ğÔÙ´Î·ÃÎÊµÄÓÃ»§µÄ»úÖÆ¡£¿ÉÒÔÓÃ
+     <A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+>
+     º¯ÊıÉè¶¨ cookies¡£Cookies ÊÇ
+     HTTP ĞÅÏ¢Í·ÖĞµÄÒ»²¿·Ö£¬Òò´Ë
+     SetCookie º¯Êı±ØĞëÔÚÏòä¯ÀÀÆ÷·¢ËÍÈÎºÎÊä³öÖ®Ç°µ÷ÓÃ¡£¶ÔÓÚ
+     <A  HREF="function.header.html"  ><B  CLASS="function" >header()</B
+></A
+> º¯ÊıÒ²ÓĞÍ¬ÑùµÄÏŞÖÆ¡£Cookie
+     Êı¾İ»áÔÚÏàÓ¦µÄ cookie Êı¾İÊı×éÖĞ¿ÉÓÃ£¬ÀıÈç
+     <TT  CLASS="varname" >$_COOKIE</TT
+>£¬<TT  CLASS="varname" >$HTTP_COOKIE_VARS</TT
+> ºÍ
+     <TT  CLASS="varname" >$_REQUEST</TT
+>¡£¸ü¶àÏ¸½ÚºÍÀı×Ó¼û
+     <A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+> ÊÖ²áÒ³Ãæ¡£
+    </P
+><P  >&#13;     Èç¹ûÒª½«¶à¸öÖµ¸³¸øÒ»¸ö cookie ±äÁ¿£¬±ØĞë½«Æä¸³³ÉÊı×é¡£ÀıÈç£º
+    </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN4391" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;setcookie</font><font  color="#007700">(</font><font  color="#DD0000">"MyCookie[foo]"</font><font  color="#007700">, </font><font  color="#DD0000">"Testing 1"</font><font  color="#007700">, </font><font  color="#0000BB">time</font><font  color="#007700">()+</font><font  color="#0000BB">3600</font><font  color="#007700">);<br  />&nbsp;&nbsp;</font><font  color="#0000BB">setcookie</font><font  color="#007700">(</font><font  color="#DD0000">"MyCookie[bar]"</font><font  color="#007700">, </font><font  color="#DD0000">"Testing 2"</font><font  color="#007700">, </font><font  color="#0000BB">time</font><font  color="#007700">()+</font><font  color="#0000BB">3600</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;     Õâ½«»á½¨Á¢Á½¸öµ¥¶ÀµÄ cookie£¬¾¡¹Ü MyCookie
+     ÔÚ½Å±¾ÖĞÊÇÒ»¸öµ¥Ò»µÄÊı×é¡£Èç¹ûÏëÔÚ½ö½öÒ»¸ö cookie
+     ÖĞÉè¶¨¶à¸öÖµ£¬¿¼ÂÇÏÈÔÚÖµÉÏÊ¹ÓÃ
+     <A  HREF="function.serialize.html"  ><B  CLASS="function" >serialize()</B
+></A
+> »ò
+     <A  HREF="function.explode.html"  ><B  CLASS="function" >explode()</B
+></A
+>¡£
+    </P
+><P  >&#13;     ×¢ÒâÔÚä¯ÀÀÆ÷ÖĞÒ»¸ö cookie »áÌæ»»µôÉÏÒ»¸öÍ¬ÃûµÄ
+     cookie£¬³ı·ÇÂ·¾¶»òÕßÓò²»Í¬¡£Òò´Ë¶ÔÓÚ¹ºÎï¿ò³ÌĞò¿ÉÒÔ±£ÁôÒ»¸ö¼ÆÊıÆ÷²¢Ò»Æğ´«µİ£¬ÀıÈç£º
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4397" ></A
+><P  ><B  >Àı×Ó 7-11. Ò»¸ö <A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+> µÄÊ¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">if (isset(</font><font  color="#0000BB">$_COOKIE</font><font  color="#007700">[</font><font  color="#DD0000">'count'</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$count </font><font  color="#007700">= </font><font  color="#0000BB">$_COOKIE</font><font  color="#007700">[</font><font  color="#DD0000">'count'</font><font  color="#007700">] + </font><font  color="#0000BB">1</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$count </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">setcookie</font><font  color="#007700">(</font><font  color="#DD0000">"count"</font><font  color="#007700">, </font><font  color="#0000BB">$count</font><font  color="#007700">, </font><font  color="#0000BB">time</font><font  color="#007700">()+</font><font  color="#0000BB">3600</font><font  color="#007700">);<br  /></font><font  color="#0000BB">setcookie</font><font  color="#007700">(</font><font  color="#DD0000">"Cart[$count]"</font><font  color="#007700">, </font><font  color="#0000BB">$item</font><font  color="#007700">, </font><font  color="#0000BB">time</font><font  color="#007700">()+</font><font  color="#0000BB">3600</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.external.dot-in-names" ></A
+>±äÁ¿ÃûÖĞµÄµã</H2
+><P  >&#13;     Í¨³££¬PHP ²»»á¸Ä±ä´«µİ¸ø½Å±¾ÖĞµÄ±äÁ¿Ãû¡£È»¶øÓ¦¸Ã×¢Òâµ½µã£¨dot£¬period£¬full
+     stop£©²»ÊÇ PHP ±äÁ¿ÃûÖĞµÄºÏ·¨×Ö·û¡£ÖÁÓÚÔ­Òò£¬¿´¿´£º
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$varname</font><font  color="#007700">.</font><font  color="#0000BB">ext</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">/* ·Ç·¨±äÁ¿Ãû */<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+     ÕâÊ±£¬½âÎöÆ÷¿´µ½ÊÇÒ»¸öÃûÎª
+     <TT  CLASS="varname" >$varname</TT
+>
+     µÄ±äÁ¿£¬ºóÃæ¸ú×ÅÒ»¸ö×Ö·û´®Á¬½ÓÔËËã·û£¬ºóÃæ¸ú×ÅÒ»¸öÂã×Ö·û´®£¨ÀıÈçÃ»ÓĞ¼ÓÒıºÅµÄ×Ö·û´®£¬ÇÒ²»Æ¥ÅäÈÎºÎÒÑÖªµÄ½¡Ãû»ò±£Áô×Ö£©'ext'¡£ºÜÃ÷ÏÔÕâ²»ÊÇÏëÒªµÄ½á¹û¡£
+    </P
+><P  >&#13;     ³öÓÚ´ËÔ­Òò£¬Òª×¢Òâ PHP
+     ½«»á×Ô¶¯½«±äÁ¿ÃûÖĞµÄµãÌæ»»³ÉÏÂ»®Ïß¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.determining-type-of" ></A
+>È·¶¨±äÁ¿ÀàĞÍ</H2
+><P  >&#13;     ÒòÎª PHP »áÅĞ¶Ï±äÁ¿ÀàĞÍ²¢ÔÚĞèÒªÊ±½øĞĞ×ª»»£¨Í¨³£Çé¿öÏÂ£©£¬Òò´ËÔÚÄ³Ò»Ê±¿Ì¸ø¶¨µÄ±äÁ¿ÊÇºÎÖÖÀàĞÍ²¢²»Ã÷ÏÔ¡£PHP
+     °üÀ¨¼¸¸öº¯Êı¿ÉÒÔÅĞ¶Ï±äÁ¿µÄÀàĞÍ£¬ÀıÈç£º<A  HREF="function.gettype.html"  ><B  CLASS="function" >gettype()</B
+></A
+>£¬<A  HREF="function.is-array.html"  ><B  CLASS="function" >is_array()</B
+></A
+>£¬<A  HREF="function.is-float.html"  ><B  CLASS="function" >is_float()</B
+></A
+>£¬<A  HREF="function.is-int.html"  ><B  CLASS="function" >is_int()</B
+></A
+>£¬<A  HREF="function.is-object.html"  ><B  CLASS="function" >is_object()</B
+></A
+> ºÍ
+     <A  HREF="function.is-string.html"  ><B  CLASS="function" >is_string()</B
+></A
+>¡£²Î¼û<A  HREF="language.types.html"  >ÀàĞÍ</A
+>Ò»ÕÂ¡£
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="language.variables.variable.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="language.constants.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >¿É±ä±äÁ¿</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="language.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >³£Á¿</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-      </div>
-
-     </div>
-    </p>
-
-    <p class="para">
-     æ ¹æ®ç‰¹å®šçš„è®¾ç½®å’Œä¸ªäººçš„å–œå¥½ï¼Œæœ‰å¾ˆå¤šç§æ–¹æ³•è®¿é—® HTML
-     è¡¨å•ä¸­çš„æ•°æ®ã€‚ä¾‹å¦‚ï¼š
-    </p>
-
-    
-    <p class="para">
-     <div class="example" id="example-121">
-      <p><strong>Example #2 ä»ä¸€ä¸ªç®€å•çš„ POST HTML è¡¨å•è®¿é—®æ•°æ®</strong></p>
-      <div class="example-contents">
-<div class="htmlcode"><pre class="htmlcode">&lt;?php
-// è‡ª PHP 4.1.0 èµ·å¯ç”¨
-   echo $_POST[&#039;username&#039;];
-   echo $_REQUEST[&#039;username&#039;];
-   
-   import_request_variables(&#039;p&#039;, &#039;p_&#039;);
-   echo $p_username;
-
-// è‡ª PHP 5.0.0 èµ·ï¼Œè¿™äº›é•¿æ ¼å¼çš„é¢„å®šä¹‰å˜é‡
-// å¯ç”¨ register_long_arrays æŒ‡ä»¤å…³é—­ã€‚
-
-   echo $HTTP_POST_VARS[&#039;username&#039;];
-
-// å¦‚æœ PHP æŒ‡ä»¤ register_globals = on æ—¶å¯ç”¨ã€‚ä¸è¿‡è‡ª
-// PHP 4.2.0 èµ·é»˜è®¤å€¼ä¸º register_globals = offã€‚
-// ä¸æå€¡ä½¿ç”¨/ä¾èµ–æ­¤ç§æ–¹æ³•ã€‚
-
-   echo $username;
-?&gt;</pre>
-</div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     ä½¿ç”¨ GET è¡¨å•ä¹Ÿç±»ä¼¼ï¼Œåªä¸è¿‡è¦ç”¨é€‚å½“çš„ GET é¢„å®šä¹‰å˜é‡ã€‚GET
-     ä¹Ÿé€‚ç”¨äº
-     <em>QUERY_STRING</em>ï¼ˆURL
-     ä¸­åœ¨â€œ?â€ä¹‹åçš„ä¿¡æ¯ï¼‰ã€‚å› æ­¤ï¼Œä¸¾ä¾‹è¯´ï¼Œ<em>http://www.example.com/test.php?id=3</em>
-     åŒ…å«æœ‰å¯ç”¨ <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET['id']</a></var></var>
-     æ¥è®¿é—®çš„ GET æ•°æ®ã€‚å‚è§
-     <a href="reserved.variables.request.html" class="link">$_REQUEST</a> å’Œ
-     <span class="function"><a href="function.import-request-variables.html" class="function">import_request_variables()</a></span>ã€‚
-    </p>
-
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      <a href="language.variables.superglobals.html" class="link">è¶…å…¨å±€æ•°ç»„</a>ä¾‹å¦‚
-      <var class="varname"><var class="varname"><a href="reserved.variables.post.html" class="classname">$_POST</a></var></var> å’Œ <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var>ï¼Œè‡ª
-      PHP 4.1.0 èµ·å¯ç”¨ã€‚
-     </p>
-    </p></blockquote>
-
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      å˜é‡åä¸­çš„ç‚¹å’Œç©ºæ ¼è¢«è½¬æ¢æˆä¸‹åˆ’çº¿ã€‚ä¾‹å¦‚
-      <em>&lt;input name=&quot;a.b&quot; /&gt;</em> å˜æˆäº†
-      <em>$_REQUEST[&quot;a_b&quot;]</em>ã€‚
-     </p>
-    </p></blockquote>
-
-    <p class="para">
-     å¦‚ä¸Šæ‰€ç¤ºï¼Œåœ¨ PHP 4.2.0 ä¹‹å‰ <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
-     çš„é»˜è®¤å€¼æ˜¯
-     <em class="emphasis">on</em>ã€‚PHP
-     ç¤¾åŒºé¼“åŠ±å¤§å®¶ä¸è¦ä¾èµ–æ­¤æŒ‡ä»¤ï¼Œå»ºè®®åœ¨ç¼–ç æ—¶å‡å®šå…¶ä¸º
-     <em class="emphasis">off</em>ã€‚
-    </p>
-
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a>
-      é…ç½®æŒ‡ä»¤å½±å“åˆ°
-      Getï¼ŒPost å’Œ Cookie çš„å€¼ã€‚å¦‚æœæ‰“å¼€ï¼Œå€¼ (It&#039;s &quot;PHP!&quot;) ä¼šè‡ªåŠ¨è½¬æ¢æˆ
-      (It\&#039;s \&quot;PHP!\&quot;)ã€‚åå¤šå¹´å‰å¯¹æ•°æ®åº“çš„æ’å…¥éœ€è¦å¦‚æ­¤è½¬ä¹‰ï¼Œå¦‚ä»Šå·²ç»è¿‡æ—¶äº†ï¼Œåº”è¯¥å…³é—­ã€‚å‚è§
-      <span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>ï¼Œ<span class="function"><a href="function.stripslashes.html" class="function">stripslashes()</a></span> å’Œ
-      <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">magic_quotes_sybase</a>ã€‚
-     </p>
-    </p></blockquote>
-
-    <p class="simpara">
-     PHP ä¹Ÿæ‡‚å¾—è¡¨å•å˜é‡ä¸Šä¸‹æ–‡ä¸­çš„æ•°ç»„ï¼ˆå‚è§<a href="faq.html.html" class="link">ç›¸å…³å¸¸è§é—®é¢˜</a>ï¼‰ã€‚ä¾‹å¦‚å¯ä»¥å°†ç›¸å…³çš„å˜é‡ç¼–æˆç»„ï¼Œæˆ–è€…ç”¨æ­¤ç‰¹æ€§ä»å¤šé€‰è¾“å…¥æ¡†ä¸­å–å¾—å€¼ã€‚ä¾‹å¦‚ï¼Œå°†ä¸€ä¸ªè¡¨å• POST ç»™è‡ªå·±å¹¶åœ¨æäº¤æ—¶æ˜¾ç¤ºæ•°æ®ï¼š
-    </p>
-
-    <p class="para">
-     <div class="example" id="example-122">
-      <p><strong>Example #3 æ›´å¤æ‚çš„è¡¨å•å˜é‡</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'action'</span><span style="color: #007700">])&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'action'</span><span style="color: #007700">]&nbsp;==&nbsp;</span><span style="color: #DD0000">'submitted'</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;pre&gt;'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;a&nbsp;href="'</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">]&nbsp;.</span><span style="color: #DD0000">'"&gt;Please&nbsp;try&nbsp;again&lt;/a&gt;'</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/pre&gt;'</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br /></span><span style="color: #0000BB">?&gt;<br /></span>&lt;form&nbsp;action="<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'PHP_SELF'</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>"&nbsp;method="post"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;name="personal[name]"&gt;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&lt;input&nbsp;type="text"&nbsp;name="personal[email]"&gt;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Beer:&nbsp;&lt;br&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;select&nbsp;multiple&nbsp;name="beer[]"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="warthog"&gt;Warthog&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="guinness"&gt;Guinness&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="stuttgarter"&gt;Stuttgarter&nbsp;Schwabenbr&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="hidden"&nbsp;name="action"&nbsp;value="submitted"&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="submit"&nbsp;name="submit"&nbsp;value="submit&nbsp;me!"&nbsp;/&gt;<br />&lt;/form&gt;<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-     <div class="sect3" id="language.variables.external.form.submit">
-     <h4 class="title">IMAGE SUBMIT å˜é‡å</h4>
-
-     <p class="simpara">
-      å½“æäº¤è¡¨å•æ—¶ï¼Œå¯ä»¥ç”¨ä¸€å¹…å›¾åƒä»£æ›¿æ ‡å‡†çš„æäº¤æŒ‰é’®ï¼Œç”¨ç±»ä¼¼è¿™æ ·çš„æ ‡è®°ï¼š
-     </p>
-
-     <div class="informalexample">
-      <div class="example-contents">
-<div class="htmlcode"><pre class="htmlcode">&lt;input type=&quot;image&quot; src=&quot;image.gif&quot; name=&quot;sub&quot; /&gt;</pre>
-</div>
-      </div>
-
-     </div>
-
-     <p class="simpara">
-      å½“ç”¨æˆ·ç‚¹å‡»åˆ°å›¾åƒä¸­çš„æŸå¤„æ—¶ï¼Œç›¸åº”çš„è¡¨å•ä¼šè¢«ä¼ é€åˆ°æœåŠ¡å™¨ï¼Œå¹¶åŠ ä¸Šä¸¤ä¸ªå˜é‡
-      <var class="varname"><var class="varname">sub_x</var></var> å’Œ
-      <var class="varname"><var class="varname">sub_y</var></var>ã€‚å®ƒä»¬åŒ…å«äº†ç”¨æˆ·ç‚¹å‡»å›¾åƒçš„åæ ‡ã€‚æœ‰ç»éªŒçš„ç”¨æˆ·å¯èƒ½ä¼šæ³¨æ„åˆ°è¢«æµè§ˆå™¨å‘é€çš„å®é™…å˜é‡ååŒ…å«çš„æ˜¯ä¸€ä¸ªç‚¹è€Œä¸æ˜¯ä¸‹åˆ’çº¿ï¼ˆå³
-      sub.x å’Œ sub.yï¼‰ï¼Œä½† PHP è‡ªåŠ¨å°†ç‚¹è½¬æ¢æˆäº†ä¸‹åˆ’çº¿ã€‚
-     </p>
-    </div>
-
-   </div>
-
-   <div class="sect2" id="language.variables.external.cookies">
-    <h3 class="title">HTTP Cookies</h3>
-
-    <p class="simpara">
-     PHP é€æ˜åœ°æ”¯æŒ <a href="http://www.faqs.org/rfcs/rfc6265" class="link external">&raquo;&nbsp;RFC 6265</a>å®šä¹‰ä¸­çš„
-     HTTP cookiesã€‚Cookies
-     æ˜¯ä¸€ç§åœ¨è¿œç«¯æµè§ˆå™¨ç«¯å­˜å‚¨æ•°æ®å¹¶èƒ½è¿½è¸ªæˆ–è¯†åˆ«å†æ¬¡è®¿é—®çš„ç”¨æˆ·çš„æœºåˆ¶ã€‚å¯ä»¥ç”¨
-     <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span>
-     å‡½æ•°è®¾å®š cookiesã€‚Cookies æ˜¯
-     HTTP ä¿¡æ¯å¤´ä¸­çš„ä¸€éƒ¨åˆ†ï¼Œå› æ­¤
-     SetCookie å‡½æ•°å¿…é¡»åœ¨å‘æµè§ˆå™¨å‘é€ä»»ä½•è¾“å‡ºä¹‹å‰è°ƒç”¨ã€‚å¯¹äº
-     <span class="function"><a href="function.header.html" class="function">header()</a></span> å‡½æ•°ä¹Ÿæœ‰åŒæ ·çš„é™åˆ¶ã€‚Cookie
-     æ•°æ®ä¼šåœ¨ç›¸åº”çš„ cookie æ•°æ®æ•°ç»„ä¸­å¯ç”¨ï¼Œä¾‹å¦‚
-     <var class="varname"><var class="varname"><a href="reserved.variables.cookies.html" class="classname">$_COOKIE</a></var></var>ï¼Œ<var class="varname"><var class="varname">$HTTP_COOKIE_VARS</var></var> å’Œ
-     <var class="varname"><var class="varname"><a href="reserved.variables.request.html" class="classname">$_REQUEST</a></var></var>ã€‚æ›´å¤šç»†èŠ‚å’Œä¾‹å­è§
-     <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> æ‰‹å†Œé¡µé¢ã€‚
-    </p>
-
-    <p class="simpara">
-     å¦‚æœè¦å°†å¤šä¸ªå€¼èµ‹ç»™ä¸€ä¸ª cookie å˜é‡ï¼Œå¿…é¡»å°†å…¶èµ‹æˆæ•°ç»„ã€‚ä¾‹å¦‚ï¼š
-    </p>
-
-    <div class="informalexample">
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"MyCookie[foo]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Testing&nbsp;1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"MyCookie[bar]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Testing&nbsp;2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-
-    <p class="simpara">
-     è¿™å°†ä¼šå»ºç«‹ä¸¤ä¸ªå•ç‹¬çš„ cookieï¼Œå°½ç®¡ MyCookie
-     åœ¨è„šæœ¬ä¸­æ˜¯ä¸€ä¸ªå•ä¸€çš„æ•°ç»„ã€‚å¦‚æœæƒ³åœ¨ä»…ä»…ä¸€ä¸ª cookie
-     ä¸­è®¾å®šå¤šä¸ªå€¼ï¼Œè€ƒè™‘å…ˆåœ¨å€¼ä¸Šä½¿ç”¨
-     <span class="function"><a href="function.serialize.html" class="function">serialize()</a></span> æˆ–
-     <span class="function"><a href="function.explode.html" class="function">explode()</a></span>ã€‚
-    </p>
-
-    <p class="simpara">
-     æ³¨æ„åœ¨æµè§ˆå™¨ä¸­ä¸€ä¸ª cookie ä¼šæ›¿æ¢æ‰ä¸Šä¸€ä¸ªåŒåçš„
-     cookieï¼Œé™¤éè·¯å¾„æˆ–è€…åŸŸä¸åŒã€‚å› æ­¤å¯¹äºè´­ç‰©è½¦ç¨‹åºå¯ä»¥ä¿ç•™ä¸€ä¸ªè®¡æ•°å™¨å¹¶ä¸€èµ·ä¼ é€’ï¼Œä¾‹å¦‚ï¼š
-    </p>
-
-    <div class="example" id="example-123">
-     <p><strong>Example #4 ä¸€ä¸ª <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> çš„ç¤ºä¾‹</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'count'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'count'</span><span style="color: #007700">]&nbsp;+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">'count'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"Cart[</span><span style="color: #0000BB">$count</span><span style="color: #DD0000">]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$item</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-
-   </div>
-
-   <div class="sect2" id="language.variables.external.dot-in-names">
-    <h3 class="title">å˜é‡åä¸­çš„ç‚¹</h3>
-
-    <p class="para">
-     é€šå¸¸ï¼ŒPHP ä¸ä¼šæ”¹å˜ä¼ é€’ç»™è„šæœ¬ä¸­çš„å˜é‡åã€‚ç„¶è€Œåº”è¯¥æ³¨æ„åˆ°ç‚¹ï¼ˆå¥å·ï¼‰ä¸æ˜¯
-     PHP å˜é‡åä¸­çš„åˆæ³•å­—ç¬¦ã€‚è‡³äºåŸå› ï¼Œçœ‹çœ‹ï¼š
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$varname</span><span style="color: #007700">.</span><span style="color: #0000BB">ext</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;éæ³•å˜é‡å&nbsp;*/<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-     è¿™æ—¶ï¼Œè§£æå™¨çœ‹åˆ°æ˜¯ä¸€ä¸ªåä¸º
-     <var class="varname"><var class="varname">$varname</var></var>
-     çš„å˜é‡ï¼Œåé¢è·Ÿç€ä¸€ä¸ªå­—ç¬¦ä¸²è¿æ¥è¿ç®—ç¬¦ï¼Œåé¢è·Ÿç€ä¸€ä¸ªè£¸å­—ç¬¦ä¸²ï¼ˆå³æ²¡æœ‰åŠ å¼•å·çš„å­—ç¬¦ä¸²ï¼Œä¸”ä¸åŒ¹é…ä»»ä½•å·²çŸ¥çš„å¥åæˆ–ä¿ç•™å­—ï¼‰&#039;ext&#039;ã€‚å¾ˆæ˜æ˜¾è¿™ä¸æ˜¯æƒ³è¦çš„ç»“æœã€‚
-    </p>
-
-    <p class="para">
-     å‡ºäºæ­¤åŸå› ï¼Œè¦æ³¨æ„ PHP
-     å°†ä¼šè‡ªåŠ¨å°†å˜é‡åä¸­çš„ç‚¹æ›¿æ¢æˆä¸‹åˆ’çº¿ã€‚
-    </p>
-
-   </div>
-
-   <div class="sect2" id="language.variables.determining-type-of">
-    <h3 class="title">ç¡®å®šå˜é‡ç±»å‹</h3>
-
-    <p class="para">
-     å› ä¸º PHP ä¼šåˆ¤æ–­å˜é‡ç±»å‹å¹¶åœ¨éœ€è¦æ—¶è¿›è¡Œè½¬æ¢ï¼ˆé€šå¸¸æƒ…å†µä¸‹ï¼‰ï¼Œå› æ­¤åœ¨æŸä¸€æ—¶åˆ»ç»™å®šçš„å˜é‡æ˜¯ä½•ç§ç±»å‹å¹¶ä¸æ˜æ˜¾ã€‚PHP
-     åŒ…æ‹¬å‡ ä¸ªå‡½æ•°å¯ä»¥åˆ¤æ–­å˜é‡çš„ç±»å‹ï¼Œä¾‹å¦‚ï¼š<span class="function"><a href="function.gettype.html" class="function">gettype()</a></span>ï¼Œ<span class="function"><a href="function.is-array.html" class="function">is_array()</a></span>ï¼Œ<span class="function"><a href="function.is-float.html" class="function">is_float()</a></span>ï¼Œ<span class="function"><a href="function.is-int.html" class="function">is_int()</a></span>ï¼Œ<span class="function"><a href="function.is-object.html" class="function">is_object()</a></span>
-     å’Œ <span class="function"><a href="function.is-string.html" class="function">is_string()</a></span>ã€‚å‚è§<a href="language.types.html" class="link">ç±»å‹</a>ä¸€ç« ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.variables.variable.html">å¯å˜å˜é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.constants.html">å¸¸é‡</a></div>
- <div class="up"><a href="language.variables.html">å˜é‡</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

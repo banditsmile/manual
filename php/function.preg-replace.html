@@ -1,358 +1,292 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼çš„æœç´¢å’Œæ›¿æ¢</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-replace-callback.html">preg_replace_callback</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.preg-split.html">preg_split</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.preg-replace" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">preg_replace</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">preg_replace</span> &mdash; <span class="dc-title">æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼çš„æœç´¢å’Œæ›¿æ¢</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.preg-replace-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>preg_replace</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$pattern</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$replacement</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$subject</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = -1</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$count</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-  æœç´¢<code class="parameter">subject</code>ä¸­åŒ¹é…<code class="parameter">pattern</code>çš„éƒ¨åˆ†ï¼Œ 
-  ä»¥<code class="parameter">replacement</code>è¿›è¡Œæ›¿æ¢ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.preg-replace-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">pattern</code></dt>
-
-     <dd>
-
-      <p class="para">
-      è¦æœç´¢çš„æ¨¡å¼ã€‚å¯ä»¥ä½¿ä¸€ä¸ªå­—ç¬¦ä¸²æˆ–å­—ç¬¦ä¸²æ•°ç»„ã€‚
-      </p>
-      <p class="para">
-       å¯ä»¥ä½¿ç”¨ä¸€äº›<a href="reference.pcre.pattern.modifiers.html" class="link">PCREä¿®é¥°ç¬¦</a>ï¼Œ
-       åŒ…æ‹¬è¢«å¼ƒç”¨çš„&#039;<em>e</em>&#039;(PREG_REPLACE_EVAL)ï¼Œå¯ä»¥ä¸ºè¿™ä¸ªå‡½æ•°æŒ‡å®šã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">replacement</code></dt>
-
-     <dd>
-
-      <p class="para">
-      ç”¨äºæ›¿æ¢çš„å­—ç¬¦ä¸²æˆ–å­—ç¬¦ä¸²æ•°ç»„ã€‚å¦‚æœè¿™ä¸ªå‚æ•°æ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå¹¶ä¸”<code class="parameter">pattern</code>
-      æ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œé‚£ä¹ˆæ‰€æœ‰çš„æ¨¡å¼éƒ½ä½¿ç”¨è¿™ä¸ªå­—ç¬¦ä¸²è¿›è¡Œæ›¿æ¢ã€‚å¦‚æœ<code class="parameter">pattern</code>å’Œ<code class="parameter">replacement</code>
-      éƒ½æ˜¯æ•°ç»„ï¼Œæ¯ä¸ª<code class="parameter">pattern</code>ä½¿ç”¨<code class="parameter">replacement</code>ä¸­å¯¹åº”çš„
-      å…ƒç´ è¿›è¡Œæ›¿æ¢ã€‚å¦‚æœ<code class="parameter">replacement</code>ä¸­çš„å…ƒç´ æ¯”<code class="parameter">pattern</code>ä¸­çš„å°‘ï¼Œ
-      å¤šå‡ºæ¥çš„<code class="parameter">pattern</code>ä½¿ç”¨ç©ºå­—ç¬¦ä¸²è¿›è¡Œæ›¿æ¢ã€‚
-      </p>
-      <p class="para">
-      <code class="parameter">replacement</code>ä¸­å¯ä»¥åŒ…å«åå‘å¼•ç”¨<em>\\<span class="replaceable">n</span></em>
-      æˆ–(php 4.0.4ä»¥ä¸Šå¯ç”¨)<em>$<span class="replaceable">n</span></em>ï¼Œè¯­æ³•ä¸Šé¦–é€‰åè€…ã€‚ æ¯ä¸ª
-      è¿™æ ·çš„å¼•ç”¨å°†è¢«åŒ¹é…åˆ°çš„ç¬¬<span class="replaceable">n</span>ä¸ªæ•è·å­ç»„æ•è·åˆ°çš„æ–‡æœ¬æ›¿æ¢ã€‚ <span class="replaceable">n</span>
-      å¯ä»¥æ˜¯0-99ï¼Œ<em>\\0</em>å’Œ<em>$0</em>ä»£è¡¨å®Œæ•´çš„æ¨¡å¼åŒ¹é…æ–‡æœ¬ã€‚
-      æ•è·å­ç»„çš„åºå·è®¡æ•°æ–¹å¼ä¸ºï¼šä»£è¡¨æ•è·å­ç»„çš„å·¦æ‹¬å·ä»å·¦åˆ°å³ï¼Œ ä»1å¼€å§‹æ•°ã€‚å¦‚æœè¦åœ¨<code class="parameter">replacement</code>
-      ä¸­ä½¿ç”¨åæ–œçº¿ï¼Œå¿…é¡»ä½¿ç”¨4ä¸ª(<em>&quot;\\\\&quot;</em>ï¼Œè¯‘æ³¨ï¼šå› ä¸ºè¿™é¦–å…ˆæ˜¯phpçš„å­—ç¬¦ä¸²ï¼Œç»è¿‡è½¬ä¹‰åï¼Œæ˜¯ä¸¤ä¸ªï¼Œå†ç»è¿‡
-      æ­£åˆ™è¡¨è¾¾å¼å¼•æ“åæ‰è¢«è®¤ä¸ºæ˜¯ä¸€ä¸ªåŸæ–‡åæ–œçº¿)ã€‚
-      </p>
-      <p class="para">
-      å½“åœ¨æ›¿æ¢æ¨¡å¼ä¸‹å·¥ä½œå¹¶ä¸”åå‘å¼•ç”¨åé¢ç´§è·Ÿç€éœ€è¦æ˜¯å¦å¤–ä¸€ä¸ªæ•°å­—(æ¯”å¦‚ï¼šåœ¨ä¸€ä¸ªåŒ¹é…æ¨¡å¼åç´§æ¥ç€å¢åŠ ä¸€ä¸ªåŸæ–‡æ•°å­—)ï¼Œ
-      ä¸èƒ½ä½¿ç”¨<em>\\1</em>è¿™æ ·çš„è¯­æ³•æ¥æè¿°åå‘å¼•ç”¨ã€‚æ¯”å¦‚ï¼Œ <em>\\11</em>å°†ä¼šä½¿<span class="function"><strong>preg_replace()</strong></span>
-      ä¸èƒ½ç†è§£ä½ å¸Œæœ›çš„æ˜¯ä¸€ä¸ª<em>\\1</em>åå‘å¼•ç”¨ç´§è·Ÿä¸€ä¸ªåŸæ–‡<em>1</em>ï¼Œè¿˜æ˜¯
-      ä¸€ä¸ª<em>\\11</em>åå‘å¼•ç”¨åé¢ä¸è·Ÿä»»ä½•ä¸œè¥¿ã€‚ è¿™ç§æƒ…å†µä¸‹è§£å†³æ–¹æ¡ˆæ˜¯ä½¿ç”¨<em>\${1}1</em>ã€‚
-      è¿™åˆ›å»ºäº†ä¸€ä¸ªç‹¬ç«‹çš„<em>$1</em>åå‘å¼•ç”¨, ä¸€ä¸ªç‹¬ç«‹çš„åŸæ–‡<em>1</em>ã€‚
-      </p>
-      <p class="para">
-      å½“ä½¿ç”¨è¢«å¼ƒç”¨çš„ <em>e</em> ä¿®é¥°ç¬¦æ—¶, è¿™ä¸ªå‡½æ•°ä¼šè½¬ä¹‰ä¸€äº›å­—ç¬¦(å³ï¼š<em>&#039;</em>ã€<em>&quot;</em>ã€
-       <em>\</em> å’Œ NULL) ç„¶åè¿›è¡Œåå‘å¼•ç”¨æ›¿æ¢ã€‚å½“è¿™äº›å®Œæˆåè¯·ç¡®ä¿åå‘å¼•ç”¨è§£æå®Œåæ²¡æœ‰å•å¼•å·æˆ–
-       åŒå¼•å·å¼•èµ·çš„è¯­æ³•é”™è¯¯(æ¯”å¦‚ï¼š <em>&#039;strlen(\&#039;$1\&#039;)+strlen(&quot;$2&quot;)&#039;</em>)ã€‚ç¡®ä¿ç¬¦åˆPHPçš„
-       <a href="language.types.string.html" class="link">å­—ç¬¦ä¸²è¯­æ³•</a>ï¼Œå¹¶ä¸”ç¬¦åˆevalè¯­æ³•ã€‚å› ä¸ºåœ¨å®Œæˆæ›¿æ¢åï¼Œ
-       å¼•æ“ä¼šå°†ç»“æœå­—ç¬¦ä¸²ä½œä¸ºphpä»£ç ä½¿ç”¨evalæ–¹å¼è¿›è¡Œè¯„ä¼°å¹¶å°†è¿”å›å€¼ä½œä¸ºæœ€ç»ˆå‚ä¸æ›¿æ¢çš„å­—ç¬¦ä¸²ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">subject</code></dt>
-
-     <dd>
-
-      <p class="para">
-      è¦è¿›è¡Œæœç´¢å’Œæ›¿æ¢çš„å­—ç¬¦ä¸²æˆ–å­—ç¬¦ä¸²æ•°ç»„ã€‚
-      </p>
-      <p class="para">
-      å¦‚æœ<code class="parameter">subject</code>æ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œæœç´¢å’Œæ›¿æ¢å›åœ¨<code class="parameter">subject</code>
-      çš„æ¯ä¸€ä¸ªå…ƒç´ ä¸Šè¿›è¡Œ, å¹¶ä¸”è¿”å›å€¼ä¹Ÿä¼šæ˜¯ä¸€ä¸ªæ•°ç»„ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">limit</code></dt>
-
-     <dd>
-
-      <p class="para">
-      æ¯ä¸ªæ¨¡å¼åœ¨æ¯ä¸ª<code class="parameter">subject</code>ä¸Šè¿›è¡Œæ›¿æ¢çš„æœ€å¤§æ¬¡æ•°ã€‚é»˜è®¤æ˜¯
-      <em>-1</em>(æ— é™)ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">count</code></dt>
-
-     <dd>
-
-      <p class="para">
-      å¦‚æœæŒ‡å®šï¼Œå°†ä¼šè¢«å¡«å……ä¸ºå®Œæˆçš„æ›¿æ¢æ¬¡æ•°ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.preg-replace-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-  å¦‚æœ<code class="parameter">subject</code>æ˜¯ä¸€ä¸ªæ•°ç»„ï¼Œ <span class="function"><strong>preg_replace()</strong></span>è¿”å›ä¸€ä¸ªæ•°ç»„ï¼Œ
-  å…¶ä»–æƒ…å†µä¸‹è¿”å›ä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
-  </p>
-  <p class="para">
-  å¦‚æœåŒ¹é…è¢«æŸ¥æ‰¾åˆ°ï¼Œæ›¿æ¢åçš„<code class="parameter">subject</code>è¢«è¿”å›ï¼Œå…¶ä»–æƒ…å†µä¸‹
-  è¿”å›æ²¡æœ‰æ”¹å˜çš„ <code class="parameter">subject</code>ã€‚å¦‚æœå‘ç”Ÿé”™è¯¯ï¼Œè¿”å› <strong><code>NULL</code></strong> ã€‚
-  </p>
- </div>
-
-
-  <div class="refsect1 errors" id="refsect1-function.preg-replace-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-   å½“ä¼ å…¥ &quot;\e&quot; ä¿®é¥°ç¬¦çš„æ—¶å€™ï¼Œä¼šäº§ç”Ÿä¸€ä¸ª <strong><code>E_DEPRECATED</code></strong> çº§åˆ«çš„é”™è¯¯ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.preg-replace-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.5.0</td>
-       <td>
-        <em>/e</em> ä¿®é¥°ç¬¦å·²ç»è¢«å¼ƒç”¨äº†ã€‚ä½¿ç”¨
-        <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> ä»£æ›¿ã€‚å‚è§æ–‡æ¡£ä¸­ <a href="reference.pcre.pattern.modifiers.html#reference.pcre.pattern.modifiers.eval" class="link">PREG_REPLACE_EVAL</a> å…³äºå®‰å…¨é£é™©çš„æ›´å¤šä¿¡æ¯ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        å¢åŠ å‚æ•°<code class="parameter">count</code>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.4</td>
-       <td>
-        å¢åŠ <code class="parameter">replacement</code>å‚æ•°ä¸­çš„&#039;$n&#039;ç”¨æ³•ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.2</td>
-       <td>
-        å¢åŠ äº†å‚æ•°<code class="parameter">limit</code>
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.preg-replace-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5112">
-    <p><strong>Example #1 ä½¿ç”¨åå‘å¼•ç”¨ç´§è·Ÿæ•°å€¼åŸæ–‡</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'April&nbsp;15,&nbsp;2003'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$pattern&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/(\w+)&nbsp;(\d+),&nbsp;(\d+)/i'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$replacement&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'${1}1,$3'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$pattern</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$replacement</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-April1,2003
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5113">
-    <p><strong>Example #2 <span class="function"><strong>preg_replace()</strong></span>ä¸­ä½¿ç”¨åŸºäºç´¢å¼•çš„æ•°ç»„</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumped&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog.'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$patterns&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$patterns</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'/quick/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$patterns</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'/brown/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$patterns</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'/fox/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$replacements&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$replacements</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'bear'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$replacements</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'black'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$replacements</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'slow'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$patterns</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$replacements</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-The bear black slow jumped over the lazy dog.
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-    å¯¹æ¨¡å¼å’Œæ›¿æ¢å†…å®¹æŒ‰keyè¿›è¡Œæ’åºæˆ‘ä»¬å¯ä»¥å¾—åˆ°æœŸæœ›çš„ç»“æœã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />ksort</span><span style="color: #007700">(</span><span style="color: #0000BB">$patterns</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">ksort</span><span style="color: #007700">(</span><span style="color: #0000BB">$replacements</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$patterns</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$replacements</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-The slow black bear jumped over the lazy dog.
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5114">
-    <p><strong>Example #3 æ›¿æ¢ä¸€äº›å€¼</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$patterns&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(</span><span style="color: #DD0000">'/(19|20)(\d{2})-(\d{1,2})-(\d{1,2})/'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'/^\s*{(\w+)}\s*=/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$replace&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(</span><span style="color: #DD0000">'\3/\4/\1\2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$\1&nbsp;='</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$patterns</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$replace</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'{startDate}&nbsp;=&nbsp;1999-5-27'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-$startDate = 5/27/1999
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5115">
-    <p><strong>Example #4 å‰¥ç¦»ç©ºç™½å­—ç¬¦</strong></p>
-    <div class="example-contents"><p>
-     è¿™ä¸ªä¾‹å­å‰¥ç¦»å¤šä½™çš„ç©ºç™½å­—ç¬¦
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo&nbsp;&nbsp;&nbsp;o'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(</span><span style="color: #DD0000">'/\s\s+/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;å°†ä¼šæ”¹å˜ä¸º'foo&nbsp;o'<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5116">
-    <p><strong>Example #5 ä½¿ç”¨å‚æ•°<code class="parameter">count</code></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">preg_replace</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'/\d/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/\s/'</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'*'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'xp&nbsp;4&nbsp;to'</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//3<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-xp***to
-3
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >preg_replace</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÕıÔò±í´ïÊ½º¯Êı¿â£¨Perl ¼æÈİ£©" HREF="ref.pcre.html"><LINK  REL="PREVIOUS" TITLE="preg_replace_callback" HREF="function.preg-replace-callback.html"><LINK  REL="NEXT" TITLE="preg_split" HREF="function.preg-split.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.preg-replace-callback.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.preg-split.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.preg-replace" ></A
+>preg_replace</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN96189" ></A
+><P  >    (PHP 3&#62;= 3.0.9, PHP 4 )</P
+>preg_replace&nbsp;--&nbsp;Ö´ĞĞÕıÔò±í´ïÊ½µÄËÑË÷ºÍÌæ»»</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN96192" ></A
+><H2  >ËµÃ÷</H2
+>mixed <B  CLASS="methodname" >preg_replace</B
+> ( mixed pattern, mixed replacement, mixed subject [, int limit])<BR  ></BR
+><P  >&#13;     ÔÚ
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ÖĞËÑË÷
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> Ä£Ê½µÄÆ¥ÅäÏî²¢Ìæ»»Îª
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+>¡£Èç¹ûÖ¸¶¨ÁË
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+>£¬Ôò½öÌæ»»
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+> ¸öÆ¥Åä£¬Èç¹ûÊ¡ÂÔ
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+> »òÕßÆäÖµÎª -1£¬ÔòËùÓĞµÄÆ¥ÅäÏî¶¼»á±»Ìæ»»¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ¿ÉÒÔ°üº¬
+     <TT  CLASS="literal" >\\<TT  CLASS="replaceable" ><I  >n</I
+></TT
+></TT
+>
+     ĞÎÊ½»ò£¨×Ô PHP 4.0.4 Æğ£©<TT  CLASS="literal" ><TT  CLASS="replaceable" ><I  >$n</I
+></TT
+></TT
+>
+     ĞÎÊ½µÄÄæÏòÒıÓÃ£¬Ê×Ñ¡Ê¹ÓÃºóÕß¡£Ã¿¸ö´ËÖÖÒıÓÃ½«±»Ìæ»»ÎªÓëµÚ
+     <TT  CLASS="replaceable" ><I  >n</I
+></TT
+>
+     ¸ö±»²¶»ñµÄÀ¨ºÅÄÚµÄ×ÓÄ£Ê½ËùÆ¥ÅäµÄÎÄ±¾¡£<TT  CLASS="replaceable" ><I  >n</I
+></TT
+>
+     ¿ÉÒÔ´Ó 0 µ½ 99£¬ÆäÖĞ
+     <TT  CLASS="literal" >\\0</TT
+> »ò <TT  CLASS="literal" >$0</TT
+>
+     Ö¸µÄÊÇ±»Õû¸öÄ£Ê½ËùÆ¥ÅäµÄÎÄ±¾¡£¶Ô×óÔ²À¨ºÅ´Ó×óµ½ÓÒ¼ÆÊı£¨´Ó 1 ¿ªÊ¼£©ÒÔÈ¡µÃ×ÓÄ£Ê½µÄÊıÄ¿¡£
+    </P
+><P  >&#13;     ¶ÔÌæ»»Ä£Ê½ÔÚÒ»¸öÄæÏòÒıÓÃºóÃæ½ô½Ó×ÅÒ»¸öÊı×ÖÊ±£¨¼´£º½ô½ÓÔÚÒ»¸öÆ¥ÅäµÄÄ£Ê½ºóÃæµÄÊı×Ö£©£¬²»ÄÜÊ¹ÓÃÊìÏ¤µÄ
+     <TT  CLASS="literal" >\\1</TT
+> ·ûºÅÀ´±íÊ¾ÄæÏòÒıÓÃ¡£¾ÙÀıËµ
+     <TT  CLASS="literal" >\\11</TT
+>£¬½«»áÊ¹
+     <B  CLASS="function" >preg_replace()</B
+> ¸ã²»Çå³şÊÇÏëÒªÒ»¸ö
+     <TT  CLASS="literal" >\\1</TT
+> µÄÄæÏòÒıÓÃºóÃæ¸ú×ÅÒ»¸öÊı×Ö
+     <TT  CLASS="literal" >1</TT
+> »¹ÊÇÒ»¸ö
+     <TT  CLASS="literal" >\\11</TT
+> µÄÄæÏòÒıÓÃ¡£±¾ÀıÖĞµÄ½â¾ö·½·¨ÊÇÊ¹ÓÃ
+     <TT  CLASS="literal" >\${1}1</TT
+>¡£Õâ»áĞÎ³ÉÒ»¸ö¸ôÀëµÄ
+     <TT  CLASS="literal" >$1</TT
+> ÄæÏòÒıÓÃ£¬¶øÊ¹ÁíÒ»¸ö
+     <TT  CLASS="literal" >1</TT
+> Ö»ÊÇµ¥´¿µÄÎÄ×Ö¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96237" ></A
+><P  ><B  >Àı×Ó 1. ÄæÏòÒıÓÃºóÃæ½ô½Ó×ÅÊı×ÖµÄÓÃ·¨</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$string </font><font  color="#007700">= </font><font  color="#DD0000">"April 15, 2003"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$pattern </font><font  color="#007700">= </font><font  color="#DD0000">"/(\w+) (\d+), (\d+)/i"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$replacement </font><font  color="#007700">= </font><font  color="#DD0000">"\${1}1,\$3"</font><font  color="#007700">;<br  />print </font><font  color="#0000BB">preg_replace</font><font  color="#007700">(</font><font  color="#0000BB">$pattern</font><font  color="#007700">, </font><font  color="#0000BB">$replacement</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Output<br  />&nbsp;&nbsp;&nbsp;======<br  /><br  />April1,2003<br  /><br  /> */<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Èç¹ûËÑË÷µ½Æ¥ÅäÏî£¬Ôò»á·µ»Ø±»Ìæ»»ºóµÄ
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+>£¬·ñÔò·µ»ØÔ­À´²»±äµÄ
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+>¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >preg_replace()</B
+> µÄÃ¿¸ö²ÎÊı£¨³ıÁË
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+>£©¶¼¿ÉÒÔÊÇÒ»¸öÊı×é¡£Èç¹û
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ºÍ
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ¶¼ÊÇÊı×é£¬½«ÒÔÆä¼üÃûÔÚÊı×éÖĞ³öÏÖµÄË³ĞòÀ´½øĞĞ´¦Àí¡£Õâ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >²»Ò»¶¨</I
+></SPAN
+>ºÍË÷ÒıµÄÊı×ÖË³ĞòÏàÍ¬¡£Èç¹ûÊ¹ÓÃË÷ÒıÀ´±êÊ¶ÄÄ¸ö
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ½«±»ÄÄ¸ö
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> À´Ìæ»»£¬Ó¦¸ÃÔÚµ÷ÓÃ
+     <B  CLASS="function" >preg_replace()</B
+> Ö®Ç°ÓÃ
+     <A  HREF="function.ksort.html"  ><B  CLASS="function" >ksort()</B
+></A
+> ¶ÔÊı×é½øĞĞÅÅĞò¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96254" ></A
+><P  ><B  >Àı×Ó 2. ÔÚ <B  CLASS="function" >preg_replace()</B
+> ÖĞÊ¹ÓÃË÷ÒıÊı×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$string </font><font  color="#007700">= </font><font  color="#DD0000">"The quick brown fox jumped over the lazy dog."</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$patterns</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">] = </font><font  color="#DD0000">"/quick/"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$patterns</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">] = </font><font  color="#DD0000">"/brown/"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$patterns</font><font  color="#007700">[</font><font  color="#0000BB">2</font><font  color="#007700">] = </font><font  color="#DD0000">"/fox/"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$replacements</font><font  color="#007700">[</font><font  color="#0000BB">2</font><font  color="#007700">] = </font><font  color="#DD0000">"bear"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$replacements</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">] = </font><font  color="#DD0000">"black"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$replacements</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">] = </font><font  color="#DD0000">"slow"</font><font  color="#007700">;<br  /><br  />print </font><font  color="#0000BB">preg_replace</font><font  color="#007700">(</font><font  color="#0000BB">$patterns</font><font  color="#007700">, </font><font  color="#0000BB">$replacements</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Output<br  />&nbsp;&nbsp;&nbsp;======<br  /><br  />The bear black slow jumped over the lazy dog.<br  /><br  />*/<br  /><br  />/* By ksorting patterns and replacements,<br  />&nbsp;&nbsp;&nbsp;we should get what we wanted. */<br  /><br  /></font><font  color="#0000BB">ksort</font><font  color="#007700">(</font><font  color="#0000BB">$patterns</font><font  color="#007700">);<br  /></font><font  color="#0000BB">ksort</font><font  color="#007700">(</font><font  color="#0000BB">$replacements</font><font  color="#007700">);<br  /><br  />print </font><font  color="#0000BB">preg_replace</font><font  color="#007700">(</font><font  color="#0000BB">$patterns</font><font  color="#007700">, </font><font  color="#0000BB">$replacements</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Output<br  />&nbsp;&nbsp;&nbsp;======<br  /><br  />The slow black bear jumped over the lazy dog.<br  /><br  />*/<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Èç¹û
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ÊÇ¸öÊı×é£¬Ôò»á¶Ô
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ÖĞµÄÃ¿¸öÏîÄ¿Ö´ĞĞËÑË÷ºÍÌæ»»£¬²¢·µ»ØÒ»¸öÊı×é¡£
+    </P
+><P  >&#13;     Èç¹û
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ºÍ
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ¶¼ÊÇÊı×é£¬Ôò
+     <B  CLASS="function" >preg_replace()</B
+> »áÒÀ´Î´ÓÖĞ·Ö±ğÈ¡³öÖµÀ´¶Ô
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ½øĞĞËÑË÷ºÍÌæ»»¡£Èç¹û
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ÖĞµÄÖµ±È
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ÖĞµÄÉÙ£¬ÔòÓÃ¿Õ×Ö·û´®×÷ÎªÓàÏÂµÄÌæ»»Öµ¡£Èç¹û
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ÊÇÊı×é¶ø
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ÊÇ×Ö·û´®£¬Ôò¶Ô
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ÖĞµÄÃ¿¸öÖµ¶¼ÓÃ´Ë×Ö·û´®×÷ÎªÌæ»»Öµ¡£·´¹ıÀ´ÔòÃ»ÓĞÒâÒåÁË¡£
+    </P
+><P  >&#13;     <TT  CLASS="literal" >/e</TT
+> ĞŞÕı·ûÊ¹
+     <B  CLASS="function" >preg_replace()</B
+> ½«
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ²ÎÊıµ±×÷
+     PHP ´úÂë£¨ÔÚÊÊµ±µÄÄæÏòÒıÓÃÌæ»»ÍêÖ®ºó£©¡£ÌáÊ¾£ºÒªÈ·±£
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+> ¹¹³ÉÒ»¸öºÏ·¨µÄ
+     PHP ´úÂë×Ö·û´®£¬·ñÔò
+     PHP »áÔÚ±¨¸æÔÚ°üº¬
+     <B  CLASS="function" >preg_replace()</B
+> µÄĞĞÖĞ³öÏÖÓï·¨½âÎö´íÎó¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96278" ></A
+><P  ><B  >Àı×Ó 3. Ìæ»»Êı¸öÖµ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$patterns </font><font  color="#007700">= array (</font><font  color="#DD0000">"/(19|20)(\d{2})-(\d{1,2})-(\d{1,2})/"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"/^\s*{(\w+)}\s*=/"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$replace </font><font  color="#007700">= array (</font><font  color="#DD0000">"\\3/\\4/\\1\\2"</font><font  color="#007700">, </font><font  color="#DD0000">"$\\1 ="</font><font  color="#007700">);<br  />print </font><font  color="#0000BB">preg_replace </font><font  color="#007700">(</font><font  color="#0000BB">$patterns</font><font  color="#007700">, </font><font  color="#0000BB">$replace</font><font  color="#007700">, </font><font  color="#DD0000">"{startDate} = 1999-5-27"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ±¾Àı½«Êä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$startDate = 5/27/1999</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96284" ></A
+><P  ><B  >Àı×Ó 4. Ê¹ÓÃ /e ĞŞÕı·û</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />preg_replace </font><font  color="#007700">(</font><font  color="#DD0000">"/(&lt;\/?)(\w+)([^&gt;]*&gt;)/e"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'\\1'.strtoupper('\\2').'\\3'"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$html_body</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Õâ½«Ê¹ÊäÈë×Ö·û´®ÖĞµÄËùÓĞ HTML ±ê¼Ç±ä³É´óĞ´¡£
+      </P
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96289" ></A
+><P  ><B  >Àı×Ó 5. ½« HTML ×ª»»³ÉÎÄ±¾</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// $document Ó¦°üº¬Ò»¸ö HTML ÎÄµµ¡£<br  />// ±¾Àı½«È¥µô HTML ±ê¼Ç£¬javascript ´úÂë<br  />// ºÍ¿Õ°××Ö·û¡£»¹»á½«Ò»Ğ©Í¨ÓÃµÄ<br  />// HTML ÊµÌå×ª»»³ÉÏàÓ¦µÄÎÄ±¾¡£<br  /><br  /></font><font  color="#0000BB">$search </font><font  color="#007700">= array (</font><font  color="#DD0000">"'&lt;script[^&gt;]*?&gt;.*?&lt;/script&gt;'si"</font><font  color="#007700">,&nbsp;&nbsp;</font><font  color="#FF8000">// È¥µô javascript<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&lt;[\/\!]*?[^&lt;&gt;]*?&gt;'si"</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// È¥µô HTML ±ê¼Ç<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'([\r\n])[\s]+'"</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// È¥µô¿Õ°××Ö·û<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(quot|#34);'i"</font><font  color="#007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Ìæ»» HTML ÊµÌå<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(amp|#38);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(lt|#60);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(gt|#62);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(nbsp|#160);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(iexcl|#161);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(cent|#162);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(pound|#163);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;(copy|#169);'i"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"'&amp;#(\d+);'e"</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ×÷Îª PHP ´úÂëÔËĞĞ<br  /><br  /></font><font  color="#0000BB">$replace </font><font  color="#007700">= array (</font><font  color="#DD0000">""</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">""</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"\\1"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"\""</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"&amp;"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"&lt;"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"&gt;"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">" "</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">chr</font><font  color="#007700">(</font><font  color="#0000BB">161</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">chr</font><font  color="#007700">(</font><font  color="#0000BB">162</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">chr</font><font  color="#007700">(</font><font  color="#0000BB">163</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">chr</font><font  color="#007700">(</font><font  color="#0000BB">169</font><font  color="#007700">),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"chr(\\1)"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$text </font><font  color="#007700">= </font><font  color="#0000BB">preg_replace </font><font  color="#007700">(</font><font  color="#0000BB">$search</font><font  color="#007700">, </font><font  color="#0000BB">$replace</font><font  color="#007700">, </font><font  color="#0000BB">$document</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >limit</I
+></TT
+> ²ÎÊıÊÇ PHP 4.0.1pl2 Ö®ºó¼ÓÈëµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.preg-match.html"  ><B  CLASS="function" >preg_match()</B
+></A
+>£¬<A  HREF="function.preg-match-all.html"  ><B  CLASS="function" >preg_match_all()</B
+></A
+>
+     ºÍ <A  HREF="function.preg-split.html"  ><B  CLASS="function" >preg_split()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.preg-replace-callback.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.preg-split.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >preg_replace_callback</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcre.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >preg_split</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.preg-replace-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-   å½“ä½¿ç”¨æ•°ç»„å½¢å¼çš„<code class="parameter">pattern</code>å’Œ<code class="parameter">replacement</code>æ—¶, 
-   å°†ä¼šæŒ‰ç…§keyåœ¨æ•°ç»„ä¸­å‡ºç°çš„é¡ºåºè¿›è¡Œå¤„ç†. è¿™<em class="emphasis">ä¸ä¸€å®š</em>å’Œæ•°ç»„çš„ç´¢å¼•é¡ºåºä¸€è‡´.
-   å¦‚æœä½ æœŸæœ›ä½¿ç”¨ç´¢å¼•å¯¹ç­‰æ–¹å¼ç”¨<code class="parameter">replacement</code>å¯¹<code class="parameter">pattern</code>
-   è¿›è¡Œæ›¿æ¢, ä½ å¯ä»¥åœ¨è°ƒç”¨<span class="function"><strong>preg_replace()</strong></span>ä¹‹å‰å¯¹ä¸¤ä¸ªæ•°ç»„å„è¿›è¡Œä¸€æ¬¡<span class="function"><a href="function.ksort.html" class="function">ksort()</a></span>æ’åº.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.preg-replace-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="pcre.pattern.html" class="link">PCRE æ¨¡å¼</a></li>
-    <li class="member"><span class="function"><a href="function.preg-filter.html" class="function" rel="rdfs-seeAlso">preg_filter()</a> - æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼æœç´¢å’Œæ›¿æ¢</span></li>
-    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</span></li>
-    <li class="member"><span class="function"><a href="function.preg-replace-callback.html" class="function" rel="rdfs-seeAlso">preg_replace_callback()</a> - æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼æœç´¢å¹¶ä¸”ä½¿ç”¨ä¸€ä¸ªå›è°ƒè¿›è¡Œæ›¿æ¢</span></li>
-    <li class="member"><span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - é€šè¿‡ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åˆ†éš”å­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - è¿”å›æœ€åä¸€ä¸ªPCREæ­£åˆ™æ‰§è¡Œäº§ç”Ÿçš„é”™è¯¯ä»£ç </span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-replace-callback.html">preg_replace_callback</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.preg-split.html">preg_split</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

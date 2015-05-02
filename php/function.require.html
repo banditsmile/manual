@@ -1,32 +1,150 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>require</title>
+<HTML  ><HEAD  ><TITLE  >require</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Á÷³Ì¿ØÖÆ" HREF="control-structures.html"><LINK  REL="PREVIOUS" TITLE="return" HREF="function.return.html"><LINK  REL="NEXT" TITLE="include" HREF="function.include.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.return.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 11. Á÷³Ì¿ØÖÆ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.include.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="function.require" ></A
+><A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+></H1
+><P  >&#13;    <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> Óï¾ä°üÀ¨²¢ÔËĞĞÖ¸¶¨ÎÄ¼ş¡£
+   </P
+><P  >&#13;     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> Óï¾ä°üÀ¨²¢ÔËĞĞÖ¸¶¨ÎÄ¼ş¡£ÓĞ¹Ø°üÀ¨ÈçºÎ¹¤×÷µÄÏêÏ¸ĞÅÏ¢¼û
+     <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> µÄÎÄµµ¡£
+   </P
+><P  >&#13;     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> ºÍ <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>
+     ³ıÁËÔõÑù´¦ÀíÊ§°ÜÖ®ÍâÔÚ¸÷·½Ãæ¶¼ÍêÈ«Ò»Ñù¡£<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> ²úÉúÒ»¸ö<A  HREF="phpdevel-errors.html#internal.e-warning"  >¾¯¸æ</A
+>¶ø <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> Ôòµ¼ÖÂÒ»¸ö<A  HREF="phpdevel-errors.html#internal.e-error"  >ÖÂÃü´íÎó</A
+>¡£»»¾ä»°Ëµ£¬Èç¹ûÄãÏëÔÚ¶ªÊ§ÎÄ¼şÊ±Í£Ö¹´¦ÀíÒ³Ãæ£¬ÄÇ¾Í±ğÓÌÔ¥ÁË£¬ÓÃ
+     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> °É¡£<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>
+     ¾Í²»ÊÇÕâÑù£¬½Å±¾»á¼ÌĞøÔËĞĞ¡£Í¬Ê±Ò²ÒªÈ·ÈÏÉèÖÃÁËºÏÊÊµÄ<A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5328" ></A
+><P  ><B  >Àı×Ó 11-2. »ù±¾µÄ <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">require </font><font  color="#DD0000">'prepend.php'</font><font  color="#007700">;<br  /><br  />require </font><font  color="#0000BB">$somefile</font><font  color="#007700">;<br  /><br  />require (</font><font  color="#DD0000">'somefile.txt'</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ¸ü¶àÀı×Ó²Î¼û <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> ÎÄµµ¡£
+   </P
+><P  >&#13;    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.0.2 Ö®Ç°ÊÊÓÃÒÔÏÂ¹æÔò£º<A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>
+      ×ÜÊÇ»á³¢ÊÔ¶ÁÈ¡Ä¿±êÎÄ¼ş£¬¼´Ê¹ËüËùÔÚµÄĞĞ¸ù±¾¾Í²»»áÖ´ĞĞ¡£Ìõ¼şÓï¾ä²»»áÓ°Ïì
+      <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>¡£²»¹ıÈç¹û <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>
+      ËùÔÚµÄĞĞÃ»ÓĞÖ´ĞĞ£¬ÔòÄ¿±êÎÄ¼şÖĞµÄ´úÂëÒ²²»»áÖ´ĞĞ¡£Í¬Ñù£¬Ñ­»·½á¹¹Ò²²»Ó°Ïì
+      <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> µÄĞĞÎª¡£¾¡¹ÜÄ¿±êÎÄ¼şÖĞ°üº¬µÄ´úÂëÈÔÈ»ÊÇÑ­»·µÄÖ÷Ìå£¬µ«
+      <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> ±¾ÉíÖ»»áÔËĞĞÒ»´Î¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>ÓÉÓÚÕâÊÇÒ»¸öÓïÑÔ½á¹¹¶ø·Çº¯Êı£¬Òò´ËËüÎŞ·¨±»¡°<A  HREF="functions.variable-functions.html"  >±äÁ¿º¯Êı</A
+>¡±µ÷ÓÃ¡£</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >Windows °æ±¾µÄ PHP
+ÔÚ 4.3.0 °æÖ®Ç°²»Ö§³Ö¸Ãº¯ÊıµÄÔ¶³ÌÎÄ¼ş·ÃÎÊ£¬¼´Ê¹
+<A  HREF="ref.filesystem.html#ini.allow-url-fopen"  >allow_url_fopen</A
+> Ñ¡ÏîÒÑ±»¼¤»î¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;    ²Î¼û <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>£¬<A  HREF="function.require-once.html"  ><B  CLASS="function" >require_once()</B
+></A
+>£¬<A  HREF="function.include-once.html"  ><B  CLASS="function" >include_once()</B
+></A
+>£¬<A  HREF="function.eval.html"  ><B  CLASS="function" >eval()</B
+></A
+>£¬<A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+>£¬<A  HREF="function.readfile.html"  ><B  CLASS="function" >readfile()</B
+></A
+>£¬<A  HREF="function.virtual.html"  ><B  CLASS="function" >virtual()</B
+></A
+>
+    ºÍ <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.return.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.include.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >return</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="control-structures.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+></TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.return.html">return</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.include.html">include</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.require" class="sect1">
- <h2 class="title">require</h2>
- <p class="verinfo">(PHP 4, PHP 5)</p>
 
- <p class="para">
-  <em>require</em> å’Œ <span class="function"><a href="function.include.html" class="function">include</a></span>
-  å‡ ä¹å®Œå…¨ä¸€æ ·ï¼Œé™¤äº†å¤„ç†å¤±è´¥çš„æ–¹å¼ä¸åŒä¹‹å¤–ã€‚<span class="function"><strong>require</strong></span>
-  åœ¨å‡ºé”™æ—¶äº§ç”Ÿ <strong><code>E_COMPILE_ERROR</code></strong>
-  çº§åˆ«çš„é”™è¯¯ã€‚æ¢å¥è¯è¯´å°†å¯¼è‡´è„šæœ¬ä¸­æ­¢è€Œ <span class="function"><a href="function.include.html" class="function">include</a></span>
-  åªäº§ç”Ÿè­¦å‘Šï¼ˆ<strong><code>E_WARNING</code></strong>ï¼‰ï¼Œè„šæœ¬ä¼šç»§ç»­è¿è¡Œã€‚
- </p>
- <p class="para">
-  å‚è§ <span class="function"><a href="function.include.html" class="function">include</a></span> æ–‡æ¡£äº†è§£è¯¦æƒ…ã€‚
- </p>
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.return.html">return</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.include.html">include</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

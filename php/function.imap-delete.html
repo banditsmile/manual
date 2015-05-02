@@ -1,130 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Mark a message for deletion from current mailbox</title>
+<HTML  ><HEAD  ><TITLE  >imap_delete</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_createmailbox" HREF="function.imap-createmailbox.html"><LINK  REL="NEXT" TITLE="imap_deletemailbox" HREF="function.imap-deletemailbox.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-createmailbox.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-deletemailbox.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-delete" ></A
+>imap_delete</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN42022" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imap_delete&nbsp;--&nbsp;
+     Mark a message for deletion from current mailbox
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN42025" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >imap_delete</B
+> ( int imap_stream, int msg_number [, int options])<BR  ></BR
+><P  >&#13;     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>.
+    </P
+><P  > 
+     <B  CLASS="function" >imap_delete()</B
+> marks messages listed
+     in <TT  CLASS="parameter" ><I  >msg_number</I
+></TT
+> for deletion.  The optional
+     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> parameter only has a single option,
+     <TT  CLASS="parameter" ><I  >FT_UID</I
+></TT
+>, which tells the function to treat
+     the <TT  CLASS="parameter" ><I  >msg_number</I
+></TT
+> argument as a
+     <TT  CLASS="parameter" ><I  >UID</I
+></TT
+>.  Messages marked for deletion will
+     stay in the mailbox until either
+     <A  HREF="function.imap-expunge.html"  ><B  CLASS="function" >imap_expunge()</B
+></A
+> is called or
+     <A  HREF="function.imap-close.html"  ><B  CLASS="function" >imap_close()</B
+></A
+> is called with the optional
+     parameter CL_EXPUNGE.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      POP3 mailboxes do not have their message flags saved between
+      connections, so <A  HREF="function.imap-expunge.html"  ><B  CLASS="function" >imap_expunge()</B
+></A
+> must be called during
+      the same connection in order for messages marked for deletion to
+      actually be purged.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >     
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN42054" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imap_delete()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$mbox </font><font  color="#007700">= </font><font  color="#0000BB">imap_open</font><font  color="#007700">(</font><font  color="#DD0000">"{your.imap.host}INBOX"</font><font  color="#007700">, </font><font  color="#DD0000">"username"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Can't connect: " </font><font  color="#007700">. </font><font  color="#0000BB">imap_last_error</font><font  color="#007700">());<br  /><br  /></font><font  color="#0000BB">$check </font><font  color="#007700">= </font><font  color="#0000BB">imap_mailboxmsginfo</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Messages before delete: " </font><font  color="#007700">. </font><font  color="#0000BB">$check</font><font  color="#007700">-&gt;</font><font  color="#0000BB">Nmsgs </font><font  color="#007700">. </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">imap_delete</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$check </font><font  color="#007700">= </font><font  color="#0000BB">imap_mailboxmsginfo</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Messages after&nbsp;&nbsp;delete: " </font><font  color="#007700">. </font><font  color="#0000BB">$check</font><font  color="#007700">-&gt;</font><font  color="#0000BB">Nmsgs </font><font  color="#007700">. </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">imap_expunge</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$check </font><font  color="#007700">= </font><font  color="#0000BB">imap_mailboxmsginfo</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Messages after expunge: " </font><font  color="#007700">. </font><font  color="#0000BB">$check</font><font  color="#007700">-&gt;</font><font  color="#0000BB">Nmsgs </font><font  color="#007700">. </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">imap_close</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.imap-undelete.html"  ><B  CLASS="function" >imap_undelete()</B
+></A
+>,
+     <A  HREF="function.imap-expunge.html"  ><B  CLASS="function" >imap_expunge()</B
+></A
+>, and
+     <A  HREF="function.imap-close.html"  ><B  CLASS="function" >imap_close()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-createmailbox.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-deletemailbox.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_createmailbox</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_deletemailbox</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-createmailbox.html">imap_createmailbox</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-deletemailbox.html">imap_deletemailbox</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-delete" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_delete</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_delete</span> &mdash; <span class="dc-title">Mark a message for deletion from current mailbox</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-delete-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imap_delete</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$msg_number</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Marks messages listed in <code class="parameter">msg_number</code> for deletion.
-   Messages marked for deletion will stay in the mailbox until either
-   <span class="function"><a href="function.imap-expunge.html" class="function">imap_expunge()</a></span> is called or
-   <span class="function"><a href="function.imap-close.html" class="function">imap_close()</a></span> is called with the optional parameter
-   <strong><code>CL_EXPUNGE</code></strong>.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-delete-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">ç”± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> è¿”å›çš„ IMAP æµã€‚</p></dd>
-
-    
-     <dt>
-<code class="parameter">msg_number</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The message number
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       You can set the <strong><code>FT_UID</code></strong> which tells the function
-       to treat the <code class="parameter">msg_number</code> argument as an
-       <em>UID</em>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-delete-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns <strong><code>TRUE</code></strong>.
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imap-delete-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3632">
-    <p><strong>Example #1 <span class="function"><strong>imap_delete()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$mbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"{imap.example.org}INBOX"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Can't&nbsp;connect:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">imap_last_error</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">$check&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_mailboxmsginfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Messages&nbsp;before&nbsp;delete:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$check</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Nmsgs&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">imap_delete</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$check&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_mailboxmsginfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Messages&nbsp;after&nbsp;&nbsp;delete:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$check</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Nmsgs&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">imap_expunge</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$check&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_mailboxmsginfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Messages&nbsp;after&nbsp;expunge:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$check</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">Nmsgs&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">imap_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.imap-delete-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    IMAP mailboxes may not have their message flags saved between connections,
-    so <span class="function"><a href="function.imap-expunge.html" class="function">imap_expunge()</a></span> should be called during the same
-    connection in order to guarantee that messages marked for deletion will
-    actually be purged.
-   </p>
-  </p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imap-delete-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imap-undelete.html" class="function" rel="rdfs-seeAlso">imap_undelete()</a> - Unmark the message which is marked deleted</span></li>
-    <li class="member"><span class="function"><a href="function.imap-expunge.html" class="function" rel="rdfs-seeAlso">imap_expunge()</a> - Delete all messages marked for deletion</span></li>
-    <li class="member"><span class="function"><a href="function.imap-close.html" class="function" rel="rdfs-seeAlso">imap_close()</a> - Close an IMAP stream</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-createmailbox.html">imap_createmailbox</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-deletemailbox.html">imap_deletemailbox</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

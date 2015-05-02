@@ -1,171 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>从随机源创建初始向量</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-cfb.html">mcrypt_cfb</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-decrypt.html">mcrypt_decrypt</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mcrypt-create-iv" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mcrypt_create_iv</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mcrypt_create_iv</span> &mdash; <span class="dc-title">从随机源创建初始向量</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mcrypt-create-iv-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mcrypt_create_iv</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$size</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$source</code><span class="initializer"> = MCRYPT_DEV_URANDOM</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   从随机源创建初始向量。
-  </p>
-  <p class="para">
-   初始向量只是为了给加密算法提供一个可用的种子，
-   所以它不需要安全保护，
-   你甚至可以随同密文一起发布初始向量也不会对安全性带来影响。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mcrypt-create-iv-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">size</code></dt>
-
-     <dd>
-
-      <p class="para">
-       初始向量大小。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">source</code></dt>
-
-     <dd>
-
-      <p class="para">
-       初始向量数据来源。可选值有：
-       <strong><code>MCRYPT_RAND</code></strong> （系统随机数生成器）,
-       <strong><code>MCRYPT_DEV_RANDOM</code></strong> （从
-       <var class="filename">/dev/random</var> 文件读取数据） 和
-       <strong><code>MCRYPT_DEV_URANDOM</code></strong> （从
-       <var class="filename">/dev/urandom</var> 文件读取数据）。
-       在 Windows 平台，PHP 5.3.0 之前的版本中，仅支持 <strong><code>MCRYPT_RAND</code></strong>。
-      </p>
-      <p class="para">
-       请注意，在 PHP 5.6.0 之前的版本中，
-       此参数的默认值为 <strong><code>MCRYPT_DEV_RANDOM</code></strong>。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-create-iv-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回初始向量。如果发生错误，则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.mcrypt-create-iv-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.6.0</td>
-       <td>
-        <code class="parameter">source</code> 参数的默认值是
-        <strong><code>MCRYPT_DEV_URANDOM</code></strong>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        <strong><code>MCRYPT_DEV_RANDOM</code></strong> 和
-        <strong><code>MCRYPT_DEV_URANDOM</code></strong> 在 Windows 平台也可用了。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        不再需要提前调用 <span class="function"><a href="function.srand.html" class="function">srand()</a></span> 函数，
-        由本函数自动完成调用。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mcrypt_create_iv</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_cfb" HREF="function.mcrypt-cfb.html"><LINK  REL="NEXT" TITLE="mcrypt_decrypt" HREF="function.mcrypt-decrypt.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-cfb.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mcrypt-decrypt.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mcrypt-create-iv" ></A
+>mcrypt_create_iv</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN54164" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>mcrypt_create_iv&nbsp;--&nbsp;
+     Create an initialization vector (IV) from a random source
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN54167" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mcrypt_create_iv</B
+> ( int size, int source)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mcrypt_create_iv()</B
+> is used to create an IV.
+    </P
+><P  >&#13;     <B  CLASS="function" >mcrypt_create_iv()</B
+> takes two arguments,
+     <TT  CLASS="parameter" ><I  >size</I
+></TT
+> determines the size of the IV,
+     <TT  CLASS="parameter" ><I  >source</I
+></TT
+> specifies the source of the IV.
+    </P
+><P  >&#13;     The source can be MCRYPT_RAND (system random number generator),
+     MCRYPT_DEV_RANDOM (read data from /dev/random) and
+     MCRYPT_DEV_URANDOM (read data from /dev/urandom). If you use
+     MCRYPT_RAND, make sure to call srand() before to initialize the
+     random number generator. MCRYPT_RAND is the only one supported on Windows
+     because Windows (of course) doesn't have /dev/random or /dev/urandom.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN54186" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >mcrypt_create_iv()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$size </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_get_iv_size</font><font  color="#007700">(</font><font  color="#0000BB">MCRYPT_CAST_256</font><font  color="#007700">, </font><font  color="#0000BB">MCRYPT_MODE_CFB</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$iv </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_create_iv</font><font  color="#007700">(</font><font  color="#0000BB">$size</font><font  color="#007700">, </font><font  color="#0000BB">MCRYPT_DEV_RANDOM</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     The IV is only meant to give an alternative seed to the encryption
+     routines. This IV does not need to be secret at all, though it can be
+     desirable. You even can send it along with your ciphertext without
+     loosing security.
+    </P
+><P  >&#13;     More information can be found at <A  href="http://www.ciphersbyritter.com/GLOSSARY.HTM#IV"  TARGET="_top" >http://www.ciphersbyritter.com/GLOSSARY.HTM#IV</A
+>, <A  href="http://fn2.freenet.edmonton.ab.ca/~jsavard/crypto/co0409.htm"  TARGET="_top" >http://fn2.freenet.edmonton.ab.ca/~jsavard/crypto/co0409.htm</A
+> and in chapter 9.3 of
+     Applied Cryptography by Schneier (ISBN 0-471-11709-9) for a discussion of
+     this topic.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-cfb.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mcrypt-decrypt.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_cfb</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mcrypt_decrypt</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.mcrypt-create-iv-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-851">
-    <p><strong>Example #1 <span class="function"><strong>mcrypt_create_iv()</strong></span> 例程</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_get_iv_size</span><span style="color: #007700">(</span><span style="color: #0000BB">MCRYPT_CAST_256</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_MODE_CFB</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">$size</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_DEV_RANDOM</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mcrypt-create-iv-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="http://www.ciphersbyritter.com/GLOSSARY.HTM#IV" class="link external">&raquo;&nbsp;http://www.ciphersbyritter.com/GLOSSARY.HTM#IV</a></li>
-    <li class="member"><a href="http://www.quadibloc.com/crypto/co0409.htm" class="link external">&raquo;&nbsp;http://www.quadibloc.com/crypto/co0409.htm</a></li>
-    <li class="member">Applied Cryptography by Schneier (ISBN 0-471-11709-9) 9.3 节。</li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-cfb.html">mcrypt_cfb</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-decrypt.html">mcrypt_decrypt</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

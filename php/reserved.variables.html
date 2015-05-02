@@ -1,172 +1,504 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>é¢„å®šä¹‰å˜é‡</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.references.spot.html">å¼•ç”¨å®šä½</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.superglobals.html">è¶…å…¨å±€å˜é‡</a></div>
- <div class="up"><a href="langref.html">è¯­è¨€å‚è€ƒ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="reserved.variables" class="reference">
- <h1 class="title">é¢„å®šä¹‰å˜é‡</h1>
-
- <div class="partintro">
-
-  <p class="para">
-   å¯¹äºŽå…¨éƒ¨è„šæœ¬è€Œè¨€ï¼ŒPHP æä¾›äº†å¤§é‡çš„é¢„å®šä¹‰å˜é‡ã€‚è¿™äº›å˜é‡å°†æ‰€æœ‰çš„<a href="language.variables.external.html" class="link">å¤–éƒ¨å˜é‡</a>è¡¨ç¤ºæˆå†…å»ºçŽ¯å¢ƒå˜é‡ï¼Œå¹¶ä¸”å°†é”™è¯¯ä¿¡æ¯è¡¨ç¤ºæˆè¿”å›žå¤´ã€‚
-  </p>
-  
-  <p class="para">
-   å‚è§ FAQ â€œ<a href="faq.using.html#faq.register-globals" class="link">register_globals å¯¹æˆ‘æœ‰ä»€ä¹ˆå½±å“ï¼Ÿ</a>â€
-  </p>
-
- </div>
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
-
- 
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
- 
-
-
-
- 
-
-
-
-
-
- 
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="language.variables.superglobals.html">è¶…å…¨å±€å˜é‡</a> â€” è¶…å…¨å±€å˜é‡æ˜¯åœ¨å…¨éƒ¨ä½œç”¨åŸŸä¸­å§‹ç»ˆå¯ç”¨çš„å†…ç½®å˜é‡</li><li><a href="reserved.variables.globals.html">$GLOBALS</a> â€” å¼•ç”¨å…¨å±€ä½œç”¨åŸŸä¸­å¯ç”¨çš„å…¨éƒ¨å˜é‡</li><li><a href="reserved.variables.server.html">$_SERVER</a> â€” æœåŠ¡å™¨å’Œæ‰§è¡ŒçŽ¯å¢ƒä¿¡æ¯</li><li><a href="reserved.variables.get.html">$_GET</a> â€” HTTP GET å˜é‡</li><li><a href="reserved.variables.post.html">$_POST</a> â€” HTTP POST å˜é‡</li><li><a href="reserved.variables.files.html">$_FILES</a> â€” HTTP æ–‡ä»¶ä¸Šä¼ å˜é‡</li><li><a href="reserved.variables.request.html">$_REQUEST</a> â€” HTTP Request å˜é‡</li><li><a href="reserved.variables.session.html">$_SESSION</a> â€” Session å˜é‡</li><li><a href="reserved.variables.environment.html">$_ENV</a> â€” çŽ¯å¢ƒå˜é‡</li><li><a href="reserved.variables.cookies.html">$_COOKIE</a> â€” HTTP Cookies</li><li><a href="reserved.variables.phperrormsg.html">$php_errormsg</a> â€” å‰ä¸€ä¸ªé”™è¯¯ä¿¡æ¯</li><li><a href="reserved.variables.httprawpostdata.html">$HTTP_RAW_POST_DATA</a> â€” åŽŸç”ŸPOSTæ•°æ®</li><li><a href="reserved.variables.httpresponseheader.html">$http_response_header</a> â€” HTTP å“åº”å¤´</li><li><a href="reserved.variables.argc.html">$argc</a> â€” ä¼ é€’ç»™è„šæœ¬çš„å‚æ•°æ•°ç›®</li><li><a href="reserved.variables.argv.html">$argv</a> â€” ä¼ é€’ç»™è„šæœ¬çš„å‚æ•°æ•°ç»„</li></ul>
+<HTML  ><HEAD  ><TITLE  >Ô¤¶¨Òå±äÁ¿</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±£Áô×ÖÁÐ±í" HREF="reserved.html"><LINK  REL="PREVIOUS" TITLE="±£Áô×ÖÁÐ±í" HREF="reserved.html"><LINK  REL="NEXT" TITLE="Ô¤¶¨ÒåÀà" HREF="reserved.classes.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="reserved.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >¸½Â¼ H. ±£Áô×ÖÁÐ±í</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="reserved.classes.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="reserved.variables" ></A
+>Ô¤¶¨Òå±äÁ¿</H1
+><P  >&#13;    ×Ô PHP 4.1.0 Æð£¬È¡µÃ<A  HREF="language.variables.external.html"  >Íâ²¿±äÁ¿</A
+>µÄÊ×Ñ¡·½·¨ÊÇÓÃÏÂÃæÌá¼°µÄ³¬È«¾Ö±äÁ¿¡£ÔÚ´ËÖ®Ç°£¬ÈËÃÇÒªÃ´ÒÀÀµ
+    <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+>£¬ÒªÃ´¾ÍÊÇ³¤³¤µÄÔ¤¶¨Òå
+    PHP Êý×é£¨<TT  CLASS="varname" >$HTTP_*_VARS</TT
+>£©¡£
+
+    ÔÚ PHP 5.0.0 ÖÐ£¬³¤µÄ PHP
+<A  HREF="language.variables.predefined.html"  >Ô¤¶¨Òå</A
+>Êý×é¿ÉÒÔÍ¨¹ýÉèÖÃ
+<A  HREF="configuration.directives.html#ini.register-long-arrays"  >register_long_arrays</A
+> À´ÆÁ±Î¡£
+   </P
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.server" ></A
+>·þÎñÆ÷±äÁ¿£º<TT  CLASS="varname" >$_SERVER</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TT  CLASS="varname" >$_SERVER</TT
+> ÊÇÒ»¸ö°üº¬ÖîÈçÍ·²¿(headers)¡¢Â·¾¶(paths)ºÍ½Å±¾Î»ÖÃ(script locations)µÄÊý×é¡£Êý×éµÄÊµÌåÓÉ web ·þÎñÆ÷´´½¨¡£²»ÄÜ±£Ö¤ËùÓÐµÄ·þÎñÆ÷¶¼ÄÜ²úÉúËùÓÐµÄÐÅÏ¢£»·þÎñÆ÷¿ÉÄÜºöÂÔÁËÒ»Ð©ÐÅÏ¢£¬»òÕß²úÉúÁËÒ»Ð©Î´ÔÚÏÂÃæÁÐ³öµÄÐÂµÄÐÅÏ¢¡£ÕâÒâÎ¶×Å£¬´óÁ¿µÄÕâÐ©±äÁ¿ÔÚ <A  href="http://hoohoo.ncsa.uiuc.edu/cgi/env.html"  TARGET="_top" >CGI 1.1 specification</A
+> ÖÐËµÃ÷£¬ËùÒÔÄúÓ¦¸Ã×ÐÏ¸ÑÐ¾¿Ëü¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_SERVER;</B
+> ·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡££¨×¢Òâ£º <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+> ºÍ <TT  CLASS="varname" >$_SERVER</TT
+> ÊÇ²»Í¬µÄ±äÁ¿£¬PHP ´¦ÀíËüÃÇµÄ·½Ê½²»Í¬¡££©
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_SERVER</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     Äú»òÐí»á·¢ÏÖÏÂÃæÁÐ³öµÄÄ³Ð© $_SERVER ÔªËØ²¢²»¿ÉÓÃ¡£×¢Òâ£¬Èç¹ûÒÔÃüÁîÐÐ·½Ê½ÔËÐÐ PHP£¬ÏÂÃæÁÐ³öµÄÔªËØ¼¸ºõÃ»ÓÐÓÐÐ§µÄ£¨»òÊÇÃ»ÓÐÈÎºÎÊµ¼ÊÒâÒåµÄ£©¡£
+    </P
+><P  >&#13;     <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  >¡°<TT  CLASS="varname" >PHP_SELF</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÕýÔÚÖ´ÐÐ½Å±¾µÄÎÄ¼þÃû£¬Óë document rootÏà¹Ø¡£¾ÙÀýÀ´Ëµ£¬ÔÚURLµØÖ·Îª <TT  CLASS="filename" >http://example.com/test.php/foo.bar</TT
+> µÄ½Å±¾ÖÐÊ¹ÓÃ <TT  CLASS="varname" >$_SERVER['PHP_SELF']</TT
+> ½«»áµÃµ½ <TT  CLASS="filename" >/test.php/foo.bar</TT
+> Õâ¸ö½á¹û¡£
+        </P
+><P  >&#13;         Èç¹û PHP ÒÔÃüÁîÐÐ·½Ê½ÔËÐÐ£¬¸Ã±äÁ¿ÎÞÐ§¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >argv</TT
+>¡±</DT
+><DD  ><P  >&#13;         ´«µÝ¸ø¸Ã½Å±¾µÄ²ÎÊý¡£µ±½Å±¾ÔËÐÐÔÚÃüÁîÐÐ·½Ê½Ê±£¬argv ±äÁ¿´«µÝ¸ø³ÌÐò C ÓïÑÔÑùÊ½µÄÃüÁîÐÐ²ÎÊý¡£µ±µ÷ÓÃ GET ·½·¨Ê±£¬¸Ã±äÁ¿°üº¬ÇëÇóµÄÊý¾Ý¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >argc</TT
+>¡±</DT
+><DD  ><P  >&#13;         °üº¬´«µÝ¸ø³ÌÐòµÄÃüÁîÐÐ²ÎÊýµÄ¸öÊý£¨Èç¹ûÔËÐÐÔÚÃüÁîÐÐÄ£Ê½£©¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >GATEWAY_INTERFACE</TT
+>¡±</DT
+><DD  ><P  >&#13;         ·þÎñÆ÷Ê¹ÓÃµÄ CGI ¹æ·¶µÄ°æ±¾¡£ÀýÈç£¬¡°<TT  CLASS="literal" >CGI/1.1</TT
+>¡±¡£
+        </P
+></DD
+><DT  >'<TT  CLASS="varname" >SERVER_NAME</TT
+>'</DT
+><DD  ><P  >&#13;         µ±Ç°ÔËÐÐ½Å±¾ËùÔÚ·þÎñÆ÷Ö÷»úµÄÃû³Æ¡£Èç¹û¸Ã½Å±¾ÔËÐÐÔÚÒ»¸öÐéÄâÖ÷»úÉÏ£¬¸ÃÃû³ÆÊÇÓÉÄÇ¸öÐéÄâÖ÷»úËùÉèÖÃµÄÖµ¾ö¶¨¡£
+        </P
+></DD
+><DT  >'<TT  CLASS="varname" >SERVER_SOFTWARE</TT
+>'</DT
+><DD  ><P  >&#13;         ·þÎñÆ÷±êÊ¶µÄ×Ö´®£¬ÔÚÏìÓ¦ÇëÇóÊ±µÄÍ·²¿ÖÐ¸ø³ö¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >SERVER_PROTOCOL</TT
+>¡±</DT
+><DD  ><P  >&#13;         ÇëÇóÒ³ÃæÊ±Í¨ÐÅÐ­ÒéµÄÃû³ÆºÍ°æ±¾¡£ÀýÈç£¬¡°<TT  CLASS="literal" >HTTP/1.0</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >REQUEST_METHOD</TT
+>¡±</DT
+><DD  ><P  >&#13;        ·ÃÎÊÒ³ÃæÊ±µÄÇëÇó·½·¨¡£ÀýÈç£º¡°<TT  CLASS="literal" >GET</TT
+>¡±¡¢¡°<TT  CLASS="literal" >HEAD</TT
+>¡±£¬¡°<TT  CLASS="literal" >POST</TT
+>¡±£¬¡°<TT  CLASS="literal" >PUT</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >QUERY_STRING</TT
+>¡±</DT
+><DD  ><P  >&#13;         ²éÑ¯(query)µÄ×Ö·û´®¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >DOCUMENT_ROOT</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÔËÐÐ½Å±¾ËùÔÚµÄÎÄµµ¸ùÄ¿Â¼¡£ÔÚ·þÎñÆ÷ÅäÖÃÎÄ¼þÖÐ¶¨Òå¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_ACCEPT</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >Accept:</TT
+> Í·²¿µÄÄÚÈÝ¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_ACCEPT_CHARSET</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >Accept-Charset:</TT
+> Í·²¿µÄÄÚÈÝ¡£ÀýÈç£º¡°<TT  CLASS="literal" >iso-8859-1,*,utf-8</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_ACCEPT_ENCODING</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >Accept-Encoding:</TT
+> Í·²¿µÄÄÚÈÝ¡£ÀýÈç£º¡°<TT  CLASS="literal" >gzip</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_ACCEPT_LANGUAGE</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >Accept-Language:</TT
+> Í·²¿µÄÄÚÈÝ¡£ÀýÈç£º¡°<TT  CLASS="literal" >en</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_CONNECTION</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >Connection:</TT
+> Í·²¿µÄÄÚÈÝ¡£ÀýÈç£º¡°<TT  CLASS="literal" >Keep-Alive</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_HOST</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >Host:</TT
+> Í·²¿µÄÄÚÈÝ¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_REFERER</TT
+>¡±</DT
+><DD  ><P  >&#13;         Á´½Óµ½µ±Ç°Ò³ÃæµÄÇ°Ò»Ò³ÃæµÄ URL µØÖ·¡£²»ÊÇËùÓÐµÄÓÃ»§´úÀí£¨ä¯ÀÀÆ÷£©¶¼»áÉèÖÃÕâ¸ö±äÁ¿£¬¶øÇÒÓÐµÄ»¹¿ÉÒÔÊÖ¹¤ÐÞ¸Ä <TT  CLASS="varname" >HTTP_REFERER</TT
+>¡£Òò´Ë£¬Õâ¸ö±äÁ¿²»×ÜÊÇÕýÈ·ÕæÊµµÄ¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >HTTP_USER_AGENT</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°ÇëÇóµÄ <TT  CLASS="literal" >User_Agent:</TT
+> Í·²¿µÄÄÚÈÝ¡£¸Ã×Ö·û´®±íÃ÷ÁË·ÃÎÊ¸ÃÒ³ÃæµÄÓÃ»§´úÀíµÄÐÅÏ¢¡£Ò»¸öµäÐÍµÄÀý×ÓÊÇ£º<TT  CLASS="computeroutput" >Mozilla/4.5 [en] (X11; U; Linux 2.2.9 i586)</TT
+>¡£ÄúÒ²¿ÉÒÔÊ¹ÓÃ <A  HREF="function.get-browser.html"  ><B  CLASS="function" >get_browser()</B
+></A
+> µÃµ½Õâ¸öÐÅÏ¢¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >REMOTE_ADDR</TT
+>¡±</DT
+><DD  ><P  >&#13;         ÕýÔÚä¯ÀÀµ±Ç°Ò³ÃæÓÃ»§µÄ IP µØÖ·¡£
+        </P
+></DD
+><DT  >'<TT  CLASS="varname" >REMOTE_HOST</TT
+>'</DT
+><DD  ><P  >&#13;         ÕýÔÚä¯ÀÀµ±Ç°Ò³ÃæÓÃ»§µÄÖ÷»úÃû¡£·´ÏòÓòÃû½âÎö»ùÓÚ¸ÃÓÃ»§µÄ
+         <TT  CLASS="varname" >REMOTE_ADDR</TT
+>¡£
+        </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+          ±ØÐëÅäÖÃ Web ·þÎñÆ÷À´½¨Á¢´Ë±äÁ¿¡£ÀýÈç Apache
+          ÐèÒªÔÚ <TT  CLASS="filename" >httpd.conf</TT
+> ÖÐÓÐ
+          <TT  CLASS="literal" >HostnameLookups On</TT
+>¡£²Î¼û <A  HREF="function.gethostbyaddr.html"  ><B  CLASS="function" >gethostbyaddr()</B
+></A
+>¡£
+         </P
+></BLOCKQUOTE
+></DIV
+></DD
+><DT  >¡°<TT  CLASS="varname" >REMOTE_PORT</TT
+>¡±</DT
+><DD  ><P  >&#13;         ÓÃ»§Á¬½Óµ½·þÎñÆ÷Ê±ËùÊ¹ÓÃµÄ¶Ë¿Ú¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >SCRIPT_FILENAME</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°Ö´ÐÐ½Å±¾µÄ¾ø¶ÔÂ·¾¶Ãû¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >SERVER_ADMIN</TT
+>¡±</DT
+><DD  ><P  >&#13;         ¸ÃÖµÖ¸Ã÷ÁË Apache ·þÎñÆ÷ÅäÖÃÎÄ¼þÖÐµÄ SERVER_ADMIN ²ÎÊý¡£Èç¹û½Å±¾ÔËÐÐÔÚÒ»¸öÐéÄâÖ÷»úÉÏ£¬Ôò¸ÃÖµÊÇÄÇ¸öÐéÄâÖ÷»úµÄÖµ¡£        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >SERVER_PORT</TT
+>¡±</DT
+><DD  ><P  >&#13;         ·þÎñÆ÷ËùÊ¹ÓÃµÄ¶Ë¿Ú¡£Ä¬ÈÏÎª¡°<TT  CLASS="literal" >80</TT
+>¡±¡£Èç¹ûÄãÊ¹ÓÃ SSL °²È«Á¬½Ó£¬ÔòÕâ¸öÖµÎªÄúËùÉèÖÃµÄ HTTP ¶Ë¿Ú¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >SERVER_SIGNATURE</TT
+>¡±</DT
+><DD  ><P  >&#13;         °üº¬·þÎñÆ÷°æ±¾ºÍÐéÄâÖ÷»úÃûµÄ×Ö·û´®¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >PATH_TRANSLATED</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ±Ç°½Å±¾ËùÔÚÎÄ¼þÏµÍ³£¨²»ÊÇÎÄµµ¸ùÄ¿Â¼£©µÄ»ù±¾Â·¾¶¡£ÕâÊÇÔÚ·þÎñÆ÷½øÐÐÐéÄâµ½ÕæÊµÂ·¾¶µÄÓ³ÏñºóµÄ½á¹û¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >SCRIPT_NAME</TT
+>¡±</DT
+><DD  ><P  >&#13;         °üº¬µ±Ç°½Å±¾µÄÂ·¾¶¡£ÕâÔÚÒ³ÃæÐèÒªÖ¸Ïò×Ô¼ºÊ±·Ç³£ÓÐÓÃ¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >REQUEST_URI</TT
+>¡±</DT
+><DD  ><P  >&#13;         ·ÃÎÊ´ËÒ³ÃæËùÐèµÄ URI¡£ÀýÈç£¬¡°<TT  CLASS="literal" >/index.html</TT
+>¡±¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >PHP_AUTH_USER</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ± PHP ÔËÐÐÔÚ Apache Ä£¿é·½Ê½ÏÂ£¬²¢ÇÒÕýÔÚÊ¹ÓÃ HTTP ÈÏÖ¤¹¦ÄÜ£¬Õâ¸ö±äÁ¿±ãÊÇÓÃ»§ÊäÈëµÄÓÃ»§Ãû¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >PHP_AUTH_PW</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ± PHP ÔËÐÐÔÚ Apache Ä£¿é·½Ê½ÏÂ£¬²¢ÇÒÕýÔÚÊ¹ÓÃ HTTP ÈÏÖ¤¹¦ÄÜ£¬Õâ¸ö±äÁ¿±ãÊÇÓÃ»§ÊäÈëµÄÃÜÂë¡£
+        </P
+></DD
+><DT  >¡°<TT  CLASS="varname" >AUTH_TYPE</TT
+>¡±</DT
+><DD  ><P  >&#13;         µ± PHP ÔËÐÐÔÚ Apache Ä£¿é·½Ê½ÏÂ£¬²¢ÇÒÕýÔÚÊ¹ÓÃ HTTP ÈÏÖ¤¹¦ÄÜ£¬Õâ¸ö±äÁ¿±ãÊÇÈÏÖ¤µÄÀàÐÍ¡£
+        </P
+></DD
+></DL
+></DIV
+>
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.environment" ></A
+>»·¾³±äÁ¿£º<TT  CLASS="varname" >$_ENV</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_ENV_VARS</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ÔÚ½âÎöÆ÷ÔËÐÐÊ±£¬ÕâÐ©±äÁ¿´Ó»·¾³±äÁ¿×ª±äÎª PHP È«¾Ö±äÁ¿Ãû³Æ¿Õ¼ä(namespace)¡£ËüÃÇÖÐµÄÐí¶à¶¼ÊÇÓÉ PHP ËùÔËÐÐµÄÏµÍ³¾ö¶¨¡£ÍêÕûµÄÁÐ±íÊÇ²»¿ÉÄÜµÄ¡£Çë²é¿´ÄúÏµÍ³µÄÎÄµµÒÔÈ·¶¨ÆäÌØ¶¨µÄ»·¾³±äÁ¿¡£
+    </P
+><P  >&#13;     ÆäËü»·¾³±äÁ¿£¨°üÀ¨ CGI ±äÁ¿£©£¬ÎÞÂÛ PHP ÊÇÒÔ·þÎñÆ÷Ä£¿é»òÊÇÒÔ CGI ´¦Àí·½Ê½ÔËÐÐ£¬¶¼ÔÚÕâÀïÁÐ³öÁË¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_ENV;</B
+> À´·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ  <TT  CLASS="varname" >$HTTP_ENV_VARS</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_ENV_VARS</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡££¨×¢Òâ£º <TT  CLASS="varname" >HTTP_ENV_VARS</TT
+> ºÍ <TT  CLASS="varname" >$_ENV</TT
+> ÊÇ²»Í¬µÄ±äÁ¿£¬PHP ´¦ÀíËüÃÇµÄ·½Ê½²»Í¬¡££©
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_ENV</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_ENV_VARS</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.cookies" ></A
+>HTTP Cookies£º<TT  CLASS="varname" >$_COOKIE</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_COOKIE_VARS</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Í¨¹ý HTTP cookies ´«µÝµÄ±äÁ¿×é³ÉµÄÊý×é¡£ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_COOKIE;</B
+> À´·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ  <TT  CLASS="varname" >$HTTP_COOKIE_VARS</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_COOKIE_VARS</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡££¨×¢Òâ£º <TT  CLASS="varname" >HTTP_COOKIE_VARS</TT
+> ºÍ <TT  CLASS="varname" >$_COOKIE</TT
+> ÊÇ²»Í¬µÄ±äÁ¿£¬PHP ´¦ÀíËüÃÇµÄ·½Ê½²»Í¬¡££©
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_COOKIE</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_COOKIE_VARS</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.get" ></A
+>HTTP GET ±äÁ¿£º<TT  CLASS="varname" >$_GET</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_GET_VARS</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Í¨¹ý HTTP GET ·½·¨´«µÝµÄ±äÁ¿×é³ÉµÄÊý×é¡£ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_GET;</B
+> À´·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ  <TT  CLASS="varname" >$HTTP_GET_VARS</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_GET_VARS</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡££¨×¢Òâ£º <TT  CLASS="varname" >HTTP_GET_VARS</TT
+> ºÍ <TT  CLASS="varname" >$_GET</TT
+> ÊÇ²»Í¬µÄ±äÁ¿£¬PHP ´¦ÀíËüÃÇµÄ·½Ê½²»Í¬¡££©
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_GET</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_GET_VARS</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.post" ></A
+>HTTP POST ±äÁ¿£º<TT  CLASS="varname" >$_POST</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_POST_VARS</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Í¨¹ý HTTP POST ·½·¨´«µÝµÄ±äÁ¿×é³ÉµÄÊý×é¡£ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_POST;</B
+> À´·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ  <TT  CLASS="varname" >$HTTP_POST_VARS</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_POST_VARS</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡££¨×¢Òâ£º <TT  CLASS="varname" >HTTP_POST_VARS</TT
+> ºÍ <TT  CLASS="varname" >$_POST</TT
+> ÊÇ²»Í¬µÄ±äÁ¿£¬PHP ´¦ÀíËüÃÇµÄ·½Ê½²»Í¬¡££©
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_POST</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_POST_VARS</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.files" ></A
+>HTTP ÎÄ¼þÉÏ´«±äÁ¿£º<TT  CLASS="varname" >$_FILES</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_POST_FILES</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Í¨¹ý HTTP POST ·½·¨´«µÝµÄÒÑÉÏ´«ÎÄ¼þÏîÄ¿×é³ÉµÄÊý×é¡£ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_FILES;</B
+> À´·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ  <TT  CLASS="varname" >$HTTP_POST_FILES</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_POST_FILES</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_FILES</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_POST_FILES</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.request" ></A
+>Request ±äÁ¿£º<TT  CLASS="varname" >$_REQUEST</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ã»ÓÐµÈ¼ÛµÄÊý×é¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.3.0 Ö®Ç°£¬<TT  CLASS="varname" >$_FILES</TT
+> Ò²±»°üÀ¨ÔÚ
+      <TT  CLASS="varname" >$_REQUEST</TT
+> Êý×éÖÐ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ´Ë¹ØÁªÊý×é°üº¬ <TT  CLASS="varname" >$_GET</TT
+>£¬<TT  CLASS="varname" >$_POST</TT
+> ºÍ
+     <TT  CLASS="varname" >$_COOKIE</TT
+> ÖÐµÄÈ«²¿ÄÚÈÝ¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶×ÅËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_REQUEST;</B
+> À´·ÃÎÊËü¡£
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_REQUEST</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.session" ></A
+>Session ±äÁ¿£º<TT  CLASS="varname" >$_SESSION</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.1.0 ¼°ÒÔºó°æ±¾Ê¹ÓÃ¡£Ö®Ç°µÄ°æ±¾£¬Ê¹ÓÃ <TT  CLASS="varname" >$HTTP_SESSION_VARS</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     °üº¬µ±Ç°½Å±¾ÖÐ session ±äÁ¿µÄÊý×é¡£²ÎÔÄ <A  HREF="ref.session.html"  >Session º¯Êý</A
+> ÎÄµµÒÔ»ñµÃ¸ü¶àÐÅÏ¢¡£    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $_SESSION;</B
+> À´·ÃÎÊËü£¬¾ÍÈçÍ¬Ê¹ÓÃ  <TT  CLASS="varname" >$HTTP_SESSION_VARS</TT
+> Ò»Ñù¡£
+    </P
+><P  >&#13;     <TT  CLASS="varname" >$HTTP_SESSION_VARS</TT
+> °üº¬×ÅÍ¬ÑùµÄÐÅÏ¢£¬µ«ÊÇ²»ÊÇÒ»¸ö×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+><P  >&#13;     Èç¹ûÉèÖÃÁË <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> Ö¸Áî£¬ÕâÐ©±äÁ¿Ò²ÔÚËùÓÐ½Å±¾ÖÐ¿ÉÓÃ£»Ò²¾ÍÊÇ£¬·ÖÀëÁË <TT  CLASS="varname" >$_SESSION</TT
+> ºÍ <TT  CLASS="varname" >$HTTP_SESSION_VARS</TT
+> Êý×é¡£Ïà¹ØÐÅÏ¢£¬Çë²ÎÔÄ°²È«µÄÏà¹ØÕÂ½Ú <A  HREF="security.registerglobals.html"  >Ê¹ÓÃ Register Globals</A
+>¡£ÕâÐ©µ¥¶ÀµÄÈ«¾Ö±äÁ¿²»ÊÇ×Ô¶¯È«¾Ö±äÁ¿¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.globals" ></A
+>Global ±äÁ¿£º<TT  CLASS="varname" >$GLOBALS</TT
+></H2
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="varname" >$GLOBALS</TT
+> ÔÚ PHP 3.0.0 ¼°ÒÔºó°æ±¾ÖÐÊÊÓÃ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ÓÉËùÓÐÒÑ¶¨ÒåÈ«¾Ö±äÁ¿×é³ÉµÄÊý×é¡£±äÁ¿Ãû¾ÍÊÇ¸ÃÊý×éµÄË÷Òý¡£
+    </P
+><P  >&#13;     ÕâÊÇÒ»¸ö¡°superglobal¡±£¬»òÕß¿ÉÒÔÃèÊöÎª×Ô¶¯È«¾Ö±äÁ¿¡£ÕâÖ»²»¹ýÒâÎ¶ÕâËüÔÚËùÓÐµÄ½Å±¾ÖÐ¶¼ÓÐÐ§¡£ÔÚº¯Êý»ò·½·¨ÖÐÄú²»ÐèÒªÊ¹ÓÃ <B  CLASS="command" >global $GLOBALS;</B
+> À´·ÃÎÊËü¡£
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="reserved.variables.phperrormsg" ></A
+>Ç°Ò»¸ö´íÎóÏûÏ¢£º<TT  CLASS="varname" >$php_errormsg</TT
+></H2
+><P  >&#13;     <TT  CLASS="varname" >$php_errormsg</TT
+> ÊÇ°üº¬ PHP ²úÉúµÄÉÏÒ»´íÎóÏûÏ¢ÄÚÈÝµÄ±äÁ¿¡£¸Ã±äÁ¿ÔÚ·¢Éú´íÎó²¢ÇÒ<A  HREF="ref.errorfunc.html#ini.track-errors"  >track_errors</A
+> Ñ¡Ïî´ò¿ª£¨Ä¬ÈÏÎª¹Ø±Õ£©ºó²ÅÓÐÐ§¡£
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="reserved.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æðµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="reserved.classes.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >±£Áô×ÖÁÐ±í</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="reserved.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Ô¤¶¨ÒåÀà</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.references.spot.html">å¼•ç”¨å®šä½</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.superglobals.html">è¶…å…¨å±€å˜é‡</a></div>
- <div class="up"><a href="langref.html">è¯­è¨€å‚è€ƒ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

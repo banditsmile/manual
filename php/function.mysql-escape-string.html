@@ -1,77 +1,103 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è½¬ä¹‰ä¸€ä¸ªå­—ç¬¦ä¸²ç”¨äº mysql_query</title>
+<HTML  ><HEAD  ><TITLE  >mysql_escape_string</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_error" HREF="function.mysql-error.html"><LINK  REL="NEXT" TITLE="mysql_fetch_array" HREF="function.mysql-fetch-array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-error.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-fetch-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-escape-string" ></A
+>mysql_escape_string</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65491" ></A
+><P  >    (PHP 4 &#62;= 4.0.3)</P
+>mysql_escape_string&nbsp;--&nbsp;
+     ×ªÒåÒ»¸ö×Ö·û´®ÓÃÓÚ mysql_query
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65494" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >mysql_escape_string</B
+> ( string unescaped_string)<BR  ></BR
+><P  >&#13;     ±¾º¯Êı½« <TT  CLASS="parameter" ><I  >unescaped_string</I
+></TT
+> ×ªÒå£¬Ê¹Ö®¿ÉÒÔ°²È«ÓÃÓÚ
+     <A  href="http://www.jb51.net/manual/php/function.mysql-query.html"  ><B  CLASS="function" >mysql_query()</B
+></A
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >mysql_escape_string()</B
+> ²¢²»×ªÒå
+      <TT  CLASS="literal" >%</TT
+> ºÍ <TT  CLASS="literal" >_</TT
+>¡£
+     </P
+><P  >&#13;      ±¾º¯ÊıºÍ
+      <A  HREF="function.mysql-real-escape-string.html"  ><B  CLASS="function" >mysql_real_escape_string()</B
+></A
+> ÍêÈ«Ò»Ñù£¬³ıÁË
+      <A  HREF="function.mysql-real-escape-string.html"  ><B  CLASS="function" >mysql_real_escape_string()</B
+></A
+>
+      ½ÓÊÜµÄÊÇÒ»¸öÁ¬½Ó¾ä±ú²¢¸ù¾İµ±Ç°×Ö·û¼¯×ªÒÆ×Ö·û´®Ö®Íâ¡£<B  CLASS="function" >mysql_escape_string()</B
+>
+      ²¢²»½ÓÊÜÁ¬½Ó²ÎÊı£¬Ò²²»¹Üµ±Ç°×Ö·û¼¯Éè¶¨¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65515" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mysql_escape_string()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$item </font><font  color="#007700">= </font><font  color="#DD0000">"Zak's Laptop"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$escaped_item </font><font  color="#007700">= </font><font  color="#0000BB">mysql_escape_string</font><font  color="#007700">(</font><font  color="#0000BB">$item</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf </font><font  color="#007700">(</font><font  color="#DD0000">"Escaped string: %s\n"</font><font  color="#007700">, </font><font  color="#0000BB">$escaped_item</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÒÔÉÏÀı×Ó½«²úÉúÈçÏÂÊä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Escaped string: Zak\'s Laptop</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.mysql-real-escape-string.html"  ><B  CLASS="function" >mysql_real_escape_string()</B
+></A
+>£¬<A  HREF="function.addslashes.html"  ><B  CLASS="function" >addslashes()</B
+></A
+>
+     ºÍ <A  HREF="ref.info.html#ini.magic-quotes-gpc"  >magic_quotes_gpc</A
+> Ö¸Áî¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-error.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-fetch-array.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_error</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_fetch_array</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-error.html">mysql_error</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-fetch-array.html">mysql_fetch_array</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-escape-string" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_escape_string</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_escape_string</span> &mdash; <span class="dc-title">
-     è½¬ä¹‰ä¸€ä¸ªå­—ç¬¦ä¸²ç”¨äº mysql_query
-    </span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-unknown-seealsr" id="refsect1-function.mysql-escape-string-unknown-unknown-unknown-seealsr">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">string</span> <span class="methodname"><strong>mysql_escape_string</strong></span>
-      ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$unescaped_string</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     æœ¬å‡½æ•°å°† <code class="parameter">unescaped_string</code> è½¬ä¹‰ï¼Œä½¿ä¹‹å¯ä»¥å®‰å…¨ç”¨äº
-     <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <span class="simpara">
-      <span class="function"><strong>mysql_escape_string()</strong></span> å¹¶ä¸è½¬ä¹‰
-      <em>%</em> å’Œ <em>_</em>ã€‚
-     </span>
-     <span class="simpara">
-      æœ¬å‡½æ•°å’Œ
-      <span class="function"><a href="function.mysql-real-escape-string.html" class="function">mysql_real_escape_string()</a></span> å®Œå…¨ä¸€æ ·ï¼Œé™¤äº†
-      <span class="function"><a href="function.mysql-real-escape-string.html" class="function">mysql_real_escape_string()</a></span>
-      æ¥å—çš„æ˜¯ä¸€ä¸ªè¿æ¥å¥æŸ„å¹¶æ ¹æ®å½“å‰å­—ç¬¦é›†è½¬ç§»å­—ç¬¦ä¸²ä¹‹å¤–ã€‚<span class="function"><strong>mysql_escape_string()</strong></span>
-      å¹¶ä¸æ¥å—è¿æ¥å‚æ•°ï¼Œä¹Ÿä¸ç®¡å½“å‰å­—ç¬¦é›†è®¾å®šã€‚
-     </span>
-    </p></blockquote>
-    <p class="para">
-     <div class="example" id="example-1699">
-      <p><strong>Example #1 <span class="function"><strong>mysql_escape_string()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$item&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Zak's&nbsp;Laptop"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$escaped_item&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_escape_string</span><span style="color: #007700">(</span><span style="color: #0000BB">$item</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"Escaped&nbsp;string:&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$escaped_item</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>
-       ä»¥ä¸Šä¾‹å­å°†äº§ç”Ÿå¦‚ä¸‹è¾“å‡ºï¼š
-      </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Escaped string: Zak\&#039;s Laptop
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     å‚è§
-     <span class="function"><a href="function.mysql-real-escape-string.html" class="function">mysql_real_escape_string()</a></span>ï¼Œ<span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>
-     å’Œ <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a> æŒ‡ä»¤ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-error.html">mysql_error</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-fetch-array.html">mysql_fetch_array</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

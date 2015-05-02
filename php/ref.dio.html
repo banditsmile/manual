@@ -1,80 +1,122 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Direct IO å‡½æ•°</title>
+<HTML  ><HEAD  ><TITLE  >Direct IO Functions</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="dbplus_xunlockrel" HREF="function.dbplus-xunlockrel.html"><LINK  REL="NEXT" TITLE="dio_close" HREF="function.dio-close.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbplus-xunlockrel.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dio-close.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.dio" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >XXII. Direct IO Functions</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN21478" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="dio.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     PHP supports the direct io functions as described in the Posix
+     Standard (Section 6) for performing I/O functions at a lower
+     level than the C-Language stream I/O functions
+     (<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>, <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+>,..).  The use
+     of the DIO functions should be considered only when direct 
+     control of a device is needed.  In all other cases, the standard
+     <A  HREF="ref.filesystem.html"  >filesystem</A
+> functions are more
+     than adequate. 
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>¸ÃÀ©Õ¹Ä£¿é²»ÊÊÓÃÓÚ Windows Æ½Ì¨£¡</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="dio.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="dio.installation" ></A
+>°²×°</H1
+><P  >&#13;  To get these functions to work, you have to configure PHP with
+  <TT  CLASS="option" >--enable-dio</TT
+>.
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="dio.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="dio.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >&#13;     One resource type is defined by this extension:
+     a file descriptor returned by <A  HREF="function.dio-open.html"  ><B  CLASS="function" >dio_open()</B
+></A
+>.
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="dio.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ³£Á¿¡£</P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.dio-close.html"  >dio_close</A
+>&nbsp;--&nbsp;Closes the file descriptor given by fd</DT
+><DT  ><A  HREF="function.dio-fcntl.html"  >dio_fcntl</A
+>&nbsp;--&nbsp;Performs a c library fcntl on fd</DT
+><DT  ><A  HREF="function.dio-open.html"  >dio_open</A
+>&nbsp;--&nbsp;
+     Opens a new filename with specified permissions of flags and
+     creation permissions of mode
+    </DT
+><DT  ><A  HREF="function.dio-read.html"  >dio_read</A
+>&nbsp;--&nbsp;
+     Reads n bytes from fd and returns them, if n is not specified,
+     reads 1k block
+    </DT
+><DT  ><A  HREF="function.dio-seek.html"  >dio_seek</A
+>&nbsp;--&nbsp;Seeks to pos on fd from whence</DT
+><DT  ><A  HREF="function.dio-stat.html"  >dio_stat</A
+>&nbsp;--&nbsp;
+     Gets stat information about the file descriptor fd
+    </DT
+><DT  ><A  HREF="function.dio-tcsetattr.html"  >dio_tcsetattr</A
+>&nbsp;--&nbsp;
+     Sets terminal attributes and baud rate for a serial port
+    </DT
+><DT  ><A  HREF="function.dio-truncate.html"  >dio_truncate</A
+>&nbsp;--&nbsp;
+     Truncates file descriptor fd to offset bytes 
+    </DT
+><DT  ><A  HREF="function.dio-write.html"  >dio_write</A
+>&nbsp;--&nbsp;
+     Writes data to fd with optional truncation at length 
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbplus-xunlockrel.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dio-close.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbplus_xunlockrel</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dio_close</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="dio.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dio-close.html">dio_close</a></div>
- <div class="up"><a href="book.dio.html">Direct IO</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.dio" class="reference">
- <h1 class="title">Direct IO å‡½æ•°</h1>
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.dio-close.html">dio_close</a> â€” Closes the file descriptor given by fd</li><li><a href="function.dio-fcntl.html">dio_fcntl</a> â€” Performs a c library fcntl on fd</li><li><a href="function.dio-open.html">dio_open</a> â€” Opens a file (creating it if necessary) at a lower level than the
-   C library input/ouput stream functions allow.</li><li><a href="function.dio-read.html">dio_read</a> â€” Reads bytes from a file descriptor</li><li><a href="function.dio-seek.html">dio_seek</a> â€” Seeks to pos on fd from whence</li><li><a href="function.dio-stat.html">dio_stat</a> â€” Gets stat information about the file descriptor fd</li><li><a href="function.dio-tcsetattr.html">dio_tcsetattr</a> â€” Sets terminal attributes and baud rate for a serial port</li><li><a href="function.dio-truncate.html">dio_truncate</a> â€” Truncates file descriptor fd to offset bytes</li><li><a href="function.dio-write.html">dio_write</a> â€” Writes data to fd with optional truncation at length</li></ul>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="dio.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dio-close.html">dio_close</a></div>
- <div class="up"><a href="book.dio.html">Direct IO</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

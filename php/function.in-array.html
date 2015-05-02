@@ -1,200 +1,157 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ£€æŸ¥æ•°ç»„ä¸­æ˜¯å¦å­˜åœ¨æŸä¸ªå€¼</title>
+<HTML  ><HEAD  ><TITLE  >in_array</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="extract" HREF="function.extract.html"><LINK  REL="NEXT" TITLE="key" HREF="function.key.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.extract.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.key.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.in-array" ></A
+>in_array</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN9967" ></A
+><P  >    (PHP 4 )</P
+>in_array&nbsp;--&nbsp;¼ì²éÊı×éÖĞÊÇ·ñ´æÔÚÄ³¸öÖµ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN9970" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >in_array</B
+> ( mixed needle, array haystack [, bool strict])<BR  ></BR
+><P  >&#13;     ÔÚ <TT  CLASS="parameter" ><I  >haystack</I
+></TT
+> ÖĞËÑË÷
+     <TT  CLASS="parameter" ><I  >needle</I
+></TT
+>£¬Èç¹ûÕÒµ½Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬·ñÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     Èç¹ûµÚÈı¸ö²ÎÊı <TT  CLASS="parameter" ><I  >strict</I
+></TT
+> µÄÖµÎª
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> Ôò <B  CLASS="function" >in_array()</B
+> º¯Êı»¹»á¼ì²é
+     <TT  CLASS="parameter" ><I  >needle</I
+></TT
+> µÄ<A  HREF="language.types.html"  >ÀàĞÍ</A
+>ÊÇ·ñºÍ
+     <TT  CLASS="parameter" ><I  >haystack</I
+></TT
+> ÖĞµÄÏàÍ¬¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Èç¹û <TT  CLASS="parameter" ><I  >needle</I
+></TT
+> ÊÇ×Ö·û´®£¬Ôò±È½ÏÊÇÇø·Ö´óĞ¡Ğ´µÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP °æ±¾ 4.2.0 Ö®Ç°£¬<TT  CLASS="parameter" ><I  >needle</I
+></TT
+> ²»ÔÊĞíÊÇÒ»¸öÊı×é¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10003" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >in_array()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$os </font><font  color="#007700">= array (</font><font  color="#DD0000">"Mac"</font><font  color="#007700">, </font><font  color="#DD0000">"NT"</font><font  color="#007700">, </font><font  color="#DD0000">"Irix"</font><font  color="#007700">, </font><font  color="#DD0000">"Linux"</font><font  color="#007700">);<br  />if (</font><font  color="#0000BB">in_array </font><font  color="#007700">(</font><font  color="#DD0000">"Irix"</font><font  color="#007700">, </font><font  color="#0000BB">$os</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"Got Irix"</font><font  color="#007700">;<br  />}<br  />if (</font><font  color="#0000BB">in_array </font><font  color="#007700">(</font><font  color="#DD0000">"mac"</font><font  color="#007700">, </font><font  color="#0000BB">$os</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"Got mac"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       µÚ¶ş¸öÌõ¼şÊ§°Ü£¬ÒòÎª <B  CLASS="function" >in_array()</B
+>
+       ÊÇÇø·Ö´óĞ¡Ğ´µÄ£¬ËùÒÔÒÔÉÏ³ÌĞòÏÔÊ¾Îª£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+Got Irix</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10011" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >in_array()</B
+> ÑÏ¸ñÀàĞÍ¼ì²éÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= array(</font><font  color="#DD0000">'1.10'</font><font  color="#007700">, </font><font  color="#0000BB">12.4</font><font  color="#007700">, </font><font  color="#0000BB">1.13</font><font  color="#007700">);<br  /><br  />if (</font><font  color="#0000BB">in_array</font><font  color="#007700">(</font><font  color="#DD0000">'12.4'</font><font  color="#007700">, </font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">TRUE</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"'12.4' found with strict check\n"</font><font  color="#007700">;<br  />}<br  />if (</font><font  color="#0000BB">in_array</font><font  color="#007700">(</font><font  color="#0000BB">1.13</font><font  color="#007700">, </font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">TRUE</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"1.13 found with strict check\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ½«ÏÔÊ¾£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+1.13 found with strict check</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10018" ></A
+><P  ><B  >Àı×Ó 3. <B  CLASS="function" >in_array()</B
+> ÖĞÓÃÊı×é×÷Îª needle</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= array(array(</font><font  color="#DD0000">'p'</font><font  color="#007700">, </font><font  color="#DD0000">'h'</font><font  color="#007700">), array(</font><font  color="#DD0000">'p'</font><font  color="#007700">, </font><font  color="#DD0000">'r'</font><font  color="#007700">), </font><font  color="#DD0000">'o'</font><font  color="#007700">);<br  /><br  />if (</font><font  color="#0000BB">in_array</font><font  color="#007700">(array (</font><font  color="#DD0000">'p'</font><font  color="#007700">, </font><font  color="#DD0000">'h'</font><font  color="#007700">), </font><font  color="#0000BB">$a</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"'ph' was found\n"</font><font  color="#007700">;<br  />}<br  />if (</font><font  color="#0000BB">in_array</font><font  color="#007700">(array (</font><font  color="#DD0000">'f'</font><font  color="#007700">, </font><font  color="#DD0000">'i'</font><font  color="#007700">), </font><font  color="#0000BB">$a</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"'fi' was found\n"</font><font  color="#007700">;<br  />}<br  />if (</font><font  color="#0000BB">in_array</font><font  color="#007700">(</font><font  color="#DD0000">'o'</font><font  color="#007700">, </font><font  color="#0000BB">$a</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"'o' was found\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#FF8000">/* Outputs:<br  />'ph' was found<br  />'o' was found<br  />*/<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.array-search.html"  ><B  CLASS="function" >array_search()</B
+></A
+>£¬<A  href="http://www.jb51.net/manual/php/function.array-key-exists.html"  ><B  CLASS="function" >array_key_exists()</B
+></A
+>
+     ºÍ <A  HREF="function.isset.html"  ><B  CLASS="function" >isset()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.extract.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.key.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >extract</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >key</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.extract.html">extract</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.key-exists.html">key_exists</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.in-array" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">in_array</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">in_array</span> &mdash; <span class="dc-title">æ£€æŸ¥æ•°ç»„ä¸­æ˜¯å¦å­˜åœ¨æŸä¸ªå€¼</span></p>
 
-   </div>
- <div class="refsect1 description" id="refsect1-function.in-array-description">
-  <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">bool</span> <span class="methodname"><strong>in_array</strong></span>
-      ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$needle</code></span>
-     , <span class="methodparam"><span class="type">array</span> <code class="parameter">$haystack</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$strict</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     åœ¨ <code class="parameter">haystack</code> ä¸­æœç´¢
-     <code class="parameter">needle</code>ï¼Œå¦‚æœæ²¡æœ‰è®¾ç½®         <code class="parameter">strict</code> åˆ™ä½¿ç”¨å®½æ¾çš„æ¯”è¾ƒã€‚
-    </p>
-   </div>
-
- <div class="refsect1 parameters" id="refsect1-function.in-array-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">needle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¾…æœç´¢çš„å€¼ã€‚
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        å¦‚æœ <code class="parameter">needle</code> æ˜¯å­—ç¬¦ä¸²ï¼Œåˆ™æ¯”è¾ƒæ˜¯åŒºåˆ†å¤§å°å†™çš„ã€‚
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">haystack</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¿™ä¸ªæ•°ç»„ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">strict</code></dt>
-
-     <dd>
-
-      <p class="para">
-        å¦‚æœç¬¬ä¸‰ä¸ªå‚æ•° <code class="parameter">strict</code> çš„å€¼ä¸º
-     <strong><code>TRUE</code></strong> åˆ™ <span class="function"><strong>in_array()</strong></span> å‡½æ•°è¿˜ä¼šæ£€æŸ¥
-     <code class="parameter">needle</code> çš„<a href="language.types.html" class="link">ç±»å‹</a>æ˜¯å¦å’Œ
-     <code class="parameter">haystack</code> ä¸­çš„ç›¸åŒã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.in-array-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">å¦‚æœæ‰¾åˆ° <code class="parameter">needle</code> åˆ™è¿”å› <strong><code>TRUE</code></strong>ï¼Œå¦åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.in-array-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        åœ¨ PHP ç‰ˆæœ¬ 4.2.0 ä¹‹å‰ï¼Œ<code class="parameter">needle</code> ä¸å…è®¸æ˜¯ä¸€ä¸ªæ•°ç»„ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.in-array-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5330">
-    <p><strong>Example #1 <span class="function"><strong>in_array()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$os&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"Mac"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"NT"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Irix"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Linux"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #DD0000">"Irix"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$os</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Got&nbsp;Irix"</span><span style="color: #007700">;<br />}<br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #DD0000">"mac"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$os</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Got&nbsp;mac"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-      ç¬¬äºŒä¸ªæ¡ä»¶å¤±è´¥ï¼Œå› ä¸º <span class="function"><strong>in_array()</strong></span>
-       æ˜¯åŒºåˆ†å¤§å°å†™çš„ï¼Œæ‰€ä»¥ä»¥ä¸Šç¨‹åºæ˜¾ç¤ºä¸ºï¼š
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Got Irix
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5331">
-    <p><strong>Example #2 <span class="function"><strong>in_array()</strong></span> ä¸¥æ ¼ç±»å‹æ£€æŸ¥ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'1.10'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12.4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1.13</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #DD0000">'12.4'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"'12.4'&nbsp;found&nbsp;with&nbsp;strict&nbsp;check\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #0000BB">1.13</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"1.13&nbsp;found&nbsp;with&nbsp;strict&nbsp;check\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-1.13 found with strict check
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5332">
-    <p><strong>Example #3 <span class="function"><strong>in_array()</strong></span> ä¸­ç”¨æ•°ç»„ä½œä¸º needle</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(array(</span><span style="color: #DD0000">'p'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'h'</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">'p'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">'o'</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'p'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'h'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"'ph'&nbsp;was&nbsp;found\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'f'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'i'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"'fi'&nbsp;was&nbsp;found\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #DD0000">'o'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"'o'&nbsp;was&nbsp;found\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-  &#039;ph&#039; was found
-  &#039;o&#039; was found
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.in-array-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.array-search.html" class="function" rel="rdfs-seeAlso">array_search()</a> - åœ¨æ•°ç»„ä¸­æœç´¢ç»™å®šçš„å€¼ï¼Œå¦‚æœæˆåŠŸåˆ™è¿”å›ç›¸åº”çš„é”®å</span></li>
-    <li class="member"><span class="function"><a href="function.isset.html" class="function" rel="rdfs-seeAlso">isset()</a> - æ£€æµ‹å˜é‡æ˜¯å¦è®¾ç½®</span></li>
-    <li class="member"><span class="function"><a href="function.array-key-exists.html" class="function" rel="rdfs-seeAlso">array_key_exists()</a> - æ£€æŸ¥ç»™å®šçš„é”®åæˆ–ç´¢å¼•æ˜¯å¦å­˜åœ¨äºæ•°ç»„ä¸­</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.extract.html">extract</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.key-exists.html">key_exists</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

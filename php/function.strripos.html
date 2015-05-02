@@ -1,144 +1,128 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strrev.html">strrev</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strrpos.html">strrpos</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.strripos" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">strripos</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">strripos</span> &mdash; <span class="dc-title">计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.strripos-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>strripos</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$haystack</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$needle</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   以不区分大小写的方式查找指定字符串在目标字符串中最后一次出现的位置。与 <span class="function"><a href="function.strrpos.html" class="function">strrpos()</a></span> 不同，<span class="function"><strong>strripos()</strong></span> 不区分大小写。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.strripos-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">haystack</code></dt>
-
-     <dd>
-
-      <p class="para">
-       在此字符串中进行查找。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">needle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       注意 <code class="parameter">needle</code> 可以是一个单字符或者多字符的字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       参数 <code class="parameter">offset</code> 可以被指定来查找字符串中任意长度的子字符串。
-      </p>
-      <p class="para">
-       负数偏移量将使得查找从字符串的起始位置开始，到 <code class="parameter">offset</code> 位置为止。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.strripos-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回 needle 相对于 <code class="parameter">haystack</code> 字符串的位置(和搜索的方向和偏移量无关)。同时注意字符串的起始位置为 0 而非 1。
-  </p>
-  <p class="para">
-   如果 needle 未被发现，返回 <strong><code>FALSE</code></strong>。
-  </p>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">此函数可能返回布尔值
-<strong><code>FALSE</code></strong>，但也可能返回等同于 <strong><code>FALSE</code></strong> 的非布尔值。请阅读 <a href="language.types.boolean.html" class="link">布尔类型</a>章节以获取更多信息。应使用
-<a href="language.operators.comparison.html" class="link">===
-运算符</a>来测试此函数的返回值。</p></div>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.strripos-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5217">
-    <p><strong>Example #1 <span class="function"><strong>strripos()</strong></span> 简单范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$haystack&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'ababcd'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$needle&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'aB'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$pos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strripos</span><span style="color: #007700">(</span><span style="color: #0000BB">$haystack</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$needle</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$pos&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Sorry,&nbsp;we&nbsp;did&nbsp;not&nbsp;find&nbsp;(</span><span style="color: #0000BB">$needle</span><span style="color: #DD0000">)&nbsp;in&nbsp;(</span><span style="color: #0000BB">$haystack</span><span style="color: #DD0000">)"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Congratulations!\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"We&nbsp;found&nbsp;the&nbsp;last&nbsp;(</span><span style="color: #0000BB">$needle</span><span style="color: #DD0000">)&nbsp;in&nbsp;(</span><span style="color: #0000BB">$haystack</span><span style="color: #DD0000">)&nbsp;at&nbsp;position&nbsp;(</span><span style="color: #0000BB">$pos</span><span style="color: #DD0000">)"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-   Congratulations!
-   We found the last (aB) in (ababcd) at position (2)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.strripos-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.strpos.html" class="function" rel="rdfs-seeAlso">strpos()</a> - 查找字符串首次出现的位置</span></li>
-    <li class="member"><span class="function"><a href="function.stripos.html" class="function" rel="rdfs-seeAlso">stripos()</a> - 查找字符串首次出现的位置（不区分大小写）</span></li>
-    <li class="member"><span class="function"><a href="function.strrchr.html" class="function" rel="rdfs-seeAlso">strrchr()</a> - 查找指定字符在字符串中的最后一次出现</span></li>
-    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 返回字符串的子串</span></li>
-    <li class="member"><span class="function"><a href="function.stristr.html" class="function" rel="rdfs-seeAlso">stristr()</a> - strstr 函数的忽略大小写版本</span></li>
-    <li class="member"><span class="function"><a href="function.strstr.html" class="function" rel="rdfs-seeAlso">strstr()</a> - 查找字符串的首次出现</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >strripos</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="strrev" HREF="function.strrev.html"><LINK  REL="NEXT" TITLE="strrpos" HREF="function.strrpos.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.strrev.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.strrpos.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.strripos" ></A
+>strripos</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN110825" ></A
+><P  >    (PHP 5 CVS only)</P
+>strripos&nbsp;--&nbsp;
+     Find position of last occurrence of a case-insensitive string in a string
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN110828" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >strripos</B
+> ( string haystack, string needle [, int offset])<BR  ></BR
+><P  >&#13;     Returns the numeric position of the last occurrence of
+     <TT  CLASS="parameter" ><I  >needle</I
+></TT
+> in the
+     <TT  CLASS="parameter" ><I  >haystack</I
+></TT
+> string.  Unlike
+     <A  HREF="function.strrpos.html"  ><B  CLASS="function" >strrpos()</B
+></A
+>, <B  CLASS="function" >strripos()</B
+> is
+     case-insensitive.  Also note that string positions start at 0, and not
+     1. 
+    </P
+><P  >&#13;     Note that the <TT  CLASS="parameter" ><I  >needle</I
+></TT
+> may be a string of one or
+     more characters.
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >needle</I
+></TT
+> is not found, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> is returned.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >����������ܷ��� Boolean <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��Ҳ���ܷ���һ���� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ��ȵط� Boolean ֵ������ 0 ���� "" ������� <A  HREF="language.types.boolean.html"  >Booleans</A
+> ���й��½��Ի�ȡ������Ϣ����ʹ�� <A  HREF="language.operators.comparison.html"  >=== ������</A
+> �����Ըú����ķ���ֵ�� </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN110859" ></A
+><P  ><B  >���� 1. A simple <B  CLASS="function" >strripos()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$haystack </font><font  color="#007700">= </font><font  color="#DD0000">'ababcd'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$needle&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#DD0000">'aB'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$pos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">strripos</font><font  color="#007700">(</font><font  color="#0000BB">$haystack</font><font  color="#007700">, </font><font  color="#0000BB">$needle</font><font  color="#007700">);<br  /><br  />if (</font><font  color="#0000BB">$pos </font><font  color="#007700">=== </font><font  color="#0000BB">false</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Sorry, we did not find ($needle) in ($haystack)"</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Congratulations!\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"We found the last ($needle) in ($haystack) at position ($pos)"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Outputs:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Congratulations!
+   We found the last (aB) in (ababcd) at position (2)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >offset</I
+></TT
+> may be specified to begin searching an 
+     arbitrary number of characters into the string.  Negative values will 
+     stop searching at an arbitrary point prior to the end of the string.
+    </P
+><P  >&#13;     See also <A  HREF="function.strrpos.html"  ><B  CLASS="function" >strrpos()</B
+></A
+>,
+     <A  HREF="function.strrchr.html"  ><B  CLASS="function" >strrchr()</B
+></A
+>, 
+     <A  HREF="function.substr.html"  ><B  CLASS="function" >substr()</B
+></A
+>, <A  HREF="function.stripos.html"  ><B  CLASS="function" >stripos()</B
+></A
+> and 
+     <A  HREF="function.stristr.html"  ><B  CLASS="function" >stristr()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.strrev.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.strrpos.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >strrev</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >strrpos</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strrev.html">strrev</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strrpos.html">strrpos</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

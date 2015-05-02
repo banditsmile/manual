@@ -1,114 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>é€šè¿‡å·²æ‰“å¼€çš„æ–‡ä»¶æŒ‡é’ˆå–å¾—æ–‡ä»¶ä¿¡æ¯</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fseek.html">fseek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftell.html">ftell</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fstat" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fstat</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">fstat</span> &mdash; <span class="dc-title">é€šè¿‡å·²æ‰“å¼€çš„æ–‡ä»¶æŒ‡é’ˆå–å¾—æ–‡ä»¶ä¿¡æ¯</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fstat-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>fstat</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   è·å–ç”±æ–‡ä»¶æŒ‡é’ˆ <code class="parameter">handle</code>
-   æ‰€æ‰“å¼€æ–‡ä»¶çš„ç»Ÿè®¡ä¿¡æ¯ã€‚æœ¬å‡½æ•°å’Œ <span class="function"><a href="function.stat.html" class="function">stat()</a></span>
-   å‡½æ•°ç›¸ä¼¼ï¼Œé™¤äº†å®ƒæ˜¯ä½œç”¨äºå·²æ‰“å¼€çš„æ–‡ä»¶æŒ‡é’ˆè€Œä¸æ˜¯æ–‡ä»¶åã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fstat-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">æ–‡ä»¶ç³»ç»ŸæŒ‡é’ˆï¼Œæ˜¯å…¸å‹åœ°ç”±
-<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> åˆ›å»ºçš„ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>(èµ„æº)ã€‚</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fstat-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ä¸€ä¸ªæ•°ç»„å…·æœ‰è¯¥æ–‡ä»¶çš„ç»Ÿè®¡ä¿¡æ¯ï¼Œè¯¥æ•°ç»„çš„æ ¼å¼è¯¦ç»†è¯´æ˜äºæ‰‹å†Œä¸­
-   <span class="function"><a href="function.stat.html" class="function">stat()</a></span> é¡µé¢é‡Œã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.fstat-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2491">
-    <p><strong>Example #1 <span class="function"><strong>fstat()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å¼€æ–‡ä»¶<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/passwd"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;å–å¾—ç»Ÿè®¡ä¿¡æ¯<br /></span><span style="color: #0000BB">$fstat&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fstat</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;å…³é—­æ–‡ä»¶<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;åªæ˜¾ç¤ºå…³è”æ•°ç»„éƒ¨åˆ†<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_slice</span><span style="color: #007700">(</span><span style="color: #0000BB">$fstat</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">13</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >fstat</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fseek" HREF="function.fseek.html"><LINK  REL="NEXT" TITLE="ftell" HREF="function.ftell.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fseek.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftell.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fstat" ></A
+>fstat</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28819" ></A
+><P  >    (PHP 4 )</P
+>fstat&nbsp;--&nbsp;Í¨¹ıÒÑ´ò¿ªµÄÎÄ¼şÖ¸ÕëÈ¡µÃÎÄ¼şĞÅÏ¢</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28822" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >fstat</B
+> ( resource handle)<BR  ></BR
+><P  >&#13;     »ñÈ¡ÓÉÎÄ¼şÖ¸Õë <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>
+     Ëù´ò¿ªÎÄ¼şµÄÍ³¼ÆĞÅÏ¢¡£±¾º¯ÊıºÍ <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+>
+     º¯ÊıÏàËÆ£¬³ıÁËËüÊÇ×÷ÓÃÓÚÒÑ´ò¿ªµÄÎÄ¼şÖ¸Õë¶ø²»ÊÇÎÄ¼şÃû¡£
+    </P
+><P  >&#13;     ·µ»ØÒ»¸öÊı×é¾ßÓĞ¸ÃÎÄ¼şµÄÍ³¼ÆĞÅÏ¢£¬¸ÃÊı×éµÄ¸ñÊ½ÏêÏ¸ËµÃ÷ÓÚÊÖ²áÖĞ
+     <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+> Ò³ÃæÀï¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN28836" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >fstat()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// ´ò¿ªÎÄ¼ş<br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"/etc/passwd"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// È¡µÃÍ³¼ÆĞÅÏ¢<br  /></font><font  color="#0000BB">$fstat </font><font  color="#007700">= </font><font  color="#0000BB">fstat</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ¹Ø±ÕÎÄ¼ş<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Ö»ÏÔÊ¾¹ØÁªÊı×é²¿·Ö<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">array_slice</font><font  color="#007700">(</font><font  color="#0000BB">$fstat</font><font  color="#007700">, </font><font  color="#0000BB">13</font><font  color="#007700">));<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Êä³öÀàËÆÓÚ£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [dev] =&gt; 771
-    [ino] =&gt; 488704
-    [mode] =&gt; 33188
-    [nlink] =&gt; 1
-    [uid] =&gt; 0
-    [gid] =&gt; 0
-    [rdev] =&gt; 0
-    [size] =&gt; 1114
-    [atime] =&gt; 1061067181
-    [mtime] =&gt; 1056136526
-    [ctime] =&gt; 1056136526
-    [blksize] =&gt; 4096
-    [blocks] =&gt; 8
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+    [dev] =&#62; 771
+    [ino] =&#62; 488704
+    [mode] =&#62; 33188
+    [nlink] =&#62; 1
+    [uid] =&#62; 0
+    [gid] =&#62; 0
+    [rdev] =&#62; 0
+    [size] =&#62; 1114
+    [atime] =&#62; 1061067181
+    [mtime] =&#62; 1056136526
+    [ctime] =&#62; 1056136526
+    [blksize] =&#62; 4096
+    [blocks] =&#62; 8
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯ÊıµÄ½á¹û»á±»»º´æ¡£ÏêÏ¸ĞÅÏ¢²Î¼û <A  HREF="function.clearstatcache.html"  ><B  CLASS="function" >clearstatcache()</B
+></A
+>¡£</P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>±¾º¯Êı²»ÄÜ×÷ÓÃÓÚ<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>£¬±»¼ì²éµÄÎÄ¼ş±ØĞëÍ¨¹ı·şÎñÆ÷µÄÎÄ¼şÏµÍ³·ÃÎÊ¡£
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fseek.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftell.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fseek</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftell</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.fstat-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°ä¸èƒ½ä½œç”¨äº<a href="features.remote-files.html" class="link">è¿œç¨‹æ–‡ä»¶</a>ï¼Œè¢«æ£€æŸ¥çš„æ–‡ä»¶å¿…é¡»æ˜¯å¯é€šè¿‡æœåŠ¡å™¨çš„æ–‡ä»¶ç³»ç»Ÿè®¿é—®çš„ã€‚</span></p></blockquote>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fseek.html">fseek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftell.html">ftell</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

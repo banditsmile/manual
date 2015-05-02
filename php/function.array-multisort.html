@@ -1,388 +1,148 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å¯¹å¤šä¸ªæ•°ç»„æˆ–å¤šç»´æ•°ç»„è¿›è¡Œæ’åº</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-merge.html">array_merge</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-pad.html">array_pad</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-multisort" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">array_multisort</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">array_multisort</span> &mdash; <span class="dc-title">å¯¹å¤šä¸ªæ•°ç»„æˆ–å¤šç»´æ•°ç»„è¿›è¡Œæ’åº</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.array-multisort-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>array_multisort</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$arr</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$arg</code><span class="initializer"> = SORT_ASC</span></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$arg</code><span class="initializer"> = SORT_REGULAR</span></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>array_multisort()</strong></span>
-   å¯ä»¥ç”¨æ¥ä¸€æ¬¡å¯¹å¤šä¸ªæ•°ç»„è¿›è¡Œæ’åºï¼Œæˆ–è€…æ ¹æ®æŸä¸€ç»´æˆ–å¤šç»´å¯¹å¤šç»´æ•°ç»„è¿›è¡Œæ’åºã€‚
-  </p>
-  <p class="para">
-   å…³è”ï¼ˆ<span class="type"><a href="language.types.string.html" class="type string">string</a></span>ï¼‰é”®åä¿æŒä¸å˜ï¼Œä½†æ•°å­—é”®åä¼šè¢«é‡æ–°ç´¢å¼•ã€‚
-  </p>
-    
-<p class="para">
- æ’åºé¡ºåºæ ‡å¿—ï¼š
- <ul class="itemizedlist">
-  <li class="listitem">
-   <span class="simpara"><strong><code>SORT_ASC</code></strong> - æŒ‰ç…§ä¸Šå‡é¡ºåºæ’åº</span>
-  </li>
-  <li class="listitem">
-   <span class="simpara"><strong><code>SORT_DESC</code></strong> - æŒ‰ç…§ä¸‹é™é¡ºåºæ’åº</span>
-  </li>
- </ul>
-</p>
-<p class="para">
- æ’åºç±»å‹æ ‡å¿—ï¼š
- <ul class="itemizedlist">
-  <li class="listitem">
-   <span class="simpara"><strong><code>SORT_REGULAR</code></strong> - å°†é¡¹ç›®æŒ‰ç…§é€šå¸¸æ–¹æ³•æ¯”è¾ƒ</span>
-  </li>
-  <li class="listitem">
-   <span class="simpara"><strong><code>SORT_NUMERIC</code></strong> - å°†é¡¹ç›®æŒ‰ç…§æ•°å€¼æ¯”è¾ƒ</span>
-  </li>
-  <li class="listitem">
-   <span class="simpara"><strong><code>SORT_STRING</code></strong> - å°†é¡¹ç›®æŒ‰ç…§å­—ç¬¦ä¸²æ¯”è¾ƒ</span>
-  </li>
- </ul>
-</p>
-<p class="para">
- æ¯ä¸ªæ•°ç»„ä¹‹åä¸èƒ½æŒ‡å®šä¸¤ä¸ªåŒç±»çš„æ’åºæ ‡å¿—ã€‚æ¯ä¸ªæ•°ç»„åæŒ‡å®šçš„æ’åºæ ‡å¿—ä»…å¯¹è¯¥æ•°ç»„æœ‰æ•ˆ - åœ¨æ­¤ä¹‹å‰ä¸ºé»˜è®¤å€¼
- <strong><code>SORT_ASC</code></strong> å’Œ <strong><code>SORT_REGULAR</code></strong>ã€‚
-</p>
-  
-  <p class="para">
-   è¾“å…¥æ•°ç»„è¢«å½“æˆä¸€ä¸ªè¡¨çš„åˆ—å¹¶ä»¥è¡Œæ¥æ’åºâ€”â€”è¿™ç±»ä¼¼äº SQL çš„ ORDER BY
-   å­å¥çš„åŠŸèƒ½ã€‚ç¬¬ä¸€ä¸ªæ•°ç»„æ˜¯è¦æ’åºçš„ä¸»è¦æ•°ç»„ã€‚æ•°ç»„ä¸­çš„è¡Œï¼ˆå€¼ï¼‰æ¯”è¾ƒä¸ºç›¸åŒçš„è¯å°±æŒ‰ç…§ä¸‹ä¸€ä¸ªè¾“å…¥æ•°ç»„ä¸­ç›¸åº”å€¼çš„å¤§å°æ¥æ’åºï¼Œä¾æ­¤ç±»æ¨ã€‚
-  </p>
-  <p class="para">
-   æœ¬å‡½æ•°çš„å‚æ•°ç»“æ„æœ‰äº›ä¸åŒå¯»å¸¸ï¼Œä½†æ˜¯éå¸¸çµæ´»ã€‚ç¬¬ä¸€ä¸ªå‚æ•°å¿…é¡»æ˜¯ä¸€ä¸ªæ•°ç»„ã€‚æ¥ä¸‹æ¥çš„æ¯ä¸ªå‚æ•°å¯ä»¥æ˜¯æ•°ç»„æˆ–è€…æ˜¯ä¸‹é¢åˆ—å‡ºçš„æ’åºæ ‡å¿—ã€‚
-  </p>
-  
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.array-multisort-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">arr</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦æ’åºçš„ä¸€ä¸ª <span class="type"><a href="language.types.array.html" class="type array">array</a></span>ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">arg</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ¥ä¸‹æ¥çš„æ¯ä¸ªå‚æ•°å¯ä»¥æ˜¯å¦ä¸€ä¸ª <span class="type"><a href="language.types.array.html" class="type array">array</a></span> æˆ–è€…æ˜¯ä¸ºä¹‹å‰ <span class="type"><a href="language.types.array.html" class="type array">array</a></span> æ’åºæ ‡å¿—é€‰é¡¹å‚æ•°ï¼š
-       <strong><code>SORT_ASC</code></strong>, 
-       <strong><code>SORT_DESC</code></strong>, 
-       <strong><code>SORT_REGULAR</code></strong>,
-       <strong><code>SORT_NUMERIC</code></strong>,
-       <strong><code>SORT_STRING</code></strong>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">...</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Additional <code class="parameter">arg</code>&#039;s. 
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-  
-  
- <div class="refsect1 returnvalues" id="refsect1-function.array-multisort-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-  
- 
- <div class="refsect1 examples" id="refsect1-function.array-multisort-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5283">
-    <p><strong>Example #1 Sorting multiple arrays</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$ar1&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$ar2&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_multisort</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ar2</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     In this example, after sorting, the first array will contain 0,
-     10, 100, 100. The second array will contain 4, 1, 2, 3. The
-     entries in the second array corresponding to the identical
-     entries in the first array (100 and 100) were sorted as well.
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(4) {
-  [0]=&gt; int(0)
-  [1]=&gt; int(10)
-  [2]=&gt; int(100)
-  [3]=&gt; int(100)
-}
-array(4) {
-  [0]=&gt; int(4)
-  [1]=&gt; int(1)
-  [2]=&gt; int(2)
-  [3]=&gt; int(3)
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5284">
-    <p><strong>Example #2 æ’åºå¤šç»´æ•°ç»„</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$ar&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">"10"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">11</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"2"</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br /></span><span style="color: #0000BB">array_multisort</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">SORT_ASC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_STRING</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ar</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">SORT_NUMERIC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_DESC</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     æœ¬ä¾‹ä¸­åœ¨æ’åºåï¼Œç¬¬ä¸€ä¸ªæ•°ç»„å°†å˜æˆ
-     &quot;10&quot;ï¼Œ100ï¼Œ100ï¼Œ11ï¼Œ&quot;a&quot;ï¼ˆè¢«å½“ä½œå­—ç¬¦ä¸²ä»¥å‡åºæ’åˆ—ï¼‰ã€‚ç¬¬äºŒä¸ªæ•°ç»„å°†åŒ…å«
-     1, 3, &quot;2&quot;, 2, 1ï¼ˆè¢«å½“ä½œæ•°å­—ä»¥é™åºæ’åˆ—ï¼‰ã€‚
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(2) {
-  [0]=&gt; array(5) {
-    [0]=&gt; string(2) &quot;10&quot;
-    [1]=&gt; int(100)
-    [2]=&gt; int(100)
-    [3]=&gt; int(11)
-    [4]=&gt; string(1) &quot;a&quot;
-  }
-  [1]=&gt; array(5) {
-    [0]=&gt; int(1)
-    [1]=&gt; int(3)
-    [2]=&gt; string(1) &quot;2&quot;
-    [3]=&gt; int(2)
-    [4]=&gt; int(1)
-  }
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5285">
-    <p><strong>Example #3 å¯¹æ•°æ®åº“ç»“æœè¿›è¡Œæ’åº</strong></p>
-    <div class="example-contents"><p>
-     æœ¬ä¾‹ä¸­ <var class="varname"><var class="varname">data</var></var>
-     æ•°ç»„ä¸­çš„æ¯ä¸ªå•å…ƒè¡¨ç¤ºä¸€ä¸ªè¡¨ä¸­çš„ä¸€è¡Œã€‚è¿™æ˜¯å…¸å‹çš„æ•°æ®åº“è®°å½•çš„æ•°æ®é›†åˆã€‚
-    </p></div>
-    <div class="example-contents"><p>
-     ä¾‹å­ä¸­çš„æ•°æ®å¦‚ä¸‹ï¼š
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-volume | edition
--------+--------
-    67 |       2
-    86 |       1
-    85 |       6
-    98 |       2
-    86 |       6
-    67 |       7
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     æ•°æ®å…¨éƒ½å­˜æ”¾åœ¨åä¸º <var class="varname"><var class="varname">data</var></var>
-     çš„æ•°ç»„ä¸­ã€‚è¿™é€šå¸¸æ˜¯é€šè¿‡å¾ªç¯ä»æ•°æ®åº“å–å¾—çš„ç»“æœï¼Œä¾‹å¦‚
-     <span class="function"><a href="function.mysql-fetch-assoc.html" class="function">mysql_fetch_assoc()</a></span>ã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$data</span><span style="color: #007700">[]&nbsp;=&nbsp;array(</span><span style="color: #DD0000">'volume'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">67</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'edition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data</span><span style="color: #007700">[]&nbsp;=&nbsp;array(</span><span style="color: #DD0000">'volume'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">86</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'edition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data</span><span style="color: #007700">[]&nbsp;=&nbsp;array(</span><span style="color: #DD0000">'volume'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">85</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'edition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data</span><span style="color: #007700">[]&nbsp;=&nbsp;array(</span><span style="color: #DD0000">'volume'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">98</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'edition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data</span><span style="color: #007700">[]&nbsp;=&nbsp;array(</span><span style="color: #DD0000">'volume'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">86</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'edition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data</span><span style="color: #007700">[]&nbsp;=&nbsp;array(</span><span style="color: #DD0000">'volume'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">67</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'edition'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     æœ¬ä¾‹ä¸­å°†æŠŠ <var class="varname"><var class="varname">volume</var></var> é™åºæ’åˆ—ï¼ŒæŠŠ
-     <var class="varname"><var class="varname">edition</var></var> å‡åºæ’åˆ—ã€‚
-    </p></div>
-    <div class="example-contents"><p>
-     ç°åœ¨æœ‰äº†åŒ…å«æœ‰è¡Œçš„æ•°ç»„ï¼Œä½†æ˜¯ <span class="function"><strong>array_multisort()</strong></span>
-     éœ€è¦ä¸€ä¸ªåŒ…å«åˆ—çš„æ•°ç»„ï¼Œå› æ­¤ç”¨ä»¥ä¸‹ä»£ç æ¥å–å¾—åˆ—ï¼Œç„¶åæ’åºã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å–å¾—åˆ—çš„åˆ—è¡¨<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$volume</span><span style="color: #007700">[</span><span style="color: #0000BB">$key</span><span style="color: #007700">]&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'volume'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$edition</span><span style="color: #007700">[</span><span style="color: #0000BB">$key</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'edition'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;å°†æ•°æ®æ ¹æ®&nbsp;volume&nbsp;é™åºæ’åˆ—ï¼Œæ ¹æ®&nbsp;edition&nbsp;å‡åºæ’åˆ—<br />//&nbsp;æŠŠ&nbsp;$data&nbsp;ä½œä¸ºæœ€åä¸€ä¸ªå‚æ•°ï¼Œä»¥é€šç”¨é”®æ’åº<br /></span><span style="color: #0000BB">array_multisort</span><span style="color: #007700">(</span><span style="color: #0000BB">$volume</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_DESC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$edition</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_ASC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     æ•°æ®é›†åˆç°åœ¨æ’å¥½åºäº†ï¼Œç»“æœå¦‚ä¸‹ï¼š
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-volume | edition
--------+--------
-    98 |       2
-    86 |       1
-    86 |       6
-    85 |       6
-    67 |       2
-    67 |       7
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5286">
-    <p><strong>Example #4 ä¸åŒºåˆ†å¤§å°å†™å­—æ¯æ’åº</strong></p>
-    <div class="example-contents"><p>
-     <strong><code>SORT_STRING</code></strong> å’Œ
-     <strong><code>SORT_REGULAR</code></strong>
-     éƒ½æ˜¯åŒºåˆ†å¤§å°å†™å­—æ¯çš„ï¼Œå¤§å†™å­—æ¯ä¼šæ’åœ¨å°å†™å­—æ¯ä¹‹å‰ã€‚
-    </p></div>
-    <div class="example-contents"><p>
-     è¦è¿›è¡Œä¸åŒºåˆ†å¤§å°å†™çš„æ’åºï¼Œå°±è¦æŒ‰ç…§åŸæ•°ç»„çš„å°å†™å­—æ¯æ‹·è´æ¥æ’åºã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Alpha'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'atomic'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Beta'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bank'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$array_lowercase&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_map</span><span style="color: #007700">(</span><span style="color: #DD0000">'strtolower'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">array_multisort</span><span style="color: #007700">(</span><span style="color: #0000BB">$array_lowercase</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_ASC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_STRING</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; Alpha
-    [1] =&gt; atomic
-    [2] =&gt; bank
-    [3] =&gt; Beta
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
-  
-      
-  <p class="para">
-   ã€è¯‘è€…æ³¨ã€‘æœ¬å‡½æ•°ç›¸å½“æœ‰ç”¨ï¼Œä¸ºæœ‰åŠ©äºç†è§£ï¼Œè¯·å†çœ‹ä¸‹é¢è¿™ä¸ªä¾‹å­ï¼š
-  </p>
-  <p class="para">
-   <div class="example" id="example-5287">
-    <p><strong>Example #5 åæ¬¡æ’åˆ—</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$grade&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"score"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #0000BB">70</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">95</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">70.0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">60</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"70"</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"Zhang&nbsp;San"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Li&nbsp;Si"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Wang&nbsp;Wu"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"Zhao&nbsp;Liu"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Liu&nbsp;Qi"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">array_multisort</span><span style="color: #007700">(</span><span style="color: #0000BB">$grade</span><span style="color: #007700">[</span><span style="color: #DD0000">"score"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">SORT_NUMERIC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_DESC</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å°†åˆ†æ•°ä½œä¸ºæ•°å€¼ï¼Œç”±é«˜åˆ°ä½æ’åº<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$grade</span><span style="color: #007700">[</span><span style="color: #DD0000">"name"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">SORT_STRING</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SORT_ASC</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å°†åå­—ä½œä¸ºå­—ç¬¦ä¸²ï¼Œç”±å°åˆ°å¤§æ’åº<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$grade</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(2) {
-  [&quot;score&quot;]=&gt;
-  array(5) {
-    [0]=&gt;
-    int(95)
-    [1]=&gt;
-    string(2) &quot;70&quot;
-    [2]=&gt;
-    float(70)
-    [3]=&gt;
-    int(70)
-    [4]=&gt;
-    int(60)
-  }
-  [&quot;name&quot;]=&gt;
-  array(5) {
-    [0]=&gt;
-    string(5) &quot;Li Si&quot;
-    [1]=&gt;
-    string(6) &quot;Liu Qi&quot;
-    [2]=&gt;
-    string(7) &quot;Wang Wu&quot;
-    [3]=&gt;
-    string(9) &quot;Zhang San&quot;
-    [4]=&gt;
-    string(8) &quot;Zhao Liu&quot;
-  }
-}
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     æœ¬ä¾‹ä¸­å¯¹åŒ…å«æˆç»©çš„æ•°ç»„ <var class="varname"><var class="varname">$grade</var></var>
-     æŒ‰ç…§åˆ†æ•°ï¼ˆscoreï¼‰ç”±é«˜åˆ°ä½è¿›è¡Œæ’åºï¼Œåˆ†æ•°ç›¸åŒçš„äººåˆ™æŒ‰ç…§åå­—ï¼ˆnameï¼‰ç”±å°åˆ°å¤§æ’åºã€‚æ’åºåæå››
-     95 åˆ†ä¸ºç¬¬ä¸€åï¼Œèµµå…­ 60 åˆ†ä¸ºç¬¬äº”åæ²¡æœ‰å¼‚è®®ã€‚å¼ ä¸‰ã€ç‹äº”å’Œåˆ˜ä¸ƒéƒ½æ˜¯
-     70 åˆ†ï¼Œä»–ä»¬çš„åæ¬¡åˆ™ç”±å…¶å§“åçš„å­—æ¯é¡ºåºæ’åˆ—ï¼ŒLiu åœ¨å‰ï¼ŒWang åœ¨åè€Œ
-     Zhang åœ¨æœ€åã€‚ä¸ºäº†åŒºåˆ«ï¼Œä¸‰ä¸ª 70
-     åˆ†åˆ†åˆ«ç”¨äº†æ•´æ•°ï¼Œæµ®ç‚¹æ•°å’Œå­—ç¬¦ä¸²æ¥è¡¨ç¤ºï¼Œå¯ä»¥åœ¨ç¨‹åºè¾“å‡ºä¸­æ¸…æ¥šåœ°çœ‹åˆ°å®ƒä»¬æ’åºçš„ç»“æœã€‚
-    </p></div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >array_multisort</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_merge" HREF="function.array-merge.html"><LINK  REL="NEXT" TITLE="array_pad" HREF="function.array-pad.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-merge.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-pad.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-multisort" ></A
+>array_multisort</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN8703" ></A
+><P  >    (PHP 4 )</P
+>array_multisort&nbsp;--&nbsp;¶Ô¶à¸öÊı×é»ò¶àÎ¬Êı×é½øĞĞÅÅĞò</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN8706" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >array_multisort</B
+> ( array ar1 [, mixed arg [, mixed ... [, array ...]]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_multisort()</B
+> ¿ÉÒÔÓÃÀ´Ò»´Î¶Ô¶à¸öÊı×é½øĞĞÅÅĞò»òÕß¸ù¾İÄ³Ò»Î¬¶Ô¶àÎ¬Êı×é½øĞĞÅÅĞò¡£ÅÅĞòÊ±±£ÁôÔ­ÓĞµÄ¼üÃû¹ØÁª¡£
+    </P
+><P  >&#13;     ÊäÈëÊı×é±»µ±³ÉÒ»¸ö±íµÄÁĞ²¢ÒÔĞĞÀ´ÅÅĞò £­ ÕâÀàËÆÓÚ SQL µÄ ORDER BY
+     ×Ó¾äµÄ¹¦ÄÜ¡£µÚÒ»¸öÊı×éÊÇÒªÅÅĞòµÄÖ÷ÒªÊı×é¡£Êı×éÖĞµÄĞĞ£¨Öµ£©±È½ÏÎªÏàÍ¬µÄ»°¾Í°´ÕÕÏÂÒ»¸öÊäÈëÊı×éÖĞÏàÓ¦ÖµµÄ´óĞ¡À´ÅÅĞò£¬ÒÀ´ËÀàÍÆ¡£
+    </P
+><P  >&#13;     ±¾º¯ÊıµÄ²ÎÊı½á¹¹ÓĞĞ©²»Í¬Ñ°³££¬µ«ÊÇ·Ç³£Áé»î¡£µÚÒ»¸ö²ÎÊı±ØĞëÊÇÒ»¸öÊı×é¡£½ÓÏÂÀ´µÄÃ¿¸ö²ÎÊı¿ÉÒÔÊÇÊı×é»òÕßÊÇÏÂÃæÁĞ³öµÄÅÅĞò±êÖ¾¡£
+    </P
+><P  >&#13;     ÅÅĞòË³Ğò±êÖ¾£º
+     <P  ></P
+><UL  ><LI  ><P  >SORT_ASC - °´ÕÕÉÏÉıË³ĞòÅÅĞò</P
+></LI
+><LI  ><P  >SORT_DESC - °´ÕÕÏÂ½µË³ĞòÅÅĞò</P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     ÅÅĞòÀàĞÍ±êÖ¾£º
+     <P  ></P
+><UL  ><LI  ><P  >SORT_REGULAR - ½«ÏîÄ¿°´ÕÕÍ¨³£·½·¨±È½Ï</P
+></LI
+><LI  ><P  >SORT_NUMERIC - ½«ÏîÄ¿°´ÕÕÊıÖµ±È½Ï</P
+></LI
+><LI  ><P  >SORT_STRING - ½«ÏîÄ¿°´ÕÕ×Ö·û´®±È½Ï</P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     Ã¿¸öÊı×éÖ®ºó²»ÄÜÖ¸¶¨Á½¸öÍ¬ÀàµÄÅÅĞò±êÖ¾¡£Ã¿¸öÊı×éºóÖ¸¶¨µÄÅÅĞò±êÖ¾½ö¶Ô¸ÃÊı×éÓĞĞ§ - ÔÚ´ËÖ®Ç°ÎªÄ¬ÈÏÖµ
+     SORT_ASC ºÍ SORT_REGULAR¡£
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8746" ></A
+><P  ><B  >Àı×Ó 1. ¶Ô¶à¸öÊı×éÅÅĞò</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$ar1 </font><font  color="#007700">= array (</font><font  color="#DD0000">"10"</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#DD0000">"a"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$ar2 </font><font  color="#007700">= array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#DD0000">"2"</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  /></font><font  color="#0000BB">array_multisort </font><font  color="#007700">(</font><font  color="#0000BB">$ar1</font><font  color="#007700">, </font><font  color="#0000BB">$ar2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ±¾ÀıÖĞ¾­¹ıÅÅĞòºó£¬µÚÒ»¸öÊı×é½«°üº¬
+     10£¬"a"£¬100£¬100¡£µÚ¶ş¸öÊı×é½«°üº¬
+     1£¬1£¬"2"£¬3¡£µÚ¶ş¸öÊı×éÖĞµÄÏîÄ¿Ë³ĞòÍêÈ«ºÍµÚÒ»¸öÊı×éÖĞÏàÓ¦µÄÏîÄ¿£¨100 ºÍ 100£©Ë³ĞòÒ»ÖÂ¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8751" ></A
+><P  ><B  >Àı×Ó 2. ¶Ô¶àÎ¬Êı×éÅÅĞò</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$ar </font><font  color="#007700">= array (array (</font><font  color="#DD0000">"10"</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#0000BB">100</font><font  color="#007700">, </font><font  color="#DD0000">"a"</font><font  color="#007700">), array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#DD0000">"2"</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">));<br  /></font><font  color="#0000BB">array_multisort </font><font  color="#007700">(</font><font  color="#0000BB">$ar</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">], </font><font  color="#0000BB">SORT_ASC</font><font  color="#007700">, </font><font  color="#0000BB">SORT_STRING</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ar</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">], </font><font  color="#0000BB">SORT_NUMERIC</font><font  color="#007700">, </font><font  color="#0000BB">SORT_DESC</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ±¾ÀıÖĞ¾­¹ıÅÅĞòºó£¬µÚÒ»¸öÊı×é½«°üº¬
+     10£¬100£¬100£¬"a"£¨×÷Îª×Ö·û´®ÉÏÉıÅÅĞò£©£¬µÚ¶ş¸öÊı×é½«°üº¬
+     1£¬3£¬"2"£¬1£¨×÷ÎªÊıÖµÏÂ½µÅÅĞò£©¡£
+    </P
+><P  >&#13;     ¡¾ÒëÕß×¢¡¿±¾º¯ÊıÏàµ±ÓĞÓÃ£¬ÎªÓĞÖúÓÚÀí½â£¬Çë¿´ÏÂÃæÕâ¸öÀı×Ó£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8757" ></A
+><P  ><B  >Àı×Ó 3. Ãû´ÎÅÅÁĞ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$grade = array("score" =&gt; array(70, 95, 70.0, 60, "70"),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name" =&gt; array("Zhang San", "Li Si", "Wang Wu",<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Zhao Liu", "Liu Qi"));<br  />array_multisort($grade["score"], SORT_NUMERIC, SORT_DESC,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ½«·ÖÊı×÷ÎªÊıÖµ£¬ÓÉ¸ßµ½µÍÅÅĞò<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$grade["name"], SORT_STRING, SORT_ASC);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ½«Ãû×Ö×÷Îª×Ö·û´®£¬ÓÉĞ¡µ½´óÅÅĞò<br  />var_dump($grade);</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÉÏÀıÊä³ö½á¹ûÈçÏÂ£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+array(2) {<br  />&nbsp;&nbsp;["score"]=&gt;<br  />&nbsp;&nbsp;array(5) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;[0]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;int(95)<br  />&nbsp;&nbsp;&nbsp;&nbsp;[1]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(2) "70"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[2]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;float(70)<br  />&nbsp;&nbsp;&nbsp;&nbsp;[3]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;int(70)<br  />&nbsp;&nbsp;&nbsp;&nbsp;[4]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;int(60)<br  />&nbsp;&nbsp;}<br  />&nbsp;&nbsp;["name"]=&gt;<br  />&nbsp;&nbsp;array(5) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;[0]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(5) "Li Si"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[1]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(6) "Liu Qi"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[2]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(7) "Wang Wu"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[3]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(9) "Zhang San"<br  />&nbsp;&nbsp;&nbsp;&nbsp;[4]=&gt;<br  />&nbsp;&nbsp;&nbsp;&nbsp;string(8) "Zhao Liu"<br  />&nbsp;&nbsp;}<br  />}</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ±¾ÀıÖĞ¶Ô°üº¬³É¼¨µÄÊı×é <TT  CLASS="varname" >$grade</TT
+>
+       °´ÕÕ·ÖÊı£¨score£©ÓÉ¸ßµ½µÍ½øĞĞÅÅĞò£¬·ÖÊıÏàÍ¬µÄÈËÔò°´ÕÕÃû×Ö£¨name£©ÓÉĞ¡µ½´óÅÅĞò¡£ÅÅĞòºóÀîËÄ
+       95 ·ÖÎªµÚÒ»Ãû£¬ÕÔÁù 60 ·ÖÎªµÚÎåÃûÃ»ÓĞÒìÒé¡£ÕÅÈı¡¢ÍõÎåºÍÁõÆß¶¼ÊÇ
+       70 ·Ö£¬ËûÃÇµÄÃû´ÎÔòÓÉÆäĞÕÃûµÄ×ÖÄ¸Ë³ĞòÅÅÁĞ£¬Liu ÔÚÇ°£¬Wang ÔÚºó¶ø
+       Zhang ÔÚ×îºó¡£ÎªÁËÇø±ğ£¬Èı¸ö 70
+       ·Ö·Ö±ğÓÃÁËÕûÊı£¬¸¡µãÊıºÍ×Ö·û´®À´±íÊ¾£¬¿ÉÒÔÔÚ³ÌĞòÊä³öÖĞÇå³şµØ¿´µ½ËüÃÇÅÅĞòµÄ½á¹û¡£
+      </P
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-merge.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-pad.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_merge</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_pad</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.array-multisort-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.usort.html" class="function" rel="rdfs-seeAlso">usort()</a> - ä½¿ç”¨ç”¨æˆ·è‡ªå®šä¹‰çš„æ¯”è¾ƒå‡½æ•°å¯¹æ•°ç»„ä¸­çš„å€¼è¿›è¡Œæ’åº</span></li>
-    <li class="member"><a href="array.sorting.html" class="link">æ•°ç»„æ’åºå‡½æ•°å¯¹æ¯”</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-merge.html">array_merge</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-pad.html">array_pad</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

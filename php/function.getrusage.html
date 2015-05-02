@@ -1,104 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取当前资源使用状况</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.getopt.html">getopt</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ini-alter.html">ini_alter</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.getrusage" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">getrusage</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">getrusage</span> &mdash; <span class="dc-title">获取当前资源使用状况</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.getrusage-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>getrusage</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$who</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   这是 <strong class="command">getrusage(2)</strong> 的接口。它返回了调用自系统的数据。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.getrusage-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">who</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果 <code class="parameter">who</code> 是 1，getrusage 会使用
-       <strong><code>RUSAGE_CHILDREN</code></strong> 来调用。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.getrusage-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回了一个包含系统返回数据的关联数组。所以条目均可通过文档中字段的名称来访问。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.getrusage-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-491">
-    <p><strong>Example #1 <span class="function"><strong>getrusage()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$dat&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getrusage</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_nswap"</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;number&nbsp;of&nbsp;swaps<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_majflt"</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;number&nbsp;of&nbsp;page&nbsp;faults<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_utime.tv_sec"</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;user&nbsp;time&nbsp;used&nbsp;(seconds)<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_utime.tv_usec"</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;user&nbsp;time&nbsp;used&nbsp;(microseconds)<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >getrusage</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="getopt" HREF="function.getopt.html"><LINK  REL="NEXT" TITLE="ini_alter" HREF="function.ini-alter.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.getopt.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ini-alter.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.getrusage" ></A
+>getrusage</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN88241" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>getrusage&nbsp;--&nbsp;Gets the current resource usages</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN88244" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >getrusage</B
+> ( [int who])<BR  ></BR
+><P  >&#13;     This is an interface to getrusage(2). It returns an associative
+     array containing the data returned from the system call. If who
+     is 1, getrusage will be called with RUSAGE_CHILDREN.
+    </P
+><P  >&#13;     All entries are accessible by using their documented field names.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN88255" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >getrusage()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$dat </font><font  color="#007700">= </font><font  color="#0000BB">getrusage</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_nswap"</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// number of swaps<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_majflt"</font><font  color="#007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// number of page faults<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_utime.tv_sec"</font><font  color="#007700">];&nbsp;&nbsp;</font><font  color="#FF8000">// user time used (seconds)<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$dat</font><font  color="#007700">[</font><font  color="#DD0000">"ru_utime.tv_usec"</font><font  color="#007700">]; </font><font  color="#FF8000">// user time used (microseconds)<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     See your system's man page on getrusage(2) for more details.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>�ú����������� Windows ƽ̨��
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.getopt.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ini-alter.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >getopt</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ini_alter</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.getrusage-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">此函数未在 Windows 平台下实现。</span></p></blockquote>
- </div>
-
-
-
- <div class="refsect1 seealso" id="refsect1-function.getrusage-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member">你系统上 <strong class="command">getrusage(2)</strong> 的 man page</li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.getopt.html">getopt</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ini-alter.html">ini_alter</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

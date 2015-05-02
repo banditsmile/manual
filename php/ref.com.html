@@ -1,235 +1,490 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>COM å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="class.variant.html">VARIANT</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.com-create-guid.html">com_create_guid</a></div>
- <div class="up"><a href="book.com.html">COM</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.com" class="reference"> 
- <h1 class="title">COM å‡½æ•°</h1> 
-   
- <div class="partintro">
-  <div class="section" id="com.seealso">
-   <h2 class="title">å‚è§</h2>
-   <p class="para">
-    For further information on COM read the <a href="http://www.microsoft.com/Com/resources/comdocs.asp" class="link external">&raquo;&nbsp;COM
-    specification</a> or perhaps take a look at Don Box&#039;s 
-    <a href="http://www.sellsbrothers.com/links/dbox/yacl.zip" class="link external">&raquo;&nbsp;Yet Another COM Library (YACL)</a>.
-    You might find some additional useful information in our FAQ for <a href="faq.com.html" class="xref">PHP å’Œ COM</a>.
-    If you&#039;re thinking of using MS Office applications on the server side,
-    you should read the information here: <a href="http://support.microsoft.com/kb/257757" class="link external">&raquo;&nbsp;Considerations for Server-Side Automation
-    of Office</a>.
-   </p> 
-  </div>
- </div>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.com-create-guid.html">com_create_guid</a> â€” Generate a globally unique identifier (GUID)</li><li><a href="function.com-event-sink.html">com_event_sink</a> â€” Connect events from a COM object to a PHP object</li><li><a href="function.com-get-active-object.html">com_get_active_object</a> â€” Returns a handle to an already running instance of a COM object</li><li><a href="function.com-load-typelib.html">com_load_typelib</a> â€” è£…è½½ä¸€ä¸ª Typelib</li><li><a href="function.com-message-pump.html">com_message_pump</a> â€” Process COM messages, sleeping for up to timeoutms milliseconds</li><li><a href="function.com-print-typeinfo.html">com_print_typeinfo</a> â€” Print out a PHP class definition for a dispatchable interface</li><li><a href="function.variant-abs.html">variant_abs</a> â€” Returns the absolute value of a variant</li><li><a href="function.variant-add.html">variant_add</a> â€” &quot;Adds&quot; two variant values together and returns the result</li><li><a href="function.variant-and.html">variant_and</a> â€” Performs a bitwise AND operation between two variants</li><li><a href="function.variant-cast.html">variant_cast</a> â€” Convert a variant into a new variant object of another type</li><li><a href="function.variant-cat.html">variant_cat</a> â€” concatenates two variant values together and returns the result</li><li><a href="function.variant-cmp.html">variant_cmp</a> â€” Compares two variants</li><li><a href="function.variant-date-from-timestamp.html">variant_date_from_timestamp</a> â€” Returns a variant date representation of a Unix timestamp</li><li><a href="function.variant-date-to-timestamp.html">variant_date_to_timestamp</a> â€” Converts a variant date/time value to Unix timestamp</li><li><a href="function.variant-div.html">variant_div</a> â€” Returns the result from dividing two variants</li><li><a href="function.variant-eqv.html">variant_eqv</a> â€” Performs a bitwise equivalence on two variants</li><li><a href="function.variant-fix.html">variant_fix</a> â€” Returns the integer portion of a variant</li><li><a href="function.variant-get-type.html">variant_get_type</a> â€” Returns the type of a variant object</li><li><a href="function.variant-idiv.html">variant_idiv</a> â€” Converts variants to integers and then returns the result from dividing them</li><li><a href="function.variant-imp.html">variant_imp</a> â€” Performs a bitwise implication on two variants</li><li><a href="function.variant-int.html">variant_int</a> â€” Returns the integer portion of a variant</li><li><a href="function.variant-mod.html">variant_mod</a> â€” Divides two variants and returns only the remainder</li><li><a href="function.variant-mul.html">variant_mul</a> â€” Multiplies the values of the two variants</li><li><a href="function.variant-neg.html">variant_neg</a> â€” Performs logical negation on a variant</li><li><a href="function.variant-not.html">variant_not</a> â€” Performs bitwise not negation on a variant</li><li><a href="function.variant-or.html">variant_or</a> â€” Performs a logical disjunction on two variants</li><li><a href="function.variant-pow.html">variant_pow</a> â€” Returns the result of performing the power function with two variants</li><li><a href="function.variant-round.html">variant_round</a> â€” Rounds a variant to the specified number of decimal places</li><li><a href="function.variant-set-type.html">variant_set_type</a> â€” Convert a variant into another type &quot;in-place&quot;</li><li><a href="function.variant-set.html">variant_set</a> â€” Assigns a new value for a variant object</li><li><a href="function.variant-sub.html">variant_sub</a> â€” Subtracts the value of the right variant from the left variant value</li><li><a href="function.variant-xor.html">variant_xor</a> â€” Performs a logical exclusion on two variants</li></ul>
+<HTML  ><HEAD  ><TITLE  >Windows µÄ COM Ö§³Öº¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="ccvs_void" HREF="function.ccvs-void.html"><LINK  REL="NEXT" TITLE="COM" HREF="class.com.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ccvs-void.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="class.com.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.com" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >VIII. Windows µÄ COM Ö§³Öº¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN12274" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="com.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     COM ÊÇÒ»ÖÖÔÊĞí£¨ÓÃÈÎºÎÓïÑÔ±àĞ´µÄ£©¿ÉÖØÓÃ´úÂëÊ¹ÓÃ±ê×¼³£¹æµ÷ÓÃ£¬Í¬Ê±½«Ö´ĞĞÏ¸½ÚÒş²ØÔÚ 
+     API Ö®ºóµÄ¼¼Êõ£¬ÀıÈç×é¼ş´æ´¢ÔÚÄ³Ì¨»úÆ÷ÉÏ£¬Í¬Ê±¿É¶Ô»úÆ÷Ö´ĞĞÄÚÎñ´¦Àí¡£Ëü¿ÉÒÔ±»ÈÏÎªÊÇÒ»ÖÖ´ø»ù´¡¸ù¶ÔÏóµÄ³¬¼¶Ô¶³Ìºô½Ğµ÷ÓÃ£¨Remote 
+     Procedure Call£¬RPC£©»úÖÆ¡£Ëü½«Ö´ĞĞ´Ó½Ó¿ÚÖĞ·ÖÀë³öÀ´¡£
+    </P
+><P  >&#13;     COM ´ÙÊ¹Ö´ĞĞ´Ó½Ó¿ÚÖĞ·ÖÀë£¬Í¬Ê±Òş²ØÁËÖ´ĞĞÏ¸½Ú£¬ÀıÈçÖ´ĞĞµÄÎ»ÖÃºÍ±àĞ´´úÂëÊ¹ÓÃµÄÓïÑÔ¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="com.requirements" ></A
+>ĞèÇó</H1
+><P  >&#13;     COM º¯Êı½ö¿ÉÓÃÓÚ PHP µÄ Windows °æ±¾¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="com.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+><P  > <TT  CLASS="literal" >PHP</TT
+> µÄ Windows °æ±¾ÒÑ¾­ÄÚÖÃ¸ÃÀ©Õ¹Ä£¿éµÄÖ§³Ö¡£ÄúÎŞĞè¼ÓÔØÈÎºÎ¸½¼ÓµÄÀ©Õ¹¿â¼´¿ÉÊ¹ÓÃÕâĞ©º¯Êı¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="com.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >ÕâĞ©º¯ÊıµÄĞĞÎªÊÜµ½È«¾Ö<A  HREF="configuration.html#configuration.file"  >ÅäÖÃÎÄ¼ş</A
+> <TT  CLASS="filename" >php.ini</TT
+> µÄÓ°Ïì¡£</P
+><P  >&#13; <DIV  CLASS="table" ><A  NAME="AEN12293" ></A
+><P  ><B  >±í¸ñ 1. COM ÅäÖÃÑ¡Ïî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ãû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×÷ÓÃ·¶Î§</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.allow_dcom</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.autoregister_typelib</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.autoregister_verbose</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.autoregister_casesensitive</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >com.typelib_file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_SYSTEM</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ ¸ü¶à¹ØÓÚ³£Á¿ PHP_INI_* µÄÏ¸½ÚºÍ½âÊÍ²Î¼û
+ <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>.
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="com.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >CLSCTX_INPROC_SERVER</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CLSCTX_INPROC_HANDLER</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CLSCTX_LOCAL_SERVER</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CLSCTX_REMOTE_SERVER</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CLSCTX_SERVER</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CLSCTX_ALL</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_NULL</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_EMPTY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_UI1</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_I2</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_I4</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_R4</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_R8</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_BOOL</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_ERROR</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_CY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_DATE</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_BSTR</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_DECIMAL</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_UNKNOWN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_DISPATCH</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_VARIANT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_I1</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_UI2</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_UI4</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_INT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_UINT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_ARRAY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >VT_BYREF</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_ACP</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_MACCP</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_OEMCP</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_UTF7</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_UTF8</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_SYMBOL</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CP_THREAD_ACP</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="com.seealso" ></A
+>Ïà¹Ø²Î¿¼</H1
+><P  >&#13;     ¸ü¶à¹ØÓÚ COM µÄĞÅÏ¢ÇëÔÄ¶Á
+     <A  href="http://www.microsoft.com/Com/resources/comdocs.asp"  TARGET="_top" >COM specification</A
+>
+     »òÓĞ¿ÉÄÜµÄ»°¿´Ò»¿´ Don Box µÄ
+     <A  href="http://www.develop.com/essentialcom/sources/YACL.htm"  TARGET="_top" >Yet Another COM Library (YACL)</A
+>
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="class.com.html"  >COM</A
+>&nbsp;--&nbsp;COM Àà</DT
+><DT  ><A  HREF="class.variant.html"  >VARIANT</A
+>&nbsp;--&nbsp;VARIANT Àà</DT
+><DT  ><A  HREF="function.com-addref.html"  >com_addref</A
+>&nbsp;--&nbsp;
+    Ôö¼Ó×é¼şÒıÓÃ¼ÆÊı¡£
+   </DT
+><DT  ><A  HREF="function.com-get.html"  >com_get</A
+>&nbsp;--&nbsp;
+    »ñÈ¡ COM ×é¼şµÄÊôĞÔÖµ
+   </DT
+><DT  ><A  HREF="function.com-invoke.html"  >com_invoke</A
+>&nbsp;--&nbsp;
+    µ÷ÓÃ COM ×é¼şµÄ·½·¨¡£
+   </DT
+><DT  ><A  HREF="function.com-isenum.html"  >com_isenum</A
+>&nbsp;--&nbsp;»ñÈ¡Ò»¸ö IEnumVariant</DT
+><DT  ><A  HREF="function.com-load-typelib.html"  >com_load_typelib</A
+>&nbsp;--&nbsp;×°ÔØÒ»¸ö Typelib</DT
+><DT  ><A  HREF="function.com-load.html"  >com_load</A
+>&nbsp;--&nbsp;
+    ´´½¨ĞÂµÄ COM ×é¼şµÄÒıÓÃ
+   </DT
+><DT  ><A  HREF="function.com-propget.html"  >com_propget</A
+>&nbsp;--&nbsp;<A  HREF="function.com-get.html"  ><B  CLASS="function" >com_get()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.com-propput.html"  >com_propput</A
+>&nbsp;--&nbsp;<A  HREF="function.com-set.html"  ><B  CLASS="function" >com_set()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.com-propset.html"  >com_propset</A
+>&nbsp;--&nbsp;<A  HREF="function.com-set.html"  ><B  CLASS="function" >com_set()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.com-release.html"  >com_release</A
+>&nbsp;--&nbsp;
+    ¼õÉÙ×é¼şÒıÓÃ¼ÆÊı¡£
+   </DT
+><DT  ><A  HREF="function.com-set.html"  >com_set</A
+>&nbsp;--&nbsp;
+    ¸ø COM ×é¼şµÄÊôĞÔ¸³Öµ
+   </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ccvs-void.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="class.com.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ccvs_void</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >COM</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="class.variant.html">VARIANT</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.com-create-guid.html">com_create_guid</a></div>
- <div class="up"><a href="book.com.html">COM</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

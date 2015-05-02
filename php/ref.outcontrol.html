@@ -1,152 +1,305 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Output Control å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="outcontrol.examples.basic.html">åŸºæœ¬ç”¨æ³•</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.flush.html">flush</a></div>
- <div class="up"><a href="book.outcontrol.html">è¾“å‡ºæ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.outcontrol" class="reference">
- <h1 class="title">Output Control å‡½æ•°</h1>
-
- <div class="partintro">
-  <h1 class="title">å‚è§</h1>
-  <p class="para">
-   See also <span class="function"><a href="function.header.html" class="function">header()</a></span> and
-   <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span>.
-  </p>
- </div>
-
- 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.flush.html">flush</a> â€” åˆ·æ–°è¾“å‡ºç¼“å†²</li><li><a href="function.ob-clean.html">ob_clean</a> â€” æ¸…ç©ºï¼ˆæ“¦æ‰ï¼‰è¾“å‡ºç¼“å†²åŒº</li><li><a href="function.ob-end-clean.html">ob_end_clean</a> â€” æ¸…ç©ºï¼ˆæ“¦é™¤ï¼‰ç¼“å†²åŒºå¹¶å…³é—­è¾“å‡ºç¼“å†²</li><li><a href="function.ob-end-flush.html">ob_end_flush</a> â€” å†²åˆ·å‡ºï¼ˆé€å‡ºï¼‰è¾“å‡ºç¼“å†²åŒºå†…å®¹å¹¶å…³é—­ç¼“å†²</li><li><a href="function.ob-flush.html">ob_flush</a> â€” å†²åˆ·å‡ºï¼ˆé€å‡ºï¼‰è¾“å‡ºç¼“å†²åŒºä¸­çš„å†…å®¹</li><li><a href="function.ob-get-clean.html">ob_get_clean</a> â€” å¾—åˆ°å½“å‰ç¼“å†²åŒºçš„å†…å®¹å¹¶åˆ é™¤å½“å‰è¾“å‡ºç¼“ã€‚</li><li><a href="function.ob-get-contents.html">ob_get_contents</a> â€” è¿”å›è¾“å‡ºç¼“å†²åŒºçš„å†…å®¹</li><li><a href="function.ob-get-flush.html">ob_get_flush</a> â€” åˆ·å‡ºï¼ˆé€å‡ºï¼‰ç¼“å†²åŒºå†…å®¹ï¼Œä»¥å­—ç¬¦ä¸²å½¢å¼è¿”å›å†…å®¹ï¼Œå¹¶å…³é—­è¾“å‡ºç¼“å†²åŒºã€‚</li><li><a href="function.ob-get-length.html">ob_get_length</a> â€” è¿”å›è¾“å‡ºç¼“å†²åŒºå†…å®¹çš„é•¿åº¦</li><li><a href="function.ob-get-level.html">ob_get_level</a> â€” è¿”å›è¾“å‡ºç¼“å†²æœºåˆ¶çš„åµŒå¥—çº§åˆ«</li><li><a href="function.ob-get-status.html">ob_get_status</a> â€” å¾—åˆ°æ‰€æœ‰è¾“å‡ºç¼“å†²åŒºçš„çŠ¶æ€</li><li><a href="function.ob-gzhandler.html">ob_gzhandler</a> â€” åœ¨ob_startä¸­ä½¿ç”¨çš„ç”¨æ¥å‹ç¼©è¾“å‡ºç¼“å†²åŒºä¸­å†…å®¹çš„å›è°ƒå‡½æ•°ã€‚ob_start callback function to gzip output buffer</li><li><a href="function.ob-implicit-flush.html">ob_implicit_flush</a> â€” æ‰“å¼€/å…³é—­ç»å¯¹åˆ·é€</li><li><a href="function.ob-list-handlers.html">ob_list_handlers</a> â€” åˆ—å‡ºæ‰€æœ‰ä½¿ç”¨ä¸­çš„è¾“å‡ºå¤„ç†ç¨‹åºã€‚</li><li><a href="function.ob-start.html">ob_start</a> â€” æ‰“å¼€è¾“å‡ºæ§åˆ¶ç¼“å†²</li><li><a href="function.output-add-rewrite-var.html">output_add_rewrite_var</a> â€” æ·»åŠ URLé‡å†™å™¨çš„å€¼ï¼ˆAdd URL rewriter valuesï¼‰</li><li><a href="function.output-reset-rewrite-vars.html">output_reset_rewrite_vars</a> â€” é‡è®¾URLé‡å†™å™¨çš„å€¼ï¼ˆReset URL rewriter valuesï¼‰</li></ul>
+<HTML  ><HEAD  ><TITLE  >Êä³ö¿ØÖÆº¯Êı</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="ovrimos_rollback" HREF="function.ovrimos-rollback.html"><LINK  REL="NEXT" TITLE="flush" HREF="function.flush.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ovrimos-rollback.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.flush.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.outcontrol" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >LXXVIII. Êä³ö¿ØÖÆº¯Êı</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN83824" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     Êä³ö¿ØÖÆº¯Êı¿ÉÒÔÓÃÀ´¿ØÖÆ½Å±¾µÄÊä³ö¡£ÕâĞ©º¯ÊıÔÚÄ³Ğ©ÌØÊâÇé¿öÏÂºÜÓĞÓÃ£¬ÌØ±ğÊÇ½Å±¾ÖĞÒÑ¾­Êä³öÁËĞÅÏ¢Ö®ºó£¬ÔÙÏëÏòä¯ÀÀÆ÷·¢ËÍÍ·ĞÅÏ¢µÄÇé¿ö¡£Êä³ö¿ØÖÆº¯Êı²»»á×÷ÓÃÓÚ
+     <A  HREF="function.header.html"  ><B  CLASS="function" >header()</B
+></A
+> »ò <A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+>
+     º¯Êı·¢ËÍµÄÍ·ĞÅÏ¢£¬¶øÖ»»áÓ°ÏìÀàËÆÓÚ <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+>
+     º¯ÊıÊä³öµÄĞÅÏ¢ºÍÇ¶ÈëÔÚ PHP ´úÂëÖ®¼äµÄĞÅÏ¢¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >ÕâĞ©º¯ÊıµÄĞĞÎªÊÜµ½È«¾Ö<A  HREF="configuration.html#configuration.file"  >ÅäÖÃÎÄ¼ş</A
+> <TT  CLASS="filename" >php.ini</TT
+> µÄÓ°Ïì¡£</P
+><P  >&#13;  <DIV  CLASS="table" ><A  NAME="AEN83843" ></A
+><P  ><B  >±í¸ñ 1. Êä³ö¿ØÖÆ ÅäÖÃÑ¡Ïî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ãû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×÷ÓÃ·¶Î§</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >output_buffering</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >output_handler</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >implicit_flush</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"0"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_PERDIR|PHP_INI_SYSTEM</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+   ¸ü¶à¹ØÓÚ³£Á¿ PHP_INI_* µÄÏ¸½ÚºÍ½âÊÍ²Î¼û
+  <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>.
+ </P
+><P  >ÒÔÏÂÊÇ¸ÃÅäÖÃÑ¡ÏîµÄ¼òÒª½âÊÍ¡£</P
+><P  >&#13; <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><A  NAME="ini.output-buffering" ></A
+><TT  CLASS="parameter" ><I  >output_buffering</I
+></TT
+>
+    <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+>/<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;	 ±¾±ê¼ÇÉèÖÃÎª On µÄÊ±£¬½«ÔÚËùÓĞµÄ½Å±¾ÖĞÊ¹ÓÃÊä³ö¿ØÖÆ¡£Èç¹ûÒªÏŞÖÆÊä³ö»º³åÇøµÄ×î´óÖµ£¬¿ÉÒÔ½«±ê¼ÇÉèÖÃ³É¸Ã×î´ó×Ö½ÚÊı£¨ÀıÈç£¬ output_buffering=4096£©¡£
+    </P
+></DD
+><DT  ><A  NAME="ini.output-handler" ></A
+><TT  CLASS="parameter" ><I  >output_handler</I
+></TT
+>
+    <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;	 ¸Ã±ê¼Ç¿É½«½Å±¾ËùÓĞµÄÊä³ö£¬ÖØ¶¨Ïòµ½Ò»¸öº¯Êı¡£ÀıÈç£¬½« output_handler ÉèÖÃÎª<A  HREF="function.mb-output-handler.html"  ><B  CLASS="function" >mb_output_handler()</B
+></A
+>Ê±£¬
+     ×Ö·ûµÄ±àÂë½«±»ĞŞ¸ÄÎªÖ¸¶¨µÄ±àÂë¡£ÉèÖÃµÄÈÎºÎ´¦Àíº¯Êı£¬½«×Ô¶¯µÄ´¦ÀíÊä³ö»º³å¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+	  ²»ÄÜÍ¬Ê±Ê¹ÓÃ<A  HREF="function.mb-output-handler.html"  ><B  CLASS="function" >mb_output_handler()</B
+></A
+>ºÍ<B  CLASS="function" >ob_inconv_handler()</B
+> £¬
+	  Ò²²»ÄÜÍ¬Ê±Ê¹ÓÃ<A  HREF="function.ob-gzhandler.html"  ><B  CLASS="function" >ob_gzhandler()</B
+></A
+>ºÍ<A  HREF="ref.zlib.html#ini.zlib.output-compression"  >zlib.output_compression</A
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+></DD
+><DT  ><A  NAME="ini.implicit-flush" ></A
+><TT  CLASS="parameter" ><I  >implicit_flush</I
+></TT
+>
+    <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+></DT
+><DD  ><P  >&#13;	 Ä¬ÈÏÎª <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ¡£Èç½«¸Ã±ê¼Ç¸ÄÎª <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> £¬PHP½«Ê¹Êä³ö²ã£¬ÔÚÃ¿¶ÎĞÅÏ¢¿éÊä³öºó£¬×Ô¶¯Ë¢ĞÂ¡£
+	 ÕâµÈÍ¬ÓÚÔÚÃ¿´ÎÊ¹ÓÃ<A  HREF="function.print.html"  ><B  CLASS="function" >print()</B
+></A
+>£¬<A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+> µÈº¯Êı »òÃ¿¸ö<TT  CLASS="literal" >HTML</TT
+>¿éÖ®ºó£¬
+	 µ÷ÓÃ<TT  CLASS="literal" >PHP</TT
+>ÖĞµÄ<A  HREF="function.flush.html"  ><B  CLASS="function" >flush()</B
+></A
+>º¯Êı¡£
+    </P
+><P  >&#13;	 ²»ÔÚweb»·¾³ÖĞÊ¹ÓÃ<TT  CLASS="literal" >PHP</TT
+>Ê±£¬´ò¿ªÕâ¸öÑ¡Ïî¶Ô³ÌĞòÖ´ĞĞµÄĞÔÄÜÓĞÑÏÖØµÄÓ°Ïì£¬Í¨³£Ö»ÍÆ¼öÔÚµ÷ÊÔÊ±Ê¹ÓÃ¡£
+	 ÔÚ<TT  CLASS="literal" >CLI SAPI</TT
+>µÄÖ´ĞĞÄ£Ê½ÏÂ£¬¸Ã±ê¼ÇÄ¬ÈÏÎª <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> ¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.ob-implicit-flush.html"  ><B  CLASS="function" >ob_implicit_flush()</B
+></A
+>¡£
+    </P
+></DD
+></DL
+></DIV
+>
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ³£Á¿¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.examples" ></A
+>·¶Àı</H1
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN83916" ></A
+><P  ><B  >Àı×Ó 1. Êä³ö¿ØÖÆ·¶Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />ob_start</font><font  color="#007700">();<br  />echo </font><font  color="#DD0000">"Hello\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">setcookie</font><font  color="#007700">(</font><font  color="#DD0000">"cookiename"</font><font  color="#007700">, </font><font  color="#DD0000">"cookiedata"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">ob_end_flush</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÔÚÉÏÃæµÄÀı×ÓÖĞ£¬º¯Êı <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+>
+     Êä³öĞÅÏ¢½«±»±£´æÔÚÊä³ö»º³åÖĞ£¬Ö±µ½
+     <A  HREF="function.ob-end-flush.html"  ><B  CLASS="function" >ob_end_flush()</B
+></A
+>
+     º¯Êı±»µ÷ÓÃ¡£ºÍÆÚÍûµÄÒ»Ñù£¬<A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+>
+     º¯Êı´æ´¢ cookie
+     µÄÊ±ºòÃ»ÓĞµ¼ÖÂ´íÎó¡££¨Í¨³£Çé¿öÏÂ£¬ÒÑ¾­ÓĞÊı¾İÊä³öºó£¬ÊÇ²»ÄÜÕı³£µÄÏòä¯ÀÀÆ÷·¢ËÍÍ·ĞÅÏ¢µÄ¡££©
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      µ±´Ó PHP 4.1£¨°üÀ¨ 4.2£©Éı¼¶µ½ 4.3 Ê±£¬ÓÉÓÚÔçÆÚ°æ±¾µÄ bug£¬±ØĞëÈ·±£ÔÚ
+      <TT  CLASS="filename" >php.ini</TT
+> ÖĞ½«<TT  CLASS="literal" >implict_flush</TT
+> ±»ÉèÖÃ³É
+      <TT  CLASS="literal" >OFF</TT
+>£¬·ñÔòËùÓĞÓÉ
+      <A  HREF="function.ob-start.html"  ><B  CLASS="function" >ob_start()</B
+></A
+> º¯Êı´¦ÀíµÄĞÅÏ¢¶¼»á±»Ö±½ÓÊä³ö¡£
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="outcontrol.seealso" ></A
+>Ïà¹Ø²Î¿¼</H1
+><P  >&#13;     Ïà¹Øº¯Êı£º<A  HREF="function.header.html"  ><B  CLASS="function" >header()</B
+></A
+> ºÍ
+     <A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+>¡£
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.flush.html"  >flush</A
+>&nbsp;--&nbsp;Flush the output buffer</DT
+><DT  ><A  HREF="function.ob-clean.html"  >ob_clean</A
+>&nbsp;--&nbsp;
+     Clean (erase) the output buffer
+    </DT
+><DT  ><A  HREF="function.ob-end-clean.html"  >ob_end_clean</A
+>&nbsp;--&nbsp;
+     Clean (erase) the output buffer and turn off output buffering
+    </DT
+><DT  ><A  HREF="function.ob-end-flush.html"  >ob_end_flush</A
+>&nbsp;--&nbsp;
+     Flush (send) the output buffer and turn off output buffering
+    </DT
+><DT  ><A  HREF="function.ob-flush.html"  >ob_flush</A
+>&nbsp;--&nbsp;
+     Flush (send) the output buffer
+    </DT
+><DT  ><A  HREF="function.ob-get-clean.html"  >ob_get_clean</A
+>&nbsp;--&nbsp;
+     Get current buffer contents and delete current output buffer
+    </DT
+><DT  ><A  HREF="function.ob-get-contents.html"  >ob_get_contents</A
+>&nbsp;--&nbsp;
+     Return the contents of the output buffer
+    </DT
+><DT  ><A  HREF="function.ob-get-flush.html"  >ob_get_flush</A
+>&nbsp;--&nbsp;
+     Flush the output buffer, return it as a string and turn off output buffering
+    </DT
+><DT  ><A  HREF="function.ob-get-length.html"  >ob_get_length</A
+>&nbsp;--&nbsp;
+     Return the length of the output buffer
+    </DT
+><DT  ><A  HREF="function.ob-get-level.html"  >ob_get_level</A
+>&nbsp;--&nbsp;
+     Return the nesting level of the output buffering mechanism
+    </DT
+><DT  ><A  HREF="function.ob-get-status.html"  >ob_get_status</A
+>&nbsp;--&nbsp;
+     Get status of output buffers
+    </DT
+><DT  ><A  HREF="function.ob-gzhandler.html"  >ob_gzhandler</A
+>&nbsp;--&nbsp;
+     ob_start callback function to gzip output buffer
+    </DT
+><DT  ><A  HREF="function.ob-implicit-flush.html"  >ob_implicit_flush</A
+>&nbsp;--&nbsp;
+     Turn implicit flush on/off 
+    </DT
+><DT  ><A  HREF="function.ob-list-handlers.html"  >ob_list_handlers</A
+>&nbsp;--&nbsp;
+     List all output handlers in use
+    </DT
+><DT  ><A  HREF="function.ob-start.html"  >ob_start</A
+>&nbsp;--&nbsp;Turn on output buffering</DT
+><DT  ><A  HREF="function.output-add-rewrite-var.html"  >output_add_rewrite_var</A
+>&nbsp;--&nbsp;
+     Add URL rewriter values
+    </DT
+><DT  ><A  HREF="function.output-reset-rewrite-vars.html"  >output_reset_rewrite_vars</A
+>&nbsp;--&nbsp;
+     Reset URL rewriter values
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ovrimos-rollback.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.flush.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ovrimos_rollback</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >flush</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="outcontrol.examples.basic.html">åŸºæœ¬ç”¨æ³•</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.flush.html">flush</a></div>
- <div class="up"><a href="book.outcontrol.html">è¾“å‡ºæ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

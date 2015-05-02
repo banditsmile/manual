@@ -1,141 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>计算一个字符串的 crc32 多项式</title>
+<HTML  ><HEAD  ><TITLE  >crc32</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="count_chars" HREF="function.count-chars.html"><LINK  REL="NEXT" TITLE="crypt" HREF="function.crypt.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.count-chars.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.crypt.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.crc32" ></A
+>crc32</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN107882" ></A
+><P  >    (PHP 4 &#62;= 4.0.1)</P
+>crc32&nbsp;--&nbsp;Calculates the crc32 polynomial of a string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN107885" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >crc32</B
+> ( string str)<BR  ></BR
+><P  >&#13;     Generates the cyclic redundancy checksum polynomial of 32-bit
+     lengths of the <TT  CLASS="parameter" ><I  >str</I
+></TT
+>. This is usually used
+     to validate the integrity of data being transmitted.
+    </P
+><P  >&#13;     Because PHP's integer type is signed, and many crc32 checksums will
+     result in negative integers, you need to use the "%u" formatter of
+     <A  HREF="function.sprintf.html"  ><B  CLASS="function" >sprintf()</B
+></A
+> or <A  HREF="function.printf.html"  ><B  CLASS="function" >printf()</B
+></A
+> to get
+     the string representation of the unsigned crc32 checksum.
+    </P
+><P  >&#13;     This second example shows how to print a converted checksum with the
+     <A  HREF="function.printf.html"  ><B  CLASS="function" >printf()</B
+></A
+> function:
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107900" ></A
+><P  ><B  >���� 1. Displaying a crc32 checksum</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$checksum </font><font  color="#007700">= </font><font  color="#0000BB">crc32</font><font  color="#007700">(</font><font  color="#DD0000">"The quick brown fox jumped over the lazy dog."</font><font  color="#007700">);<br  /></font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">"%u\n"</font><font  color="#007700">, </font><font  color="#0000BB">$checksum</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.md5.html"  ><B  CLASS="function" >md5()</B
+></A
+> and <A  HREF="function.sha1.html"  ><B  CLASS="function" >sha1()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.count-chars.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.crypt.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >count_chars</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >crypt</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.count-chars.html">count_chars</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.crypt.html">crypt</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.crc32" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">crc32</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5)</p><p class="refpurpose"><span class="refname">crc32</span> &mdash; <span class="dc-title">计算一个字符串的 crc32 多项式</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.crc32-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>crc32</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   生成 <code class="parameter">str</code>
-   的 32 位循环冗余校验码多项式。这通常用于检查传输的数据是否完整。
-  </p>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="simpara">
-    由于 PHP 的整数是带符号的，所以在 32 位系统上许多 crc32 校验码将返回负整数。
-    尽管在 64 位上所有 <span class="function"><strong>crc32()</strong></span> 的结果将都是正整数。
-   </p>
-   <p class="simpara">
-    因此你需要使用
-    <span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> 或 <span class="function"><a href="function.printf.html" class="function">printf()</a></span>
-    的“%u”格式符来获取表示无符号 crc32 校验码的字符串。
-   </p>
-   <p class="simpara">
-    For a hexadecimal representation of the checksum you can either use the 
-    &quot;%x&quot; formatter of <span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> or <span class="function"><a href="function.printf.html" class="function">printf()</a></span> 
-    or the <span class="function"><a href="function.dechex.html" class="function">dechex()</a></span> conversion functions, both of these
-    also take care of converting the <span class="function"><strong>crc32()</strong></span> result to
-    an unsigned integer.
-   </p>
-   <p class="simpara">
-    Having 64bit installations also return negative integers for higher
-    result values was considered but would break the hexadecimal conversion
-    as negatives would get an extra 0xFFFFFFFF######## offset then. As 
-    hexadecimal representation seems to be the most common use case we
-    decided to not break this even if it breaks direct decimal comparisons
-    in about 50% of the cases when moving from 32 to 64bits.
-   </p>
-   <p class="simpara">
-    In retrospect having the function return an integer maybe wasn&#039;t the 
-    best idea and returning a hex string representation right away (as 
-    e.g. <span class="function"><a href="function.md5.html" class="function">md5()</a></span> does) might have been a better plan to
-    begin with.
-   </p>
-   <p class="simpara">
-    For a more portable solution you may also consider the generic 
-    <span class="function"><a href="function.hash.html" class="function">hash()</a></span>. <code class="code">hash(&quot;crc32b&quot;, $str)</code> will 
-    return the same string as <code class="code">dechex(crc32($str))</code>.
-   </p>
-  </div>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.crc32-parameters">
-  <h3 class="title">参数</h3>
-   <p class="para">
-    <dl>
-
-     
-      <dt>
-<code class="parameter">str</code></dt>
-
-      <dd>
-
-       <p class="para">
-        要校验的数据。
-       </p>
-      </dd>
-
-     
-    </dl>
-
-   </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.crc32-returnvalues">
-  <h3 class="title">返回值</h3>
-   <p class="para">
-    返回 <code class="parameter">str</code> crc32 校验的整数。
-   </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.crc32-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5138">
-    <p><strong>Example #1 显示一个 crc32 校验码</strong></p>
-    <div class="example-contents"><p>
-     示例中的第二行演示了如何使用 <span class="function"><a href="function.printf.html" class="function">printf()</a></span>
-     函数转换校验码：
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$checksum&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crc32</span><span style="color: #007700">(</span><span style="color: #DD0000">"The&nbsp;quick&nbsp;brown&nbsp;fox&nbsp;jumped&nbsp;over&nbsp;the&nbsp;lazy&nbsp;dog."</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"%u\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$checksum</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.crc32-seealso">
-  <h3 class="title">参见</h3>
-   <p class="para">
-    <ul class="simplelist">
-     <li class="member"><span class="function"><a href="function.hash.html" class="function" rel="rdfs-seeAlso">hash()</a> - 生成哈希值 （消息摘要）</span></li>
-     <li class="member"><span class="function"><a href="function.md5.html" class="function" rel="rdfs-seeAlso">md5()</a> - 计算字符串的 MD5 散列值</span></li>
-     <li class="member"><span class="function"><a href="function.sha1.html" class="function" rel="rdfs-seeAlso">sha1()</a> - 计算字符串的 sha1 散列值</span></li>
-    </ul>
-   </p>
- </div>
-
- 
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.count-chars.html">count_chars</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.crypt.html">crypt</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

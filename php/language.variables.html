@@ -1,35 +1,108 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å˜é‡</title>
+<HTML  ><HEAD  ><TITLE  >±äÁ¿</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÓïÑÔ²Î¿¼" HREF="langref.html"><LINK  REL="PREVIOUS" TITLE="ÀàĞÍÏ··¨" HREF="language.types.type-juggling.html"><LINK  REL="NEXT" TITLE="Ô¤¶¨Òå±äÁ¿" HREF="language.variables.predefined.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="chapter" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="language.types.type-juggling.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="language.variables.predefined.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="chapter" ><H1  ><A  NAME="language.variables" >ÕÂ 7. ±äÁ¿</A
+></H1
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="language.variables.html#language.variables.basics"  >»ù´¡</A
+></DT
+><DT  ><A  HREF="language.variables.predefined.html"  >Ô¤¶¨Òå±äÁ¿</A
+></DT
+><DT  ><A  HREF="language.variables.scope.html"  >±äÁ¿·¶Î§</A
+></DT
+><DT  ><A  HREF="language.variables.variable.html"  >¿É±ä±äÁ¿</A
+></DT
+><DT  ><A  HREF="language.variables.external.html"  >PHP µÄÍâ²¿±äÁ¿</A
+></DT
+></DL
+></DIV
+><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="language.variables.basics" ></A
+>»ù´¡</H1
+><P  >&#13;    PHP ÖĞÒ»¸öÃÀÔª·ûºÅºóÃæ¸úÉÏÒ»¸ö±äÁ¿Ãû³Æ£¬¼´±íÊ¾Ò»¸ö±äÁ¿¡£±äÁ¿µÄÃû³ÆÊÇ¶Ô´óĞ¡Ğ´Ãô¸ĞµÄ¡£
+   </P
+><P  >&#13;    ±äÁ¿ÃûÓë PHP ÖĞÆäËüµÄ±êÇ©Ò»Ñù×ñÑ­ÏàÍ¬µÄ¹æÔò¡£Ò»¸öÓĞĞ§µÄ±äÁ¿ÃûÓÉ×ÖÄ¸»òÕßÏÂ»®Ïß¿ªÍ·£¬ºóÃæ¸úÉÏÈÎÒâÊıÁ¿µÄ×ÖÄ¸£¬Êı×Ö£¬»òÕßÏÂ»®Ïß¡£°´ÕÕÕı³£µÄÕıÔò±í´ïÊ½£¬Ëü½«±»±íÊöÎª£º'[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*'
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     ×ÖÄ¸Îª a-z£¬A-Z£¬ASCII ×Ö·û´Ó 127 µ½ 255£¨0x7f-0xff£©¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    <DIV  CLASS="informalexample" ><A  NAME="AEN4091" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$var </font><font  color="#007700">= </font><font  color="#DD0000">"Bob"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$Var </font><font  color="#007700">= </font><font  color="#DD0000">"Joe"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"$var, $Var"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// outputs "Bob, Joe"<br  /><br  /></font><font  color="#007700">$</font><font  color="#0000BB">4site </font><font  color="#007700">= </font><font  color="#DD0000">'not yet'</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// invalid; starts with a number<br  /></font><font  color="#0000BB">$_4site </font><font  color="#007700">= </font><font  color="#DD0000">'not yet'</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// valid; starts with an underscore<br  /></font><font  color="#0000BB">$t</font><font  color="#007700">?</font><font  color="#0000BB">yte </font><font  color="#007700">= </font><font  color="#DD0000">'mansikka'</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// valid; 'ä§ is (Extended) ASCII 228.<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    PHP 3 ÖĞ£¬±äÁ¿×ÜÊÇ´«Öµ¸³Öµ¡£ÄÇÒ²¾ÍÊÇËµ£¬µ±Äã½«Ò»¸ö±í´ïÊ½µÄÖµ¸³ÓèÒ»¸ö±äÁ¿Ê±£¬Õû¸öÔ­Ê¼±í´ïÊ½µÄÖµ±»¸³Öµµ½Ä¿±ê±äÁ¿¡£ÕâÒâÎ¶×Å£¬ÀıÈç£¬µ±Ò»¸ö±äÁ¿µÄÖµ¸³ÓèÁíÍâÒ»¸ö±äÁ¿Ê±£¬¸Ä±äÆäÖĞÒ»¸ö±äÁ¿µÄÖµ£¬½«²»»áÓ°Ïìµ½ÁíÍâÒ»¸ö±äÁ¿¡£ÓĞ¹ØÕâÖÖÀàĞÍµÄ¸³Öµ²Ù×÷£¬Çë²ÎÔÄ<A  HREF="language.expressions.html"  >±í´ïÊ½</A
+>Ò»ÕÂ¡£
+   </P
+><P  >&#13;    PHP 4 Ìá¹©ÁËÁíÍâÒ»ÖÖ·½Ê½¸ø±äÁ¿¸³Öµ£º<A  HREF="language.references.html"  >´«µØÖ·¸³Öµ</A
+>¡£ÕâÒâÎ¶×ÅĞÂµÄ±äÁ¿¼òµ¥µÄÒıÓÃ£¨»»ÑÔÖ®£¬¡°³ÉÎªÆä±ğÃû¡± »òÕß ¡°Ö¸Ïò¡±£©ÁËÔ­Ê¼±äÁ¿¡£¸Ä¶¯ĞÂµÄ±äÁ¿½«Ó°Ïìµ½Ô­Ê¼±äÁ¿£¬·´Ö®ÒàÈ»¡£ÕâÍ¬ÑùÒâÎ¶×ÅÆäÖĞÃ»ÓĞÖ´ĞĞ¸´ÖÆ²Ù×÷£»Òò¶ø£¬ÕâÖÖ¸³Öµ²Ù×÷¸ü¼Ó¿ìËÙ¡£¾¡¹ÜÈç´Ë£¬ÈÎºÎÌáËÙµÄ²Ù×÷Ö»ÓĞÔÚ½ôÃÜÑ­»·»òÕß´ó<A  HREF="language.types.array.html"  >Êı×é</A
+>»òÕß<A  HREF="language.types.object.html"  >¶ÔÏó</A
+>²Å¿ÉÄÜ±»×¢Òâµ½¡£
+   </P
+><P  >&#13;    Ê¹ÓÃ´«µØÖ·¸³Öµ£¬¼òµ¥µØ×·¼ÓÒ»¸ö£¨&#38;£©·ûºÅµ½½«Òª¸³ÖµµÄ±äÁ¿Ç°£¨Ô´±äÁ¿£©¡£ÀıÈç£¬ÏÂÁĞ´úÂëÆ¬¶ÏÁ½´ÎÊä³ö¡®My name is Bob¡¯£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN4100" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo </font><font  color="#007700">= </font><font  color="#DD0000">'Bob'</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Assign the value 'Bob' to $foo<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= &amp;</font><font  color="#0000BB">$foo</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Reference $foo via $bar.<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">"My name is $bar"</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// Alter $bar...<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$bar</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$foo</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is altered too.<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    ĞèÒª×¢ÒâµÄÊÇÖ»ÓĞÃüÃû±äÁ¿²Å¿ÉÒÔ´«µØÖ·¸³Öµ£¬ÕâÒ»µã·Ç³£ÖØÒª¡£
+    <DIV  CLASS="informalexample" ><A  NAME="AEN4103" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo </font><font  color="#007700">= </font><font  color="#0000BB">25</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= &amp;</font><font  color="#0000BB">$foo</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// This is a valid assignment.<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= &amp;(</font><font  color="#0000BB">24 </font><font  color="#007700">* </font><font  color="#0000BB">7</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// Invalid; references an unnamed expression.<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">test</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">25</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= &amp;</font><font  color="#0000BB">test</font><font  color="#007700">();&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Invalid.<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="language.types.type-juggling.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="language.variables.predefined.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ÀàĞÍÏ··¨</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="langref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Ô¤¶¨Òå±äÁ¿</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.types.type-juggling.html">ç±»å‹è½¬æ¢çš„åˆ¤åˆ«</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.basics.html">åŸºç¡€</a></div>
- <div class="up"><a href="langref.html">è¯­è¨€å‚è€ƒ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="language.variables" class="chapter">
-  <h1>å˜é‡</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="language.variables.basics.html">åŸºç¡€</a></li><li><a href="language.variables.predefined.html">é¢„å®šä¹‰å˜é‡</a></li><li><a href="language.variables.scope.html">å˜é‡èŒƒå›´</a></li><li><a href="language.variables.variable.html">å¯å˜å˜é‡</a></li><li><a href="language.variables.external.html">æ¥è‡ª PHP ä¹‹å¤–çš„å˜é‡</a></li></ul>
 
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
- </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.types.type-juggling.html">ç±»å‹è½¬æ¢çš„åˆ¤åˆ«</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.basics.html">åŸºç¡€</a></div>
- <div class="up"><a href="langref.html">è¯­è¨€å‚è€ƒ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

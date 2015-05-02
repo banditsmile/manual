@@ -1,67 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>èŒƒå›´è§£ææ“ä½œç¬¦ï¼ˆ::ï¼‰</title>
+<HTML  ><HEAD  ><TITLE  >::</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÀàÓë¶ÔÏó" HREF="language.oop.html"><LINK  REL="PREVIOUS" TITLE="¹¹Ôìº¯Êı" HREF="language.oop.constructor.html"><LINK  REL="NEXT" TITLE="parent" HREF="keyword.parent.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="language.oop.constructor.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 13. ÀàÓë¶ÔÏó</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="keyword.parent.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="keyword.paamayim-nekudotayim" ></A
+><TT  CLASS="literal" >::</TT
+></H1
+><DIV  CLASS="caution" ><P  ></P
+><TABLE  CLASS="caution" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >×¢Òâ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;     ÏÂÁĞÄÚÈİ½öÔÚ PHP 4 ¼°ÒÔºó°æ±¾ÖĞÓĞĞ§¡£
+    </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;    ÓĞÊ±£¬ÔÚÃ»ÓĞÉùÃ÷ÈÎºÎÊµÀıµÄÇé¿öÏÂ·ÃÎÊÀàÖĞµÄº¯Êı»òÕß»ùÀàÖĞµÄº¯ÊıºÍ±äÁ¿ºÜÓĞÓÃ´¦¡£¶ø
+    :: ÔËËã·û¼´ÓÃÓÚ´ËÇé¿ö¡£
+   </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN5788" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">A<br  /></font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">example</font><font  color="#007700">()<br  />&nbsp;&nbsp;&nbsp;&nbsp;{<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"I am the original function A::example().&lt;br&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />class </font><font  color="#0000BB">B </font><font  color="#007700">extends </font><font  color="#0000BB">A<br  /></font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">example</font><font  color="#007700">()<br  />&nbsp;&nbsp;&nbsp;&nbsp;{<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"I am the redefined function B::example().&lt;br&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">A</font><font  color="#007700">::</font><font  color="#0000BB">example</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#FF8000">// A ÀàÃ»ÓĞ¶ÔÏó£¬Õâ½«Êä³ö<br  />//&nbsp;&nbsp;&nbsp;I am the original function A::example().&lt;br&gt;<br  /></font><font  color="#0000BB">A</font><font  color="#007700">::</font><font  color="#0000BB">example</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// ½¨Á¢Ò»¸ö B ÀàµÄ¶ÔÏó<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= new </font><font  color="#0000BB">B</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Õâ½«Êä³ö<br  />//&nbsp;&nbsp;&nbsp;I am the redefined function B::example().&lt;br&gt;<br  />//&nbsp;&nbsp;&nbsp;I am the original function A::example().&lt;br&gt;<br  /></font><font  color="#0000BB">$b</font><font  color="#007700">-&gt;</font><font  color="#0000BB">example</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;    ÉÏÃæµÄÀı×Óµ÷ÓÃÁË A ÀàµÄº¯Êı example()£¬µ«ÊÇÕâÀï²¢²»´æÔÚ A
+    ÀàµÄ¶ÔÏó£¬Òò´Ë²»ÄÜÕâÑùÓÃ $a-&#62;example() »òÕßÀàËÆµÄ·½·¨µ÷ÓÃ
+    example()¡£·´¶øÎÒÃÇ½« example()
+    ×÷ÎªÒ»¸öÀàº¯ÊıÀ´µ÷ÓÃ£¬Ò²¾ÍÊÇËµ£¬×÷ÎªÒ»¸öÀà×ÔÉíµÄº¯ÊıÀ´µ÷ÓÃ£¬¶ø²»ÊÇÕâ¸öÀàµÄÈÎºÎ¶ÔÏó¡£
+   </P
+><P  >&#13;    ÕâÀïÓĞÀàº¯Êı£¬µ«Ã»ÓĞÀàµÄ±äÁ¿¡£Êµ¼ÊÉÏ£¬ÔÚµ÷ÓÃº¯ÊıÊ±ÍêÈ«Ã»ÓĞÈÎºÎ¶ÔÏó¡£Òò¶øÒ»¸öÀàµÄº¯Êı¿ÉÒÔ²»Ê¹ÓÃÈÎºÎ¶ÔÏó£¨µ«¿ÉÒÔÊ¹ÓÃ¾Ö²¿»òÕßÈ«¾Ö±äÁ¿£©£¬²¢ÇÒ¿ÉÒÔ¸ù±¾²»Ê¹ÓÃ
+    <TT  CLASS="varname" >$this</TT
+> ±äÁ¿¡£
+   </P
+><P  >&#13;    ÉÏÃæµÄÀı×ÓÖĞ£¬Àà B ÖØĞÂ¶¨ÒåÁËº¯Êı example()¡£A
+    ÀàÖĞÔ­Ê¼¶¨ÒåµÄº¯Êı example()
+    ½«±»ÆÁ±Î²¢ÇÒ²»ÔÙÉúĞ§£¬³ı·ÇÄãÊ¹ÓÃ ::
+    ÔËËã·ûÀ´·ÃÎÊ A ÀàÖĞµÄ example() º¯Êı¡£Èç£ºA::example()£¨Êµ¼ÊÉÏ£¬Ó¦¸ÃĞ´Îª
+    parent::example()£¬ÏÂÒ»ÕÂ½éÉÜ¸ÃÄÚÈİ¡££©
+   </P
+><P  >&#13;    ¾Í´Ë¶øÂÛ£¬¶ÔÓÚµ±Ç°¶ÔÏó£¬Ëü¿ÉÄÜÓĞ¶ÔÏó±äÁ¿¡£Òò¶ø£¬Äã¿ÉÒÔÔÚ¶ÔÏóº¯ÊıµÄÄÚ²¿Ê¹ÓÃ
+    <TT  CLASS="varname" >$this</TT
+> ºÍ¶ÔÏó±äÁ¿¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="language.oop.constructor.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="keyword.parent.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><TT  CLASS="literal" >¹¹Ôìº¯Êı</TT
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="language.oop.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><TT  CLASS="literal" >parent</TT
+></TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="oop4.constructor.html">æ„é€ å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="keyword.parent.html">parent</a></div>
- <div class="up"><a href="oop4.html">ç±»ä¸å¯¹è±¡ï¼ˆPHP 4ï¼‰</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="keyword.paamayim-nekudotayim" class="sect1">
-   <h2 class="title">èŒƒå›´è§£ææ“ä½œç¬¦ï¼ˆ<em>::</em>ï¼‰</h2>
 
-   <div class="caution"><strong class="caution">Caution</strong>
-    <p class="simpara">
-     ä¸‹åˆ—å†…å®¹ä»…åœ¨ PHP 4 åŠä»¥åç‰ˆæœ¬ä¸­æœ‰æ•ˆã€‚
-    </p>
-   </div>
-
-   <p class="para">
-    æœ‰æ—¶ï¼Œåœ¨æ²¡æœ‰å£°æ˜ä»»ä½•å®ä¾‹çš„æƒ…å†µä¸‹è®¿é—®ç±»ä¸­çš„å‡½æ•°æˆ–è€…åŸºç±»ä¸­çš„å‡½æ•°å’Œå˜é‡å¾ˆæœ‰ç”¨å¤„ã€‚è€Œ
-    :: è¿ç®—ç¬¦å³ç”¨äºæ­¤æƒ…å†µã€‚
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">example</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;am&nbsp;the&nbsp;original&nbsp;function&nbsp;A::example().&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">example</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;am&nbsp;the&nbsp;redefined&nbsp;function&nbsp;B::example().&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">::</span><span style="color: #0000BB">example</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;A&nbsp;ç±»æ²¡æœ‰å¯¹è±¡ï¼Œè¿™å°†è¾“å‡º<br />//&nbsp;&nbsp;&nbsp;I&nbsp;am&nbsp;the&nbsp;original&nbsp;function&nbsp;A::example().&lt;br&nbsp;/&gt;<br /></span><span style="color: #0000BB">A</span><span style="color: #007700">::</span><span style="color: #0000BB">example</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;å»ºç«‹ä¸€ä¸ª&nbsp;B&nbsp;ç±»çš„å¯¹è±¡<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;è¿™å°†è¾“å‡º<br />//&nbsp;&nbsp;&nbsp;I&nbsp;am&nbsp;the&nbsp;redefined&nbsp;function&nbsp;B::example().&lt;br&nbsp;/&gt;<br />//&nbsp;&nbsp;&nbsp;I&nbsp;am&nbsp;the&nbsp;original&nbsp;function&nbsp;A::example().&lt;br&nbsp;/&gt;<br /></span><span style="color: #0000BB">$b</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">example</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-
-   <p class="para">
-    ä¸Šé¢çš„ä¾‹å­è°ƒç”¨äº† A ç±»çš„å‡½æ•° example()ï¼Œä½†æ˜¯è¿™é‡Œå¹¶ä¸å­˜åœ¨ A
-    ç±»çš„å¯¹è±¡ï¼Œå› æ­¤ä¸èƒ½è¿™æ ·ç”¨ $a-&gt;example() æˆ–è€…ç±»ä¼¼çš„æ–¹æ³•è°ƒç”¨
-    example()ã€‚åè€Œæˆ‘ä»¬å°† example()
-    ä½œä¸ºä¸€ä¸ªç±»å‡½æ•°æ¥è°ƒç”¨ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œä½œä¸ºä¸€ä¸ªç±»è‡ªèº«çš„å‡½æ•°æ¥è°ƒç”¨ï¼Œè€Œä¸æ˜¯è¿™ä¸ªç±»çš„ä»»ä½•å¯¹è±¡ã€‚
-   </p>
-
-   <p class="para">
-    è¿™é‡Œæœ‰ç±»å‡½æ•°ï¼Œä½†æ²¡æœ‰ç±»çš„å˜é‡ã€‚å®é™…ä¸Šï¼Œåœ¨è°ƒç”¨å‡½æ•°æ—¶å®Œå…¨æ²¡æœ‰ä»»ä½•å¯¹è±¡ã€‚å› è€Œä¸€ä¸ªç±»çš„å‡½æ•°å¯ä»¥ä¸ä½¿ç”¨ä»»ä½•å¯¹è±¡ï¼ˆä½†å¯ä»¥ä½¿ç”¨å±€éƒ¨æˆ–è€…å…¨å±€å˜é‡ï¼‰ï¼Œå¹¶ä¸”å¯ä»¥æ ¹æœ¬ä¸ä½¿ç”¨
-    <var class="varname"><var class="varname">$this</var></var> å˜é‡ã€‚
-   </p>
-
-   <p class="para">
-    ä¸Šé¢çš„ä¾‹å­ä¸­ï¼Œç±» B é‡æ–°å®šä¹‰äº†å‡½æ•° example()ã€‚A
-    ç±»ä¸­åŸå§‹å®šä¹‰çš„å‡½æ•° example()
-    å°†è¢«å±è”½å¹¶ä¸”ä¸å†ç”Ÿæ•ˆï¼Œé™¤éä½¿ç”¨ ::
-    è¿ç®—ç¬¦æ¥è®¿é—® A ç±»ä¸­çš„ example() å‡½æ•°ã€‚å¦‚ï¼šA::example()ï¼ˆå®é™…ä¸Šï¼Œåº”è¯¥å†™ä¸º
-    parent::example()ï¼Œä¸‹ä¸€ç« ä»‹ç»è¯¥å†…å®¹ï¼‰ã€‚
-   </p>
-
-   <p class="para">
-    å°±æ­¤è€Œè®ºï¼Œå¯¹äºå½“å‰å¯¹è±¡ï¼Œå®ƒå¯èƒ½æœ‰å¯¹è±¡å˜é‡ã€‚å› æ­¤å¯ä»¥åœ¨å¯¹è±¡å‡½æ•°çš„å†…éƒ¨ä½¿ç”¨
-    <var class="varname"><var class="varname">$this</var></var> å’Œå¯¹è±¡å˜é‡ã€‚
-   </p>
-
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="oop4.constructor.html">æ„é€ å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="keyword.parent.html">parent</a></div>
- <div class="up"><a href="oop4.html">ç±»ä¸å¯¹è±¡ï¼ˆPHP 4ï¼‰</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

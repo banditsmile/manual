@@ -1,67 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›å½“å‰ Unix æ—¶é—´æˆ³å’Œå¾®ç§’æ•°</title>
+<HTML  ><HEAD  ><TITLE  >microtime</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ê±¼äÈÕÆÚº¯Êı¿â" HREF="ref.datetime.html"><LINK  REL="PREVIOUS" TITLE="localtime" HREF="function.localtime.html"><LINK  REL="NEXT" TITLE="mktime" HREF="function.mktime.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.localtime.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mktime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.microtime" ></A
+>microtime</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN18708" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>microtime&nbsp;--&nbsp;
+     ·µ»Øµ±Ç° UNIX Ê±¼ä´ÁºÍÎ¢ÃëÊı</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN18711" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >microtime</B
+> ( void )<BR  ></BR
+><P  >&#13;     ·µ»Ø¸ñÊ½Îª¡°msec sec¡±µÄ×Ö·û´®£¬ÆäÖĞ sec ÊÇµ±Ç°µÄ Unix
+     Ê±¼ä´Á£¬msec ÊÇÎ¢Ãë²¿·Ö¡£±¾º¯Êı½öÔÚÖ§³Ö gettimeofday()
+     ÏµÍ³µ÷ÓÃµÄ²Ù×÷ÏµÍ³ÏÂ¿ÉÓÃ¡£
+    </P
+><P  >&#13;     ×Ö·û´®µÄÁ½²¿·Ö¶¼ÊÇÒÔÃëÎªµ¥Î»·µ»ØµÄ¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18719" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >microtime()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">getmicrotime</font><font  color="#007700">(){ <br  />&nbsp;&nbsp;&nbsp;&nbsp;list(</font><font  color="#0000BB">$usec</font><font  color="#007700">, </font><font  color="#0000BB">$sec</font><font  color="#007700">) = </font><font  color="#0000BB">explode</font><font  color="#007700">(</font><font  color="#DD0000">" "</font><font  color="#007700">,</font><font  color="#0000BB">microtime</font><font  color="#007700">()); <br  />&nbsp;&nbsp;&nbsp;&nbsp;return ((float)</font><font  color="#0000BB">$usec </font><font  color="#007700">+ (float)</font><font  color="#0000BB">$sec</font><font  color="#007700">); <br  />&nbsp;&nbsp;&nbsp;&nbsp;} <br  /><br  /></font><font  color="#0000BB">$time_start </font><font  color="#007700">= </font><font  color="#0000BB">getmicrotime</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">1000</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++){<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">//do nothing, 1000 times<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">}<br  /><br  /></font><font  color="#0000BB">$time_end </font><font  color="#007700">= </font><font  color="#0000BB">getmicrotime</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$time </font><font  color="#007700">= </font><font  color="#0000BB">$time_end </font><font  color="#007700">- </font><font  color="#0000BB">$time_start</font><font  color="#007700">;<br  /><br  />echo </font><font  color="#DD0000">"Did nothing in $time seconds"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.time.html"  ><B  CLASS="function" >time()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.localtime.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mktime.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >localtime</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.datetime.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mktime</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.localtime.html">localtime</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mktime.html">mktime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.microtime" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">microtime</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">microtime</span> &mdash; <span class="dc-title">è¿”å›å½“å‰ Unix æ—¶é—´æˆ³å’Œå¾®ç§’æ•°</span></p>
 
- </div>
- <div class="refsect1 unknown-seealsp" id="refsect1-function.microtime-unknown-seealsp">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>microtime</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$get_as_float</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>microtime()</strong></span> å½“å‰ Unix
-   æ—¶é—´æˆ³ä»¥åŠå¾®ç§’æ•°ã€‚æœ¬å‡½æ•°ä»…åœ¨æ”¯æŒ gettimeofday()
-   ç³»ç»Ÿè°ƒç”¨çš„æ“ä½œç³»ç»Ÿä¸‹å¯ç”¨ã€‚
-  </p>
-  <p class="para">
-   å¦‚æœè°ƒç”¨æ—¶ä¸å¸¦å¯é€‰å‚æ•°ï¼Œæœ¬å‡½æ•°ä»¥ &quot;msec sec&quot;
-   çš„æ ¼å¼è¿”å›ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå…¶ä¸­ sec æ˜¯è‡ª Unix çºªå…ƒï¼ˆ0:00:00 January 1,
-   1970 GMTï¼‰èµ·åˆ°ç°åœ¨çš„ç§’æ•°ï¼Œmsec æ˜¯å¾®ç§’éƒ¨åˆ†ã€‚å­—ç¬¦ä¸²çš„ä¸¤éƒ¨åˆ†éƒ½æ˜¯ä»¥ç§’ä¸ºå•ä½è¿”å›çš„ã€‚
-  </p>
-  <p class="para">
-   å¦‚æœç»™å‡ºäº† <code class="parameter">get_as_float</code> å‚æ•°å¹¶ä¸”å…¶å€¼ç­‰ä»·äº
-   <strong><code>TRUE</code></strong>ï¼Œ<span class="function"><strong>microtime()</strong></span> å°†è¿”å›ä¸€ä¸ªæµ®ç‚¹æ•°ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    <code class="parameter">get_as_float</code> å‚æ•°æ˜¯ PHP 5.0.0 æ–°åŠ çš„ã€‚
-   </span>
-  </p></blockquote>
-  <p class="para">
-   <div class="example" id="example-2410">
-    <p><strong>Example #1 ç”¨ <span class="function"><strong>microtime()</strong></span> å¯¹è„šæœ¬çš„è¿è¡Œè®¡æ—¶</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/**<br />&nbsp;*&nbsp;Simple&nbsp;function&nbsp;to&nbsp;replicate&nbsp;PHP&nbsp;5&nbsp;behaviour<br />&nbsp;*/<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">microtime_float</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;list(</span><span style="color: #0000BB">$usec</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sec</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">"&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">microtime</span><span style="color: #007700">());<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;((float)</span><span style="color: #0000BB">$usec&nbsp;</span><span style="color: #007700">+&nbsp;(float)</span><span style="color: #0000BB">$sec</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$time_start&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">microtime_float</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Sleep&nbsp;for&nbsp;a&nbsp;while<br /></span><span style="color: #0000BB">usleep</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$time_end&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">microtime_float</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$time&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$time_end&nbsp;</span><span style="color: #007700">-&nbsp;</span><span style="color: #0000BB">$time_start</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Did&nbsp;nothing&nbsp;in&nbsp;</span><span style="color: #0000BB">$time</span><span style="color: #DD0000">&nbsp;seconds\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   å‚è§ <span class="function"><a href="function.time.html" class="function">time()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.localtime.html">localtime</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mktime.html">mktime</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,198 +1,96 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Open a persistent connection to an InterBase database</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-param-info.html">ibase_param_info</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-prepare.html">ibase_prepare</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-pconnect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_pconnect</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_pconnect</span> &mdash; <span class="dc-title">Open a persistent connection to an InterBase database</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-pconnect-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ibase_pconnect</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$charset</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$buffers</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$dialect</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$role</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$sync</code></span>
-  ]]]]]]]] )</div>
-
-  <p class="para rdfs-comment">
-   Opens a persistent connection to an InterBase database.
-  </p>
-  <p class="para">
-   <span class="function"><strong>ibase_pconnect()</strong></span> acts very much like
-   <span class="function"><a href="function.ibase-connect.html" class="function">ibase_connect()</a></span> with two major differences.
-  </p>
-  <p class="para">
-   First, when connecting, the function will first try to find a (persistent)
-   link that&#039;s already opened with the same parameters. If one is found, an
-   identifier for it will be returned instead of opening a new connection.
-  </p>
-  <p class="para">
-   Second, the connection to the InterBase server will not be closed when the
-   execution of the script ends. Instead, the link will remain open for
-   future use (<span class="function"><a href="function.ibase-close.html" class="function">ibase_close()</a></span> will not close links
-   established by <span class="function"><strong>ibase_pconnect()</strong></span>). This type of link is
-   therefore called &#039;persistent&#039;.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-pconnect-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">database</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The <code class="parameter">database</code> argument has to be a valid path to
-       database file on the server it resides on. If the server is not local,
-       it must be prefixed with either &#039;hostname:&#039; (TCP/IP), &#039;//hostname/&#039;
-       (NetBEUI) or &#039;hostname@&#039; (IPX/SPX), depending on the connection
-       protocol used.   
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">username</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The user name. Can be set with the
-       <em>ibase.default_user</em> <var class="filename">php.ini</var> directive.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">password</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The password for <code class="parameter">username</code>. Can be set with the
-       <em>ibase.default_password</em> <var class="filename">php.ini</var> directive.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">charset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">charset</code> is the default character set for a
-       database.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">buffers</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">buffers</code> is the number of database buffers to
-       allocate for the server-side cache. If 0 or omitted, server chooses
-       its own default.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">dialect</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">dialect</code> selects the default SQL dialect for any
-       statement executed within a connection, and it defaults to the highest
-       one supported by client libraries. Functional only with InterBase 6
-       and up.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">role</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Functional only with InterBase 5 and up.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">sync</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_pconnect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_param_info" HREF="function.ibase-param-info.html"><LINK  REL="NEXT" TITLE="ibase_prepare" HREF="function.ibase-prepare.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-param-info.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-prepare.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-pconnect" ></A
+>ibase_pconnect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45615" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>ibase_pconnect&nbsp;--&nbsp;
+     Open a persistent connection to an InterBase database
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45618" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >ibase_pconnect</B
+> ( string database [, string username [, string password [, string charset [, int buffers [, int dialect [, string role]]]]]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >ibase_pconnect()</B
+> acts very much like
+     <A  HREF="function.ibase-connect.html"  ><B  CLASS="function" >ibase_connect()</B
+></A
+> with two major differences.
+     First, when connecting, the function will first try to find a
+     (persistent) link that's already opened with the same parameters.
+     If one is found, an identifier for it will be returned instead of
+     opening a new connection. Second, the connection to the InterBase
+     server will not be closed when the execution of the script ends.
+     Instead, the link will remain open for future use
+     (<A  HREF="function.ibase-close.html"  ><B  CLASS="function" >ibase_close()</B
+></A
+> will not close links established
+     by <B  CLASS="function" >ibase_pconnect()</B
+>). This type of link is
+     therefore called 'persistent'.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >buffers</I
+></TT
+> was added in PHP4-RC2.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >dialect</I
+></TT
+> was added in PHP4-RC2. It is functional
+       only with InterBase 6 and versions higher than that.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >role</I
+></TT
+> was added in PHP4-RC2. It is functional
+       only with InterBase 5 and versions higher than that.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.ibase-close.html"  ><B  CLASS="function" >ibase_close()</B
+></A
+> and 
+     <A  HREF="function.ibase-connect.html"  ><B  CLASS="function" >ibase_connect()</B
+></A
+> for the meaning of
+     parameters passed to this function. They are exactly the same.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-param-info.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-prepare.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_param_info</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_prepare</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-pconnect-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an InterBase link identifier on success, or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-pconnect-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-close.html" class="function" rel="rdfs-seeAlso">ibase_close()</a> - Close a connection to an InterBase database</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-connect.html" class="function" rel="rdfs-seeAlso">ibase_connect()</a> - Open a connection to a database</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-param-info.html">ibase_param_info</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-prepare.html">ibase_prepare</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

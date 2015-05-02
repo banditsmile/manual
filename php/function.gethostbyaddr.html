@@ -1,99 +1,72 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取指定的IP地址对应的主机名</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fsockopen.html">fsockopen</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gethostbyname.html">gethostbyname</a></div>
- <div class="up"><a href="ref.network.html">网络 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.gethostbyaddr" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">gethostbyaddr</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">gethostbyaddr</span> &mdash; <span class="dc-title">
-   获取指定的IP地址对应的主机名
-  </span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.gethostbyaddr-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>gethostbyaddr</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$ip_address</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   返回指定的IP地址（<code class="parameter">ip_address</code>）对应的主机名。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.gethostbyaddr-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">ip_address</code></dt>
-
-     <dd>
-
-      <p class="para">
-       主机的IP地址。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.gethostbyaddr-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功则返回主机名；失败则原样输出（输出IP地址）；如果输入的格式不正常，则返回<strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.gethostbyaddr-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4764">
-    <p><strong>Example #1 一个使用 <span class="function"><strong>gethostbyaddr()</strong></span> 的简单例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$hostname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gethostbyaddr</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">]);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$hostname</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >gethostbyaddr</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Network Functions" HREF="ref.network.html"><LINK  REL="PREVIOUS" TITLE="fsockopen" HREF="function.fsockopen.html"><LINK  REL="NEXT" TITLE="gethostbyname" HREF="function.gethostbyname.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fsockopen.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.gethostbyname.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.gethostbyaddr" ></A
+>gethostbyaddr</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN72627" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>gethostbyaddr&nbsp;--&nbsp;
+     Get the Internet host name corresponding to a given IP address
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN72630" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >gethostbyaddr</B
+> ( string ip_address)<BR  ></BR
+><P  >&#13;     Returns the host name of the Internet host specified by
+     <TT  CLASS="parameter" ><I  >ip_address</I
+></TT
+> or a string containing the unmodified 
+     <TT  CLASS="parameter" ><I  >ip_address</I
+></TT
+> on failure.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN72642" ></A
+><P  ><B  >���� 1. A simple <B  CLASS="function" >gethostbyaddr()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$hostname </font><font  color="#007700">= </font><font  color="#0000BB">gethostbyaddr</font><font  color="#007700">(</font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'REMOTE_ADDR'</font><font  color="#007700">]);<br  />&nbsp;&nbsp;<br  />echo </font><font  color="#0000BB">$hostname</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.gethostbyname.html"  ><B  CLASS="function" >gethostbyname()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fsockopen.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.gethostbyname.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fsockopen</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.network.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >gethostbyname</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.gethostbyaddr-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.gethostbyname.html" class="function" rel="rdfs-seeAlso">gethostbyname()</a> - Get the IPv4 address corresponding to a given Internet host name</span></li>
-    <li class="member"><span class="function"><a href="function.gethostbynamel.html" class="function" rel="rdfs-seeAlso">gethostbynamel()</a> - Get a list of IPv4 addresses corresponding to a given Internet host
-   name</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fsockopen.html">fsockopen</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gethostbyname.html">gethostbyname</a></div>
- <div class="up"><a href="ref.network.html">网络 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

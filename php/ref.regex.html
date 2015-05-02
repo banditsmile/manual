@@ -1,82 +1,187 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>POSIX Regex å‡½æ•°</title>
+<HTML  ><HEAD  ><TITLE  >ÕıÔò±í´ïÊ½º¯Êı¿â£¨POSIX À©Õ¹£©</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="qdom_tree" HREF="function.qdom-tree.html"><LINK  REL="NEXT" TITLE="ereg_replace" HREF="function.ereg-replace.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.qdom-tree.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ereg-replace.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.regex" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >XCIII. ÕıÔò±í´ïÊ½º¯Êı¿â£¨POSIX À©Õ¹£©</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN96431" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.intro" ></A
+>½éÉÜ</H1
+><DIV  CLASS="tip" ><BLOCKQUOTE  CLASS="tip" ><P  ><B  >ÌáÊ¾: </B
+>
+      PHP Ò²Ö§³ÖÊ¹ÓÃ Perl ¼æÈİÓï·¨µÄ
+      <A  HREF="ref.pcre.html"  >PCRE º¯Êı¿â</A
+>£¬Ö§³Ö
+      non-greedy Æ¥Åä£¬¶ÏÑÔ£¬Ìõ¼ş×ÓÄ£Ê½ÒÔ¼°ÆäËüĞí¶à
+      POSIX À©Õ¹ÕıÔò±í´ïÊ½Óï·¨Ëù²»Ö§³ÖµÄÌØĞÔ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      ±¾ÀàÕıÔò±í´ïÊ½²¢²»ÄÜ°²È«ÓÃÓÚ¶ş½øÖÆÄ£Ê½¡£<A  HREF="ref.pcre.html"  >PCRE
+      º¯Êı¿â</A
+>Ôò¿ÉÒÔ¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     ÕıÔò±í´ïÊ½ÔÚ PHP ÖĞÓÃÀ´×ö¸´ÔÓµÄ×Ö·û´®²Ù×÷¡£Ö§³ÖÕıÔò±í´ïÊ½µÄº¯ÊıÎª£º
+     <P  ></P
+><UL  ><LI  ><P  ><A  HREF="function.ereg.html"  ><B  CLASS="function" >ereg()</B
+></A
+></P
+></LI
+><LI  ><P  ><A  HREF="function.ereg-replace.html"  ><B  CLASS="function" >ereg_replace()</B
+></A
+></P
+></LI
+><LI  ><P  ><A  HREF="function.eregi.html"  ><B  CLASS="function" >eregi()</B
+></A
+></P
+></LI
+><LI  ><P  ><A  HREF="function.eregi-replace.html"  ><B  CLASS="function" >eregi_replace()</B
+></A
+></P
+></LI
+><LI  ><P  ><A  HREF="function.split.html"  ><B  CLASS="function" >split()</B
+></A
+></P
+></LI
+><LI  ><P  ><A  HREF="function.spliti.html"  ><B  CLASS="function" >spliti()</B
+></A
+></P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     ÕâĞ©º¯Êı¶¼½ÓÊÜÒ»¸öÕıÔò±í´ïÊ½×Ö·û´®×÷ÎªÆäµÚÒ»¸ö²ÎÊı¡£PHP Ê¹ÓÃÓÉ
+     POSIX 1003.3 ¶¨ÒåµÄ POSIX À©Õ¹ÕıÔò±í´ïÊ½¡£POSIX
+     ÕıÔò±í´ïÊ½ÍêÕûµÄÃèÊö¼û°üº¬ÔÚ PHP ·¢ĞĞ°üÖĞ regex Ä¿Â¼ÏÂµÄ man
+     Ò³Ãæ¡£¿ÉÒÔÍ¨¹ıÀàËÆ
+     <B  CLASS="command" >man /usr/local/src/regex/regex.7</B
+>
+     µÄÃüÁîÀ´ÔÄ¶Á¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.installation" ></A
+>°²×°</H1
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;   ³ı·ÇÖªµÀ×Ô¼ºÔÚ×öÊ²Ã´£¬·ñÔò²»Òª¸Ä±ä TYPE¡£
+  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;  Òª¼¤»î regexp µÄÖ§³ÖÔÚÅäÖÃ PHP Ê±¼ÓÉÏ
+  <TT  CLASS="option" >--with-regex[=TYPE]</TT
+>¡£TYPE
+  ¿ÉÒÔÊÇ
+  system£¬apache »ò php Ö®Ò»¡£Ä¬ÈÏÊ¹ÓÃ php¡£
+ </P
+><P  > <TT  CLASS="literal" >PHP</TT
+> µÄ Windows °æ±¾ÒÑ¾­ÄÚÖÃ¸ÃÀ©Õ¹Ä£¿éµÄÖ§³Ö¡£ÄúÎŞĞè¼ÓÔØÈÎºÎ¸½¼ÓµÄÀ©Õ¹¿â¼´¿ÉÊ¹ÓÃÕâĞ©º¯Êı¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ³£Á¿¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.examples" ></A
+>·¶Àı</H1
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96485" ></A
+><P  ><B  >Àı×Ó 1. ÕıÔò±í´ïÊ½Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// Èç¹ûÔÚ $string ÖĞÈÎºÎµØ·½ÕÒµ½ "abc" Ôò·µ»Ø &amp;true;<br  /></font><font  color="#0000BB">ereg </font><font  color="#007700">(</font><font  color="#DD0000">"abc"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Èç¹û $string ÒÔ "abc" ¿ªÍ·Ôò·µ»Ø &amp;true;<br  /></font><font  color="#0000BB">ereg </font><font  color="#007700">(</font><font  color="#DD0000">"^abc"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Èç¹û $string ÒÔ "abc" ½áÎ²Ôò·µ»Ø &amp;true;<br  /></font><font  color="#0000BB">ereg </font><font  color="#007700">(</font><font  color="#DD0000">"abc$"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Èç¹ûÓÃ»§ä¯ÀÀÆ÷ÊÇ Netscape 2£¬3 »ò MSIE 3 Ôò·µ»Ø &amp;true;<br  /></font><font  color="#0000BB">eregi </font><font  color="#007700">(</font><font  color="#DD0000">"(ozilla.[23]|MSIE.3)"</font><font  color="#007700">, </font><font  color="#0000BB">$HTTP_USER_AGENT</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ½«Èı¸ö¿Õ¸ñ·Ö¸ôµÄµ¥´Ê·ÅÈë $regs[1]£¬$regs[2] ºÍ $regs[3] ÖĞ<br  /></font><font  color="#0000BB">ereg </font><font  color="#007700">(</font><font  color="#DD0000">"([[:alnum:]]+) ([[:alnum:]]+) ([[:alnum:]]+)"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">,</font><font  color="#0000BB">$regs</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ½« &lt;br /&gt; ±ê¼Ç·Åµ½ $string ¿ªÍ·<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#0000BB">ereg_replace </font><font  color="#007700">(</font><font  color="#DD0000">"^"</font><font  color="#007700">, </font><font  color="#DD0000">"&lt;br /&gt;"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ½« &lt;br /&gt; ±ê¼Ç·Åµ½ $string ½áÎ²<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#0000BB">ereg_replace </font><font  color="#007700">(</font><font  color="#DD0000">"$"</font><font  color="#007700">, </font><font  color="#DD0000">"&lt;br /&gt;"</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// É¾³ı $string ÖĞµÄËùÓĞ»»ĞĞ·û<br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#0000BB">ereg_replace </font><font  color="#007700">(</font><font  color="#DD0000">"\n"</font><font  color="#007700">, </font><font  color="#DD0000">""</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="regex.seealso" ></A
+>Ïà¹Ø²Î¿¼</H1
+><P  >&#13;     Perl ¼æÈİÓï·¨µÄÕıÔò±í´ïÊ½¼û
+     <A  HREF="ref.pcre.html"  >PCRE º¯Êı¿â</A
+>¡£¼òµ¥µÄÃüÁîĞĞ½âÊÍÆ÷·ç¸ñµÄÍ¨Åä·ûÆ¥ÅäÓÉ
+     <A  HREF="function.fnmatch.html"  ><B  CLASS="function" >fnmatch()</B
+></A
+> Ìá¹©¡£
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.ereg-replace.html"  >ereg_replace</A
+>&nbsp;--&nbsp;Ìæ»»ÕıÔò±í´ïÊ½</DT
+><DT  ><A  HREF="function.ereg.html"  >ereg</A
+>&nbsp;--&nbsp;ÕıÔò±í´ïÊ½Æ¥Åä</DT
+><DT  ><A  HREF="function.eregi-replace.html"  >eregi_replace</A
+>&nbsp;--&nbsp;²»Çø·Ö´óĞ¡Ğ´Ìæ»»ÕıÔò±í´ïÊ½</DT
+><DT  ><A  HREF="function.eregi.html"  >eregi</A
+>&nbsp;--&nbsp;²»Çø·Ö´óĞ¡Ğ´µÄÕıÔò±í´ïÊ½Æ¥Åä</DT
+><DT  ><A  HREF="function.split.html"  >split</A
+>&nbsp;--&nbsp;ÓÃÕıÔò±í´ïÊ½½«×Ö·û´®·Ö¸îµ½Êı×éÖĞ</DT
+><DT  ><A  HREF="function.spliti.html"  >spliti</A
+>&nbsp;--&nbsp;
+     ÓÃÕıÔò±í´ïÊ½²»Çø·Ö´óĞ¡Ğ´½«×Ö·û´®·Ö¸îµ½Êı×éÖĞ
+    </DT
+><DT  ><A  HREF="function.sql-regcase.html"  >sql_regcase</A
+>&nbsp;--&nbsp;
+     ²úÉúÓÃÓÚ²»Çø·Ö´óĞ¡µÄÆ¥ÅäµÄÕıÔò±í´ïÊ½
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.qdom-tree.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ereg-replace.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >qdom_tree</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ereg_replace</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="regex.examples.html">èŒƒä¾‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ereg-replace.html">ereg_replace</a></div>
- <div class="up"><a href="book.regex.html">POSIX Regex</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.regex" class="reference">
- <h1 class="title">POSIX Regex å‡½æ•°</h1>
- <div class="partintro">
-  <h1 class="title">å‚è§</h1>
-  <p class="para">
-   For regular expressions in Perl-compatible syntax have a look at the
-   <a href="book.pcre.html" class="link">PCRE functions</a>. The simpler shell style
-   wildcard pattern matching is provided by <span class="function"><a href="function.fnmatch.html" class="function">fnmatch()</a></span>.
-  </p>
- </div>
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.ereg-replace.html">ereg_replace</a> â€” æ­£åˆ™è¡¨è¾¾å¼æ›¿æ¢</li><li><a href="function.ereg.html">ereg</a> â€” æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</li><li><a href="function.eregi-replace.html">eregi_replace</a> â€” ä¸åŒºåˆ†å¤§å°å†™çš„æ­£åˆ™è¡¨è¾¾å¼æ›¿æ¢</li><li><a href="function.eregi.html">eregi</a> â€” ä¸åŒºåˆ†å¤§å°å†™çš„æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</li><li><a href="function.split.html">split</a> â€” ç”¨æ­£åˆ™è¡¨è¾¾å¼å°†å­—ç¬¦ä¸²åˆ†å‰²åˆ°æ•°ç»„ä¸­</li><li><a href="function.spliti.html">spliti</a> â€” ç”¨æ­£åˆ™è¡¨è¾¾å¼ä¸åŒºåˆ†å¤§å°å†™å°†å­—ç¬¦ä¸²åˆ†å‰²åˆ°æ•°ç»„ä¸­</li><li><a href="function.sql-regcase.html">sql_regcase</a> â€” äº§ç”Ÿç”¨äºä¸åŒºåˆ†å¤§å°çš„åŒ¹é…çš„æ­£åˆ™è¡¨è¾¾å¼</li></ul>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="regex.examples.html">èŒƒä¾‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ereg-replace.html">ereg_replace</a></div>
- <div class="up"><a href="book.regex.html">POSIX Regex</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

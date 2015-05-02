@@ -1,124 +1,99 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Sets a quota for a given mailbox</title>
+<HTML  ><HEAD  ><TITLE  >imap_set_quota</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_search" HREF="function.imap-search.html"><LINK  REL="NEXT" TITLE="imap_setacl" HREF="function.imap-setacl.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-search.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-setacl.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-set-quota" ></A
+>imap_set_quota</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN43302" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>imap_set_quota&nbsp;--&nbsp;Sets a quota for a given mailbox</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN43305" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >imap_set_quota</B
+> ( resource imap_stream, string quota_root, int quota_limit)<BR  ></BR
+><P  >  
+     Sets an upper limit quota on a per mailbox basis.  This function
+     requires the <TT  CLASS="parameter" ><I  >imap_stream</I
+></TT
+> to have been opened
+     as the mail administrator account.  It will not work if opened as
+     any other user. 
+    </P
+><P  >&#13;     This function is currently only available to users of the c-client2000
+     or greater library.
+    </P
+><P  >&#13;    <TT  CLASS="parameter" ><I  >imap_stream</I
+></TT
+> is the stream pointer returned from
+    a <A  HREF="function.imap-open.html"  ><B  CLASS="function" >imap_open()</B
+></A
+> call.  This stream must be opened as
+    the mail administrator, other wise this function will fail.
+    <TT  CLASS="parameter" ><I  >quota_root</I
+></TT
+> is the mailbox to have a quota set.  This 
+    should follow the IMAP standard format for a mailbox, 'user.name'.
+    <TT  CLASS="parameter" ><I  >quota_limit</I
+></TT
+> is the maximum size (in KB) for 
+    the <TT  CLASS="parameter" ><I  >quota_root</I
+></TT
+>. 
+    </P
+><P  >&#13;     Returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success and <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN43332" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imap_set_quota()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$mbox </font><font  color="#007700">= </font><font  color="#0000BB">imap_open</font><font  color="#007700">(</font><font  color="#DD0000">"{your.imap.host:143}"</font><font  color="#007700">, </font><font  color="#DD0000">"mailadmin"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">);<br  /><br  />if (!</font><font  color="#0000BB">imap_set_quota</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">, </font><font  color="#DD0000">"user.kalowsky"</font><font  color="#007700">, </font><font  color="#0000BB">3000</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Error in setting quota\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;return;<br  />}<br  /><br  /></font><font  color="#0000BB">imap_close</font><font  color="#007700">(</font><font  color="#0000BB">$mbox</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.imap-open.html"  ><B  CLASS="function" >imap_open()</B
+></A
+> and
+     <B  CLASS="function" >imap_set_quota()</B
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-search.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-setacl.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_search</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_setacl</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-search.html">imap_search</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-setacl.html">imap_setacl</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-set-quota" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_set_quota</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">imap_set_quota</span> &mdash; <span class="dc-title">Sets a quota for a given mailbox</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-set-quota-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imap_set_quota</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$quota_root</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$quota_limit</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Sets an upper limit quota on a per mailbox basis. 
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-set-quota-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">ç”± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> è¿”å›çš„ IMAP æµã€‚</p></dd>
-
-    
-     <dt>
-<code class="parameter">quota_root</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The mailbox to have a quota set. This should follow the IMAP standard
-       format for a mailbox: <em>user.name</em>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">quota_limit</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The maximum size (in KB) for the <code class="parameter">quota_root</code>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-set-quota-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imap-set-quota-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3651">
-    <p><strong>Example #1 <span class="function"><strong>imap_set_quota()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$mbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_open</span><span style="color: #007700">(</span><span style="color: #DD0000">"{imap.example.org:143}"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mailadmin"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">);<br /><br />if&nbsp;(!</span><span style="color: #0000BB">imap_set_quota</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"user.kalowsky"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3000</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Error&nbsp;in&nbsp;setting&nbsp;quota\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return;<br />}<br /><br /></span><span style="color: #0000BB">imap_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$mbox</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.imap-set-quota-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <p class="para">
-   This function is currently only available to users of the c-client2000
-   or greater library.
-  </p>
-  <p class="para">
-   The given <code class="parameter">imap_stream</code> must be opened as the mail
-   administrator, other wise this function will fail.
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.imap-set-quota-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imap-open.html" class="function" rel="rdfs-seeAlso">imap_open()</a> - Open an IMAP stream to a mailbox</span></li>
-    <li class="member"><span class="function"><a href="function.imap-get-quota.html" class="function" rel="rdfs-seeAlso">imap_get_quota()</a> - Retrieve the quota level settings, and usage statics per mailbox</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-search.html">imap_search</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-setacl.html">imap_setacl</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

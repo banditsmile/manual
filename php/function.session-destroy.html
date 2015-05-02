@@ -1,95 +1,86 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>销毁一个会话中的全部数据</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-decode.html">session_decode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-encode.html">session_encode</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.session-destroy" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">session_destroy</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">session_destroy</span> &mdash; <span class="dc-title">销毁一个会话中的全部数据</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.session-destroy-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>session_destroy</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="simpara">
-   <span class="function"><strong>session_destroy()</strong></span> 销毁当前会话中的全部数据，
-   但是不会重置当前会话所关联的全局变量，
-   也不会重置会话 cookie。
-   如果需要再次使用会话变量，
-   必须重新调用 <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> 函数。
-  </p>
-  <p class="para">
-   为了彻底销毁会话，比如在用户退出登录的时候，必须同时重置会话 ID。
-   如果是通过 cookie 方式传送会话 ID 的，那么同时也需要
-   调用 <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> 函数来
-   删除客户端的会话 cookie。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.session-destroy-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.session-destroy-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5082">
-    <p><strong>Example #1 销毁会话数据以及 <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;初始化会话。<br />//&nbsp;如果要使用会话，别忘了现在就调用：<br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;重置会话中的所有变量<br /></span><span style="color: #0000BB">$_SESSION&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br /></span><span style="color: #FF8000">//&nbsp;如果要清理的更彻底，那么同时删除会话&nbsp;cookie<br />//&nbsp;注意：这样不但销毁了会话中的数据，还同时销毁了会话本身<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">ini_get</span><span style="color: #007700">(</span><span style="color: #DD0000">"session.use_cookies"</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$params&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">session_get_cookie_params</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #0000BB">session_name</span><span style="color: #007700">(),&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()&nbsp;-&nbsp;</span><span style="color: #0000BB">42000</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$params</span><span style="color: #007700">[</span><span style="color: #DD0000">"path"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$params</span><span style="color: #007700">[</span><span style="color: #DD0000">"domain"</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$params</span><span style="color: #007700">[</span><span style="color: #DD0000">"secure"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$params</span><span style="color: #007700">[</span><span style="color: #DD0000">"httponly"</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;最后，销毁会话<br /></span><span style="color: #0000BB">session_destroy</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.session-destroy-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    对于旧版本中不使用 <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> 的代码，
-    仅能使用 <span class="function"><a href="function.session-unset.html" class="function">session_unset()</a></span> 来完成会话销毁工作。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.session-destroy-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.unset.html" class="function" rel="rdfs-seeAlso">unset()</a> - 释放给定的变量</span></li>
-    <li class="member"><span class="function"><a href="function.setcookie.html" class="function" rel="rdfs-seeAlso">setcookie()</a> - Send a cookie</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >session_destroy</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Session Handling Functions" HREF="ref.session.html"><LINK  REL="PREVIOUS" TITLE="session_decode" HREF="function.session-decode.html"><LINK  REL="NEXT" TITLE="session_encode" HREF="function.session-encode.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.session-decode.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.session-encode.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.session-destroy" ></A
+>session_destroy</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99072" ></A
+><P  >    (PHP 4 )</P
+>session_destroy&nbsp;--&nbsp;Destroys all data registered to a session</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99075" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >session_destroy</B
+> ( void )<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >session_destroy()</B
+> destroys all of the data
+     associated with the current session. It does not unset any of
+     the global variables associated with the session, or unset the
+     session cookie.
+    </P
+><P  >&#13;     This function returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> on success and 
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure to destroy
+     the session data.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99087" ></A
+><P  ><B  >���� 1. Destroying a session</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// Initialize the session.<br  />// If you are using session_name("something"), don't forget it now!<br  /></font><font  color="#0000BB">session_start</font><font  color="#007700">();<br  /></font><font  color="#FF8000">// Unset all of the session variables.<br  /></font><font  color="#0000BB">session_unset</font><font  color="#007700">();<br  /></font><font  color="#FF8000">// Finally, destroy the session.<br  /></font><font  color="#0000BB">session_destroy</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99091" ></A
+><P  ><B  >���� 2. Destroying a session with $_SESSION</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// Initialize the session.<br  />// If you are using session_name("something"), don't forget it now!<br  /></font><font  color="#0000BB">session_start</font><font  color="#007700">();<br  /></font><font  color="#FF8000">// Unset all of the session variables.<br  /></font><font  color="#0000BB">$_SESSION </font><font  color="#007700">= array();<br  /></font><font  color="#FF8000">// Finally, destroy the session.<br  /></font><font  color="#0000BB">session_destroy</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.session-decode.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.session-encode.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >session_decode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.session.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >session_encode</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-decode.html">session_decode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-encode.html">session_encode</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

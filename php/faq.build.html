@@ -1,433 +1,645 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç¼–è¯‘é—®é¢˜</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="faq.installation.html">å®‰è£…</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="faq.using.html">ä½¿ç”¨ PHP</a></div>
- <div class="up"><a href="faq.html">FAQ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="faq.build" class="chapter">
- <h1>ç¼–è¯‘é—®é¢˜</h1>
-
- 
- <p class="para">æœ¬èŠ‚æ±‡é›†äº†å¤§å¤šæ•°ç¼–è¯‘æ—¶å‡ºçŽ°çš„å¸¸è§é”™è¯¯ã€‚</p>
- <div class="qandaset"><ol class="qandaset_questions"><li><a href="#faq.build.configure">
-    æˆ‘ç”¨åŒ¿å GIT æœåŠ¡å¾—åˆ°äº†æœ€æ–°ç‰ˆçš„ PHPï¼Œä½†æ˜¯é‡Œé¢æ²¡æœ‰ configure è„šæœ¬ï¼
-   </a></li><li><a href="#faq.build.configuring">
-    æˆ‘åœ¨é…ç½® PHP å’Œ Apache ä¸€èµ·å·¥ä½œæ—¶é‡åˆ°äº†é—®é¢˜ã€‚è¯´æ²¡æ‰¾åˆ° 
-     httpd.hï¼Œä½†è¿™ä¸ªæ–‡ä»¶æ˜Žæ˜Žå°±åœ¨é‚£é‡Œï¼
-   </a></li><li><a href="#faq.build.lex">
-    å½“è¿è¡Œ PHP é…ç½®æ—¶ï¼ˆ
-     ./configureï¼‰ï¼Œé‡åˆ°ç±»ä¼¼å¦‚ä¸‹çš„é—®é¢˜ï¼š
-    
-     checking lex output file root... ./configure: lex: command not found configure: error: cannot find output from lex; giving up
-    
-   </a></li><li><a href="#faq.build.apache-sharedcore">
-    å½“è¯•å›¾å¯åŠ¨ Apache æ—¶ï¼Œå¾—åˆ°ç±»ä¼¼å¦‚ä¸‹é”™è¯¯ä¿¡æ¯ï¼š
-    
-     fatal: relocation error: file /path/to/libphp4.so: symbol ap_block_alarms: referenced symbol not found
-    
-   </a></li><li><a href="#faq.build.not-found">
-    å½“è¿è¡Œ configure æ—¶ï¼ŒæŠ¥å‘Šè¯´æ‰¾ä¸åˆ°å¤´æ–‡ä»¶æˆ– GD åº“æˆ– gdbmï¼Œæˆ–å…¶å®ƒçš„ä»€ä¹ˆåŒ…ï¼
-   </a></li><li><a href="#faq.build.yytname">
-     å½“ç¼–è¯‘ 
-      language-parser.tab.cæ–‡ä»¶æ—¶ï¼ŒæŠ¥é”™è¯´ 
-      yytname undeclaredã€‚
-    </a></li><li><a href="#faq.build.link">
-     å½“æˆ‘è¿è¡Œ 
-      makeæ—¶ï¼Œçœ‹ä¸ŠåŽ»ä¸€åˆ‡æ­£å¸¸ï¼Œå¯å½“è¿žæŽ¥æœ€åŽçš„ç¨‹åºæ—¶æŠ¥å‘Šè¯´æ‰¾ä¸åˆ°æŸäº›æ–‡ä»¶è€Œå¤±è´¥äº†ã€‚
-    </a></li><li><a href="#faq.build.undefined">
-     å½“è¿žæŽ¥ PHP æ—¶ï¼ŒæŠ¥å‘Šè¯´æœ‰ä¸€äº›æœªå®šä¹‰çš„å¼•ç”¨ã€‚
-    </a></li><li><a href="#faq.build.apache">
-     æˆ‘ä¸çŸ¥é“æ€Žæ ·æŠŠ PHP å’Œ Apache 1.3 ä¸€èµ·ç¼–è¯‘ã€‚
-    </a></li><li><a href="#faq.build.not-running">
-     æˆ‘æŒ‰ç…§æ‰€æœ‰çš„æ­¥éª¤åœ¨ UNIX ä¸‹å®‰è£…äº†PHP çš„ Apache æ¨¡å—ç‰ˆæœ¬ï¼Œä½†æˆ‘çš„ PHP è„šæœ¬è¢«æ˜¾ç¤ºåœ¨æµè§ˆå™¨ä¸­æˆ–è€…æç¤ºä¿å­˜æ­¤æ–‡ä»¶ã€‚
-    </a></li><li><a href="#faq.build.activate-module">
-     è¯´è¦ç”¨ï¼š
-      --activate-module=src/modules/php4/libphp4.aï¼Œä½†æ˜¯æ­¤æ–‡ä»¶æ ¹æœ¬ä¸å­˜åœ¨ï¼ŒäºŽæ˜¯æˆ‘æ”¹æˆäº† 
-      --activate-module=src/modules/php4/libmodphp4.aï¼Œç»“æžœä¸è¡Œã€‚æ€Žä¹ˆå›žäº‹ï¼Ÿ
-    </a></li><li><a href="#faq.build.ansi">
-     å½“æˆ‘ç”¨ 
-      --activate-module=src/modules/php4/libphp4.aè¯•ç€æŠŠ PHP ç¼–è¯‘æˆ Apache çš„é™æ€æ¨¡å—æ—¶ï¼ŒæŠ¥å‘Šè¯´æˆ‘çš„ç¼–è¯‘å™¨ä¸æœä»Ž ANSI æ ‡å‡†ã€‚
-    </a></li><li><a href="#faq.build.apxs">
-     å½“æˆ‘ç”¨ 
-      --with-apxsç¼–è¯‘ PHP æ—¶å¾—åˆ°å¥‡æ€ªçš„é”™è¯¯ä¿¡æ¯ã€‚
-    </a></li><li><a href="#faq.build.microtime">
-     åœ¨ 
-      makeçš„è¿‡ç¨‹ä¸­ï¼Œåœ¨ microtime ä¸­å‡ºé”™ï¼Œè¿˜æœ‰å¾ˆå¤š 
-      RUSAGE_ä¹‹ç±»çš„ä¸œè¥¿ã€‚
-    </a></li><li><a href="#faq.build.mysql.tempnam">
-     å½“å¸¦ MySQL ç¼–è¯‘ PHP æ—¶ï¼Œå¯ä»¥æ­£ç¡®åœ°è¿è¡Œconfigureï¼Œä½†æ˜¯åœ¨
-      makeçš„è¿‡ç¨‹ä¸­å‡ºçŽ°äº†ç±»ä¼¼ä»¥ä¸‹çš„é”™è¯¯ä¿¡æ¯ï¼š 
-      ext/mysql/ libmysqlclient /my_tempnam.o(.text+0x46): In function 
-       my_tempnam&#039;: /php4/ext/mysql/ libmysqlclient /my_tempnam.c:103: the 
-       use of tempnam&#039; is dangerous, better use mkstemp&#039;ï¼Œè¿™æ˜¯æ€Žä¹ˆå›žäº‹
-    </a></li><li><a href="#faq.build.upgrade">
-     æˆ‘æƒ³å‡çº§æˆ‘çš„ PHPã€‚ä¸Šå“ªé‡Œæ‰¾åˆ°æˆ‘ç”¨æ¥é…ç½®ç›®å‰çš„ PHP çš„ 
-      ./configureçš„å‚æ•°å‘¢ï¼Ÿ
-    </a></li><li><a href="#faq.build.gdlibs">
-     å’Œ GD åº“ä¸€èµ·ç¼–è¯‘ PHP æ—¶ï¼Œè¦ä¹ˆç»™å‡ºä¸€ä¸ªå¥‡æ€ªçš„ç¼–è¯‘é”™è¯¯ï¼Œè¦ä¹ˆåœ¨è¿è¡Œæ—¶å‡ºçŽ° segfaultsã€‚
-    </a></li><li><a href="#faq.installation.needgnu">
-     å½“ç¼–è¯‘ PHP æ—¶æˆ‘çœ‹åˆ°ä¸€äº›éšæœºçš„é”™è¯¯ï¼Œå¥½åƒæ­»äº†ã€‚æˆ‘ç”¨çš„æ˜¯ Solarisï¼Œä¸çŸ¥é“æœ‰æ²¡æœ‰å…³ç³»ã€‚
-    </a></li></ol></div>
-  <dl class="qandaentry" id="faq.build.configure">
-   <dt><strong>
-    æˆ‘ç”¨åŒ¿å GIT æœåŠ¡å¾—åˆ°äº†æœ€æ–°ç‰ˆçš„ PHPï¼Œä½†æ˜¯é‡Œé¢æ²¡æœ‰ configure è„šæœ¬ï¼
-   </strong></dt>
-   <dd class="answer">
-    <p class="para">ä½ å¿…é¡»å®‰è£…æœ‰ GNU autoconf åŒ…ï¼Œè¿™æ ·æ‰å¯ä»¥ä»Ž 
-     <var class="filename">configure.in</var>ç”Ÿæˆ configure è„šæœ¬ã€‚ä»Ž GIT æœåŠ¡ä¸­å¾—åˆ°æºç¨‹åºåŽåªè¦åœ¨æœ€é«˜å±‚çš„ç›®å½•ä¸­è¿è¡Œ 
-     <strong class="command">./buildconf</strong>å³å¯ã€‚ï¼ˆåŒæ—¶è¦æ³¨æ„ï¼Œé™¤éžä½ ç”¨äº† 
-     <em>--enable-maintainer-mode</em>é€‰é¡¹æ¥è¿è¡Œ <strong class="command">configure</strong>ï¼Œå¦åˆ™å³ä½¿ 
-     <var class="filename">configure.in</var>æ–‡ä»¶æ›´æ–°äº†ï¼Œconfigure è„šæœ¬ä¹Ÿä¸ä¼šè‡ªåŠ¨é‡æ–°ç”Ÿæˆã€‚æ‰€ä»¥å½“ä½ å‘çŽ° 
-     <var class="filename">configure.in</var>æ–‡ä»¶æ›´æ–°äº†æ—¶è¦ç¡®ä¿æ‰‹å·¥é‡æ–°ç”Ÿæˆ configure è„šæœ¬ã€‚æœ‰ä¸€ä¸ªç—‡çŠ¶æ˜¯åœ¨ configure ä¹‹åŽæˆ–è€…è¿è¡Œ 
-     <var class="filename">config.status</var>æ—¶åœ¨ Makefile ä¸­å¯»æ‰¾ç±»ä¼¼ @VARIABLE@ çš„ä¸œè¥¿ã€‚ï¼‰</p>
-   </dd>
-  </dl>
-  <dl class="qandaentry" id="faq.build.configuring">
-   <dt><strong>
-    æˆ‘åœ¨é…ç½® PHP å’Œ Apache ä¸€èµ·å·¥ä½œæ—¶é‡åˆ°äº†é—®é¢˜ã€‚è¯´æ²¡æ‰¾åˆ° 
-     <var class="filename">httpd.h</var>ï¼Œä½†è¿™ä¸ªæ–‡ä»¶æ˜Žæ˜Žå°±åœ¨é‚£é‡Œï¼
-   </strong></dt>
-   <dd class="answer">
-    <p class="para">ä½ éœ€è¦å‘Šè¯‰ configure/setup è„šæœ¬ä½ çš„ Apache æºç¨‹åºæœ€ä¸Šå±‚çš„ç›®å½•ä½ç½®ã€‚è¿™æ„å‘³ç€ä½ éœ€è¦è¿™æ ·æŒ‡å®š 
-     <strong class="option configure">--with-apache=/path/to/apache</strong>
-è€Œ
-     <em class="emphasis">ä¸æ˜¯</em>è¿™æ · 
-     <strong class="option configure">--with-apache=/path/to/apache/src</strong>
-ã€‚</p>
-   </dd>
-  </dl>
-  <dl class="qandaentry" id="faq.build.lex">
-   <dt><strong>
-    å½“è¿è¡Œ PHP é…ç½®æ—¶ï¼ˆ
-     <em>./configure</em>ï¼‰ï¼Œé‡åˆ°ç±»ä¼¼å¦‚ä¸‹çš„é—®é¢˜ï¼š
-    
-     <div class="example-contents screen">checking lex output file root... ./configure: lex: command not found configure: error: cannot find output from lex; giving up</div>
-    
-   </strong></dt>
-   <dd class="answer">
-    <p class="para">è¯·è®¤çœŸé˜…è¯» PHP çš„
-     <a href="install.unix.html" class="link">å®‰è£…</a>è¯´æ˜Žï¼Œå¹¶æ³¨æ„è¦ç¼–è¯‘ PHP éœ€è¦åŒæ—¶å®‰è£… flex å’Œ bisonã€‚æ ¹æ®è®¾ç½®çš„ä¸åŒï¼Œå¯ä»¥ä»Žæºä»£ç ç¼–è¯‘ bison å’Œ flexï¼Œè¦ä¹ˆé€šè¿‡å·²ç¼–è¯‘å¥½çš„å‘è¡ŒåŒ…ï¼Œä¾‹å¦‚ RPMã€‚</p>
-   </dd>
-  </dl>
-  <dl class="qandaentry" id="faq.build.apache-sharedcore">
-   <dt><strong>
-    å½“è¯•å›¾å¯åŠ¨ Apache æ—¶ï¼Œå¾—åˆ°ç±»ä¼¼å¦‚ä¸‹é”™è¯¯ä¿¡æ¯ï¼š
-    
-     <div class="example-contents screen">fatal: relocation error: file /path/to/libphp4.so: symbol ap_block_alarms: referenced symbol not found</div>
-    
-   </strong></dt>
-   <dd class="answer">
-    <p class="para">è¯¥é”™è¯¯é€šå¸¸åœ¨ Apache çš„æ ¸å¿ƒç¨‹åºè¢«ç¼–è¯‘ä¸ºå…±äº«ç”¨é€”çš„ DSO åº“æ—¶å‘ç”Ÿã€‚è¯·å°è¯•é‡æ–°é…ç½® Apacheï¼Œç¡®ä¿è‡³å°‘ä½¿ç”¨äº†å¦‚ä¸‹å‚æ•°ï¼š</p>
-    <p class="para">
-     <div class="example-contents screen">--enable-shared=max --enable-rule=SHARED_CORE</div>
-    </p>
-    <p class="para">æ›´å¤šä¿¡æ¯ï¼Œè¯·é˜…è¯» Apache é¡¶å±‚ç›®å½•çš„ 
-     <var class="filename">INSTALL</var>æ–‡ä»¶æˆ–è€… Apache çš„ 
-     <a href="http://httpd.apache.org/docs/current/dso.html" class="link external">&raquo;&nbsp;DSO æ‰‹å†Œ</a>ã€‚</p>
-   </dd>
-  </dl>
-  <dl class="qandaentry" id="faq.build.not-found">
-   <dt><strong>
-    å½“è¿è¡Œ configure æ—¶ï¼ŒæŠ¥å‘Šè¯´æ‰¾ä¸åˆ°å¤´æ–‡ä»¶æˆ– GD åº“æˆ– gdbmï¼Œæˆ–å…¶å®ƒçš„ä»€ä¹ˆåŒ…ï¼
-   </strong></dt>
-   <dd class="answer">
-    <p class="para">å¯ä»¥é€šè¿‡æŒ‡å®šé™„åŠ çš„é€‰é¡¹è®© configure è„šæœ¬åœ¨éžæ ‡å‡†çš„è·¯å¾„ä¸­å¯»æ‰¾å¤´æ–‡ä»¶å’Œåº“å¹¶ä¼ é€’ç»™ C é¢„å¤„ç†å™¨å’Œè¿žæŽ¥å™¨ï¼Œä¾‹å¦‚ï¼š 
-     <div class="example-contents">
-<div class="cdata"><pre>
-    CPPFLAGS=-I/path/to/include LDFLAGS=-L/path/to/library ./configure
-</pre></div>
-         </div>
-å¦‚æžœç”¨ csh çš„å˜ç§ä½œä¸ºä½ çš„ç™»å½• shellï¼ˆä¸ºä»€ä¹ˆï¼Ÿï¼‰ï¼Œé‚£å°±æ˜¯ï¼š 
-         <div class="example-contents">
-<div class="cdata"><pre>
-    env CPPFLAGS=-I/path/to/include LDFLAGS=-L/path/to/library ./configure
-</pre></div>
-         </div>
-</p>
-     </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.yytname">
-    <dt><strong>
-     å½“ç¼–è¯‘ 
-      <var class="filename">language-parser.tab.c</var>æ–‡ä»¶æ—¶ï¼ŒæŠ¥é”™è¯´ 
-      <em>yytname undeclared</em>ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">éœ€è¦æ›´æ–° Bison çš„ç‰ˆæœ¬ã€‚æœ€æ–°ç‰ˆæœ¬åœ¨ 
-      <a href="http://www.gnu.org/software/bison/bison.html" class="link external">&raquo;&nbsp;http://www.gnu.org/software/bison/bison.html</a>ã€‚</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.link">
-    <dt><strong>
-     å½“æˆ‘è¿è¡Œ 
-      <strong class="command">make</strong>æ—¶ï¼Œçœ‹ä¸ŠåŽ»ä¸€åˆ‡æ­£å¸¸ï¼Œå¯å½“è¿žæŽ¥æœ€åŽçš„ç¨‹åºæ—¶æŠ¥å‘Šè¯´æ‰¾ä¸åˆ°æŸäº›æ–‡ä»¶è€Œå¤±è´¥äº†ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">ä¸€äº›æ—§ç‰ˆæœ¬çš„ make æ²¡æœ‰æ­£ç¡®å°† functions ç›®å½•ä¸‹ç¼–è¯‘åŽçš„æ–‡ä»¶æ”¾åˆ°åŒä¸€ä¸ªç›®å½•ä¸‹ã€‚è¯•è¯•è¿è¡Œ 
-      <strong class="command">cp *.o functions</strong>ç„¶åŽå†è¿è¡Œ 
-      <strong class="command">make</strong>çœ‹çœ‹æœ‰æ²¡æœ‰ä»€ä¹ˆå¸®åŠ©ã€‚å¦‚æžœæˆåŠŸäº†ï¼Œé‚£ä½ ç¡®å®žéœ€è¦æ›´æ–°åˆ°æœ€æ–°ç‰ˆçš„ GNU makeã€‚</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.undefined">
-    <dt><strong>
-     å½“è¿žæŽ¥ PHP æ—¶ï¼ŒæŠ¥å‘Šè¯´æœ‰ä¸€äº›æœªå®šä¹‰çš„å¼•ç”¨ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">çœ‹çœ‹è¿žæŽ¥çš„è¿™ä¸€è¡Œå‘½ä»¤ï¼Œç¡®è®¤æ‰€æœ‰é€‚å½“çš„åº“éƒ½åŒ…æ‹¬åœ¨æœ€åŽäº†ã€‚é€šå¸¸å¯èƒ½æ¼æŽ‰äº†â€œ-ldlâ€å’Œä½ åŒ…æ‹¬çš„ä»»ä½•æ•°æ®åº“æ”¯æŒæ‰€éœ€è¦çš„åº“ã€‚</p>
-     <p class="para">ä¸€äº›äººä¹ŸæŠ¥å‘Šè¯´åœ¨å’Œ Apache è¿žæŽ¥æ—¶ä»–ä»¬ä¸å¾—ä¸ç´§æŽ¥ç€ 
-      <var class="filename">libphp4.a</var>ä¹‹åŽåŠ ä¸Šâ€œ-ldlâ€ã€‚</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.apache">
-    <dt><strong>
-     æˆ‘ä¸çŸ¥é“æ€Žæ ·æŠŠ PHP å’Œ Apache 1.3 ä¸€èµ·ç¼–è¯‘ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">è¿™å…¶å®žå¾ˆç®€å•ã€‚å°å¿ƒåœ°ç…§ç€ä»¥ä¸‹æ­¥éª¤æ¥ï¼š 
-      <ul class="itemizedlist">
-       <li class="listitem">
-        <span class="simpara">ä»Ž 
-         <a href="http://httpd.apache.org/download.cgi" class="link external">&raquo;&nbsp;http://httpd.apache.org/download.cgi</a>ä¸‹è½½æœ€æ–°ç‰ˆçš„ Apache 1.3ã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">è§£åŽ‹ç¼©åˆ°æŸå¤„ï¼Œä¾‹å¦‚ 
-         <var class="filename">/usr/local/src/apache-1.3</var>ã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">ç¼–è¯‘ PHPï¼Œå…ˆè¿è¡Œ 
-         <strong class="command">./configure --with-apache=/&lt;path&gt;/apache-1.3</strong>ï¼ˆç”¨ä½  apache-1.3 æ‰€åœ¨çš„çœŸå®žè·¯å¾„æ›¿æ¢æŽ‰ &lt;path&gt;ã€‚ï¼‰</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">è¾“å…¥ 
-         <strong class="command">make</strong>æŽ¥ç€æ˜¯ 
-         <strong class="command">make install</strong>æ¥ç¼–è¯‘ PHP å¹¶æŠŠå¿…è¦çš„æ–‡ä»¶æ‹·è´åˆ° Apache çš„æºç¨‹åºç›®å½•æ ‘ä¸­ã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">æ”¹å˜å½“å‰ç›®å½•åˆ° 
-         <var class="filename">/&lt;path&gt;/apache-1.3/src</var>ç›®å½•å¹¶ç¼–è¾‘ 
-         <var class="filename">Configuration</var>æ–‡ä»¶ã€‚æ·»åŠ è¿™ä¸€è¡Œï¼š
-         <em>AddModule modules/php4/libphp4.a</em>ã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">è¾“å…¥ 
-         <strong class="command">./configure</strong>æŽ¥ç€æ˜¯ 
-         <em>make</em>ã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">ä½ çŽ°åœ¨åº”è¯¥æœ‰ä¸€ä¸ªåŒ…æ‹¬ PHP æ”¯æŒçš„ httpd å¯æ‰§è¡Œç¨‹åºäº†ï¼</span>
-       </li>
-      </ul></p>
-     <p class="para">
-      <em class="emphasis">æ³¨æ„ï¼š</em>ä¹Ÿå¯ä»¥ç”¨æ–°çš„ Apache 
-      <em>./configure</em>è„šæœ¬ã€‚å‚è§ Apache å‘è¡ŒåŒ…ä¸­ 
-      <em>README.configure</em>æ–‡ä»¶ä¸­çš„è¯´æ˜Žã€‚ä¹Ÿçœ‹çœ‹ PHP å‘è¡ŒåŒ…ä¸­çš„ 
-      <var class="filename">INSTALL</var>æ–‡ä»¶ã€‚</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.not-running">
-    <dt><strong>
-     æˆ‘æŒ‰ç…§æ‰€æœ‰çš„æ­¥éª¤åœ¨ UNIX ä¸‹å®‰è£…äº†PHP çš„ Apache æ¨¡å—ç‰ˆæœ¬ï¼Œä½†æˆ‘çš„ PHP è„šæœ¬è¢«æ˜¾ç¤ºåœ¨æµè§ˆå™¨ä¸­æˆ–è€…æç¤ºä¿å­˜æ­¤æ–‡ä»¶ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">è¿™è¯´æ˜Ž PHP æ¨¡å—å‡ºäºŽæŸäº›åŽŸå› æ²¡æœ‰è¢«è°ƒç”¨ã€‚åœ¨å¯»æ±‚æ›´å¤šå¸®åŠ©å‰å…ˆæ£€æŸ¥ä¸‰ä»¶äº‹ï¼š 
-      <ul class="itemizedlist">
-       <li class="listitem">
-        <span class="simpara">ç¡®è®¤ä½ è¿è¡Œçš„ httpd ç¨‹åºå°±æ˜¯ä½ åˆšåˆšç¼–è¯‘çš„æ–° httpd ç¨‹åºã€‚è¿è¡Œï¼š 
-         <em>/path/to/binary/httpd -l</em></span>
-        <span class="simpara">å¦‚æžœä½ æ²¡çœ‹åˆ° 
-         <var class="filename">mod_php4.c</var>è¢«åˆ—å‡ºæ¥é‚£ä½ å°±æ²¡æœ‰è¿è¡Œå¯¹ç¨‹åºã€‚æ‰¾åˆ°å¹¶æ­£ç¡®å®‰è£…ç¨‹åºã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">ç¡®è®¤ä½ åœ¨ 
-         <em>Apache .conf</em>æ–‡ä»¶ä¸­åŠ å…¥äº†æ­£ç¡®çš„ Mime ç±»åž‹ã€‚åº”è¯¥æ˜¯ï¼š 
-         <em>AddType application/x-httpd-php .php</em>
-        </span>
-        <span class="simpara">ä¹Ÿç¡®è®¤ AddType è¿™ä¸€è¡Œæ²¡æœ‰éšè—åœ¨ &lt;Virtualhost&gt; æˆ–è€… &lt;Directory&gt; å—ä¸­ï¼Œè¿™å¯èƒ½ä¼šé€ æˆä½ çš„æµ‹è¯•è„šæœ¬æ‰€åœ¨ä½ç½®æ²¡æœ‰è¢«åº”ç”¨åˆ°æ­¤è®¾ç½®ã€‚</span>
-       </li>
-       <li class="listitem">
-        <span class="simpara">æœ€åŽï¼ŒApache 1.2 å’Œ Apache 1.3 ä¹‹é—´é»˜è®¤é…ç½®æ–‡ä»¶çš„ä½ç½®æ”¹å˜äº†ã€‚ä½ è¦ç¡®è®¤ä½ æ·»åŠ  AddType è¡Œçš„æ–‡ä»¶å°±æ˜¯å®žé™…ä¸Šç”¨çš„ã€‚ä½ å¯ä»¥åœ¨ä½ çš„ <var class="filename">httpd.conf</var> ä¸­æ·»åŠ ä¸€ä¸ªæ˜Žæ˜¾çš„è¯­æ³•é”™è¯¯æˆ–è€…å…¶å®ƒæ˜Žæ˜¾ä¿®æ”¹ï¼Œè¿™å¯ä»¥å‘Šè¯‰ä½ æ˜¯å¦è¯»å–äº†æ­£ç¡®çš„æ–‡ä»¶ã€‚</span>
-       </li>
-      </ul></p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.activate-module">
-    <dt><strong>
-     è¯´è¦ç”¨ï¼š
-      <em>--activate-module=src/modules/php4/libphp4.a</em>ï¼Œä½†æ˜¯æ­¤æ–‡ä»¶æ ¹æœ¬ä¸å­˜åœ¨ï¼ŒäºŽæ˜¯æˆ‘æ”¹æˆäº† 
-      <em>--activate-module=src/modules/php4/libmodphp4.a</em>ï¼Œç»“æžœä¸è¡Œã€‚æ€Žä¹ˆå›žäº‹ï¼Ÿ
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">æ³¨æ„ 
-      <var class="filename">libphp4.a</var>æ–‡ä»¶æœ¬æ¥å°±ä¸è¯¥å­˜åœ¨ï¼Œapache è¿›ç¨‹å°†åˆ›å»ºå®ƒï¼</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.ansi">
-    <dt><strong>
-     å½“æˆ‘ç”¨ 
-      <em>--activate-module=src/modules/php4/libphp4.a</em>è¯•ç€æŠŠ PHP ç¼–è¯‘æˆ Apache çš„é™æ€æ¨¡å—æ—¶ï¼ŒæŠ¥å‘Šè¯´æˆ‘çš„ç¼–è¯‘å™¨ä¸æœä»Ž ANSI æ ‡å‡†ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">è¿™æ˜¯ä¸€ä¸ª Apache è¯¯æŠ¥çš„é”™è¯¯ä¿¡æ¯ï¼Œåœ¨æ–°çš„ç‰ˆæœ¬ä¸­å·²ç»ä¿®æ­£äº†ã€‚</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.apxs">
-    <dt><strong>
-     å½“æˆ‘ç”¨ 
-      <strong class="option configure">--with-apxs</strong>
-ç¼–è¯‘ PHP æ—¶å¾—åˆ°å¥‡æ€ªçš„é”™è¯¯ä¿¡æ¯ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">è¿™é‡Œè¦æ£€æŸ¥ä¸‰ä»¶äº‹ã€‚é¦–å…ˆï¼Œå‡ºäºŽæŸäº›åŽŸå› å½“ Apache ç”Ÿæˆ apxs Perl è„šæœ¬æ—¶ï¼Œæœ‰æ—¶æ²¡æœ‰æ­£ç¡®çš„ç¼–è¯‘å’Œæ ‡è®°å˜é‡å°±ç»“æŸäº†ã€‚æ‰¾åˆ°ä½ çš„ apxs è„šæœ¬ï¼ˆç”¨å‘½ä»¤ 
-      <strong class="command">which apxs</strong>ï¼‰ï¼Œæœ‰æ—¶ä¼šåœ¨ 
-      <var class="filename">/usr/local/apache/bin/apxs</var>æˆ–è€… 
-      <var class="filename">/usr/sbin/apxs</var>ã€‚æ‰“å¼€å¹¶æ£€æŸ¥ç±»ä¼¼å¦‚ä¸‹çš„è¡Œï¼š 
-      <div class="example-contents">
-<div class="cdata"><pre>
-my $CFG_CFLAGS_SHLIB  = &#039; &#039;;          # substituted via Makefile.tmpl
-my $CFG_LD_SHLIB      = &#039; &#039;;          # substituted via Makefile.tmpl
-my $CFG_LDFLAGS_SHLIB = &#039; &#039;;          # substituted via Makefile.tmpl
-</pre></div>
-         </div>
-å¦‚æžœä½ çœ‹åˆ°è¿™å‡ è¡Œï¼Œé‚£é—®é¢˜å°±åœ¨è¿™é‡Œã€‚å®ƒä»¬å¯èƒ½åŒ…å«äº†ä»…ä»…ç©ºæ ¼æˆ–è€…å…¶å®ƒä¸æ­£ç¡®çš„å€¼ï¼Œä¾‹å¦‚â€œq()â€ã€‚æ”¹æˆè¿™æ ·ï¼š 
-         <div class="example-contents">
-<div class="cdata"><pre>
-my $CFG_CFLAGS_SHLIB  = &#039;-fpic -DSHARED_MODULE&#039;; # substituted via Makefile.tmpl
-my $CFG_LD_SHLIB      = &#039;gcc&#039;;                   # substituted via Makefile.tmpl
-my $CFG_LDFLAGS_SHLIB = q(-shared);              # substituted via Makefile.tmpl
-</pre></div>
-         </div>
-ç¬¬äºŒä¸ªå¯èƒ½çš„é—®é¢˜ä»…å¯èƒ½åœ¨åœ¨ Red Hat 6.1 å’Œ 6.2 ä¸­å‘ç”Ÿã€‚Red Hat å‘è¡Œçš„ apxs è„šæœ¬åäº†ã€‚æŸ¥æ‰¾è¿™ä¸€è¡Œï¼š 
-         <div class="example-contents">
-<div class="cdata"><pre>
-my $CFG_LIBEXECDIR    = &#039;modules&#039;;         # substituted via APACI install
-</pre></div>
-         </div>
-å¦‚æžœä½ çœ‹åˆ°ä¸Šé¢è¿™ä¸€è¡Œï¼Œæ”¹æˆè¿™æ ·ï¼š 
-         <div class="example-contents">
-<div class="cdata"><pre>
-my $CFG_LIBEXECDIR    = &#039;/usr/lib/apache&#039;; # substituted via APACI install
-</pre></div>
-         </div>
-æœ€åŽï¼Œå¦‚æžœä½ é‡æ–°é…ç½®æˆ–è€…é‡è£…äº† Apacheï¼Œåœ¨ 
-         <strong class="command">./configure</strong>ä¹‹åŽå’Œ 
-         <strong class="command">make</strong>ä¹‹å‰å¢žåŠ ä¸€ä¸ª 
-         <strong class="command">make clean</strong>å‘½ä»¤ã€‚</p>
-     </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.microtime">
-    <dt><strong>
-     åœ¨ 
-      <strong class="command">make</strong>çš„è¿‡ç¨‹ä¸­ï¼Œåœ¨ microtime ä¸­å‡ºé”™ï¼Œè¿˜æœ‰å¾ˆå¤š 
-      <em>RUSAGE_</em>ä¹‹ç±»çš„ä¸œè¥¿ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">å¦‚æžœ 
-      <strong class="command">make</strong>æ—¶é‡åˆ°ç±»ä¼¼è¿™æ ·çš„é—®é¢˜ï¼š 
-      <div class="example-contents">
-<div class="cdata"><pre>
-microtime.c: In function `php_if_getrusage&#039;:
-microtime.c:94: storage size of `usg&#039; isn&#039;t known
-microtime.c:97: `RUSAGE_SELF&#039; undeclared (first use in this function)
+<HTML  ><HEAD  ><TITLE  >±àÒëÎÊÌâ</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FAQ: ³£¼ûÎÊÌâ" HREF="faq.html"><LINK  REL="PREVIOUS" TITLE="°²×°" HREF="faq.installation.html"><LINK  REL="NEXT" TITLE="Ê¹ÓÃ PHP" HREF="faq.using.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="chapter" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="faq.installation.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="faq.using.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="chapter" ><H1  ><A  NAME="faq.build" >ÕÂ 49. ±àÒëÎÊÌâ</A
+></H1
+><P  >&#13;    ±¾½Ú»ã¼¯ÁË´ó¶àÊý±àÒëÊ±³öÏÖµÄ³£¼û´íÎó¡£
+   </P
+><DIV  CLASS="qandaset" ><DL  ><DT  >1. <A  HREF="faq.build.html#faq.build.configure"  >&#13;      ÎÒÓÃÄäÃû CVS µÃµ½ÁË×îÐÂ°æµÄ PHP£¬µ«ÊÇÀïÃæÃ»ÓÐ configure ½Å±¾£¡
+     </A
+></DT
+><DT  >2. <A  HREF="faq.build.html#faq.build.configuring"  >&#13;      ÎÒÔÚÅäÖÃ PHP ºÍ Apache Ò»Æð¹¤×÷Ê±Óöµ½ÁËÎÊÌâ¡£ËµÃ»ÕÒµ½
+      <TT  CLASS="filename" >httpd.h</TT
+>£¬µ«Õâ¸öÎÄ¼þÃ÷Ã÷¾ÍÔÚÄÇÀï£¡
+     </A
+></DT
+><DT  >3. <A  HREF="faq.build.html#faq.build.lex"  >&#13;      µ±ÔËÐÐ PHP ÅäÖÃÊ±£¨<TT  CLASS="literal" >./configure</TT
+>£©£¬Óöµ½ÀàËÆÈçÏÂµÄÎÊÌâ£º
+     </A
+></DT
+><DT  >4. <A  HREF="faq.build.html#faq.build.apache-sharedcore"  >&#13;      µ±ÎÒÊÔÍ¼Æô¶¯ Apache Ê±£¬ÎÒµÃµ½ÈçÏÂ´íÎóÐÅÏ¢£º
+     </A
+></DT
+><DT  >5. <A  HREF="faq.build.html#faq.build.not-found"  >&#13;      µ±ÎÒÔËÐÐ configure Ê±£¬±¨¸æËµÕÒ²»µ½Í·ÎÄ¼þ»ò GD ¿â»ò gdbm£¬»òÆäËüµÄÊ²Ã´°ü£¡
+     </A
+></DT
+><DT  >6. <A  HREF="faq.build.html#faq.build.yytname"  >&#13;      µ±±àÒë <TT  CLASS="filename" >language-parser.tab.c</TT
+> ÎÄ¼þÊ±£¬±¨´íËµ
+      <TT  CLASS="literal" >yytname undeclared</TT
+>¡£
+     </A
+></DT
+><DT  >7. <A  HREF="faq.build.html#faq.build.link"  >&#13;      µ±ÎÒÔËÐÐ <B  CLASS="command" >make</B
+>
+      Ê±£¬¿´ÉÏÈ¥Ò»ÇÐÕý³££¬¿Éµ±Á¬½Ó×îºóµÄ³ÌÐòÊ±±¨¸æËµÕÒ²»µ½Ä³Ð©ÎÄ¼þ¶øÊ§°ÜÁË¡£
+     </A
+></DT
+><DT  >8. <A  HREF="faq.build.html#faq.build.undefined"  >&#13;      µ±Á¬½Ó PHP Ê±£¬±¨¸æËµÓÐÒ»Ð©Î´¶¨ÒåµÄÒýÓÃ¡£
+     </A
+></DT
+><DT  >9. <A  HREF="faq.build.html#faq.build.Apache"  >&#13;      ÎÒ²»ÖªµÀÔõÑù°Ñ PHP ºÍ Apache 1.3 Ò»Æð±àÒë¡£
+     </A
+></DT
+><DT  >10. <A  HREF="faq.build.html#faq.build.not-running"  >&#13;      ÎÒ°´ÕÕËùÓÐµÄ²½ÖèÔÚ UNIX ÏÂ°²×°ÁËPHP µÄ Apache Ä£¿é°æ±¾£¬µ«ÎÒµÄ PHP
+      ½Å±¾±»ÏÔÊ¾ÔÚä¯ÀÀÆ÷ÖÐ»òÕßÌáÊ¾±£´æ´ËÎÄ¼þ¡£
+     </A
+></DT
+><DT  >11. <A  HREF="faq.build.html#faq.build.activate-module"  >&#13;      ËµÒªÓÃ£º<TT  CLASS="literal" >--activate-module=src/modules/php4/libphp4.a</TT
+>£¬µ«ÊÇ´ËÎÄ¼þ¸ù±¾²»´æÔÚ£¬ÓÚÊÇÎÒ¸Ä³ÉÁË
+      <TT  CLASS="literal" >--activate-module=src/modules/php4/libmodphp4.a</TT
+>£¬½á¹û²»ÐÐ¡£ÔõÃ´»ØÊÂ£¿
+     </A
+></DT
+><DT  >12. <A  HREF="faq.build.html#faq.build.ansi"  >&#13;      µ±ÎÒÓÃ <TT  CLASS="literal" >--activate-module=src/modules/php4/libphp4.a</TT
+>
+      ÊÔ×Å°Ñ PHP ±àÒë³É Apache
+      µÄ¾²Ì¬Ä£¿éÊ±£¬±¨¸æËµÎÒµÄ±àÒëÆ÷²»·þ´Ó ANSI ±ê×¼¡£
+     </A
+></DT
+><DT  >13. <A  HREF="faq.build.html#faq.build.apxs"  >&#13;      µ±ÎÒÓÃ <TT  CLASS="literal" >--with-apxs</TT
+> ±àÒë PHP Ê±µÃµ½Ææ¹ÖµÄ´íÎóÐÅÏ¢¡£
+     </A
+></DT
+><DT  >14. <A  HREF="faq.build.html#faq.build.microtime"  >&#13;     ÔÚ <B  CLASS="command" >make</B
+> µÄ¹ý³ÌÖÐ£¬ÔÚ microtime ÖÐ³ö´í£¬»¹ÓÐºÜ¶à
+     <TT  CLASS="literal" >RUSAGE_</TT
+> Ö®ÀàµÄ¶«Î÷¡£
+    </A
+></DT
+><DT  >15. <A  HREF="faq.build.html#faq.build.mysql.tempnam"  > 
+      µ±´ø MySQL ±àÒë PHP Ê±£¬¿ÉÒÔÕýÈ·µØÔËÐÐÅäÖÃ£¬µ«ÊÇÔÚ <TT  CLASS="literal" >make</TT
+> µÄ¹ý³ÌÖÐ³öÏÖÁËÀàËÆÒÔÏÂµÄ´íÎóÐÅÏ¢£º
+      <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ext/mysql/libmysql/my_tempnam.o(.text+0x46): In function
+      my_tempnam': /php4/ext/mysql/libmysql/my_tempnam.c:103: the
+      use of tempnam' is dangerous, better use mkstemp'</I
+></SPAN
+>£¬ÕâÊÇÔõÃ´»ØÊÂ
+     </A
+></DT
+><DT  >16. <A  HREF="faq.build.html#faq.build.upgrade"  >&#13;      ÎÒÏëÉý¼¶ÎÒµÄ PHP¡£ÉÏÄÄÀïÕÒµ½ÎÒÓÃÀ´ÅäÖÃÄ¿Ç°µÄ PHP µÄ
+      <B  CLASS="command" >./configure</B
+> µÄ²ÎÊýÄØ£¿
+     </A
+></DT
+><DT  >17. <A  HREF="faq.build.html#faq.build.gdlibs"  >&#13;      ºÍ GD ¿âÒ»Æð±àÒë PHP Ê±£¬ÒªÃ´¸ø³öÒ»¸öÆæ¹ÖµÄ±àÒë´íÎó£¬ÒªÃ´ÔÚÔËÐÐÊ±³öÏÖ segfaults¡£
+     </A
+></DT
+><DT  >18. <A  HREF="faq.build.html#faq.installation.needgnu"  >&#13;      µ±±àÒë PHP Ê±ÎÒ¿´µ½Ò»Ð©Ëæ»úµÄ´íÎó£¬ºÃÏñËÀÁË¡£ÎÒÓÃµÄÊÇ Solaris£¬²»ÖªµÀÓÐÃ»ÓÐ¹ØÏµ¡£
+     </A
+></DT
+></DL
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.configure" ></A
+><B  >1. </B
+>
+      ÎÒÓÃÄäÃû CVS µÃµ½ÁË×îÐÂ°æµÄ PHP£¬µ«ÊÇÀïÃæÃ»ÓÐ configure ½Å±¾£¡
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      Äã±ØÐë°²×°ÓÐ GNU µÄ autoconf °ü£¬ÕâÑù²Å¿ÉÒÔ´Ó <TT  CLASS="filename" >configure.in</TT
+>
+      Éú³É configure ½Å±¾¡£´Ó CVS µÃµ½Ô´³ÌÐòºóÖ»ÒªÔÚ×î¸ß²ãµÄÄ¿Â¼ÖÐÔËÐÐ
+      <B  CLASS="command" >./buildconf</B
+> ¼´¿É¡££¨Í¬Ñù£¬³ý·ÇÄãÓÃÁË
+      <TT  CLASS="literal" >--enable-maintainer-mode</TT
+>
+      Ñ¡ÏîÀ´ÔËÐÐ configure£¬·ñÔò¼´Ê¹ <TT  CLASS="filename" >configure.in</TT
+>
+      ÎÄ¼þ¸üÐÂÁË£¬configure
+      ½Å±¾Ò²²»»á×Ô¶¯ÖØÐÂÉú³É¡£ËùÒÔµ±Äã·¢ÏÖ <TT  CLASS="filename" >configure.in</TT
+>
+      ÎÄ¼þ¸üÐÂÁËÊ±ÒªÈ·±£ÊÖ¹¤ÖØÐÂÉú³É configure
+      ½Å±¾¡£ÓÐÒ»¸öÖ¢×´ÊÇÔÚ configure Ö®ºó»òÕßÔËÐÐ
+      <TT  CLASS="filename" >config.status</TT
+> Ê±ÔÚ Makefile ÖÐÑ°ÕÒÀàËÆ @VARIABLE@ µÄ¶«Î÷¡££©
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.configuring" ></A
+><B  >2. </B
+>
+      ÎÒÔÚÅäÖÃ PHP ºÍ Apache Ò»Æð¹¤×÷Ê±Óöµ½ÁËÎÊÌâ¡£ËµÃ»ÕÒµ½
+      <TT  CLASS="filename" >httpd.h</TT
+>£¬µ«Õâ¸öÎÄ¼þÃ÷Ã÷¾ÍÔÚÄÇÀï£¡
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÄãÐèÒª¸æËß configure/setup ½Å±¾ÄãµÄ Apache
+      Ô´³ÌÐò×îÉÏ²ãµÄÄ¿Â¼Î»ÖÃ¡£ÕâÒâÎ¶×ÅÄãÐèÒªÕâÑùÖ¸¶¨
+      <TT  CLASS="literal" >--with-apache=/path/to/apache</TT
+>
+      ¶ø<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >²»ÊÇ</I
+></SPAN
+>ÕâÑù
+      <TT  CLASS="literal" >--with-apache=/path/to/apache/src</TT
+>¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.lex" ></A
+><B  >3. </B
+>
+      µ±ÔËÐÐ PHP ÅäÖÃÊ±£¨<TT  CLASS="literal" >./configure</TT
+>£©£¬Óöµ½ÀàËÆÈçÏÂµÄÎÊÌâ£º
+     </P
+><P  >&#13;      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >checking lex output file root... ./configure: lex: command not found
+       configure: error: cannot find output from lex; giving up</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÇëÈÏÕæÔÄ¶Á PHP µÄ<A  HREF="install.unix.html"  >°²×°</A
+>ËµÃ÷£¬²¢×¢ÒâÒª±àÒë
+      PHP ÐèÒªÍ¬Ê±°²×° flex ºÍ bison¡£¸ù¾ÝÄú°²×°ÉèÖÃµÄ²»Í¬£¬ÄúµÄ
+      bison ºÍ flex ÒªÃ´Í¨¹ýÔ´´úÂë£¬ÒªÃ´Í¨¹ýÖîÈç RPM µÄ°²×°°ü¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.apache-sharedcore" ></A
+><B  >4. </B
+>
+      µ±ÎÒÊÔÍ¼Æô¶¯ Apache Ê±£¬ÎÒµÃµ½ÈçÏÂ´íÎóÐÅÏ¢£º
+     </P
+><P  >&#13;      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >fatal: relocation error: file /path/to/libphp4.so:
+       symbol ap_block_alarms: referenced symbol not found</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ¸Ã´íÎóÍ¨³£ÔÚ Apache µÄºËÐÄ³ÌÐò±»±àÒëÎª¹²ÏíÓÃÍ¾µÄ DSO ¿âÊ±·¢Éú¡£Çë³¢ÊÔÖØÐÂÅäÖÃ
+      Apache£¬È·±£ÖÁÉÙÊ¹ÓÃÁËÈçÏÂ²ÎÊý£º
+     </P
+><P  >&#13;      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >--enable-shared=max --enable-rule=SHARED_CORE</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >&#13;      Èç¹ûÄúÐèÒª¸ü¶àÐÅÏ¢£¬ÇëÔÄ¶Á Apache µÄ¶¥¼¶ <TT  CLASS="filename" >INSTALL</TT
+>
+      ÎÄ¼þ»òÕß Apache µÄ <A  href="http://httpd.apache.org/docs/dso.html"  TARGET="_top" >DSO ÊÖ²á</A
+>¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.not-found" ></A
+><B  >5. </B
+>
+      µ±ÎÒÔËÐÐ configure Ê±£¬±¨¸æËµÕÒ²»µ½Í·ÎÄ¼þ»ò GD ¿â»ò gdbm£¬»òÆäËüµÄÊ²Ã´°ü£¡
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      Äã¿ÉÒÔÍ¨¹ýÖ¸¶¨¸½¼ÓµÄÑ¡ÏîÈÃ configure ½Å±¾ÔÚ·Ç±ê×¼µÄÂ·¾¶ÖÐÑ°ÕÒÍ·ÎÄ¼þºÍ¿â²¢´«µÝ¸ø
+      C Ô¤´¦ÀíÆ÷ºÍÁ¬½ÓÆ÷£¬ÀýÈç£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >CPPFLAGS=-I/path/to/include LDFLAGS=-L/path/to/library ./configure</PRE
+></TD
+></TR
+></TABLE
+>
+      Èç¹ûÄãÓÃ csh µÄ±äÖÖ×÷ÎªÄãµÄµÇÂ¼ shell£¨ÎªÊ²Ã´£¿£©£¬ÄÇ¾ÍÊÇ£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >env CPPFLAGS=-I/path/to/include LDFLAGS=-L/path/to/library ./configure</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.yytname" ></A
+><B  >6. </B
+>
+      µ±±àÒë <TT  CLASS="filename" >language-parser.tab.c</TT
+> ÎÄ¼þÊ±£¬±¨´íËµ
+      <TT  CLASS="literal" >yytname undeclared</TT
+>¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÄãÐèÒª¸üÐÂ Bison µÄ°æ±¾¡£×îÐÂ°æ±¾ÔÚ <A  href="http://www.gnu.org/software/bison/bison.html"  TARGET="_top" >http://www.gnu.org/software/bison/bison.html</A
+>¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.link" ></A
+><B  >7. </B
+>
+      µ±ÎÒÔËÐÐ <B  CLASS="command" >make</B
+>
+      Ê±£¬¿´ÉÏÈ¥Ò»ÇÐÕý³££¬¿Éµ±Á¬½Ó×îºóµÄ³ÌÐòÊ±±¨¸æËµÕÒ²»µ½Ä³Ð©ÎÄ¼þ¶øÊ§°ÜÁË¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      Ò»Ð©¾É°æ±¾µÄ make Ã»ÓÐÕýÈ·½« functions Ä¿Â¼ÏÂ±àÒëºóµÄÎÄ¼þ·Åµ½Í¬Ò»¸öÄ¿Â¼ÏÂ¡£ÊÔÊÔÔËÐÐ
+      <B  CLASS="command" >cp *.o functions</B
+> È»ºóÔÙÔËÐÐ <B  CLASS="command" >make</B
+>
+      ¿´¿´ÓÐÃ»ÓÐÊ²Ã´°ïÖú¡£Èç¹û³É¹¦ÁË£¬ÄÇÄãÈ·ÊµÐèÒª¸üÐÂµ½×îÐÂ°æµÄ GNU make¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.undefined" ></A
+><B  >8. </B
+>
+      µ±Á¬½Ó PHP Ê±£¬±¨¸æËµÓÐÒ»Ð©Î´¶¨ÒåµÄÒýÓÃ¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ¿´¿´Á¬½ÓµÄÕâÒ»ÐÐÃüÁî£¬È·ÈÏËùÓÐÊÊµ±µÄ¿â¶¼°üÀ¨ÔÚ×îºóÁË¡£ÄãÍ¨³£¿ÉÄÜÂ©µôÁË¡°ldl¡±ºÍÄã°üÀ¨µÄÈÎºÎÊý¾Ý¿âÖ§³ÖËùÐèÒªµÄ¿â¡£
+     </P
+><P  >&#13;      Èç¹ûÄãºÍ Apache 1.2.x Ò»ÆðÁ¬½Ó£¬¼ÇµÃ°ÑÊÊµ±µÄÐÅÏ¢Ìí¼Óµ½ÅäÖÃÎÄ¼þµÄ EXTRA_LIBS
+      ÕâÒ»ÐÐ²¢ÖØÐÂÔËÐÐ Apache
+      µÄÅäÖÃ½Å±¾ÁËÂð£¿¸ü¶àÐÅÏ¢²Î¼û·¢ÐÐ°üÖÐµÄ
+      <A  href="http://cvs.php.net/co.php/php-src/INSTALL/"  TARGET="_top" >INSTALL</A
+> ÎÄ¼þ¡£
+     </P
+><P  >&#13;      Ò»Ð©ÈËÒ²±¨¸æËµÔÚºÍ Apache Á¬½ÓÊ±ËûÃÇ²»µÃ²»ÔÚ <TT  CLASS="filename" >libphp4.a</TT
+>
+      Ö®ºóÁ¢¼´¼ÓÉÏ¡°ldl¡±¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.Apache" ></A
+><B  >9. </B
+>
+      ÎÒ²»ÖªµÀÔõÑù°Ñ PHP ºÍ Apache 1.3 Ò»Æð±àÒë¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÕâÆäÊµºÜ¼òµ¥¡£Ð¡ÐÄµØÕÕ×ÅÒÔÏÂ²½ÖèÀ´£º
+      <P  ></P
+><UL  ><LI  ><P  >&#13;         ´Ó <A  href="http://www.apache.org/dist/httpd/"  TARGET="_top" >http://www.apache.org/dist/httpd/</A
+>
+         ÏÂÔØ×îÐÂ°æµÄ Apache 1.3¡£
+        </P
+></LI
+><LI  ><P  >&#13;         ½âÑ¹Ëõµ½Ä³´¦£¬ÀýÈç <TT  CLASS="filename" >/usr/local/src/apache-1.3</TT
+>¡£
+        </P
+></LI
+><LI  ><P  >&#13;         ±àÒë PHP£¬ÏÈÔËÐÐ
+         <B  CLASS="command" >./configure --with-apache=/&#60;path&#62;/apache-1.3</B
+>£¨ÓÃÄã
+         apache-1.3 ËùÔÚµÄÕæÊµÂ·¾¶Ìæ»»µô &#60;path&#62;¡££©
+        </P
+></LI
+><LI  ><P  >&#13;         ÊäÈë <B  CLASS="command" >make</B
+> ½Ó×ÅÊÇ <B  CLASS="command" >make install</B
+>
+         À´±àÒë PHP ²¢°Ñ±ØÒªµÄÎÄ¼þ¿½±´µ½ Apache µÄÔ´³ÌÐòÄ¿Â¼Ê÷ÖÐ¡£
+        </P
+></LI
+><LI  ><P  >&#13;         ¸Ä±äµ±Ç°Ä¿Â¼µ½ <TT  CLASS="filename" >/&#60;path&#62;/apache-1.3/src</TT
+>
+         Ä¿Â¼²¢±à¼­ <TT  CLASS="filename" >Configuration</TT
+>
+         ÎÄ¼þ¡£Ìí¼ÓÕâÒ»ÐÐ£º<TT  CLASS="literal" >AddModule modules/php4/libphp4.a</TT
+>¡£
+        </P
+></LI
+><LI  ><P  >&#13;         ÊäÈë <B  CLASS="command" >./configure</B
+> ½Ó×ÅÊÇ <TT  CLASS="literal" >make</TT
+>¡£
+        </P
+></LI
+><LI  ><P  >&#13;         ÄãÏÖÔÚÓ¦¸ÃÓÐÒ»¸ö°üÀ¨ PHP Ö§³ÖµÄ httpd ¿ÉÖ´ÐÐ³ÌÐòÁË£¡
+        </P
+></LI
+></UL
+>
+     </P
+><P  >&#13;      <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >×¢Òâ£º</I
+></SPAN
+>ÄãÒ²¿ÉÒÔÓÃÐÂµÄ Apache <TT  CLASS="literal" >./configure</TT
+>
+      ½Å±¾¡£²Î¼û Apache ·¢ÐÐ°üÖÐ <TT  CLASS="literal" >README.configure</TT
+>
+      ÎÄ¼þÖÐµÄËµÃ÷¡£Ò²¿´¿´ PHP ·¢ÐÐ°üÖÐµÄ <TT  CLASS="filename" >INSTALL</TT
+> ÎÄ¼þ¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.not-running" ></A
+><B  >10. </B
+>
+      ÎÒ°´ÕÕËùÓÐµÄ²½ÖèÔÚ UNIX ÏÂ°²×°ÁËPHP µÄ Apache Ä£¿é°æ±¾£¬µ«ÎÒµÄ PHP
+      ½Å±¾±»ÏÔÊ¾ÔÚä¯ÀÀÆ÷ÖÐ»òÕßÌáÊ¾±£´æ´ËÎÄ¼þ¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÕâËµÃ÷ PHP Ä£¿é³öÓÚÄ³Ð©Ô­ÒòÃ»ÓÐ±»µ÷ÓÃ¡£ÔÚÑ°Çó¸ü¶à°ïÖúÇ°ÏÈ¼ì²éÈý¼þÊÂ£º
+      <P  ></P
+><UL  ><LI  ><P  >&#13;         È·ÈÏÄãÔËÐÐµÄ httpd ³ÌÐò¾ÍÊÇÄã¸Õ¸Õ±àÒëµÄÐÂ httpd ³ÌÐò¡£ÔËÐÐ£º 
+         <TT  CLASS="literal" >/path/to/binary/httpd -l</TT
+>
+        </P
+><P  >&#13;         Èç¹ûÄãÃ»¿´µ½ <TT  CLASS="filename" >mod_php4.c</TT
+>
+         ±»ÁÐ³öÀ´ÄÇÄã¾ÍÃ»ÓÐÔËÐÐ¶Ô³ÌÐò¡£ÕÒµ½²¢ÕýÈ·°²×°³ÌÐò¡£
+        </P
+></LI
+><LI  ><P  >&#13;         È·ÈÏÄãÔÚ <TT  CLASS="literal" >Apache .conf</TT
+> ÎÄ¼þÖÐ¼ÓÈëÁËÕýÈ·µÄ Mime ÀàÐÍ¡£Ó¦¸ÃÊÇ£º
+         <TT  CLASS="literal" >AddType application/x-httpd-php3 .php3</TT
+>£¨PHP 3£©
+        </P
+><P  >&#13;         »òÕß <TT  CLASS="literal" >AddType application/x-httpd-php .php</TT
+>£¨PHP 4£©
+        </P
+><P  > 
+         Ò²È·ÈÏ AddType ÕâÒ»ÐÐÃ»ÓÐÒþ²ØÔÚ &#60;Virtualhost&#62; »òÕß
+         &#60;Directory&#62; ¿éÖÐ£¬Õâ¿ÉÄÜ»áÔì³ÉÄãµÄ²âÊÔ½Å±¾ËùÔÚÎ»ÖÃÃ»ÓÐ±»Ó¦ÓÃµ½´ËÉèÖÃ¡£
+        </P
+></LI
+><LI  ><P  >&#13;         ×îºó£¬Apache 1.2 ºÍ Apache 1.3 Ö®¼äÄ¬ÈÏÅäÖÃÎÄ¼þµÄÎ»ÖÃ¸Ä±äÁË¡£ÄãÒªÈ·ÈÏÄãÌí¼Ó AddType
+         ÐÐµÄÎÄ¼þ¾ÍÊÇÊµ¼ÊÉÏÓÃµÄ¡£Äã¿ÉÒÔÔÚÄãµÄ <TT  CLASS="filename" >httpd.conf</TT
+>
+         ÖÐÌí¼ÓÒ»¸öÃ÷ÏÔµÄÓï·¨´íÎó»òÕßÆäËüÃ÷ÏÔÐÞ¸Ä£¬Õâ¿ÉÒÔ¸æËßÄãÊÇ·ñ¶ÁÈ¡ÁËÕýÈ·µÄÎÄ¼þ¡£
+        </P
+></LI
+></UL
+>
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.activate-module" ></A
+><B  >11. </B
+>
+      ËµÒªÓÃ£º<TT  CLASS="literal" >--activate-module=src/modules/php4/libphp4.a</TT
+>£¬µ«ÊÇ´ËÎÄ¼þ¸ù±¾²»´æÔÚ£¬ÓÚÊÇÎÒ¸Ä³ÉÁË
+      <TT  CLASS="literal" >--activate-module=src/modules/php4/libmodphp4.a</TT
+>£¬½á¹û²»ÐÐ¡£ÔõÃ´»ØÊÂ£¿
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+       ×¢Òâ <TT  CLASS="filename" >libphp4.a</TT
+> ÎÄ¼þ±¾À´¾Í²»¸Ã´æÔÚ£¬apache ½ø³Ì½«´´½¨Ëü£¡
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.ansi" ></A
+><B  >12. </B
+>
+      µ±ÎÒÓÃ <TT  CLASS="literal" >--activate-module=src/modules/php4/libphp4.a</TT
+>
+      ÊÔ×Å°Ñ PHP ±àÒë³É Apache
+      µÄ¾²Ì¬Ä£¿éÊ±£¬±¨¸æËµÎÒµÄ±àÒëÆ÷²»·þ´Ó ANSI ±ê×¼¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÕâÊÇÒ»¸ö Apache Îó±¨µÄ´íÎóÐÅÏ¢£¬ÔÚÐÂµÄ°æ±¾ÖÐÒÑ¾­ÐÞÕýÁË¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.apxs" ></A
+><B  >13. </B
+>
+      µ±ÎÒÓÃ <TT  CLASS="literal" >--with-apxs</TT
+> ±àÒë PHP Ê±µÃµ½Ææ¹ÖµÄ´íÎóÐÅÏ¢¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÕâÀïÒª¼ì²éÈý¼þÊÂ¡£Ê×ÏÈ£¬³öÓÚÄ³Ð©Ô­Òòµ± Apache Éú³É apxs Perl
+      ½Å±¾Ê±£¬ÓÐÊ±Ã»ÓÐÕýÈ·µÄ±àÒëºÍ±ê¼Ç±äÁ¿¾Í½áÊøÁË¡£ÕÒµ½ÄãµÄ
+      apxs ½Å±¾£¨ÓÃÃüÁî <B  CLASS="command" >which apxs</B
+>£©£¬ÓÐÊ±»áÔÚ
+      <TT  CLASS="filename" >/usr/local/apache/bin/apxs</TT
+> »òÕß
+      <TT  CLASS="filename" >/usr/sbin/apxs</TT
+>¡£´ò¿ª²¢¼ì²éÀàËÆÈçÏÂµÄÐÐ£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >my $CFG_CFLAGS_SHLIB  = ' ';          # substituted via Makefile.tmpl
+my $CFG_LD_SHLIB      = ' ';          # substituted via Makefile.tmpl
+my $CFG_LDFLAGS_SHLIB = ' ';          # substituted via Makefile.tmpl</PRE
+></TD
+></TR
+></TABLE
+>
+      Èç¹ûÄã¿´µ½Õâ¼¸ÐÐ£¬ÄÇÎÊÌâ¾ÍÔÚÕâÀï¡£ËüÃÇ¿ÉÄÜ°üº¬ÁË½ö½ö¿Õ¸ñ»òÕßÆäËü²»ÕýÈ·µÄÖµ£¬ÀýÈç¡°q()¡±¡£¸Ä³ÉÕâÑù£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >my $CFG_CFLAGS_SHLIB  = '-fpic -DSHARED_MODULE'; # substituted via Makefile.tmpl
+my $CFG_LD_SHLIB      = 'gcc';                   # substituted via Makefile.tmpl
+my $CFG_LDFLAGS_SHLIB = q(-shared);              # substituted via Makefile.tmpl</PRE
+></TD
+></TR
+></TABLE
+>
+      µÚ¶þ¸ö¿ÉÄÜµÄÎÊÌâ½ö¿ÉÄÜÔÚÔÚ Red Hat 6.1 ºÍ 6.2 ÖÐ·¢Éú¡£Red Hat
+      ·¢ÐÐµÄ apxs ½Å±¾»µÁË¡£²éÕÒÕâÒ»ÐÐ£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >my $CFG_LIBEXECDIR    = 'modules';         # substituted via APACI install</PRE
+></TD
+></TR
+></TABLE
+>
+      Èç¹ûÄã¿´µ½ÉÏÃæÕâÒ»ÐÐ£¬¸Ä³ÉÕâÑù£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >my $CFG_LIBEXECDIR    = '/usr/lib/apache'; # substituted via APACI install</PRE
+></TD
+></TR
+></TABLE
+>
+       ×îºó£¬Èç¹ûÄãÖØÐÂÅäÖÃ»òÕßÖØ×°ÁË Apache£¬ÔÚ <B  CLASS="command" >./configure</B
+>
+       Ö®ºóºÍ <B  CLASS="command" >make</B
+> Ö®Ç°Ôö¼ÓÒ»¸ö <B  CLASS="command" >make clean</B
+> ÃüÁî¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.microtime" ></A
+><B  >14. </B
+>
+     ÔÚ <B  CLASS="command" >make</B
+> µÄ¹ý³ÌÖÐ£¬ÔÚ microtime ÖÐ³ö´í£¬»¹ÓÐºÜ¶à
+     <TT  CLASS="literal" >RUSAGE_</TT
+> Ö®ÀàµÄ¶«Î÷¡£
+    </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      Èç¹û <B  CLASS="command" >make</B
+> Ê±Óöµ½ÀàËÆÕâÑùµÄÎÊÌâ£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >microtime.c: In function `php_if_getrusage':
+microtime.c:94: storage size of `usg' isn't known
+microtime.c:97: `RUSAGE_SELF' undeclared (first use in this function)
 microtime.c:97: (Each undeclared identifier is reported only once
 microtime.c:97: for each function it appears in.)
-microtime.c:103: `RUSAGE_CHILDREN&#039; undeclared (first use in this function)
+microtime.c:103: `RUSAGE_CHILDREN' undeclared (first use in this function)
 make[3]: *** [microtime.lo] Error 1
-make[3]: Leaving directory `/home/master/php-4.0.1/ext/standard&#039;
+make[3]: Leaving directory `/home/master/php-4.0.1/ext/standard'
 make[2]: *** [all-recursive] Error 1
-make[2]: Leaving directory `/home/master/php-4.0.1/ext/standard&#039;
+make[2]: Leaving directory `/home/master/php-4.0.1/ext/standard'
 make[1]: *** [all-recursive] Error 1
-make[1]: Leaving directory `/home/master/php-4.0.1/ext&#039;
-make: *** [all-recursive] Error 1
-</pre></div>
-         </div>
-</p>
-       <p class="para">ä½ çš„ç³»ç»Ÿåäº†ã€‚ä½ éœ€è¦å®‰è£…ä¸€ä¸ªç¬¦åˆä½ çš„ glibc çš„ glibc-devel åŒ…æ¥ä¿®å¤ 
-        <var class="filename">/usr/include</var>ä¸­çš„æ–‡ä»¶ã€‚è¿™å’Œ PHP ç»å¯¹æ²¡æœ‰ä»»ä½•å…³ç³»ã€‚è¦è¯å®žè¿™ä¸€ç‚¹ï¼Œè¯•è¯•è¿™ä¸ªç®€å•çš„æµ‹è¯•ï¼š 
-         <div class="example-contents">
-<div class="cdata"><pre>
-$ cat &gt;test.c &lt;&lt;X
-#include &lt;sys/resource.h&gt;
+make[1]: Leaving directory `/home/master/php-4.0.1/ext'
+make: *** [all-recursive] Error 1</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >&#13;     ÄãµÄÏµÍ³»µÁË¡£ÄãÐèÒª°²×°Ò»¸ö·ûºÏÄãµÄ glibc µÄ glibc-devel °üÀ´ÐÞ¸´
+     <TT  CLASS="filename" >/usr/include</TT
+>
+     ÖÐµÄÎÄ¼þ¡£ÕâºÍ PHP ¾ø¶ÔÃ»ÓÐÈÎºÎ¹ØÏµ¡£ÒªÖ¤ÊµÕâÒ»µã£¬ÊÔÊÔÕâ¸ö¼òµ¥µÄ²âÊÔ£º
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >$ cat &#62;test.c &#60;&#60;X
+#include &#60;sys/resource.h&#62;
 X
-$ gcc -E test.c &gt;/dev/null
-</pre></div>
-         </div>
-å¦‚æžœå‡ºçŽ°é”™è¯¯ï¼Œé‚£ä½ å°±çŸ¥é“å¤´æ–‡ä»¶åäº†ã€‚</p>
-     </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.mysql.tempnam">
-    <dt><strong>
-     å½“å¸¦ MySQL ç¼–è¯‘ PHP æ—¶ï¼Œå¯ä»¥æ­£ç¡®åœ°è¿è¡Œconfigureï¼Œä½†æ˜¯åœ¨
-      <em>make</em>çš„è¿‡ç¨‹ä¸­å‡ºçŽ°äº†ç±»ä¼¼ä»¥ä¸‹çš„é”™è¯¯ä¿¡æ¯ï¼š 
-      <em class="emphasis">ext/mysql/ libmysqlclient /my_tempnam.o(.text+0x46): In function 
-       my_tempnam&#039;: /php4/ext/mysql/ libmysqlclient /my_tempnam.c:103: the 
-       use of tempnam&#039; is dangerous, better use mkstemp&#039;</em>ï¼Œè¿™æ˜¯æ€Žä¹ˆå›žäº‹
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">é¦–å…ˆï¼Œæˆ‘ä»¬éœ€è¦è®¤è¯†åˆ°è¿™åªæ˜¯ä¸ª
-      <em>è­¦å‘Š</em>ï¼Œè€Œéžè‡´å‘½é”™è¯¯ã€‚ç”±äºŽè¿™æ¡ä¿¡æ¯é€šå¸¸æ˜¯åœ¨ 
-      <em>make</em>çš„æœ€åŽè¾“å‡ºçš„ï¼Œæ‰€ä»¥çœ‹èµ·æ¥å®ƒå¯èƒ½åƒæ˜¯ä¸€ä¸ªè‡´å‘½é”™è¯¯ï¼Œä½†å®žé™…ä¸Šä¸æ˜¯ã€‚å½“ç„¶ï¼Œå¦‚æžœå°†ç¼–è¯‘å™¨è®¾ç½®æˆé‡è§è­¦å‘Šä¿¡æ¯æ—¶åœæ­¢ï¼Œåˆ™è¿™ä¹Ÿå¯ä»¥ç®—æ˜¯è‡´å‘½é”™è¯¯ã€‚å¦å¤–å€¼å¾—ä¸€æçš„æ˜¯ï¼ŒMySQL çš„æ”¯æŒæ˜¯é»˜è®¤æ‰“å¼€çš„ã€‚</p>
-     <blockquote class="note"><p><strong class="note">Note</strong>: 
-      <p class="para">è‡ª PHP 4.3.2 èµ·ï¼Œä½ å°†åœ¨ç¼–è¯‘ï¼ˆmakeï¼‰ç»“æŸåŽçœ‹åˆ°ä¸‹é¢çš„æ–‡å­—ï¼š</p>
-      <p class="para">
-       <div class="example-contents screen"><br />
-        Build complete.<br />
-        (It is safe to ignore warnings about tempnam and tmpnam).<br />
-       </div>
-      </p>
-     </p></blockquote>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.upgrade">
-    <dt><strong>
-     æˆ‘æƒ³å‡çº§æˆ‘çš„ PHPã€‚ä¸Šå“ªé‡Œæ‰¾åˆ°æˆ‘ç”¨æ¥é…ç½®ç›®å‰çš„ PHP çš„ 
-      <strong class="command">./configure</strong>çš„å‚æ•°å‘¢ï¼Ÿ
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">è¦ä¹ˆåœ¨ä½ ç”¨æ¥ç¼–è¯‘å½“å‰çš„ PHP çš„æºç æ ‘ä¸­æŸ¥çœ‹ config.nice æ–‡ä»¶ï¼Œå¦‚æžœæ²¡æœ‰ï¼Œåªè¦è¿è¡Œæ­¤è„šæœ¬ï¼š 
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php&nbsp;phpinfo</span><span style="color: #007700">();&nbsp;</span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
+$ gcc -E test.c &#62;/dev/null</PRE
+></TD
+></TR
+></TABLE
+>
+      Èç¹û³öÏÖ´íÎó£¬ÄÇÄã¾ÍÖªµÀÍ·ÎÄ¼þ»µÁË¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.mysql.tempnam" ></A
+><B  >15. </B
+> 
+      µ±´ø MySQL ±àÒë PHP Ê±£¬¿ÉÒÔÕýÈ·µØÔËÐÐÅäÖÃ£¬µ«ÊÇÔÚ <TT  CLASS="literal" >make</TT
+> µÄ¹ý³ÌÖÐ³öÏÖÁËÀàËÆÒÔÏÂµÄ´íÎóÐÅÏ¢£º
+      <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ext/mysql/libmysql/my_tempnam.o(.text+0x46): In function
+      my_tempnam': /php4/ext/mysql/libmysql/my_tempnam.c:103: the
+      use of tempnam' is dangerous, better use mkstemp'</I
+></SPAN
+>£¬ÕâÊÇÔõÃ´»ØÊÂ
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      Ê×ÏÈ£¬ÎÒÃÇÐèÒªÈÏÊ¶µ½ÕâÖ»ÊÇ¸ö<TT  CLASS="literal" >¾¯¸æ</TT
+>£¬¶ø·ÇÖÂÃü´íÎó¡£ÓÉÓÚÕâÌõÐÅÏ¢Í¨³£ÊÇÔÚ
+      <TT  CLASS="literal" >make</TT
+> µÄ×îºóÊä³öµÄ£¬ËùÒÔ¿´ÆðÀ´Ëü¿ÉÄÜÏñÊÇÒ»¸öÖÂÃü´íÎó£¬µ«Êµ¼ÊÉÏ²»ÊÇ¡£µ±È»£¬Èç¹ûÄú½«ÄúµÄ±àÒëÆ÷ÉèÖÃ³ÉÓö¼û¾¯¸æÐÅÏ¢Ê±Í£Ö¹£¬ÔòÕâÒ²¿ÉÒÔËãÊÇÖÂÃü´íÎó¡£ÁíÍâÖµµÃÒ»ÌáµÄÊÇ£¬MySQL µÄÖ§³ÖÊÇÄ¬ÈÏ´ò¿ªµÄ¡£
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ×Ô PHP 4.3.2 Æð£¬Äã½«ÔÚ±àÒë£¨make£©½áÊøºó¿´µ½ÏÂÃæµÄÎÄ×Ö£º
+      </P
+><P  >&#13;       <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Build complete.
+        (It is safe to ignore warnings about tempnam and tmpnam).</PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+></BLOCKQUOTE
+></DIV
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.upgrade" ></A
+><B  >16. </B
+>
+      ÎÒÏëÉý¼¶ÎÒµÄ PHP¡£ÉÏÄÄÀïÕÒµ½ÎÒÓÃÀ´ÅäÖÃÄ¿Ç°µÄ PHP µÄ
+      <B  CLASS="command" >./configure</B
+> µÄ²ÎÊýÄØ£¿
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÒªÃ´ÔÚÄãµ±Ç°µÄ PHP µÄ°²×°Ä¿Â¼²é¿´ config.nice ÎÄ¼þ£¬Èç¹ûÃ»ÓÐ£¬Ö»ÒªÔËÐÐ´Ë½Å±¾£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >&#60;?php phpinfo(); ?&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      ÔÚÊä³öµÄ¶¥¶ËÏÔÊ¾ÁËÓÃÀ´ÅäÖÃ´Ë PHP µÄ <B  CLASS="command" >./configure</B
+> ²ÎÊý¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.build.gdlibs" ></A
+><B  >17. </B
+>
+      ºÍ GD ¿âÒ»Æð±àÒë PHP Ê±£¬ÒªÃ´¸ø³öÒ»¸öÆæ¹ÖµÄ±àÒë´íÎó£¬ÒªÃ´ÔÚÔËÐÐÊ±³öÏÖ segfaults¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      È·±£ÄãµÄ GD ¿âºÍ PHP ÔÚÁ¬½ÓÊ±Ê¹ÓÃÁËÓÃÍ¬ÑùµÄÖ§³Ö¿â£¨ÀýÈç libpng£©¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.installation.needgnu" ></A
+><B  >18. </B
+>
+      µ±±àÒë PHP Ê±ÎÒ¿´µ½Ò»Ð©Ëæ»úµÄ´íÎó£¬ºÃÏñËÀÁË¡£ÎÒÓÃµÄÊÇ Solaris£¬²»ÖªµÀÓÐÃ»ÓÐ¹ØÏµ¡£
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      µ±±àÒë PHP Ê±Ê¹ÓÃ·Ç GNU µÄ¹¤¾ß»áµ¼ÖÂÎÊÌâ¡£È·±£Ê¹ÓÃ GNU ¹¤¾ßÀ´È·±£ÄÜ¹»ÕýÈ·±àÒë
+      PHP¡£ÀýÈç£¬ÔÚ Solaris ÏÂÃæ²»ÂÛÊ¹ÓÃ SunOS BSD ¼æÈÝ»òÕß Solaris °æ±¾µÄ
+      <TT  CLASS="literal" >sed</TT
+> ¶¼²»ÐÐ£¬µ«ÊÇÊ¹ÓÃ GNU »òÕß Sun POSIX (xpg4) °æ±¾µÄ
+      <TT  CLASS="literal" >sed</TT
+> ¾Í¿ÉÒÔ¡£Ïà¹ØÁ¬½Ó£º<A  href="http://www.gnu.org/software/sed/sed.html"  TARGET="_top" >GNU sed</A
+>£¬<A  href="http://www.gnu.org/software/flex/flex.html"  TARGET="_top" >GNU flex</A
+>£¬<A  href="http://www.gnu.org/software/bison/bison.html"  TARGET="_top" >GNU bison</A
+>¡£
+     </P
+></DIV
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="faq.installation.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æðµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="faq.using.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >°²×°</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="faq.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Ê¹ÓÃ PHP</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-      åœ¨è¾“å‡ºçš„é¡¶ç«¯æ˜¾ç¤ºäº†ç”¨æ¥é…ç½®æ­¤ PHP çš„ 
-      <strong class="command">./configure</strong>å‚æ•°ã€‚
-      </p>
-     </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.build.gdlibs">
-    <dt><strong>
-     å’Œ GD åº“ä¸€èµ·ç¼–è¯‘ PHP æ—¶ï¼Œè¦ä¹ˆç»™å‡ºä¸€ä¸ªå¥‡æ€ªçš„ç¼–è¯‘é”™è¯¯ï¼Œè¦ä¹ˆåœ¨è¿è¡Œæ—¶å‡ºçŽ° segfaultsã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">ç¡®ä¿ä½ çš„ GD åº“å’Œ PHP åœ¨è¿žæŽ¥æ—¶ä½¿ç”¨äº†ç”¨åŒæ ·çš„æ”¯æŒåº“ï¼ˆä¾‹å¦‚ libpngï¼‰ã€‚</p>
-    </dd>
-   </dl>
-   <dl class="qandaentry" id="faq.installation.needgnu">
-    <dt><strong>
-     å½“ç¼–è¯‘ PHP æ—¶æˆ‘çœ‹åˆ°ä¸€äº›éšæœºçš„é”™è¯¯ï¼Œå¥½åƒæ­»äº†ã€‚æˆ‘ç”¨çš„æ˜¯ Solarisï¼Œä¸çŸ¥é“æœ‰æ²¡æœ‰å…³ç³»ã€‚
-    </strong></dt>
-    <dd class="answer">
-     <p class="para">å½“ç¼–è¯‘ PHP æ—¶ä½¿ç”¨éž GNU çš„å·¥å…·ä¼šå¯¼è‡´é—®é¢˜ã€‚ç¡®ä¿ä½¿ç”¨ GNU å·¥å…·æ¥ç¡®ä¿èƒ½å¤Ÿæ­£ç¡®ç¼–è¯‘ PHPã€‚ä¾‹å¦‚ï¼Œåœ¨ Solaris ä¸‹é¢ä¸è®ºä½¿ç”¨ SunOS BSD å…¼å®¹æˆ–è€… Solaris ç‰ˆæœ¬çš„ 
-      <em>sed</em>éƒ½ä¸è¡Œï¼Œä½†æ˜¯ä½¿ç”¨ GNU æˆ–è€… Sun POSIX (xpg4) ç‰ˆæœ¬çš„ 
-      <em>sed</em>å°±å¯ä»¥ã€‚ç›¸å…³è¿žæŽ¥ï¼š
-      <a href="http://www.gnu.org/software/sed/sed.html" class="link external">&raquo;&nbsp;GNU sed</a>ï¼Œ
-      <a href="http://www.gnu.org/software/flex/flex.html" class="link external">&raquo;&nbsp;GNU flex</a>ï¼Œ
-      <a href="http://www.gnu.org/software/bison/bison.html" class="link external">&raquo;&nbsp;GNU bison</a>ã€‚</p>
-    </dd>
-   </dl>
-          
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="faq.installation.html">å®‰è£…</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="faq.using.html">ä½¿ç”¨ PHP</a></div>
- <div class="up"><a href="faq.html">FAQ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

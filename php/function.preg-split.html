@@ -1,313 +1,191 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>é€šè¿‡ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åˆ†éš”å­—ç¬¦ä¸²</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-replace.html">preg_replace</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.regex.html">POSIX Regex</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.preg-split" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">preg_split</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">preg_split</span> &mdash; <span class="dc-title">é€šè¿‡ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åˆ†éš”å­—ç¬¦ä¸²</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.preg-split-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>preg_split</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$subject</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = -1</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = 0</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-  é€šè¿‡ä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åˆ†éš”ç»™å®šå­—ç¬¦ä¸².
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.preg-split-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">pattern</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ç”¨äºæœç´¢çš„æ¨¡å¼ï¼Œå­—ç¬¦ä¸²å½¢å¼ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">subject</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¾“å…¥å­—ç¬¦ä¸²
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">limit</code></dt>
-
-     <dd>
-
-      <p class="para">
-      å¦‚æœæŒ‡å®šï¼Œå°†é™åˆ¶åˆ†éš”å¾—åˆ°çš„å­ä¸²æœ€å¤šåªæœ‰<code class="parameter">limit</code>ä¸ªï¼Œè¿”å›çš„æœ€åä¸€ä¸ª
-      å­ä¸²å°†åŒ…å«æ‰€æœ‰å‰©ä½™éƒ¨åˆ†ã€‚<code class="parameter">limit</code>å€¼ä¸º-1ï¼Œ 0æˆ–nullæ—¶éƒ½ä»£è¡¨&quot;ä¸é™åˆ¶&quot;ï¼Œ
-      ä½œä¸ºphpçš„æ ‡å‡†ï¼Œä½ å¯ä»¥ä½¿ç”¨nullè·³è¿‡å¯¹<code class="parameter">flags</code>çš„è®¾ç½®ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">flags </code>å¯ä»¥æ˜¯ä»»ä½•ä¸‹é¢æ ‡è®°çš„ç»„åˆ(ä»¥ä½æˆ–è¿ç®— <em>|</em> ç»„åˆ)ï¼š
-       <dl>
-
-        
-         <dt>
-<strong><code>PREG_SPLIT_NO_EMPTY</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-          å¦‚æœè¿™ä¸ªæ ‡è®°è¢«è®¾ç½®ï¼Œ <span class="function"><strong>preg_split()</strong></span> å°†è¿›è¿”å›åˆ†éš”åçš„éç©ºéƒ¨åˆ†ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>PREG_SPLIT_DELIM_CAPTURE</code></strong></dt>
-
-         <dd>
-
-          <span class="simpara">
-          å¦‚æœè¿™ä¸ªæ ‡è®°è®¾ç½®äº†ï¼Œç”¨äºåˆ†éš”çš„æ¨¡å¼ä¸­çš„æ‹¬å·è¡¨è¾¾å¼å°†è¢«æ•è·å¹¶è¿”å›ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<strong><code>PREG_SPLIT_OFFSET_CAPTURE</code></strong></dt>
-
-         <dd>
-
-          <p class="para">
-          å¦‚æœè¿™ä¸ªæ ‡è®°è¢«è®¾ç½®, å¯¹äºæ¯ä¸€ä¸ªå‡ºç°çš„åŒ¹é…è¿”å›æ—¶å°†ä¼šé™„åŠ å­—ç¬¦ä¸²åç§»é‡. 
-          æ³¨æ„ï¼šè¿™å°†ä¼šæ”¹å˜è¿”å›æ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ , ä½¿å…¶æ¯ä¸ªå…ƒç´ æˆä¸ºä¸€ä¸ªç”±ç¬¬<em>0</em>
-          ä¸ªå…ƒç´ ä¸ºåˆ†éš”åçš„å­ä¸²ï¼Œç¬¬<em>1</em>ä¸ªå…ƒç´ ä¸ºè¯¥å­ä¸²åœ¨<code class="parameter">subject</code>
-          ä¸­çš„åç§»é‡ç»„æˆçš„æ•°ç»„ã€‚
-          </p>
-         </dd>
-
-        
-       </dl>
-
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.preg-split-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-  è¿”å›ä¸€ä¸ªä½¿ç”¨ <code class="parameter">pattern</code> è¾¹ç•Œåˆ†éš” <code class="parameter">subject</code> åå¾—åˆ°
-  çš„å­ä¸²ç»„æˆçš„æ•°ç»„ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.preg-split-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-       å¢åŠ äº†æ ‡è®°<strong><code>PREG_SPLIT_OFFSET_CAPTURE</code></strong>ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        å¢åŠ äº†æ ‡è®°<strong><code>PREG_SPLIT_DELIM_CAPTURE</code></strong>ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.preg-split-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5117">
-    <p><strong>Example #1 <span class="function"><strong>preg_split()</strong></span>ç¤ºä¾‹ï¼šè·å–æœç´¢å­—ç¬¦ä¸²çš„éƒ¨åˆ†</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//ä½¿ç”¨é€—å·æˆ–ç©ºæ ¼(åŒ…å«"&nbsp;",&nbsp;\r,&nbsp;\t,&nbsp;\n,&nbsp;\f)åˆ†éš”çŸ­è¯­<br /></span><span style="color: #0000BB">$keywords&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">"/[\s,]+/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hypertext&nbsp;language,&nbsp;programming"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$keywords</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div> 
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >preg_split</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÕıÔò±í´ïÊ½º¯Êı¿â£¨Perl ¼æÈİ£©" HREF="ref.pcre.html"><LINK  REL="PREVIOUS" TITLE="preg_replace" HREF="function.preg-replace.html"><LINK  REL="NEXT" TITLE="qtdom Functions" HREF="ref.qtdom.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.preg-replace.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.qtdom.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.preg-split" ></A
+>preg_split</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN96300" ></A
+><P  >    (PHP 3&#62;= 3.0.9, PHP 4 )</P
+>preg_split&nbsp;--&nbsp;ÓÃÕıÔò±í´ïÊ½·Ö¸î×Ö·û´®</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN96303" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >preg_split</B
+> ( string pattern, string subject [, int limit [, int flags]])<BR  ></BR
+><P  >&#13;     ·µ»ØÒ»¸öÊı×é£¬°üº¬
+     <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ÖĞÑØ×ÅÓë
+     <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> Æ¥ÅäµÄ±ß½çËù·Ö¸îµÄ×Ó´®¡£
+    </P
+><P  >&#13;     Èç¹ûÖ¸¶¨ÁË <TT  CLASS="parameter" ><I  >limit</I
+></TT
+>£¬Ôò×î¶à·µ»Ø
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+> ¸ö×Ó´®£¬Èç¹û
+     <TT  CLASS="parameter" ><I  >limit</I
+></TT
+> ÊÇ -1£¬ÔòÒâÎ¶×ÅÃ»ÓĞÏŞÖÆ£¬¿ÉÒÔÓÃÀ´¼ÌĞøÖ¸¶¨¿ÉÑ¡²ÎÊı
+     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+>¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> ¿ÉÒÔÊÇÏÂÁĞ±ê¼ÇµÄÈÎÒâ×éºÏ£¨ÓÃ°´Î»»òÔËËã·û | ×éºÏ£©£º
+      <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >PREG_SPLIT_NO_EMPTY</B
+></TT
+></DT
+><DD  ><P  >&#13;          Èç¹ûÉè¶¨ÁË±¾±ê¼Ç£¬Ôò
+          <B  CLASS="function" >preg_split()</B
+> Ö»·µ»Ø·Ç¿ÕµÄ³É·Ö¡£
+         </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >PREG_SPLIT_DELIM_CAPTURE</B
+></TT
+></DT
+><DD  ><P  >&#13;          Èç¹ûÉè¶¨ÁË±¾±ê¼Ç£¬¶¨½ç·ûÄ£Ê½ÖĞµÄÀ¨ºÅ±í´ïÊ½Ò²»á±»²¶»ñ²¢·µ»Ø¡£±¾±ê¼ÇÌí¼ÓÓÚ PHP 4.0.5¡£
+         </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >PREG_SPLIT_OFFSET_CAPTURE</B
+></TT
+></DT
+><DD  ><P  >&#13;          Èç¹ûÉè¶¨ÁË±¾±ê¼Ç£¬Èç¹ûÉè¶¨±¾±ê¼Ç£¬¶ÔÃ¿¸ö³öÏÖµÄÆ¥Åä½á¹ûÒ²Í¬Ê±·µ»ØÆä¸½ÊôµÄ×Ö·û´®Æ«ÒÆÁ¿¡£×¢ÒâÕâ¸Ä±äÁË·µ»ØµÄÊı×éµÄÖµ£¬Ê¹ÆäÖĞµÄÃ¿¸öµ¥ÔªÒ²ÊÇÒ»¸öÊı×é£¬ÆäÖĞµÚÒ»ÏîÎªÆ¥Åä×Ö·û´®£¬µÚ¶şÏîÎªÆäÔÚ
+          <TT  CLASS="parameter" ><I  >subject</I
+></TT
+> ÖĞµÄÆ«ÒÆÁ¿¡£±¾±ê¼Ç×Ô
+          <TT  CLASS="literal" >PHP 4.3.0</TT
+> Æğ¿ÉÓÃ¡£
+         </P
+></DD
+></DL
+></DIV
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96350" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >preg_split()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// split the phrase by any number of commas or space characters,<br  />// which include " ", \r, \t, \n and \f<br  /></font><font  color="#0000BB">$keywords </font><font  color="#007700">= </font><font  color="#0000BB">preg_split </font><font  color="#007700">(</font><font  color="#DD0000">"/[\s,]+/"</font><font  color="#007700">, </font><font  color="#DD0000">"hypertext language, programming"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96355" ></A
+><P  ><B  >Àı×Ó 2. ½«×Ö·û´®·Ö¸î³É×Ö·û</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$str </font><font  color="#007700">= </font><font  color="#DD0000">'string'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$chars </font><font  color="#007700">= </font><font  color="#0000BB">preg_split</font><font  color="#007700">(</font><font  color="#DD0000">'//'</font><font  color="#007700">, </font><font  color="#0000BB">$str</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">PREG_SPLIT_NO_EMPTY</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$chars</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96359" ></A
+><P  ><B  >Àı×Ó 3. ½«×Ö·û´®·Ö¸îÎªÆ¥ÅäÏî¼°ÆäÆ«ÒÆÁ¿</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$str </font><font  color="#007700">= </font><font  color="#DD0000">'hypertext language programming'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$chars </font><font  color="#007700">= </font><font  color="#0000BB">preg_split</font><font  color="#007700">(</font><font  color="#DD0000">'/ /'</font><font  color="#007700">, </font><font  color="#0000BB">$str</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">PREG_SPLIT_OFFSET_CAPTURE</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$chars</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ±¾Àı½«Êä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [0] =&gt; hypertext
-    [1] =&gt; language
-    [2] =&gt; programming
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5118">
-    <p><strong>Example #2 å°†ä¸€ä¸ªå­—ç¬¦ä¸²åˆ†éš”ä¸ºç»„æˆå®ƒçš„å­—ç¬¦</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'string'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$chars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">'//'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_SPLIT_NO_EMPTY</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$chars</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; s
-    [1] =&gt; t
-    [2] =&gt; r
-    [3] =&gt; i
-    [4] =&gt; n
-    [5] =&gt; g
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5119">
-    <p><strong>Example #3 åˆ†éš”ä¸€ä¸ªå­—ç¬¦ä¸²å¹¶è·å–æ¯éƒ¨åˆ†çš„åç§»é‡</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'hypertext&nbsp;language&nbsp;programming'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$chars&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_split</span><span style="color: #007700">(</span><span style="color: #DD0000">'/&nbsp;/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_SPLIT_OFFSET_CAPTURE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$chars</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; Array
+    [0] =&#62; Array
         (
-            [0] =&gt; hypertext
-            [1] =&gt; 0
+            [0] =&#62; hypertext
+            [1] =&#62; 0
         )
 
-    [1] =&gt; Array
+    [1] =&#62; Array
         (
-            [0] =&gt; language
-            [1] =&gt; 10
+            [0] =&#62; language
+            [1] =&#62; 10
         )
 
-    [2] =&gt; Array
+    [2] =&#62; Array
         (
-            [0] =&gt; programming
-            [1] =&gt; 19
+            [0] =&#62; programming
+            [1] =&#62; 19
         )
 
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> ÊÇ PHP 4 Beta 3 Ìí¼ÓµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.spliti.html"  ><B  CLASS="function" >spliti()</B
+></A
+>£¬<A  HREF="function.split.html"  ><B  CLASS="function" >split()</B
+></A
+>£¬<A  HREF="function.implode.html"  ><B  CLASS="function" >implode()</B
+></A
+>£¬<A  HREF="function.preg-match.html"  ><B  CLASS="function" >preg_match()</B
+></A
+>£¬<A  HREF="function.preg-match-all.html"  ><B  CLASS="function" >preg_match_all()</B
+></A
+>
+     ºÍ <A  HREF="function.preg-replace.html"  ><B  CLASS="function" >preg_replace()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.preg-replace.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.qtdom.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >preg_replace</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcre.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >qtdom Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.preg-split-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <div class="tip"><strong class="tip">Tip</strong>
-   <p class="para">
-   å¦‚æœä½ ä¸éœ€è¦æ­£åˆ™è¡¨è¾¾å¼åŠŸèƒ½ï¼Œå¯ä»¥æœ‰æ›´å¿«(å¹¶ä¸”æ›´ç®€å•)çš„é€‰æ‹©æ¯”å¦‚ <span class="function"><a href="function.explode.html" class="function">explode()</a></span>
-    æˆ– <span class="function"><a href="function.str-split.html" class="function">str_split()</a></span>ã€‚
-   </p>
-  </div>
-  <div class="tip"><strong class="tip">Tip</strong>
-   <p class="para">
-    å¦‚æœæ²¡æœ‰æˆåŠŸåŒ¹é…ï¼Œå°†ä¼šè¿”å›ä¸€ä¸ªæ•°ç»„ï¼ŒåŒ…å«äº†å•ä¸ªå…ƒç´ ï¼Œå³è¾“å…¥çš„å­—ç¬¦ä¸²ã€‚
-   </p>
-  </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.preg-split-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="pcre.pattern.html" class="link">PCRE æ¨¡å¼</a></li>
-    <li class="member"><span class="function"><a href="function.implode.html" class="function" rel="rdfs-seeAlso">implode()</a> - å°†ä¸€ä¸ªä¸€ç»´æ•°ç»„çš„å€¼è½¬åŒ–ä¸ºå­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</span></li>
-    <li class="member"><span class="function"><a href="function.preg-match-all.html" class="function" rel="rdfs-seeAlso">preg_match_all()</a> - æ‰§è¡Œä¸€ä¸ªå…¨å±€æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</span></li>
-    <li class="member"><span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - æ‰§è¡Œä¸€ä¸ªæ­£åˆ™è¡¨è¾¾å¼çš„æœç´¢å’Œæ›¿æ¢</span></li>
-    <li class="member"><span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - è¿”å›æœ€åä¸€ä¸ªPCREæ­£åˆ™æ‰§è¡Œäº§ç”Ÿçš„é”™è¯¯ä»£ç </span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.preg-replace.html">preg_replace</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.regex.html">POSIX Regex</a></div>
- <div class="up"><a href="ref.pcre.html">PCRE å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,54 +1,73 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¯·æ±‚è¿è¡Œä¸€æ¡ FTP å‘½ä»¤</title>
+<HTML  ><HEAD  ><TITLE  >ftp_exec</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FTP º¯Êı¿â" HREF="ref.ftp.html"><LINK  REL="PREVIOUS" TITLE="ftp_delete" HREF="function.ftp-delete.html"><LINK  REL="NEXT" TITLE="ftp_fget" HREF="function.ftp-fget.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftp-delete.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-fget.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftp-exec" ></A
+>ftp_exec</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN31325" ></A
+><P  >    (PHP 4 &#62;= 4.0.3)</P
+>ftp_exec&nbsp;--&nbsp;ÇëÇóÔËĞĞÒ»Ìõ FTP ÃüÁî</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN31328" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >ftp_exec</B
+> ( resource ftp_stream, string command)<BR  ></BR
+><P  >&#13;     ·¢ËÍÒ»¸ö SITE EXEC <TT  CLASS="parameter" ><I  >command</I
+></TT
+> ÇëÇóµ½ FTP
+     ·şÎñÆ÷¡£Èç¹û³É¹¦£¨·şÎñÆ÷·¢ËÍÏìÓ¦´úÂë <TT  CLASS="literal" >200</TT
+>£©Ôò·µ»Ø
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬·ñÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31345" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ftp_exec()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$command </font><font  color="#007700">= </font><font  color="#DD0000">'ls -al'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$conn_id </font><font  color="#007700">= </font><font  color="#0000BB">ftp_connect</font><font  color="#007700">(</font><font  color="#0000BB">$ftp_server</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$login_result </font><font  color="#007700">= </font><font  color="#0000BB">ftp_login</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_name</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_pass</font><font  color="#007700">);<br  />if(</font><font  color="#0000BB">$res </font><font  color="#007700">= </font><font  color="#0000BB">ftp_exec</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$command</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$command executed successfully&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">nl2br</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">);<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">'could not execute ' </font><font  color="#007700">. </font><font  color="#0000BB">$command</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.ftp-raw.html"  ><B  CLASS="function" >ftp_raw()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftp-delete.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-fget.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftp_delete</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ftp.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_fget</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-delete.html">ftp_delete</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-fget.html">ftp_fget</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftp-exec" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">ftp_exec</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5)</p><p class="refpurpose"><span class="refname">ftp_exec</span> &mdash; <span class="dc-title">è¯·æ±‚è¿è¡Œä¸€æ¡ FTP å‘½ä»¤</span></p>
 
-   </div>
-   <div class="refsect1 unknown-examplet" id="refsect1-function.ftp-exec-unknown-examplet">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">bool</span> <span class="methodname"><strong>ftp_exec</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
-     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$command</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     å‘é€ä¸€ä¸ª SITE EXEC <code class="parameter">command</code> è¯·æ±‚åˆ° FTP
-     æœåŠ¡å™¨ã€‚å¦‚æœæˆåŠŸï¼ˆæœåŠ¡å™¨å‘é€å“åº”ä»£ç  <em>200</em>ï¼‰åˆ™è¿”å›
-     <strong><code>TRUE</code></strong>ï¼Œå¦åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-4574">
-      <p><strong>Example #1 <span class="function"><strong>ftp_exec()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$command&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'ls&nbsp;-al'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$conn_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$ftp_server</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$login_result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_login</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ftp_user_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ftp_user_pass</span><span style="color: #007700">);<br />if(</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$command</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$command</span><span style="color: #DD0000">&nbsp;executed&nbsp;successfully&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">nl2br</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'could&nbsp;not&nbsp;execute&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$command</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.ftp-raw.html" class="function">ftp_raw()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-delete.html">ftp_delete</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-fget.html">ftp_fget</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

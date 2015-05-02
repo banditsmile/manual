@@ -1,108 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get system name</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.posix-ttyname.html">posix_ttyname</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.exec.html">ç¨‹åºæ‰§è¡Œ</a></div>
- <div class="up"><a href="ref.posix.html">POSIX å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.posix-uname" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">posix_uname</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">posix_uname</span> &mdash; <span class="dc-title">Get system name</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.posix-uname-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>posix_uname</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Gets information about the system.
-  </p>
-  <p class="para">
-   Posix requires that assumptions must not be made about the
-   format of the values, e.g. the assumption that a release may contain
-   three digits or anything else returned by this function.
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.posix-uname-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a hash of strings with information about the
-   system. The indices of the hash are
-   <ul class="itemizedlist">
-    <li class="listitem"><span class="simpara">
-      sysname - operating system name (e.g. Linux)
-     </span></li>
-    <li class="listitem"><span class="simpara">
-      nodename - system name (e.g. valiant)
-     </span></li>
-    <li class="listitem"><span class="simpara">
-      release - operating system release (e.g. 2.2.10)
-     </span></li>
-    <li class="listitem"><span class="simpara">
-      version - operating system version (e.g. #4 Tue Jul 20
-      17:01:36 MEST 1999)
-     </span></li>
-    <li class="listitem"><span class="simpara">
-      machine - system architecture (e.g. i586)
-     </span></li>
-    <li class="listitem"><span class="simpara">
-      domainname - DNS domainname (e.g. example.com)
-     </span></li>
-   </ul>
-  </p>
-  <p class="para">
-   domainname is a GNU extension and not part of POSIX.1, so this
-   field is only available on GNU systems or when using the GNU
-   libc.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >posix_uname</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="POSIX Functions" HREF="ref.posix.html"><LINK  REL="PREVIOUS" TITLE="posix_ttyname" HREF="function.posix-ttyname.html"><LINK  REL="NEXT" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.posix-ttyname.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.pgsql.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.posix-uname" ></A
+>posix_uname</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN90490" ></A
+><P  >    (PHP 3&#62;= 3.0.10, PHP 4 )</P
+>posix_uname&nbsp;--&nbsp;Get system name</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN90493" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_uname</B
+> ( void )<BR  ></BR
+><P  >&#13;     Returns a hash of strings with information about the
+     system. The indices of the hash are
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        sysname - operating system name (e.g. Linux)
+       </P
+></LI
+><LI  ><P  >&#13;        nodename - system name (e.g. valiant)
+       </P
+></LI
+><LI  ><P  >&#13;        release - operating system release (e.g. 2.2.10)
+       </P
+></LI
+><LI  ><P  >&#13;        version - operating system version (e.g. #4 Tue Jul 20
+        17:01:36 MEST 1999)
+       </P
+></LI
+><LI  ><P  >&#13;        machine - system architecture (e.g. i586)
+       </P
+></LI
+><LI  ><P  >&#13;        domainname - DNS domainname (e.g. php.net)
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     domainname is a GNU extension and not part of POSIX.1, so this
+     field is only available on GNU systems or when using the GNU
+     libc.
+    </P
+><P  >&#13;     Posix requires that you must not make any assumptions about the
+     format of the values, e.g. you cannot rely on three digit version
+     numbers or anything else returned by this function.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.posix-ttyname.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >posix_ttyname</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.posix.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >PostgreSQL Êı¾İ¿âº¯Êı¿â</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.posix-uname-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3948">
-    <p><strong>Example #1 Example use of <span class="function"><strong>posix_uname()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$uname</span><span style="color: #007700">=</span><span style="color: #0000BB">posix_uname</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$uname</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [sysname] =&gt; Linux
-    [nodename] =&gt; funbox
-    [release] =&gt; 2.6.20-15-server
-    [version] =&gt; #2 SMP Sun Apr 15 07:41:34 UTC 2007
-    [machine] =&gt; i686
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.posix-ttyname.html">posix_ttyname</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.exec.html">ç¨‹åºæ‰§è¡Œ</a></div>
- <div class="up"><a href="ref.posix.html">POSIX å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,49 +1,67 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä» PHP 4 ç§»æ¤åˆ° PHP 5</title>
+<HTML  ><HEAD  ><TITLE  >Migrating from PHP 4 to PHP 5</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="¸½Â¼" HREF="appendixes.html"><LINK  REL="PREVIOUS" TITLE="PHP Ïà¹ØÎÄÕÂ" HREF="history.php.publications.html"><LINK  REL="NEXT" TITLE="Backward Incompatible Changes" HREF="migration5.incompatible.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="appendix" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="history.php.publications.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration5.incompatible.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="appendix" ><H1  ><A  NAME="migration5" >¸½Â¼ B. Migrating from PHP 4 to PHP 5</A
+></H1
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="migration5.html#migration5.changes"  >What has changed in PHP 5</A
+></DT
+><DT  ><A  HREF="migration5.incompatible.html"  >Backward Incompatible Changes</A
+></DT
+><DT  ><A  HREF="migration5.cli-cgi.html"  >CLI and CGI</A
+></DT
+><DT  ><A  HREF="migration5.configuration.html"  >Migrating Configuration Files</A
+></DT
+><DT  ><A  HREF="migration5.functions.html"  >New Functions</A
+></DT
+><DT  ><A  HREF="migration5.newconf.html"  >New Directives</A
+></DT
+><DT  ><A  HREF="migration5.databases.html"  >Databases</A
+></DT
+><DT  ><A  HREF="migration5.oop.html"  >New Object Model</A
+></DT
+></DL
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.changes" ></A
+>What has changed in PHP 5</H1
+><P  >&#13;    PHP 5 and the integrated Zend Engine 2 have greatly improved PHP's
+    performance and capabilities, but great care has been taken to break as
+    little existing code as possible. So migrating your code from PHP 4 to 5
+    should be very easy. Most existing PHP 4 code should be ready to run
+    without changes, but you should still know about the <A  HREF="migration5.incompatible.html"  >few differences</A
+> and
+    take care to test your code before switching versions in production
+    environments.
+   </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="history.php.publications.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration5.incompatible.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >PHP Ïà¹ØÎÄÕÂ</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="appendixes.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Backward Incompatible Changes</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration51.errorcheck.html">Checking for E_STRICT</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.changes.html">PHP 5 ä¸­æœ‰å“ªäº›æ”¹å˜</a></div>
- <div class="up"><a href="appendices.html">é™„å½•</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5" class="appendix">
-  <h1>ä» PHP 4 ç§»æ¤åˆ° PHP 5</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_appendix"><li><a href="migration5.changes.html">PHP 5 ä¸­æœ‰å“ªäº›æ”¹å˜</a></li><li><a href="migration5.incompatible.html">æœªå‘ä¸‹å…¼å®¹çš„æ”¹å˜</a></li><li><a href="migration5.cli-cgi.html">CLI å’Œ CGI</a></li><li><a href="migration5.configuration.html">ç§»æ¤é…ç½®æ–‡ä»¶</a></li><li><a href="migration5.functions.html">æ–°å‡½æ•°</a></li><li><a href="migration5.newconf.html">æ–°æŒ‡ä»¤</a></li><li><a href="migration5.databases.html">æ•°æ®åº“</a></li><li><a href="migration5.oop.html">æ–°å¯¹è±¡æ¨¡å‹</a></li><li><a href="migrating5.errorrep.html">é”™è¯¯æŠ¥å‘Š</a></li></ul>
 
-  <p class="para">
-   å‚è§ PHP ç‰ˆæœ¬è¿ç§»æŒ‡å—
-   <a href="migration51.html" class="link">5.1.x</a>, 
-   <a href="migration52.html" class="link">5.2.x</a> and 
-   <a href="migration53.html" class="link">5.3.x</a>.
-  </p>
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-
-  
-
-  
-
- </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration51.errorcheck.html">Checking for E_STRICT</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.changes.html">PHP 5 ä¸­æœ‰å“ªäº›æ”¹å˜</a></div>
- <div class="up"><a href="appendices.html">é™„å½•</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

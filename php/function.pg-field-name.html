@@ -1,48 +1,41 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›å­—æ®µçš„åå­—</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-field-is-null.html">pg_field_is_null</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-field-num.html">pg_field_num</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-field-name" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_field_name</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_field_name</span> &mdash; <span class="dc-title">è¿”å›å­—æ®µçš„åå­—</span></p>
-
-   </div>
-   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.pg-field-name-unknown-unknown-seealsq">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">string</span> <span class="methodname"><strong>pg_field_name</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-      , <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_number</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_field_name()</strong></span> è¿”å›ç»™å®š PostgreSQL <code class="parameter">result</code> èµ„æºä¸­çš„ <code class="parameter">field_number</code> æ‰€ä»£è¡¨çš„å­—æ®µåã€‚å­—æ®µç¼–å·ä» 0 å¼€å§‹ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-2195">
-      <p><strong>Example #1 è·å–å­—æ®µä¿¡æ¯</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;authors&nbsp;where&nbsp;author&nbsp;=&nbsp;'Orwell'"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$j&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$j&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$j</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"column&nbsp;</span><span style="color: #0000BB">$j</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$fieldname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$j</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"fieldname:&nbsp;</span><span style="color: #0000BB">$fieldname</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"printed&nbsp;length:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">pg_field_prtlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fieldname</span><span style="color: #007700">).</span><span style="color: #DD0000">"&nbsp;characters\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"storage&nbsp;length:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">pg_field_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$j</span><span style="color: #007700">).</span><span style="color: #DD0000">"&nbsp;bytes\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"field&nbsp;type:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">pg_field_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$j</span><span style="color: #007700">).</span><span style="color: #DD0000">"&nbsp;\n\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>
-       ä¸Šä¾‹çš„è¾“å‡ºå¦‚ä¸‹ï¼š
-      </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-column 0
+<HTML  ><HEAD  ><TITLE  >pg_field_name</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_field_is_null" HREF="function.pg-field-is-null.html"><LINK  REL="NEXT" TITLE="pg_field_num" HREF="function.pg-field-num.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-field-is-null.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-field-num.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-field-name" ></A
+>pg_field_name</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN91598" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>pg_field_name&nbsp;--&nbsp;·µ»Ø×Ö¶ÎµÄÃû×Ö</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN91601" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >pg_field_name</B
+> ( resource result, int field_number)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_field_name()</B
+> ·µ»Ø¸ø¶¨ PostgreSQL <TT  CLASS="parameter" ><I  >result</I
+></TT
+> ×ÊÔ´ÖĞµÄ <TT  CLASS="parameter" ><I  >field_number</I
+></TT
+> Ëù´ú±íµÄ×Ö¶ÎÃû¡£×Ö¶Î±àºÅ´Ó 0 ¿ªÊ¼¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN91617" ></A
+><P  ><B  >Àı×Ó 1. »ñÈ¡×Ö¶ÎĞÅÏ¢</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn </font><font  color="#007700">= </font><font  color="#0000BB">pg_connect</font><font  color="#007700">(</font><font  color="#DD0000">"dbname=publisher"</font><font  color="#007700">) or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$res </font><font  color="#007700">= </font><font  color="#0000BB">pg_query</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">, </font><font  color="#DD0000">"select * from authors where author = 'Orwell'"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">pg_num_fields</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$j </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$j </font><font  color="#007700">&lt; </font><font  color="#0000BB">$i</font><font  color="#007700">; </font><font  color="#0000BB">$j</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"column $j\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$fieldname </font><font  color="#007700">= </font><font  color="#0000BB">pg_field_name</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">$j</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"fieldname: $fieldname\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"printed length: "</font><font  color="#007700">.</font><font  color="#0000BB">pg_field_prtlen</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">$fieldname</font><font  color="#007700">).</font><font  color="#DD0000">" characters\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"storage length: "</font><font  color="#007700">.</font><font  color="#0000BB">pg_field_size</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">$j</font><font  color="#007700">).</font><font  color="#DD0000">" bytes\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"field type: "</font><font  color="#007700">.</font><font  color="#0000BB">pg_field_type</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">$j</font><font  color="#007700">).</font><font  color="#DD0000">" \n\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÉÏÀıµÄÊä³öÈçÏÂ£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >column 0
 fieldname: author
 printed length: 6 characters
 storage length: -1 bytes
@@ -58,24 +51,47 @@ column 2
 fieldname: title
 printed length: 24 characters
 storage length: -1 bytes
-field type: varchar
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      æœ¬å‡½æ•°ä»¥å‰çš„åå­—ä¸º <em>pg_fieldname()</em>ã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.pg-field-num.html" class="function">pg_field_num()</a></span>ã€‚
-    </p>
-   </div>
+field type: varchar</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ±¾º¯ÊıÒÔÇ°µÄÃû×ÖÎª <TT  CLASS="literal" >pg_fieldname()</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.pg-field-num.html"  ><B  CLASS="function" >pg_field_num()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-field-is-null.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-field-num.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_field_is_null</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_field_num</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-field-is-null.html">pg_field_is_null</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-field-num.html">pg_field_num</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

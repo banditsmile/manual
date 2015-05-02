@@ -1,212 +1,117 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>SNMP å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="snmp.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.snmp-get-quick-print.html">snmp_get_quick_print</a></div>
- <div class="up"><a href="book.snmp.html">SNMP</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.snmp" class="reference">
- <h1 class="title">SNMP å‡½æ•°</h1>
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.snmp-get-quick-print.html">snmp_get_quick_print</a> â€” è¿”å› UCD åº“ä¸­ quick_print è®¾ç½®çš„å½“å‰å€¼</li><li><a href="function.snmp-get-valueretrieval.html">snmp_get_valueretrieval</a> â€” Return the method how the SNMP values will be returned</li><li><a href="function.snmp-read-mib.html">snmp_read_mib</a> â€” Reads and parses a MIB file into the active MIB tree</li><li><a href="function.snmp-set-enum-print.html">snmp_set_enum_print</a> â€” Return all values that are enums with their enum value instead of the raw integer</li><li><a href="function.snmp-set-oid-numeric-print.html">snmp_set_oid_numeric_print</a> â€” Set the OID output format</li><li><a href="function.snmp-set-oid-output-format.html">snmp_set_oid_output_format</a> â€” Set the OID output format</li><li><a href="function.snmp-set-quick-print.html">snmp_set_quick_print</a> â€” è®¾ç½® UCD SNMP åº“ä¸­ quick_print çš„å€¼</li><li><a href="function.snmp-set-valueretrieval.html">snmp_set_valueretrieval</a> â€” Specify the method how the SNMP values will be returned</li><li><a href="function.snmp2-get.html">snmp2_get</a> â€” Fetch an SNMP object</li><li><a href="function.snmp2-getnext.html">snmp2_getnext</a> â€” Fetch the SNMP object which follows the given object id</li><li><a href="function.snmp2-real-walk.html">snmp2_real_walk</a> â€” Return all objects including their respective object ID within the specified one</li><li><a href="function.snmp2-set.html">snmp2_set</a> â€” Set the value of an SNMP object</li><li><a href="function.snmp2-walk.html">snmp2_walk</a> â€” Fetch all the SNMP objects from an agent</li><li><a href="function.snmp3-get.html">snmp3_get</a> â€” Fetch an SNMP object</li><li><a href="function.snmp3-getnext.html">snmp3_getnext</a> â€” Fetch the SNMP object which follows the given object id</li><li><a href="function.snmp3-real-walk.html">snmp3_real_walk</a> â€” Return all objects including their respective object ID within the specified one</li><li><a href="function.snmp3-set.html">snmp3_set</a> â€” Set the value of an SNMP object</li><li><a href="function.snmp3-walk.html">snmp3_walk</a> â€” Fetch all the SNMP objects from an agent</li><li><a href="function.snmpget.html">snmpget</a> â€” è·å–ä¸€ä¸ª SNMP å¯¹è±¡</li><li><a href="function.snmpgetnext.html">snmpgetnext</a> â€” Fetch the SNMP object which follows the given object id</li><li><a href="function.snmprealwalk.html">snmprealwalk</a> â€” è¿”å›æŒ‡å®šçš„æ‰€æœ‰å¯¹è±¡ï¼ŒåŒ…æ‹¬å®ƒä»¬å„è‡ªçš„å¯¹è±¡ ID</li><li><a href="function.snmpset.html">snmpset</a> â€” è®¾ç½®ä¸€ä¸ª SNMP å¯¹è±¡</li><li><a href="function.snmpwalk.html">snmpwalk</a> â€” ä»ä»£ç†è¿”å›æ‰€æœ‰çš„ SNMP å¯¹è±¡</li><li><a href="function.snmpwalkoid.html">snmpwalkoid</a> â€” æŸ¥è¯¢å…³äºç½‘ç»œå®ä½“çš„ä¿¡æ¯æ ‘</li></ul>
+<HTML  ><HEAD  ><TITLE  >SNMP º¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="swf_viewport" HREF="function.swf-viewport.html"><LINK  REL="NEXT" TITLE="snmp_get_quick_print" HREF="function.snmp-get-quick-print.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.swf-viewport.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.snmp-get-quick-print.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.snmp" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >CII. SNMP º¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN103342" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="snmp.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="snmp.requirements" ></A
+>ĞèÇó</H1
+><P  >&#13;     ÎªÁËÔÚ Unix ÖĞÊ¹ÓÃ SNMP º¯Êı¿â£¬ÄúĞèÒª°²×°
+     <A  href="http://net-snmp.sourceforge.net/"  TARGET="_top" >UCD SNMP</A
+> »ò 
+     <A  href="http://www.net-snmp.org/"  TARGET="_top" >NET-SNMP</A
+> °ü¡£ÔÚ
+     Windows ÖĞ£¬ÕâĞ©º¯ÊıÖ»ÄÜÓÃÓÚ NT£¬¶ø²»ÄÜÓÃÓÚ Win95/98¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="snmp.installation" ></A
+>°²×°</H1
+><P  >&#13;  ÖØµã£ºÎªÁËÊ¹ÓÃ UCD SNMP °ü£¬ÄúĞèÒªÔÚ±àÒëÖ®Ç°½«
+  NO_ZEROLENGTH_COMMUNITY ¶¨ÒåÎª 1¡£ ÔÚ configuring UCD
+  SNMP Ö®ºó£¬±à¼­ <TT  CLASS="filename" >config.h</TT
+>£¬²éÕÒ
+  NO_ZEROLENGTH_COMMUNITY£¬½« #define ËùÔÚĞĞµÄ×¢ÊÍÈ¥µô¡£ĞŞ¸ÄºóÓ¦¸ÃÀàËÆÕâÑù£º
+  <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="c" >#define NO_ZEROLENGTH_COMMUNITY 1</PRE
+></TD
+></TR
+></TABLE
+>
+  È»ºóÊ¹ÓÃ <TT  CLASS="option" >--with-snmp[=DIR]</TT
+> Ñ¡Ïî±àÒë PHP¡£
+ </P
+><P  >&#13;  Èç¹ûÄúÔÚÁªºÏ SNMP ÃüÁîÊ±¿´µ½Ææ¹ÖµÄ·Ö¶Î´íÎó£¬Ôò²»Òª¼ÌĞøÉÏÊöµÄÖ¸Áî¡£Èç¹ûÄú²»ÏëÖØĞÂ±àÒë
+  UCD SNMP£¬¿ÉÒÔÊ¹ÓÃ <TT  CLASS="option" >--enable-ucd-snmp-hack</TT
+>
+  ¿ª¹Ø±àÒë PHP£¬´Ë¿ª¹Ø½«±Ü¿ªÉÏÊö´íÎó¡£
+ </P
+><P  >&#13;  Windows °æ±¾ÔÚÄ¿Â¼ <TT  CLASS="filename" >mibs</TT
+> 
+  ÖĞ°üº¬ÁËÖ§³Ö SNMP µÄÎÄ¼ş¡£´ËÄ¿Â¼Ó¦¸ÃÒÆµ½ 
+  <TT  CLASS="filename" >DRIVE:\usr\mibs</TT
+>£¬ÆäÖĞ DRIVE ÊÇ°²×° PHP ËùÔÚµÄÇı¶¯Æ÷Ãû£¬ÀıÈç£º<TT  CLASS="filename" >c:\usr\mibs</TT
+>¡£
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="snmp.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="snmp.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >&#13;    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="snmp.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ³£Á¿¡£</P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.snmp-get-quick-print.html"  >snmp_get_quick_print</A
+>&nbsp;--&nbsp;
+     ·µ»Ø UCD ¿âÖĞ quick_print ÉèÖÃµÄµ±Ç°Öµ
+    </DT
+><DT  ><A  HREF="function.snmp-set-quick-print.html"  >snmp_set_quick_print</A
+>&nbsp;--&nbsp;
+     ÉèÖÃ UCD SNMP ¿âÖĞ quick_print µÄÖµ
+    </DT
+><DT  ><A  HREF="function.snmpget.html"  >snmpget</A
+>&nbsp;--&nbsp;»ñÈ¡Ò»¸ö SNMP ¶ÔÏó</DT
+><DT  ><A  HREF="function.snmprealwalk.html"  >snmprealwalk</A
+>&nbsp;--&nbsp;
+     ·µ»ØÖ¸¶¨µÄËùÓĞ¶ÔÏó£¬°üÀ¨ËüÃÇ¸÷×ÔµÄ¶ÔÏó ID
+    </DT
+><DT  ><A  HREF="function.snmpset.html"  >snmpset</A
+>&nbsp;--&nbsp;ÉèÖÃÒ»¸ö SNMP ¶ÔÏó</DT
+><DT  ><A  HREF="function.snmpwalk.html"  >snmpwalk</A
+>&nbsp;--&nbsp;´Ó´úÀí·µ»ØËùÓĞµÄ SNMP ¶ÔÏó</DT
+><DT  ><A  HREF="function.snmpwalkoid.html"  >snmpwalkoid</A
+>&nbsp;--&nbsp;²éÑ¯¹ØÓÚÍøÂçÊµÌåµÄĞÅÏ¢Ê÷
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.swf-viewport.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.snmp-get-quick-print.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >swf_viewport</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >snmp_get_quick_print</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="snmp.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.snmp-get-quick-print.html">snmp_get_quick_print</a></div>
- <div class="up"><a href="book.snmp.html">SNMP</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

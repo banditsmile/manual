@@ -1,150 +1,100 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>生成一个唯一ID</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.time-sleep-until.html">time_sleep_until</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.unpack.html">unpack</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.uniqid" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">uniqid</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">uniqid</span> &mdash; <span class="dc-title">生成一个唯一ID</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.uniqid-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>uniqid</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code><span class="initializer"> = &quot;&quot;</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$more_entropy</code><span class="initializer"> = false</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   获取一个带前缀、基于当前时间微秒数的唯一ID。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.uniqid-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">prefix</code></dt>
-
-     <dd>
-
-      <p class="para">
-       有用的参数。例如：如果在多台主机上可能在同一微秒生成唯一ID。
-      </p>
-      <p class="para">
-       <code class="parameter">prefix</code>为空，则返回的字符串长度为13。<code class="parameter">more_entropy</code> 为
-       <strong><code>TRUE</code></strong>，则返回的字符串长度为23。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">more_entropy</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设置为 <strong><code>TRUE</code></strong>，<span class="function"><strong>uniqid()</strong></span> 会在返回的字符串结尾增加额外的煽（使用combined linear congruential generator）。
-       使得唯一ID更具唯一性。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.uniqid-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回字符串形式的唯一ID。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.uniqid-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4091">
-    <p><strong>Example #1 <span class="function"><strong>uniqid()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;A&nbsp;uniqid,&nbsp;like:&nbsp;4b3403665fea6&nbsp;*/<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"uniqid():&nbsp;%s\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">/*&nbsp;We&nbsp;can&nbsp;also&nbsp;prefix&nbsp;the&nbsp;uniqid,&nbsp;this&nbsp;the&nbsp;same&nbsp;as&nbsp;<br />&nbsp;*&nbsp;doing:<br />&nbsp;*<br />&nbsp;*&nbsp;$uniqid&nbsp;=&nbsp;$prefix&nbsp;.&nbsp;uniqid();<br />&nbsp;*&nbsp;$uniqid&nbsp;=&nbsp;uniqid($prefix);<br />&nbsp;*/<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"uniqid('php_'):&nbsp;%s\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">(</span><span style="color: #DD0000">'php_'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">/*&nbsp;We&nbsp;can&nbsp;also&nbsp;activate&nbsp;the&nbsp;more_entropy&nbsp;parameter,&nbsp;which&nbsp;is&nbsp;<br />&nbsp;*&nbsp;required&nbsp;on&nbsp;some&nbsp;systems,&nbsp;like&nbsp;Cygwin.&nbsp;This&nbsp;makes&nbsp;uniqid()<br />&nbsp;*&nbsp;produce&nbsp;a&nbsp;value&nbsp;like:&nbsp;4b340550242239.64159797<br />&nbsp;*/<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"uniqid('',&nbsp;true):&nbsp;%s\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">(</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >uniqid</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Miscellaneous Functions" HREF="ref.misc.html"><LINK  REL="PREVIOUS" TITLE="sleep" HREF="function.sleep.html"><LINK  REL="NEXT" TITLE="unpack" HREF="function.unpack.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sleep.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.unpack.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.uniqid" ></A
+>uniqid</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN62625" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>uniqid&nbsp;--&nbsp;Generate a unique ID</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN62628" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >uniqid</B
+> ( string prefix [, bool lcg])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >uniqid()</B
+> returns a prefixed unique identifier
+     based on the current time in microseconds. The prefix can be
+     useful for instance if you generate identifiers simultaneously on
+     several hosts that might happen to generate the identifier at the
+     same microsecond. <TT  CLASS="parameter" ><I  >Prefix</I
+></TT
+> can be up to 114
+     characters long.
+    </P
+><P  >&#13;     If the optional <TT  CLASS="parameter" ><I  >lcg</I
+></TT
+> parameter is <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>,
+     <B  CLASS="function" >uniqid()</B
+> will add additional "combined LCG"
+     entropy at the end of the return value, which should make the
+     results more unique.
+    </P
+><P  >&#13;     With an empty <TT  CLASS="parameter" ><I  >prefix</I
+></TT
+>, the returned string
+     will be 13 characters long.  If <TT  CLASS="parameter" ><I  >lcg</I
+></TT
+> is
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>, it will be 23 characters.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      The <TT  CLASS="parameter" ><I  >lcg</I
+></TT
+> parameter is only available in
+      PHP 4 and PHP 3.0.13 and later.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     If you need a unique identifier or token and you intend to give
+     out that token to the user via the network (i.e. session cookies),
+     it is recommended that you use something along these lines:
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN62655" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// no prefix<br  /></font><font  color="#0000BB">$token </font><font  color="#007700">= </font><font  color="#0000BB">md5</font><font  color="#007700">(</font><font  color="#0000BB">uniqid</font><font  color="#007700">(</font><font  color="#DD0000">""</font><font  color="#007700">));<br  /><br  /></font><font  color="#FF8000">// better, difficult to guess<br  /></font><font  color="#0000BB">$better_token </font><font  color="#007700">= </font><font  color="#0000BB">md5</font><font  color="#007700">(</font><font  color="#0000BB">uniqid</font><font  color="#007700">(</font><font  color="#0000BB">rand</font><font  color="#007700">(), </font><font  color="#0000BB">true</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     This will create a 32 character identifier (a 128 bit hex number)
+     that is extremely difficult to predict.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sleep.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.unpack.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sleep</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.misc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >unpack</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 changelog" id="refsect1-function.uniqid-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        <code class="parameter">prefix</code> 参数设为可选。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.1</td>
-       <td>
-        <code class="parameter">prefix</code> 参数的长度限制提升到114个字符。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.uniqid-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在Cygwin环境下，为了使此函数能够工作，<code class="parameter">more_entropy</code> 必须设置为 <strong><code>TRUE</code></strong>。
-   </p>
-  </p></blockquote>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.time-sleep-until.html">time_sleep_until</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.unpack.html">unpack</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

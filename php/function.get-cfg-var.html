@@ -1,116 +1,66 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取 PHP 配置选项的值</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gc-enabled.html">gc_enabled</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-current-user.html">get_current_user</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-cfg-var" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">get_cfg_var</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">get_cfg_var</span> &mdash; <span class="dc-title">获取 PHP 配置选项的值</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.get-cfg-var-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>get_cfg_var</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$option</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   获取 PHP 配置选项 <code class="parameter">option</code> 的值。
-  </p>
-  <p class="para">
-   此函数不会返回 PHP 编译的配置信息，或从 Apache 配置文件读取。
-  </p>
-  <p class="para">
-   检查系统是否使用了一个<a href="configuration.file.html" class="link">配置文件</a>，并尝试获取 cfg_file_path 的配置设置的值。
-   如果有效，将会使用一个配置文件。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.get-cfg-var-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">option</code></dt>
-
-     <dd>
-
-      <p class="para">
-       配置选项的名称。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.get-cfg-var-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回 <code class="parameter">option</code> 指定的当前 PHP 配置变量的值，错误发生时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >get_cfg_var</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="extension_loaded" HREF="function.extension-loaded.html"><LINK  REL="NEXT" TITLE="get_current_user" HREF="function.get-current-user.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.extension-loaded.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-current-user.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-cfg-var" ></A
+>get_cfg_var</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN87862" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>get_cfg_var&nbsp;--&nbsp;
+     Gets the value of a PHP configuration option
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN87865" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >get_cfg_var</B
+> ( string varname)<BR  ></BR
+><P  >&#13;     Returns the current value of the PHP configuration variable
+     specified by <TT  CLASS="parameter" ><I  >varname</I
+></TT
+>, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if an
+     error occurs.
+    </P
+><P  >&#13;     It will not return configuration information set when the PHP was
+     compiled, or read from an Apache configuration file (using the
+     php3_configuration_option directives).
+    </P
+><P  >&#13;     To check whether the system is using a <A  HREF="configuration.html#configuration.file"  >configuration file</A
+>, try
+     retrieving the value of the cfg_file_path configuration
+     setting. If this is available, a configuration file is being
+     used.
+    </P
+><P  >&#13;     See also <A  HREF="function.ini-get.html"  ><B  CLASS="function" >ini_get()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.extension-loaded.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-current-user.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >extension_loaded</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_current_user</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 changelog" id="refsect1-function.get-cfg-var-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        <span class="function"><strong>get_cfg_var()</strong></span> 被修复，能够返回 &quot;array&quot; 的 ini 选项。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.get-cfg-var-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ini-get.html" class="function" rel="rdfs-seeAlso">ini_get()</a> - 获取一个配置选项的值</span></li>
-    <li class="member"><span class="function"><a href="function.ini-get-all.html" class="function" rel="rdfs-seeAlso">ini_get_all()</a> - 获取所有配置选项</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gc-enabled.html">gc_enabled</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-current-user.html">get_current_user</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,157 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ›´æ–°è¡¨</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-untrace.html">pg_untrace</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-version.html">pg_version</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-update" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_update</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_update</span> &mdash; <span class="dc-title">
-     æ›´æ–°è¡¨
-    </span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.pg-update-description">
-  <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>pg_update</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-      , <span class="methodparam"><span class="type">string</span> <code class="parameter">$table_name</code></span>
-      , <span class="methodparam"><span class="type">array</span> <code class="parameter">$data</code></span>
-      , <span class="methodparam"><span class="type">array</span> <code class="parameter">$condition</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = PGSQL_DML_EXEC</span></span>
-     ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_update()</strong></span> ç”¨ <em>condition</em> ä½œä¸ºæ¡ä»¶æŸ¥è¯¢æ•°æ®åº“ï¼Œç”¨ <em>data</em> ä¸­çš„æ•°æ®æ›´æ–°ç¬¦åˆæ¡ä»¶çš„è®°å½•ã€‚å¦‚æœæŒ‡å®šäº† <em>options</em>ï¼Œåˆ™ <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span> ä¼šæŒ‰ç…§æŒ‡å®šé€‰é¡¹ä½œç”¨åˆ° <em>data</em> ä¸Šã€‚
-    </p>
-    <div class="warning"><strong class="warning">Warning</strong><p class="simpara">æ­¤å‡½æ•°æ˜¯<em class="emphasis">å®éªŒæ€§</em>çš„ã€‚æ­¤å‡½æ•°çš„è¡¨è±¡ï¼ŒåŒ…æ‹¬åç§°åŠå…¶ç›¸å…³æ–‡æ¡£éƒ½å¯èƒ½åœ¨æœªæ¥çš„
-PHP å‘å¸ƒç‰ˆæœ¬ä¸­æœªé€šçŸ¥å°±è¢«ä¿®æ”¹ã€‚ä½¿ç”¨æœ¬å‡½æ•°é£é™©è‡ªæ‹… ã€‚</p></div>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pg-update-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">connection</code></dt>
-
-     <dd>
-
-      <p class="para">
-       PostgreSQL database connection resource.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">table_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Name of the table into which to update rows.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An <span class="type"><a href="language.types.array.html" class="type array">array</a></span> whose keys are field names in the table <code class="parameter">table_name</code>,
-       and whose values are what matched rows are to be updated to.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">condition</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An <span class="type"><a href="language.types.array.html" class="type array">array</a></span> whose keys are field names in the table <code class="parameter">table_name</code>,
-       and whose values are the conditions that a row must meet to be updated.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Any number of <strong><code>PGSQL_CONV_OPTS</code></strong>, 
-       <strong><code>PGSQL_DML_NO_CONV</code></strong>,
-       <strong><code>PGSQL_DML_EXEC</code></strong> or
-       <strong><code>PGSQL_DML_STRING</code></strong> combined. If <strong><code>PGSQL_DML_STRING</code></strong> is part of the
-       <code class="parameter">options</code> then query string is returned.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >pg_update</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_untrace" HREF="function.pg-untrace.html"><LINK  REL="NEXT" TITLE="Process Control Functions" HREF="ref.pcntl.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-untrace.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.pcntl.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-update" ></A
+>pg_update</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN92744" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>pg_update&nbsp;--&nbsp;
+     ¸üĞÂ±í
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN92747" ></A
+><H2  >ËµÃ÷</H2
+>mixed <B  CLASS="methodname" >pg_update</B
+> ( resource connection, string table_name, array data, array condition [, int options])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_update()</B
+> ÓÃ <TT  CLASS="literal" >condition</TT
+> ×÷ÎªÌõ¼ş²éÑ¯Êı¾İ¿â£¬ÓÃ <TT  CLASS="literal" >data</TT
+> ÖĞµÄÊı¾İ¸üĞÂ·ûºÏÌõ¼şµÄ¼ÇÂ¼¡£Èç¹ûÖ¸¶¨ÁË <TT  CLASS="literal" >options</TT
+>£¬Ôò <A  HREF="function.pg-convert.html"  ><B  CLASS="function" >pg_convert()</B
+></A
+> »á°´ÕÕÖ¸¶¨Ñ¡Ïî×÷ÓÃµ½ <TT  CLASS="literal" >data</TT
+> ÉÏ¡£
+    </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN92775" ></A
+><P  ><B  >Àı×Ó 1. pg_update</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php <br  />&nbsp;&nbsp;&nbsp;&nbsp;$db </font><font  color="#007700">= </font><font  color="#0000BB">pg_connect </font><font  color="#007700">(</font><font  color="#DD0000">'dbname=foo'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$data </font><font  color="#007700">= array(</font><font  color="#DD0000">'field1'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'AA'</font><font  color="#007700">, </font><font  color="#DD0000">'field2'</font><font  color="#007700">=&gt;</font><font  color="#DD0000">'BB'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// This is safe, since $_POST is converted automatically<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$res </font><font  color="#007700">= </font><font  color="#0000BB">pg_update</font><font  color="#007700">(</font><font  color="#0000BB">$db</font><font  color="#007700">, </font><font  color="#DD0000">'post_log'</font><font  color="#007700">, </font><font  color="#0000BB">$_POST</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$res</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Data is updated: $res\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"User must have sent wrong inputs\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.pg-convert.html"  ><B  CLASS="function" >pg_convert()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-untrace.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.pcntl.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_untrace</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Process Control Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.pg-update-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚  Returns <span class="type"><a href="language.types.string.html" class="type string">string</a></span> if <strong><code>PGSQL_DML_STRING</code></strong> is passed
-   via <code class="parameter">options</code>.
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.pg-update-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2222">
-    <p><strong>Example #1 <span class="function"><strong>pg_update()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'dbname=foo'</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'field1'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'AA'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'field2'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'BB'</span><span style="color: #007700">);<br />&nbsp;&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;safe,&nbsp;since&nbsp;$_POST&nbsp;is&nbsp;converted&nbsp;automatically<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_update</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'post_log'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br />&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Data&nbsp;is&nbsp;updated:&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"User&nbsp;must&nbsp;have&nbsp;sent&nbsp;wrong&nbsp;inputs\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.pg-update-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - å°†å…³è”çš„æ•°ç»„å€¼è½¬æ¢ä¸ºé€‚åˆ SQL è¯­å¥çš„æ ¼å¼ã€‚</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-untrace.html">pg_untrace</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-version.html">pg_version</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

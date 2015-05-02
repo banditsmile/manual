@@ -1,254 +1,86 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Read an entry</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ldap-parse-result.html">ldap_parse_result</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ldap-rename.html">ldap_rename</a></div>
- <div class="up"><a href="ref.ldap.html">LDAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ldap-read" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ldap_read</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ldap_read</span> &mdash; <span class="dc-title">Read an entry</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ldap-read-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ldap_read</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$base_dn</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$filter</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$attributes</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$attrsonly</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$sizelimit</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$timelimit</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$deref</code></span>
-  ]]]]] )</div>
-
-  <p class="para rdfs-comment">
-   Performs the search for a specified <code class="parameter">filter</code> on the
-   directory with the scope <strong><code>LDAP_SCOPE_BASE</code></strong>. So it is
-   equivalent to reading an entry from the directory.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ldap-read-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An LDAP link identifier, returned by <span class="function"><a href="function.ldap-connect.html" class="function">ldap_connect()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">base_dn</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The base DN for the directory.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">filter</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An empty filter is not allowed. If you want to retrieve absolutely all
-       information for this entry, use a filter of 
-       <em>objectClass=*</em>. If you know which entry types are
-       used on the directory server, you might use an appropriate filter such
-       as <em>objectClass=inetOrgPerson</em>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">attributes</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An array of the required attributes, e.g. array(&quot;mail&quot;, &quot;sn&quot;, &quot;cn&quot;).
-       Note that the &quot;dn&quot; is always returned irrespective of which attributes
-       types are requested.
-      </p>
-      <p class="para">
-       Using this parameter is much more efficient than the default action
-       (which is to return all attributes and their associated values). 
-       The use of this parameter should therefore be considered good
-       practice.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">attrsonly</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Should be set to 1 if only attribute types are wanted. If set to 0
-       both attributes types and attribute values are fetched which is the
-       default behaviour.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">sizelimit</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Enables you to limit the count of entries fetched. Setting this to 0
-       means no limit.
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        This parameter can NOT override server-side preset sizelimit. You can
-        set it lower though.
-       </p>
-       <p class="para">
-        Some directory server hosts will be configured to return no more than
-        a preset number of entries. If this occurs, the server will indicate
-        that it has only returned a partial results set. This also occurs if
-        you use this parameter to limit the count of fetched entries.
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">timelimit</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Sets the number of seconds how long is spend on the search. Setting
-       this to 0 means no limit.
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        This parameter can NOT override server-side preset timelimit. You can
-        set it lower though.
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">deref</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Specifies how aliases should be handled during the search. It can be
-       one of the following:
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>LDAP_DEREF_NEVER</code></strong> - (default) aliases are never
-          dereferenced.
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>LDAP_DEREF_SEARCHING</code></strong> - aliases should be
-          dereferenced during the search but not when locating the base object
-          of the search.
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>LDAP_DEREF_FINDING</code></strong> - aliases should be
-          dereferenced when locating the base object but not during the search.
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>LDAP_DEREF_ALWAYS</code></strong> - aliases should be dereferenced
-          always.
-         </span>
-        </li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ldap_read</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="LDAP Functions" HREF="ref.ldap.html"><LINK  REL="PREVIOUS" TITLE="ldap_parse_result" HREF="function.ldap-parse-result.html"><LINK  REL="NEXT" TITLE="ldap_rename" HREF="function.ldap-rename.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ldap-parse-result.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ldap-rename.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ldap-read" ></A
+>ldap_read</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN48515" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>ldap_read&nbsp;--&nbsp;Read an entry</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN48518" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >ldap_read</B
+> ( resource link_identifier, string base_dn, string filter [, array attributes [, int attrsonly [, int sizelimit [, int timelimit [, int deref]]]]])<BR  ></BR
+><P  >&#13;     Returns a search result identifier or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.</P
+><P  >  
+     <B  CLASS="function" >ldap_read()</B
+> performs the search for a
+     specified <TT  CLASS="parameter" ><I  >filter</I
+></TT
+> on the directory with the scope
+     LDAP_SCOPE_BASE. So it is equivalent to reading an entry from the
+     directory.</P
+><P  >&#13;     An empty filter is not allowed. If you want to retrieve
+     absolutely all information for this entry, use a filter of
+     "objectClass=*". If you know which entry types are used on the
+     directory server, you might use an appropriate filter such as
+     "objectClass=inetOrgPerson".</P
+><P  >&#13;     This call takes 5 optional parameters. See <A  HREF="function.ldap-search.html"  ><B  CLASS="function" >ldap_search()</B
+></A
+>
+     notes.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      These optional parameters were added in 4.0.2:
+      <TT  CLASS="parameter" ><I  >attrsonly</I
+></TT
+>,
+      <TT  CLASS="parameter" ><I  >sizelimit</I
+></TT
+>,
+      <TT  CLASS="parameter" ><I  >timelimit</I
+></TT
+>,
+      <TT  CLASS="parameter" ><I  >deref</I
+></TT
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;      From 4.0.5 on it's also possible to do parallel searches. See
+      <A  HREF="function.ldap-search.html"  ><B  CLASS="function" >ldap_search()</B
+></A
+> for details.
+     </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ldap-parse-result.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ldap-rename.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ldap_parse_result</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ldap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ldap_rename</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ldap-read-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a search result identifier or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.ldap-read-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        Parallel searches support was added.
-        See <span class="function"><a href="function.ldap-search.html" class="function">ldap_search()</a></span> for details.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ldap-parse-result.html">ldap_parse_result</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ldap-rename.html">ldap_rename</a></div>
- <div class="up"><a href="ref.ldap.html">LDAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

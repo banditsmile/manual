@@ -1,250 +1,198 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>输出关于 PHP 配置的信息</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.phpcredits.html">phpcredits</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.phpversion.html">phpversion</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.phpinfo" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">phpinfo</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">phpinfo</span> &mdash; <span class="dc-title">输出关于 PHP 配置的信息</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.phpinfo-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>phpinfo</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$what</code><span class="initializer"> = INFO_ALL</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-  输出 PHP 当前状态的大量信息，包含了 PHP 编译选项、启用的扩展、PHP 版本、服务器信息和环境变量（如果编译为一个模块的话）、PHP环境变量、操作系统版本信息、path 变量、配置选项的本地值和主值、HTTP 头和PHP授权信息(License)。
-  </p>
-  <p class="para">
-  因为每个系统安装得有所不同，<span class="function"><strong>phpinfo()</strong></span> 常用于在系统上检查 <a href="configuration.html" class="link">配置设置</a>和
-  <a href="language.variables.predefined.html" class="link">预定义变量</a>。
-  </p>
-  <p class="para">
-   <span class="function"><strong>phpinfo()</strong></span> 同时是个很有价值的、包含所有 EGPCS(Environment, GET, POST, Cookie, Server) 数据的调试工具。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.phpinfo-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">what</code></dt>
-
-     <dd>
-
-      <p class="para">
-       可以用以下的一个或多个 <em class="emphasis">constants</em> 用位运算传递给可选的 <code class="parameter">what</code> 参数来定制输出的信息。
-       该参数可以把常量相加或者用 <a href="language.operators.bitwise.html" class="link">or</a> 操作符按位运算。
-      </p>
-      <p class="para">
-       <table class="doctable table">
-        <caption><strong><span class="function"><strong>phpinfo()</strong></span> 选项</strong></caption>
-        
-         <thead>
-          <tr>
-           <th>Name (constant)</th>
-           <th>Value</th>
-           <th>Description</th>
-          </tr>
-
-         </thead>
-
-         <tbody class="tbody">
-          <tr>
-           <td>INFO_GENERAL</td>
-           <td>1</td>
-           <td>
-            配置的命令行、 <var class="filename">php.ini</var> 的文件位置、建立的时间、Web 服务器、系统及更多其他信息。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_CREDITS</td>
-           <td>2</td>
-           <td>
-            PHP 贡献者名单。参加 <span class="function"><a href="function.phpcredits.html" class="function">phpcredits()</a></span>。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_CONFIGURATION</td>
-           <td>4</td>
-           <td>
-            当前PHP指令的本地值和主值。参见 <span class="function"><a href="function.ini-get.html" class="function">ini_get()</a></span>。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_MODULES</td>
-           <td>8</td>
-           <td>
-            已加载的模块和模块相应的设置。参见
-            <span class="function"><a href="function.get-loaded-extensions.html" class="function">get_loaded_extensions()</a></span>。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_ENVIRONMENT</td>
-           <td>16</td>
-           <td>
-            环境变量信息也可以用 <var class="varname"><var class="varname"><a href="reserved.variables.environment.html" class="classname">$_ENV</a></var></var> 获取。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_VARIABLES</td>
-           <td>32</td>
-           <td>
-            显示所有来自 EGPCS (Environment, GET,
-            POST, Cookie, Server) 的 <a href="language.variables.predefined.html" class="link">
-            预定义变量</a>。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_LICENSE</td>
-           <td>64</td>
-           <td>
-            PHP许可证信息。参见 <a href="http://www.php.net/license/" class="link external">&raquo;&nbsp;license FAQ</a>。
-           </td>
-          </tr>
-
-          <tr>
-           <td>INFO_ALL</td>
-           <td>-1</td>
-           <td>
-            显示以上所有信息。
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.phpinfo-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.phpinfo-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>5.5.0</th>
-       <th>
-        Logo GUIDs were replaced with data URIs, and so turning off expose_php
-        now has no effect on the result of phpinfo(). Credits are also now
-        embedded within the output itself instead of linked.
-       </th>
-      </tr>
-
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.2</td>
-       <td>
-        增加了“已加载的配置文件”信息，之前只存在“配置文件路径(php.ini)&quot;。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >phpinfo</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="phpcredits" HREF="function.phpcredits.html"><LINK  REL="NEXT" TITLE="phpversion" HREF="function.phpversion.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.phpcredits.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.phpversion.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.phpinfo" ></A
+>phpinfo</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN89580" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>phpinfo&nbsp;--&nbsp;Outputs lots of PHP information</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN89583" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >phpinfo</B
+> ( [int what])<BR  ></BR
+><P  >&#13;     Outputs a large amount of information about the current state of
+     PHP. This includes information about PHP compilation options and
+     extensions, the PHP version, server information and environment
+     (if compiled as a module), the PHP environment, OS version
+     information, paths, master and local values of configuration
+     options, HTTP headers, and the PHP License.
+    </P
+><P  >&#13;     Because every system is setup differently,
+     <B  CLASS="function" >phpinfo()</B
+> is commonly used to check <A  HREF="configuration.html"  >configuration settings</A
+> and for
+     available <A  HREF="language.variables.predefined.html"  >predefined
+     variables</A
+> on a given system.  Also,
+     <B  CLASS="function" >phpinfo()</B
+> is a valuable debugging tool as it
+     contains all EGPCS (Environment, GET, POST, Cookie, Server) data.
+    </P
+><P  >&#13;     The output may be customized by passing one or more of the
+     following <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >constants</I
+></SPAN
+> bitwise values summed
+     together in the optional <TT  CLASS="parameter" ><I  >what</I
+></TT
+> parameter.
+     One can also combine the respective constants or bitwise values
+     together with the <A  HREF="language.operators.bitwise.html"  >or</A
+> operator.
+    </P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN89602" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >phpinfo()</B
+> options</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Name (constant)</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Value</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_GENERAL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The configuration line, <TT  CLASS="filename" >php.ini</TT
+> location, build date, Web
+          Server, System and more.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_CREDITS</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >2</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          PHP 4 Credits.  See also <A  HREF="function.phpcredits.html"  ><B  CLASS="function" >phpcredits()</B
+></A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_CONFIGURATION</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Current Local and Master values for PHP directives.  See
+          also <A  HREF="function.ini-get.html"  ><B  CLASS="function" >ini_get()</B
+></A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_MODULES</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >8</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Loaded modules and their respective settings.  See also
+          <B  CLASS="function" >get_loaded_modules()</B
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_ENVIRONMENT</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >16</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Environment Variable information that's also available in
+          <TT  CLASS="varname" >$_ENV</TT
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_VARIABLES</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >32</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Shows all <A  HREF="language.variables.predefined.html"  >&#13;          predefined variables</A
+> from EGPCS (Environment, GET,
+          POST, Cookie, Server).
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_LICENSE</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >64</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          PHP License information.  See also the <A  href="http://www.php.net/license/"  TARGET="_top" >license faq</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >INFO_ALL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-1</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Shows all of the above.  This is the default value.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89652" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >phpinfo()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// Show all information, defaults to INFO_ALL<br  /></font><font  color="#0000BB">phpinfo</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// Show just the module information.<br  />// phpinfo(8) yields identical results.<br  /></font><font  color="#0000BB">phpinfo</font><font  color="#007700">(</font><font  color="#0000BB">INFO_MODULES</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Parts of the information displayed are disabled when the
+      <A  HREF="configuration.directives.html#ini.expose-php"  >expose_php</A
+> configuration setting
+      is set to <TT  CLASS="literal" >off</TT
+>. This includes the PHP and Zend logos,
+      and the credits.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Since PHP 4.3.0, if <A  HREF="ref.errorfunc.html#ini.html-errors"  >html_errors</A
+>
+      is <TT  CLASS="literal" >off</TT
+>, <B  CLASS="function" >phpinfo()</B
+> outputs plain
+      text instead of HTML.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    See also <A  HREF="function.phpversion.html"  ><B  CLASS="function" >phpversion()</B
+></A
+>,
+    <A  HREF="function.phpcredits.html"  ><B  CLASS="function" >phpcredits()</B
+></A
+>,
+    <A  HREF="function.php-logo-guid.html"  ><B  CLASS="function" >php_logo_guid()</B
+></A
+>, 
+    <A  HREF="function.ini-get.html"  ><B  CLASS="function" >ini_get()</B
+></A
+>,
+    <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>, 
+    <B  CLASS="function" >get_loaded_modules()</B
+>,
+    and the section on <A  HREF="language.variables.predefined.html"  >Predefined
+    Variables</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.phpcredits.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.phpversion.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >phpcredits</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >phpversion</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.phpinfo-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-507">
-    <p><strong>Example #1 <span class="function"><strong>phpinfo()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;显示所有信息，默认显示&nbsp;INFO_ALL<br /></span><span style="color: #0000BB">phpinfo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Show&nbsp;just&nbsp;the&nbsp;module&nbsp;information.&nbsp;仅仅显示PHP模块信息，<br />//&nbsp;phpinfo(8)&nbsp;返回同样的结果。<br /></span><span style="color: #0000BB">phpinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">INFO_MODULES</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.phpinfo-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在 PHP 5.5 之前版本，当 <a href="ini.core.html#ini.expose-php" class="link">expose_php</a> 设置为 <em>off</em> 可以禁用一部分信息。
-    这包括了 PHP 和 Zend 的 logo，以及贡献者名单。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在命令行（CLI）模式下 <span class="function"><strong>phpinfo()</strong></span> 仅会输出纯文本，而不是HTML。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.phpinfo-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.phpversion.html" class="function" rel="rdfs-seeAlso">phpversion()</a> - 获取当前的PHP版本</span></li>
-    <li class="member"><span class="function"><a href="function.phpcredits.html" class="function" rel="rdfs-seeAlso">phpcredits()</a> - 打印 PHP 贡献者名单</span></li>
-    <li class="member"><span class="function"><a href="function.php-logo-guid.html" class="function" rel="rdfs-seeAlso">php_logo_guid()</a> - 获取 logo 的 guid</span></li>
-    <li class="member"><span class="function"><a href="function.ini-get.html" class="function" rel="rdfs-seeAlso">ini_get()</a> - 获取一个配置选项的值</span></li>
-    <li class="member"><span class="function"><a href="function.ini-set.html" class="function" rel="rdfs-seeAlso">ini_set()</a> - 为一个配置选项设置值</span></li>
-    <li class="member"><span class="function"><a href="function.get-loaded-extensions.html" class="function" rel="rdfs-seeAlso">get_loaded_extensions()</a> - 返回所有编译并加载模块名的 array</span></li>
-    <li class="member"><a href="language.variables.predefined.html" class="link">Predefined Variables</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.phpcredits.html">phpcredits</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.phpversion.html">phpversion</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,117 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Read a BLOB from the database</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-query.html">fbsql_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-read-clob.html">fbsql_read_clob</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-read-blob" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_read_blob</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_read_blob</span> &mdash; <span class="dc-title">Read a BLOB from the database</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fbsql-read-blob-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>fbsql_read_blob</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$blob_handle</code></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Reads BLOB data from the database.
-  </p>
-  <p class="para">
-   If a select statement contains BLOB and/or CLOB columns FrontBase will
-   return the data directly when data is fetched. This default behavior can
-   be changed with <span class="function"><a href="function.fbsql-set-lob-mode.html" class="function">fbsql_set_lob_mode()</a></span> so the fetch
-   functions will return handles to BLOB and CLOB data.  If a handle is
-   fetched a user must call <span class="function"><strong>fbsql_read_blob()</strong></span> to get the
-   actual BLOB data from the database.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fbsql-read-blob-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">blob_handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A BLOB handle, returned by <span class="function"><a href="function.fbsql-create-blob.html" class="function">fbsql_create_blob()</a></span>.
-      </p>
-     </dd>
-
-    
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para">由
-<span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 或
-<span class="function"><a href="function.fbsql-pconnect.html" class="function">fbsql_pconnect()</a></span> 返回的 FrontBase 链接标识符.</p>
-<p class="para">如可选并未指定，函数会尝试查找一个到 FrontBase 服务器的开放链接，且如没有找到这样的链接，会尝试通过不带参数调用 <span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 来创建一个。</p>
-</dd>
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fbsql-read-blob-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns a string containing the specified BLOB data.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fbsql_read_blob</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_query" HREF="function.fbsql-query.html"><LINK  REL="NEXT" TITLE="fbsql_read_clob" HREF="function.fbsql-read-clob.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fbsql-query.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-read-clob.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-read-blob" ></A
+>fbsql_read_blob</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN26782" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>fbsql_read_blob&nbsp;--&nbsp;Read a BLOB from the database</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN26785" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >fbsql_read_blob</B
+> ( string blob_handle [, resource link_identifier])<BR  ></BR
+><P  > 
+     Returns: A string containing the BLOB specified by blob_handle.
+    </P
+><P  > 
+     <B  CLASS="function" >fbsql_read_blob()</B
+> reads BLOB data from the
+     database.  If a select statement contains BLOB and/or CLOB
+     columns FrontBase will return the data directly when data is
+     fetched. This default behavior can be changed with
+     <A  HREF="function.fbsql-set-lob-mode.html"  ><B  CLASS="function" >fbsql_set_lob_mode()</B
+></A
+> so the fetch functions
+     will return handles to BLOB and CLOB data.  If a handle is
+     fetched a user must call <B  CLASS="function" >fbsql_read_blob()</B
+> to
+     get the actual BLOB data from the database.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN26801" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >fbsql_read_blob()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_pconnect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"_SYSTEM"</font><font  color="#007700">, </font><font  color="#DD0000">"secret"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$sql </font><font  color="#007700">= </font><font  color="#DD0000">"SELECT BLOB_COLUMN FROM BLOB_TABLE;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rs </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_query</font><font  color="#007700">(</font><font  color="#0000BB">$sql</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$row_data </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_fetch_row</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $row_data[0] will now contain the blob data for the first row<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fbsql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rs </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_query</font><font  color="#007700">(</font><font  color="#0000BB">$sql</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fbsql_set_lob_mode</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">, </font><font  color="#0000BB">FBSQL_LOB_HANDLE</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$row_data </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_fetch_row</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $row_data[0] will now contain a handle to the BLOB data in the first row<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$blob_data </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_read_blob</font><font  color="#007700">(</font><font  color="#0000BB">$row_data</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fbsql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also: <A  HREF="function.fbsql-create-blob.html"  ><B  CLASS="function" >fbsql_create_blob()</B
+></A
+>,
+     <B  CLASS="function" >fbsql_read_blob()</B
+>,
+     <A  HREF="function.fbsql-read-clob.html"  ><B  CLASS="function" >fbsql_read_clob()</B
+></A
+>, and
+     <A  HREF="function.fbsql-set-lob-mode.html"  ><B  CLASS="function" >fbsql_set_lob_mode()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fbsql-query.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-read-clob.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_query</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_read_clob</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.fbsql-read-blob-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-1159">
-    <p><strong>Example #1 <span class="function"><strong>fbsql_read_blob()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"_SYSTEM"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"secret"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;BLOB_COLUMN&nbsp;FROM&nbsp;BLOB_TABLE;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$rs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$row_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_fetch_row</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;$row_data[0]&nbsp;will&nbsp;now&nbsp;contain&nbsp;the&nbsp;blob&nbsp;data&nbsp;for&nbsp;the&nbsp;first&nbsp;row<br /></span><span style="color: #0000BB">fbsql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$rs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fbsql_set_lob_mode</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FBSQL_LOB_HANDLE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$row_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_fetch_row</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;$row_data[0]&nbsp;will&nbsp;now&nbsp;contain&nbsp;a&nbsp;handle&nbsp;to&nbsp;the&nbsp;BLOB&nbsp;data&nbsp;in&nbsp;the&nbsp;first&nbsp;row<br /></span><span style="color: #0000BB">$blob_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_read_blob</span><span style="color: #007700">(</span><span style="color: #0000BB">$row_data</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">fbsql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$rs</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fbsql-read-blob-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fbsql-create-blob.html" class="function" rel="rdfs-seeAlso">fbsql_create_blob()</a> - Create a BLOB</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-read-clob.html" class="function" rel="rdfs-seeAlso">fbsql_read_clob()</a> - Read a CLOB from the database</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-set-lob-mode.html" class="function" rel="rdfs-seeAlso">fbsql_set_lob_mode()</a> - Set the LOB retrieve mode for a FrontBase result set</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-query.html">fbsql_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-read-clob.html">fbsql_read_clob</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

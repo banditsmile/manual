@@ -1,678 +1,506 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Filesystem å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="filesystem.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.basename.html">basename</a></div>
- <div class="up"><a href="book.filesystem.html">Filesystem</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.filesystem" class="reference">
- <h1 class="title">Filesystem å‡½æ•°</h1>
-
- <div class="partintro">
-  <h1 class="title">å‚è§</h1>
-  <p class="simpara">
-   For related functions, see also the <a href="ref.dir.html" class="link">Directory</a>
-   and <a href="ref.exec.html" class="link">Program Execution</a> sections.
-  </p>
-  <p class="simpara">
-   For a list and explanation of the various URL wrappers that can be used
-   as remote files, see also <a href="wrappers.html" class="xref">æ”¯æŒçš„åè®®å’Œå°è£…åè®®</a>.
-  </p>
- </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.basename.html">basename</a> â€” è¿”å›è·¯å¾„ä¸­çš„æ–‡ä»¶åéƒ¨åˆ†</li><li><a href="function.chgrp.html">chgrp</a> â€” æ”¹å˜æ–‡ä»¶æ‰€å±çš„ç»„</li><li><a href="function.chmod.html">chmod</a> â€” æ”¹å˜æ–‡ä»¶æ¨¡å¼</li><li><a href="function.chown.html">chown</a> â€” æ”¹å˜æ–‡ä»¶çš„æ‰€æœ‰è€…</li><li><a href="function.clearstatcache.html">clearstatcache</a> â€” æ¸…é™¤æ–‡ä»¶çŠ¶æ€ç¼“å­˜</li><li><a href="function.copy.html">copy</a> â€” æ‹·è´æ–‡ä»¶</li><li><a href="function.delete.html">delete</a> â€” å‚è§ unlink æˆ– unset</li><li><a href="function.dirname.html">dirname</a> â€” è¿”å›è·¯å¾„ä¸­çš„ç›®å½•éƒ¨åˆ†</li><li><a href="function.disk-free-space.html">disk_free_space</a> â€” è¿”å›ç›®å½•ä¸­çš„å¯ç”¨ç©ºé—´</li><li><a href="function.disk-total-space.html">disk_total_space</a> â€” è¿”å›ä¸€ä¸ªç›®å½•çš„ç£ç›˜æ€»å¤§å°</li><li><a href="function.diskfreespace.html">diskfreespace</a> â€” disk_free_space çš„åˆ«å</li><li><a href="function.fclose.html">fclose</a> â€” å…³é—­ä¸€ä¸ªå·²æ‰“å¼€çš„æ–‡ä»¶æŒ‡é’ˆ</li><li><a href="function.feof.html">feof</a> â€” æµ‹è¯•æ–‡ä»¶æŒ‡é’ˆæ˜¯å¦åˆ°äº†æ–‡ä»¶ç»“æŸçš„ä½ç½®</li><li><a href="function.fflush.html">fflush</a> â€” å°†ç¼“å†²å†…å®¹è¾“å‡ºåˆ°æ–‡ä»¶</li><li><a href="function.fgetc.html">fgetc</a> â€” ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–å­—ç¬¦</li><li><a href="function.fgetcsv.html">fgetcsv</a> â€” ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å…¥ä¸€è¡Œå¹¶è§£æ CSV å­—æ®µ</li><li><a href="function.fgets.html">fgets</a> â€” ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œ</li><li><a href="function.fgetss.html">fgetss</a> â€” ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œå¹¶è¿‡æ»¤æ‰ HTML æ ‡è®°</li><li><a href="function.file-exists.html">file_exists</a> â€” æ£€æŸ¥æ–‡ä»¶æˆ–ç›®å½•æ˜¯å¦å­˜åœ¨</li><li><a href="function.file-get-contents.html">file_get_contents</a> â€” å°†æ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªå­—ç¬¦ä¸²</li><li><a href="function.file-put-contents.html">file_put_contents</a> â€” å°†ä¸€ä¸ªå­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶</li><li><a href="function.file.html">file</a> â€” æŠŠæ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªæ•°ç»„ä¸­</li><li><a href="function.fileatime.html">fileatime</a> â€” å–å¾—æ–‡ä»¶çš„ä¸Šæ¬¡è®¿é—®æ—¶é—´</li><li><a href="function.filectime.html">filectime</a> â€” å–å¾—æ–‡ä»¶çš„ inode ä¿®æ”¹æ—¶é—´</li><li><a href="function.filegroup.html">filegroup</a> â€” å–å¾—æ–‡ä»¶çš„ç»„</li><li><a href="function.fileinode.html">fileinode</a> â€” å–å¾—æ–‡ä»¶çš„ inode</li><li><a href="function.filemtime.html">filemtime</a> â€” å–å¾—æ–‡ä»¶ä¿®æ”¹æ—¶é—´</li><li><a href="function.fileowner.html">fileowner</a> â€” å–å¾—æ–‡ä»¶çš„æ‰€æœ‰è€…</li><li><a href="function.fileperms.html">fileperms</a> â€” å–å¾—æ–‡ä»¶çš„æƒé™</li><li><a href="function.filesize.html">filesize</a> â€” å–å¾—æ–‡ä»¶å¤§å°</li><li><a href="function.filetype.html">filetype</a> â€” å–å¾—æ–‡ä»¶ç±»å‹</li><li><a href="function.flock.html">flock</a> â€” è½»ä¾¿çš„å’¨è¯¢æ–‡ä»¶é”å®š</li><li><a href="function.fnmatch.html">fnmatch</a> â€” ç”¨æ¨¡å¼åŒ¹é…æ–‡ä»¶å</li><li><a href="function.fopen.html">fopen</a> â€” æ‰“å¼€æ–‡ä»¶æˆ–è€… URL</li><li><a href="function.fpassthru.html">fpassthru</a> â€” è¾“å‡ºæ–‡ä»¶æŒ‡é’ˆå¤„çš„æ‰€æœ‰å‰©ä½™æ•°æ®</li><li><a href="function.fputcsv.html">fputcsv</a> â€” å°†è¡Œæ ¼å¼åŒ–ä¸º CSV å¹¶å†™å…¥æ–‡ä»¶æŒ‡é’ˆ</li><li><a href="function.fputs.html">fputs</a> â€” fwrite çš„åˆ«å</li><li><a href="function.fread.html">fread</a> â€” è¯»å–æ–‡ä»¶ï¼ˆå¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶æ–‡ä»¶ï¼‰</li><li><a href="function.fscanf.html">fscanf</a> â€” ä»æ–‡ä»¶ä¸­æ ¼å¼åŒ–è¾“å…¥</li><li><a href="function.fseek.html">fseek</a> â€” åœ¨æ–‡ä»¶æŒ‡é’ˆä¸­å®šä½</li><li><a href="function.fstat.html">fstat</a> â€” é€šè¿‡å·²æ‰“å¼€çš„æ–‡ä»¶æŒ‡é’ˆå–å¾—æ–‡ä»¶ä¿¡æ¯</li><li><a href="function.ftell.html">ftell</a> â€” è¿”å›æ–‡ä»¶æŒ‡é’ˆè¯»/å†™çš„ä½ç½®</li><li><a href="function.ftruncate.html">ftruncate</a> â€” å°†æ–‡ä»¶æˆªæ–­åˆ°ç»™å®šçš„é•¿åº¦</li><li><a href="function.fwrite.html">fwrite</a> â€” å†™å…¥æ–‡ä»¶ï¼ˆå¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶æ–‡ä»¶ï¼‰</li><li><a href="function.glob.html">glob</a> â€” å¯»æ‰¾ä¸æ¨¡å¼åŒ¹é…çš„æ–‡ä»¶è·¯å¾„</li><li><a href="function.is-dir.html">is_dir</a> â€” åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦æ˜¯ä¸€ä¸ªç›®å½•</li><li><a href="function.is-executable.html">is_executable</a> â€” åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦å¯æ‰§è¡Œ</li><li><a href="function.is-file.html">is_file</a> â€” åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦ä¸ºä¸€ä¸ªæ­£å¸¸çš„æ–‡ä»¶</li><li><a href="function.is-link.html">is_link</a> â€” åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦ä¸ºä¸€ä¸ªç¬¦å·è¿æ¥</li><li><a href="function.is-readable.html">is_readable</a> â€” åˆ¤æ–­ç»™å®šæ–‡ä»¶åæ˜¯å¦å¯è¯»</li><li><a href="function.is-uploaded-file.html">is_uploaded_file</a> â€” åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯é€šè¿‡ HTTP POST ä¸Šä¼ çš„</li><li><a href="function.is-writable.html">is_writable</a> â€” åˆ¤æ–­ç»™å®šçš„æ–‡ä»¶åæ˜¯å¦å¯å†™</li><li><a href="function.is-writeable.html">is_writeable</a> â€” is_writable çš„åˆ«å</li><li><a href="function.lchgrp.html">lchgrp</a> â€” Changes group ownership of symlink</li><li><a href="function.lchown.html">lchown</a> â€” Changes user ownership of symlink</li><li><a href="function.link.html">link</a> â€” å»ºç«‹ä¸€ä¸ªç¡¬è¿æ¥</li><li><a href="function.linkinfo.html">linkinfo</a> â€” è·å–ä¸€ä¸ªè¿æ¥çš„ä¿¡æ¯</li><li><a href="function.lstat.html">lstat</a> â€” ç»™å‡ºä¸€ä¸ªæ–‡ä»¶æˆ–ç¬¦å·è¿æ¥çš„ä¿¡æ¯</li><li><a href="function.mkdir.html">mkdir</a> â€” æ–°å»ºç›®å½•</li><li><a href="function.move-uploaded-file.html">move_uploaded_file</a> â€” å°†ä¸Šä¼ çš„æ–‡ä»¶ç§»åŠ¨åˆ°æ–°ä½ç½®</li><li><a href="function.parse-ini-file.html">parse_ini_file</a> â€” è§£æä¸€ä¸ªé…ç½®æ–‡ä»¶</li><li><a href="function.parse-ini-string.html">parse_ini_string</a> â€” Parse a configuration string</li><li><a href="function.pathinfo.html">pathinfo</a> â€” è¿”å›æ–‡ä»¶è·¯å¾„çš„ä¿¡æ¯</li><li><a href="function.pclose.html">pclose</a> â€” å…³é—­è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</li><li><a href="function.popen.html">popen</a> â€” æ‰“å¼€è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</li><li><a href="function.readfile.html">readfile</a> â€” è¾“å‡ºä¸€ä¸ªæ–‡ä»¶</li><li><a href="function.readlink.html">readlink</a> â€” è¿”å›ç¬¦å·è¿æ¥æŒ‡å‘çš„ç›®æ ‡</li><li><a href="function.realpath-cache-get.html">realpath_cache_get</a> â€” Get realpath cache entries</li><li><a href="function.realpath-cache-size.html">realpath_cache_size</a> â€” Get realpath cache size</li><li><a href="function.realpath.html">realpath</a> â€” è¿”å›è§„èŒƒåŒ–çš„ç»å¯¹è·¯å¾„å</li><li><a href="function.rename.html">rename</a> â€” é‡å‘½åä¸€ä¸ªæ–‡ä»¶æˆ–ç›®å½•</li><li><a href="function.rewind.html">rewind</a> â€” å€’å›æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®</li><li><a href="function.rmdir.html">rmdir</a> â€” åˆ é™¤ç›®å½•</li><li><a href="function.set-file-buffer.html">set_file_buffer</a> â€” stream_set_write_buffer çš„åˆ«å</li><li><a href="function.stat.html">stat</a> â€” ç»™å‡ºæ–‡ä»¶çš„ä¿¡æ¯</li><li><a href="function.symlink.html">symlink</a> â€” å»ºç«‹ç¬¦å·è¿æ¥</li><li><a href="function.tempnam.html">tempnam</a> â€” å»ºç«‹ä¸€ä¸ªå…·æœ‰å”¯ä¸€æ–‡ä»¶åçš„æ–‡ä»¶</li><li><a href="function.tmpfile.html">tmpfile</a> â€” å»ºç«‹ä¸€ä¸ªä¸´æ—¶æ–‡ä»¶</li><li><a href="function.touch.html">touch</a> â€” è®¾å®šæ–‡ä»¶çš„è®¿é—®å’Œä¿®æ”¹æ—¶é—´</li><li><a href="function.umask.html">umask</a> â€” æ”¹å˜å½“å‰çš„ umask</li><li><a href="function.unlink.html">unlink</a> â€” åˆ é™¤æ–‡ä»¶</li></ul>
+<HTML  ><HEAD  ><TITLE  >ÎÄ¼şÏµÍ³º¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="filepro" HREF="function.filepro.html"><LINK  REL="NEXT" TITLE="basename" HREF="function.basename.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.filepro.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.basename.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.filesystem" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >XXX. ÎÄ¼şÏµÍ³º¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN27204" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.requirements" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >ÕâĞ©º¯ÊıµÄĞĞÎªÊÜµ½È«¾Ö<A  HREF="configuration.html#configuration.file"  >ÅäÖÃÎÄ¼ş</A
+> <TT  CLASS="filename" >php.ini</TT
+> µÄÓ°Ïì¡£</P
+><P  >&#13;  <DIV  CLASS="table" ><A  NAME="AEN27220" ></A
+><P  ><B  >±í¸ñ 1. ÎÄ¼şÏµÍ³ºÍÁ÷ÅäÖÃÑ¡Ïî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ãû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×÷ÓÃ·¶Î§</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >allow_url_fopen</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"1"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >user_agent</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >default_socket_timeout</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"60"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >from</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >NULL</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >??</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >auto_detect_line_endings</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"Off"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ </P
+><P  >ÒÔÏÂÊÇ¸ÃÅäÖÃÑ¡ÏîµÄ¼òÒª½âÊÍ¡£</P
+><P  >&#13;  <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><A  NAME="ini.allow-url-fopen" ></A
+><TT  CLASS="parameter" ><I  >allow_url_fopen</I
+></TT
+>
+     <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+></DT
+><DD  ><P  >&#13;      ±¾Ñ¡Ïî¼¤»îÁË URL ĞÎÊ½µÄ fopen ·â×°Ğ­ÒéÊ¹µÃ¿ÉÒÔ·ÃÎÊ URL
+      ¶ÔÏóÀıÈçÎÄ¼ş¡£Ä¬ÈÏµÄ·â×°Ğ­ÒéÌá¹©ÓÃ ftp ºÍ http Ğ­ÒéÀ´·ÃÎÊ<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>£¬Ò»Ğ©À©Õ¹¿âÀıÈç
+      <A  HREF="ref.zlib.html"  >zlib</A
+> ¿ÉÄÜ»á×¢²á¸ü¶àµÄ·â×°Ğ­Òé¡£
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ±¾Ñ¡ÏîÊÇ°æ±¾ 4.0.3 ·¢ĞĞºóÁ¢¼´Òı½øµÄ¡£4.0.3
+       ÒÔ¼°ÒÔÇ°µÄ°æ±¾Ö»ÄÜÔÚ±àÒëÊ±Í¨¹ıÅäÖÃÏî <A  HREF="install.configure.html#install.configure.disable-url-fopen-wrapper"  ><TT  CLASS="parameter" ><I  >&#13;       --disable-url-fopen-wrapper</I
+></TT
+></A
+> À´È¡Ïû´ËÌØĞÔ¡£
+      </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  > 
+       Windows °æÔÚ PHP 4.3.0
+       Ö®Ç°£¬ÏÂÁĞº¯Êı²»Ö§³ÖÔ¶³ÌÎÄ¼ş·ÃÎÊ£º<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>£¬<A  HREF="function.include-once.html"  ><B  CLASS="function" >include_once()</B
+></A
+>, <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>£¬<A  HREF="function.require-once.html"  ><B  CLASS="function" >require_once()</B
+></A
+>
+       ºÍ <A  HREF="ref.image.html"  >²Î¿¼ XLI, <I  >Í¼Ïñº¯Êı¿â</I
+></A
+> À©Õ¹¿âÖĞµÄ imagecreatefromXXX º¯Êı¡£
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+></DD
+><DT  ><A  NAME="ini.user-agent" ></A
+><TT  CLASS="parameter" ><I  >user_agent</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      ¶¨Òå <TT  CLASS="literal" >PHP</TT
+> ·¢ËÍµÄ User-Agent¡£
+     </P
+></DD
+><DT  ><A  NAME="ini.default-socket-timeout" ></A
+><TT  CLASS="parameter" ><I  >default_socket_timeout</I
+></TT
+>
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></DT
+><DD  ><P  >&#13;      »ùÓÚ socket µÄÁ÷µÄÄ¬ÈÏ³¬Ê±Ê±¼ä£¨Ãë£©¡£
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ±¾ÅäÖÃ²ÎÊıÊÇ PHP 4.3.0 Òı½øµÄ¡£
+      </P
+></BLOCKQUOTE
+></DIV
+></DD
+><DT  ><A  NAME="ini.from" ></A
+><TT  CLASS="parameter" ><I  >from="joe@example.com"</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      ¶¨ÒåÄäÃû ftp µÄÃÜÂë£¨ÄãµÄ email µØÖ·£©¡£
+     </P
+></DD
+><DT  ><A  NAME="ini.auto-detect-line-endings" ></A
+><TT  CLASS="parameter" ><I  >auto_detect_line_endings</I
+></TT
+>
+     <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+></DT
+><DD  ><P  >&#13;      µ±ÉèÎª On Ê±£¬PHP ½«¼ì²éÍ¨¹ı
+      <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+> ºÍ <A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+>
+      È¡µÃµÄÊı¾İÖĞµÄĞĞ½áÊø·ûºÅÊÇ·ûºÏ Unix£¬MS-Dos£¬»¹ÊÇ Macintosh µÄÏ°¹ß¡£
+     </P
+><P  >&#13;      ÕâÊ¹µÃ PHP ¿ÉÒÔºÍ Macintosh ÏµÍ³½»»¥²Ù×÷£¬µ«ÊÇÄ¬ÈÏÖµÊÇ Off£¬ÒòÎªÔÚ¼ì²âµÚÒ»ĞĞµÄ
+      EOL Ï°¹ßÊ±»áÓĞºÜĞ¡µÄĞÔÄÜËğÊ§£¬¶øÇÒÔÚ Unix
+      ÏµÍ³ÏÂÊ¹ÓÃ»Ø³µ·ûºÅ×÷ÎªÏîÄ¿·Ö¸ô·ûµÄÈËÃÇ»áÔâÓöÏòÏÂ²»¼æÈİµÄĞĞÎª¡£
+     </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ±¾ÅäÖÃ²ÎÊıÊÇ PHP 4.3.0 Òı½øµÄ¡£
+      </P
+></BLOCKQUOTE
+></DIV
+></DD
+></DL
+></DIV
+>
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >&#13;     </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >GLOB_BRACE</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >GLOB_ONLYDIR</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >GLOB_MARK</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >GLOB_NOSORT</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >GLOB_NOCHECK</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >GLOB_NOESCAPE</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >PATHINFO_DIRNAME</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >PATHINFO_BASENAME</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >PATHINFO_EXTENSION</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FILE_USE_INCLUDE_PATH</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FILE_APPEND</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FILE_IGNORE_NEW_LINES</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >FILE_SKIP_EMPTY_LINES</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="filesystem.seealso" ></A
+>Ïà¹Ø²Î¿¼</H1
+><P  >&#13;     Ïà¹Øº¯Êı²Î¼û<A  HREF="ref.dir.html"  >Ä¿Â¼º¯Êı¿â</A
+>ºÍ<A  HREF="ref.exec.html"  >³ÌĞòÖ´ĞĞº¯Êı¿â</A
+>Ğ¡½Ú¡£
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.basename.html"  >basename</A
+>&nbsp;--&nbsp;·µ»ØÂ·¾¶ÖĞµÄÎÄ¼şÃû²¿·Ö</DT
+><DT  ><A  HREF="function.chgrp.html"  >chgrp</A
+>&nbsp;--&nbsp;¸Ä±äÎÄ¼şËùÊôµÄ×é</DT
+><DT  ><A  HREF="function.chmod.html"  >chmod</A
+>&nbsp;--&nbsp;¸Ä±äÎÄ¼şÄ£Ê½</DT
+><DT  ><A  HREF="function.chown.html"  >chown</A
+>&nbsp;--&nbsp;¸Ä±äÎÄ¼şµÄËùÓĞÕß</DT
+><DT  ><A  HREF="function.clearstatcache.html"  >clearstatcache</A
+>&nbsp;--&nbsp;Çå³ıÎÄ¼ş×´Ì¬»º´æ</DT
+><DT  ><A  HREF="function.copy.html"  >copy</A
+>&nbsp;--&nbsp;¿½±´ÎÄ¼ş</DT
+><DT  ><A  HREF="function.delete.html"  >delete</A
+>&nbsp;--&nbsp;²Î¼û <A  HREF="function.unlink.html"  ><B  CLASS="function" >unlink()</B
+></A
+> »ò <A  HREF="function.unset.html"  ><B  CLASS="function" >unset()</B
+></A
+></DT
+><DT  ><A  HREF="function.dirname.html"  >dirname</A
+>&nbsp;--&nbsp;·µ»ØÂ·¾¶ÖĞµÄÄ¿Â¼²¿·Ö</DT
+><DT  ><A  HREF="function.disk-free-space.html"  >disk_free_space</A
+>&nbsp;--&nbsp;·µ»ØÄ¿Â¼ÖĞµÄ¿ÉÓÃ¿Õ¼ä</DT
+><DT  ><A  HREF="function.disk-total-space.html"  >disk_total_space</A
+>&nbsp;--&nbsp;·µ»ØÒ»¸öÄ¿Â¼µÄ´ÅÅÌ×Ü´óĞ¡</DT
+><DT  ><A  HREF="function.diskfreespace.html"  >diskfreespace</A
+>&nbsp;--&nbsp;<A  HREF="function.disk-free-space.html"  ><B  CLASS="function" >disk_free_space()</B
+></A
+> º¯ÊıµÄ±ğÃû</DT
+><DT  ><A  HREF="function.fclose.html"  >fclose</A
+>&nbsp;--&nbsp;¹Ø±ÕÒ»¸öÒÑ´ò¿ªµÄÎÄ¼şÖ¸Õë</DT
+><DT  ><A  HREF="function.feof.html"  >feof</A
+>&nbsp;--&nbsp;²âÊÔÎÄ¼şÖ¸ÕëÊÇ·ñµ½ÁËÎÄ¼ş½áÊøµÄÎ»ÖÃ</DT
+><DT  ><A  HREF="function.fflush.html"  >fflush</A
+>&nbsp;--&nbsp;½«»º³åÄÚÈİÊä³öµ½ÎÄ¼ş</DT
+><DT  ><A  HREF="function.fgetc.html"  >fgetc</A
+>&nbsp;--&nbsp;´ÓÎÄ¼şÖ¸ÕëÖĞ¶ÁÈ¡×Ö·û</DT
+><DT  ><A  HREF="function.fgetcsv.html"  >fgetcsv</A
+>&nbsp;--&nbsp;´ÓÎÄ¼şÖ¸ÕëÖĞ¶ÁÈëÒ»ĞĞ²¢½âÎö CSV ×Ö¶Î</DT
+><DT  ><A  HREF="function.fgets.html"  >fgets</A
+>&nbsp;--&nbsp;´ÓÎÄ¼şÖ¸ÕëÖĞ¶ÁÈ¡Ò»ĞĞ</DT
+><DT  ><A  HREF="function.fgetss.html"  >fgetss</A
+>&nbsp;--&nbsp;´ÓÎÄ¼şÖ¸ÕëÖĞ¶ÁÈ¡Ò»ĞĞ²¢¹ıÂËµô HTML ±ê¼Ç</DT
+><DT  ><A  HREF="function.file-exists.html"  >file_exists</A
+>&nbsp;--&nbsp;¼ì²éÎÄ¼ş»òÄ¿Â¼ÊÇ·ñ´æÔÚ</DT
+><DT  ><A  HREF="function.file-get-contents.html"  >file_get_contents</A
+>&nbsp;--&nbsp;½«Õû¸öÎÄ¼ş¶ÁÈëÒ»¸ö×Ö·û´®</DT
+><DT  ><A  HREF="function.file-put-contents.html"  >file_put_contents</A
+>&nbsp;--&nbsp;½«Ò»¸ö×Ö·û´®Ğ´ÈëÎÄ¼ş</DT
+><DT  ><A  HREF="function.file.html"  >file</A
+>&nbsp;--&nbsp;°ÑÕû¸öÎÄ¼ş¶ÁÈëÒ»¸öÊı×éÖĞ</DT
+><DT  ><A  HREF="function.fileatime.html"  >fileatime</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şµÄÉÏ´Î·ÃÎÊÊ±¼ä</DT
+><DT  ><A  HREF="function.filectime.html"  >filectime</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şµÄ inode ĞŞ¸ÄÊ±¼ä</DT
+><DT  ><A  HREF="function.filegroup.html"  >filegroup</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şµÄ×é</DT
+><DT  ><A  HREF="function.fileinode.html"  >fileinode</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şµÄ inode</DT
+><DT  ><A  HREF="function.filemtime.html"  >filemtime</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şĞŞ¸ÄÊ±¼ä</DT
+><DT  ><A  HREF="function.fileowner.html"  >fileowner</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şµÄËùÓĞÕß</DT
+><DT  ><A  HREF="function.fileperms.html"  >fileperms</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şµÄÈ¨ÏŞ</DT
+><DT  ><A  HREF="function.filesize.html"  >filesize</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼ş´óĞ¡</DT
+><DT  ><A  HREF="function.filetype.html"  >filetype</A
+>&nbsp;--&nbsp;È¡µÃÎÄ¼şÀàĞÍ</DT
+><DT  ><A  HREF="function.flock.html"  >flock</A
+>&nbsp;--&nbsp;Çá±ãµÄ×ÉÑ¯ÎÄ¼şËø¶¨</DT
+><DT  ><A  HREF="function.fnmatch.html"  >fnmatch</A
+>&nbsp;--&nbsp;ÓÃÄ£Ê½Æ¥ÅäÎÄ¼şÃû</DT
+><DT  ><A  HREF="function.fopen.html"  >fopen</A
+>&nbsp;--&nbsp;´ò¿ªÎÄ¼ş»òÕß URL</DT
+><DT  ><A  HREF="function.fpassthru.html"  >fpassthru</A
+>&nbsp;--&nbsp;Êä³öÎÄ¼şÖ¸Õë´¦µÄËùÓĞÊ£ÓàÊı¾İ</DT
+><DT  ><A  HREF="function.fputs.html"  >fputs</A
+>&nbsp;--&nbsp;<A  HREF="function.fwrite.html"  ><B  CLASS="function" >fwrite()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.fread.html"  >fread</A
+>&nbsp;--&nbsp;¶ÁÈ¡ÎÄ¼ş£¨¿É°²È«ÓÃÓÚ¶ş½øÖÆÎÄ¼ş£©</DT
+><DT  ><A  HREF="function.fscanf.html"  >fscanf</A
+>&nbsp;--&nbsp;´ÓÎÄ¼şÖĞ¸ñÊ½»¯ÊäÈë</DT
+><DT  ><A  HREF="function.fseek.html"  >fseek</A
+>&nbsp;--&nbsp;ÔÚÎÄ¼şÖ¸ÕëÖĞ¶¨Î»</DT
+><DT  ><A  HREF="function.fstat.html"  >fstat</A
+>&nbsp;--&nbsp;Í¨¹ıÒÑ´ò¿ªµÄÎÄ¼şÖ¸ÕëÈ¡µÃÎÄ¼şĞÅÏ¢</DT
+><DT  ><A  HREF="function.ftell.html"  >ftell</A
+>&nbsp;--&nbsp;·µ»ØÎÄ¼şÖ¸Õë¶Á/Ğ´µÄÎ»ÖÃ</DT
+><DT  ><A  HREF="function.ftruncate.html"  >ftruncate</A
+>&nbsp;--&nbsp;½«ÎÄ¼ş½Ø¶Ïµ½¸ø¶¨µÄ³¤¶È</DT
+><DT  ><A  HREF="function.fwrite.html"  >fwrite</A
+>&nbsp;--&nbsp;Ğ´ÈëÎÄ¼ş£¨¿É°²È«ÓÃÓÚ¶ş½øÖÆÎÄ¼ş£©</DT
+><DT  ><A  HREF="function.glob.html"  >glob</A
+>&nbsp;--&nbsp;Ñ°ÕÒÓëÄ£Ê½Æ¥ÅäµÄÎÄ¼şÂ·¾¶</DT
+><DT  ><A  HREF="function.is-dir.html"  >is_dir</A
+>&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨ÎÄ¼şÃûÊÇ·ñÊÇÒ»¸öÄ¿Â¼</DT
+><DT  ><A  HREF="function.is-executable.html"  >is_executable</A
+>&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨ÎÄ¼şÃûÊÇ·ñ¿ÉÖ´ĞĞ</DT
+><DT  ><A  HREF="function.is-file.html"  >is_file</A
+>&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨ÎÄ¼şÃûÊÇ·ñÎªÒ»¸öÕı³£µÄÎÄ¼ş</DT
+><DT  ><A  HREF="function.is-link.html"  >is_link</A
+>&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨ÎÄ¼şÃûÊÇ·ñÎªÒ»¸ö·ûºÅÁ¬½Ó</DT
+><DT  ><A  HREF="function.is-readable.html"  >is_readable</A
+>&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨ÎÄ¼şÃûÊÇ·ñ¿É¶Á</DT
+><DT  ><A  HREF="function.is-uploaded-file.html"  >is_uploaded_file</A
+>&nbsp;--&nbsp;ÅĞ¶ÏÎÄ¼şÊÇ·ñÊÇÍ¨¹ı HTTP POST ÉÏ´«µÄ</DT
+><DT  ><A  HREF="function.is-writable.html"  >is_writable</A
+>&nbsp;--&nbsp;ÅĞ¶Ï¸ø¶¨µÄÎÄ¼şÃûÊÇ·ñ¿ÉĞ´</DT
+><DT  ><A  HREF="function.is-writeable.html"  >is_writeable</A
+>&nbsp;--&nbsp;<A  HREF="function.is-writable.html"  ><B  CLASS="function" >is_writable()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.link.html"  >link</A
+>&nbsp;--&nbsp;½¨Á¢Ò»¸öÓ²Á¬½Ó</DT
+><DT  ><A  HREF="function.linkinfo.html"  >linkinfo</A
+>&nbsp;--&nbsp;»ñÈ¡Ò»¸öÁ¬½ÓµÄĞÅÏ¢</DT
+><DT  ><A  HREF="function.lstat.html"  >lstat</A
+>&nbsp;--&nbsp;¸ø³öÒ»¸öÎÄ¼ş»ò·ûºÅÁ¬½ÓµÄĞÅÏ¢</DT
+><DT  ><A  HREF="function.mkdir.html"  >mkdir</A
+>&nbsp;--&nbsp;ĞÂ½¨Ä¿Â¼</DT
+><DT  ><A  HREF="function.move-uploaded-file.html"  >move_uploaded_file</A
+>&nbsp;--&nbsp;½«ÉÏ´«µÄÎÄ¼şÒÆ¶¯µ½ĞÂÎ»ÖÃ</DT
+><DT  ><A  HREF="function.parse-ini-file.html"  >parse_ini_file</A
+>&nbsp;--&nbsp;½âÎöÒ»¸öÅäÖÃÎÄ¼ş</DT
+><DT  ><A  HREF="function.pathinfo.html"  >pathinfo</A
+>&nbsp;--&nbsp;·µ»ØÎÄ¼şÂ·¾¶µÄĞÅÏ¢</DT
+><DT  ><A  HREF="function.pclose.html"  >pclose</A
+>&nbsp;--&nbsp;¹Ø±Õ½ø³ÌÎÄ¼şÖ¸Õë</DT
+><DT  ><A  HREF="function.popen.html"  >popen</A
+>&nbsp;--&nbsp;´ò¿ª½ø³ÌÎÄ¼şÖ¸Õë</DT
+><DT  ><A  HREF="function.readfile.html"  >readfile</A
+>&nbsp;--&nbsp;Êä³öÒ»¸öÎÄ¼ş</DT
+><DT  ><A  HREF="function.readlink.html"  >readlink</A
+>&nbsp;--&nbsp;·µ»Ø·ûºÅÁ¬½ÓÖ¸ÏòµÄÄ¿±ê</DT
+><DT  ><A  HREF="function.realpath.html"  >realpath</A
+>&nbsp;--&nbsp;·µ»Ø¹æ·¶»¯µÄ¾ø¶ÔÂ·¾¶Ãû</DT
+><DT  ><A  HREF="function.rename.html"  >rename</A
+>&nbsp;--&nbsp;ÎÄ¼şÖØÃüÃû</DT
+><DT  ><A  HREF="function.rewind.html"  >rewind</A
+>&nbsp;--&nbsp;µ¹»ØÎÄ¼şÖ¸ÕëµÄÎ»ÖÃ</DT
+><DT  ><A  HREF="function.rmdir.html"  >rmdir</A
+>&nbsp;--&nbsp;É¾³ıÄ¿Â¼</DT
+><DT  ><A  HREF="function.set-file-buffer.html"  >set_file_buffer</A
+>&nbsp;--&nbsp;<A  HREF="function.stream-set-write-buffer.html"  ><B  CLASS="function" >stream_set_write_buffer()</B
+></A
+> µÄ±ğÃû</DT
+><DT  ><A  HREF="function.stat.html"  >stat</A
+>&nbsp;--&nbsp;¸ø³öÎÄ¼şµÄĞÅÏ¢</DT
+><DT  ><A  HREF="function.symlink.html"  >symlink</A
+>&nbsp;--&nbsp;½¨Á¢·ûºÅÁ¬½Ó</DT
+><DT  ><A  HREF="function.tempnam.html"  >tempnam</A
+>&nbsp;--&nbsp;½¨Á¢Ò»¸ö¾ßÓĞÎ¨Ò»ÎÄ¼şÃûµÄÎÄ¼ş</DT
+><DT  ><A  HREF="function.tmpfile.html"  >tmpfile</A
+>&nbsp;--&nbsp;½¨Á¢Ò»¸öÁÙÊ±ÎÄ¼ş</DT
+><DT  ><A  HREF="function.touch.html"  >touch</A
+>&nbsp;--&nbsp;Éè¶¨ÎÄ¼şµÄ·ÃÎÊºÍĞŞ¸ÄÊ±¼ä</DT
+><DT  ><A  HREF="function.umask.html"  >umask</A
+>&nbsp;--&nbsp;¸Ä±äµ±Ç°µÄ umask</DT
+><DT  ><A  HREF="function.unlink.html"  >unlink</A
+>&nbsp;--&nbsp;É¾³ıÎÄ¼ş</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.filepro.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.basename.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >filepro</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >basename</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="filesystem.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.basename.html">basename</a></div>
- <div class="up"><a href="book.filesystem.html">Filesystem</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

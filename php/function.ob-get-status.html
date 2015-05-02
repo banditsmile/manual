@@ -1,147 +1,65 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>得到所有输出缓冲区的状态</title>
+<HTML  ><HEAD  ><TITLE  >ob_get_status</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="������ƺ���" HREF="ref.outcontrol.html"><LINK  REL="PREVIOUS" TITLE="ob_get_level" HREF="function.ob-get-level.html"><LINK  REL="NEXT" TITLE="ob_gzhandler" HREF="function.ob-gzhandler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ob-get-level.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ob-gzhandler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ob-get-status" ></A
+>ob_get_status</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN84152" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>ob_get_status&nbsp;--&nbsp;
+     Get status of output buffers
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN84155" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >ob_get_status</B
+> ( [bool full_status])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >����չģ����<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ʵ����</I
+></SPAN
+>�ġ���ģ�����Ϊ�������亯���������Լ������κι��ڴ�ģ����ĵ����ܻ���û��֪ͨ��������� PHP �Ժ�ķ������ı䡣������������ʹ�ñ���չģ���ͬʱ�Ե����ա�
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     This will return the current status of output buffers. It returns
+     array contains buffer status or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> for error.
+    </P
+><P  >&#13;     See also <A  HREF="function.ob-get-level.html"  ><B  CLASS="function" >ob_get_level()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ob-get-level.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ob-gzhandler.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ob_get_level</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.outcontrol.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ob_gzhandler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ob-get-level.html">ob_get_level</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-gzhandler.html">ob_gzhandler</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ob-get-status" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ob_get_status</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">ob_get_status</span> &mdash; <span class="dc-title">得到所有输出缓冲区的状态</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ob-get-status-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>ob_get_status</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span>  <code class="parameter">$full_status</code> <span class="initializer"> = FALSE</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>ob_get_status()</strong></span>返回最顶层输出缓冲区的状态信息；或者如果<code class="parameter">full_status</code>设为<strong><code>TRUE</code></strong>，返回所有有效的输出缓冲级别。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ob-get-status-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">full_status</code></dt>
-
-     <dd>
-
-      <p class="para">
-        设为<strong><code>TRUE</code></strong> 返回所有有效的输出缓冲区级别的状态信息。如果设为 <strong><code>FALSE</code></strong> 或者没有设置，仅返回最        顶层输出缓冲区的状态信息。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ob-get-status-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-    如果调用时没有<code class="parameter">full_status</code>参数，或者<code class="parameter">full_status</code> = <strong><code>FALSE</code></strong> 将返回一个包含下面元素的简单数组：
-   <div class="informalexample">
-    <div class="example-contents screen">
-<div class="returnvaluescode"><pre class="returnvaluescode">Array
-(
-    [level] =&gt; 2
-    [type] =&gt; 0
-    [status] =&gt; 0
-    [name] =&gt; URL-Rewriter
-    [del] =&gt; 1
-)</pre>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-    </div>
-   </div>
-   <table class="segmentedlist">
-    <caption><strong>Simple <span class="function"><strong>ob_get_status()</strong></span> results</strong></caption>
-    <thead><tr><th>Key</th><th>Value</th>
-    </tr></thead><tbody><tr class="seglistitem"><td class="seg">level</td><td class="seg">输出嵌套级别</td></tr>
-    <tr class="seglistitem"><td class="seg">type</td><td class="seg"><em>PHP_OUTPUT_HANDLER_INTERNAL (0)</em> 或者 <em>PHP_OUTPUT_HANDLER_USER (1)</em></td></tr>
-    <tr class="seglistitem"><td class="seg">status</td><td class="seg"><em>PHP_OUTPUT_HANDLER_START</em> (0), <em>PHP_OUTPUT_HANDLER_CONT</em> (1) or <em>PHP_OUTPUT_HANDLER_END</em> (2) 三个之一</td></tr>
-    <tr class="seglistitem"><td class="seg">name</td><td class="seg">起作用的输出处理程序的名字，或者是默认的输出处理程序的名字（如果没有设置的话）</td></tr>
-    <tr class="seglistitem"><td class="seg">del</td><td class="seg">由<span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span>设置的删除标签（Erase-flag）</td></tr>
-   </tbody></table>
-  </p>
-  <p class="para">
-   如果调用时<code class="parameter">full_status</code> = <strong><code>TRUE</code></strong>，将返回一个数组，该数组的每个元素包含有效的输出缓冲区级别的状态信息。缓冲区的级别数用来当作数组的第一维数；每个元素自身是另一个数组，它持有该有效输出级别的状态信息。
-   <div class="informalexample">
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; Array
-        (
-            [chunk_size] =&gt; 0
-            [size] =&gt; 40960
-            [block_size] =&gt; 10240
-            [type] =&gt; 1
-            [status] =&gt; 0
-            [name] =&gt; default output handler
-            [del] =&gt; 1
-        )
-
-    [1] =&gt; Array
-        (
-            [chunk_size] =&gt; 0
-            [size] =&gt; 40960
-            [block_size] =&gt; 10240
-            [type] =&gt; 0
-            [buffer_size] =&gt; 0
-            [status] =&gt; 0
-            [name] =&gt; URL-Rewriter
-            [del] =&gt; 1
-        )
-
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   完整的输出包含以下附加元素：
-   <table class="segmentedlist">
-    <caption><strong>完整的<span class="function"><strong>ob_get_status()</strong></span> 结果</strong></caption>
-    <thead><tr><th>Key</th><th>Value</th>
-    </tr></thead><tbody><tr class="seglistitem"><td class="seg">chunk_size</td><td class="seg">由 <span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span>设置的Chunk size值</td></tr>
-    <tr class="seglistitem"><td class="seg">size</td><td class="seg">...</td></tr>
-    <tr class="seglistitem"><td class="seg">blocksize</td><td class="seg">...</td></tr>
-   </tbody></table>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ob-get-status-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ob-get-level.html" class="function" rel="rdfs-seeAlso">ob_get_level()</a> - 返回输出缓冲机制的嵌套级别</span></li>
-    <li class="member"><span class="function"><a href="function.ob-list-handlers.html" class="function" rel="rdfs-seeAlso">ob_list_handlers()</a> - 列出所有使用中的输出处理程序。</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ob-get-level.html">ob_get_level</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ob-gzhandler.html">ob_gzhandler</a></div>
- <div class="up"><a href="ref.outcontrol.html">Output Control 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

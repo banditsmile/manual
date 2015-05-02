@@ -1,154 +1,56 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>检查类是否已定义</title>
+<HTML  ><HEAD  ><TITLE  >class_exists</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�࣯��������" HREF="ref.classobj.html"><LINK  REL="PREVIOUS" TITLE="call_user_method" HREF="function.call-user-method.html"><LINK  REL="NEXT" TITLE="get_class_methods" HREF="function.get-class-methods.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.call-user-method.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-class-methods.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.class-exists" ></A
+>class_exists</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN12959" ></A
+><P  >    (PHP 4 )</P
+>class_exists&nbsp;--&nbsp;������Ƿ��Ѷ���</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN12962" ></A
+><H2  >����</H2
+>bool <B  CLASS="methodname" >class_exists</B
+> ( string class_name)<BR  ></BR
+><P  >&#13;     ����� <TT  CLASS="parameter" ><I  >class_name</I
+></TT
+>
+     ��ָ�����Ѿ����壬�˺������� 
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>�����򷵻� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+    </P
+><P  >&#13;     �μ� <A  HREF="function.get-declared-classes.html"  ><B  CLASS="function" >get_declared_classes()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.call-user-method.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-class-methods.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >call_user_method</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.classobj.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_class_methods</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.class-alias.html">class_alias</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-called-class.html">get_called_class</a></div>
- <div class="up"><a href="ref.classobj.html">类/对象 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.class-exists" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">class_exists</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">class_exists</span> &mdash; <span class="dc-title">检查类是否已定义</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.class-exists-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>class_exists</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$autoload</code><span class="initializer"> = true</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   检查指定的类是否已定义。
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.class-exists-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">class_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       类名。名字的匹配是大小写不敏感的。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">autoload</code></dt>
-
-     <dd>
-
-      <p class="para">
-       是否默认调用 <a href="language.oop5.autoload.html" class="link">__autoload</a>。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.class-exists-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果由 <code class="parameter">class_name</code>
-   所指的类已经定义，此函数返回 
-   <strong><code>TRUE</code></strong>，否则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.class-exists-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.2</td>
-       <td>
-        不再为已定义的 interface 返回 <strong><code>TRUE</code></strong>。请使用
-        <span class="function"><a href="function.interface-exists.html" class="function">interface_exists()</a></span>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        增加参数 <code class="parameter">autoload</code>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.class-exists-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5360">
-    <p><strong>Example #1 <span class="function"><strong>class_exists()</strong></span>  例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;使用前检查类是否存在<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">class_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'MyClass'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$myclass&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   <div class="example" id="example-5361">
-    <p><strong>Example #2 <code class="parameter">autoload</code> parameter  例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">__autoload</span><span style="color: #007700">(</span><span style="color: #0000BB">$class</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;include(</span><span style="color: #0000BB">$class&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'.php'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Check&nbsp;to&nbsp;see&nbsp;whether&nbsp;the&nbsp;include&nbsp;declared&nbsp;the&nbsp;class<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">class_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$class</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #DD0000">"Unable&nbsp;to&nbsp;load&nbsp;class:&nbsp;</span><span style="color: #0000BB">$class</span><span style="color: #DD0000">"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">E_USER_WARNING</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">class_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'MyClass'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$myclass&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MyClass</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.class-exists-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.function-exists.html" class="function" rel="rdfs-seeAlso">function_exists()</a> - 如果给定的函数已经被定义就返回 TRUE</span></li>
-    <li class="member"><span class="function"><a href="function.interface-exists.html" class="function" rel="rdfs-seeAlso">interface_exists()</a> - 检查接口是否已被定义</span></li>
-    <li class="member"><span class="function"><a href="function.get-declared-classes.html" class="function" rel="rdfs-seeAlso">get_declared_classes()</a> - 返回由已定义类的名字所组成的数组</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.class-alias.html">class_alias</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-called-class.html">get_called_class</a></div>
- <div class="up"><a href="ref.classobj.html">类/对象 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

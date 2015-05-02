@@ -1,135 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get column information from a result and return as an object</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-fetch-assoc.html">fbsql_fetch_assoc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-fetch-lengths.html">fbsql_fetch_lengths</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-fetch-field" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_fetch_field</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_fetch_field</span> &mdash; <span class="dc-title">Get column information from a result and return as an object</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fbsql-fetch-field-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>fbsql_fetch_field</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_offset</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Used in order to obtain information about fields in a certain query result.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fbsql-fetch-field-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-result</code></dt>
-<dd>
-<p class="para">Áî± <span class="function"><a href="function.fbsql-query.html" class="function">fbsql_query()</a></span>
-Êàñ <span class="function"><a href="function.fbsql-db-query.html" class="function">fbsql_db_query()</a></span> ËøîÂõûÁöÑÁªìÊûúÊ†áËØÜÁ¨¶„ÄÇ</p></dd>
-
-    
-     <dt>
-<code class="parameter">field_offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The numerical offset of the field. The field index starts at 0.
-       If not specified, the next field that wasn&#039;t yet retrieved by 
-       <span class="function"><strong>fbsql_fetch_field()</strong></span> is retrieved.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fbsql-fetch-field-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an object containing field information, or <strong><code>FALSE</code></strong> on errors.
-  </p>
-  <p class="para">
-   The properties of the object are:
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      name - column name
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      table - name of the table the column belongs to
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      max_length - maximum length of the column
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      not_null - 1 if the column cannot be <strong><code>NULL</code></strong>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      type - the type of the column
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fbsql_fetch_field</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_fetch_assoc" HREF="function.fbsql-fetch-assoc.html"><LINK  REL="NEXT" TITLE="fbsql_fetch_lengths" HREF="function.fbsql-fetch-lengths.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fbsql-fetch-assoc.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-fetch-lengths.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-fetch-field" ></A
+>fbsql_fetch_field</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN26219" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>fbsql_fetch_field&nbsp;--&nbsp;
+     Get column information from a result and return as an object
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN26222" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >fbsql_fetch_field</B
+> ( resource result [, int field_offset])<BR  ></BR
+><P  >&#13;     Returns an object containing field information.
+    </P
+><P  >&#13;     <B  CLASS="function" >fbsql_fetch_field()</B
+> can be used in order to
+     obtain information about fields in a certain query result.  If
+     the field offset isn't specified, the next field that wasn't yet
+     retrieved by <B  CLASS="function" >fbsql_fetch_field()</B
+> is retrieved.
+    </P
+><P  >&#13;     The properties of the object are:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        name - column name
+       </P
+></LI
+><LI  ><P  >&#13;        table - name of the table the column belongs to
+       </P
+></LI
+><LI  ><P  >&#13;        max_length - maximum length of the column
+       </P
+></LI
+><LI  ><P  >&#13;        not_null - 1 if the column cannot be <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>
+       </P
+></LI
+><LI  ><P  >&#13;        type - the type of the column
+       </P
+></LI
+></UL
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN26250" ></A
+><P  ><B  >¿˝◊” 1. <B  CLASS="function" >fbsql_fetch_field()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php <br  />fbsql_connect</font><font  color="#007700">(</font><font  color="#0000BB">$host</font><font  color="#007700">, </font><font  color="#0000BB">$user</font><font  color="#007700">, </font><font  color="#0000BB">$password</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_db_query</font><font  color="#007700">(</font><font  color="#DD0000">"database"</font><font  color="#007700">, </font><font  color="#DD0000">"select * from table"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Query failed"</font><font  color="#007700">);<br  /></font><font  color="#FF8000"># get column metadata<br  /></font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />while (</font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">fbsql_num_fields</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Information for column $i:&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$meta </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_fetch_field</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">$meta</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"No information available&lt;br /&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;pre&gt;<br  />max_length:&nbsp;&nbsp;&nbsp;$meta-&gt;max_length<br  />name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;name<br  />not_null:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;not_null<br  />table:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;table<br  />type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$meta-&gt;type<br  />&lt;/pre&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$i</font><font  color="#007700">++;<br  />}<br  /></font><font  color="#0000BB">fbsql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also <A  HREF="function.fbsql-field-seek.html"  ><B  CLASS="function" >fbsql_field_seek()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fbsql-fetch-assoc.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-fetch-lengths.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_fetch_assoc</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_fetch_lengths</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.fbsql-fetch-field-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1149">
-    <p><strong>Example #1 <span class="function"><strong>fbsql_fetch_field()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />fbsql_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_db_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"database"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;table"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Query&nbsp;failed"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">#&nbsp;get&nbsp;column&nbsp;metadata<br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">fbsql_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Information&nbsp;for&nbsp;column&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">:&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_fetch_field</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$meta</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"No&nbsp;information&nbsp;available&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;pre&gt;<br />max_length:&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">max_length</span><span style="color: #DD0000"><br />name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #DD0000"><br />not_null:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">not_null</span><span style="color: #DD0000"><br />table:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table</span><span style="color: #DD0000"><br />type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$meta</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">type</span><span style="color: #DD0000"><br />&lt;/pre&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;<br />}<br /></span><span style="color: #0000BB">fbsql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fbsql-fetch-field-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fbsql-field-seek.html" class="function" rel="rdfs-seeAlso">fbsql_field_seek()</a> - Set result pointer to a specified field offset</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-fetch-assoc.html">fbsql_fetch_assoc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-fetch-lengths.html">fbsql_fetch_lengths</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

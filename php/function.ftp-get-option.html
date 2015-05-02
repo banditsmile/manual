@@ -1,68 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›å½“å‰ FTP è¿æ¥çš„å„ç§ä¸åŒçš„é€‰é¡¹è®¾ç½®</title>
+<HTML  ><HEAD  ><TITLE  >ftp_get_option</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FTP º¯Êı¿â" HREF="ref.ftp.html"><LINK  REL="PREVIOUS" TITLE="ftp_fput" HREF="function.ftp-fput.html"><LINK  REL="NEXT" TITLE="ftp_get" HREF="function.ftp-get.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftp-fput.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-get.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftp-get-option" ></A
+>ftp_get_option</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN31439" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>ftp_get_option&nbsp;--&nbsp;·µ»Øµ±Ç° FTP Á¬½ÓµÄ¸÷ÖÖ²»Í¬µÄÑ¡ÏîÉèÖÃ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN31442" ></A
+><H2  >ËµÃ÷</H2
+>mixed <B  CLASS="methodname" >ftp_get_option</B
+> ( resource ftp_stream, int option)<BR  ></BR
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»ØÑ¡ÏîµÄÖµ£¬·ñÔò£¬Èç¹û¸ø¶¨µÄ²ÎÊı <TT  CLASS="parameter" ><I  >option</I
+></TT
+>
+     Ñ¡ÏîÈç¹û²»±»Ö§³ÖÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> Í¬Ê±»áÌáÊ¾Ò»Ìõ´íÎóĞÅÏ¢¡£
+    </P
+><P  >&#13;     ´Ëº¯Êı»á·µ»ØÁ¬½Ó¾ä±úÎª <TT  CLASS="parameter" ><I  >ftp_stream</I
+></TT
+>£¬Ö¸¶¨¼üÖµ <TT  CLASS="parameter" ><I  >option</I
+></TT
+>
+     µÄÖµ£¬½ØÖ¹µ½Ä¿Ç°£¬ÒÔÏÂÑ¡Ïî±»Ö§³Ö:
+     <DIV  CLASS="table" ><A  NAME="AEN31459" ></A
+><P  ><B  >±í¸ñ 1. Ö§³Ö FTP ³¬Ê±Ñ¡Ïî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >FTP_TIMEOUT_SEC</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >·µ»Øµ±Ç°Éè¶¨µÄÍøÂç²Ù×÷µÄ³¬Ê±Ê±¼ä¡£</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31466" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ftp_get_option()</B
+> ÊµÀı </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// Get the timeout of the given FTP stream<br  /></font><font  color="#0000BB">$timeout </font><font  color="#007700">= </font><font  color="#0000BB">ftp_get_option</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">FTP_TIMEOUT_SEC</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     ²Î¼û <A  href="http://www.jb51.net/manual/php/function.ftp-set-option.html"  ><B  CLASS="function" >ftp_set_option()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftp-fput.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-get.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftp_fput</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ftp.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_get</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-fput.html">ftp_fput</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-get.html">ftp_get</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftp-get-option" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">ftp_get_option</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">ftp_get_option</span> &mdash; <span class="dc-title">è¿”å›å½“å‰ FTP è¿æ¥çš„å„ç§ä¸åŒçš„é€‰é¡¹è®¾ç½®</span></p>
 
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.ftp-get-option-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>ftp_get_option</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
-     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$option</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     å¦‚æœæˆåŠŸåˆ™è¿”å›é€‰é¡¹çš„å€¼ï¼Œå¦åˆ™ï¼Œå¦‚æœç»™å®šçš„å‚æ•° <code class="parameter">option</code>
-     é€‰é¡¹å¦‚æœä¸è¢«æ”¯æŒåˆ™è¿”å› <strong><code>FALSE</code></strong> åŒæ—¶ä¼šæç¤ºä¸€æ¡é”™è¯¯ä¿¡æ¯ã€‚
-    </p>
-    <p class="para">
-     æ­¤å‡½æ•°ä¼šè¿”å›è¿æ¥å¥æŸ„ä¸º <code class="parameter">ftp_stream</code>ï¼ŒæŒ‡å®šé”®å€¼ <code class="parameter">option</code>
-     çš„å€¼ï¼Œæˆªæ­¢åˆ°ç›®å‰ï¼Œä»¥ä¸‹é€‰é¡¹è¢«æ”¯æŒ:
-     <table class="doctable table">
-      <caption><strong>æ”¯æŒ FTP è¶…æ—¶é€‰é¡¹</strong></caption>
-      
-       <tbody class="tbody">
-        <tr>
-         <td>FTP_TIMEOUT_SEC</td>
-         <td>è¿”å›å½“å‰è®¾å®šçš„ç½‘ç»œæ“ä½œçš„è¶…æ—¶æ—¶é—´ã€‚</td>
-        </tr>
-
-       </tbody>
-      
-     </table>
-
-    </p>
-    <div class="example" id="example-4577">
-     <p><strong>Example #1 <span class="function"><strong>ftp_get_option()</strong></span> å®ä¾‹ </strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Get&nbsp;the&nbsp;timeout&nbsp;of&nbsp;the&nbsp;given&nbsp;FTP&nbsp;stream<br /></span><span style="color: #0000BB">$timeout&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_get_option</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FTP_TIMEOUT_SEC</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.ftp-set-option.html" class="function">ftp_set_option()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-fput.html">ftp_fput</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-get.html">ftp_get</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,122 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>读取/设置会话名称</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-module-name.html">session_module_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-regenerate-id.html">session_regenerate_id</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.session-name" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">session_name</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">session_name</span> &mdash; <span class="dc-title">读取/设置会话名称</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.session-name-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>session_name</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>session_name()</strong></span> 函数返回当前会话名称。
-   如果指定 <code class="parameter">name</code> 参数，
-   <span class="function"><strong>session_name()</strong></span> 函数会更新会话名称，
-   并返回 <em>原来的</em> 会话名称。
-  </p>
-  <p class="para">
-   请求开始的时候，会话名称会被重置并且存储到
-   <em>session.name</em> 配置项。
-   因此，要想设置会话名称，那么对于每个请求，都需要在
-   调用 <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> 或者 <span class="function"><a href="function.session-register.html" class="function">session_register()</a></span> 函数
-   之前调用 <span class="function"><strong>session_name()</strong></span> 函数。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.session-name-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       用在 cookie 或者 URL 中的会话名称，
-       例如：<em>PHPSESSID</em>。
-       只能使用字母和数字作为会话名称，建议尽可能的短一些，
-       并且是望文知意的名字（对于启用了 cookie 警告的用户来说，方便其判断是否要允许此 cookie）。
-       如果指定了 <code class="parameter">name</code> 参数，
-       那么当前会话也会使用指定值作为名称。
-      </p>
-      <p class="para">
-       <div class="warning"><strong class="warning">Warning</strong>
-        <p class="para">
-         会话名称至少需要一个字母，不能全部都使用数字，
-         否则，每次都会生成一个新的会话 ID。
-        </p>
-       </div>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.session-name-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回当前会话名称。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >session_name</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Session Handling Functions" HREF="ref.session.html"><LINK  REL="PREVIOUS" TITLE="session_module_name" HREF="function.session-module-name.html"><LINK  REL="NEXT" TITLE="session_regenerate_id" HREF="function.session-regenerate-id.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.session-module-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.session-regenerate-id.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.session-name" ></A
+>session_name</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99207" ></A
+><P  >    (PHP 4 )</P
+>session_name&nbsp;--&nbsp;Get and/or set the current session name</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99210" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >session_name</B
+> ( [string name])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >session_name()</B
+> returns the name of the current
+     session. If <TT  CLASS="parameter" ><I  >name</I
+></TT
+> is specified, the name of
+     the current session is changed to its value.
+    </P
+><P  >&#13;     The session name references the session id in cookies and
+     URLs. It should contain only alphanumeric characters; it should
+     be short and descriptive (i.e. for users with enabled cookie
+     warnings). The session name is reset to the default value
+     stored in <TT  CLASS="literal" >session.name</TT
+> at request startup
+     time. Thus, you need to call <B  CLASS="function" >session_name()</B
+>
+     for every request (and before <A  HREF="function.session-start.html"  ><B  CLASS="function" >session_start()</B
+></A
+>
+     or <A  HREF="function.session-register.html"  ><B  CLASS="function" >session_register()</B
+></A
+> are called).
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99226" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >session_name()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">/* set the session name to WebsiteID */<br  /><br  /></font><font  color="#0000BB">$previous_name </font><font  color="#007700">= </font><font  color="#0000BB">session_name</font><font  color="#007700">(</font><font  color="#DD0000">"WebsiteID"</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"The previous session name was $previous_name&lt;p&gt;"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also the <A  HREF="ref.session.html#ini.session.name"  >session.name</A
+>
+     configuration directive.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.session-module-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.session-regenerate-id.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >session_module_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.session.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >session_regenerate_id</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.session-name-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5083">
-    <p><strong>Example #1 <span class="function"><strong>session_name()</strong></span> 示例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;设置会话名称为&nbsp;WebsiteID&nbsp;*/<br /><br /></span><span style="color: #0000BB">$previous_name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">session_name</span><span style="color: #007700">(</span><span style="color: #DD0000">"WebsiteID"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;previous&nbsp;session&nbsp;name&nbsp;was&nbsp;</span><span style="color: #0000BB">$previous_name</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.session-name-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member">
-     <a href="session.configuration.html#ini.session.name" class="link">session.name</a> 
-     配置指示
-    </li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-module-name.html">session_module_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-regenerate-id.html">session_regenerate_id</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

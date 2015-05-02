@@ -1,178 +1,126 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>对比两个「PHP 规范化」的版本数字字符串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sys-get-temp-dir.html">sys_get_temp_dir</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.zend-logo-guid.html">zend_logo_guid</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.version-compare" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">version_compare</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">version_compare</span> &mdash; <span class="dc-title">对比两个「PHP 规范化」的版本数字字符串</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.version-compare-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>version_compare</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$version1</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$version2</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$operator</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>version_compare()</strong></span> 用于对比两个「PHP 规范化」的版本数字字符串。
-   这对于编写仅能兼容某些版本 PHP 的程序很有帮助。
-  </p>
-  <p class="para">
-   此函数首先在版本字符串里用一个点 <em>.</em> 替换 <em>_</em>、<em>-</em> 和 <em>+</em>，也会在任意非数字前后插入一个点 <em>.</em>，这样，类似 &#039;4.3.2RC1&#039; 将会变成 &#039;4.3.2.RC.1&#039;。
-   接下来它会分割结果，就像你使用 explode(&#039;.&#039;, $ver) 那样。
-   然后它会从左往右对比各个部分。
-   如果某部分包含了特定的版本字符串，将会用以下顺序处理：
-   <em>列表中未找到的任意字符串</em> &lt; 
-   <em>dev</em> &lt; <em>alpha</em> =
-   <em>a</em> &lt; <em>beta</em> =
-   <em>b</em> &lt; <em>RC</em> =  
-   <em>rc</em> &lt; <em>#</em> &lt;
-   <em>pl</em> = <em>p</em>。
-   
-   这种方式不仅能够对比类似 &#039;4.1&#039; 和 &#039;4.1.2&#039; 那种不同的版本级别，同时也可以指定对比任何包含 PHP 开发状态的版本。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.version-compare-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">version1</code></dt>
-
-     <dd>
-
-      <p class="para">
-       第一个版本数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">version2</code></dt>
-
-     <dd>
-
-      <p class="para">
-       第二个版本数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">operator</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果你指定了可选的第三个参数 <code class="parameter">operator</code>，你可以测试两者的特定关系。
-       可以的操作符分别是：<em>&lt;</em>、
-       <em>lt</em>、<em>&lt;=</em>、
-       <em>le</em>、<em>&gt;</em>、
-       <em>gt</em>、<em>&gt;=</em>、
-       <em>ge</em>、<em>==</em>、
-       <em>=</em>、<em>eq</em>、
-       <em>!=</em>、<em>&lt;&gt;</em> 和
-       <em>ne</em>。
-      </p>
-      <p class="para">
-       此参数区分大小写，所以它的值应该是小写的。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.version-compare-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   
-   默认情况下，在第一个版本低于第二个时，<span class="function"><strong>version_compare()</strong></span> 返回 <em>-1</em>；如果两者相等，返回 <em>0</em>；第二个版本更低时则返回 <em>1</em>。
-  </p>
-  <p class="para">
-   当使用了可选参数 <code class="parameter">operator</code> 时，如果关系是操作符所指定的那个，函数将返回 <strong><code>TRUE</code></strong>，否则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.version-compare-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   下例使用了 <strong><code>PHP_VERSION</code></strong> 常量，因为它执行的代码包含了 PHP 版本的值。
-  </p>
-  <p class="para">
-   <div class="example" id="example-516">
-    <p><strong>Example #1 <span class="function"><strong>version_compare()</strong></span> examples</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'6.0.0'</span><span style="color: #007700">)&nbsp;&gt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'I&nbsp;am&nbsp;at&nbsp;least&nbsp;PHP&nbsp;version&nbsp;6.0.0,&nbsp;my&nbsp;version:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5.3.0'</span><span style="color: #007700">)&nbsp;&gt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'I&nbsp;am&nbsp;at&nbsp;least&nbsp;PHP&nbsp;version&nbsp;5.3.0,&nbsp;my&nbsp;version:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5.0.0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&gt;='</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'I&nbsp;am&nbsp;using&nbsp;PHP&nbsp;5,&nbsp;my&nbsp;version:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5.0.0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&lt;'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'I&nbsp;am&nbsp;using&nbsp;PHP&nbsp;4,&nbsp;my&nbsp;version:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >version_compare</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="set_time_limit" HREF="function.set-time-limit.html"><LINK  REL="NEXT" TITLE="zend_logo_guid" HREF="function.zend-logo-guid.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.set-time-limit.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.zend-logo-guid.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.version-compare" ></A
+>version_compare</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN89827" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>version_compare&nbsp;--&nbsp;
+     Compares two "PHP-standardized" version number strings
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN89830" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >version_compare</B
+> ( string version1, string version2 [, string operator])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >version_compare()</B
+> compares two
+     "PHP-standardized" version number strings. This is useful if you
+     would like to write programs working only on some versions of
+     PHP.
+    </P
+><P  >&#13;     <B  CLASS="function" >version_compare()</B
+> returns -1 if the first
+     version is lower than the second, 0 if they are equal, and +1 if
+     the second is lower.
+    </P
+><P  >&#13;     The function first replaces <TT  CLASS="literal" >_</TT
+>, <TT  CLASS="literal" >-</TT
+>
+     and <TT  CLASS="literal" >+</TT
+> with a dot <TT  CLASS="literal" >.</TT
+> in the version 
+     strings and also inserts dots <TT  CLASS="literal" >.</TT
+> before and after any 
+     non number so that for example '4.3.2RC1' becomes '4.3.2.RC.1'. Then it 
+     splits the results like if you were using explode('.', $ver). Then it 
+     compares the parts starting from left to right. If a part contains 
+     special version strings these are handled in the following order: 
+     <TT  CLASS="literal" >dev</TT
+> &#60; <TT  CLASS="literal" >alpha</TT
+> = 
+     <TT  CLASS="literal" >a</TT
+> &#60; <TT  CLASS="literal" >beta</TT
+> = 
+     <TT  CLASS="literal" >b</TT
+> &#60; <TT  CLASS="literal" >RC</TT
+> &#60; 
+     <TT  CLASS="literal" >pl</TT
+>. This way not only versions with different levels
+     like '4.1' and '4.1.2' can be compared but also any PHP specific version
+     containing development state.
+    </P
+><P  >&#13;     If you specify the third optional <TT  CLASS="parameter" ><I  >operator</I
+></TT
+>
+     argument, you can test for a particular relationship. The
+     possible operators are: <TT  CLASS="literal" >&#60;</TT
+>,
+     <TT  CLASS="literal" >lt</TT
+>, <TT  CLASS="literal" >&#60;=</TT
+>,
+     <TT  CLASS="literal" >le</TT
+>, <TT  CLASS="literal" >&#62;</TT
+>,
+     <TT  CLASS="literal" >gt</TT
+>, <TT  CLASS="literal" >&#62;=</TT
+>,
+     <TT  CLASS="literal" >ge</TT
+>, <TT  CLASS="literal" >==</TT
+>,
+     <TT  CLASS="literal" >=</TT
+>, <TT  CLASS="literal" >eq</TT
+>,
+     <TT  CLASS="literal" >!=</TT
+>, <TT  CLASS="literal" >&#60;&#62;</TT
+>,
+     <TT  CLASS="literal" >ne</TT
+> respectively. Using this argument, the
+     function will return 1 if the relationship is the one specified
+     by the operator, 0 otherwise.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN89878" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >version_compare()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// prints -1<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">version_compare</font><font  color="#007700">(</font><font  color="#DD0000">"4.0.4"</font><font  color="#007700">, </font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// these all print 1<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">version_compare</font><font  color="#007700">(</font><font  color="#DD0000">"4.0.4"</font><font  color="#007700">, </font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">, </font><font  color="#DD0000">"&lt;"</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">version_compare</font><font  color="#007700">(</font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">, </font><font  color="#DD0000">"4.0.6"</font><font  color="#007700">, </font><font  color="#DD0000">"eq"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.set-time-limit.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.zend-logo-guid.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >set_time_limit</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >zend_logo_guid</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.version-compare-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <strong><code>PHP_VERSION</code></strong> 常量包含了当前 PHP 的版本。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    注意，类似 5.3.0-dev 的预发行版本，被认为是低于它们的最终发行版本（就像 5.3.0）。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    指定类似 <em>alpha</em>、<em>beta</em> 的版本字符串是大小写敏感的。
-    版本字符串的来源若不遵循 PHP 标准，可能需要在调用 <span class="function"><strong>version_compare()</strong></span> 之前先用 <span class="function"><a href="function.strtolower.html" class="function">strtolower()</a></span> 转成小写。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.version-compare-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.phpversion.html" class="function" rel="rdfs-seeAlso">phpversion()</a> - 获取当前的PHP版本</span></li>
-    <li class="member"><span class="function"><a href="function.php-uname.html" class="function" rel="rdfs-seeAlso">php_uname()</a> - 返回运行 PHP 的系统的有关信息</span></li>
-    <li class="member"><span class="function"><a href="function.function-exists.html" class="function" rel="rdfs-seeAlso">function_exists()</a> - 如果给定的函数已经被定义就返回 TRUE</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sys-get-temp-dir.html">sys_get_temp_dir</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.zend-logo-guid.html">zend_logo_guid</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

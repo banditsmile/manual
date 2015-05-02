@@ -1,186 +1,115 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>使用给定参数加密明文</title>
+<HTML  ><HEAD  ><TITLE  >mcrypt_encrypt</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_enc_self_test" HREF="function.mcrypt-enc-self-test.html"><LINK  REL="NEXT" TITLE="mcrypt_generic_deinit" HREF="function.mcrypt-generic-deinit.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-enc-self-test.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mcrypt-generic-deinit.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mcrypt-encrypt" ></A
+>mcrypt_encrypt</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN54445" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>mcrypt_encrypt&nbsp;--&nbsp;Encrypts plaintext with given parameters</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN54448" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mcrypt_encrypt</B
+> ( string cipher, string key, string data, string mode [, string iv])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mcrypt_encrypt()</B
+> encrypts the data
+     and returns the encrypted data.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Cipher</I
+></TT
+> is one of the MCRYPT_ciphername
+     constants of the name of the algorithm as string.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Key</I
+></TT
+> is the key with which the data
+     will be encrypted. If it's smaller that the required keysize, it
+     is padded with '<TT  CLASS="literal" >\0</TT
+>'. It is better not to use ASCII strings for
+     keys. It is recommended to use the mhash functions to create a key 
+     from a string.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Data</I
+></TT
+> is the data that will be encrypted
+     with the given cipher and mode. If the size of the data is not
+     n * blocksize, the data will be padded with '<TT  CLASS="literal" >\0</TT
+>'. The returned
+     crypttext can be larger that the size of the data that is given
+     by <TT  CLASS="parameter" ><I  >data</I
+></TT
+>.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Mode</I
+></TT
+> is one of the MCRYPT_MODE_modename
+     constants of one of "ecb", "cbc", "cfb", "ofb", "nofb" or 
+     "stream".
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >IV</I
+></TT
+> parameter is used for the
+     initialisation in CBC, CFB, OFB modes, and in some algorithms
+     in STREAM mode. If you do not supply an IV, while it is needed
+     for an algorithm, the function issues a warning and uses an
+     IV with all bytes set to '<TT  CLASS="literal" >\0</TT
+>'.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN54485" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >mcrypt_encrypt()</B
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$iv_size </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_get_iv_size</font><font  color="#007700">(</font><font  color="#0000BB">MCRYPT_RIJNDAEL_256</font><font  color="#007700">, </font><font  color="#0000BB">MCRYPT_MODE_ECB</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$iv </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_create_iv</font><font  color="#007700">(</font><font  color="#0000BB">$iv_size</font><font  color="#007700">, </font><font  color="#0000BB">MCRYPT_RAND</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$key </font><font  color="#007700">= </font><font  color="#DD0000">"This is a very secret key"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$text </font><font  color="#007700">= </font><font  color="#DD0000">"Meet me at 11 o'clock behind the monument."</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$text</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$crypttext </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_encrypt</font><font  color="#007700">(</font><font  color="#0000BB">MCRYPT_RIJNDAEL_256</font><font  color="#007700">, </font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$text</font><font  color="#007700">, </font><font  color="#0000BB">MCRYPT_MODE_ECB</font><font  color="#007700">, </font><font  color="#0000BB">$iv</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$crypttext</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       The above example will print out:
+       <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >42
+64</PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.mcrypt-module-open.html"  ><B  CLASS="function" >mcrypt_module_open()</B
+></A
+> for a more advanced API
+     and an example.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-enc-self-test.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mcrypt-generic-deinit.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_enc_self_test</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mcrypt_generic_deinit</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-enc-self-test.html">mcrypt_enc_self_test</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-generic-deinit.html">mcrypt_generic_deinit</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mcrypt-encrypt" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mcrypt_encrypt</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">mcrypt_encrypt</span> &mdash; <span class="dc-title">使用给定参数加密明文</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mcrypt-encrypt-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mcrypt_encrypt</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$cipher</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$iv</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   加密数据并返回密文。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mcrypt-encrypt-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">cipher</code></dt>
-
-     <dd>
-
-      <p class="para"><strong><code>MCRYPT_ciphername</code></strong> 常量中的一个，或者是字符串值的算法名称。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">key</code></dt>
-
-     <dd>
-
-      <p class="para">
-       加密密钥。
-       如果密钥长度不是该算法所能够支持的有效长度，则函数将会发出警告并返回 <strong><code>FALSE</code></strong>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       使用给定的 <code class="parameter">cipher</code> 和 <code class="parameter">mode</code>
-       加密的数据。
-       如果数据长度不是 n*分组大小，则在其后使用 &#039;<em>\0</em>&#039; 补齐。
-      </p>
-      <p class="para">
-       返回的密文长度可能比 <code class="parameter">data</code> 
-       更大。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para"><strong><code>MCRYPT_MODE_modename</code></strong> 常量中的一个，或以下字符串中的一个：&quot;ecb&quot;，&quot;cbc&quot;，&quot;cfb&quot;，&quot;ofb&quot;，&quot;nofb&quot; 和 &quot;stream&quot;。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">iv</code></dt>
-
-     <dd>
-
-      <p class="para">Used for the initialization in CBC, CFB, OFB modes, and in some algorithms in STREAM mode. If the provided IV size is not supported by the chaining mode or no IV was provided, but the chaining mode requires one, the function will emit a warning and return <strong><code>FALSE</code></strong>.</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-encrypt-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   以字符串方式返回密文， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-<div class="refsect1 changelog" id="refsect1-function.mcrypt-encrypt-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.6.0</td>
-       <td>
-        不再接受无效长度的 <code class="parameter">key</code> and <code class="parameter">iv</code> 参数。
-        如果参数长度无效，则 <span class="function"><a href="function.mcrypt-decrypt.html" class="function">mcrypt_decrypt()</a></span> 函数会产生警告并且返回 <strong><code>FALSE</code></strong>。
-        之前版本中，对于长度不足的密钥和初始向量会在其后补齐 &#039;<em>\0</em>&#039; 
-        使其达到有效长度。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.mcrypt-encrypt-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-855">
-    <p><strong>Example #1 <span class="function"><strong>mcrypt_encrypt()</strong></span> 例程</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;---&nbsp;加密&nbsp;---<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;密钥应该是随机的二进制数据，<br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;开始使用&nbsp;scrypt,&nbsp;bcrypt&nbsp;或&nbsp;PBKDF2&nbsp;将一个字符串转换成一个密钥<br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;密钥是&nbsp;16&nbsp;进制字符串格式<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pack</span><span style="color: #007700">(</span><span style="color: #DD0000">'H*'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bcb04b7e103a0cd8b54763051cef08bc55abe029fdebae5e1d417e2ffb2a00a3"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;显示&nbsp;AES-128,&nbsp;192,&nbsp;256&nbsp;对应的密钥长度：<br />&nbsp;&nbsp;&nbsp;&nbsp;#16，24，32&nbsp;字节。<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$key_size&nbsp;</span><span style="color: #007700">=&nbsp;&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$key</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Key&nbsp;size:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$key_size&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$plaintext&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;string&nbsp;was&nbsp;AES-256&nbsp;/&nbsp;CBC&nbsp;/&nbsp;ZeroBytePadding&nbsp;encrypted."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;为&nbsp;CBC&nbsp;模式创建随机的初始向量<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv_size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_get_iv_size</span><span style="color: #007700">(</span><span style="color: #0000BB">MCRYPT_RIJNDAEL_128</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_MODE_CBC</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">$iv_size</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_RAND</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;创建和&nbsp;AES&nbsp;兼容的密文（Rijndael&nbsp;分组大小&nbsp;=&nbsp;128）<br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;仅适用于编码后的输入不是以&nbsp;00h&nbsp;结尾的<br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;（因为默认是使用&nbsp;0&nbsp;来补齐数据）<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_encrypt</span><span style="color: #007700">(</span><span style="color: #0000BB">MCRYPT_RIJNDAEL_128</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$plaintext</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_MODE_CBC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;将初始向量附加在密文之后，以供解密时使用<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$ciphertext</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;对密文进行&nbsp;base64&nbsp;编码<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext_base64&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">base64_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$ciphertext</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext_base64&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;===&nbsp;警告&nbsp;===<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;密文并未进行完整性和可信度保护，<br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;所以可能遭受&nbsp;Padding&nbsp;Oracle&nbsp;攻击。<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;---&nbsp;解密&nbsp;---<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext_dec&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">base64_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$ciphertext_base64</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;初始向量大小，可以通过&nbsp;mcrypt_get_iv_size()&nbsp;来获得<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv_dec&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$ciphertext_dec</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv_size</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;获取除初始向量外的密文<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext_dec&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">$ciphertext_dec</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv_size</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">#&nbsp;可能需要从明文末尾移除&nbsp;0<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$plaintext_dec&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_decrypt</span><span style="color: #007700">(</span><span style="color: #0000BB">MCRYPT_RIJNDAEL_128</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ciphertext_dec</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_MODE_CBC</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv_dec</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&nbsp;</span><span style="color: #0000BB">$plaintext_dec&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Key size: 32
-ENJW8mS2KaJoNB5E5CoSAAu0xARgsR1bdzFWpEn+poYw45q+73az5kYi4j+0haevext1dGrcW8Qi59txfCBV8BBj3bzRP3dFCp3CPQSJ8eU=
-This string was AES-256 / CBC / ZeroBytePadding encrypted.
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.mcrypt-encrypt-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mcrypt-decrypt.html" class="function" rel="rdfs-seeAlso">mcrypt_decrypt()</a> - 使用给定参数解密密文</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-module-open.html" class="function" rel="rdfs-seeAlso">mcrypt_module_open()</a> - 打开算法和模式对应的模块</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-enc-self-test.html">mcrypt_enc_self_test</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-generic-deinit.html">mcrypt_generic_deinit</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

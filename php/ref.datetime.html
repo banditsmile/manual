@@ -1,381 +1,106 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Date/Time å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="dateperiod.construct.html">DatePeriod::__construct</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.checkdate.html">checkdate</a></div>
- <div class="up"><a href="book.datetime.html">æ—¥æœŸ/æ—¶é—´</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.datetime" class="reference">
- <h1 class="title">Date/Time å‡½æ•°</h1>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.checkdate.html">checkdate</a> â€” éªŒè¯ä¸€ä¸ªæ ¼é‡Œé«˜é‡Œæ—¥æœŸ</li><li><a href="function.date-add.html">date_add</a> â€” åˆ«å DateTime::add</li><li><a href="function.date-create-from-format.html">date_create_from_format</a> â€” åˆ«å DateTime::createFromFormat</li><li><a href="function.date-create-immutable-from-format.html">date_create_immutable_from_format</a> â€” åˆ«å DateTimeImmutable::createFromFormat</li><li><a href="function.date-create-immutable.html">date_create_immutable</a> â€” åˆ«å DateTimeImmutable::__construct</li><li><a href="function.date-create.html">date_create</a> â€” åˆ«å DateTime::__construct</li><li><a href="function.date-date-set.html">date_date_set</a> â€” åˆ«å DateTime::setDate</li><li><a href="function.date-default-timezone-get.html">date_default_timezone_get</a> â€” å–å¾—ä¸€ä¸ªè„šæœ¬ä¸­æ‰€æœ‰æ—¥æœŸæ—¶é—´å‡½æ•°æ‰€ä½¿ç”¨çš„é»˜è®¤æ—¶åŒº</li><li><a href="function.date-default-timezone-set.html">date_default_timezone_set</a> â€” è®¾å®šç”¨äºä¸€ä¸ªè„šæœ¬ä¸­æ‰€æœ‰æ—¥æœŸæ—¶é—´å‡½æ•°çš„é»˜è®¤æ—¶åŒº</li><li><a href="function.date-diff.html">date_diff</a> â€” åˆ«å DateTime::diff</li><li><a href="function.date-format.html">date_format</a> â€” åˆ«å DateTime::format</li><li><a href="function.date-get-last-errors.html">date_get_last_errors</a> â€” åˆ«å DateTime::getLastErrors</li><li><a href="function.date-interval-create-from-date-string.html">date_interval_create_from_date_string</a> â€” åˆ«å DateInterval::createFromDateString</li><li><a href="function.date-interval-format.html">date_interval_format</a> â€” åˆ«å DateInterval::format</li><li><a href="function.date-isodate-set.html">date_isodate_set</a> â€” åˆ«å DateTime::setISODate</li><li><a href="function.date-modify.html">date_modify</a> â€” åˆ«å DateTime::modify</li><li><a href="function.date-offset-get.html">date_offset_get</a> â€” åˆ«å DateTime::getOffset</li><li><a href="function.date-parse-from-format.html">date_parse_from_format</a> â€” Get info about given date formatted according to the specified format</li><li><a href="function.date-parse.html">date_parse</a> â€” Returns associative array with detailed info about given date</li><li><a href="function.date-sub.html">date_sub</a> â€” åˆ«å DateTime::sub</li><li><a href="function.date-sun-info.html">date_sun_info</a> â€” Returns an array with information about sunset/sunrise and twilight begin/end</li><li><a href="function.date-sunrise.html">date_sunrise</a> â€” è¿”å›ç»™å®šçš„æ—¥æœŸä¸åœ°ç‚¹çš„æ—¥å‡ºæ—¶é—´</li><li><a href="function.date-sunset.html">date_sunset</a> â€” è¿”å›ç»™å®šçš„æ—¥æœŸä¸åœ°ç‚¹çš„æ—¥è½æ—¶é—´</li><li><a href="function.date-time-set.html">date_time_set</a> â€” åˆ«å DateTime::setTime</li><li><a href="function.date-timestamp-get.html">date_timestamp_get</a> â€” åˆ«å DateTime::getTimestamp</li><li><a href="function.date-timestamp-set.html">date_timestamp_set</a> â€” åˆ«å DateTime::setTimestamp</li><li><a href="function.date-timezone-get.html">date_timezone_get</a> â€” åˆ«å DateTime::getTimezone</li><li><a href="function.date-timezone-set.html">date_timezone_set</a> â€” åˆ«å DateTime::setTimezone</li><li><a href="function.date.html">date</a> â€” æ ¼å¼åŒ–ä¸€ä¸ªæœ¬åœ°æ—¶é—´ï¼æ—¥æœŸ</li><li><a href="function.getdate.html">getdate</a> â€” å–å¾—æ—¥æœŸï¼æ—¶é—´ä¿¡æ¯</li><li><a href="function.gettimeofday.html">gettimeofday</a> â€” å–å¾—å½“å‰æ—¶é—´</li><li><a href="function.gmdate.html">gmdate</a> â€” æ ¼å¼åŒ–ä¸€ä¸ª GMT/UTC æ—¥æœŸï¼æ—¶é—´</li><li><a href="function.gmmktime.html">gmmktime</a> â€” å–å¾— GMT æ—¥æœŸçš„ UNIX æ—¶é—´æˆ³</li><li><a href="function.gmstrftime.html">gmstrftime</a> â€” æ ¹æ®åŒºåŸŸè®¾ç½®æ ¼å¼åŒ– GMT/UTC æ—¶é—´ï¼æ—¥æœŸ</li><li><a href="function.idate.html">idate</a> â€” å°†æœ¬åœ°æ—¶é—´æ—¥æœŸæ ¼å¼åŒ–ä¸ºæ•´æ•°</li><li><a href="function.localtime.html">localtime</a> â€” å–å¾—æœ¬åœ°æ—¶é—´</li><li><a href="function.microtime.html">microtime</a> â€” è¿”å›å½“å‰ Unix æ—¶é—´æˆ³å’Œå¾®ç§’æ•°</li><li><a href="function.mktime.html">mktime</a> â€” å–å¾—ä¸€ä¸ªæ—¥æœŸçš„ Unix æ—¶é—´æˆ³</li><li><a href="function.strftime.html">strftime</a> â€” æ ¹æ®åŒºåŸŸè®¾ç½®æ ¼å¼åŒ–æœ¬åœ°æ—¶é—´ï¼æ—¥æœŸ</li><li><a href="function.strptime.html">strptime</a> â€” è§£æç”± strftime ç”Ÿæˆçš„æ—¥æœŸï¼æ—¶é—´</li><li><a href="function.strtotime.html">strtotime</a> â€” å°†ä»»ä½•è‹±æ–‡æ–‡æœ¬çš„æ—¥æœŸæ—¶é—´æè¿°è§£æä¸º Unix æ—¶é—´æˆ³</li><li><a href="function.time.html">time</a> â€” è¿”å›å½“å‰çš„ Unix æ—¶é—´æˆ³</li><li><a href="function.timezone-abbreviations-list.html">timezone_abbreviations_list</a> â€” åˆ«å DateTimeZone::listAbbreviations</li><li><a href="function.timezone-identifiers-list.html">timezone_identifiers_list</a> â€” åˆ«å DateTimeZone::listIdentifiers</li><li><a href="function.timezone-location-get.html">timezone_location_get</a> â€” åˆ«å DateTimeZone::getLocation</li><li><a href="function.timezone-name-from-abbr.html">timezone_name_from_abbr</a> â€” Returns the timezone name from abbreviation</li><li><a href="function.timezone-name-get.html">timezone_name_get</a> â€” åˆ«å DateTimeZone::getName</li><li><a href="function.timezone-offset-get.html">timezone_offset_get</a> â€” åˆ«å DateTimeZone::getOffset</li><li><a href="function.timezone-open.html">timezone_open</a> â€” åˆ«å DateTimeZone::__construct</li><li><a href="function.timezone-transitions-get.html">timezone_transitions_get</a> â€” åˆ«å DateTimeZone::getTransitions</li><li><a href="function.timezone-version-get.html">timezone_version_get</a> â€” Gets the version of the timezonedb</li></ul>
+<HTML  ><HEAD  ><TITLE  >Ê±¼äÈÕÆÚº¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="dba_sync" HREF="function.dba-sync.html"><LINK  REL="NEXT" TITLE="checkdate" HREF="function.checkdate.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dba-sync.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.checkdate.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.datetime" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >XVII. Ê±¼äÈÕÆÚº¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN18095" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="datetime.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     ¿ÉÒÔÓÃÕâĞ©º¯ÊıµÃµ½ PHP ËùÔËĞĞµÄ·şÎñÆ÷µÄÈÕÆÚºÍÊ±¼ä¡£¿ÉÒÔÓÃÕâĞ©º¯Êı½«ÈÕÆÚºÍÊ±¼äÒÔºÜ¶à²»Í¬·½Ê½¸ñÊ½»¯Êä³ö¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÇëÁôÒâÕâĞ©º¯ÊıÒÀÀµÓÚ·şÎñÆ÷µÄµØÇøÉèÖÃ¡£È·ÈÏÔÚÊ¹ÓÃÕâĞ©º¯ÊıÊ±¿¼ÂÇµ½ÁËÏÄÁîÊ±µÄÉèÖÃºÍÈòÄê¡£
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="datetime.required" ></A
+>ĞèÇó</H1
+><P  >ÎŞĞèÍâ²¿¿âÎÄ¼ş¾Í¿ÉÒÔ¼ÓÈë±¾À©Õ¹Ä£¿éµÄÖ§³Ö¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="datetime.installation" ></A
+>°²×°</H1
+><P  >ÕâĞ©º¯Êı×÷Îª PHP ºËĞÄµÄÒ»²¿·Ö£¬ÎŞĞè±»°²×°¼´¿ÉÊ¹ÓÃ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="datetime.runtime" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="datetime.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="datetime.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ³£Á¿¡£</P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.checkdate.html"  >checkdate</A
+>&nbsp;--&nbsp;ÑéÖ¤Ò»¸ö¸ñÀï¸ßÀïÈÕÆÚ</DT
+><DT  ><A  HREF="function.date.html"  >date</A
+>&nbsp;--&nbsp;¸ñÊ½»¯Ò»¸ö±¾µØÊ±¼ä£¯ÈÕÆÚ</DT
+><DT  ><A  HREF="function.getdate.html"  >getdate</A
+>&nbsp;--&nbsp;È¡µÃÈÕÆÚ£¯Ê±¼äĞÅÏ¢</DT
+><DT  ><A  HREF="function.gettimeofday.html"  >gettimeofday</A
+>&nbsp;--&nbsp;È¡µÃµ±Ç°Ê±¼ä</DT
+><DT  ><A  HREF="function.gmdate.html"  >gmdate</A
+>&nbsp;--&nbsp;¸ñÊ½»¯Ò»¸ö GMT/UTC ÈÕÆÚ£¯Ê±¼ä</DT
+><DT  ><A  HREF="function.gmmktime.html"  >gmmktime</A
+>&nbsp;--&nbsp;È¡µÃ GMT ÈÕÆÚµÄ UNIX Ê±¼ä´Á</DT
+><DT  ><A  HREF="function.gmstrftime.html"  >gmstrftime</A
+>&nbsp;--&nbsp;
+     ¸ù¾İÇøÓòÉèÖÃ¸ñÊ½»¯ GMT/UTC Ê±¼ä£¯ÈÕÆÚ
+    </DT
+><DT  ><A  HREF="function.localtime.html"  >localtime</A
+>&nbsp;--&nbsp;È¡µÃ±¾µØÊ±¼ä</DT
+><DT  ><A  HREF="function.microtime.html"  >microtime</A
+>&nbsp;--&nbsp;
+     ·µ»Øµ±Ç° UNIX Ê±¼ä´ÁºÍÎ¢ÃëÊı</DT
+><DT  ><A  HREF="function.mktime.html"  >mktime</A
+>&nbsp;--&nbsp;È¡µÃÒ»¸öÈÕÆÚµÄ UNIX Ê±¼ä´Á</DT
+><DT  ><A  HREF="function.strftime.html"  >strftime</A
+>&nbsp;--&nbsp;
+     ¸ù¾İÇøÓòÉèÖÃ¸ñÊ½»¯±¾µØÊ±¼ä£¯ÈÕÆÚ
+    </DT
+><DT  ><A  HREF="function.strtotime.html"  >strtotime</A
+>&nbsp;--&nbsp;
+     ½«ÈÎºÎÓ¢ÎÄÎÄ±¾µÄÈÕÆÚÊ±¼äÃèÊö½âÎöÎª UNIX Ê±¼ä´Á
+    </DT
+><DT  ><A  HREF="function.time.html"  >time</A
+>&nbsp;--&nbsp;·µ»Øµ±Ç°µÄ UNIX Ê±¼ä´Á</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dba-sync.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.checkdate.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dba_sync</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >checkdate</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="dateperiod.construct.html">DatePeriod::__construct</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.checkdate.html">checkdate</a></div>
- <div class="up"><a href="book.datetime.html">æ—¥æœŸ/æ—¶é—´</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

@@ -1,107 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果</title>
+<HTML  ><HEAD  ><TITLE  >expm1</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="��ѧ������" HREF="ref.math.html"><LINK  REL="PREVIOUS" TITLE="exp" HREF="function.exp.html"><LINK  REL="NEXT" TITLE="floor" HREF="function.floor.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.exp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.floor.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.expm1" ></A
+>expm1</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN49847" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>expm1&nbsp;--&nbsp;
+     ���� exp(number) - 1�������� number ��ֵ�ӽ���Ҳ�ܼ����׼ȷ���
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN49850" ></A
+><H2  >˵��</H2
+>float <B  CLASS="methodname" >expm1</B
+> ( float number)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >����չģ����<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ʵ����</I
+></SPAN
+>�ġ���ģ�����Ϊ�������亯���������Լ������κι��ڴ�ģ����ĵ����ܻ���û��֪ͨ��������� PHP �Ժ�ķ������ı䡣������������ʹ�ñ���չģ���ͬʱ�Ե����ա�
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >�ú���Ŀǰ���޲ο��ĵ����������б����á�
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.exp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.floor.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >exp</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.math.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >floor</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.exp.html">exp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.floor.html">floor</a></div>
- <div class="up"><a href="ref.math.html">Math 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.expm1" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">expm1</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">expm1</span> &mdash; <span class="dc-title">
-     返回 exp(number) - 1，甚至当 number 的值接近零也能计算出准确结果
-    </span></p>
 
-   </div>
- <div class="refsect1 description" id="refsect1-function.expm1-description">
-  <h3 class="title">说明</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">float</span> <span class="methodname"><strong>expm1</strong></span>
-    ( <span class="methodparam"><span class="type">float</span> <code class="parameter">$arg</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>expm1()</strong></span> 返回 &#039;exp(<code class="parameter">number</code>) - 1&#039;，甚至当
-     <code class="parameter">number</code> 的值接近零也能计算出准确结果。但是当两个数值趋近于相等的时候，
-     &#039;exp (<code class="parameter">number</code>) - 1&#039; 就会变得不太准确。
-    </p>
-   </div>
-
- <div class="refsect1 parameters" id="refsect1-function.expm1-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">arg</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要处理的参数
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.expm1-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   &#039;e&#039; to the power of <code class="parameter">arg</code> minus one
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.expm1-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-         此函数在所有平台上均可用
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.expm1-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.log1p.html" class="function" rel="rdfs-seeAlso">log1p()</a> - 返回 log(1 + number)，甚至当 number 的值接近零也能计算出准确结果</span></li>
-    <li class="member"><span class="function"><a href="function.exp.html" class="function" rel="rdfs-seeAlso">exp()</a> - 计算 e 的指数</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.exp.html">exp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.floor.html">floor</a></div>
- <div class="up"><a href="ref.math.html">Math 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

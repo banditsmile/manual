@@ -1,121 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åœ¨æ•°ç»„å¼€å¤´æ’å…¥ä¸€ä¸ªæˆ–å¤šä¸ªå•å…ƒ</title>
+<HTML  ><HEAD  ><TITLE  >array_unshift</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_unique" HREF="function.array-unique.html"><LINK  REL="NEXT" TITLE="array_values" HREF="function.array-values.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-unique.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-values.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-unshift" ></A
+>array_unshift</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN9411" ></A
+><P  >    (PHP 4 )</P
+>array_unshift&nbsp;--&nbsp;
+     ÔÚÊı×é¿ªÍ·²åÈëÒ»¸ö»ò¶à¸öµ¥Ôª
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN9414" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >array_unshift</B
+> ( array array, mixed var [, mixed ...])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_unshift()</B
+> ½«´«ÈëµÄµ¥Ôª²åÈëµ½
+     <TT  CLASS="parameter" ><I  >array</I
+></TT
+> Êı×éµÄ¿ªÍ·¡£×¢Òâµ¥ÔªÊÇ×÷ÎªÕûÌå±»²åÈëµÄ£¬Òò´Ë´«Èëµ¥Ôª½«±£³ÖÍ¬ÑùµÄË³Ğò¡£ËùÓĞµÄÊıÖµ¼üÃû½«ĞŞ¸ÄÎª´ÓÁã¿ªÊ¼ÖØĞÂ¼ÆÊı£¬ËùÓĞµÄÎÄ×Ö¼üÃû±£³Ö²»±ä¡£
+    </P
+><P  >&#13;     ·µ»Ø <TT  CLASS="parameter" ><I  >array</I
+></TT
+> Êı×éĞÂµÄµ¥ÔªÊıÄ¿¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN9434" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >array_unshift()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$queue </font><font  color="#007700">= array (</font><font  color="#DD0000">"orange"</font><font  color="#007700">, </font><font  color="#DD0000">"banana"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">array_unshift </font><font  color="#007700">(</font><font  color="#0000BB">$queue</font><font  color="#007700">, </font><font  color="#DD0000">"apple"</font><font  color="#007700">, </font><font  color="#DD0000">"raspberry"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Õâ½«Ê¹ <TT  CLASS="varname" >$queue</TT
+> °üº¬ÈçÏÂµ¥Ôª£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+Array<br  />(<br  />&nbsp;&nbsp;&nbsp;&nbsp;[0] =&gt; apple<br  />&nbsp;&nbsp;&nbsp;&nbsp;[1] =&gt; raspberry<br  />&nbsp;&nbsp;&nbsp;&nbsp;[2] =&gt; orange<br  />&nbsp;&nbsp;&nbsp;&nbsp;[3] =&gt; banana<br  />)</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.array-shift.html"  ><B  CLASS="function" >array_shift()</B
+></A
+>£¬<A  HREF="function.array-push.html"  ><B  CLASS="function" >array_push()</B
+></A
+>
+     ºÍ <A  HREF="function.array-pop.html"  ><B  CLASS="function" >array_pop()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-unique.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-values.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_unique</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_values</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-unique.html">array_unique</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-values.html">array_values</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-unshift" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">array_unshift</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">array_unshift</span> &mdash; <span class="dc-title">
-     åœ¨æ•°ç»„å¼€å¤´æ’å…¥ä¸€ä¸ªæˆ–å¤šä¸ªå•å…ƒ
-    </span></p>
 
-   </div>
- <div class="refsect1 description" id="refsect1-function.array-unshift-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>array_unshift</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$var</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>array_unshift()</strong></span> å°†ä¼ å…¥çš„å•å…ƒæ’å…¥åˆ°
-     <code class="parameter">array</code> æ•°ç»„çš„å¼€å¤´ã€‚æ³¨æ„å•å…ƒæ˜¯ä½œä¸ºæ•´ä½“è¢«æ’å…¥çš„ï¼Œå› æ­¤ä¼ å…¥å•å…ƒå°†ä¿æŒåŒæ ·çš„é¡ºåºã€‚æ‰€æœ‰çš„æ•°å€¼é”®åå°†ä¿®æ”¹ä¸ºä»é›¶å¼€å§‹é‡æ–°è®¡æ•°ï¼Œæ‰€æœ‰çš„æ–‡å­—é”®åä¿æŒä¸å˜ã€‚
-    </p>
-   </div>
-
-    <div class="refsect1 parameters" id="refsect1-function.array-unshift-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">array</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¾“å…¥çš„æ•°ç»„ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">var</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¼€å¤´æ’å…¥çš„å˜é‡ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.array-unshift-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-    è¿”å› <code class="parameter">array</code> æ•°ç»„æ–°çš„å•å…ƒæ•°ç›®ã€‚
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.array-unshift-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5312">
-    <p><strong>Example #1 <span class="function"><strong>array_unshift()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$queue&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"banana"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_unshift</span><span style="color: #007700">(</span><span style="color: #0000BB">$queue</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"raspberry"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$queue</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; apple
-    [1] =&gt; raspberry
-    [2] =&gt; orange
-    [3] =&gt; banana
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.array-unshift-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.array-shift.html" class="function" rel="rdfs-seeAlso">array_shift()</a> - å°†æ•°ç»„å¼€å¤´çš„å•å…ƒç§»å‡ºæ•°ç»„</span></li>
-    <li class="member"><span class="function"><a href="function.array-push.html" class="function" rel="rdfs-seeAlso">array_push()</a> - å°†ä¸€ä¸ªæˆ–å¤šä¸ªå•å…ƒå‹å…¥æ•°ç»„çš„æœ«å°¾ï¼ˆå…¥æ ˆï¼‰</span></li>
-    <li class="member"><span class="function"><a href="function.array-pop.html" class="function" rel="rdfs-seeAlso">array_pop()</a> - å°†æ•°ç»„æœ€åä¸€ä¸ªå•å…ƒå¼¹å‡ºï¼ˆå‡ºæ ˆï¼‰</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-unique.html">array_unique</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-values.html">array_values</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

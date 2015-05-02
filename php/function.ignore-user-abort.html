@@ -1,113 +1,60 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>设置客户端断开连接时是否中断脚本的执行</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.highlight-string.html">highlight_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pack.html">pack</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ignore-user-abort" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ignore_user_abort</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ignore_user_abort</span> &mdash; <span class="dc-title">设置客户端断开连接时是否中断脚本的执行</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ignore-user-abort-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>ignore_user_abort</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-    设置客户端断开连接时是否中断脚本的执行
-  </p>
-  <p class="para">
-   PHP以命令行脚本执行时，当脚本终端结束，脚本不会被立即中止，除非设置 <code class="parameter">value</code> 为 <strong><code>TRUE</code></strong>，否则脚本输出任意字符时会被中止。</p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ignore-user-abort-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">value</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设置了该值，函数会把 <a href="misc.configuration.html#ini.ignore-user-abort" class="link">ignore_user_abort</a> ini的值设置为 <code class="parameter">value</code>。
-       如果未设置该值，函数不会改变设置，仅会返回之前的设置。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ignore_user_abort</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Miscellaneous Functions" HREF="ref.misc.html"><LINK  REL="PREVIOUS" TITLE="highlight_string" HREF="function.highlight-string.html"><LINK  REL="NEXT" TITLE="pack" HREF="function.pack.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.highlight-string.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pack.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ignore-user-abort" ></A
+>ignore_user_abort</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN62470" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>ignore_user_abort&nbsp;--&nbsp;
+     Set whether a client disconnect should abort script execution
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN62473" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >ignore_user_abort</B
+> ( [bool setting])<BR  ></BR
+><P  >&#13;     This function sets whether a client disconnect should cause a
+     script to be aborted.    It will return the previous setting and
+     can be called without an argument to not change the current
+     setting and only return the current setting.  See the <A  HREF="features.connection-handling.html"  >Connection Handling</A
+>
+     section in the <A  HREF="features.html"  >Features</A
+> chapter
+     for a complete description of connection handling in PHP.
+    </P
+><P  >&#13;     See also <A  HREF="function.connection-aborted.html"  ><B  CLASS="function" >connection_aborted()</B
+></A
+>, and
+     <A  HREF="function.connection-status.html"  ><B  CLASS="function" >connection_status()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.highlight-string.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pack.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >highlight_string</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.misc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pack</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ignore-user-abort-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   以整型返回之前的设置
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.ignore-user-abort-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4084">
-    <p><strong>Example #1 一个<span class="function"><strong>ignore_user_abort()</strong></span>的例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Ignore&nbsp;user&nbsp;aborts&nbsp;and&nbsp;allow&nbsp;the&nbsp;script<br />//&nbsp;to&nbsp;run&nbsp;forever<br /></span><span style="color: #0000BB">ignore_user_abort</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">set_time_limit</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Testing&nbsp;connection&nbsp;handling&nbsp;in&nbsp;PHP'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Run&nbsp;a&nbsp;pointless&nbsp;loop&nbsp;that&nbsp;sometime&nbsp;<br />//&nbsp;hopefully&nbsp;will&nbsp;make&nbsp;us&nbsp;click&nbsp;away&nbsp;from&nbsp;<br />//&nbsp;page&nbsp;or&nbsp;click&nbsp;the&nbsp;"Stop"&nbsp;button.<br /></span><span style="color: #007700">while(</span><span style="color: #0000BB">1</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Did&nbsp;the&nbsp;connection&nbsp;fail?<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">connection_status</span><span style="color: #007700">()&nbsp;!=&nbsp;</span><span style="color: #0000BB">CONNECTION_NORMAL</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Sleep&nbsp;for&nbsp;10&nbsp;seconds<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;If&nbsp;this&nbsp;is&nbsp;reached,&nbsp;then&nbsp;the&nbsp;'break'&nbsp;<br />//&nbsp;was&nbsp;triggered&nbsp;from&nbsp;inside&nbsp;the&nbsp;while&nbsp;loop<br /><br />//&nbsp;So&nbsp;here&nbsp;we&nbsp;can&nbsp;log,&nbsp;or&nbsp;perform&nbsp;any&nbsp;other&nbsp;tasks<br />//&nbsp;we&nbsp;need&nbsp;without&nbsp;actually&nbsp;being&nbsp;dependent&nbsp;on&nbsp;the&nbsp;<br />//&nbsp;browser.<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.ignore-user-abort-notes">
-  <h3 class="title">注释</h3>
-  <p class="para">
-   在PHP尝试发送信息到客户端之前，不会检测到用户是否已中断连接。
-   仅使用 echo 语句不能确保信息已发送，参见 <span class="function"><a href="function.flush.html" class="function">flush()</a></span> 函数。 
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ignore-user-abort-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.connection-aborted.html" class="function" rel="rdfs-seeAlso">connection_aborted()</a> - 检查客户端是否已经断开</span></li>
-    <li class="member"><span class="function"><a href="function.connection-status.html" class="function" rel="rdfs-seeAlso">connection_status()</a> - 返回连接的状态位</span></li>
-    <li class="member">
-     <a href="features.connection-handling.html" class="link">Connection Handling</a>
-     关于PHP连接处理的完整描述。
-    </li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.highlight-string.html">highlight_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pack.html">pack</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

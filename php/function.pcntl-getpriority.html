@@ -1,99 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取任意进程的优先级</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-setpriority.html">pcntl_setpriority</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pcntl-getpriority" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pcntl_getpriority</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">pcntl_getpriority</span> &mdash; <span class="dc-title">获取任意进程的优先级</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pcntl-getpriority-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>pcntl_getpriority</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$pid</code><span class="initializer"> = getmypid()</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$process_identifier</code><span class="initializer"> = PRIO_PROCESS</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>pcntl_getpriority()</strong></span> 获取进程号为
-   <code class="parameter">pid</code>的进程的优先级。由于不同的系统类型以及内核版本下
-   优先级可能不同，因此请参考您系统的getpriority（2）手册以获取详细的规范。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pcntl-getpriority-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">pid</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果没有指定，默认是当前进程的进程号。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">process_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <strong><code>PRIO_PGRP</code></strong>（译注：获取进程组优先级）, <strong><code>PRIO_USER</code></strong>
-       （译注：获取用户进程优先级）或 <strong><code>PRIO_PROCESS（译注：默认值;获取进程优先级）</code></strong>三者之一。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.pcntl-getpriority-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   <span class="function"><strong>pcntl_getpriority()</strong></span> 返回进程的优先级或在错误时返回 <strong><code>FALSE</code></strong> 。 值越小代表优先级越高。
-  </p>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">此函数可能返回布尔值
-<strong><code>FALSE</code></strong>，但也可能返回等同于 <strong><code>FALSE</code></strong> 的非布尔值。请阅读 <a href="language.types.boolean.html" class="link">布尔类型</a>章节以获取更多信息。应使用
-<a href="language.operators.comparison.html" class="link">===
-运算符</a>来测试此函数的返回值。</p></div>
- </div>
+<HTML  ><HEAD  ><TITLE  >pcntl_getpriority</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Process Control Functions" HREF="ref.pcntl.html"><LINK  REL="PREVIOUS" TITLE="pcntl_fork" HREF="function.pcntl-fork.html"><LINK  REL="NEXT" TITLE="pcntl_setpriority" HREF="function.pcntl-setpriority.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pcntl-fork.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pcntl-setpriority.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pcntl-getpriority" ></A
+>pcntl_getpriority</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93139" ></A
+><P  >    (PHP 5 CVS only)</P
+>pcntl_getpriority&nbsp;--&nbsp;
+     Get the priority of any process
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93142" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pcntl_getpriority</B
+> ( [int pid])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pcntl_getpriority()</B
+> gets the priority of 
+     <TT  CLASS="parameter" ><I  >pid</I
+></TT
+>.  If <TT  CLASS="parameter" ><I  >pid</I
+></TT
+> is not
+     specified, the pid of the current process is used.  Because priority
+     levels can differ between system types and kernel versions, please see
+     your system's getpriority(2) man page for specific details.
+    </P
+><P  >&#13;     <B  CLASS="function" >pcntl_getpriority()</B
+> returns the priority of the process
+     or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.  A lower numerical value causes more favorable
+     scheduling.
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >����</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >����������ܷ��� Boolean <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��Ҳ���ܷ���һ���� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ��ȵط� Boolean ֵ������ 0 ���� "" ������� <A  HREF="language.types.boolean.html"  >Booleans</A
+> ���й��½��Ի�ȡ������Ϣ����ʹ�� <A  HREF="language.operators.comparison.html"  >=== ������</A
+> �����Ըú����ķ���ֵ�� </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pcntl-fork.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pcntl-setpriority.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pcntl_fork</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcntl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pcntl_setpriority</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.pcntl-getpriority-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pcntl-setpriority.html" class="function" rel="rdfs-seeAlso">pcntl_setpriority()</a> - 修改任意进程的优先级</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-setpriority.html">pcntl_setpriority</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

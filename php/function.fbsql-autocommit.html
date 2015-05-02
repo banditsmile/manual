@@ -1,101 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Enable or disable autocommit</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-affected-rows.html">fbsql_affected_rows</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-blob-size.html">fbsql_blob_size</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-autocommit" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_autocommit</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_autocommit</span> &mdash; <span class="dc-title">Enable or disable autocommit</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fbsql-autocommit-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>fbsql_autocommit</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$OnOff</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Returns the current autocommit status. 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fbsql-autocommit-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para">由
-<span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 或
-<span class="function"><a href="function.fbsql-pconnect.html" class="function">fbsql_pconnect()</a></span> 返回的 FrontBase 链接标识符.</p>
-<p class="para">如可选并未指定，函数会尝试查找一个到 FrontBase 服务器的开放链接，且如没有找到这样的链接，会尝试通过不带参数调用 <span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 来创建一个。</p>
-</dd>
-
-    
-     <dt>
-<code class="parameter">OnOff</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If this optional parameter is given the auto commit status will be
-       changed.
-      </p>
-      <p class="para">
-       With <code class="parameter">OnOff</code> set to <strong><code>TRUE</code></strong> each statement will be
-       committed automatically, if no errors was found.
-      </p>
-      <p class="para">
-       With OnOff set to <strong><code>FALSE</code></strong> the user must commit or rollback the
-       transaction using either <span class="function"><a href="function.fbsql-commit.html" class="function">fbsql_commit()</a></span> or
-       <span class="function"><a href="function.fbsql-rollback.html" class="function">fbsql_rollback()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fbsql_autocommit</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_affected_rows" HREF="http://shouce.jb51.net/php/function.fbsql-affected-rows.html"><LINK  REL="NEXT" TITLE="fbsql_change_user" HREF="function.fbsql-change-user.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="http://shouce.jb51.net/php/function.fbsql-affected-rows.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-change-user.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-autocommit" ></A
+>fbsql_autocommit</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN25737" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>fbsql_autocommit&nbsp;--&nbsp;Enable or disable autocommit</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN25740" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >fbsql_autocommit</B
+> ( resource link_identifier [, bool OnOff])<BR  ></BR
+><P  > 
+     <B  CLASS="function" >fbsql_autocommit()</B
+> returns the current
+     autocommit status. If the optional OnOff parameter is
+     given the auto commit status will be changed.
+     With OnOff set to <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> each statement will be committed
+     automatically, if no errors was found.
+     With OnOff set to <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> the user must commit or rollback
+     the transaction using either <A  HREF="function.fbsql-commit.html"  ><B  CLASS="function" >fbsql_commit()</B
+></A
+> or
+     <A  HREF="function.fbsql-rollback.html"  ><B  CLASS="function" >fbsql_rollback()</B
+></A
+>.
+    </P
+><P  >&#13;     See also: <A  HREF="function.fbsql-commit.html"  ><B  CLASS="function" >fbsql_commit()</B
+></A
+> and
+     <A  HREF="function.fbsql-rollback.html"  ><B  CLASS="function" >fbsql_rollback()</B
+></A
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="http://shouce.jb51.net/php/function.fbsql-affected-rows.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-change-user.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_affected_rows</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_change_user</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.fbsql-autocommit-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns the current autocommit status, as a boolean.
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.fbsql-autocommit-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fbsql-commit.html" class="function" rel="rdfs-seeAlso">fbsql_commit()</a> - Commits a transaction to the database</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-rollback.html" class="function" rel="rdfs-seeAlso">fbsql_rollback()</a> - Rollback a transaction to the database</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-affected-rows.html">fbsql_affected_rows</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-blob-size.html">fbsql_blob_size</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,93 +1,141 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä» FTP æœåŠ¡å™¨ä¸Šè·å–æ–‡ä»¶å¹¶å†™å…¥æœ¬åœ°æ–‡ä»¶ï¼ˆnon-blockingï¼‰</title>
+<HTML  ><HEAD  ><TITLE  >ftp_nb_get</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FTP º¯Êı¿â" HREF="ref.ftp.html"><LINK  REL="PREVIOUS" TITLE="ftp_nb_fput" HREF="function.ftp-nb-fput.html"><LINK  REL="NEXT" TITLE="ftp_nb_put" HREF="function.ftp-nb-put.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftp-nb-fput.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-nb-put.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftp-nb-get" ></A
+>ftp_nb_get</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN31703" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>ftp_nb_get&nbsp;--&nbsp;´Ó FTP ·şÎñÆ÷ÉÏ»ñÈ¡ÎÄ¼ş²¢Ğ´Èë±¾µØÎÄ¼ş£¨non-blocking£©</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN31706" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >ftp_nb_get</B
+> ( resource ftp_stream, string local_file, string remote_file, int mode [, int resumepos])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >ftp_nb_get()</B
+> º¯ÊıÓÃÀ´»ñÈ¡²ÎÊı <TT  CLASS="parameter" ><I  >remote_file</I
+></TT
+>
+     Ö¸¶¨µÄµÄÔ¶³ÌÎÄ¼ş£¬²¢±£´æµ½ÓÉ²ÎÊı <TT  CLASS="parameter" ><I  >local_file</I
+></TT
+>
+     Ö¸¶¨µÄ±¾µØÎÄ¼ş¡£´«ÊäÄ£Ê½²ÎÊı
+     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> Ö»ÄÜÎª <TT  CLASS="constant" ><B  >FTP_ASCII</B
+></TT
+> (ÎÄ±¾Ä£Ê½) »ò <TT  CLASS="constant" ><B  >FTP_BINARY</B
+></TT
+>
+     (¶ş½øÖÆÄ£Ê½) Á½ÖÖ¡£Óë <A  HREF="function.ftp-get.html"  ><B  CLASS="function" >ftp_get()</B
+></A
+>
+     º¯Êı²»Í¬µÄÊÇ£¬´Ëº¯ÊıÉÏ´«ÎÄ¼şµÄÊ±ºò²ÉÓÃµÄÊÇÒì²½´«ÊäÄ£Ê½£¬Ò²¾ÍÒâÎ¶×ÅÔÚÎÄ¼ş´«ËÍµÄ¹ı³ÌÖĞ£¬ÄãµÄ³ÌĞò¿ÉÒÔ¼ÌĞø¸ÉÆäËüµÄÊÂÇé¡£
+    </P
+><P  >&#13;     ·µ»Ø <TT  CLASS="constant" ><B  >FTP_FAILED</B
+></TT
+>£¬<TT  CLASS="constant" ><B  >FTP_FINISHED</B
+></TT
+>
+     »ò <TT  CLASS="constant" ><B  >FTP_MOREDATA</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31739" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ftp_nb_get()</B
+> ÊµÀı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ¿ªÊ¼ÏÂÔØ<br  /></font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_get</font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">, </font><font  color="#DD0000">"test"</font><font  color="#007700">, </font><font  color="#DD0000">"README"</font><font  color="#007700">, </font><font  color="#0000BB">FTP_BINARY</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">$ret </font><font  color="#007700">== </font><font  color="#0000BB">FTP_MOREDATA</font><font  color="#007700">) {<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ÕâÀï¿ÉÒÔ²åÈëÆäËü´úÂë<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"."</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ¼ÌĞøÏÂÔØ...<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_continue </font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">);<br  />}<br  />if (</font><font  color="#0000BB">$ret </font><font  color="#007700">!= </font><font  color="#0000BB">FTP_FINISHED</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"ÏÂÔØÖĞ³ö´í..."</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;exit(</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31743" ></A
+><P  ><B  >Àı×Ó 2. Ê¹ÓÃ <B  CLASS="function" >ftp_nb_get()</B
+> º¯Êı¶ÏÏßĞø´«</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ¿ªÊ¼<br  /></font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_get </font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">, </font><font  color="#DD0000">"test"</font><font  color="#007700">, </font><font  color="#DD0000">"README"</font><font  color="#007700">, </font><font  color="#0000BB">FTP_BINARY</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">filesize</font><font  color="#007700">(</font><font  color="#DD0000">"test"</font><font  color="#007700">));<br  /></font><font  color="#FF8000">// »ò: $ret = ftp_nb_get ($my_connection, "test", "README",<br  />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FTP_BINARY, FTP_AUTORESUME);<br  /></font><font  color="#007700">while (</font><font  color="#0000BB">$ret </font><font  color="#007700">== </font><font  color="#0000BB">FTP_MOREDATA</font><font  color="#007700">) {<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ¿ÉÒÔ²åÈëÆäËü´úÂë<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"."</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ¼ÌĞø´«ËÍ...<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_continue </font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">);<br  />}<br  />if (</font><font  color="#0000BB">$ret </font><font  color="#007700">!= </font><font  color="#0000BB">FTP_FINISHED</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"ÏÂÔØ³ö´í..."</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;exit(</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31747" ></A
+><P  ><B  >Àı×Ó 3. 
+       ÓÃ <B  CLASS="function" >ftp_nb_get()</B
+> ÔÚ 100 µÄÎ»ÖÃ¶ÏÏßĞø´«²¢´æÎª "newfile"
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+// ½ûÖ¹×Ô¶¯ËÑÑ°<br  />ftp_set_option ($my_connection, FTP_AUTOSEEK, FALSE);<br  /><br  />// ¿ªÊ¼<br  />$ret = ftp_nb_get ($my_connection, "newfile", "README", FTP_BINARY, 100);<br  />while ($ret == FTP_MOREDATA) {<br  /><br  />&nbsp;&nbsp;&nbsp;...<br  /><br  />&nbsp;&nbsp;&nbsp;// ¼ÌĞøÏÂÔØ...<br  />&nbsp;&nbsp;&nbsp;$ret = ftp_nb_continue ($my_connection);<br  />}</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÔÚÉÏ±ßµÄÀı×ÓÖĞ£¬<TT  CLASS="filename" >"newfile"</TT
+> ÎÄ¼ş±È·şÎñÆ÷ÉÏµÄÎÄ¼ş
+     <TT  CLASS="filename" >"README"</TT
+> ÒªĞ¡ 100 ×Ö½Ú¡£ÕâÊÇÒòÎªÎÒÃÇÊÇ´ÓÎÄ¼şµÄÆ«ÒÆÁ¿ 100
+     ´¦¿ªÊ¼¶ÁÈ¡µÄ£¬Èç¹ûÃ»ÓĞ½ûÖ¹ <TT  CLASS="constant" ><B  >FTP_AUTOSEEK</B
+></TT
+>£¬Ôò
+     <TT  CLASS="filename" >"newfile"</TT
+> µÄÇ° 100
+     ×Ö½Ú½«»áÊÇ <TT  CLASS="literal" >'\0'</TT
+>¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.ftp-nb-fget.html"  ><B  CLASS="function" >ftp_nb_fget()</B
+></A
+>£¬<A  HREF="function.ftp-nb-continue.html"  ><B  CLASS="function" >ftp_nb_continue()</B
+></A
+>£¬<A  HREF="function.ftp-get.html"  ><B  CLASS="function" >ftp_get()</B
+></A
+>
+     ºÍ <A  HREF="function.ftp-fget.html"  ><B  CLASS="function" >ftp_fget()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftp-nb-fput.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-nb-put.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftp_nb_fput</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ftp.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_nb_put</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-nb-fput.html">ftp_nb_fput</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-nb-put.html">ftp_nb_put</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftp-nb-get" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">ftp_nb_get</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">ftp_nb_get</span> &mdash; <span class="dc-title">ä» FTP æœåŠ¡å™¨ä¸Šè·å–æ–‡ä»¶å¹¶å†™å…¥æœ¬åœ°æ–‡ä»¶ï¼ˆnon-blockingï¼‰</span></p>
 
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.ftp-nb-get-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">bool</span> <span class="methodname"><strong>ftp_nb_get</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
-     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$local_file</code></span>
-     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$remote_file</code></span>
-     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$resumepos</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>ftp_nb_get()</strong></span> å‡½æ•°ç”¨æ¥è·å–å‚æ•° <code class="parameter">remote_file</code>
-     æŒ‡å®šçš„çš„è¿œç¨‹æ–‡ä»¶ï¼Œå¹¶ä¿å­˜åˆ°ç”±å‚æ•° <code class="parameter">local_file</code>
-     æŒ‡å®šçš„æœ¬åœ°æ–‡ä»¶ã€‚ä¼ è¾“æ¨¡å¼å‚æ•°
-     <code class="parameter">mode</code> åªèƒ½ä¸º <strong><code>FTP_ASCII</code></strong> (æ–‡æœ¬æ¨¡å¼) æˆ– <strong><code>FTP_BINARY</code></strong>
-     (äºŒè¿›åˆ¶æ¨¡å¼) ä¸¤ç§ã€‚ä¸ <span class="function"><a href="function.ftp-get.html" class="function">ftp_get()</a></span>
-     å‡½æ•°ä¸åŒçš„æ˜¯ï¼Œæ­¤å‡½æ•°ä¸Šä¼ æ–‡ä»¶çš„æ—¶å€™é‡‡ç”¨çš„æ˜¯å¼‚æ­¥ä¼ è¾“æ¨¡å¼ï¼Œä¹Ÿå°±æ„å‘³ç€åœ¨æ–‡ä»¶ä¼ é€çš„è¿‡ç¨‹ä¸­ï¼Œä½ çš„ç¨‹åºå¯ä»¥ç»§ç»­å¹²å…¶å®ƒçš„äº‹æƒ…ã€‚
-    </p>
-    <p class="para">
-     è¿”å› <strong><code>FTP_FAILED</code></strong>ï¼Œ<strong><code>FTP_FINISHED</code></strong>
-     æˆ– <strong><code>FTP_MOREDATA</code></strong>ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-4583">
-      <p><strong>Example #1 <span class="function"><strong>ftp_nb_get()</strong></span> å®ä¾‹</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å¼€å§‹ä¸‹è½½<br /></span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_get</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"README"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FTP_BINARY</span><span style="color: #007700">);<br />while&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">FTP_MOREDATA</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;è¿™é‡Œå¯ä»¥æ’å…¥å…¶å®ƒä»£ç <br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ç»§ç»­ä¸‹è½½...<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_continue&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">);<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">FTP_FINISHED</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ä¸‹è½½ä¸­å‡ºé”™..."</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-     <div class="example" id="example-4584">
-      <p><strong>Example #2 ä½¿ç”¨ <span class="function"><strong>ftp_nb_get()</strong></span> å‡½æ•°æ–­çº¿ç»­ä¼ </strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å¼€å§‹<br /></span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_get&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"README"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FTP_BINARY</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"test"</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">//&nbsp;æˆ–:&nbsp;$ret&nbsp;=&nbsp;ftp_nb_get&nbsp;($my_connection,&nbsp;"test",&nbsp;"README",<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FTP_BINARY,&nbsp;FTP_AUTORESUME);<br /></span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">FTP_MOREDATA</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å¯ä»¥æ’å…¥å…¶å®ƒä»£ç <br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ç»§ç»­ä¼ é€...<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_continue&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">);<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">FTP_FINISHED</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ä¸‹è½½å‡ºé”™..."</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-     <div class="example" id="example-4585">
-      <p><strong>Example #3 
-       ç”¨ <span class="function"><strong>ftp_nb_get()</strong></span> åœ¨ 100 çš„ä½ç½®æ–­çº¿ç»­ä¼ å¹¶å­˜ä¸º &quot;newfile&quot;
-      </strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-//&nbsp;ç¦æ­¢è‡ªåŠ¨æœå¯»<br />ftp_set_option&nbsp;($my_connection,&nbsp;FTP_AUTOSEEK,&nbsp;FALSE);<br /><br />//&nbsp;å¼€å§‹<br />$ret&nbsp;=&nbsp;ftp_nb_get&nbsp;($my_connection,&nbsp;"newfile",&nbsp;"README",&nbsp;FTP_BINARY,&nbsp;100);<br />while&nbsp;($ret&nbsp;==&nbsp;FTP_MOREDATA)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;...<br /><br />&nbsp;&nbsp;&nbsp;//&nbsp;ç»§ç»­ä¸‹è½½...<br />&nbsp;&nbsp;&nbsp;$ret&nbsp;=&nbsp;ftp_nb_continue&nbsp;($my_connection);<br />}</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     åœ¨ä¸Šè¾¹çš„ä¾‹å­ä¸­ï¼Œ<var class="filename">&quot;newfile&quot;</var> æ–‡ä»¶æ¯”æœåŠ¡å™¨ä¸Šçš„æ–‡ä»¶
-     <var class="filename">&quot;README&quot;</var> è¦å° 100 å­—èŠ‚ã€‚è¿™æ˜¯å› ä¸ºæˆ‘ä»¬æ˜¯ä»æ–‡ä»¶çš„åç§»é‡ 100
-     å¤„å¼€å§‹è¯»å–çš„ï¼Œå¦‚æœæ²¡æœ‰ç¦æ­¢ <strong><code>FTP_AUTOSEEK</code></strong>ï¼Œåˆ™
-     <var class="filename">&quot;newfile&quot;</var> çš„å‰ 100
-     å­—èŠ‚å°†ä¼šæ˜¯ <em>&#039;\0&#039;</em>ã€‚
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.ftp-nb-fget.html" class="function">ftp_nb_fget()</a></span>ï¼Œ<span class="function"><a href="function.ftp-nb-continue.html" class="function">ftp_nb_continue()</a></span>ï¼Œ<span class="function"><a href="function.ftp-get.html" class="function">ftp_get()</a></span>
-     å’Œ <span class="function"><a href="function.ftp-fget.html" class="function">ftp_fget()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-nb-fput.html">ftp_nb_fput</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-nb-put.html">ftp_nb_put</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,178 +1,128 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œ</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fgetcsv.html">fgetcsv</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fgetss.html">fgetss</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fgets" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fgets</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">fgets</span> &mdash; <span class="dc-title">ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œ</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.fgets-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>fgets</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fgets-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">æ–‡ä»¶æŒ‡é’ˆå¿…é¡»æ˜¯æœ‰æ•ˆçš„ï¼Œå¿…é¡»æŒ‡å‘ç”±
-<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> æˆ– <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> æˆåŠŸæ‰“å¼€çš„æ–‡ä»¶(å¹¶è¿˜æœªç”± <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> å…³é—­)ã€‚</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ä» <code class="parameter">handle</code>
-   æŒ‡å‘çš„æ–‡ä»¶ä¸­è¯»å–ä¸€è¡Œå¹¶è¿”å›é•¿åº¦æœ€å¤šä¸º <code class="parameter">length</code> - 1
-   å­—èŠ‚çš„å­—ç¬¦ä¸²ã€‚ç¢°åˆ°æ¢è¡Œç¬¦ï¼ˆåŒ…æ‹¬åœ¨è¿”å›å€¼ä¸­ï¼‰ã€EOF æˆ–è€…å·²ç»è¯»å–äº† length - 1
-   å­—èŠ‚ååœæ­¢ï¼ˆçœ‹å…ˆç¢°åˆ°é‚£ä¸€ç§æƒ…å†µï¼‰ã€‚å¦‚æœæ²¡æœ‰æŒ‡å®š
-   <code class="parameter">length</code>ï¼Œåˆ™é»˜è®¤ä¸º 1Kï¼Œæˆ–è€…è¯´ 1024 å­—èŠ‚ã€‚
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-       ä» PHP 4.3 å¼€å§‹ï¼Œå¿½ç•¥æ‰
-    length åˆ™è¡Œçš„é•¿åº¦è¢«å‡å®šä¸º 1024ï¼Œå°†ç»§ç»­ä»æµä¸­è¯»å–æ•°æ®ç›´åˆ°è¡Œç»“æŸã€‚å¦‚æœæ–‡ä»¶ä¸­çš„å¤§å¤šæ•°è¡Œéƒ½å¤§äº
-    8KBï¼Œåˆ™åœ¨è„šæœ¬ä¸­æŒ‡å®šæœ€å¤§è¡Œçš„é•¿åº¦åœ¨åˆ©ç”¨èµ„æºä¸Šæ›´ä¸ºæœ‰æ•ˆã€‚
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fgets-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   ä»æŒ‡é’ˆ <code class="parameter">handle</code> æŒ‡å‘çš„æ–‡ä»¶ä¸­è¯»å–äº† <code class="parameter">length</code> - 1 å­—èŠ‚åè¿”å›å­—ç¬¦ä¸²ã€‚ 
-   å¦‚æœæ–‡ä»¶æŒ‡é’ˆä¸­æ²¡æœ‰æ›´å¤šçš„æ•°æ®äº†åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
-  <p class="para">
-   é”™è¯¯å‘ç”Ÿæ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.fgets-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        <span class="function"><strong>fgets()</strong></span> å¼€å§‹äºŒè¿›åˆ¶å®‰å…¨
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        <code class="parameter">length</code> å‚æ•°æˆä¸ºå¯é€‰ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fgets</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fgetcsv" HREF="function.fgetcsv.html"><LINK  REL="NEXT" TITLE="fgetss" HREF="function.fgetss.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fgetcsv.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fgetss.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fgets" ></A
+>fgets</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN27848" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>fgets&nbsp;--&nbsp;´ÓÎÄ¼şÖ¸ÕëÖĞ¶ÁÈ¡Ò»ĞĞ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN27851" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >fgets</B
+> ( int handle [, int length])<BR  ></BR
+><P  >&#13;     ´Ó <TT  CLASS="parameter" ><I  >handle</I
+></TT
+> Ö¸ÏòµÄÎÄ¼şÖĞ¶ÁÈ¡Ò»ĞĞ²¢·µ»Ø³¤¶È×î¶àÎª length - 1
+     ×Ö½ÚµÄ×Ö·û´®¡£Åöµ½»»ĞĞ·û£¨°üÀ¨ÔÚ·µ»ØÖµÖĞ£©¡¢EOF »òÕßÒÑ¾­¶ÁÈ¡ÁË length - 1
+     ×Ö½ÚºóÍ£Ö¹£¨¿´ÏÈÅöµ½ÄÇÒ»ÖÖÇé¿ö£©¡£Èç¹ûÃ»ÓĞÖ¸¶¨ length£¬ÔòÄ¬ÈÏÎª 1K£¬»òÕßËµ 1024 ×Ö½Ú¡£
+    </P
+><P  >&#13;     ³ö´íÊ±·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     Í¨³£µÄÈ±Ïİ£º
+    </P
+><P  >&#13;     Ï°¹ßÁË C ÓïÑÔÖĞ <B  CLASS="function" >fgets()</B
+> Óï·¨µÄÈËÓ¦¸Ã×¢Òâµ½ <TT  CLASS="literal" >EOF</TT
+>
+     ÊÇÔõÑù±»·µ»ØµÄ¡£
+    </P
+><P  >&#13;     ÎÄ¼şÖ¸Õë±ØĞëÓĞĞ§£¬²¢ÇÒÊÇÍ¨¹ı
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> »ò
+     <A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+> ³É¹¦´ò¿ªµÄ¡£
+    </P
+><P  >&#13;     ÒÔÏÂÊÇÒ»¸ö¼òµ¥Àı×Ó£º
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN27874" ></A
+><P  ><B  >Àı×Ó 1. ÖğĞĞ¶ÁÈ¡ÎÄ¼ş</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$handle </font><font  color="#007700">= </font><font  color="#0000BB">fopen </font><font  color="#007700">(</font><font  color="#DD0000">"/tmp/inputfile.txt"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">);<br  />while (!</font><font  color="#0000BB">feof </font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$buffer </font><font  color="#007700">= </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$fd</font><font  color="#007700">, </font><font  color="#0000BB">4096</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$buffer</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">fclose </font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >length</I
+></TT
+> ²ÎÊı´Ó PHP 4.2.0
+      Æğ³ÉÎª¿ÉÑ¡Ïî£¬Èç¹ûºöÂÔ£¬ÔòĞĞµÄ³¤¶È±»¼Ù¶¨Îª 1024¡£´Ó PHP 4.3 ¿ªÊ¼£¬ºöÂÔµô
+      <TT  CLASS="parameter" ><I  >length</I
+></TT
+> ½«¼ÌĞø´ÓÁ÷ÖĞ¶ÁÈ¡Êı¾İÖ±µ½ĞĞ½áÊø¡£Èç¹ûÎÄ¼şÖĞµÄ´ó¶àÊıĞĞ¶¼´óÓÚ
+      8KB£¬ÔòÔÚ½Å±¾ÖĞÖ¸¶¨×î´óĞĞµÄ³¤¶ÈÔÚÀûÓÃ×ÊÔ´ÉÏ¸üÎªÓĞĞ§¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ´Ó PHP 4.3 ¿ªÊ¼±¾º¯Êı¿ÉÒÔ°²È«ÓÃÓÚ¶ş½øÖÆÎÄ¼ş¡£ÔçÆÚµÄ°æ±¾Ôò²»ĞĞ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>Èç¹ûÅöµ½ <TT  CLASS="literal" >PHP</TT
+>
+ÔÚ¶ÁÈ¡ÎÄ¼şÊ±²»ÄÜÊ¶±ğ Macintosh ÎÄ¼ş¸ñÊ½£¬¿ÉÒÔ¼¤»î
+<A  HREF="ref.filesystem.html#ini.auto-detect-line-endings"  >auto_detect_line_endings</A
+>
+µÄÔËĞĞÊ±ÅäÖÃÑ¡Ïî¡£</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+>£¬<A  HREF="function.fgetc.html"  ><B  CLASS="function" >fgetc()</B
+></A
+>£¬<A  HREF="function.stream-get-line.html"  ><B  CLASS="function" >stream_get_line()</B
+></A
+>£¬<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>£¬<A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+>£¬<A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+>
+     ºÍ <A  HREF="function.socket-set-timeout.html"  ><B  CLASS="function" >socket_set_timeout()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fgetcsv.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fgetss.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fgetcsv</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fgetss</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.fgets-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2459">
-    <p><strong>Example #1 é€è¡Œè¯»å–æ–‡ä»¶</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;@</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/tmp/inputfile.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;((</span><span style="color: #0000BB">$buffer&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4096</span><span style="color: #007700">))&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$buffer</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">feof</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Error:&nbsp;unexpected&nbsp;fgets()&nbsp;fail\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.fgets-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">åœ¨è¯»å–åœ¨ Macintosh ç”µè„‘ä¸­æˆ–ç”±å…¶åˆ›å»ºçš„æ–‡ä»¶æ—¶ï¼Œ å¦‚æœ PHP
-ä¸èƒ½æ­£ç¡®çš„è¯†åˆ«è¡Œç»“æŸç¬¦ï¼Œå¯ç”¨è¿è¡Œæ—¶é…ç½®å¯é€‰é¡¹ <a href="filesystem.configuration.html#ini.auto-detect-line-endings" class="link">auto_detect_line_endings</a>
-ä¹Ÿè®¸å¯ä»¥è§£å†³æ­¤é—®é¢˜ã€‚</span></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    ä¹ æƒ¯äº† C è¯­è¨€ä¸­ <span class="function"><strong>fgets()</strong></span> è¯­æ³•çš„äººåº”è¯¥æ³¨æ„åˆ° <em>EOF</em>
-   æ˜¯æ€æ ·è¢«è¿”å›çš„ã€‚
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fgets-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œå¹¶è¿‡æ»¤æ‰ HTML æ ‡è®°</span></li>
-    <li class="member"><span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - è¯»å–æ–‡ä»¶ï¼ˆå¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶æ–‡ä»¶ï¼‰</span></li>
-    <li class="member"><span class="function"><a href="function.fgetc.html" class="function" rel="rdfs-seeAlso">fgetc()</a> - ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–å­—ç¬¦</span></li>
-    <li class="member"><span class="function"><a href="function.stream-get-line.html" class="function" rel="rdfs-seeAlso">stream_get_line()</a> - ä»èµ„æºæµé‡Œè¯»å–ä¸€è¡Œç›´åˆ°ç»™å®šçš„å®šç•Œç¬¦</span></li>
-    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - æ‰“å¼€æ–‡ä»¶æˆ–è€… URL</span></li>
-    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - æ‰“å¼€è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</span></li>
-    <li class="member"><span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - æ‰“å¼€ä¸€ä¸ªç½‘ç»œè¿æ¥æˆ–è€…ä¸€ä¸ªUnixå¥—æ¥å­—è¿æ¥</span></li>
-    <li class="member"><span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - Set timeout period on a stream</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fgetcsv.html">fgetcsv</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fgetss.html">fgetss</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

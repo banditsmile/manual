@@ -1,87 +1,131 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</title>
+<HTML  ><HEAD  ><TITLE  >ereg</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÕıÔò±í´ïÊ½º¯Êı¿â£¨POSIX À©Õ¹£©" HREF="ref.regex.html"><LINK  REL="PREVIOUS" TITLE="ereg_replace" HREF="function.ereg-replace.html"><LINK  REL="NEXT" TITLE="eregi_replace" HREF="function.eregi-replace.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ereg-replace.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.eregi-replace.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ereg" ></A
+>ereg</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN96554" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>ereg&nbsp;--&nbsp;ÕıÔò±í´ïÊ½Æ¥Åä</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN96557" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >ereg</B
+> ( string pattern, string string [, array regs])<BR  ></BR
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Ê¹ÓÃ Perl ¼æÈİÕıÔò±í´ïÊ½Óï·¨µÄ <A  HREF="function.preg-match.html"  ><B  CLASS="function" >preg_match()</B
+></A
+>
+      º¯ÊıÍ¨³£ÊÇ±È <B  CLASS="function" >ereg()</B
+> ¸ü¿ìµÄÌæ´ú·½°¸¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ÒÔÇø·Ö´óĞ¡Ğ´µÄ·½Ê½ÔÚ <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     ÖĞÑ°ÕÒÓë¸ø¶¨µÄÕıÔò±í´ïÊ½ <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> ËùÆ¥ÅäµÄ×Ó´®¡£
+    </P
+><P  >&#13;     Èç¹ûÕÒµ½Óë <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+>
+     ÖĞÔ²À¨ºÅÄÚµÄ×ÓÄ£Ê½ÏàÆ¥ÅäµÄ×Ó´®²¢ÇÒº¯Êıµ÷ÓÃ¸ø³öÁËµÚÈı¸ö²ÎÊı
+     <TT  CLASS="parameter" ><I  >regs</I
+></TT
+>£¬ÔòÆ¥ÅäÏî½«±»´æÈë
+     <TT  CLASS="parameter" ><I  >regs</I
+></TT
+> Êı×éÖĞ¡£$regs[1]
+     °üº¬µÚÒ»¸ö×óÔ²À¨ºÅ¿ªÊ¼µÄ×Ó´®£¬$regs[2]
+     °üº¬µÚ¶ş¸ö×Ó´®£¬ÒÔ´ËÀàÍÆ¡£$regs[0] °üº¬Õû¸öÆ¥ÅäµÄ×Ö·û´®¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Ö±µ½ PHP 4.1.0 ÎªÖ¹£¬<TT  CLASS="varname" >$regs</TT
+>
+      ½«±»Ìî³äÎªÕıºÃÊ®¸öµ¥Ôª£¬¼´Ê¹Êµ¼ÊÆ¥ÅäµÄ×Ó´®ÉÙÓÚÊ®¸ö¡£Õâ²¢²»Ó°Ïì
+      <B  CLASS="function" >ereg()</B
+> Æ¥Åä¸ü¶à×Ó´®µÄÄÜÁ¦¡£Èç¹ûÃ»ÓĞÕÒµ½Æ¥Åä£¬Ôò
+      <TT  CLASS="literal" >$regs</TT
+> ²»»á±» <B  CLASS="function" >ereg()</B
+> ¸ü¸Ä¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Èç¹ûÔÚ <TT  CLASS="parameter" ><I  >string</I
+></TT
+>
+     ÖĞÕÒµ½ <TT  CLASS="parameter" ><I  >pattern</I
+></TT
+> Ä£Ê½µÄÆ¥ÅäÔò·µ»Ø
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Èç¹ûÃ»ÓĞÕÒµ½Æ¥Åä»ò³ö´íÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ÒÔÏÂ´úÂëÆ¬¶Ï½ÓÊÜ ISO ¸ñÊ½µÄÈÕÆÚ£¨YYYY-MM-DD£©È»ºóÒÔ
+     DD.MM.YYYY ¸ñÊ½ÏÔÊ¾£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN96595" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ereg()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">ereg </font><font  color="#007700">(</font><font  color="#DD0000">"([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})"</font><font  color="#007700">, </font><font  color="#0000BB">$date</font><font  color="#007700">, </font><font  color="#0000BB">$regs</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$regs[3].$regs[2].$regs[1]"</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Invalid date format: $date"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.eregi.html"  ><B  CLASS="function" >eregi()</B
+></A
+>£¬<A  HREF="function.ereg-replace.html"  ><B  CLASS="function" >ereg_replace()</B
+></A
+>£¬<A  HREF="function.eregi-replace.html"  ><B  CLASS="function" >eregi_replace()</B
+></A
+>£¬<A  HREF="function.preg-match.html"  ><B  CLASS="function" >preg_match()</B
+></A
+>£¬<A  HREF="function.strpos.html"  ><B  CLASS="function" >strpos()</B
+></A
+>
+     ºÍ <A  HREF="function.strstr.html"  ><B  CLASS="function" >strstr()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ereg-replace.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.eregi-replace.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ereg_replace</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.regex.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >eregi_replace</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ereg-replace.html">ereg_replace</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.eregi-replace.html">eregi_replace</a></div>
- <div class="up"><a href="ref.regex.html">POSIX Regex å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ereg" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ereg</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ereg</span> &mdash; <span class="dc-title">æ­£åˆ™è¡¨è¾¾å¼åŒ¹é…</span></p>
 
- </div>
- <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.ereg-unknown-unknown-seealsq">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>ereg</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$string</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$regs</code></span>
-  ] )</div>
-
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    ä½¿ç”¨ Perl å…¼å®¹æ­£åˆ™è¡¨è¾¾å¼è¯­æ³•çš„ <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span>
-    å‡½æ•°é€šå¸¸æ˜¯æ¯” <span class="function"><strong>ereg()</strong></span> æ›´å¿«çš„æ›¿ä»£æ–¹æ¡ˆã€‚
-   </p>
-  </p></blockquote>
-  <p class="simpara">
-   ä»¥åŒºåˆ†å¤§å°å†™çš„æ–¹å¼åœ¨ <code class="parameter">string</code>
-   ä¸­å¯»æ‰¾ä¸ç»™å®šçš„æ­£åˆ™è¡¨è¾¾å¼ <code class="parameter">pattern</code> æ‰€åŒ¹é…çš„å­ä¸²ã€‚
-  </p>
-  <p class="simpara">
-   å¦‚æœæ‰¾åˆ°ä¸ <code class="parameter">pattern</code>
-   ä¸­åœ†æ‹¬å·å†…çš„å­æ¨¡å¼ç›¸åŒ¹é…çš„å­ä¸²å¹¶ä¸”å‡½æ•°è°ƒç”¨ç»™å‡ºäº†ç¬¬ä¸‰ä¸ªå‚æ•°
-   <code class="parameter">regs</code>ï¼Œåˆ™åŒ¹é…é¡¹å°†è¢«å­˜å…¥
-   <code class="parameter">regs</code> æ•°ç»„ä¸­ã€‚$regs[1]
-   åŒ…å«ç¬¬ä¸€ä¸ªå·¦åœ†æ‹¬å·å¼€å§‹çš„å­ä¸²ï¼Œ$regs[2]
-   åŒ…å«ç¬¬äºŒä¸ªå­ä¸²ï¼Œä»¥æ­¤ç±»æ¨ã€‚$regs[0] åŒ…å«æ•´ä¸ªåŒ¹é…çš„å­—ç¬¦ä¸²ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    ç›´åˆ° PHP 4.1.0 ä¸ºæ­¢ï¼Œ<var class="varname"><var class="varname">$regs</var></var>
-    å°†è¢«å¡«å……ä¸ºæ­£å¥½åä¸ªå•å…ƒï¼Œå³ä½¿å®é™…åŒ¹é…çš„å­ä¸²å°‘äºåä¸ªã€‚è¿™å¹¶ä¸å½±å“
-    <span class="function"><strong>ereg()</strong></span> åŒ¹é…æ›´å¤šå­ä¸²çš„èƒ½åŠ›ã€‚å¦‚æœæ²¡æœ‰æ‰¾åˆ°åŒ¹é…ï¼Œåˆ™
-    <em>$regs</em> ä¸ä¼šè¢« <span class="function"><strong>ereg()</strong></span> æ›´æ”¹ã€‚
-   </span>
-  </p></blockquote>
-  <p class="simpara">
-   å¦‚æœåœ¨ <code class="parameter">string</code>
-   ä¸­æ‰¾åˆ° <code class="parameter">pattern</code> æ¨¡å¼çš„åŒ¹é…åˆ™è¿”å›
-   æ‰€åŒ¹é…å­—ç¬¦ä¸²çš„é•¿åº¦ï¼Œå¦‚æœæ²¡æœ‰æ‰¾åˆ°åŒ¹é…æˆ–å‡ºé”™åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚å¦‚æœæ²¡æœ‰ä¼ é€’å…¥å¯é€‰å‚æ•°
-   <code class="parameter">regs</code> æˆ–è€…æ‰€åŒ¹é…çš„å­—ç¬¦ä¸²é•¿åº¦ä¸º 0ï¼Œåˆ™æœ¬å‡½æ•°è¿”å› 1ã€‚
-  </p>
-  <p class="para">
-   ä»¥ä¸‹ä»£ç ç‰‡æ–­æ¥å— ISO æ ¼å¼çš„æ—¥æœŸï¼ˆYYYY-MM-DDï¼‰ç„¶åä»¥
-   DD.MM.YYYY æ ¼å¼æ˜¾ç¤ºï¼š
-  </p>
-  <p class="para">
-   <div class="example" id="example-5124">
-    <p><strong>Example #1 <span class="function"><strong>ereg()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">ereg&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$regs</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$regs</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">]</span><span style="color: #DD0000">.</span><span style="color: #0000BB">$regs</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]</span><span style="color: #DD0000">.</span><span style="color: #0000BB">$regs</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Invalid&nbsp;date&nbsp;format:&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   å‚è§ <span class="function"><a href="function.eregi.html" class="function">eregi()</a></span>ï¼Œ<span class="function"><a href="function.ereg-replace.html" class="function">ereg_replace()</a></span>ï¼Œ<span class="function"><a href="function.eregi-replace.html" class="function">eregi_replace()</a></span>ï¼Œ<span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span>ï¼Œ<span class="function"><a href="function.strpos.html" class="function">strpos()</a></span>
-   å’Œ <span class="function"><a href="function.strstr.html" class="function">strstr()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ereg-replace.html">ereg_replace</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.eregi-replace.html">eregi_replace</a></div>
- <div class="up"><a href="ref.regex.html">POSIX Regex å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

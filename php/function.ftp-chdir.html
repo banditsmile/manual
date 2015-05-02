@@ -1,104 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åœ¨ FTP æœåŠ¡å™¨ä¸Šæ”¹å˜å½“å‰ç›®å½•</title>
+<HTML  ><HEAD  ><TITLE  >ftp_chdir</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FTP º¯Êı¿â" HREF="ref.ftp.html"><LINK  REL="PREVIOUS" TITLE="ftp_cdup" HREF="function.ftp-cdup.html"><LINK  REL="NEXT" TITLE="ftp_chmod" HREF="function.ftp-chmod.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftp-cdup.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-chmod.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftp-chdir" ></A
+>ftp_chdir</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN31189" ></A
+><P  >    (PHP 3&#62;= 3.0.13, PHP 4 )</P
+>ftp_chdir&nbsp;--&nbsp;ÔÚ FTP ·şÎñÆ÷ÉÏÇĞ»»µ±Ç°Ä¿Â¼</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN31192" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >ftp_chdir</B
+> ( resource ftp_stream, string directory)<BR  ></BR
+><P  >&#13;     ÇĞ»»µ±Ç°Ä¿Â¼µ½²ÎÊı <TT  CLASS="parameter" ><I  >directory</I
+></TT
+> Ö¸¶¨µÄÄ¿Â¼¡£
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31208" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ftp_chdir()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// set up basic connection<br  /></font><font  color="#0000BB">$conn_id </font><font  color="#007700">= </font><font  color="#0000BB">ftp_connect</font><font  color="#007700">(</font><font  color="#0000BB">$ftp_server</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// login with username and password<br  /></font><font  color="#0000BB">$login_result </font><font  color="#007700">= </font><font  color="#0000BB">ftp_login</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_name</font><font  color="#007700">, </font><font  color="#0000BB">$ftp_user_pass</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// check connection<br  /></font><font  color="#007700">if ((!</font><font  color="#0000BB">$conn_id</font><font  color="#007700">) || (!</font><font  color="#0000BB">$login_result</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"FTP connection has failed !"</font><font  color="#007700">);<br  />}<br  /><br  />echo </font><font  color="#DD0000">"Current directory : "</font><font  color="#007700">, </font><font  color="#0000BB">ftp_pwd</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  />if (@</font><font  color="#0000BB">ftp_chdir</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">, </font><font  color="#DD0000">"somedir"</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Current directory is now : "</font><font  color="#007700">, </font><font  color="#0000BB">ftp_pwd</font><font  color="#007700">(</font><font  color="#0000BB">$conn_id</font><font  color="#007700">), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Couldn't change directory\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     ²Î¼û <A  HREF="function.ftp-cdup.html"  ><B  CLASS="function" >ftp_cdup()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftp-cdup.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-chmod.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftp_cdup</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ftp.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_chmod</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-cdup.html">ftp_cdup</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-chmod.html">ftp_chmod</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftp-chdir" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ftp_chdir</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ftp_chdir</span> &mdash; <span class="dc-title">åœ¨ FTP æœåŠ¡å™¨ä¸Šæ”¹å˜å½“å‰ç›®å½•</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.ftp-chdir-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>ftp_chdir</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$directory</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   å°†å½“å‰ç›®å½•åˆ‡æ¢ä¸ºæŒ‡å®šçš„ç›®å½•ã€‚
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.ftp-chdir-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">ftp_stream</code></dt>
-
-     <dd>
-
-      <p class="para">
-       FTP è¿æ¥çš„æ ‡è¯†ç¬¦ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">directory</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ç›®æ ‡ç›®å½•ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.ftp-chdir-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚å¦‚æœåˆ‡æ¢ç›®å½•å¤±è´¥ï¼ŒPHP è¿˜ä¼šå‘å‡ºä¸€æ¡è­¦å‘Šã€‚
-  </p>
- </div>
- 
- <div class="refsect1 examples" id="refsect1-function.ftp-chdir-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-4569">
-    <p><strong>Example #1 <span class="function"><strong>ftp_chdir()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;set&nbsp;up&nbsp;basic&nbsp;connection<br /></span><span style="color: #0000BB">$conn_id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$ftp_server</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;login&nbsp;with&nbsp;username&nbsp;and&nbsp;password<br /></span><span style="color: #0000BB">$login_result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_login</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ftp_user_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ftp_user_pass</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;check&nbsp;connection<br /></span><span style="color: #007700">if&nbsp;((!</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">)&nbsp;||&nbsp;(!</span><span style="color: #0000BB">$login_result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"FTP&nbsp;connection&nbsp;has&nbsp;failed&nbsp;!"</span><span style="color: #007700">);<br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Current&nbsp;directory:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">ftp_pwd</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;try&nbsp;to&nbsp;change&nbsp;the&nbsp;directory&nbsp;to&nbsp;somedir<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">ftp_chdir</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"somedir"</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Current&nbsp;directory&nbsp;is&nbsp;now:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">ftp_pwd</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Couldn't&nbsp;change&nbsp;directory\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;close&nbsp;the&nbsp;connection&nbsp;<br /></span><span style="color: #0000BB">ftp_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_id</span><span style="color: #007700">);&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p> 
- </div>
- 
- <div class="refsect1 seealso" id="refsect1-function.ftp-chdir-seealso"> 
-  <h3 class="title">å‚è§</h3> 
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ftp-cdup.html" class="function" rel="rdfs-seeAlso">ftp_cdup()</a> - åˆ‡æ¢åˆ°å½“å‰ç›®å½•çš„çˆ¶ç›®å½•</span></li>
-    <li class="member"><span class="function"><a href="function.ftp-pwd.html" class="function" rel="rdfs-seeAlso">ftp_pwd()</a> - è¿”å›å½“å‰ç›®å½•å</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-cdup.html">ftp_cdup</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-chmod.html">ftp_chmod</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

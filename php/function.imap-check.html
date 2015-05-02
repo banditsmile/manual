@@ -1,124 +1,107 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Check current mailbox</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-bodystruct.html">imap_bodystruct</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-clearflag-full.html">imap_clearflag_full</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imap-check" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imap_check</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imap_check</span> &mdash; <span class="dc-title">Check current mailbox</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.imap-check-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>imap_check</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$imap_stream</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Checks information about the current mailbox.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.imap-check-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-imap_stream</code></dt>
-<dd>
-<p class="para">ç”± <span class="function"><a href="function.imap-open.html" class="function">imap_open()</a></span> è¿”å›çš„ IMAP æµã€‚</p></dd>
-
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.imap-check-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns the information in an object with following properties:
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>Date</code></strong> - current system time formatted according to <a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC2822</a>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>Driver</code></strong> - protocol used to access this mailbox:
-      <acronym title="Post Office Protocol version 3">POP3</acronym>, <acronym title="Internet Message Access Protocol">IMAP</acronym>, <acronym title="Network News Transfer Protocol">NNTP</acronym>
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>Mailbox</code></strong> - the mailbox name
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>Nmsgs</code></strong> - number of messages in the mailbox
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>Recent</code></strong> - number of recent messages in the mailbox
-     </span>
-    </li>
-   </ul>
-  </p>
-  <p class="para">
-   Returns <strong><code>FALSE</code></strong> on failure.
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imap-check-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3630">
-    <p><strong>Example #1 <span class="function"><strong>imap_check()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$imap_obj&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imap_check</span><span style="color: #007700">(</span><span style="color: #0000BB">$imap_stream</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$imap_obj</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-object(stdClass)(5) {
-  [&quot;Date&quot;]=&gt;
-  string(37) &quot;Wed, 10 Dec 2003 17:56:54 +0100 (CET)&quot;
-  [&quot;Driver&quot;]=&gt;
-  string(4) &quot;imap&quot;
-  [&quot;Mailbox&quot;]=&gt;
+<HTML  ><HEAD  ><TITLE  >imap_check</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="IMAP, POP3 and NNTP Functions" HREF="ref.imap.html"><LINK  REL="PREVIOUS" TITLE="imap_bodystruct" HREF="function.imap-bodystruct.html"><LINK  REL="NEXT" TITLE="imap_clearflag_full" HREF="function.imap-clearflag-full.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imap-bodystruct.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imap-clearflag-full.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imap-check" ></A
+>imap_check</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN41900" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imap_check&nbsp;--&nbsp;Check current mailbox</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN41903" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >imap_check</B
+> ( resource imap_stream)<BR  ></BR
+><P  >&#13;     Returns information about the current mailbox. Returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on
+     failure.
+    </P
+><P  > 
+     The <B  CLASS="function" >imap_check()</B
+> function checks the current
+     mailbox status on the server and returns the information in an
+     object with following properties:
+    </P
+><P  >&#13;     <P  ></P
+><UL  ><LI  ><P  >&#13;        Date - current system time formatted according to <A  href="http://www.faqs.org/rfcs/rfc822/"  TARGET="_top" >RFC822</A
+>
+       </P
+></LI
+><LI  ><P  >&#13;        Driver - protocol used to access this mailbox: POP3, IMAP, NNTP
+       </P
+></LI
+><LI  ><P  >&#13;        Mailbox - the mailbox name
+       </P
+></LI
+><LI  ><P  >&#13;        Nmsgs - number of messages in the mailbox
+       </P
+></LI
+><LI  ><P  >&#13;        Recent - number of recent messages in the mailbox
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN41929" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imap_check()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$imap_obj </font><font  color="#007700">= </font><font  color="#0000BB">imap_check</font><font  color="#007700">(</font><font  color="#0000BB">$imap_stream</font><font  color="#007700">);<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$imap_obj</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       this will output :
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >object(stdClass)(5) {
+  ["Date"]=&#62;
+  string(37) "Wed, 10 Dec 2003 17:56:54 +0100 (CET)"
+  ["Driver"]=&#62;
+  string(4) "imap"
+  ["Mailbox"]=&#62;
   string(54)
-  &quot;{www.example.com:143/imap/user=&quot;foo@example.com&quot;}INBOX&quot;
-  [&quot;Nmsgs&quot;]=&gt;
+  "{www.example.com:143/imap/user="foo@example.com"}INBOX"
+  ["Nmsgs"]=&#62;
   int(1)
-  [&quot;Recent&quot;]=&gt;
+  ["Recent"]=&#62;
   int(0)
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+}</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imap-bodystruct.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imap-clearflag-full.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imap_bodystruct</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.imap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imap_clearflag_full</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imap-bodystruct.html">imap_bodystruct</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imap-clearflag-full.html">imap_clearflag_full</a></div>
- <div class="up"><a href="ref.imap.html">IMAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

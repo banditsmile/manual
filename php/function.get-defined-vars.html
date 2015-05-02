@@ -1,51 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›ç”±æ‰€æœ‰å·²å®šä¹‰å˜é‡æ‰€ç»„æˆçš„æ•°ç»„</title>
+<HTML  ><HEAD  ><TITLE  >get_defined_vars</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿º¯Êı¿â" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="floatval" HREF="function.floatval.html"><LINK  REL="NEXT" TITLE="get_resource_type" HREF="function.get-resource-type.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.floatval.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-resource-type.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-defined-vars" ></A
+>get_defined_vars</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115426" ></A
+><P  >    (PHP 4 &#62;= 4.0.4)</P
+>get_defined_vars&nbsp;--&nbsp;
+     ·µ»ØÓÉËùÓĞÒÑ¶¨Òå±äÁ¿Ëù×é³ÉµÄÊı×é
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115429" ></A
+><H2  >ÃèÊö</H2
+>array <B  CLASS="methodname" >get_defined_vars</B
+> ( void )<BR  ></BR
+><P  >&#13;     ´Ëº¯Êı·µ»ØÒ»¸ö°üº¬ËùÓĞÒÑ¶¨Òå±äÁ¿ÁĞ±íµÄ¶àÎ¬Êı×é£¬ÕâĞ©±äÁ¿°üÀ¨»·¾³±äÁ¿¡¢·şÎñÆ÷±äÁ¿ºÍÓÃ»§¶¨ÒåµÄ±äÁ¿¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN115436" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$b </font><font  color="#007700">= array(</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">2</font><font  color="#007700">,</font><font  color="#0000BB">3</font><font  color="#007700">,</font><font  color="#0000BB">5</font><font  color="#007700">,</font><font  color="#0000BB">8</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$arr </font><font  color="#007700">= </font><font  color="#0000BB">get_defined_vars</font><font  color="#007700">();<br  /><br  /></font><font  color="#FF8000">// ´òÓ¡ $b<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"b"</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// ´òÓ¡ PHP ½âÊÍ³ÌĞòµÄÂ·¾¶£¨Èç¹û PHP ×÷Îª CGI Ê¹ÓÃµÄ»°£©<br  />// ÀıÈç£º/usr/local/bin/php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"_"</font><font  color="#007700">];<br  /><br  /></font><font  color="#FF8000">// ´òÓ¡ÃüÁîĞĞ²ÎÊı£¨Èç¹ûÓĞµÄ»°£©<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"argv"</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// ´òÓ¡ËùÓĞ·şÎñÆ÷±äÁ¿<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#DD0000">"_SERVER"</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// ´òÓ¡±äÁ¿Êı×éµÄËùÓĞ¿ÉÓÃ¼üÖµ<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">array_keys</font><font  color="#007700">(</font><font  color="#0000BB">get_defined_vars</font><font  color="#007700">()));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.get-defined-functions.html"  ><B  CLASS="function" >get_defined_functions()</B
+></A
+> ºÍ
+     <A  HREF="function.get-defined-constants.html"  ><B  CLASS="function" >get_defined_constants()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.floatval.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-resource-type.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >floatval</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_resource_type</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.floatval.html">floatval</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-resource-type.html">get_resource_type</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-defined-vars" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">get_defined_vars</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.4, PHP 5)</p><p class="refpurpose"><span class="refname">get_defined_vars</span> &mdash; <span class="dc-title">
-     è¿”å›ç”±æ‰€æœ‰å·²å®šä¹‰å˜é‡æ‰€ç»„æˆçš„æ•°ç»„
-    </span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.get-defined-vars-unknown-unknown-seealsq">
-    <h3 class="title">æè¿°</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">array</span> <span class="methodname"><strong>get_defined_vars</strong></span>
-       ( <span class="methodparam">void</span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     æ­¤å‡½æ•°è¿”å›ä¸€ä¸ªåŒ…å«æ‰€æœ‰å·²å®šä¹‰å˜é‡åˆ—è¡¨çš„å¤šç»´æ•°ç»„ï¼Œè¿™äº›å˜é‡åŒ…æ‹¬ç¯å¢ƒå˜é‡ã€æœåŠ¡å™¨å˜é‡å’Œç”¨æˆ·å®šä¹‰çš„å˜é‡ã€‚
-     <div class="informalexample">
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$b&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">,</span><span style="color: #0000BB">3</span><span style="color: #007700">,</span><span style="color: #0000BB">5</span><span style="color: #007700">,</span><span style="color: #0000BB">8</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_defined_vars</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°&nbsp;$b<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"b"</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°&nbsp;PHP&nbsp;è§£é‡Šç¨‹åºçš„è·¯å¾„ï¼ˆå¦‚æœ&nbsp;PHP&nbsp;ä½œä¸º&nbsp;CGI&nbsp;ä½¿ç”¨çš„è¯ï¼‰<br />//&nbsp;ä¾‹å¦‚ï¼š/usr/local/bin/php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"_"</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°å‘½ä»¤è¡Œå‚æ•°ï¼ˆå¦‚æœæœ‰çš„è¯ï¼‰<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"argv"</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°æ‰€æœ‰æœåŠ¡å™¨å˜é‡<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"_SERVER"</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°å˜é‡æ•°ç»„çš„æ‰€æœ‰å¯ç”¨é”®å€¼<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_keys</span><span style="color: #007700">(</span><span style="color: #0000BB">get_defined_vars</span><span style="color: #007700">()));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.get-defined-functions.html" class="function">get_defined_functions()</a></span> å’Œ
-     <span class="function"><a href="function.get-defined-constants.html" class="function">get_defined_constants()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.floatval.html">floatval</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-resource-type.html">get_resource_type</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

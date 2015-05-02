@@ -1,238 +1,106 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç”¨&ldquo;è‡ªç„¶æ’åº&rdquo;ç®—æ³•å¯¹æ•°ç»„æ’åº</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.natcasesort.html">natcasesort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.next.html">next</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.natsort" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">natsort</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">natsort</span> &mdash; <span class="dc-title">
-     ç”¨â€œè‡ªç„¶æ’åºâ€ç®—æ³•å¯¹æ•°ç»„æ’åº
-    </span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.natsort-description">
-  <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">bool</span> <span class="methodname"><strong>natsort</strong></span>
-       ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     æœ¬å‡½æ•°å®ç°äº†ä¸€ä¸ªå’Œäººä»¬é€šå¸¸å¯¹å­—æ¯æ•°å­—å­—ç¬¦ä¸²è¿›è¡Œæ’åºçš„æ–¹æ³•ä¸€æ ·çš„æ’åºç®—æ³•å¹¶ä¿æŒåŸæœ‰é”®ï¼å€¼çš„å…³è”ï¼Œè¿™è¢«ç§°ä¸ºâ€œè‡ªç„¶æ’åºâ€ã€‚æœ¬ç®—æ³•å’Œé€šå¸¸çš„è®¡ç®—æœºå­—ç¬¦ä¸²æ’åºç®—æ³•ï¼ˆç”¨äº
-     <span class="function"><a href="function.sort.html" class="function">sort()</a></span>ï¼‰çš„åŒºåˆ«è§ä¸‹é¢ç¤ºä¾‹ã€‚
-    </p>
-   </div>
-
- <div class="refsect1 parameters" id="refsect1-function.natsort-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">array</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¾“å…¥çš„ arrayã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.natsort-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.natsort-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <table class="doctable informaltable">
-   
-    <thead>
-     <tr>
-      <th>ç‰ˆæœ¬</th>
-      <th>è¯´æ˜</th>
-     </tr>
-
-    </thead>
-
-    <tbody class="tbody">
-     <tr>
-      <td>5.2.10</td>
-      <td>
-       Zero padded numeric strings (e.g., &#039;00005&#039;) now essentially ignore the 0 padding.
-      </td>
-     </tr>
-
-    </tbody>
-   
-  </table>
-
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.natsort-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5341">
-    <p><strong>Example #1 <span class="function"><strong>natsort()</strong></span> examples demonstrating basic usage</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$array2&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"img12.png"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"img10.png"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"img2.png"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"img1.png"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">asort</span><span style="color: #007700">(</span><span style="color: #0000BB">$array1</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Standard&nbsp;sorting\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">natsort</span><span style="color: #007700">(</span><span style="color: #0000BB">$array2</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"\nNatural&nbsp;order&nbsp;sorting\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Standard sorting
+<HTML  ><HEAD  ><TITLE  >natsort</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="natcasesort" HREF="function.natcasesort.html"><LINK  REL="NEXT" TITLE="next" HREF="function.next.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.natcasesort.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.next.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.natsort" ></A
+>natsort</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN10186" ></A
+><P  >    (PHP 4 )</P
+>natsort&nbsp;--&nbsp;
+     ÓÃ¡°×ÔÈ»ÅÅĞò¡±Ëã·¨¶ÔÊı×éÅÅĞò
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN10189" ></A
+><H2  >ËµÃ÷</H2
+>void <B  CLASS="methodname" >natsort</B
+> ( array array)<BR  ></BR
+><P  >&#13;     ±¾º¯ÊıÊµÏÖÁËÒ»¸öºÍÈËÃÇÍ¨³£¶Ô×ÖÄ¸Êı×Ö×Ö·û´®½øĞĞÅÅĞòµÄ·½·¨Ò»ÑùµÄÅÅĞòËã·¨£¬Õâ±»³ÆÎª¡°×ÔÈ»ÅÅĞò¡±¡£±¾Ëã·¨ºÍÍ¨³£µÄ¼ÆËã»ú×Ö·û´®ÅÅĞòËã·¨£¨ÓÃÓÚ
+     <A  HREF="function.sort.html"  ><B  CLASS="function" >sort()</B
+></A
+>£©µÄÇø±ğÊ¾ÀıÈçÏÂ£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10200" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >natsort()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$array1 </font><font  color="#007700">= </font><font  color="#0000BB">$array2 </font><font  color="#007700">= array (</font><font  color="#DD0000">"img12.png"</font><font  color="#007700">, </font><font  color="#DD0000">"img10.png"</font><font  color="#007700">, </font><font  color="#DD0000">"img2.png"</font><font  color="#007700">, </font><font  color="#DD0000">"img1.png"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">sort</font><font  color="#007700">(</font><font  color="#0000BB">$array1</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"Standard sorting\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$array1</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">natsort</font><font  color="#007700">(</font><font  color="#0000BB">$array2</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"\nNatural order sorting\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$array2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÒÔÉÏ´úÂëÏÔÊ¾½á¹ûÎª£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Standard sorting
 Array
 (
-    [3] =&gt; img1.png
-    [1] =&gt; img10.png
-    [0] =&gt; img12.png
-    [2] =&gt; img2.png
+    [0] =&#62; img1.png
+    [1] =&#62; img10.png
+    [2] =&#62; img12.png
+    [3] =&#62; img2.png
 )
 
 Natural order sorting
 Array
 (
-    [3] =&gt; img1.png
-    [2] =&gt; img2.png
-    [1] =&gt; img10.png
-    [0] =&gt; img12.png
-)
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     For more information see: Martin Pool&#039;s <a href="http://sourcefrog.net/projects/natsort/" class="link external">&raquo;&nbsp;Natural Order String Comparison</a>
-     page.
-    </p></div>
-   </div>
-   <div class="example" id="example-5342">
-    <p><strong>Example #2 <span class="function"><strong>natsort()</strong></span> examples demonstrating potential gotchas</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Negative&nbsp;numbers\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$negative&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'-5'</span><span style="color: #007700">,</span><span style="color: #DD0000">'3'</span><span style="color: #007700">,</span><span style="color: #DD0000">'-2'</span><span style="color: #007700">,</span><span style="color: #DD0000">'0'</span><span style="color: #007700">,</span><span style="color: #DD0000">'-1000'</span><span style="color: #007700">,</span><span style="color: #DD0000">'9'</span><span style="color: #007700">,</span><span style="color: #DD0000">'1'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$negative</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">natsort</span><span style="color: #007700">(</span><span style="color: #0000BB">$negative</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$negative</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Zero&nbsp;padding\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$zeros&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'09'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'8'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'10'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'009'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'011'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'0'</span><span style="color: #007700">);&nbsp;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$zeros</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">natsort</span><span style="color: #007700">(</span><span style="color: #0000BB">$zeros</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$zeros</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Other&nbsp;characters&nbsp;interfering\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$images_oops&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'image_1.jpg'</span><span style="color: #007700">,</span><span style="color: #DD0000">'image_12.jpg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'image_21.jpg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'image_4.jpg'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$images_oops</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">natsort</span><span style="color: #007700">(</span><span style="color: #0000BB">$images_oops</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$images_oops</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Sort&nbsp;by&nbsp;keys\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$smoothie&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'orange'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'apple'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yogurt'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'banana'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$smoothie</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">uksort</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$smoothie</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'strnatcmp'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$smoothie</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
+    [3] =&#62; img1.png
+    [2] =&#62; img2.png
+    [1] =&#62; img10.png
+    [0] =&#62; img12.png
+)</PRE
+></TD
+></TR
+></TABLE
+><P  >&#13;       ¸ü¶àĞÅÏ¢¼û Martin Pool µÄ <A  href="http://www.naturalordersort.org/"  TARGET="_top" >Natural Order String Comparison</A
+> Ò³Ãæ¡£
+      </P
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Èç¹ûÄãÏë±£³ÖË÷Òı£¯ÖµµÄ¹ØÁª£¬¿¼ÂÇÊ¹ÓÃ <TT  CLASS="literal" >uasort($arr, 'strnatcmp')</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.natcasesort.html"  ><B  CLASS="function" >natcasesort()</B
+></A
+>£¬<A  HREF="function.strnatcmp.html"  ><B  CLASS="function" >strnatcmp()</B
+></A
+> ºÍ
+     <A  HREF="function.strnatcasecmp.html"  ><B  CLASS="function" >strnatcasecmp()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.natcasesort.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.next.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >natcasesort</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >next</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Negative numbers
-Array
-(
-    [0] =&gt; -5
-    [1] =&gt; 3
-    [2] =&gt; -2
-    [3] =&gt; 0
-    [4] =&gt; -1000
-    [5] =&gt; 9
-    [6] =&gt; 1
-)
-Array
-(
-    [2] =&gt; -2
-    [0] =&gt; -5
-    [4] =&gt; -1000
-    [3] =&gt; 0
-    [6] =&gt; 1
-    [1] =&gt; 3
-    [5] =&gt; 9
-)
 
-Zero padding
-Array
-(
-    [0] =&gt; 09
-    [1] =&gt; 8
-    [2] =&gt; 10
-    [3] =&gt; 009
-    [4] =&gt; 011
-    [5] =&gt; 0
-)
-Array
-(
-    [5] =&gt; 0
-    [1] =&gt; 8
-    [3] =&gt; 009
-    [0] =&gt; 09
-    [2] =&gt; 10
-    [4] =&gt; 011
-)
-
-Other characters interfering
-Array
-(
-    [0] =&gt; image_1.jpg
-    [1] =&gt; image_12.jpg
-    [2] =&gt; image_21.jpg
-    [3] =&gt; image_4.jpg
-)
-Array
-(
-    [0] =&gt; image_1.jpg
-    [3] =&gt; image_4.jpg
-    [1] =&gt; image_12.jpg
-    [2] =&gt; image_21.jpg
-)
-
-Sort by keys
-Array
-(
-    [orange] =&gt; 1
-    [apple]  =&gt; 1
-    [yogurt] =&gt; 4
-    [banana] =&gt; 4
-)
-Array
-(
-    [apple]  =&gt; 1
-    [banana] =&gt; 4
-    [orange] =&gt; 1
-    [yogurt] =&gt; 4
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.natsort-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.natcasesort.html" class="function" rel="rdfs-seeAlso">natcasesort()</a> - ç”¨&ldquo;è‡ªç„¶æ’åº&rdquo;ç®—æ³•å¯¹æ•°ç»„è¿›è¡Œä¸åŒºåˆ†å¤§å°å†™å­—æ¯çš„æ’åº</span></li>
-    <li class="member"><a href="array.sorting.html" class="link">æ•°ç»„æ’åºå‡½æ•°å¯¹æ¯”</a></li>
-    <li class="member"><span class="function"><a href="function.strnatcmp.html" class="function" rel="rdfs-seeAlso">strnatcmp()</a> - ä½¿ç”¨è‡ªç„¶æ’åºç®—æ³•æ¯”è¾ƒå­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.strnatcasecmp.html" class="function" rel="rdfs-seeAlso">strnatcasecmp()</a> - ä½¿ç”¨&ldquo;è‡ªç„¶é¡ºåº&rdquo;ç®—æ³•æ¯”è¾ƒå­—ç¬¦ä¸²ï¼ˆä¸åŒºåˆ†å¤§å°å†™ï¼‰</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.natcasesort.html">natcasesort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.next.html">next</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

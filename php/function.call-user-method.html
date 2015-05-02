@@ -1,68 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å¯¹ç‰¹å®šå¯¹è±¡è°ƒç”¨ç”¨æˆ·æ–¹æ³•ï¼ˆå·²åºŸå¼ƒï¼‰</title>
+<HTML  ><HEAD  ><TITLE  >call_user_method</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Àà£¯¶ÔÏóº¯Êı¿â" HREF="ref.classobj.html"><LINK  REL="PREVIOUS" TITLE="call_user_method_array" HREF="function.call-user-method-array.html"><LINK  REL="NEXT" TITLE="class_exists" HREF="function.class-exists.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.call-user-method-array.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.class-exists.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.call-user-method" ></A
+>call_user_method</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN12922" ></A
+><P  >    (PHP 3&#62;= 3.0.3, PHP 4 )</P
+>call_user_method&nbsp;--&nbsp;
+     µ÷ÓÃÌØ¶¨¶ÔÏóµÄÓÃ»§·½·¨£ÛÒÑÍ£ÓÃ£İ
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN12925" ></A
+><H2  >ÃèÊö</H2
+>mixed <B  CLASS="methodname" >call_user_method</B
+> ( string method_name, object obj [, mixed parameter [, mixed ...]])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      <B  CLASS="function" >call_user_method()</B
+> 
+      º¯Êı´Ó PHP 4.1.0 ¿ªÊ¼ÒÑ¾­Í£ÓÃ£¬Ê¹ÓÃ <A  HREF="function.call-user-func.html"  ><B  CLASS="function" >call_user_func()</B
+></A
+> 
+      º¯ÊıºÍ <TT  CLASS="literal" >array(&#38;$obj, "method_name")</TT
+>
+      Óï·¨´úÌæ¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     ´ÓÓÃ»§¶¨ÒåµÄ <TT  CLASS="parameter" ><I  >obj</I
+></TT
+> 
+     ¶ÔÏóÖĞµ÷ÓÃ <TT  CLASS="parameter" ><I  >method_name</I
+></TT
+>
+     ËùÖ¸µÄ·½·¨¡£ÏÂ±ßÊÇÓÃ·¨Ê¾Àı£¬ÎÒÃÇ¶¨ÒåÁËÒ»¸öÀà£¬½Ó×Å´´½¨ÁËÒ»¸ö¶ÔÏóÊµÀı£¬È»ºóÊ¹ÓÃ
+     <B  CLASS="function" >call_user_method()</B
+> ¼ä½Óµ÷ÓÃËüµÄ
+     <TT  CLASS="varname" >print_info</TT
+> ·½·¨¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN12952" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Country </font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$NAME</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$TLD</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">Country</font><font  color="#007700">(</font><font  color="#0000BB">$name</font><font  color="#007700">, </font><font  color="#0000BB">$tld</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">NAME </font><font  color="#007700">= </font><font  color="#0000BB">$name</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">TLD </font><font  color="#007700">= </font><font  color="#0000BB">$tld</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">print_info</font><font  color="#007700">(</font><font  color="#0000BB">$prestr</font><font  color="#007700">=</font><font  color="#DD0000">""</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$prestr</font><font  color="#007700">.</font><font  color="#DD0000">"Country: "</font><font  color="#007700">.</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">NAME</font><font  color="#007700">.</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$prestr</font><font  color="#007700">.</font><font  color="#DD0000">"Top Level Domain: "</font><font  color="#007700">.</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">TLD</font><font  color="#007700">.</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#0000BB">$cntry </font><font  color="#007700">= new </font><font  color="#0000BB">Country</font><font  color="#007700">(</font><font  color="#DD0000">"Peru"</font><font  color="#007700">,</font><font  color="#DD0000">"pe"</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#DD0000">"* Calling the object method directly\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$cntry</font><font  color="#007700">-&gt;</font><font  color="#0000BB">print_info</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#DD0000">"\n* Calling the same method indirectly\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">call_user_method </font><font  color="#007700">(</font><font  color="#DD0000">"print_info"</font><font  color="#007700">, </font><font  color="#0000BB">$cntry</font><font  color="#007700">, </font><font  color="#DD0000">"\t"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.call-user-func-array.html"  ><B  CLASS="function" >call_user_func_array()</B
+></A
+>¡¢
+     <A  HREF="function.call-user-func.html"  ><B  CLASS="function" >call_user_func()</B
+></A
+> ºÍ
+     <A  HREF="function.call-user-method-array.html"  ><B  CLASS="function" >call_user_method_array()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.call-user-method-array.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.class-exists.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >call_user_method_array</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.classobj.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >class_exists</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.call-user-method-array.html">call_user_method_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.class-alias.html">class_alias</a></div>
- <div class="up"><a href="ref.classobj.html">ç±»/å¯¹è±¡ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.call-user-method" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">call_user_method</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">call_user_method</span> &mdash; <span class="dc-title">
-   å¯¹ç‰¹å®šå¯¹è±¡è°ƒç”¨ç”¨æˆ·æ–¹æ³•ï¼ˆå·²åºŸå¼ƒï¼‰
-  </span></p>
 
- </div>
- <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.call-user-method-unknown-unknown-seealsq">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>call_user_method</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$method_name</code></span>
-   , <span class="methodparam"><span class="type">object</span> <code class="parameter reference">&$obj</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$parameter</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ]] )</div>
-
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    <span class="function"><strong>call_user_method()</strong></span> 
-    å‡½æ•°ä» PHP 4.1.0 å¼€å§‹å·²ç»åœç”¨ï¼Œä½¿ç”¨ <span class="function"><a href="function.call-user-func.html" class="function">call_user_func()</a></span> 
-    å‡½æ•°å’Œ <em>array(&amp;$obj, &quot;method_name&quot;)</em>
-    è¯­æ³•ä»£æ›¿ã€‚
-   </p>
-  </div>
-  <p class="para">
-   ä»ç”¨æˆ·å®šä¹‰çš„ <code class="parameter">obj</code> 
-   å¯¹è±¡ä¸­è°ƒç”¨ <code class="parameter">method_name</code>
-   æŒ‡çš„æ–¹æ³•ã€‚ä¸‹è¾¹æ˜¯ç”¨æ³•ç¤ºä¾‹ï¼Œæˆ‘ä»¬å®šä¹‰äº†ä¸€ä¸ªç±»ï¼Œæ¥ç€åˆ›å»ºäº†ä¸€ä¸ªå¯¹è±¡å®ä¾‹ï¼Œç„¶åä½¿ç”¨
-   <span class="function"><strong>call_user_method()</strong></span> é—´æ¥è°ƒç”¨å®ƒçš„
-   <var class="varname"><var class="varname">print_info</var></var> æ–¹æ³•ã€‚
-  </p>
-  <p class="para">
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Country&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$NAME</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$TLD</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">Country</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$tld</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">NAME&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">TLD&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$tld</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">print_info</span><span style="color: #007700">(</span><span style="color: #0000BB">$prestr</span><span style="color: #007700">=</span><span style="color: #DD0000">""</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$prestr&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"Country:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">NAME&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$prestr&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"Top&nbsp;Level&nbsp;Domain:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">TLD&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$cntry&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Country</span><span style="color: #007700">(</span><span style="color: #DD0000">"Peru"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"pe"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"*&nbsp;Calling&nbsp;the&nbsp;object&nbsp;method&nbsp;directly\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$cntry</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">print_info</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"\n*&nbsp;Calling&nbsp;the&nbsp;same&nbsp;method&nbsp;indirectly\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">call_user_method</span><span style="color: #007700">(</span><span style="color: #DD0000">"print_info"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$cntry</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\t"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="simpara">
-   å‚è§ <span class="function"><a href="function.call-user-func-array.html" class="function">call_user_func_array()</a></span> å’Œ
-   <span class="function"><a href="function.call-user-func.html" class="function">call_user_func()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.call-user-method-array.html">call_user_method_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.class-alias.html">class_alias</a></div>
- <div class="up"><a href="ref.classobj.html">ç±»/å¯¹è±¡ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

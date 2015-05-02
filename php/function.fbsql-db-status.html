@@ -1,135 +1,102 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get the status for a given database</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-db-query.html">fbsql_db_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-drop-db.html">fbsql_drop_db</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-db-status" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_db_status</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.7, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_db_status</span> &mdash; <span class="dc-title">Get the status for a given database</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fbsql-db-status-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>fbsql_db_status</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$database_name</code></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Gets the current status of the specified database.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fbsql-db-status-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">database_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The database name.
-      </p>
-     </dd>
-
-    
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para">由
-<span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 或
-<span class="function"><a href="function.fbsql-pconnect.html" class="function">fbsql_pconnect()</a></span> 返回的 FrontBase 链接标识符.</p>
-<p class="para">如可选并未指定，函数会尝试查找一个到 FrontBase 服务器的开放链接，且如没有找到这样的链接，会尝试通过不带参数调用 <span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 来创建一个。</p>
-</dd>
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fbsql-db-status-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns an integer value with the current status. This can be one of the
-   following constants:
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FALSE</code></strong> - The exec handler for the host was invalid. This error will
-      occur when the <code class="parameter">link_identifier</code> connects directly
-      to a database by using a port number. FBExec can be available on the
-      server but no connection has been made for it.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FBSQL_UNKNOWN</code></strong> - The Status is unknown.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FBSQL_STOPPED</code></strong> - The database is not running. Use
-      <span class="function"><a href="function.fbsql-start-db.html" class="function">fbsql_start_db()</a></span> to start the database.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FBSQL_STARTING</code></strong> - The database is starting.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FBSQL_RUNNING</code></strong> - The database is running and can be
-      used to perform SQL operations.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FBSQL_STOPPING</code></strong> - The database is stopping.
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <strong><code>FBSQL_NOEXEC</code></strong> - FBExec is not running on the server
-      and it is not possible to get the status of the database.
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fbsql_db_status</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_db_query" HREF="function.fbsql-db-query.html"><LINK  REL="NEXT" TITLE="fbsql_drop_db" HREF="function.fbsql-drop-db.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fbsql-db-query.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-drop-db.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-db-status" ></A
+>fbsql_db_status</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN26045" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>fbsql_db_status&nbsp;--&nbsp;Get the status for a given database</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN26048" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >fbsql_db_status</B
+> ( string database_name [, resource link_identifier])<BR  ></BR
+><P  > 
+     Returns: An integer value with the current status.
+    </P
+><P  > 
+     <B  CLASS="function" >fbsql_db_status()</B
+> requests the current status
+     of the database specified by
+     <TT  CLASS="parameter" ><I  >database_name</I
+></TT
+>.  If the
+     <TT  CLASS="parameter" ><I  >link_identifier</I
+></TT
+> is omitted the default
+     link_identifier will be used.
+    </P
+><P  > 
+     The return value can be one of the following constants:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> - The exec handler for the host was invalid. This
+        error will occur when the link_identifier connects directly to
+        a database by using a port number. FBExec can be available on
+        the server but no connection has been made for it.
+       </P
+></LI
+><LI  ><P  >&#13;        FBSQL_UNKNOWN - The Status is unknown.
+       </P
+></LI
+><LI  ><P  >&#13;        FBSQL_STOPPED - The database is not running. Use 
+        <A  HREF="function.fbsql-start-db.html"  ><B  CLASS="function" >fbsql_start_db()</B
+></A
+> to start the database.
+       </P
+></LI
+><LI  ><P  >&#13;        FBSQL_STARTING - The database is starting.
+       </P
+></LI
+><LI  ><P  >&#13;        FBSQL_RUNNING - The database is running and can be used to
+        perform SQL operations.
+       </P
+></LI
+><LI  ><P  >&#13;        FBSQL_STOPPING - The database is stopping.
+       </P
+></LI
+><LI  ><P  >&#13;        FBSQL_NOEXEC - FBExec is not running on the server and it is not 
+        possible to get the status of the database.
+       </P
+></LI
+></UL
+>
+    </P
+><P  > 
+     See also: <A  HREF="function.fbsql-start-db.html"  ><B  CLASS="function" >fbsql_start_db()</B
+></A
+> and
+     <A  HREF="function.fbsql-stop-db.html"  ><B  CLASS="function" >fbsql_stop_db()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fbsql-db-query.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-drop-db.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_db_query</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_drop_db</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.fbsql-db-status-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fbsql-start-db.html" class="function" rel="rdfs-seeAlso">fbsql_start_db()</a> - Start a database on local or remote server</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-stop-db.html" class="function" rel="rdfs-seeAlso">fbsql_stop_db()</a> - Stop a database on local or remote server</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-db-query.html">fbsql_db_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-drop-db.html">fbsql_drop_db</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

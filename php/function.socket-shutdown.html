@@ -1,113 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Shuts down a socket for receiving, sending, or both</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-set-option.html">socket_set_option</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-strerror.html">socket_strerror</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.socket-shutdown" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">socket_shutdown</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">socket_shutdown</span> &mdash; <span class="dc-title">Shuts down a socket for receiving, sending, or both</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.socket-shutdown-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>socket_shutdown</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$how</code><span class="initializer"> = 2</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   The <span class="function"><strong>socket_shutdown()</strong></span> function allows you to stop
-   incoming, outgoing or all data (the default) from being sent through the
-   <code class="parameter">socket</code>
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.socket-shutdown-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A valid socket resource created with <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">how</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The value of <code class="parameter">how</code> can be one of the following:
-       <table class="doctable table">
-        <caption><strong>possible values for <code class="parameter">how</code></strong></caption>
-        
-         <tbody class="tbody">
-          <tr>
-           <td><em>0</em></td>
-           <td>
-            Shutdown socket reading
-           </td>
-          </tr>
-
-          <tr>
-           <td><em>1</em></td>
-           <td>
-            Shutdown socket writing
-           </td>
-          </tr>
-
-          <tr>
-           <td><em>2</em></td>
-           <td>
-            Shutdown socket reading and writing
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >socket_shutdown</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="PREVIOUS" TITLE="socket_set_option" HREF="function.socket-set-option.html"><LINK  REL="NEXT" TITLE="socket_strerror" HREF="function.socket-strerror.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.socket-set-option.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.socket-strerror.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.socket-shutdown" ></A
+>socket_shutdown</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN105224" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>socket_shutdown&nbsp;--&nbsp;Shuts down a socket for receiving, sending, or both. </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN105227" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >socket_shutdown</B
+> ( resource socket [, int how])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     The <B  CLASS="function" >socket_shutdown()</B
+> function allows you to stop
+     incoming, outgoing or all data (the default) from being sent through the
+     <TT  CLASS="parameter" ><I  >socket</I
+></TT
+>
+    </P
+><P  >&#13;     The value of <TT  CLASS="parameter" ><I  >how</I
+></TT
+> can be one of the following:
+     <DIV  CLASS="table" ><A  NAME="AEN105246" ></A
+><P  ><B  >±í¸ñ 1. possible values for <TT  CLASS="parameter" ><I  >how</I
+></TT
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Shutdown socket reading
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Shutdown socket writing
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >2</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Shutdown socket reading and writing
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.socket-set-option.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.socket-strerror.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >socket_set_option</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >socket_strerror</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.socket-shutdown-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-set-option.html">socket_set_option</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-strerror.html">socket_strerror</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,295 +1,194 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å‡½æ•°çš„å‚æ•°</title>
+<HTML  ><HEAD  ><TITLE  >º¯ÊıµÄ²ÎÊı</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı" HREF="functions.html"><LINK  REL="PREVIOUS" TITLE="º¯Êı" HREF="functions.html"><LINK  REL="NEXT" TITLE="·µ»ØÖµ" HREF="functions.returning-values.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="functions.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 12. º¯Êı</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="functions.returning-values.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="functions.arguments" ></A
+>º¯ÊıµÄ²ÎÊı</H1
+><P  >&#13;    Í¨¹ı²ÎÊıÁĞ±í¿ÉÒÔ´«µİĞÅÏ¢µ½º¯Êı£¬¸ÃÁĞ±íÊÇÒÔ¶ººÅ×÷Îª·Ö¸ô·ûµÄ±äÁ¿ºÍ³£Á¿ÁĞ±í¡£
+   </P
+><P  >&#13;     PHP Ö§³Ö°´Öµ´«µİ²ÎÊı£¨Ä¬ÈÏ£©,
+     <A  HREF="functions.arguments.html#functions.arguments.by-reference"  >Í¨¹ıÒıÓÃ´«µİ</A
+>, ºÍ
+     <A  HREF="functions.arguments.html#functions.arguments.default"  >Ä¬ÈÏ²ÎÊıÖµ</A
+>.
+     ¿É±ä³¤¶È²ÎÊıÁĞ±í½öÔÚ PHP 4 ºÍºóĞø°æ±¾ÖĞÖ§³Ö£»¸ü¶àĞÅÏ¢Çë²ÎÕÕ <A  HREF="functions.arguments.html#functions.variable-arg-list"  >¿É±ä³¤¶È²ÎÊıÁĞ±í</A
+>
+     ºÍÉæ¼°µ½µÄÏà¹Øº¯Êı <A  HREF="function.func-num-args.html"  ><B  CLASS="function" >func_num_args()</B
+></A
+>£¬
+     <A  HREF="function.func-get-arg.html"  ><B  CLASS="function" >func_get_arg()</B
+></A
+>, ºÍ
+     <A  HREF="function.func-get-args.html"  ><B  CLASS="function" >func_get_args()</B
+></A
+>¡£
+     PHP 3 ÖĞÍ¨¹ı´«µİÒ»¸öÊı×é²ÎÊı¿ÉÒÔ´ïµ½ÀàËÆµÄĞ§¹û£º
+    </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5552" ></A
+><P  ><B  >Àı×Ó 12-4. Ïòº¯Êı´«µİÊı×é</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">takes_array</font><font  color="#007700">(</font><font  color="#0000BB">$input</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$input[0] + $input[1] = "</font><font  color="#007700">, </font><font  color="#0000BB">$input</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]+</font><font  color="#0000BB">$input</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">];<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="functions.arguments.by-reference" ></A
+>Í¨¹ıÒıÓÃ´«µİ²ÎÊı</H2
+><P  >&#13;     È±Ê¡Çé¿öÏÂ£¬º¯Êı²ÎÊıÍ¨¹ıÖµ´«µİ£¨Òò¶ø¼´Ê¹ÔÚº¯ÊıÄÚ²¿¸Ä±ä²ÎÊıµÄÖµ£¬Ëü
+     ²¢²»»á¸Ä±äº¯ÊıÍâ²¿µÄÖµ£©¡£Èç¹ûÄãÏ£ÍûÔÊĞíº¯ÊıĞŞ¸ÄËüµÄ²ÎÊıÖµ£¬Äã±ØĞë
+     Í¨¹ıÒıÓÃ´«µİ²ÎÊı¡£
+    </P
+><P  >&#13;     Èç¹ûÏëÒªº¯ÊıµÄÒ»¸ö²ÎÊı×ÜÊÇÍ¨¹ıÒıÓÃ´«µİ£¬Äã¿ÉÒÔÔÚº¯Êı¶¨ÒåÖĞ¸Ã²ÎÊıµÄ
+     Ç°ÃæÔ¤ÏÈ¼ÓÉÏ·ûºÅ£¨&#38;£©£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5560" ></A
+><P  ><B  >Àı×Ó 12-5. ÓÃÒıÓÃ´«µİº¯Êı²ÎÊı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">add_some_extra</font><font  color="#007700">(&amp;</font><font  color="#0000BB">$string</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$string </font><font  color="#007700">.= </font><font  color="#DD0000">'and something extra.'</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">$str </font><font  color="#007700">= </font><font  color="#DD0000">'This is a string, '</font><font  color="#007700">;<br  /></font><font  color="#0000BB">add_some_extra</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$str</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// outputs 'This is a string, and something extra.'<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="functions.arguments.default" ></A
+>Ä¬ÈÏ²ÎÊıµÄÖµ</H2
+><P  >&#13;     º¯Êı¿ÉÒÔ¶¨Òå C++ ·ç¸ñµÄ±êÁ¿²ÎÊıÄ¬ÈÏÖµ£¬ÈçÏÂ£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5567" ></A
+><P  ><B  >Àı×Ó 12-6. º¯ÊıÖĞÄ¬ÈÏ²ÎÊıµÄÓÃÍ¾</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">makecoffee </font><font  color="#007700">(</font><font  color="#0000BB">$type </font><font  color="#007700">= </font><font  color="#DD0000">"cappuccino"</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#DD0000">"Making a cup of $type.\n"</font><font  color="#007700">;<br  />}<br  />echo </font><font  color="#0000BB">makecoffee </font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">makecoffee </font><font  color="#007700">(</font><font  color="#DD0000">"espresso"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÉÏÊöÆ¬¶ÏµÄÊä³öÊÇ£º
+    </P
+><P  >&#13;     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Making a cup of cappuccino.
+Making a cup of espresso.</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Ä¬ÈÏÖµ±ØĞëÊÇ³£Á¿±í´ïÊ½£¬²»ÊÇ£¨±ÈÈç£©±äÁ¿£¬Àà³ÉÔ±£¬»òÕßº¯Êıµ÷ÓÃ¡£
+    </P
+><P  >&#13;     Çë×¢Òâµ±Ê¹ÓÃÄ¬ÈÏ²ÎÊıÊ±£¬ÈÎºÎÄ¬ÈÏ²ÎÊı±ØĞë·ÅÔÚÈÎºÎ·ÇÄ¬ÈÏ²ÎÊıµÄÓÒ²à£»·ñÔò£¬
+     ¿ÉÄÜº¯Êı½«²»»á°´ÕÕÔ¤ÆÚµÄÇé¿ö¹¤×÷¡£¿¼ÂÇÏÂÃæµÄ´úÂëÆ¬¶Ï£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5576" ></A
+><P  ><B  >Àı×Ó 12-7. º¯ÊıÄ¬ÈÏ²ÎÊı²»ÕıÈ·µÄÓÃ·¨</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">makeyogurt </font><font  color="#007700">(</font><font  color="#0000BB">$type </font><font  color="#007700">= </font><font  color="#DD0000">"acidophilus"</font><font  color="#007700">, </font><font  color="#0000BB">$flavour</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#DD0000">"Making a bowl of $type $flavour.\n"</font><font  color="#007700">;<br  />}<br  /><br  />echo </font><font  color="#0000BB">makeyogurt </font><font  color="#007700">(</font><font  color="#DD0000">"raspberry"</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// won't work as expected<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÉÏÊöÀı×ÓµÄÊä³öÊ±£º
+    </P
+><P  >&#13;     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Warning: Missing argument 2 in call to makeyogurt() in
+/usr/local/etc/httpd/htdocs/php3test/functest.html on line 41
+Making a bowl of raspberry .</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÏÖÔÚ£¬±È½ÏÉÏÃæµÄÀı×ÓºÍÕâ¸öÀı×Ó£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5584" ></A
+><P  ><B  >Àı×Ó 12-8. º¯ÊıÄ¬ÈÏ²ÎÊıÕıÈ·µÄÓÃ·¨</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">makeyogurt </font><font  color="#007700">(</font><font  color="#0000BB">$flavour</font><font  color="#007700">, </font><font  color="#0000BB">$type </font><font  color="#007700">= </font><font  color="#DD0000">"acidophilus"</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#DD0000">"Making a bowl of $type $flavour.\n"</font><font  color="#007700">;<br  />}<br  /><br  />echo </font><font  color="#0000BB">makeyogurt </font><font  color="#007700">(</font><font  color="#DD0000">"raspberry"</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// works as expected<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Õâ¸öÀı×ÓµÄÊä³öÊÇ£º
+    </P
+><P  >&#13;     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Making a bowl of acidophilus raspberry.</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="functions.variable-arg-list" ></A
+>¿É±ä³¤¶È²ÎÊıÁĞ±í</H2
+><P  >&#13;     PHP 4 ÒÑ¾­ÔÚÓÃ»§×Ô¶¨Òåº¯ÊıÖĞÖ§³Ö¿É±ä³¤¶È²ÎÊıÁĞ±í¡£Õâ¸öÕæµÄºÜ¼òµ¥£¬
+     Ê¹ÓÃ <A  HREF="function.func-num-args.html"  ><B  CLASS="function" >func_num_args()</B
+></A
+>£¬<A  HREF="function.func-get-arg.html"  ><B  CLASS="function" >func_get_arg()</B
+></A
+>£¬ºÍ
+     <A  HREF="function.func-get-args.html"  ><B  CLASS="function" >func_get_args()</B
+></A
+> º¯Êı.
+    </P
+><P  >&#13;     ÎŞĞèÌØ±ğµÄÓï·¨£¬²ÎÊıÁĞ±íÈÔÈ»ÄÜ¹»±»Ã÷È·ÎŞÎóµÄ´«µİ¸øº¯Êı²¢ÇÒÕı³£ÔË×ª¡£
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="functions.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="functions.returning-values.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >º¯Êı</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="functions.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >·µ»ØÖµ</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="functions.user-defined.html">ç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="functions.returning-values.html">è¿”å›å€¼</a></div>
- <div class="up"><a href="language.functions.html">å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="functions.arguments" class="sect1">
-   <h2 class="title">å‡½æ•°çš„å‚æ•°</h2>
 
-   <p class="simpara">
-    é€šè¿‡å‚æ•°åˆ—è¡¨å¯ä»¥ä¼ é€’ä¿¡æ¯åˆ°å‡½æ•°ï¼Œå³ä»¥é€—å·ä½œä¸ºåˆ†éš”ç¬¦çš„è¡¨è¾¾å¼åˆ—è¡¨ã€‚å‚æ•°æ˜¯ä»å·¦å‘å³æ±‚å€¼çš„ã€‚
-   </p>
-   <p class="para">
-    PHP æ”¯æŒæŒ‰å€¼ä¼ é€’å‚æ•°ï¼ˆé»˜è®¤ï¼‰ï¼Œ<a href="functions.arguments.html#functions.arguments.by-reference" class="link">é€šè¿‡å¼•ç”¨ä¼ é€’å‚æ•°</a>ä»¥åŠ<a href="functions.arguments.html#functions.arguments.default" class="link">é»˜è®¤å‚æ•°</a>ã€‚ä¹Ÿæ”¯æŒ<a href="functions.arguments.html#functions.variable-arg-list" class="link">å¯å˜é•¿åº¦å‚æ•°åˆ—è¡¨</a>ã€‚
-   </p>
-   <p class="para">
-    <div class="example" id="example-164">
-     <p><strong>Example #1 å‘å‡½æ•°ä¼ é€’æ•°ç»„</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">takes_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$input</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;+&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;=&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]+</span><span style="color: #0000BB">$input</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-
-   <div class="sect2" id="functions.arguments.by-reference">
-    <h3 class="title">é€šè¿‡å¼•ç”¨ä¼ é€’å‚æ•°</h3>
-
-    <p class="simpara">
-     é»˜è®¤æƒ…å†µä¸‹ï¼Œå‡½æ•°å‚æ•°é€šè¿‡å€¼ä¼ é€’ï¼ˆå› è€Œå³ä½¿åœ¨å‡½æ•°å†…éƒ¨æ”¹å˜å‚æ•°çš„å€¼ï¼Œå®ƒå¹¶ä¸ä¼šæ”¹å˜å‡½æ•°å¤–éƒ¨çš„å€¼ï¼‰ã€‚å¦‚æœå¸Œæœ›å…è®¸å‡½æ•°ä¿®æ”¹å®ƒçš„å‚æ•°å€¼ï¼Œå¿…é¡»é€šè¿‡å¼•ç”¨ä¼ é€’å‚æ•°ã€‚
-    </p>
-    <p class="para">
-     å¦‚æœæƒ³è¦å‡½æ•°çš„ä¸€ä¸ªå‚æ•°æ€»æ˜¯é€šè¿‡å¼•ç”¨ä¼ é€’ï¼Œå¯ä»¥åœ¨å‡½æ•°å®šä¹‰ä¸­è¯¥å‚æ•°çš„å‰é¢åŠ ä¸Šç¬¦å· &amp;ï¼š
-    </p>
-    <p class="para">
-     <div class="example" id="example-165">
-      <p><strong>Example #2 ç”¨å¼•ç”¨ä¼ é€’å‡½æ•°å‚æ•°</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">add_some_extra</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$string&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'and&nbsp;something&nbsp;extra.'</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;string,&nbsp;'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">add_some_extra</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;outputs&nbsp;'This&nbsp;is&nbsp;a&nbsp;string,&nbsp;and&nbsp;something&nbsp;extra.'<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-   </div>
-
-   <div class="sect2" id="functions.arguments.default">
-    <h3 class="title">é»˜è®¤å‚æ•°çš„å€¼</h3>
-
-    <p class="para">
-     å‡½æ•°å¯ä»¥å®šä¹‰ C++ é£æ ¼çš„æ ‡é‡å‚æ•°é»˜è®¤å€¼ï¼Œå¦‚ä¸‹æ‰€ç¤ºï¼š
-    </p>
-    <p class="para">
-     <div class="example" id="example-166">
-      <p><strong>Example #3 åœ¨å‡½æ•°ä¸­ä½¿ç”¨é»˜è®¤å‚æ•°</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">(</span><span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"cappuccino"</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"Making&nbsp;a&nbsp;cup&nbsp;of&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">(</span><span style="color: #0000BB">null</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">(</span><span style="color: #DD0000">"espresso"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Making a cup of cappuccino.
-Making a cup of .
-Making a cup of espresso.
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     PHP è¿˜å…è®¸ä½¿ç”¨æ•°ç»„ <span class="type"><a href="language.types.array.html" class="type array">array</a></span> å’Œç‰¹æ®Šç±»å‹ <strong><code>NULL</code></strong> ä½œä¸ºé»˜è®¤å‚æ•°ï¼Œä¾‹å¦‚ï¼š
-    </p>
-    <p class="para">
-     <div class="example" id="example-167">
-      <p><strong>Example #4 ä½¿ç”¨éæ ‡é‡ç±»å‹ä½œä¸ºé»˜è®¤å‚æ•°</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">(</span><span style="color: #0000BB">$types&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"cappuccino"</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">$coffeeMaker&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$device&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">is_null</span><span style="color: #007700">(</span><span style="color: #0000BB">$coffeeMaker</span><span style="color: #007700">)&nbsp;?&nbsp;</span><span style="color: #DD0000">"hands"&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">$coffeeMaker</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"Making&nbsp;a&nbsp;cup&nbsp;of&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">join</span><span style="color: #007700">(</span><span style="color: #DD0000">",&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$types</span><span style="color: #007700">).</span><span style="color: #DD0000">"&nbsp;with&nbsp;</span><span style="color: #0000BB">$device</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">makecoffee</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"cappuccino"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"lavazza"</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"teapot"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-    <p class="simpara">
-     é»˜è®¤å€¼å¿…é¡»æ˜¯å¸¸é‡è¡¨è¾¾å¼ï¼Œä¸èƒ½æ˜¯è¯¸å¦‚å˜é‡ï¼Œç±»æˆå‘˜ï¼Œæˆ–è€…å‡½æ•°è°ƒç”¨ç­‰ã€‚
-    </p>
-    <p class="para">
-     æ³¨æ„å½“ä½¿ç”¨é»˜è®¤å‚æ•°æ—¶ï¼Œä»»ä½•é»˜è®¤å‚æ•°å¿…é¡»æ”¾åœ¨ä»»ä½•éé»˜è®¤å‚æ•°çš„å³ä¾§ï¼›å¦åˆ™ï¼Œå‡½æ•°å°†ä¸ä¼šæŒ‰ç…§é¢„æœŸçš„æƒ…å†µå·¥ä½œã€‚è€ƒè™‘ä¸‹é¢çš„ä»£ç ç‰‡æ–­ï¼š
-    </p>
-    <p class="para">
-     <div class="example" id="example-168">
-      <p><strong>Example #5 å‡½æ•°é»˜è®¤å‚æ•°çš„ä¸æ­£ç¡®ç”¨æ³•</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">makeyogurt</span><span style="color: #007700">(</span><span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"acidophilus"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$flavour</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"Making&nbsp;a&nbsp;bowl&nbsp;of&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #DD0000">&nbsp;</span><span style="color: #0000BB">$flavour</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">makeyogurt</span><span style="color: #007700">(</span><span style="color: #DD0000">"raspberry"</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;won't&nbsp;work&nbsp;as&nbsp;expected<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Warning: Missing argument 2 in call to makeyogurt() in 
-/usr/local/etc/httpd/htdocs/phptest/functest.html on line 41
-Making a bowl of raspberry .
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     ç°åœ¨ï¼Œæ¯”è¾ƒä¸Šé¢çš„ä¾‹å­å’Œè¿™ä¸ªä¾‹å­ï¼š
-    </p>
-    <p class="para">
-     <div class="example" id="example-169">
-      <p><strong>Example #6 å‡½æ•°é»˜è®¤å‚æ•°æ­£ç¡®çš„ç”¨æ³•</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">makeyogurt</span><span style="color: #007700">(</span><span style="color: #0000BB">$flavour</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"acidophilus"</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"Making&nbsp;a&nbsp;bowl&nbsp;of&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #DD0000">&nbsp;</span><span style="color: #0000BB">$flavour</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">makeyogurt</span><span style="color: #007700">(</span><span style="color: #DD0000">"raspberry"</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;works&nbsp;as&nbsp;expected<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Making a bowl of acidophilus raspberry.
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <span class="simpara">
-      è‡ª PHP 5 èµ·ï¼Œä¼ å¼•ç”¨çš„å‚æ•°ä¹Ÿå¯ä»¥æœ‰é»˜è®¤å€¼ã€‚
-     </span>
-    </p></blockquote>
-
-   </div>
-
-   <div class="sect2" id="functions.variable-arg-list">
-    <h3 class="title">å¯å˜æ•°é‡çš„å‚æ•°åˆ—è¡¨</h3>
-
-    <p class="simpara">
-     PHP åœ¨ç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°ä¸­æ”¯æŒå¯å˜æ•°é‡çš„å‚æ•°åˆ—è¡¨ã€‚åœ¨ PHP 5.6 åŠä»¥ä¸Šçš„ç‰ˆæœ¬ä¸­ï¼Œç”± <em>...</em> è¯­æ³•å®ç°ï¼›åœ¨ PHP 5.5 åŠæ›´æ—©ç‰ˆæœ¬ä¸­ï¼Œä½¿ç”¨å‡½æ•°
-     <span class="function"><a href="function.func-num-args.html" class="function">func_num_args()</a></span>ï¼Œ<span class="function"><a href="function.func-get-arg.html" class="function">func_get_arg()</a></span>ï¼Œå’Œ
-     <span class="function"><a href="function.func-get-args.html" class="function">func_get_args()</a></span> ã€‚
-    </p>
-    <div class="sect3" id="functions.variable-arg-list.new">
-     <h4 class="title"><em>...</em> in PHP 5.6+</h4>
-
-     <p class="para">
-      In PHP 5.6 and later, argument lists may include the
-      <em>...</em> token to denote that the function accepts a
-      variable number of arguments. The arguments will be passed into the
-      given variable as an array; for example:
-
-      <div class="example" id="example-170">
-       <p><strong>Example #7 Using <em>...</em> to access variable arguments</strong></p>
-       <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(...</span><span style="color: #0000BB">$numbers</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$acc</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-       </div>
-
-       <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-       <div class="example-contents screen">
-<div class="cdata"><pre>
-10
-</pre></div>
-       </div>
-      </div>
-     </p>
-
-     <p class="para">
-      You can also use <em>...</em> when calling functions to unpack
-      an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> or <strong class="classname">Traversable</strong> variable or
-      literal into the argument list:
-
-      <div class="example" id="example-171">
-       <p><strong>Example #8 Using <em>...</em> to provide arguments</strong></p>
-       <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(...[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">]).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(...</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-       </div>
-
-       <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-       <div class="example-contents screen">
-<div class="cdata"><pre>
-3
-3
-</pre></div>
-       </div>
-      </div>
-     </p>
-
-     <p class="para">
-      You may specify normal positional arguments before the
-      <em>...</em> token. In this case, only the trailing arguments
-      that don&#039;t match a positional argument will be added to the array
-      generated by <em>...</em>.
-     </p>
-
-     <p class="para">
-      It is also possible to add a
-      <a href="language.oop5.typehinting.html" class="link">type hint</a> before the
-      <em>...</em> token. If this is present, then all arguments
-      captured by <em>...</em> must be objects of the hinted class.
-
-      <div class="example" id="example-172">
-       <p><strong>Example #9 Type hinted variable arguments</strong></p>
-       <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">total_intervals</span><span style="color: #007700">(</span><span style="color: #0000BB">$unit</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DateInterval&nbsp;</span><span style="color: #007700">...</span><span style="color: #0000BB">$intervals</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$time&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$intervals&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$interval</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$time&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$interval</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$unit</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$time</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P1D'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P2D'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">total_intervals</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">).</span><span style="color: #DD0000">'&nbsp;days'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;This&nbsp;will&nbsp;fail,&nbsp;since&nbsp;null&nbsp;isn't&nbsp;a&nbsp;DateInterval&nbsp;object.<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">total_intervals</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-       </div>
-
-       <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-       <div class="example-contents screen">
-<div class="cdata"><pre>
-3 days
-Catchable fatal error: Argument 2 passed to total_intervals() must be an instance of DateInterval, null given, called in - on line 14 and defined in - on line 2
-</pre></div>
-       </div>
-      </div>
-     </p>
-
-     <p class="para">
-      Finally, you may also pass variable arguments
-      <a href="functions.arguments.html#functions.arguments.by-reference" class="link">by reference</a> by
-      prefixing the <em>...</em> with an ampersand
-      (<em>&amp;</em>).
-     </p>
-    </div>
-
-    <div class="sect3" id="functions.variable-arg-list.old">
-     <h4 class="title">Older versions of PHP</h4>
-
-     <p class="para">
-      No special syntax is required to note that a function is variadic;
-      however access to the function&#039;s arguments must use
-      <span class="function"><a href="function.func-num-args.html" class="function">func_num_args()</a></span>, <span class="function"><a href="function.func-get-arg.html" class="function">func_get_arg()</a></span>
-      and <span class="function"><a href="function.func-get-args.html" class="function">func_get_args()</a></span>.
-     </p>
-
-     <p class="para">
-      The first example above would be implemented as follows in PHP 5.5 and
-      earlier:
-
-      <div class="example" id="example-173">
-       <p><strong>Example #10 Accessing variable arguments in PHP 5.5 and earlier</strong></p>
-       <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">()&nbsp;as&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$acc</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-       </div>
-
-       <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-       <div class="example-contents screen">
-<div class="cdata"><pre>
-10
-</pre></div>
-       </div>
-      </div>
-     </p>
-    </div>
-
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="functions.user-defined.html">ç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="functions.returning-values.html">è¿”å›å€¼</a></div>
- <div class="up"><a href="language.functions.html">å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

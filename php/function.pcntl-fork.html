@@ -1,83 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>在当前进程当前位置产生分支（子进程）。译注：fork是创建了一个子进程，父进程和子进程
-  都从fork的位置开始向下继续执行，不同的是父进程执行过程中，得到的fork返回值为子进程
-  号，而子进程得到的是0。</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-exec.html">pcntl_exec</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pcntl-fork" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pcntl_fork</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">pcntl_fork</span> &mdash; <span class="dc-title">
-  在当前进程当前位置产生分支（子进程）。译注：fork是创建了一个子进程，父进程和子进程
-  都从fork的位置开始向下继续执行，不同的是父进程执行过程中，得到的fork返回值为子进程
-  号，而子进程得到的是0。
-  </span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pcntl-fork-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>pcntl_fork</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-  <span class="function"><strong>pcntl_fork()</strong></span>函数创建一个子进程，这个子进程仅PID（进程号）
-  和PPID（父进程号）与其父进程不同。fork怎样在您的系统工作的详细信息请查阅您的系统
-  的fork（2）手册。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.pcntl-fork-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-  成功时，在父进程执行线程内返回产生的子进程的PID，在子进程执行线程内返回0。失败时，在
-  父进程上下文返回-1，不会创建子进程，并且会引发一个PHP错误。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.pcntl-fork-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-3918">
-    <p><strong>Example #1 <span class="function"><strong>pcntl_fork()</strong></span> 示例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$pid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pcntl_fork</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//父进程和子进程都会执行下面代码<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$pid&nbsp;</span><span style="color: #007700">==&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//错误处理：创建子进程失败时返回-1.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">die(</span><span style="color: #DD0000">'could&nbsp;not&nbsp;fork'</span><span style="color: #007700">);<br />}&nbsp;else&nbsp;if&nbsp;(</span><span style="color: #0000BB">$pid</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//父进程会得到子进程号，所以这里是父进程执行的逻辑<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pcntl_wait</span><span style="color: #007700">(</span><span style="color: #0000BB">$status</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//等待子进程中断，防止子进程成为僵尸进程。<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//子进程得到的$pid为0,&nbsp;所以这里是子进程执行的逻辑。<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.pcntl-fork-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pcntl-waitpid.html" class="function" rel="rdfs-seeAlso">pcntl_waitpid()</a> - 等待或返回fork的子进程状态</span></li>
-    <li class="member"><span class="function"><a href="function.pcntl-signal.html" class="function" rel="rdfs-seeAlso">pcntl_signal()</a> - 安装一个信号处理器</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >pcntl_fork</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Process Control Functions" HREF="ref.pcntl.html"><LINK  REL="PREVIOUS" TITLE="pcntl_exec" HREF="function.pcntl-exec.html"><LINK  REL="NEXT" TITLE="pcntl_getpriority" HREF="function.pcntl-getpriority.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pcntl-exec.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pcntl-getpriority.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pcntl-fork" ></A
+>pcntl_fork</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93119" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>pcntl_fork&nbsp;--&nbsp;Forks the currently running process</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93122" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pcntl_fork</B
+> ( void )<BR  ></BR
+><P  >&#13;    The <B  CLASS="function" >pcntl_fork()</B
+> function creates a child
+    process that differs from the parent process only in its PID and
+    PPID. Please see your system's fork(2) man page for specific details as to
+    how fork works on your system.
+   </P
+><P  >&#13;    On success, the PID of the child process is returned in the
+    parent's thread of execution, and a 0 is returned in the child's
+    thread of execution.  On failure, a -1 will be returned in the
+    parent's context, no child process will be created, and a PHP
+    error is raised.
+   </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN93131" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >pcntl_fork()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$pid </font><font  color="#007700">= </font><font  color="#0000BB">pcntl_fork</font><font  color="#007700">();<br  />if (</font><font  color="#0000BB">$pid </font><font  color="#007700">== -</font><font  color="#0000BB">1</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"could not fork"</font><font  color="#007700">);<br  />} else if (</font><font  color="#0000BB">$pid</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// we are the parent<br  /></font><font  color="#007700">} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// we are the child<br  /></font><font  color="#007700">}<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;    See also <A  HREF="function.pcntl-waitpid.html"  ><B  CLASS="function" >pcntl_waitpid()</B
+></A
+> and
+    <A  HREF="function.pcntl-signal.html"  ><B  CLASS="function" >pcntl_signal()</B
+></A
+>.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pcntl-exec.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pcntl-getpriority.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pcntl_exec</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcntl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pcntl_getpriority</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-exec.html">pcntl_exec</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-get-last-error.html">pcntl_get_last_error</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

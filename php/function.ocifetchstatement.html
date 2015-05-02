@@ -1,33 +1,105 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åˆ«å oci_fetch_all</title>
+<HTML  ><HEAD  ><TITLE  >ocifetchstatement</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Oracle 8 º¯Êı¿â" HREF="ref.oci8.html"><LINK  REL="PREVIOUS" TITLE="ocifetchinto" HREF="function.ocifetchinto.html"><LINK  REL="NEXT" TITLE="lob->getBuffering"
+HREF="function.ocigetbufferinglob.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ocifetchinto.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ocigetbufferinglob.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ocifetchstatement" ></A
+>ocifetchstatement</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN81449" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>ocifetchstatement&nbsp;--&nbsp;»ñÈ¡½á¹ûÊı¾İµÄËùÓĞĞĞµ½Ò»¸öÊı×é</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN81452" ></A
+><H2  >ÃèÊö</H2
+>int <B  CLASS="methodname" >ocifetchstatement</B
+> ( resource stmt, array &#38;output [, int skip [, int maxrows [, int flags]]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >ocifetchstatement()</B
+> ´ÓÒ»¸ö½á¹ûÖĞ»ñÈ¡ËùÓĞµÄĞĞµ½Ò»¸ö
+ÓÃ»§¶¨ÒåµÄÊı×é¡£
+     <B  CLASS="function" >ocifetchstatement()</B
+> ·µ»Ø»ñÈ¡µÄĞĞÊı¡£
+ <TT  CLASS="parameter" ><I  >skip</I
+></TT
+> ÊÇ´Ó½á¹ûÖĞ»ñÈ¡Êı¾İÊ±£¬×î¿ªÊ¼ºöÂÔµÄĞĞÊı
+(¸Ã²ÎÊıµÄÄ¬ÈÏÖµÊÇ 0£¬¼´´ÓµÚÒ»ĞĞ¿ªÊ¼)¡£
+<TT  CLASS="parameter" ><I  >maxrows</I
+></TT
+> ÊÇ¶ÁÈ¡µÄĞĞÊı£¬´ÓµÚ <TT  CLASS="parameter" ><I  >skip</I
+></TT
+> ĞĞ¿ªÊ¼
+(Ä¬ÈÏÖµÊÇ -1£¬¼´ËùÓĞĞĞ)¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> ±íÊ¾´æÔÚµÄÑ¡Ïî£¬
+¿ÉÒÔÊÇÏÂÁĞÈÎÒ»µÄ×éºÏ£º
+     <P  ></P
+><TABLE  BORDER="0" ><TBODY  ><TR  ><TD  >&#13;       <TT  CLASS="constant" ><B  >OCI_FETCHSTATEMENT_BY_ROW</B
+></TT
+>
+      </TD
+></TR
+><TR  ><TD  >&#13;       <TT  CLASS="constant" ><B  >OCI_FETCHSTATEMENT_BY_COLUMN</B
+></TT
+> (Ä¬ÈÏÖµ)
+      </TD
+></TR
+><TR  ><TD  >&#13;       <TT  CLASS="constant" ><B  >OCI_NUM</B
+></TT
+>
+      </TD
+></TR
+><TR  ><TD  >&#13;       <TT  CLASS="constant" ><B  >OCI_ASSOC</B
+></TT
+>
+      </TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN81490" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ocifetchstatement()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* OCIFetchStatement example mbritton at verinet dot com (990624) */<br  /><br  /></font><font  color="#0000BB">$conn </font><font  color="#007700">= </font><font  color="#0000BB">OCILogon</font><font  color="#007700">(</font><font  color="#DD0000">"scott"</font><font  color="#007700">, </font><font  color="#DD0000">"tiger"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$stmt </font><font  color="#007700">= </font><font  color="#0000BB">OCIParse</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#DD0000">"select * from emp"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">OCIExecute</font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$nrows </font><font  color="#007700">= </font><font  color="#0000BB">OCIFetchStatement</font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">, </font><font  color="#0000BB">$results</font><font  color="#007700">);<br  />if (</font><font  color="#0000BB">$nrows </font><font  color="#007700">&gt; </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;table border=\"1\"&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;while (list(</font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$val</font><font  color="#007700">) = </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$results</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;th&gt;$key&lt;/th&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;/tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">$nrows</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">reset</font><font  color="#007700">(</font><font  color="#0000BB">$results</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (</font><font  color="#0000BB">$column </font><font  color="#007700">= </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$results</font><font  color="#007700">)) {&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">$column</font><font  color="#007700">[</font><font  color="#DD0000">'value'</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;td&gt;$data[$i]&lt;/td&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;/tr&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;/table&gt;\n"</font><font  color="#007700">;<br  />} else {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"No data found&lt;br /&gt;\n"</font><font  color="#007700">;<br  />}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br  />echo </font><font  color="#DD0000">"$nrows Records Selected&lt;br /&gt;\n"</font><font  color="#007700">;<br  /> <br  /></font><font  color="#0000BB">OCIFreeStatement</font><font  color="#007700">(</font><font  color="#0000BB">$stmt</font><font  color="#007700">);<br  /></font><font  color="#0000BB">OCILogoff</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ocifetchinto.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ocigetbufferinglob.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ocifetchinto</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.oci8.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >lob-&#62;getBuffering</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ocifetchinto.html">ocifetchinto</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ocifreecollection.html">ocifreecollection</a></div>
- <div class="up"><a href="oldaliases.oci8.html">OCI8 Obsolete Aliases and Functions</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ocifetchstatement" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ocifetchstatement</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PECL OCI8 &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">ocifetchstatement</span> &mdash; <span class="dc-title">åˆ«å <span class="function"><a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a></span></span></p>
 
- </div>
-
- <div class="refsect1 description" id="refsect1-function.ocifetchstatement-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <p class="para">åˆ«å <span class="function"><a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a></span></p>
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">è‡ª PHP 5.4.0
-èµ·ï¼Œå·²ç»<em class="emphasis">åºŸå¼ƒ</em>æ­¤åˆ«åã€‚å¼ºçƒˆå»ºè®®ä¸è¦åº”ç”¨æ­¤åˆ«å ã€‚</p></div>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ocifetchinto.html">ocifetchinto</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ocifreecollection.html">ocifreecollection</a></div>
- <div class="up"><a href="oldaliases.oci8.html">OCI8 Obsolete Aliases and Functions</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

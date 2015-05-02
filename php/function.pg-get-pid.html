@@ -1,53 +1,67 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Ping æ•°æ®åº“è¿æ¥</title>
+<HTML  ><HEAD  ><TITLE  >pg_get_pid</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_get_notify" HREF="function.pg-get-notify.html"><LINK  REL="NEXT" TITLE="pg_get_result" HREF="function.pg-get-result.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-get-notify.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-get-result.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-get-pid" ></A
+>pg_get_pid</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN91785" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>pg_get_pid&nbsp;--&nbsp;Ping Êı¾İ¿âÁ¬½Ó</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN91788" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >pg_get_pid</B
+> ( resource connection)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_get_pid()</B
+> È¡µÃºó¶Ë£¨Êı¾İ¿â·şÎñÆ÷½ø³Ì£©µÄ
+     PID¡£PID ÓÃÀ´¼ì²éÆäËü½ø³ÌÊÇ·ñ·¢ËÍÁË
+     <TT  CLASS="literal" >NOTIFY</TT
+> ÏûÏ¢¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN91800" ></A
+><P  ><B  >Àı×Ó 1. PostgreSQL ºó¶Ë PID</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php <br  />$conn </font><font  color="#007700">= </font><font  color="#0000BB">pg_pconnect</font><font  color="#007700">(</font><font  color="#DD0000">"dbname=publisher"</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$conn</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"An error occured.\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br  />}<br  /><br  /></font><font  color="#FF8000">// Backend process PID. Use PID with pg_get_notify()<br  /></font><font  color="#0000BB">$pid </font><font  color="#007700">= </font><font  color="#0000BB">pg_get_pid</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.pg-get-notify.html"  ><B  CLASS="function" >pg_get_notify()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-get-notify.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-get-result.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_get_notify</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_get_result</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-get-notify.html">pg_get_notify</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-get-result.html">pg_get_result</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-get-pid" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_get_pid</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_get_pid</span> &mdash; <span class="dc-title">Ping æ•°æ®åº“è¿æ¥</span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.pg-get-pid-unknown-unknown-seealsq">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">int</span> <span class="methodname"><strong>pg_get_pid</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_get_pid()</strong></span> å–å¾—åç«¯ï¼ˆæ•°æ®åº“æœåŠ¡å™¨è¿›ç¨‹ï¼‰çš„
-     PIDã€‚PID ç”¨æ¥æ£€æŸ¥å…¶å®ƒè¿›ç¨‹æ˜¯å¦å‘é€äº†
-     <em>NOTIFY</em> æ¶ˆæ¯ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-2200">
-      <p><strong>Example #1 PostgreSQL åç«¯ PID</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php&nbsp;<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occured.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Backend&nbsp;process&nbsp;PID.&nbsp;Use&nbsp;PID&nbsp;with&nbsp;pg_get_notify()<br /></span><span style="color: #0000BB">$pid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_get_pid</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.pg-get-notify.html" class="function">pg_get_notify()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-get-notify.html">pg_get_notify</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-get-result.html">pg_get_result</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

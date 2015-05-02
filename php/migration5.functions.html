@@ -1,510 +1,458 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新函数</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.configuration.html">移植配置文件</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.newconf.html">新指令</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5.functions" class="section">
-   <h2 class="title">新函数</h2>
-   <p class="para">
-    PHP 5 有了些新函数。下面是列表：
-   </p>
-   <p class="para"><a href="ref.array.html" class="link">Arrays</a>:</p>
-    <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-combine.html" class="function">array_combine()</a></span> -
-      用一个数组作为键名，另一个数组作为值创建一个新数组
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-diff-uassoc.html" class="function">array_diff_uassoc()</a></span> -
-      计算数组的差别，并用用户提供的回调函数作附加的索引检查
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-udiff.html" class="function">array_udiff()</a></span> -
-      用回调函数比较数据来计算数组的差别
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-udiff-assoc.html" class="function">array_udiff_assoc()</a></span> -
-      计算数组的差别并作附加的索引检查。用回调函数来比较数据
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-udiff-uassoc.html" class="function">array_udiff_uassoc()</a></span> -
-      计算数组的差别并作附加的索引检查。数据的比较和索引检查都用回调函数来完成
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-walk-recursive.html" class="function">array_walk_recursive()</a></span> -
-      对数组的每个成员递归使用用户函数
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-uintersect-assoc.html" class="function">array_uintersect_assoc()</a></span> -
-      计算数组的交集并作附加的索引检查。用回调函数来比较数据
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-uintersect-uassoc.html" class="function">array_uintersect_uassoc()</a></span> -
-      计算数组的交集并作附加的索引检查。数据和索引都用回调函数来比较
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.array-uintersect.html" class="function">array_uintersect()</a></span> -
-      计算数组的交集。用回调函数来比较数据
-     </span>
-    </li>
-   </ul>
-
-   <p class="para"><a href="ref.ibase.html" class="link">InterBase</a>:</p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-affected-rows.html" class="function">ibase_affected_rows()</a></span> -
-      返回前一个查询影响到的行的数目
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-backup.html" class="function">ibase_backup()</a></span> -
-      在服务管理器中发起一个后台任务并立即返回
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-commit-ret.html" class="function">ibase_commit_ret()</a></span> -
-      提交一个事务但不关闭
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-db-info.html" class="function">ibase_db_info()</a></span> -
-      请求有关数据库的统计信息
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-drop-db.html" class="function">ibase_drop_db()</a></span> -
-      删除一个数据库
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-errcode.html" class="function">ibase_errcode()</a></span> -
-      返回一个错误代码
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-free-event-handler.html" class="function">ibase_free_event_handler()</a></span> -
-      取消一个已注册的事件句柄
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-gen-id.html" class="function">ibase_gen_id()</a></span> -
-      递增指定的发生器并返回其新值
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-maintain-db.html" class="function">ibase_maintain_db()</a></span> -
-      在数据库服务器上执行一条维护命令
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-name-result.html" class="function">ibase_name_result()</a></span> -
-      给结果集指定一个名字
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-num-params.html" class="function">ibase_num_params()</a></span> -
-      返回一个准备好的查询的参数数目
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-param-info.html" class="function">ibase_param_info()</a></span> -
-      返回一个准备好的查询的参数信息
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-restore.html" class="function">ibase_restore()</a></span> -
-      在服务管理器中发起一个还原任务并立即返回
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-rollback-ret.html" class="function">ibase_rollback_ret()</a></span> -
-      回卷一笔事务并保留事务上下文
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-server-info.html" class="function">ibase_server_info()</a></span> -
-      请求有关数据库服务器的统计信息
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-service-attach.html" class="function">ibase_service_attach()</a></span> -
-      连接到服务管理器
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-service-detach.html" class="function">ibase_service_detach()</a></span> -
-      从服务管理器断开
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-set-event-handler.html" class="function">ibase_set_event_handler()</a></span> -
-      注册一个当事件发布时要调用的回调函数
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ibase-wait-event.html" class="function">ibase_wait_event()</a></span> -
-      等待数据库发布一条事件
-     </span>
-    </li>
-   </ul>
-
-   <p class="para"><a href="ref.iconv.html" class="link">iconv</a>:</p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-mime-decode.html" class="function">iconv_mime_decode()</a></span> -
-      解码 MIME 头信息字段
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-mime-decode-headers.html" class="function">iconv_mime_decode_headers()</a></span> -
-      一次解码多个 MIME 头信息字段
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-mime-encode.html" class="function">iconv_mime_encode()</a></span> -
-      压缩 MIME 头信息字段
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-strlen.html" class="function">iconv_strlen()</a></span> -
-      返回字符串中的字符计数
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-strpos.html" class="function">iconv_strpos()</a></span> -
-      在堆栈中找到第一个出现的子串位置
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-strrpos.html" class="function">iconv_strrpos()</a></span> -
-      在堆栈中找到最后一个出现的子串位置
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.iconv-substr.html" class="function">iconv_substr()</a></span> -
-      从字符串中取出一部分
-     </span>
-    </li>
-   </ul>
-
-   <p class="para"><a href="ref.stream.html" class="link">Streams</a>:</p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-copy-to-stream.html" class="function">stream_copy_to_stream()</a></span> -
-      把一个流的数据复制到另一个流
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-get-line.html" class="function">stream_get_line()</a></span> -
-      根据给定的分隔符中流中读取一行
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-socket-accept.html" class="function">stream_socket_accept()</a></span> - 接受一个由
-      <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> 建立的 socket 连接
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span> - 打开一个 Internet 或 Unix
-      域的 socket 连接
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-socket-get-name.html" class="function">stream_socket_get_name()</a></span> - 获取本地或远程的 sockets
-      名字
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-socket-recvfrom.html" class="function">stream_socket_recvfrom()</a></span> - 从 socket
-      获取数据（不管连接是否已经建立）
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-socket-sendto.html" class="function">stream_socket_sendto()</a></span> - 向 socket
-      发送一个消息（不管连接是否已经建立）
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> - 建立一个 Internet 或 Unix
-      域服务器的 socket
-     </span>
-    </li>
-   </ul>
-
-   <p class="para"><a href="ref.datetime.html" class="link">Date/Time</a>:</p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.idate.html" class="function">idate()</a></span> - 将本地时间格式化为整数
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.date-sunset.html" class="function">date_sunset()</a></span> - 计算所指定日期和地点的日落时间
-    </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.date-sunrise.html" class="function">date_sunrise()</a></span> - T计算所指定日期和地点的日出时间
-    </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.time-nanosleep.html" class="function">time_nanosleep()</a></span> - 廷迟执行程若干秒和若干纳秒
-    </span>
-    </li>
-   </ul>
-
-   <p class="para"><a href="ref.strings.html" class="link">Strings</a>:</p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.str-split.html" class="function">str_split()</a></span> - 把一个字符串分割为数组
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.strpbrk.html" class="function">strpbrk()</a></span> - 在一字符串中搜索给定的字符集合中的任意一个字符
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.substr-compare.html" class="function">substr_compare()</a></span> - 以二进制的形式比较两个字符串，从第一个字符串的
-      offset 开始，直到到达长度为 length 时结束，可自定义是否大小写敏感比较
-     </span>
-    </li>
-   </ul>
-
-   <p class="para">Other:</p>
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.convert-uudecode.html" class="function">convert_uudecode()</a></span> - 解码 uuencoded 的字符串
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.convert-uuencode.html" class="function">convert_uuencode()</a></span> - 对字符串进行 uuencode
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.curl-copy-handle.html" class="function">curl_copy_handle()</a></span> - 复制一个 cURL 句柄及其所有参数
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.dba-key-split.html" class="function">dba_key_split()</a></span> - 把一个键分隔为字符串数组
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.dbase-get-header-info.html" class="function">dbase_get_header_info()</a></span> - 取得 dBase 数据库的头部信息
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.dbx-fetch-row.html" class="function">dbx_fetch_row()</a></span> - 获取结果集中被设置为 DBX_RESULT_UNBUFFERED
-      的行
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.fbsql-set-password.html" class="function">fbsql_set_password()</a></span> - 修改指定用户的密码
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.file-put-contents.html" class="function">file_put_contents()</a></span> - 向一个文件内写入字符串
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ftp-alloc.html" class="function">ftp_alloc()</a></span> - 为准备上传的文件分配空间
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.get-declared-interfaces.html" class="function">get_declared_interfaces()</a></span> - 以数组的形式返回所有已定义的接品
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.get-headers.html" class="function">get_headers()</a></span> - 获取服务器响应 HTTP
-      请求时的所有头部信息
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.headers-list.html" class="function">headers_list()</a></span> - 返回所有已发送或准备发送响应头部列表
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.http-build-query.html" class="function">http_build_query()</a></span> - 生成一个已经过 URL 编码的请求字符串
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.image-type-to-extension.html" class="function">image_type_to_extension()</a></span> - 根据
-      <span class="function"><a href="function.getimagesize.html" class="function">getimagesize()</a></span>,
-      <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span>,
-      <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span>,
-      <span class="function"><a href="function.exif-imagetype.html" class="function">exif_imagetype()</a></span> 所返回的 image-type 取得文件名后缀
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.imagefilter.html" class="function">imagefilter()</a></span> - 对图像应用滤镜
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.imap-getacl.html" class="function">imap_getacl()</a></span> - 获取指定邮箱的 ACL
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.ldap-sasl-bind.html" class="function">ldap_sasl_bind()</a></span> - 使用 SASL 绑定到 LDAP 目录
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.mb-list-encodings.html" class="function">mb_list_encodings()</a></span> - 以数组的形式返回所支持的全部字符集
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.pcntl-getpriority.html" class="function">pcntl_getpriority()</a></span> - 获得任意一个进程的优先级
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.pcntl-wait.html" class="function">pcntl_wait()</a></span> - Waits on or returns the status of a
+<HTML  ><HEAD  ><TITLE  >New Functions</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Migrating from PHP 4 to PHP 5" HREF="migration5.html"><LINK  REL="PREVIOUS" TITLE="Migrating Configuration Files" HREF="migration5.configuration.html"><LINK  REL="NEXT" TITLE="New Directives" HREF="migration5.newconf.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="migration5.configuration.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ B. Migrating from PHP 4 to PHP 5</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration5.newconf.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.functions" ></A
+>New Functions</H1
+><P  >&#13;    In PHP 5 there are some new functions. Here is the list of them:
+   </P
+><P  >Arrays:</P
+><P  ></P
+><UL  ><LI  ><P  >&#13;      <A  HREF="function.array-combine.html"  ><B  CLASS="function" >array_combine()</B
+></A
+> - Creates an array by using one array
+      for keys and another for its values
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.array-diff-uassoc.html"  ><B  CLASS="function" >array_diff_uassoc()</B
+></A
+> - Computes the difference of
+      arrays with additional index check which is performed by a user supplied
+      callback function
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.array-udiff.html"  ><B  CLASS="function" >array_udiff()</B
+></A
+> - Computes the difference of arrays by
+      using a callback function for data comparison
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.array-udiff-assoc.html"  ><B  CLASS="function" >array_udiff_assoc()</B
+></A
+> - Computes the difference of
+      arrays with additional index check. The data is compared by using a
+      callback function
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.array-udiff-uassoc.html"  ><B  CLASS="function" >array_udiff_uassoc()</B
+></A
+> - Computes the difference of
+      arrays with additional index check. The data is compared by using a
+      callback function. The index check is done by a callback function also
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >array_walk_recursive()</B
+> - Apply a user function
+      recursively to every member of an array
+    </P
+></LI
+></UL
+><P  >InterBase:</P
+><P  ></P
+><UL  ><LI  ><P  >&#13;      <A  HREF="function.ibase-affected-rows.html"  ><B  CLASS="function" >ibase_affected_rows()</B
+></A
+> - Return the number of rows
+      that were affected by the previous query
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_backup()</B
+> - Initiates a backup task in the
+      service manager and returns immediately
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-commit-ret.html"  ><B  CLASS="function" >ibase_commit_ret()</B
+></A
+> - Commit a transaction without
+      closing it
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_db_info()</B
+> - Request statistics about a
+      database
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-drop-db.html"  ><B  CLASS="function" >ibase_drop_db()</B
+></A
+> - Drops a database
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-errcode.html"  ><B  CLASS="function" >ibase_errcode()</B
+></A
+> - Return an error code
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-free-event-handler.html"  ><B  CLASS="function" >ibase_free_event_handler()</B
+></A
+> - Cancels a registered
+      event handler
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-gen-id.html"  ><B  CLASS="function" >ibase_gen_id()</B
+></A
+> - Increments the named generator and
+      returns its new value
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_maintain_db()</B
+> - Execute a maintenance command
+      on the database server
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-name-result.html"  ><B  CLASS="function" >ibase_name_result()</B
+></A
+> - Assigns a name to a result set
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-num-params.html"  ><B  CLASS="function" >ibase_num_params()</B
+></A
+> - Return the number of parameters
+      in a prepared query
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-param-info.html"  ><B  CLASS="function" >ibase_param_info()</B
+></A
+> - Return information about a
+      parameter in a prepared query
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_restore()</B
+> - Initiates a restore task in the
+      service manager and returns immediately
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-rollback-ret.html"  ><B  CLASS="function" >ibase_rollback_ret()</B
+></A
+> - Rollback transaction and
+      retain the transaction context
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_server_info()</B
+> - Request statistics about a
+      database
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_service_attach()</B
+> - Connect to the service manager
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ibase_service_detach()</B
+> - Disconnect from the service manager
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-set-event-handler.html"  ><B  CLASS="function" >ibase_set_event_handler()</B
+></A
+> - Register a callback
+      function to be called when events are posted
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ibase-wait-event.html"  ><B  CLASS="function" >ibase_wait_event()</B
+></A
+> - Wait for an event to be posted
+      by the database
+    </P
+></LI
+></UL
+><P  >iconv:</P
+><P  ></P
+><UL  ><LI  ><P  >&#13;      <A  HREF="function.iconv-mime-decode.html"  ><B  CLASS="function" >iconv_mime_decode()</B
+></A
+> - Decodes a MIME header field
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.iconv-mime-decode-headers.html"  ><B  CLASS="function" >iconv_mime_decode_headers()</B
+></A
+> - Decodes multiple MIME
+      header fields at once
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.iconv-mime-encode.html"  ><B  CLASS="function" >iconv_mime_encode()</B
+></A
+> - Composes a MIME header field
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.iconv-strlen.html"  ><B  CLASS="function" >iconv_strlen()</B
+></A
+> - Returns the character count of
+      string
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.iconv-strpos.html"  ><B  CLASS="function" >iconv_strpos()</B
+></A
+> - Finds position of first occurrence
+      of a needle within a haystack
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.iconv-strrpos.html"  ><B  CLASS="function" >iconv_strrpos()</B
+></A
+> - Finds the last occurrence of a
+      needle within the specified range of haystack
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.iconv-substr.html"  ><B  CLASS="function" >iconv_substr()</B
+></A
+> - Cut out part of a string
+    </P
+></LI
+></UL
+><P  >Streams:</P
+><P  ></P
+><UL  ><LI  ><P  >&#13;      <A  HREF="function.stream-copy-to-stream.html"  ><B  CLASS="function" >stream_copy_to_stream()</B
+></A
+> - Copies data from one stream
+      to another
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-get-line.html"  ><B  CLASS="function" >stream_get_line()</B
+></A
+> - Gets line from stream resource up
+      to a given delimiter
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-socket-accept.html"  ><B  CLASS="function" >stream_socket_accept()</B
+></A
+> - Accept a connection on a
+      socket created by <A  HREF="function.stream-socket-server.html"  ><B  CLASS="function" >stream_socket_server()</B
+></A
+>
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-socket-client.html"  ><B  CLASS="function" >stream_socket_client()</B
+></A
+> - Open Internet or Unix domain
+      socket connection
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-socket-get-name.html"  ><B  CLASS="function" >stream_socket_get_name()</B
+></A
+> - Retrieve the name of the
+      local or remote sockets
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-socket-recvfrom.html"  ><B  CLASS="function" >stream_socket_recvfrom()</B
+></A
+> - Receives data from a
+      socket, connected or not
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-socket-sendto.html"  ><B  CLASS="function" >stream_socket_sendto()</B
+></A
+> - Sends a message to a socket,
+      whether it is connected or not
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.stream-socket-server.html"  ><B  CLASS="function" >stream_socket_server()</B
+></A
+> - Create an Internet or Unix
+      domain server socket
+    </P
+></LI
+></UL
+><P  >Other:</P
+><P  ></P
+><UL  ><LI  ><P  >&#13;      <B  CLASS="function" >convert_uudecode()</B
+> - decode a uuencoded string
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >convert_uuencode()</B
+> - uuencode a string
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.dba-key-split.html"  ><B  CLASS="function" >dba_key_split()</B
+></A
+> - Splits a key in string
+      representation into array representation
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.dbase-get-header-info.html"  ><B  CLASS="function" >dbase_get_header_info()</B
+></A
+> - Get the header info of a
+      dBase database
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.dbx-fetch-row.html"  ><B  CLASS="function" >dbx_fetch_row()</B
+></A
+> - Fetches rows from a query-result
+      that had the DBX_RESULT_UNBUFFERED flag set
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >fbsql_set_password()</B
+> - Change the password for a given user
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.file-put-contents.html"  ><B  CLASS="function" >file_put_contents()</B
+></A
+> - Write a string to a file
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.ftp-alloc.html"  ><B  CLASS="function" >ftp_alloc()</B
+></A
+> - Allocates space for a file to be
+      uploaded
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >get_declared_interfaces()</B
+> - Returns an array of all
+      declared interfaces
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >get_headers()</B
+> - Fetches all the headers sent by the
+      server in response to a HTTP request
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.headers-list.html"  ><B  CLASS="function" >headers_list()</B
+></A
+> - Returns a list of response headers
+      sent (or ready to send)
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.http-build-query.html"  ><B  CLASS="function" >http_build_query()</B
+></A
+> - Generate URL-encoded query string
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >idate()</B
+> - Format a local time/date as integer
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >image_type_to_extension()</B
+> - Get file extension for
+      image-type returned by <A  HREF="function.getimagesize.html"  ><B  CLASS="function" >getimagesize()</B
+></A
+>,
+      <A  HREF="function.exif-read-data.html"  ><B  CLASS="function" >exif_read_data()</B
+></A
+>,
+      <A  HREF="function.exif-thumbnail.html"  ><B  CLASS="function" >exif_thumbnail()</B
+></A
+>,
+      <A  HREF="function.exif-imagetype.html"  ><B  CLASS="function" >exif_imagetype()</B
+></A
+>
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >imagefilter()</B
+> - Applies Filter an image using a
+      custom angle 
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.imap-getacl.html"  ><B  CLASS="function" >imap_getacl()</B
+></A
+> - Gets the ACL for a given mailbox
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >ldap_sasl_bind()</B
+> - Bind to LDAP directory using SASL
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.pcntl-getpriority.html"  ><B  CLASS="function" >pcntl_getpriority()</B
+></A
+> - Get the priority of any
+      process
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.pcntl-wait.html"  ><B  CLASS="function" >pcntl_wait()</B
+></A
+> - Waits on or returns the status of a
       forked child as defined by the waitpid() system call
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.pg-version.html" class="function">pg_version()</a></span> - 返回一个包含客户端、协议和服务器版本的数组
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.php-check-syntax.html" class="function">php_check_syntax()</a></span> - 检查指定文件的语法
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.php-strip-whitespace.html" class="function">php_strip_whitespace()</a></span> - 返回已经去除注释和空白的源代码
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.proc-nice.html" class="function">proc_nice()</a></span> - 修改当前进程的优前级
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.pspell-config-data-dir.html" class="function">pspell_config_data_dir()</a></span> - 修改语言文件的位置
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.pspell-config-dict-dir.html" class="function">pspell_config_dict_dir()</a></span> - 修改主要单词列表的位置
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.setrawcookie.html" class="function">setrawcookie()</a></span> - 发送一个没有经过 url 编码的 cookie
-      值
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.scandir.html" class="function">scandir()</a></span> -
-      列中指定目录中的所有子目录和文件
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.snmp-read-mib.html" class="function">snmp_read_mib()</a></span> - 在一个可用的 MIB 树中读取和分板一个
-      MIB 文件
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      <span class="function"><a href="function.sqlite-fetch-column-types.html" class="function">sqlite_fetch_column_types()</a></span> -
-      以数组的形式返回一张表中的列类型
-     </span>
-    </li>
-   </ul>
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <p class="para">
-     <a href="ref.tidy.html" class="link">Tidy</a> 扩展库的 API 也作了重大调整
-    </p>
-   </p></blockquote>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.configuration.html">移植配置文件</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.newconf.html">新指令</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >pg_version()</B
+> - Returns an array with client, protocol
+      and server version (when available)
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >php_check_syntax()</B
+> - Check the syntax of the
+      specified file
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >php_strip_whitespace()</B
+> - Return source with stripped
+      comments and whitespace
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.proc-nice.html"  ><B  CLASS="function" >proc_nice()</B
+></A
+> - Change the priority of the current
+      process
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >pspell_config_data_dir()</B
+> - Change location of
+      language data files
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >pspell_config_dict_dir()</B
+> - Change location of the
+      main word list
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.setrawcookie.html"  ><B  CLASS="function" >setrawcookie()</B
+></A
+> - Send a cookie with no url encoding
+      of the value
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >snmp_read_mib()</B
+> - Reads and parses a MIB file into
+      the active MIB tree
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >sqlite_fetch_column_types()</B
+> - Return an array of
+      column types from a particular table
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.str-split.html"  ><B  CLASS="function" >str_split()</B
+></A
+> - Convert a string to an array
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >strpbrk()</B
+> - Search a string for any of a set of
+      characters
+    </P
+></LI
+><LI  ><P  >&#13;      <A  HREF="function.substr-compare.html"  ><B  CLASS="function" >substr_compare()</B
+></A
+> - Binary safe optionally case
+      insensitive comparison of two strings from an offset, up to length
+      characters
+    </P
+></LI
+><LI  ><P  >&#13;      <B  CLASS="function" >time_nanosleep()</B
+> - Delay for a number of seconds and
+      nano seconds
+    </P
+></LI
+></UL
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="migration5.configuration.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration5.newconf.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Migrating Configuration Files</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="migration5.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >New Directives</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

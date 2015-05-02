@@ -1,0 +1,529 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="undefined">
+
+<script type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+
+<script type="text/javascript" src="http://shouce.jb51.net/jquery-1.3.2.js" ></script>
+<script type="text/javascript" src="http://shouce.jb51.net/jquery.extend.js" ></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Language" content="zh-CN">
+<style>
+ul { 
+margin: 2px 0 2px -20px;
+*margin:2px 0 2px 20px;  /*ie7*/
+_margin:2px 0 2px 20px;  /*ie6*/
+}
+a{
+font-size:12px;}
+a:link {
+	color: #1101A4;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #4D11D3;
+}
+a:hover {
+	text-decoration: none;
+	background-color:lightgreen
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+<!-- base target="main" --><BASE TARGET="main">
+</head>
+<BODY bgcolor="#FFFFFF">
+<input id="search" type="text" name="search" value="输入你要查的内容" style="color:red;" notice="输入你要查的内容" info="js"><button>查找</button>
+
+<UL id="js">
+  <LI><a href="html/jsconJScriptUsersGuide.htm" >JScript 用户指南</a>
+    <UL>
+      <LI><a href="html/jsconJScriptFundamentals.htm" >Jscript 基础</a>
+        <UL>
+          <LI><a href="html/about.htm" >什么是 JScript？</a>
+          <LI><a href="html/statement.htm" >编写 JScript 代码</a>
+          <LI><a href="html/declare.htm" >JScript 的变量</a>
+          <LI><a href="html/datatype.htm" >JScript 的数据类型</a>
+          <LI><a href="html/jsoperators.htm" >JScript 的运算符</a>
+          <LI><a href="html/conditionals.htm" >控制程序的流程</a>
+          <LI><a href="html/jsconFunctions.htm" >JScript 函数</a>
+          <LI><a href="html/objects.htm" >Jscript对象</a>
+            <UL>
+              <LI><a href="html/jsconCreatingOwnObjects.htm" >创建自己的对象</a>
+              <LI><a href="html/jsconIntrinsicObjects.htm" >内部对象</a>
+              </UL>
+          <LI><a href="html/jsreserved.htm" >JScript 保留关键字</a>
+          </UL>
+      <LI><a href="html/jsconAdvancedJScript.htm" >高级 JScript</a>
+        <UL>
+          <LI><a href="html/constructor.htm" >创建高级对象</a>
+          <LI><a href="html/recurse.htm" >递归</a>
+          <LI><a href="html/scope.htm" >变量范围</a>
+          <LI><a href="html/valref.htm" >复制、传递和比较数据</a>
+          <LI><a href="html/UsingArr.htm" >使用数组</a>
+          <LI><a href="html/specialcharacter.htm" >特殊字符</a>
+          <LI><a href="html/cautions.htm" >脚本问题解答</a>
+          <LI><a href="html/jsConditionalCompilation.htm" >条件编译</a>
+          <LI><a href="html/jsConditionalCompilationVars.htm" >条件编译变量</a>
+          </UL>
+      <LI><a href="html/writeclear.htm" >在浏览器中显示信息</a>
+        <UL>
+          <LI><a href="html/jsUsingMessageBoxes.htm" >使用消息框</a>
+          </UL>
+    </UL>
+  <LI><a href="html-vss/jstoc-2.htm" >语言参考</a>
+    <UL>
+      <LI><a href="html/jslrfFeatureInformation.htm" >特性信息</a>
+      <LI><a href="html/jsgrpecmafeatures.htm" >Microsoft JScript 特性 - ECMA</a>
+      <LI><a href="html/jsgrpnonecmafeatures.htm" >Microsoft JScript 特性 - 非-ECMA</a>
+      <LI><a href="html/jslrfJScriptAlphaKeywordList.htm" >JScript 字母顺序的关健字列表</a>
+      <LI><a href="html/jslrfJScriptErrorsTOC.htm" >JScript 错误</a>
+        <UL>
+          <LI><a href="html/jsmscruntimeerrors.htm" >JScript 运行时错误</a>
+          <LI><a href="html/jsmscSyntaxErrors.htm" >JScript 语法错误</a>
+          </UL>
+      <LI><a href="html/jslrfJScriptFunctionsTOC.htm" >JScript 函数</a>
+        <UL>
+          <LI><a href="html/jsfctGetObject.htm" >GetObject 函数</a>
+          <LI><a href="html/jsfctScriptEngine.htm" >ScriptEngine 函数</a>
+          <LI><a href="html/jsfctScriptEngineBuildVersion.htm" >ScriptEngineBuildVersion 函数</a>
+          <LI><a href="html/jsfctScriptEngineMajorVersion.htm" >ScriptEngineMajorVersion 函数</a>
+          <LI><a href="html/jsfctScriptEngineMinorVersion.htm" >ScriptEngineMinorVersion 函数</a>
+          </UL>
+      <LI><a href="html/jslrfJScriptMethodsTOC.htm" >JScript 方法</a>
+        <UL>
+          <LI>A-E
+                <UL>
+                  <LI><a href="html/jsmthabs.htm" >abs 方法</a>
+                  <LI><a href="html/jsmthacos.htm" >acos 方法</a>
+                  <LI><a href="html/jsmthanchor.htm" >anchor 方法</a>
+                  <LI><a href="html/jsmthApply.htm" >apply 方法</a>
+                  <LI><a href="html/jsmthasin.htm" >asin 方法</a>
+                  <LI><a href="html/jsmthatan.htm" >atan 方法</a>
+                  <LI><a href="html/jsmthatan2.htm" >atan2 方法</a>
+                  <LI><a href="html/jsmthatEnd.htm" >atEnd 方法</a>
+                  <LI><a href="html/jsmthbig.htm" >big 方法</a>
+                  <LI><a href="html/jsmthblink.htm" >blink 方法</a>
+                  <LI><a href="html/jsmthbold.htm" >bold 方法</a>
+                  <LI><a href="html/jsmthCall.htm" >call 方法</a>
+                  <LI><a href="html/jsmthceil.htm" >ceil 方法</a>
+                  <LI><a href="html/jsmthcharat.htm" >charAt 方法</a>
+                  <LI><a href="html/jsmthcharCodeAt.htm" >charCodeAt 方法</a>
+                  <LI><a href="html/jsmthcompile.htm" >compile 方法</a>
+                  <LI><a href="html/jsmthconcatarray.htm" >concat 方法 (Array)</a>
+                  <LI><a href="html/jsmthconcatstring.htm" >concat 方法 (String)</a>
+                  <LI><a href="html/jsmthcos.htm" >cos 方法</a>
+                  <LI><a href="html/jsmthDecodeURI.htm" >decodeURI 方法</a>
+                  <LI><a href="html/jsmthDecodeURIComponent.htm" >decodeURIComponent 方法</a>
+                  <LI><a href="html/jsmthdimensions.htm" >dimensions 方法</a>
+                  <LI><a href="html/jsmthfEncodeURI.htm" >encodeURI 方法</a>
+                  <LI><a href="html/jsmthEncodeURIComponent.htm" >encodeURIComponent 方法</a>
+                  <LI><a href="html/jsmthescape.htm" >escape 方法</a>
+                  <LI><a href="html/jsmtheval.htm" >eval 方法</a>
+                  <LI><a href="html/jsmthexec.htm" >exec 方法</a>
+                  <LI><a href="html/jsmthexp.htm" >exp 方法</a>
+              </UL>
+          <LI>F-I
+                  <UL>
+                    <LI><a href="html/jsmthfixed.htm" >fixed 方法</a>
+                    <LI><a href="html/jsmthfloor.htm" >floor 方法</a>
+                    <LI><a href="html/jsmthfontcolor.htm" >fontcolor 方法</a>
+                    <LI><a href="html/jsmthfontsize.htm" >fontsize 方法</a>
+                    <LI><a href="html/jsmthfromCharCode.htm" >fromCharCode 方法</a>
+                    <LI><a href="html/jsmthgetdate.htm" >getDate 方法</a>
+                    <LI><a href="html/jsmthgetday.htm" >getDay 方法</a>
+                    <LI><a href="html/jsmthgetFullYear.htm" >getFullYear 方法</a>
+                    <LI><a href="html/jsmthgethours.htm" >getHours 方法</a>
+                    <LI><a href="html/jsmthgetItem.htm" >getItem 方法</a>
+                    <LI><a href="html/jsmthgetMilliSeconds.htm" >getMilliseconds 方法</a>
+                    <LI><a href="html/jsmthgetminutes.htm" >getMinutes 方法</a>
+                    <LI><a href="html/jsmthgetmonth.htm" >getMonth 方法</a>
+                    <LI><a href="html/jsmthgetseconds.htm" >getSeconds 方法</a>
+                    <LI><a href="html/jsmthgettime.htm" >getTime 方法</a>
+                    <LI><a href="html/jsmthgettimezone.htm" >getTimezoneOffset 方法</a>
+                    <LI><a href="html/jsmthgetUTCDate.htm" >getUTCDate 方法</a>
+                    <LI><a href="html/jsmthgetUTCDay.htm" >getUTCDay 方法</a>
+                    <LI><a href="html/jsmthgetUTCFullYear.htm" >getUTCFullYear 方法</a>
+                    <LI><a href="html/jsmthgetUTCHours.htm" >getUTCHours 方法</a>
+                    <LI><a href="html/jsmthgetUTCMilliSeconds.htm" >getUTCMilliseconds 方法</a>
+                    <LI><a href="html/jsmthgetUTCMinutes.htm" >getUTCMinutes 方法</a>
+                    <LI><a href="html/jsmthgetUTCMonth.htm" >getUTCMonth 方法</a>
+                    <LI><a href="html/jsmthgetUTCSeconds.htm" >getUTCSeconds 方法</a>
+                    <LI><a href="html/jsmthgetvardate.htm" >getVarDate 方法</a>
+                    <LI><a href="html/jsmthgetyear.htm" >getYear 方法</a>
+                    <LI><a href="html/jsmthindexof.htm" >indexOf 方法</a>
+                    <LI><a href="html/jsmthisFinite.htm" >isFinite 方法</a>
+                    <LI><a href="html/jsmthisNaN.htm" >isNaN 方法</a>
+                    <LI><a href="html/jsmthitalics.htm" >italics 方法</a>
+                    <LI><a href="html/jsmthitem.htm" >item 方法</a>
+              </UL>
+          <LI>J-R
+                    <UL>
+                      <LI><a href="html/jsmthjoin.htm" >join 方法</a>
+                      <LI><a href="html/jsmthlastindexof.htm" >lastIndexOf 方法</a>
+                      <LI><a href="html/jsmthlbound.htm" >lbound 方法</a>
+                      <LI><a href="html/jsmthlink.htm" >link 方法</a>
+                      <LI><a href="html/jsmthLocaleCompare.htm" >localeCompare 方法</a>
+                      <LI><a href="html/jsmthlog.htm" >log 方法</a>
+                      <LI><a href="html/jsmthmatch.htm" >match 方法</a>
+                      <LI><a href="html/jsmthmax.htm" >max 方法</a>
+                      <LI><a href="html/jsmthmin.htm" >min 方法</a>
+                      <LI><a href="html/jsmthmoveFirst.htm" >moveFirst 方法</a>
+                      <LI><a href="html/jsmthmoveNext.htm" >moveNext 方法</a>
+                      <LI><a href="html/jsmthparse.htm" >parse 方法</a>
+                      <LI><a href="html/jsmthparsefloat.htm" >parseFloat 方法</a>
+                      <LI><a href="html/jsmthparseint.htm" >parseInt 方法</a>
+                      <LI><a href="html/jsmthPop.htm" >pop 方法</a>
+                      <LI><a href="html/jsmthpow.htm" >pow 方法</a>
+                      <LI><a href="html/jsmthPush.htm" >push 方法</a>
+                      <LI><a href="html/jsmthrandom.htm" >random 方法</a>
+                      <LI><a href="html/jsmthreplace.htm" >replace 方法</a>
+                      <LI><a href="html/jsmthreverse.htm" >reverse 方法</a>
+                      <LI><a href="html/jsmthround.htm" >round 方法</a>
+              </UL>
+          <LI>S
+                      <UL>
+                        <LI><a href="html/jsmthsearch.htm" >search 方法</a>
+                        <LI><a href="html/jsmthsetdate.htm" >setDate 方法</a>
+                        <LI><a href="html/jsmthsetFullYear.htm" >setFullYear 方法</a>
+                        <LI><a href="html/jsmthsethours.htm" >setHours 方法</a>
+                        <LI><a href="html/jsmthsetMilliSeconds.htm" >setMilliseconds 方法</a>
+                        <LI><a href="html/jsmthsetMinutes.htm" >setMinutes 方法</a>
+                        <LI><a href="html/jsmthsetmonth.htm" >setMonth 方法</a>
+                        <LI><a href="html/jsmthsetseconds.htm" >setSeconds 方法</a>
+                        <LI><a href="html/jsmthsettime.htm" >setTime 方法</a>
+                        <LI><a href="html/jsmthsetUTCDate.htm" >setUTCDate 方法</a>
+                        <LI><a href="html/jsmthsetUTCFullYear.htm" >setUTCFullYear 方法</a>
+                        <LI><a href="html/jsmthsetUTCHours.htm" >setUTCHours 方法</a>
+                        <LI><a href="html/jsmthsetUTCMilliSeconds.htm" >setUTCMilliseconds 方法</a>
+                        <LI><a href="html/jsmthsetUTCMinutes.htm" >setUTCMinutes 方法</a>
+                        <LI><a href="html/jsmthsetUTCMonth.htm" >setUTCMonth 方法</a>
+                        <LI><a href="html/jsmthsetUTCSeconds.htm" >setUTCSeconds 方法</a>
+                        <LI><a href="html/jsmthsetyear.htm" >setYear 方法</a>
+                        <LI><a href="html/jsmthShift.htm" >shift 方法</a>
+                        <LI><a href="html/jsmthsin.htm" >sin 方法</a>
+                        <LI><a href="html/jsmthslicearray.htm" >slice 方法 (Array)</a>
+                        <LI><a href="html/jsmthslicestring.htm" >slice 方法 (String)</a>
+                        <LI><a href="html/jsmthsmall.htm" >small 方法</a>
+                        <LI><a href="html/jsmthsort.htm" >sort 方法</a>
+                        <LI><a href="html/jsmthSplice.htm" >splice 方法</a>
+                        <LI><a href="html/jsmthsplit.htm" >split 方法</a>
+                        <LI><a href="html/jsmthsqrt.htm" >sqrt 方法</a>
+                        <LI><a href="html/jsmthstrike.htm" >strike 方法</a>
+                        <LI><a href="html/jsmthsub.htm" >sub 方法</a>
+                        <LI><a href="html/jsmthsubstr.htm" >substr 方法</a>
+                        <LI><a href="html/jsmthsubstring.htm" >substring 方法</a>
+                        <LI><a href="html/jsmthsup.htm" >sup 方法</a>
+              </UL>
+          <LI>T-Z
+                        <UL>
+                          <LI><a href="html/jsmthtan.htm" >tan 方法</a>
+                          <LI><a href="html/jsmthtest.htm" >test 方法</a>
+                          <LI><a href="html/jsmthtoArray.htm" >toArray 方法</a>
+                          <LI><a href="html/jsmthToDateString.htm" >toDateString 方法</a>
+                          <LI><a href="html/jsmthToExponential.htm" >toExponential 方法</a>
+                          <LI><a href="html/jsmthToFixed.htm" >toFixed 方法</a>
+                          <LI><a href="html/jsmthtogmtstring.htm" >toGMTString 方法</a>
+                          <LI><a href="html/jsmthToLocaleDateString.htm" >toLocaleDateString 方法</a>
+                          <LI><a href="html/jsmthToLocaleLowerCase.htm" >toLocaleLowerCase 方法</a>
+                          <LI><a href="html/jsmthtolocalestring.htm" >toLocaleString 方法</a>
+                          <LI><a href="html/jsmthToLocaleTimeString.htm" >toLocaleTimeString 方法</a>
+                          <LI><a href="html/jsmthToLocaleUpperCase.htm" >toLocaleUpperCase 方法</a>
+                          <LI><a href="html/jsmthtolowercase.htm" >toLowerCase 方法</a>
+                          <LI><a href="html/jsmthToPrecision.htm" >toPrecision 方法</a>
+                          <LI><a href="html/jsmthtoString.htm" >toString 方法</a>
+                          <LI><a href="html/jsmthToTimeString.htm" >toTimeString 方法</a>
+                          <LI><a href="html/jsmthtouppercase.htm" >toUpperCase 方法</a>
+                          <LI><a href="html/jsmthtoUTCString.htm" >toUTCString 方法</a>
+                          <LI><a href="html/jsmthubound.htm" >ubound 方法</a>
+                          <LI><a href="html/jsmthunescape.htm" >unescape 方法</a>
+                          <LI><a href="html/jsmthUnshift.htm" >unshift 方法</a>
+                          <LI><a href="html/jsmthUTC.htm" >UTC 方法</a>
+                          <LI><a href="html/jsmthvalueOf.htm" >valueOf 方法</a>
+              </UL>
+        </UL>
+      <LI><a href="html/jslrfJScriptObjectsTOC.htm" >JScript 对象</a>
+        <UL>
+          <LI><a href="html/jsobjActiveXObject.htm" >ActiveXObject 对象</a>
+          <LI><a href="html/jsobjarray.htm" >Array 对象</a>
+          <LI><a href="html/jsobjBoolean.htm" >Boolean 对象</a>
+          <LI><a href="html/jsobjdate.htm" >Date 对象</a>
+          <LI><a href="html/jsobjEnumerator.htm" >Enumerator 对象</a>
+          <LI><a href="html/jsobjError.htm" >Error 对象</a>
+          <LI><a href="html/jsobjFunction.htm" >Function 对象</a>
+          <LI><a href="html/jsobjglobal.htm" >Global 对象</a>
+          <LI><a href="html/jsobjmath.htm" >Math 对象</a>
+          <LI><a href="html/Jsobjnumber.htm" >Number 对象</a>
+          <LI><a href="html/jsobjObject.htm" >Object 对象</a>
+          <LI><a href="html/jsobjRegExp.htm" >RegExp 对象</a>
+          <LI><a href="html/jsobjregexpression.htm" >正则表达式对象</a>
+          <LI><a href="html/jsobjstring.htm" >String 对象</a>
+          <LI><a href="html/jsobjVBArray.htm" >VBArray 对象</a>
+          </UL>
+      <LI><a href="html/jslrfJScriptOperatorsTOC.htm" >JScript 运算符</a>
+        <UL>
+          <LI>
+            <param name="Name" value="通用信息">
+            <UL>
+              <LI><a href="html/jsOperatorPrecedence.htm" >运算符优先级</a>
+              <LI><a href="html/jsmsclist.htm" >运算符总结</a>
+              </UL>
+          <LI><a href="html/jsopraddequ.htm" >加法赋值运算符 (+=)</a>
+          <LI><a href="html/jsoprAdd.htm" >加法运算符 (+)</a>
+          <LI><a href="html/jsoprassign.htm" >赋值运算符 (=)</a>
+          <LI><a href="html/jsoprbitandequ.htm" >按位“与”赋值运算符 (&amp;=)</a>
+          <LI><a href="html/jsoprbitwiseand.htm" >按位“与”运算符 (&amp;)</a>
+          <LI><a href="html/jsoprlshift.htm" >按位左移运算符 (&lt;&lt;)</a>
+          <LI><a href="html/jsoprbitwisenot.htm" >按位“非”运算符 (~)</a>
+          <LI><a href="html/jsoprbitorequ.htm" >按位“或”赋值运算符 (|=)</a>
+          <LI><a href="html/jsoprbitwiseor.htm" >按位“或”运算符 (|)</a>
+          <LI><a href="html/jsoprrshift.htm" >按位右移运算符 (&gt;&gt;)</a>
+          <LI><a href="html/jsoprxorequ.htm" >按位“异或”赋值运算符 (^=)</a>
+          <LI><a href="html/jsoprxor.htm" >按位“异或”运算符 (^)</a>
+          <LI><a href="html/jsoprcomma.htm" >逗号运算符 (,)</a>
+          <LI><a href="html/jsgrpcomparison.htm" >比较运算符</a>
+          <LI><a href="html/jsCompoundAssignmentOperators.htm" >复合赋值运算符</a>
+          <LI><a href="html/jsoprconditional.htm" >条件（三目）运算符 (?:)</a>
+          <LI><a href="html/jsoprdelete.htm" >delete 运算符</a>
+          <LI><a href="html/jsoprdivequ.htm" >除法赋值运算符 (/=)</a>
+          <LI><a href="html/jsoprDivide.htm" >除法运算符 (/)</a>
+          <LI><a href="html/jsoprIn.htm" >in 运算符</a>
+          <LI><a href="html/jsoprincdec.htm" >递增 (++) 和递减 (--) 运算符</a>
+          <LI><a href="html/jsoprinstanceof.htm" >instanceof 运算符</a>
+          <LI><a href="html/jsoprlshftequ.htm" >左移赋值运算符 (&lt;&lt;=)</a>
+          <LI><a href="html/jsoprAnd.htm" >逻辑“与”运算符 (&amp;&amp;)</a>
+          <LI><a href="html/jsoprNot.htm" >逻辑“非”运算符 (!)</a>
+          <LI><a href="html/jsoprOr.htm" >逻辑“或”运算符 (||)</a>
+          <LI><a href="html/jsoprmodequ.htm" >取余赋值运算符 (%=)</a>
+          <LI><a href="html/jsoprmod.htm" >取余运算符 (%)</a>
+          <LI><a href="html/jsoprmultequ.htm" >乘法赋值运算符 (*=)</a>
+          <LI><a href="html/jsoprmultiply.htm" >乘法运算符 (*)</a>
+          <LI><a href="html/jsoprnew.htm" >new 运算符</a>
+          <LI><a href="html/jsoprrshftequ.htm" >右移赋值运算符 (&gt;&gt;=)</a>
+          <LI><a href="html/jsoprsubequ.htm" >减法赋值运算符 (-=)</a>
+          <LI><a href="html/jsoprSubtract.htm" >减法运算符 (-)</a>
+          <LI><a href="html/jsoprtypeof.htm" >typeof 运算符</a>
+          <LI><a href="html/jsoprurshift.htm" >无符号右移运算符 (&gt;&gt;&gt;)</a>
+          <LI><a href="html/jsoprurshftequ.htm" >无符号右移赋值操作 (&gt;&gt;&gt;=)</a>
+          <LI><a href="html/jsoprvoid.htm" >void 运算符</a>
+          </UL>
+      <LI><a href="html/jslrfJScriptPropertiesTOC.htm" >JScript 属性</a>
+        <UL>
+          <LI><a href="html/jspromatches.htm" >$1...$9 属性</a>
+          <LI><a href="html/jsproArguments.htm" >arguments 属性</a>
+          <LI><a href="html/jsproCaller.htm" >caller 属性</a>
+          <LI><a href="html/jsproconstructor.htm" >constructor 属性</a>
+          <LI><a href="html/jsproDescription.htm" >description 属性</a>
+          <LI><a href="html/jsproe.htm" >E 属性</a>
+          <LI><a href="html/jsproGlobal.htm" >global 属性</a>
+          <LI><a href="html/jsmthHasOwnProperty.htm" >hasOwnProperty 方法</a>
+          <LI><a href="html/jsproIgnoreCase.htm" >ignoreCase 属性</a>
+          <LI><a href="html/jsproindex.htm" >index 属性</a>
+          <LI><a href="html/jsproInfinity.htm" >Infinity 属性</a>
+          <LI><a href="html/jsproinput.htm" >input 属性($_)</a>
+          <LI><a href="html/jsmthIsPrototypeOf.htm" >isProptotyeOf 方法</a>
+          <LI><a href="html/jsprolastIndex.htm" >lastIndex 属性</a>
+          <LI><a href="html/jsprolengtharray.htm" >length 属性 (Array)</a>
+          <LI><a href="html/jsprolengthfunction.htm" >length 属性 (Function)</a>
+          <LI><a href="html/jsprolengthstring.htm" >length 属性 (String)</a>
+          <LI><a href="html/jsproln10.htm" >LN10 属性</a>
+          <LI><a href="html/jsproln2.htm" >LN2 属性</a>
+          <LI><a href="html/jsprolog10e.htm" >LOG10E 属性</a>
+          <LI><a href="html/jsprolog2e.htm" >LOG2E 属性</a>
+          <LI><a href="html/jsproMaxValue.htm" >MAX_VALUE 属性</a>
+          <LI><a href="html/jsproMessage.htm" >message 属性</a>
+          <LI><a href="html/jsproMinValue.htm" >MIN_VALUE 属性</a>
+          <LI><a href="html/jsproMultiline.htm" >multiline 属性</a>
+          <LI><a href="html/jsproNameError.htm" >name 属性</a>
+          <LI><a href="html/jsproNaNnumber.htm" >NaN 属性</a>
+          <LI><a href="html/jsproNaNglobal.htm" >NaN 属性 (Global)</a>
+          <LI><a href="html/jsproNegativeInf.htm" >NEGATIVE_INFINITY 属性</a>
+          <LI><a href="html/jsproNumber.htm" >number 属性</a>
+          <LI><a href="html/jspropi.htm" >PI 属性</a>
+          <LI><a href="html/jsproPositiveInf.htm" >POSITIVE_INFINITY 属性</a>
+          <LI><a href="html/jsproPropertyIsEnumerable.htm" >propertyIsEnumerable 属性</a>
+          <LI><a href="html/jsproprototype.htm" >prototype 属性</a>
+          <LI><a href="html/jsprosource.htm" >source 属性</a>
+          <LI><a href="html/jsprosqrt1_2.htm" >SQRT1_2 属性</a>
+          <LI><a href="html/jsprosqrt2.htm" >SQRT2 属性</a>
+          <LI><a href="html/jsproundefined.htm" >undefined 属性</a>
+          </UL>
+      <LI><a href="html/jslrfJScriptStatementsTOC.htm" >JScript 语句</a>
+        <UL>
+          <LI><a href="html/jsstmccon.htm" >@cc_on 语句</a>
+          <LI><a href="html/jsstmconditionalif.htm" >@if 语句</a>
+          <LI><a href="html/jsstmset.htm" >@set 语句</a>
+          <LI><a href="html/jsstmbreak.htm" >break 语句</a>
+          <LI><a href="html/jsstmcomment.htm" >Comment 语句</a>
+          <LI><a href="html/jsstmcontinue.htm" >continue 语句</a>
+          <LI><a href="html/jsstmdowhile.htm" >do...while 语句</a>
+          <LI><a href="html/jsstmfor.htm" >for 语句</a>
+          <LI><a href="html/jsstmforin.htm" >for...in 语句</a>
+          <LI><a href="html/jsstmfunction.htm" >function 语句</a>
+          <LI><a href="html/jsstmif.htm" >if...else 语句</a>
+          <LI><a href="html/jsstmlabeled.htm" >Labeled 语句</a>
+          <LI><a href="html/jsstmreturn.htm" >return 语句</a>
+          <LI><a href="html/jsstmswitch.htm" >switch 语句</a>
+          <LI><a href="html/jsstmthis.htm" >this 语句</a>
+          <LI><a href="html/jsstmThrow.htm" >throw 语句</a>
+          <LI><a href="html/jsstmtrycatch.htm" >try...catch...finally 语句</a>
+          <LI><a href="html/jsstmvar.htm" >var 语句</a>
+          <LI><a href="html/jsstmwhile.htm" >while 语句</a>
+          <LI><a href="html/jsstmwith.htm" >with 语句</a>
+          </UL>
+    </UL>
+  <LI><a href="html/jsFSOTutor.htm" >FileSystemObject 用户指南</a>
+    <UL>
+      <LI><a href="html/sgfilesystemobjectmodel.htm" >FileSystemObject 对象模型</a>
+      <LI><a href="html/sgintrotofilesystemobject.htm" >FileSystemObject 和 Scripting 运行时库参考的介绍</a>
+      <LI><a href="html/sgfilesystemobjects.htm" >FileSystemObject 对象</a>
+      <LI><a href="html/sgProgrammingFileSystemObject.htm" >设计 FileSystemObject</a>
+      <LI><a href="html/sgWorkingWithDrives.htm" >处理驱动器和文件夹</a>
+      <LI><a href="html/sgWorkingWithFiles.htm" >处理文件</a>
+      <LI><a href="html/sgFSOSample.htm" >FileSystemObject 示例代码</a>
+      </UL>
+  <LI><a href="html-vss/jsfsotoc.htm" >Scripting 运行时库参考</a>
+    <UL>
+      <LI><a href="html/jsoriScriptingRun-TimeMethods.htm" >脚本运行时方法</a>
+        <UL>
+          <LI><a href="html/jsmthadddictionary.htm" >Add 方法 (Dictionary)</a>
+          <LI><a href="html/jsmthaddfolders.htm" >Add 方法 (Folders)</a>
+          <LI><a href="html/jsmthBuildPath.htm" >BuildPath 方法</a>
+          <LI><a href="html/jsmthClose.htm" >Close 方法</a>
+          <LI><a href="html/jsmthCopy.htm" >Copy 方法</a>
+          <LI><a href="html/jsmthCopyFile.htm" >CopyFile 方法</a>
+          <LI><a href="html/jsmthCopyFolder.htm" >CopyFolder 方法</a>
+          <LI><a href="http://www.jb51.net/manual/jscript/html/jsmthCreateFolder.htm" >CreateFolder 方法</a>
+          <LI><a href="html/jsmthcreateTextFile.htm" >CreateTextFile 方法</a>
+          <LI><a href="html/jsmthDelete.htm" >Delete 方法</a>
+          <LI><a href="html/jsmthDeleteFile.htm" >DeleteFile 方法</a>
+          <LI><a href="html/jsmthDeleteFolder.htm" >DeleteFolder 方法</a>
+          <LI><a href="html/jsmthDriveExists.htm" >DriveExists 方法</a>
+          <LI><a href="html/jsmthExists.htm" >Exists 方法</a>
+          <LI><a href="html/jsmthFileExists.htm" >FileExists 方法</a>
+          <LI><a href="html/jsmthFolderExists.htm" >FolderExists 方法</a>
+          <LI><a href="html/jsmthGetAbsolutePathname.htm" >GetAbsolutePathName 方法</a>
+          <LI><a href="html/jsmthGetBaseName.htm" >GetBaseName 方法</a>
+          <LI><a href="html/jsmthGetDrive.htm" >GetDrive 方法</a>
+          <LI><a href="html/jsmthGetDriveName.htm" >GetDriveName 方法</a>
+          <LI><a href="html/jsmthGetExtensionName.htm" >GetExtensionName 方法</a>
+          <LI><a href="html/jsmthGetFile.htm" >GetFile 方法</a>
+          <LI><a href="html/jsmthGetFileName.htm" >GetFileName 方法</a>
+          <LI><a href="html/jsmthGetFileVersion.htm" >getFileVersion 方法</a>
+          <LI><a href="html/jsmthGetFolder.htm" >GetFolder 方法</a>
+          <LI><a href="html/jsmthGetParentFolderName.htm" >GetParentFolderName 方法</a>
+          <LI><a href="html/jsmthGetSpecialFolder.htm" >GetSpecialFolder 方法</a>
+          <LI><a href="html/jsmthGetTempName.htm" >GetTempName 方法</a>
+          <LI><a href="html/jsmthItems.htm" >Items 方法</a>
+          <LI><a href="html/jsmthKeys.htm" >Keys 方法</a>
+          <LI><a href="html/jsmthMove.htm" >Move 方法</a>
+          <LI><a href="html/jsmthMoveFile.htm" >MoveFile 方法</a>
+          <LI><a href="html/jsmthMoveFolder.htm" >MoveFolder 方法</a>
+          <LI><a href="html/jsmthOpenAsTextStream.htm" >OpenAsTextStream 方法</a>
+          <LI><a href="html/jsmthOpenTextFile.htm" >OpenTextFile 方法</a>
+          <LI><a href="html/jsmthRead.htm" >Read 方法</a>
+          <LI><a href="html/jsmthReadAll.htm" >ReadAll 方法</a>
+          <LI><a href="html/jsmthReadLine.htm" >ReadLine 方法</a>
+          <LI><a href="html/jsmthRemove.htm" >Remove 方法</a>
+          <LI><a href="html/jsmthRemoveAll.htm" >RemoveAll 方法</a>
+          <LI><a href="html/jsmthSkip.htm" >Skip 方法</a>
+          <LI><a href="html/jsmthSkipLine.htm" >SkipLine 方法</a>
+          <LI><a href="html/jsmthWrite.htm" >Write 方法</a>
+          <LI><a href="html/jsmthWriteBlankLines.htm" >WriteBlankLines 方法</a>
+          <LI><a href="html/jsmthWriteLine.htm" >WriteLine 方法</a>
+          </UL>
+      <LI><a href="html/jsoriScriptRunTimeObjects.htm" >脚本运行时对象</a>
+        <UL>
+          <LI><a href="html/jsobjDictionary.htm" >Dictionary 对象</a>
+          <LI><a href="html/jsobjDrive.htm" >Drive 对象</a>
+          <LI><a href="html/jscolDrives.htm" >Drives 集合</a>
+          <LI><a href="html/jsobjFile.htm" >File 对象</a>
+          <LI><a href="html/jscolFiles.htm" >Files 集合</a>
+          <LI><a href="html/jsobjFileSystem.htm" >FileSystemObject 对象</a>
+          <LI><a href="html/jsobjFolder.htm" >Folder 对象</a>
+          <LI><a href="html/jscolFolders.htm" >Folders 集合</a>
+          <LI><a href="html/jsobjTextStream.htm" >TextStream 对象</a>
+          </UL>
+      <LI><a href="html/jsoriScriptingRunTimeProperties.htm" >脚本运行时属性</a>
+        <UL>
+          <LI><a href="html/jsproatEndOfLine.htm" >AtEndOfLine 属性</a>
+          <LI><a href="html/jsproatEndOfStream.htm" >AtEndOfStream 属性</a>
+          <LI><a href="html/jsproAttributes.htm" >Attributes 属性</a>
+          <LI><a href="html/jsproAvailableSpace.htm" >AvailableSpace 属性</a>
+          <LI><a href="html/jsprocolumn.htm" >Column 属性</a>
+          <LI><a href="html/jsprocompareMode.htm" >CompareMode 属性</a>
+          <LI><a href="html/jsprocount.htm" >Count 属性</a>
+          <LI><a href="html/jsproDateCreated.htm" >DateCreated 属性</a>
+          <LI><a href="html/jsproDateLastAccessed.htm" >DateLastAccessed 属性</a>
+          <LI><a href="html/jsproDateLastModified.htm" >DateLastModified 属性</a>
+          <LI><a href="html/jsproDrive.htm" >Drive 属性</a>
+          <LI><a href="html/jsproDriveLetter.htm" >DriveLetter 属性</a>
+          <LI><a href="html/jsproDrives.htm" >Drives 属性</a>
+          <LI><a href="html/jsproDriveType.htm" >DriveType 属性</a>
+          <LI><a href="html/jsproFiles.htm" >Files 属性</a>
+          <LI><a href="html/jsproFileSystem.htm" >FileSystem 属性</a>
+          <LI><a href="html/jsproFreeSpace.htm" >FreeSpace 属性</a>
+          <LI><a href="html/jsproIsReady.htm" >IsReady 属性</a>
+          <LI><a href="html/jsproIsRootFolder.htm" >IsRootFolder 属性</a>
+          <LI><a href="html/jsproitem.htm" >Item 属性</a>
+          <LI><a href="html/jsprokey.htm" >Key 属性</a>
+          <LI><a href="html/jsproline.htm" >Line 属性</a>
+          <LI><a href="html/jsproName.htm" >Name 属性</a>
+          <LI><a href="html/jsproParentFolder.htm" >ParentFolder 属性</a>
+          <LI><a href="html/jsproPath.htm" >Path 属性</a>
+          <LI><a href="html/jsproRootFolder.htm" >RootFolder 属性</a>
+          <LI><a href="html/jsproSerialNumber.htm" >SerialNumber 属性</a>
+          <LI><a href="html/jsproShareName.htm" >ShareName 属性</a>
+          <LI><a href="html/jsproShortName.htm" >ShortName 属性</a>
+          <LI><a href="html/jsproShortPath.htm" >ShortPath 属性</a>
+          <LI><a href="html/jsproSize.htm" >Size 属性</a>
+          <LI><a href="html/jsproSubFolders.htm" >SubFolders 属性</a>
+          <LI><a href="html/jsproTotalSize.htm" >TotalSize 属性</a>
+          <LI><a href="html/jsproType.htm" >Type 属性</a>
+          <LI><a href="html/jsproVolumeName.htm" >VolumeName 属性</a>
+          </UL>
+    </UL>
+  <LI><a href="html/reconIntroductionToRegularExpressions.htm" >正则表达式简介</a>
+    <UL>
+      <LI><a href="html/reconRegularExpressions.htm" >正则表达式</a>
+      <LI><a href="html/reconEarlyBeginnings.htm" >早期起源</a>
+      <LI><a href="html/reconUsesforRegularExpressions.htm" >使用正则表达式</a>
+      <LI><a href="html/jsgrpRegExpSyntax.htm" >正则表达式语法</a>
+      <LI><a href="html/reconBuildRegularExpression.htm" >建立正则表达式</a>
+      <LI><a href="html/reconOrderOfPrecedence.htm" >优先权顺序</a>
+      <LI><a href="html/reconOrdinaryCharacters.htm" >普通字符</a>
+      <LI><a href="html/reconSpecialCharacters.htm" >特殊字符</a>
+      <LI><a href="html/reconNon-PrintableCharacters.htm" >非打印字符</a>
+      <LI><a href="html/reconCharacterMatching.htm" >字符匹配</a>
+      <LI><a href="html/reconQuantifiers.htm" >限定符</a>
+      <LI><a href="html/reconAnchors.htm" >定位符</a>
+      <LI><a href="html/reconAlternationGrouping.htm" >选择和编组</a>
+      <LI><a href="http://www.jb51.net/manual/jscript/html/reconBackreferences.htm" >后向引用</a>
+      </UL>
+</UL>
+    <script src="script.html" ></script>
+<script type='text/javascript' src="http://shouce.jb51.net/utf8/tank.js"  charset=utf-8></script>
+</body>
+</html>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$('#search').addNotice("red");
+	$('button').bind("click",function(){
+			$(this).search("search");
+	});
+
+});
+</script>

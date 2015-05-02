@@ -1,119 +1,66 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Create blob, copy file in it, and close it</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-blob-get.html">ibase_blob_get</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-blob-info.html">ibase_blob_info</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-blob-import" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_blob_import</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_blob_import</span> &mdash; <span class="dc-title">Create blob, copy file in it, and close it</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-blob-import-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>ibase_blob_import</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-   , <span class="methodparam"><span class="type">resource</span> <code class="parameter">$file_handle</code></span>
-   )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>ibase_blob_import</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$file_handle</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   This function creates a BLOB, reads an entire file into it, closes it and
-   returns the assigned BLOB id.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-blob-import-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An InterBase link identifier. If omitted, the last opened link is
-       assumed.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">file_handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The file handle is a handle returned by <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_blob_import</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_blob_get" HREF="function.ibase-blob-get.html"><LINK  REL="NEXT" TITLE="ibase_blob_info" HREF="function.ibase-blob-info.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-blob-get.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-blob-info.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-blob-import" ></A
+>ibase_blob_import</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45054" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>ibase_blob_import&nbsp;--&nbsp;
+     Create blob, copy file in it, and close it
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45057" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >ibase_blob_import</B
+> ( [resource link_identifier, resource file_handle])<BR  ></BR
+><P  >&#13;     This function creates a BLOB, reads an entire file into it, closes it and 
+     returns the assigned BLOB id. The file handle is a handle returned by
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>. Returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ibase-blob-add.html"  ><B  CLASS="function" >ibase_blob_add()</B
+></A
+>,
+     <A  HREF="function.ibase-blob-cancel.html"  ><B  CLASS="function" >ibase_blob_cancel()</B
+></A
+>,
+     <A  HREF="function.ibase-blob-close.html"  ><B  CLASS="function" >ibase_blob_close()</B
+></A
+> and
+     <A  HREF="function.ibase-blob-create.html"  ><B  CLASS="function" >ibase_blob_create()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-blob-get.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-blob-info.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_blob_get</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_blob_info</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-blob-import-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns the BLOB id on success, or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.ibase-blob-import-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1129">
-    <p><strong>Example #1 <span class="function"><strong>ibase_blob_import()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$host</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$username</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/tmp/bar'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$fd&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$blob&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_blob_import</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fd</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fd</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">is_string</span><span style="color: #007700">(</span><span style="color: #0000BB">$blob</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;import&nbsp;failed<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;foo&nbsp;(name,&nbsp;data)&nbsp;VALUES&nbsp;('</span><span style="color: #0000BB">$filename</span><span style="color: #DD0000">',&nbsp;?)"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$prepared&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_prepare</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">ibase_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$prepared</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$blob</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;record&nbsp;insertion&nbsp;failed<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;unable&nbsp;to&nbsp;open&nbsp;the&nbsp;data&nbsp;file<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-blob-import-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-blob-add.html" class="function" rel="rdfs-seeAlso">ibase_blob_add()</a> - Add data into a newly created blob</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-cancel.html" class="function" rel="rdfs-seeAlso">ibase_blob_cancel()</a> - Cancel creating blob</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-close.html" class="function" rel="rdfs-seeAlso">ibase_blob_close()</a> - Close blob</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-create.html" class="function" rel="rdfs-seeAlso">ibase_blob_create()</a> - Create a new blob for adding data</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-blob-get.html">ibase_blob_get</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-blob-info.html">ibase_blob_info</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

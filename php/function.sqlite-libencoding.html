@@ -1,83 +1,83 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns the encoding of the linked SQLite library</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqlite-last-insert-rowid.html">sqlite_last_insert_rowid</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sqlite-libversion.html">sqlite_libversion</a></div>
- <div class="up"><a href="ref.sqlite.html">SQLite ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.sqlite-libencoding" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">sqlite_libencoding</h1>
-  <p class="verinfo">(PHP 5 &lt; 5.4.0, PECL sqlite &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">sqlite_libencoding</span> &mdash; <span class="dc-title">Returns the encoding of the linked SQLite library</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.sqlite-libencoding-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>sqlite_libencoding</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   The SQLite library may be compiled in either <em>ISO-8859-1</em>
-   or <em>UTF-8</em> compatible modes. This function allows you to
-   determine which encoding scheme is used by your version of the library.
-  </p>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    The default PHP distribution builds <var class="filename">libsqlite</var> in
-    <em>ISO-8859-1</em> encoding
-    mode.  However, this is a misnomer; rather than handling
-    <em>ISO-8859-1</em>, it operates according to your current
-    locale settings for string comparisons and sort ordering. So, rather
-    than <em>ISO-8859-1</em>, you should think of it as being
-    &#039;<em>8-bit</em>&#039; instead.
-   </p>
-  </div>
-  <p class="para">
-   When compiled with <em>UTF-8</em> support, sqlite handles encoding and decoding
-   of <em>UTF-8</em> multi-byte character sequences, but does not yet do a complete
+<HTML  ><HEAD  ><TITLE  >sqlite_libencoding</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="SQLite" HREF="ref.sqlite.html"><LINK  REL="PREVIOUS" TITLE="sqlite_last_insert_rowid" HREF="function.sqlite-last-insert-rowid.html"><LINK  REL="NEXT" TITLE="sqlite_libversion" HREF="function.sqlite-libversion.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sqlite-last-insert-rowid.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sqlite-libversion.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.sqlite-libencoding" ></A
+>sqlite_libencoding</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN101477" ></A
+><P  >    (no version information, might be only in CVS)</P
+>sqlite_libencoding&nbsp;--&nbsp;Returns the encoding of the linked SQLite library.</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN101480" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >sqlite_libencoding</B
+> ( void )<BR  ></BR
+><P  >&#13;   The SQLite library may be compiled in either ISO-8859-1 or UTF-8
+   compatible modes.  This function allows you to determine which encoding
+   scheme is used by your version of the library.
+  </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >æØ∏Ê</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;    The default PHP distribution builds libsqlite in ISO-8859-1 encoding
+    mode.  However, this is a misnomer; rather than handling ISO-8859-1, it
+    operates according to your current locale settings for string
+    comparisons and sort ordering.  So, rather than ISO-8859-1, you should
+    think of it as being '8-bit' instead.
+   </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;   When compiled with UTF-8 support, sqlite handles encoding and decoding
+   of UTF-8 multi-byte character sequences, but does not yet do a complete
    job when working with the data (no normalization is performed for
    example), and some comparison operations may still not be carried out
    correctly.
-  </p>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    It is not recommended that you use PHP in a web-server configuration
-    with a version of the SQLite library compiled with <em>UTF-8</em> support, since
-    <var class="filename">libsqlite</var> will abort the process if it detects a problem with the
-    <em>UTF-8</em> encoding.
-   </p>
-  </div>
- </div>
+  </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >æØ∏Ê</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;    It is not recommended that you use PHP in a web-server configuration
+    with a version of the SQLite library compiled with UTF-8 support, since
+    libsqlite will abort the process if it detects a problem with the
+    UTF-8 encoding.
+   </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;   See also <A  HREF="function.sqlite-libversion.html"  ><B  CLASS="function" >sqlite_libversion()</B
+></A
+>.
+  </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sqlite-last-insert-rowid.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sqlite-libversion.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sqlite_last_insert_rowid</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sqlite.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sqlite_libversion</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.sqlite-libencoding-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns the library encoding.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.sqlite-libencoding-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><strong>sqlite_lib_version()</strong></span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sqlite-last-insert-rowid.html">sqlite_last_insert_rowid</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sqlite-libversion.html">sqlite_libversion</a></div>
- <div class="up"><a href="ref.sqlite.html">SQLite ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

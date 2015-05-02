@@ -1,104 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›æ–‡ä»¶æŒ‡é’ˆè¯»/å†™çš„ä½ç½®</title>
+<HTML  ><HEAD  ><TITLE  >ftell</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fstat" HREF="function.fstat.html"><LINK  REL="NEXT" TITLE="ftruncate" HREF="function.ftruncate.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fstat.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftruncate.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftell" ></A
+>ftell</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28849" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>ftell&nbsp;--&nbsp;·µ»ØÎÄ¼şÖ¸Õë¶Á/Ğ´µÄÎ»ÖÃ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28852" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >ftell</B
+> ( resource handle)<BR  ></BR
+><P  >&#13;     ·µ»ØÓÉ <TT  CLASS="parameter" ><I  >handle</I
+></TT
+> Ö¸¶¨µÄÎÄ¼şÖ¸ÕëµÄÎ»ÖÃ£¬Ò²¾ÍÊÇÎÄ¼şÁ÷ÖĞµÄÆ«ÒÆÁ¿¡£
+    </P
+><P  >&#13;     Èç¹û³ö´í£¬·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ÎÄ¼şÖ¸Õë±ØĞëÊÇÓĞĞ§µÄ£¬ÇÒ±ØĞëÖ¸ÏòÒ»¸öÍ¨¹ı <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>
+     »ò <A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+> ³É¹¦´ò¿ªµÄÎÄ¼ş¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN28868" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ftell()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// ´ò¿ªÎÄ¼ş²¢¶ÁĞ©Êı¾İ<br  /></font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"/etc/passwd"</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">12</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// ÏÖÔÚÖ¸Õëµ½ÄÄÀïÁË£¿<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">ftell</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">); </font><font  color="#FF8000">// 11<br  /><br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>£¬<A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+>£¬<A  HREF="function.fseek.html"  ><B  CLASS="function" >fseek()</B
+></A
+>
+     ºÍ <A  HREF="function.rewind.html"  ><B  CLASS="function" >rewind()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fstat.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftruncate.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fstat</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftruncate</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fstat.html">fstat</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftruncate.html">ftruncate</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftell" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ftell</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ftell</span> &mdash; <span class="dc-title">è¿”å›æ–‡ä»¶æŒ‡é’ˆè¯»/å†™çš„ä½ç½®</span></p>
 
- </div>
- 
-  <div class="refsect1 description" id="refsect1-function.ftell-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>ftell</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   è¿”å›ç”± <code class="parameter">handle</code> æŒ‡å®šçš„æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®ï¼Œä¹Ÿå°±æ˜¯æ–‡ä»¶æµä¸­çš„åç§»é‡ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.ftell-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æ–‡ä»¶æŒ‡é’ˆå¿…é¡»æ˜¯æœ‰æ•ˆçš„ï¼Œä¸”å¿…é¡»æŒ‡å‘ä¸€ä¸ªé€šè¿‡ <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
-   æˆ– <span class="function"><a href="function.popen.html" class="function">popen()</a></span> æˆåŠŸæ‰“å¼€çš„æ–‡ä»¶ã€‚åœ¨é™„åŠ æ¨¡å¼ï¼ˆåŠ å‚æ•° &quot;a&quot; æ‰“å¼€æ–‡ä»¶ï¼‰ä¸­ <span class="function"><strong>ftell()</strong></span>
-   ä¼šè¿”å›æœªå®šä¹‰é”™è¯¯ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ftell-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns the position of the file pointer referenced by
-   <code class="parameter">handle</code> as an integer; i.e., its offset into the file stream.
-  </p>
-  <p class="para">
-   å¦‚æœå‡ºé”™ï¼Œè¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
-  <div class="refsect1 examples" id="refsect1-function.ftell-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2492">
-    <p><strong>Example #1 <span class="function"><strong>ftell()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;opens&nbsp;a&nbsp;file&nbsp;and&nbsp;read&nbsp;some&nbsp;data<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/passwd"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;where&nbsp;are&nbsp;we&nbsp;?<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">ftell</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;11<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
-  <div class="refsect1 seealso" id="refsect1-function.ftell-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - æ‰“å¼€æ–‡ä»¶æˆ–è€… URL</span></li>
-    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - æ‰“å¼€è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</span></li>
-    <li class="member"><span class="function"><a href="function.fseek.html" class="function" rel="rdfs-seeAlso">fseek()</a> - åœ¨æ–‡ä»¶æŒ‡é’ˆä¸­å®šä½</span></li>
-    <li class="member"><span class="function"><a href="function.rewind.html" class="function" rel="rdfs-seeAlso">rewind()</a> - å€’å›æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fstat.html">fstat</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftruncate.html">ftruncate</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,137 +1,159 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>从封装协议文件指针中取得报头／元数据</title>
+<HTML  ><HEAD  ><TITLE  >stream_get_meta_data</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_get_line" HREF="function.stream-get-line.html"><LINK  REL="NEXT" TITLE="stream_get_transports" HREF="function.stream-get-transports.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-get-line.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-get-transports.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-get-meta-data" ></A
+>stream_get_meta_data</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN106564" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>stream_get_meta_data&nbsp;--&nbsp;Retrieves header/meta data from streams/file pointers</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN106567" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >stream_get_meta_data</B
+> ( resource stream)<BR  ></BR
+><P  >&#13;     Returns information about an existing <TT  CLASS="parameter" ><I  >stream</I
+></TT
+>.
+     The stream can be any stream created by <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>,
+     <A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+> and <A  HREF="function.pfsockopen.html"  ><B  CLASS="function" >pfsockopen()</B
+></A
+>.
+     The result array contains the following items:
+    </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >timed_out</I
+></TT
+> (bool) - <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the stream
+       timed out while waiting for data on the last call to
+       <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+> or <A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>.
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >blocked</I
+></TT
+> (bool) - <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the stream is
+       in blocking IO mode. See <A  HREF="function.stream-set-blocking.html"  ><B  CLASS="function" >stream_set_blocking()</B
+></A
+>.
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >eof</I
+></TT
+> (bool) - <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the stream has reached
+       end-of-file.  Note that for socket streams this member can be <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>
+       even when <TT  CLASS="parameter" ><I  >unread_bytes</I
+></TT
+> is non-zero.  To
+       determine if there is more data to be read, use
+       <A  HREF="function.feof.html"  ><B  CLASS="function" >feof()</B
+></A
+> instead of reading this item.
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >unread_bytes</I
+></TT
+> (int) - the number of bytes
+       currently contained in the read buffer.
+      </P
+></LI
+></UL
+><P  >&#13;     The following items were added in PHP 4.3:
+    </P
+><P  ></P
+><UL  ><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >stream_type</I
+></TT
+> (string) - a label describing
+       the underlying implementation of the stream.
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >wrapper_type</I
+></TT
+> (string) - a label describing
+       the protocol wrapper implementation layered over the stream.
+       See <A  HREF="wrappers.html"  >��¼ J</A
+> for more information about wrappers.
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >wrapper_data</I
+></TT
+> (mixed) - wrapper specific
+       data attached to this stream.  See <A  HREF="wrappers.html"  >��¼ J</A
+> for
+       more information about wrappers and their wrapper data.
+      </P
+></LI
+><LI  ><P  >&#13;       <TT  CLASS="parameter" ><I  >filters</I
+></TT
+> (array) - and array containing
+       the names of any filters that have been stacked onto this stream.
+       Filters are currently undocumented.
+      </P
+></LI
+></UL
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      This function was introduced in PHP 4.3, but prior to this version,
+      <A  HREF="function.socket-get-status.html"  ><B  CLASS="function" >socket_get_status()</B
+></A
+> could be used to retrieve
+      the first four items, for <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >socket based streams only</I
+></SPAN
+>.
+     </P
+><P  >&#13;      In PHP 4.3 and later,
+      <A  HREF="function.socket-get-status.html"  ><B  CLASS="function" >socket_get_status()</B
+></A
+> is an alias for this function.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>This function does NOT work on sockets created by the <A  HREF="ref.sockets.html"  >Socket extension</A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-get-line.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-get-transports.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_get_line</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_get_transports</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-get-line.html">stream_get_line</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-get-transports.html">stream_get_transports</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-get-meta-data" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_get_meta_data</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">stream_get_meta_data</span> &mdash; <span class="dc-title">从封装协议文件指针中取得报头／元数据</span></p>
 
- </div>
- <div class="refsect1 unknown-seealsp" id="refsect1-function.stream-get-meta-data-unknown-seealsp">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>stream_get_meta_data</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$fp</code></span>
-   )</div>
-
-  <p class="simpara">
-   返回现有 <code class="parameter">stream</code> 的信息。可以是任何通过
-   <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>，<span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span>
-   和 <span class="function"><a href="function.pfsockopen.html" class="function">pfsockopen()</a></span> 建立的流。返回的数组包含以下项目：
-  </p>
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">timed_out</code> (bool) - 如果在上次调用
-     <span class="function"><a href="function.fread.html" class="function">fread()</a></span> 或者 <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span>
-     中等待数据时流超时了则为 <strong><code>TRUE</code></strong>。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">blocked</code> (bool) - 如果流处于阻塞
-     IO 模式时为 <strong><code>TRUE</code></strong>。参见 <span class="function"><a href="function.stream-set-blocking.html" class="function">stream_set_blocking()</a></span>。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">eof</code> (bool) - 如果流到达文件末尾时为
-     <strong><code>TRUE</code></strong>。注意对于 socket 流甚至当 <code class="parameter">unread_bytes</code>
-     为非零值时也可以为 <strong><code>TRUE</code></strong>。要测定是否有更多数据可读，用
-     <span class="function"><a href="function.feof.html" class="function">feof()</a></span> 替代读取本项目的值。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">unread_bytes</code> (int) - 当前在 PHP 自己的内部缓冲区中的字节数。
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <span class="simpara">
-      不要在脚本中使用此值。
-     </span>
-    </p></blockquote>
-   </li>
-  </ul>
-  <p class="simpara">
-   以下项目是 PHP 4.3 新加的：
-  </p>
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">stream_type</code> (string) - 一个描述流底层实现的标注。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">wrapper_type</code> (string) -
-     一个描述流的分层协议封装实现的标注。更多关于封装协议的信息见
-     <a href="wrappers.html" class="xref">支持的协议和封装协议</a>。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">wrapper_data</code> (mixed) -
-     当前流附加的封装协议数据。更多封装协议及其数据的信息见
-     <a href="wrappers.html" class="xref">支持的协议和封装协议</a>。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">filters</code> (array) - 
-     包含有被叠加在当前流的任何过滤器名的数组。过滤器的文档见附录中的<a href="filters.html" class="link">可用过滤器列表</a>。
-    </p>
-   </li>
-  </ul>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    本函数是 PHP 4.3 引进的，在此版本之前，可以用 <span class="function"><a href="function.socket-get-status.html" class="function">socket_get_status()</a></span>
-    来取得前四个项目并且<em class="emphasis">仅能用于基于 socket 的流</em>。
-   </p>
-   <p class="para">
-    在 PHP 4.3 及以后版本中，<span class="function"><a href="function.socket-get-status.html" class="function">socket_get_status()</a></span>
-    是本函数的别名。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    本函数不能作用于通过 <a href="ref.sockets.html" class="link">Socket 扩展库</a>创建的流。
-   </span>
-  </p></blockquote>
-  <p class="simpara">
-   以下项目为 PHP 5.0 新加：
-  </p>
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">mode</code> (string) - 对当前流所要求的访问类型（见
-     <a href="function.fopen.html" class="link">fopen()</a> 中的表格 1）。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">seekable</code> (bool) - 是否可以在当前流中定位。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <code class="parameter">uri</code> (string) - 与当前流关联的 URI 或文件名。
-    </p>
-   </li>
-  </ul>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-get-line.html">stream_get_line</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-get-transports.html">stream_get_transports</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

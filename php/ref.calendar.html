@@ -1,134 +1,339 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ—¥å† å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="calendar.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.cal-days-in-month.html">cal_days_in_month</a></div>
- <div class="up"><a href="book.calendar.html">Calendar</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.calendar" class="reference">
-  <h1 class="title">æ—¥å† å‡½æ•°</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.cal-days-in-month.html">cal_days_in_month</a> â€” è¿”å›æŸä¸ªå†æ³•ä¸­æŸå¹´ä¸­æŸæœˆçš„å¤©æ•°</li><li><a href="function.cal-from-jd.html">cal_from_jd</a> â€” è½¬æ¢Julian Dayè®¡æ•°åˆ°ä¸€ä¸ªæ”¯æŒçš„å†æ³•ã€‚</li><li><a href="function.cal-info.html">cal_info</a> â€” è¿”å›é€‰å®šå†æ³•çš„ä¿¡æ¯</li><li><a href="function.cal-to-jd.html">cal_to_jd</a> â€” ä»ä¸€ä¸ªæ”¯æŒçš„å†æ³•è½¬å˜ä¸ºJulian Dayè®¡æ•°ã€‚</li><li><a href="function.easter-date.html">easter_date</a> â€” å¾—åˆ°æŒ‡å®šå¹´ä»½çš„å¤æ´»èŠ‚åˆå¤œæ—¶çš„Unixæ—¶é—´æˆ³ã€‚</li><li><a href="function.easter-days.html">easter_days</a> â€” å¾—åˆ°æŒ‡å®šå¹´ä»½çš„3æœˆ21æ—¥åˆ°å¤æ´»èŠ‚ä¹‹é—´çš„å¤©æ•°</li><li><a href="function.frenchtojd.html">FrenchToJD</a> â€” ä»ä¸€ä¸ªFrench Republicanå†æ³•çš„æ—¥æœŸå¾—åˆ°Julian Dayè®¡æ•°ã€‚</li><li><a href="function.gregoriantojd.html">GregorianToJD</a> â€” è½¬å˜ä¸€ä¸ªGregorianå†æ³•æ—¥æœŸåˆ°Julian Dayè®¡æ•°</li><li><a href="function.jddayofweek.html">JDDayOfWeek</a> â€” è¿”å›æ˜ŸæœŸçš„æ—¥æœŸ</li><li><a href="function.jdmonthname.html">JDMonthName</a> â€” è¿”å›æœˆä»½çš„åç§°</li><li><a href="function.jdtofrench.html">JDToFrench</a> â€” è½¬å˜ä¸€ä¸ªJulian Dayè®¡æ•°åˆ°French Republicanå†æ³•çš„æ—¥æœŸ</li><li><a href="function.jdtogregorian.html">JDToGregorian</a> â€” è½¬å˜ä¸€ä¸ªJulian Dayè®¡æ•°ä¸ºGregorianå†æ³•æ—¥æœŸ</li><li><a href="function.jdtojewish.html">jdtojewish</a> â€” è½¬æ¢ä¸€ä¸ªjulianå¤©æ•°ä¸ºJewishå†æ³•çš„æ—¥æœŸ</li><li><a href="function.jdtojulian.html">JDToJulian</a> â€” è½¬å˜ä¸€ä¸ªJulian Dayè®¡æ•°åˆ°Julianå†æ³•çš„æ—¥æœŸ</li><li><a href="function.jdtounix.html">jdtounix</a> â€” è½¬å˜Julian Dayè®¡æ•°ä¸ºä¸€ä¸ªUnixæ—¶é—´æˆ³</li><li><a href="function.jewishtojd.html">JewishToJD</a> â€” è½¬å˜ä¸€ä¸ªJewishå†æ³•çš„æ—¥æœŸä¸ºä¸€ä¸ªJulian Dayè®¡æ•°</li><li><a href="function.juliantojd.html">JulianToJD</a> â€” è½¬å˜ä¸€ä¸ªJulianå†æ³•çš„æ—¥æœŸä¸ºJulian Dayè®¡æ•°</li><li><a href="function.unixtojd.html">unixtojd</a> â€” è½¬å˜Unixæ—¶é—´æˆ³ä¸ºJulian Dayè®¡æ•°</li></ul>
+<HTML  ><HEAD  ><TITLE  >Calendar Functions</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="bzwrite" HREF="function.bzwrite.html"><LINK  REL="NEXT" TITLE="cal_days_in_month" HREF="function.cal-days-in-month.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.bzwrite.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.cal-days-in-month.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.calendar" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >VI. Calendar Functions</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN11344" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="calendar.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     The calendar extension presents a series of functions to simplify
+     converting between different calendar formats.  The intermediary or
+     standard it is based on is the Julian Day Count.  The Julian Day Count is
+     a count of days starting from January 1st, 4713 B.C.  To convert between
+     calendar systems, you must first convert to Julian Day Count, then to the
+     calendar system of your choice.  Julian Day Count is very different from
+     the Julian Calendar! For more information on Julian Day Count, visit
+     <A  href="http://www.hermetic.ch/cal_stud/jdn.htm"  TARGET="_top" >http://www.hermetic.ch/cal_stud/jdn.htm</A
+>. For more
+     information on calendar systems visit <A  href="http://www.boogle.com/info/cal-overview.html"  TARGET="_top" >http://www.boogle.com/info/cal-overview.html</A
+>.  Excerpts from this page are
+     included in these instructions, and are in quotes.
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="calendar.installation" ></A
+>°²×°</H1
+><P  >&#13;  To get these functions to work, you have to compile PHP with
+  <TT  CLASS="option" >--enable-calendar</TT
+>.
+ </P
+><P  > <TT  CLASS="literal" >PHP</TT
+> µÄ Windows °æ±¾ÒÑ¾­ÄÚÖÃ¸ÃÀ©Õ¹Ä£¿éµÄÖ§³Ö¡£ÄúÎŞĞè¼ÓÔØÈÎºÎ¸½¼ÓµÄÀ©Õ¹¿â¼´¿ÉÊ¹ÓÃÕâĞ©º¯Êı¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="calendar.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="calendar.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="calendar.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >CAL_GREGORIAN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_JULIAN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_JEWISH</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_FRENCH</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_NUM_CALS</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_DOW_DAYNO</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_DOW_SHORT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_DOW_LONG</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_MONTH_GREGORIAN_SHORT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_MONTH_GREGORIAN_LONG</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_MONTH_JULIAN_SHORT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_MONTH_JULIAN_LONG</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_MONTH_JEWISH</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_MONTH_FRENCH</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+></DL
+></DIV
+><P  >&#13;  The following constants are available since <TT  CLASS="literal" >PHP</TT
+> 4.3.0 :
+ </P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >CAL_EASTER_DEFAULT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_EASTER_ROMAN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_EASTER_ALWAYS_GREGORIAN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_EASTER_ALWAYS_JULIAN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+></DL
+></DIV
+><P  >&#13;  The following constants are available since <TT  CLASS="literal" >PHP</TT
+> 5.0.0 :
+ </P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >CAL_JEWISH_ADD_ALAFIM_GERESH</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_JEWISH_ADD_ALAFIM</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >CAL_JEWISH_ADD_GERESHAYIM</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.cal-days-in-month.html"  >cal_days_in_month</A
+>&nbsp;--&nbsp;Return the number of days in a month for a given year and calendar</DT
+><DT  ><A  HREF="function.cal-from-jd.html"  >cal_from_jd</A
+>&nbsp;--&nbsp;Converts from Julian Day Count to a supported calendar</DT
+><DT  ><A  HREF="function.cal-info.html"  >cal_info</A
+>&nbsp;--&nbsp;Returns information about a particular calendar</DT
+><DT  ><A  HREF="function.cal-to-jd.html"  >cal_to_jd</A
+>&nbsp;--&nbsp;Converts from a supported calendar to Julian Day Count</DT
+><DT  ><A  HREF="function.easter-date.html"  >easter_date</A
+>&nbsp;--&nbsp;
+     Get Unix timestamp for midnight on Easter of a given year
+    </DT
+><DT  ><A  HREF="function.easter-days.html"  >easter_days</A
+>&nbsp;--&nbsp;
+     Get number of days after March 21 on which Easter falls for a
+     given year
+    </DT
+><DT  ><A  HREF="function.frenchtojd.html"  >FrenchToJD</A
+>&nbsp;--&nbsp;
+     Converts a date from the French Republican Calendar to a Julian
+     Day Count
+    </DT
+><DT  ><A  HREF="function.gregoriantojd.html"  >GregorianToJD</A
+>&nbsp;--&nbsp;
+     Converts a Gregorian date to Julian Day Count
+    </DT
+><DT  ><A  HREF="function.jddayofweek.html"  >JDDayOfWeek</A
+>&nbsp;--&nbsp;Returns the day of the week</DT
+><DT  ><A  HREF="function.jdmonthname.html"  >JDMonthName</A
+>&nbsp;--&nbsp;Returns a month name</DT
+><DT  ><A  HREF="function.jdtofrench.html"  >JDToFrench</A
+>&nbsp;--&nbsp;
+     Converts a Julian Day Count to the French Republican Calendar
+    </DT
+><DT  ><A  HREF="function.jdtogregorian.html"  >JDToGregorian</A
+>&nbsp;--&nbsp;Converts Julian Day Count to Gregorian date</DT
+><DT  ><A  HREF="function.jdtojewish.html"  >jdtojewish</A
+>&nbsp;--&nbsp;
+     Converts a Julian day count to a Jewish calendar date
+    </DT
+><DT  ><A  HREF="function.jdtojulian.html"  >JDToJulian</A
+>&nbsp;--&nbsp;
+     Converts a Julian Day Count to a Julian Calendar Date
+    </DT
+><DT  ><A  HREF="function.jdtounix.html"  >jdtounix</A
+>&nbsp;--&nbsp;Convert Julian Day to Unix timestamp</DT
+><DT  ><A  HREF="function.jewishtojd.html"  >JewishToJD</A
+>&nbsp;--&nbsp;
+     Converts a date in the Jewish Calendar to Julian Day Count
+    </DT
+><DT  ><A  HREF="function.juliantojd.html"  >JulianToJD</A
+>&nbsp;--&nbsp;
+     Converts a Julian Calendar date to Julian Day Count
+    </DT
+><DT  ><A  HREF="function.unixtojd.html"  >unixtojd</A
+>&nbsp;--&nbsp;Convert Unix timestamp to Julian Day</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.bzwrite.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.cal-days-in-month.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >bzwrite</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >cal_days_in_month</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="calendar.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.cal-days-in-month.html">cal_days_in_month</a></div>
- <div class="up"><a href="book.calendar.html">Calendar</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

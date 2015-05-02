@@ -1,128 +1,138 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Queries the local side of the given socket which may either result in host/port or in a Unix filesystem path, dependent on its type</title>
+<HTML  ><HEAD  ><TITLE  >socket_getsockname</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="PREVIOUS" TITLE="socket_getpeername" HREF="function.socket-getpeername.html"><LINK  REL="NEXT" TITLE="socket_iovec_add" HREF="function.socket-iovec-add.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.socket-getpeername.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.socket-iovec-add.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.socket-getsockname" ></A
+>socket_getsockname</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN104444" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>socket_getsockname&nbsp;--&nbsp;
+     Queries the local side of the given socket which may either result in host/port
+     or in a Unix filesystem path, dependent on its type.
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN104447" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >socket_getsockname</B
+> ( resource socket, string &#38;addr [, int &#38;port])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     If the given socket is of type <TT  CLASS="constant" ><B  >AF_INET</B
+></TT
+>
+     or <TT  CLASS="constant" ><B  >AF_INET6</B
+></TT
+>, <B  CLASS="function" >socket_getsockname()</B
+> 
+     will return the local <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >IP address</I
+></SPAN
+> in appropriate notation (e.g.
+     <TT  CLASS="literal" >127.0.0.1</TT
+> or <TT  CLASS="literal" >fe80::1</TT
+>) in the 
+     <TT  CLASS="parameter" ><I  >address</I
+></TT
+> parameter and, if the optional 
+     <TT  CLASS="parameter" ><I  >port</I
+></TT
+> parameter is present, also the associated port.
+    </P
+><P  >&#13;     If the given socket is of type <TT  CLASS="constant" ><B  >AF_UNIX</B
+></TT
+>,
+     <B  CLASS="function" >socket_getsockname()</B
+> will return the Unix filesystem
+     path (e.g. <TT  CLASS="literal" >/var/run/daemon.sock</TT
+>) in the
+     <TT  CLASS="parameter" ><I  >address</I
+></TT
+> parameter.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >socket_getsockname()</B
+> should not be used with
+      <TT  CLASS="constant" ><B  >AF_UNIX</B
+></TT
+> sockets created with <A  HREF="function.socket-connect.html"  ><B  CLASS="function" >socket_connect()</B
+></A
+>.
+      Only sockets created with <A  HREF="function.socket-accept.html"  ><B  CLASS="function" >socket_accept()</B
+></A
+> or a primary
+      server socket following a call to <A  HREF="function.socket-bind.html"  ><B  CLASS="function" >socket_bind()</B
+></A
+> will return
+      meaningful values.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£ <B  CLASS="function" >socket_getsockname()</B
+> may also return
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the socket type is not any of <TT  CLASS="constant" ><B  >AF_INET</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >AF_INET6</B
+></TT
+>, or <TT  CLASS="constant" ><B  >AF_UNIX</B
+></TT
+>, in which 
+     case the last socket error code is <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >not</I
+></SPAN
+> updated.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.socket-getpeername.html"  ><B  CLASS="function" >socket_getpeername()</B
+></A
+>,
+     <A  HREF="function.socket-last-error.html"  ><B  CLASS="function" >socket_last_error()</B
+></A
+> and
+     <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.socket-getpeername.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.socket-iovec-add.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >socket_getpeername</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >socket_iovec_add</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-getpeername.html">socket_getpeername</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-import-stream.html">socket_import_stream</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.socket-getsockname" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">socket_getsockname</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">socket_getsockname</span> &mdash; <span class="dc-title">Queries the local side of the given socket which may either result in host/port or in a Unix filesystem path, dependent on its type</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.socket-getsockname-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>socket_getsockname</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$addr</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$port</code></span>
-  ] )</div>
-
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <span class="simpara">
-    <span class="function"><strong>socket_getsockname()</strong></span> should not be used with
-    <strong><code>AF_UNIX</code></strong> sockets created with <span class="function"><a href="function.socket-connect.html" class="function">socket_connect()</a></span>.
-    Only sockets created with <span class="function"><a href="function.socket-accept.html" class="function">socket_accept()</a></span> or a primary
-    server socket following a call to <span class="function"><a href="function.socket-bind.html" class="function">socket_bind()</a></span> will return
-    meaningful values.
-   </span>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.socket-getsockname-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A valid socket resource created with <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> 
-       or <span class="function"><a href="function.socket-accept.html" class="function">socket_accept()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">addr</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If the given socket is of type <strong><code>AF_INET</code></strong>
-       or <strong><code>AF_INET6</code></strong>, <span class="function"><strong>socket_getsockname()</strong></span>
-       will return the local <em class="emphasis">IP address</em> in appropriate notation (e.g.
-       <em>127.0.0.1</em> or <em>fe80::1</em>) in the
-       <code class="parameter">address</code> parameter and, if the optional
-       <code class="parameter">port</code> parameter is present, also the associated port.
-      </p>
-      <p class="para">
-       If the given socket is of type <strong><code>AF_UNIX</code></strong>,
-       <span class="function"><strong>socket_getsockname()</strong></span> will return the Unix filesystem
-       path (e.g. <em>/var/run/daemon.sock</em>) in the
-       <code class="parameter">address</code> parameter.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">port</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If provided, this will hold the associated port.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.socket-getsockname-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚ <span class="function"><strong>socket_getsockname()</strong></span> may also return
-   <strong><code>FALSE</code></strong> if the socket type is not any of <strong><code>AF_INET</code></strong>,
-   <strong><code>AF_INET6</code></strong>, or <strong><code>AF_UNIX</code></strong>, in which
-   case the last socket error code is <em class="emphasis">not</em> updated.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.socket-getsockname-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.socket-getpeername.html" class="function" rel="rdfs-seeAlso">socket_getpeername()</a> - Queries the remote side of the given socket which may either result in host/port or in a Unix filesystem path, dependent on its type</span></li>
-    <li class="member"><span class="function"><a href="function.socket-last-error.html" class="function" rel="rdfs-seeAlso">socket_last_error()</a> - Returns the last error on the socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-strerror.html" class="function" rel="rdfs-seeAlso">socket_strerror()</a> - Return a string describing a socket error</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-getpeername.html">socket_getpeername</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-import-stream.html">socket_import_stream</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

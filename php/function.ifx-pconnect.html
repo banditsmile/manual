@@ -1,129 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Open persistent Informix connection</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ifx-num-rows.html">ifx_num_rows</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ifx-prepare.html">ifx_prepare</a></div>
- <div class="up"><a href="ref.ifx.html">Informix ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ifx-pconnect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ifx_pconnect</h1>
-  <p class="verinfo">(PHP 4, PHP &lt;=5.2.0)</p><p class="refpurpose"><span class="refname">ifx_pconnect</span> &mdash; <span class="dc-title">Open persistent Informix connection</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ifx-pconnect-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ifx_pconnect</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$userid</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>ifx_pconnect()</strong></span> acts very much like
-   <span class="function"><a href="function.ifx-connect.html" class="function">ifx_connect()</a></span> with two major differences.
-  </p>
-  <p class="para">
-   First, when connecting, the function would first try to find a
-   (persistent) link that&#039;s already open with the same host,
-   username and password.  If one is found, an identifier for it
-   will be returned instead of opening a new connection.
-  </p>
-  <p class="para">
-   Second, the connection to the SQL server will not be closed when
-   the execution of the script ends.  Instead, the link will remain
-   open for future use (<span class="function"><a href="function.ifx-close.html" class="function">ifx_close()</a></span> will not
-   close links established by <span class="function"><strong>ifx_pconnect()</strong></span>).
-  </p>
-  <p class="para">
-   This type of links is therefore called &#039;persistent&#039;.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ifx-pconnect-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   All of the arguments are optional, and if they&#039;re missing, defaults are
-   taken from values supplied in <var class="filename">php.ini</var> (ifx.default_host for the host
-   (Informix libraries will use <span class="envar">INFORMIXSERVER</span> environment
-   value if not defined), ifx.default_user for user, ifx.default_password for
-   the password (none if not defined).
-  </p>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">database</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The database name, as a string.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">userid</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The username, as a string.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">password</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The password, as a string.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ifx_pconnect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Informix Functions" HREF="ref.ifx.html"><LINK  REL="PREVIOUS" TITLE="ifx_num_rows" HREF="function.ifx-num-rows.html"><LINK  REL="NEXT" TITLE="ifx_prepare" HREF="function.ifx-prepare.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ifx-num-rows.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ifx-prepare.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ifx-pconnect" ></A
+>ifx_pconnect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN44383" ></A
+><P  >    (PHP 3&#62;= 3.0.3, PHP 4 )</P
+>ifx_pconnect&nbsp;--&nbsp;Open persistent Informix connection</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN44386" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >ifx_pconnect</B
+> ( [string database [, string userid [, string password]]])<BR  ></BR
+><P  > 
+     Returns: A positive Informix persistent link identifier on success,
+     or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error
+    </P
+><P  >&#13;     <B  CLASS="function" >ifx_pconnect()</B
+> acts very much like
+     <A  HREF="function.ifx-connect.html"  ><B  CLASS="function" >ifx_connect()</B
+></A
+> with two major differences.
+    </P
+><P  > 
+     This function behaves exactly like <A  HREF="function.ifx-connect.html"  ><B  CLASS="function" >ifx_connect()</B
+></A
+>
+     when PHP is not running as an Apache module.
+     First, when connecting, the function would first try to find a
+     (persistent) link that's already open with the same host,
+     username and password.  If one is found, an identifier for it
+     will be returned instead of opening a new connection.
+    </P
+><P  > 
+     Second, the connection to the SQL server will not be closed when
+     the execution of the script ends.  Instead, the link will remain
+     open for future use (<A  HREF="function.ifx-close.html"  ><B  CLASS="function" >ifx_close()</B
+></A
+> will not
+     close links established by <B  CLASS="function" >ifx_pconnect()</B
+>).
+    </P
+><P  > 
+     This type of links is therefore called 'persistent'.
+    </P
+><P  >&#13;     See also: <A  HREF="function.ifx-connect.html"  ><B  CLASS="function" >ifx_connect()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ifx-num-rows.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ifx-prepare.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ifx_num_rows</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ifx.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ifx_prepare</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ifx-pconnect-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns: valid Informix persistent link identifier on success, or <strong><code>FALSE</code></strong>
-   on errors.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ifx-pconnect-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ifx-connect.html" class="function" rel="rdfs-seeAlso">ifx_connect()</a> - Open Informix server connection</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ifx-num-rows.html">ifx_num_rows</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ifx-prepare.html">ifx_prepare</a></div>
- <div class="up"><a href="ref.ifx.html">Informix ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,276 +1,187 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>é‡Šæ”¾ç»™å®šçš„å˜é‡</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.unserialize.html">unserialize</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.var-dump.html">var_dump</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.unset" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">unset</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">unset</span> &mdash; <span class="dc-title">é‡Šæ”¾ç»™å®šçš„å˜é‡</span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.unset-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>unset</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$var</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>unset()</strong></span> é”€æ¯æŒ‡å®šçš„å˜é‡ã€‚
-    </p>
-    <p class="para">
-     <span class="function"><strong>unset()</strong></span> åœ¨å‡½æ•°ä¸­çš„è¡Œä¸ºä¼šä¾èµ–äºæƒ³è¦é”€æ¯çš„å˜é‡çš„ç±»å‹è€Œæœ‰æ‰€ä¸åŒã€‚
-    </p>
-    <p class="para">
-     å¦‚æœåœ¨å‡½æ•°ä¸­ <span class="function"><strong>unset()</strong></span> 
-     ä¸€ä¸ªå…¨å±€å˜é‡ï¼Œåˆ™åªæ˜¯å±€éƒ¨å˜é‡è¢«é”€æ¯ï¼Œè€Œåœ¨è°ƒç”¨ç¯å¢ƒä¸­çš„å˜é‡å°†ä¿æŒè°ƒç”¨
-     <span class="function"><strong>unset()</strong></span> ä¹‹å‰ä¸€æ ·çš„å€¼ã€‚
-     <div class="informalexample">
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">destroy_foo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">destroy_foo</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-       </p>
-  <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-    <p class="para">
-     <div class="informalexample">
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-bar
-</pre></div>
-      </div>
-     </div>
-    </p>
-  <p class="para">
-       å¦‚æœæ‚¨æƒ³åœ¨å‡½æ•°ä¸­ <span class="function"><strong>unset()</strong></span>
-     ä¸€ä¸ªå…¨å±€å˜é‡ï¼Œå¯ä½¿ç”¨ <var class="varname"><var class="varname"><a href="reserved.variables.globals.html" class="classname">$GLOBALS</a></var></var>
-     æ•°ç»„æ¥å®ç°ï¼š
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">]);<br />}<br /><br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"something"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-    <p class="para">
-     å¦‚æœåœ¨å‡½æ•°ä¸­ <span class="function"><strong>unset()</strong></span> 
-     ä¸€ä¸ªé€šè¿‡å¼•ç”¨ä¼ é€’çš„å˜é‡ï¼Œåˆ™åªæ˜¯å±€éƒ¨å˜é‡è¢«é”€æ¯ï¼Œè€Œåœ¨è°ƒç”¨ç¯å¢ƒä¸­çš„å˜é‡å°†ä¿æŒè°ƒç”¨
-     <span class="function"><strong>unset()</strong></span> ä¹‹å‰ä¸€æ ·çš„å€¼ã€‚
-     <div class="informalexample">
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(&amp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"blah"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'something'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$bar</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$bar</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-  </p>
-   <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-  <p class="para">
-     <div class="informalexample">
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-something
-something
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     å¦‚æœåœ¨å‡½æ•°ä¸­ <span class="function"><strong>unset()</strong></span> 
-     ä¸€ä¸ªé™æ€å˜é‡ï¼Œé‚£ä¹ˆåœ¨å‡½æ•°å†…éƒ¨æ­¤é™æ€å˜é‡å°†è¢«é”€æ¯ã€‚ä½†æ˜¯ï¼Œå½“å†æ¬¡è°ƒç”¨æ­¤å‡½æ•°æ—¶ï¼Œæ­¤é™æ€å˜é‡å°†è¢«å¤åŸä¸ºä¸Šæ¬¡è¢«é”€æ¯ä¹‹å‰çš„å€¼ã€‚
-     <div class="informalexample">
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Before&nbsp;unset:&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #DD0000">,&nbsp;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;unset(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">23</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"after&nbsp;unset:&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
- </p>
-   <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-  <p class="para">
-     <div class="informalexample">
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Before unset: 1, after unset: 23
-Before unset: 2, after unset: 23
-Before unset: 3, after unset: 23
-</pre></div>
-      </div>
-     </div>
-    </p>
-   </div>
-
-  
- <div class="refsect1 parameters" id="refsect1-function.unset-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">var</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦é”€æ¯çš„å˜é‡ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">...</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å…¶ä»–å˜é‡â€¦â€¦
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.unset-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æ²¡æœ‰è¿”å›å€¼ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.unset-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.0.1</td>
-       <td>
-        æ·»åŠ äº†å¤šä¸ªå‚æ•°çš„æ”¯æŒã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >unset</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿º¯Êı¿â" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="unserialize" HREF="function.unserialize.html"><LINK  REL="NEXT" TITLE="var_dump" HREF="function.var-dump.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.unserialize.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.var-dump.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.unset" ></A
+>unset</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN116191" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>unset&nbsp;--&nbsp;ÊÍ·Å¸ø¶¨µÄ±äÁ¿</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN116194" ></A
+><H2  >ÃèÊö</H2
+>void <B  CLASS="methodname" >unset</B
+> ( mixed var [, mixed var [, ...]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >unset()</B
+> Ïú»ÙÖ¸¶¨µÄ±äÁ¿¡£×¢ÒâÔÚ
+     PHP 3 ÖĞ£¬<B  CLASS="function" >unset()</B
+> ½«·µ»Ø
+     <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¨Êµ¼ÊÉÏÊÇÕûĞÍÖµ 1£©£¬¶øÔÚ PHP 4
+     ÖĞ£¬<B  CLASS="function" >unset()</B
+> 
+     ²»ÔÙÊÇÒ»¸öÕæÕıµÄº¯Êı£ºËüÏÖÔÚÊÇÒ»¸öÓï¾ä¡£ÕâÑù¾ÍÃ»ÓĞÁË·µ»ØÖµ£¬ÊÔÍ¼»ñÈ¡
+     <B  CLASS="function" >unset()</B
+> µÄ·µ»ØÖµ½«µ¼ÖÂ½âÎö´íÎó¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN116214" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >unset()</B
+> Ê¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// Ïú»Ùµ¥¸ö±äÁ¿<br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$foo</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Ïú»Ùµ¥¸öÊı×éÔªËØ<br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$bar</font><font  color="#007700">[</font><font  color="#DD0000">'quux'</font><font  color="#007700">]);<br  /><br  /></font><font  color="#FF8000">// Ïú»ÙÒ»¸öÒÔÉÏµÄ±äÁ¿<br  /></font><font  color="#007700">unset (</font><font  color="#0000BB">$foo1</font><font  color="#007700">, </font><font  color="#0000BB">$foo2</font><font  color="#007700">, </font><font  color="#0000BB">$foo3</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <B  CLASS="function" >unset()</B
+> ÔÚº¯ÊıÖĞµÄĞĞÎª»áÒÀÀµÓÚÏëÒªÏú»ÙµÄ±äÁ¿µÄÀàĞÍ¶øÓĞËù²»Í¬¡£
+    </P
+><P  >&#13;     Èç¹ûÔÚº¯ÊıÖĞ <B  CLASS="function" >unset()</B
+> 
+     Ò»¸öÈ«¾Ö±äÁ¿£¬ÔòÖ»ÊÇ¾Ö²¿±äÁ¿±»Ïú»Ù£¬¶øÔÚµ÷ÓÃ»·¾³ÖĞµÄ±äÁ¿½«±£³Öµ÷ÓÃ
+     <B  CLASS="function" >unset()</B
+> Ö®Ç°Ò»ÑùµÄÖµ¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116223" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">destroy_foo</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$foo</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;unset(</font><font  color="#0000BB">$foo</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#DD0000">'bar'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">destroy_foo</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">$foo</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     ÉÏ±ßµÄÀı×Ó½«Êä³ö£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116225" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >bar</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹ûÔÚº¯ÊıÖĞ <B  CLASS="function" >unset()</B
+> 
+     Ò»¸öÍ¨¹ıÒıÓÃ´«µİµÄ±äÁ¿£¬ÔòÖ»ÊÇ¾Ö²¿±äÁ¿±»Ïú»Ù£¬¶øÔÚµ÷ÓÃ»·¾³ÖĞµÄ±äÁ¿½«±£³Öµ÷ÓÃ
+     <B  CLASS="function" >unset()</B
+> Ö®Ç°Ò»ÑùµÄÖµ¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116230" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">(&amp;</font><font  color="#0000BB">$bar</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;unset(</font><font  color="#0000BB">$bar</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">"blah"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">'something'</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"$bar\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">(</font><font  color="#0000BB">$bar</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"$bar\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     ÉÏ±ßµÄÀı×Ó½«Êä³ö£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116232" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >something
+something</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹ûÔÚº¯ÊıÖĞ <B  CLASS="function" >unset()</B
+> 
+     Ò»¸ö¾²Ì¬±äÁ¿£¬Ôò <B  CLASS="function" >unset()</B
+>
+     ½«Ïú»Ù´Ë±äÁ¿¼°ÆäËùÓĞµÄÒıÓÃ¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116237" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;static </font><font  color="#0000BB">$a</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$a</font><font  color="#007700">++;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$a\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;unset(</font><font  color="#0000BB">$a</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     ÉÏ±ßµÄÀı×Ó½«Êä³ö£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116239" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >1
+2
+3</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹ûÄúÏëÔÚº¯ÊıÖĞ <B  CLASS="function" >unset()</B
+>
+     Ò»¸öÈ«¾Ö±äÁ¿£¬¿ÉÊ¹ÓÃ <TT  CLASS="varname" >$GLOBALS</TT
+>
+     Êı×éÀ´ÊµÏÖ£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN116244" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;unset(</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#DD0000">'bar'</font><font  color="#007700">]);<br  />}<br  /><br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= </font><font  color="#DD0000">"something"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>ÓÉÓÚÕâÊÇÒ»¸öÓïÑÔ½á¹¹¶ø·Çº¯Êı£¬Òò´ËËüÎŞ·¨±»¡°<A  HREF="functions.variable-functions.html"  >±äÁ¿º¯Êı</A
+>¡±µ÷ÓÃ¡£</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.isset.html"  ><B  CLASS="function" >isset()</B
+></A
+> ºÍ
+     <A  HREF="function.empty.html"  ><B  CLASS="function" >empty()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.unserialize.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.var-dump.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >unserialize</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >var_dump</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.unset-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5574">
-    <p><strong>Example #1 <span class="function"><strong>unset()</strong></span> ç¤ºä¾‹</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;é”€æ¯å•ä¸ªå˜é‡<br /></span><span style="color: #007700">unset&nbsp;(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;é”€æ¯å•ä¸ªæ•°ç»„å…ƒç´ <br /></span><span style="color: #007700">unset&nbsp;(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">[</span><span style="color: #DD0000">'quux'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;é”€æ¯ä¸€ä¸ªä»¥ä¸Šçš„å˜é‡<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$foo1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$foo2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$foo3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   <div class="example" id="example-5575">
-    <p><strong>Example #2 ä½¿ç”¨ <em>(unset)</em> ç±»å‹å¼ºåˆ¶è½¬æ¢</strong></p>
-    <div class="example-contents"><p>
-     <em>(unset)</em> ç±»å‹å¼ºåˆ¶è½¬æ¢å¸¸å¸¸å’Œå‡½æ•°     <span class="function"><strong>unset()</strong></span> å¼•èµ·å›°æƒ‘ã€‚
-     ä¸ºäº†å®Œæ•´æ€§ï¼Œ<em>(unset)</em> æ˜¯ä½œä¸ºä¸€ä¸ª  <em>NULL</em> ç±»å‹çš„å¼ºåˆ¶è½¬æ¢ã€‚å®ƒä¸ä¼šæ”¹å˜å˜é‡çš„ç±»å‹ã€‚
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Felipe'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((unset)&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-NULL
-string(6) &quot;Felipe&quot;
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.unset-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">å› ä¸ºæ˜¯ä¸€ä¸ªè¯­è¨€æ„é€ å™¨è€Œä¸æ˜¯ä¸€ä¸ªå‡½æ•°ï¼Œä¸èƒ½è¢«
-<a href="functions.variable-functions.html" class="link">å¯å˜å‡½æ•°</a> è°ƒç”¨ã€‚
-</span>
-</p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    It is possible to unset even object properties visible in current context.
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    åœ¨ PHP 5 ä¹‹å‰æ— æ³•åœ¨å¯¹è±¡é‡Œé”€æ¯ <em>$this</em>ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    åœ¨ <span class="function"><strong>unset()</strong></span> ä¸€ä¸ªæ— æ³•è®¿é—®çš„å¯¹è±¡å±æ€§æ—¶ï¼Œå¦‚æœå®šä¹‰äº† <a href="language.oop5.overloading.html#object.unset" class="link">__unset()</a> åˆ™å¯¹è°ƒç”¨è¿™ä¸ªé‡è½½æ–¹æ³•ã€‚
-   </p>
-  </p></blockquote>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.unset-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.isset.html" class="function" rel="rdfs-seeAlso">isset()</a> - æ£€æµ‹å˜é‡æ˜¯å¦è®¾ç½®</span></li>
-    <li class="member"><span class="function"><a href="function.empty.html" class="function" rel="rdfs-seeAlso">empty()</a> - æ£€æŸ¥ä¸€ä¸ªå˜é‡æ˜¯å¦ä¸ºç©º</span></li>
-    <li class="member"><a href="language.oop5.overloading.html#object.unset" class="link">__unset()</a></li>
-    <li class="member"><span class="function"><a href="function.array-splice.html" class="function" rel="rdfs-seeAlso">array_splice()</a> - æŠŠæ•°ç»„ä¸­çš„ä¸€éƒ¨åˆ†å»æ‰å¹¶ç”¨å…¶å®ƒå€¼å–ä»£</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.unserialize.html">unserialize</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.var-dump.html">var_dump</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

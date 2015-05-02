@@ -1,200 +1,95 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Register a function for execution on shutdown</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-defined-functions.html">get_defined_functions</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.register-tick-function.html">register_tick_function</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.register-shutdown-function" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">register_shutdown_function</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">register_shutdown_function</span> &mdash; <span class="dc-title">Register a function for execution on shutdown</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.register-shutdown-function-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>register_shutdown_function</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$callback</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$parameter</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   Registers a <code class="parameter">callback</code> to be executed after script
-   execution finishes or <span class="function"><a href="function.exit.html" class="function">exit()</a></span> is called.
-  </p>
-  <p class="para">
-   Multiple calls to <span class="function"><strong>register_shutdown_function()</strong></span> can be
-   made, and each will be called in the same order as they were registered.
-   If you call <span class="function"><a href="function.exit.html" class="function">exit()</a></span> within one registered shutdown
-   function, processing will stop completely and no other registered
-   shutdown functions will be called.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.register-shutdown-function-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">callback</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The shutdown callback to register.
-      </p>
-      <p class="para">
-       The shutdown callbacks are executed as the part of the request, so
-       it&#039;s possible to send output from them and access output buffers.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">parameter</code></dt>
-
-     <dd>
-
-      <p class="para">
-       It is possible to pass parameters to the shutdown function by passing
-       additional parameters.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">...</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >register_shutdown_function</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Function Handling Functions" HREF="ref.funchand.html"><LINK  REL="PREVIOUS" TITLE="get_defined_functions" HREF="function.get-defined-functions.html"><LINK  REL="NEXT" TITLE="register_tick_function" HREF="function.register-tick-function.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.get-defined-functions.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.register-tick-function.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.register-shutdown-function" ></A
+>register_shutdown_function</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN32426" ></A
+><P  >    (PHP 3&#62;= 3.0.4, PHP 4 )</P
+>register_shutdown_function&nbsp;--&nbsp;
+     Register a function for execution on shutdown
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN32429" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >register_shutdown_function</B
+> ( callback function)<BR  ></BR
+><P  >&#13;     Registers the function named by <TT  CLASS="parameter" ><I  >function</I
+></TT
+> to be
+     executed when script processing is complete.
+    </P
+><P  >&#13;     Multiple calls to <B  CLASS="function" >register_shutdown_function()</B
+> can be
+     made, and each will be called in the same order as they were registered.
+     If you call <A  HREF="function.exit.html"  ><B  CLASS="function" >exit()</B
+></A
+> within one registered shutdown
+     function, processing will stop completely and no other registered
+     shutdown functions will be called.
+    </P
+><P  >&#13;     The registered shutdown functions are called after the request has been
+     completed (including sending any output buffers), so it is not possible
+     to send output to the browser using <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+> or
+     <A  HREF="function.print.html"  ><B  CLASS="function" >print()</B
+></A
+>, or retrieve the contents of any output
+     buffers using <A  HREF="function.ob-get-contents.html"  ><B  CLASS="function" >ob_get_contents()</B
+></A
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Typically undefined functions cause fatal errors in PHP, but when the
+      <TT  CLASS="parameter" ><I  >function</I
+></TT
+> called with
+      <B  CLASS="function" >register_shutdown_function()</B
+> is undefined, an error
+      of level <TT  CLASS="constant" ><B  >E_WARNING</B
+></TT
+> is generated instead.  Also,
+      for reasons internal to PHP, this error will refer to
+      <B  CLASS="function" >Unknown()</B
+> at line #0. 
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="configuration.directives.html#ini.auto-append-file"  >auto_append_file</A
+>,
+     <A  HREF="function.exit.html"  ><B  CLASS="function" >exit()</B
+></A
+>, and the section on
+     <A  HREF="features.connection-handling.html"  >connection handling</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.get-defined-functions.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.register-tick-function.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >get_defined_functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.funchand.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >register_tick_function</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.register-shutdown-function-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   没有返回值。
-  </p>
- </div>
-
- 
- <div class="refsect1 errors" id="refsect1-function.register-shutdown-function-errors">
-  <h3 class="title">错误／异常</h3>
-  <p class="para">
-   If the passed callback is not callable a <strong><code>E_WARNING</code></strong>
-   level error will be generated.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.register-shutdown-function-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.1.0</td>
-       <td>
-        The shutdown functions are now called as a part of the request.
-        In earlier versions under Apache, the registered shutdown functions
-        were called after the request has been completed (including sending
-        any output buffers), so it was not possible to send output to the
-        browser using <span class="function"><a href="function.echo.html" class="function">echo</a></span> or
-        <span class="function"><a href="function.print.html" class="function">print</a></span>, or retrieve the contents of any output
-        buffers using <span class="function"><a href="function.ob-get-contents.html" class="function">ob_get_contents()</a></span>.
-        Headers were also always already sent.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.register-shutdown-function-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5437">
-    <p><strong>Example #1 <span class="function"><strong>register_shutdown_function()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">shutdown</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;our&nbsp;shutdown&nbsp;function,&nbsp;in&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;here&nbsp;we&nbsp;can&nbsp;do&nbsp;any&nbsp;last&nbsp;operations<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;before&nbsp;the&nbsp;script&nbsp;is&nbsp;complete.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Script&nbsp;executed&nbsp;with&nbsp;success'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">register_shutdown_function</span><span style="color: #007700">(</span><span style="color: #DD0000">'shutdown'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.register-shutdown-function-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Working directory of the script can change inside the shutdown function
-    under some web servers, e.g. Apache.
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Shutdown functions will not be executed if the process is killed with a SIGTERM
-    or SIGKILL signal. While you cannot intercept a SIGKILL, you can use <span class="function"><a href="function.pcntl-signal.html" class="function">pcntl_signal()</a></span>
-    to install a handler for a SIGTERM which uses <span class="function"><a href="function.exit.html" class="function">exit()</a></span> to
-    end cleanly.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.register-shutdown-function-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a></li>
-    <li class="member"><span class="function"><a href="function.exit.html" class="function" rel="rdfs-seeAlso">exit()</a> - 输出一个消息并且退出当前脚本</span></li>
-    <li class="member">The section on <a href="features.connection-handling.html" class="link">connection handling</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-defined-functions.html">get_defined_functions</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.register-tick-function.html">register_tick_function</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

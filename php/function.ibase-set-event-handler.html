@@ -1,142 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Register a callback function to be called when events are posted</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-service-detach.html">ibase_service_detach</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-trans.html">ibase_trans</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-set-event-handler" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_set_event_handler</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_set_event_handler</span> &mdash; <span class="dc-title">Register a callback function to be called when events are posted</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-set-event-handler-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ibase_set_event_handler</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$event_handler</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name1</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name2</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$...</code></span>
-  ]] )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ibase_set_event_handler</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$event_handler</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name1</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name2</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$...</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   This function registers a PHP user function as event handler for the
-   specified events. 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-set-event-handler-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">event_handler</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The callback is called with the event name and the link resource as
-       arguments whenever one of the specified events is posted by the
-       database.
-      </p>
-      <p class="para">
-       The callback must return <strong><code>FALSE</code></strong> if the event handler should be
-       canceled. Any other return value is ignored. This function accepts up
-       to 15 event arguments.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">event_name1</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An event name.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">event_name2</code></dt>
-
-     <dd>
-
-      <p class="para">
-       At most 15 events allowed.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_set_event_handler</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_rollback" HREF="function.ibase-rollback.html"><LINK  REL="NEXT" TITLE="ibase_timefmt" HREF="function.ibase-timefmt.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-rollback.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-timefmt.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-set-event-handler" ></A
+>ibase_set_event_handler</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45746" ></A
+><P  >    (no version information, might be only in CVS)</P
+>ibase_set_event_handler&nbsp;--&nbsp;
+     Register a callback function to be called when events are posted
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45749" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >ibase_set_event_handler</B
+> ( [resource connection, callback event_handler, string event_name1 [, string event_name2 [, string ...]]])<BR  ></BR
+><P  >&#13;     This function registers a PHP user function as event handler for the specified
+     events. The callback is called with the event name and the link resource as arguments
+     whenever one of the specified events is posted by the database. The callback must
+     return <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if the event handler should be canceled. Any other return value is ignored.
+	</P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN45772" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">event_handler</font><font  color="#007700">(</font><font  color="#0000BB">$event_name</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">) <br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$event_name</font><font  color="#007700">==</font><font  color="#DD0000">"NEW ORDER"</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// process new order<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">ibase_query</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">, </font><font  color="#DD0000">"UPDATE orders SET status='handled'"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else if (</font><font  color="#0000BB">$event_name</font><font  color="#007700">==</font><font  color="#DD0000">"DB_SHUTDOWN"</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// free event handler <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#0000BB">ibase_set_event_handler</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">, </font><font  color="#DD0000">"event_handler"</font><font  color="#007700">, </font><font  color="#DD0000">"NEW_ORDER"</font><font  color="#007700">, </font><font  color="#DD0000">"DB_SHUTDOWN"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     The return value is an event resource. This resource can be used to free the event handler
+     using <A  HREF="function.ibase-free-event-handler.html"  ><B  CLASS="function" >ibase_free_event_handler()</B
+></A
+>.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ibase-free-event-handler.html"  ><B  CLASS="function" >ibase_free_event_handler()</B
+></A
+> and
+     <A  HREF="function.ibase-wait-event.html"  ><B  CLASS="function" >ibase_wait_event()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-rollback.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-timefmt.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_rollback</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_timefmt</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-set-event-handler-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   The return value is an event resource. This resource can be used to free
-   the event handler using <span class="function"><a href="function.ibase-free-event-handler.html" class="function">ibase_free_event_handler()</a></span>.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.ibase-set-event-handler-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1137">
-    <p><strong>Example #1 <span class="function"><strong>ibase_set_event_handler()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">event_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$event_name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$event_name&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"NEW&nbsp;ORDER"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;process&nbsp;new&nbsp;order<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ibase_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"UPDATE&nbsp;orders&nbsp;SET&nbsp;status='handled'"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(</span><span style="color: #0000BB">$event_name&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"DB_SHUTDOWN"</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;free&nbsp;event&nbsp;handler<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">return&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">ibase_set_event_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"event_handler"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"NEW_ORDER"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"DB_SHUTDOWN"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-set-event-handler-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-free-event-handler.html" class="function" rel="rdfs-seeAlso">ibase_free_event_handler()</a> - Cancels a registered event handler</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-wait-event.html" class="function" rel="rdfs-seeAlso">ibase_wait_event()</a> - Wait for an event to be posted by the database</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-service-detach.html">ibase_service_detach</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-trans.html">ibase_trans</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

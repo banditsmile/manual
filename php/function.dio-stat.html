@@ -1,136 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets stat information about the file descriptor fd</title>
+<HTML  ><HEAD  ><TITLE  >dio_stat</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Direct IO Functions" HREF="ref.dio.html"><LINK  REL="PREVIOUS" TITLE="dio_seek" HREF="function.dio-seek.html"><LINK  REL="NEXT" TITLE="dio_tcsetattr" HREF="function.dio-tcsetattr.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dio-seek.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dio-tcsetattr.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dio-stat" ></A
+>dio_stat</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN21678" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>dio_stat&nbsp;--&nbsp;
+     Gets stat information about the file descriptor fd
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN21681" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >dio_stat</B
+> ( resource fd)<BR  ></BR
+><P  >&#13;     Function <B  CLASS="function" >dio_stat()</B
+> returns information about
+     the file with file descriptor
+     <TT  CLASS="parameter" ><I  >fd</I
+></TT
+>. <B  CLASS="function" >dio_stat()</B
+> returns
+     an associative array with the following keys:
+     <P  ></P
+><UL  ><LI  ><P  >"device" - device</P
+></LI
+><LI  ><P  >"inode" - inode</P
+></LI
+><LI  ><P  >"mode" - mode</P
+></LI
+><LI  ><P  >"nlink" - number of hard links</P
+></LI
+><LI  ><P  >"uid" - user id</P
+></LI
+><LI  ><P  >"gid" - group id</P
+></LI
+><LI  ><P  >&#13;        "device_type" - device type (if inode device)
+       </P
+></LI
+><LI  ><P  >"size" - total size in bytes</P
+></LI
+><LI  ><P  >"blocksize" - blocksize</P
+></LI
+><LI  ><P  >"blocks" - number of blocks allocated</P
+></LI
+><LI  ><P  >"atime" - time of last access</P
+></LI
+><LI  ><P  >"mtime" - time of last modification</P
+></LI
+><LI  ><P  >"ctime" - time of last change</P
+></LI
+></UL
+>
+     On error <B  CLASS="function" >dio_stat()</B
+> returns <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dio-seek.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dio-tcsetattr.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dio_seek</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dio.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dio_tcsetattr</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dio-seek.html">dio_seek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dio-tcsetattr.html">dio_tcsetattr</a></div>
- <div class="up"><a href="ref.dio.html">Direct IO ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dio-stat" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dio_stat</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5 &lt;= 5.0.5)</p><p class="refpurpose"><span class="refname">dio_stat</span> &mdash; <span class="dc-title">
-   Gets stat information about the file descriptor fd
-  </span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.dio-stat-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>dio_stat</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$fd</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>dio_stat()</strong></span> returns information about the given file
-   descriptor.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.dio-stat-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">fd</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The file descriptor returned by <span class="function"><a href="function.dio-open.html" class="function">dio_open()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.dio-stat-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an associative array with the following keys:
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <p class="para">
-      &quot;device&quot; - device
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;inode&quot; - inode
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;mode&quot; - mode
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;nlink&quot; - number of hard links
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;uid&quot; - user id
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;gid&quot; - group id
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;device_type&quot; - device type (if inode device)
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;size&quot; - total size in bytes
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;blocksize&quot; - blocksize
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;blocks&quot; - number of blocks allocated
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;atime&quot; - time of last access
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;mtime&quot; - time of last modification
-     </p>
-    </li>
-    <li class="listitem">
-     <p class="para">
-      &quot;ctime&quot; - time of last change
-     </p>
-    </li>
-   </ul>
-   On error <span class="function"><strong>dio_stat()</strong></span> returns <strong><code>NULL</code></strong>.
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dio-seek.html">dio_seek</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dio-tcsetattr.html">dio_tcsetattr</a></div>
- <div class="up"><a href="ref.dio.html">Direct IO ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

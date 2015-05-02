@@ -1,85 +1,250 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>YP/NIS å‡½æ•°</title>
+<HTML  ><HEAD  ><TITLE  >YP/NIS Functions</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="yaz_wait" HREF="function.yaz-wait.html"><LINK  REL="NEXT" TITLE="yp_all" HREF="function.yp-all.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.yaz-wait.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.yp-all.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.nis" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >CXXI. YP/NIS Functions</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN120301" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="nis.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     NIS (formerly called Yellow Pages) allows network management of
+     important administrative files (e.g. the password file). For more
+     information refer to the NIS manpage and <A  href="http://www.tldp.org/HOWTO/NIS-HOWTO/index.html"  TARGET="_top" >&#13;     The Linux NIS(YP)/NYS/NIS+ HOWTO</A
+>. There is also a book called <A  href="http://www.oreilly.com/catalog/nfs/noframes.html"  TARGET="_top" >Managing NFS and NIS</A
+> by Hal Stern.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>¸ÃÀ©Õ¹Ä£¿é²»ÊÊÓÃÓÚ Windows Æ½Ì¨£¡</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="nis.requirements" ></A
+>ĞèÇó</H1
+><P  >&#13;     None besides functions from standard Unix libraries which are
+     always available (either <TT  CLASS="filename" >libc</TT
+> or 
+     <TT  CLASS="filename" >libnsl</TT
+>, configure will detect which one to use).
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="nis.installation" ></A
+>°²×°</H1
+><P  >&#13;  To get these functions to work, you have to configure PHP with
+  <TT  CLASS="option" >--enable-yp</TT
+>.
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="nis.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="nis.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >YPERR_BADARGS</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_BADDB</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_BUSY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_DOMAIN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_KEY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_MAP</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_NODOM</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_NOMORE</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_PMAP</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_RESRC</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_RPC</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_YPBIND</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_YPERR</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_YPSERV</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >YPERR_VERS</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.yp-all.html"  >yp_all</A
+>&nbsp;--&nbsp;
+     Traverse the map and call a function on each entry
+    </DT
+><DT  ><A  HREF="function.yp-cat.html"  >yp_cat</A
+>&nbsp;--&nbsp;
+     Return an array containing the entire map
+    </DT
+><DT  ><A  HREF="function.yp-err-string.html"  >yp_err_string</A
+>&nbsp;--&nbsp;
+    Returns the error string associated with the given error code
+   </DT
+><DT  ><A  HREF="function.yp-errno.html"  >yp_errno</A
+>&nbsp;--&nbsp;
+     Returns the error code of the previous operation
+    </DT
+><DT  ><A  HREF="function.yp-first.html"  >yp_first</A
+>&nbsp;--&nbsp;
+     Returns the first key-value pair from the named map
+    </DT
+><DT  ><A  HREF="function.yp-get-default-domain.html"  >yp_get_default_domain</A
+>&nbsp;--&nbsp;Fetches the machine's default NIS domain</DT
+><DT  ><A  HREF="function.yp-master.html"  >yp_master</A
+>&nbsp;--&nbsp;
+     Returns the machine name of the master NIS server for a map
+    </DT
+><DT  ><A  HREF="function.yp-match.html"  >yp_match</A
+>&nbsp;--&nbsp;Returns the matched line</DT
+><DT  ><A  HREF="function.yp-next.html"  >yp_next</A
+>&nbsp;--&nbsp;Returns the next key-value pair in the named
+     map.</DT
+><DT  ><A  HREF="function.yp-order.html"  >yp_order</A
+>&nbsp;--&nbsp;Returns the order number for a map</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.yaz-wait.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.yp-all.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >yaz_wait</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >yp_all</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="nis.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yp-all.html">yp_all</a></div>
- <div class="up"><a href="book.nis.html">YP/NIS</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.nis" class="reference">
- <h1 class="title">YP/NIS å‡½æ•°</h1>
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.yp-all.html">yp_all</a> â€” Traverse the map and call a function on each entry</li><li><a href="function.yp-cat.html">yp_cat</a> â€” Return an array containing the entire map</li><li><a href="function.yp-err-string.html">yp_err_string</a> â€” Returns the error string associated with the given error code</li><li><a href="function.yp-errno.html">yp_errno</a> â€” Returns the error code of the previous operation</li><li><a href="function.yp-first.html">yp_first</a> â€” Returns the first key-value pair from the named map</li><li><a href="function.yp-get-default-domain.html">yp_get_default_domain</a> â€” Fetches the machine's default NIS domain</li><li><a href="function.yp-master.html">yp_master</a> â€” Returns the machine name of the master NIS server for a map</li><li><a href="function.yp-match.html">yp_match</a> â€” Returns the matched line</li><li><a href="function.yp-next.html">yp_next</a> â€” Returns the next key-value pair in the named map</li><li><a href="function.yp-order.html">yp_order</a> â€” Returns the order number for a map</li></ul>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="nis.constants.html">é¢„å®šä¹‰å¸¸é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yp-all.html">yp_all</a></div>
- <div class="up"><a href="book.nis.html">YP/NIS</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

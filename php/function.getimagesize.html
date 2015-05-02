@@ -1,429 +1,234 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—å›¾åƒå¤§å°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gd-info.html">gd_info</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.getimagesizefromstring.html">getimagesizefromstring</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.getimagesize" class="refentry">
-  <div class="refnamediv">
-   <h1 class="refname">getimagesize</h1>
-   <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">getimagesize</span> &mdash; <span class="dc-title">å–å¾—å›¾åƒå¤§å°</span></p>
-
-  </div>
-  <div class="refsect1 description" id="refsect1-function.getimagesize-description">
-   <h3 class="title">è¯´æ˜</h3>
-   <div class="methodsynopsis dc-description">
-    <span class="type">array</span> <span class="methodname"><strong>getimagesize</strong></span>
-     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-    [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$imageinfo</code></span>
-   ] )</div>
-
-   <p class="para rdfs-comment">
-    <span class="function"><strong>getimagesize()</strong></span> å‡½æ•°å°†æµ‹å®šä»»ä½•
-    <acronym title="Graphic Interchange Format">GIF</acronym>ï¼Œ<acronym>JPG</acronym>ï¼Œ<acronym title="Portable Network Graphics">PNG</acronym>ï¼Œ<acronym title="Shockwave Flash">SWF</acronym>ï¼Œ<acronym>SWC</acronym>ï¼Œ<acronym title="Photoshop Document">PSD</acronym>ï¼Œ<acronym title="Tagged Image File Format">TIFF</acronym>ï¼Œ<acronym title="Bitmap">BMP</acronym>ï¼Œ<acronym title="Interchange File Format">IFF</acronym>ï¼Œ<acronym title="JPEG-2000">JP2</acronym>ï¼Œ<acronym>JPX</acronym>ï¼Œ<acronym title="Joint Bilevel Image Experts Group">JB2</acronym>ï¼Œ<acronym title="Japan Picture">JPC</acronym>ï¼Œ<acronym title="X Bitmap">XBM</acronym>
-    æˆ– <acronym title="Wireless Bitmap">WBMP</acronym> å›¾åƒæ–‡ä»¶çš„å¤§å°å¹¶è¿”å›å›¾åƒçš„å°ºå¯¸ä»¥åŠæ–‡ä»¶ç±»å‹å’Œä¸€ä¸ªå¯ä»¥ç”¨äºæ™®é€š
-    <acronym title="Hyper Text Markup Language">HTML</acronym> æ–‡ä»¶ä¸­ <code class="tag">IMG</code> æ ‡è®°ä¸­çš„
-    height/width æ–‡æœ¬å­—ç¬¦ä¸²ã€‚
-   </p>
-   <p class="para">
-    å¦‚æœä¸èƒ½è®¿é—® <code class="parameter">filename</code>
-    æŒ‡å®šçš„å›¾åƒæˆ–è€…å…¶ä¸æ˜¯æœ‰æ•ˆçš„å›¾åƒï¼Œ<span class="function"><strong>getimagesize()</strong></span>
-    å°†è¿”å› <strong><code>FALSE</code></strong> å¹¶äº§ç”Ÿä¸€æ¡ <var class="varname"><var class="varname">E_WARNING</var></var> çº§çš„é”™è¯¯ã€‚
-   </p>
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <p class="para">
-     å¯¹ <acronym title="Japan Picture">JPC</acronym>ï¼Œ<acronym title="JPEG-2000">JP2</acronym>ï¼Œ<acronym>JPX</acronym>ï¼Œ<acronym title="Joint Bilevel Image Experts Group">JB2</acronym>ï¼Œ<acronym title="X Bitmap">XBM</acronym>
-     å’Œ <acronym title="Wireless Bitmap">WBMP</acronym> çš„æ”¯æŒè‡ª PHP 4.3.2
-     èµ·å¯ç”¨ã€‚å¯¹ <acronym>SWC</acronym> çš„æ”¯æŒè‡ª PHP 4.3.0 èµ·å¯ç”¨ã€‚å¯¹
-     <acronym title="Tagged Image File Format">TIFF</acronym> çš„æ”¯æŒæ˜¯ PHP 4.2.0 æ·»åŠ çš„ã€‚
-    </p>
-   </p></blockquote>
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <span class="simpara">
-     JPEG 2000 æ”¯æŒæ˜¯ PHP 4.3.2 æ·»åŠ çš„ã€‚æ³¨æ„ JPC å’Œ JP2
-     å¯ä»¥æœ‰ä¸åŒçš„è‰²å½©æ·±åº¦çš„æˆåˆ†ã€‚æ­¤æƒ…å†µä¸‹ï¼Œâ€œbitsâ€çš„å€¼æ˜¯ç¢°åˆ°çš„æœ€é«˜çš„ä½æ·±åº¦ã€‚æ­¤å¤–ï¼ŒJP2
-     æ–‡ä»¶å¯èƒ½åŒ…å«æœ‰å¤šä¸ª JPEG 2000 ä»£ç æµï¼Œæ­¤æƒ…å†µä¸‹ï¼Œ<span class="function"><strong>getimagesize()</strong></span>
-     è¿”å›æ­¤æ–‡ä»¶é¡¶å±‚ä¸­ç¢°åˆ°çš„ç¬¬ä¸€ä¸ªä»£ç æµçš„å€¼ã€‚
-    </span>
-   </p></blockquote>
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <span class="simpara">
-     æœ¬å‡½æ•°ä¸éœ€è¦ GD å›¾åƒåº“ã€‚
-    </span>
-   </p></blockquote>
-   <p class="para">
-    è¿”å›ä¸€ä¸ªå…·æœ‰å››ä¸ªå•å…ƒçš„æ•°ç»„ã€‚ç´¢å¼• 0 åŒ…å«å›¾åƒå®½åº¦çš„åƒç´ å€¼ï¼Œç´¢å¼• 1
-    åŒ…å«å›¾åƒé«˜åº¦çš„åƒç´ å€¼ã€‚ç´¢å¼• 2 æ˜¯å›¾åƒç±»å‹çš„æ ‡è®°ï¼š1 = GIFï¼Œ2 = JPGï¼Œ3 =
-    PNGï¼Œ4 = SWFï¼Œ5 = PSDï¼Œ6 = BMPï¼Œ7 = TIFF(intel byte order)ï¼Œ8 =
-    TIFF(motorola byte order)ï¼Œ9 = JPCï¼Œ10 = JP2ï¼Œ11 = JPXï¼Œ12 =
-    JB2ï¼Œ13 = SWCï¼Œ14 = IFFï¼Œ15 = WBMPï¼Œ16 = XBMã€‚è¿™äº›æ ‡è®°ä¸ PHP 4.3.0
-    æ–°åŠ çš„ IMAGETYPE å¸¸é‡å¯¹åº”ã€‚ç´¢å¼• 3 æ˜¯æ–‡æœ¬å­—ç¬¦ä¸²ï¼Œå†…å®¹ä¸ºâ€œheight=&quot;yyy&quot;
-    width=&quot;xxx&quot;â€ï¼Œå¯ç›´æ¥ç”¨äº IMG æ ‡è®°ã€‚
-    <div class="example" id="example-3267">
-     <p><strong>Example #1 getimagesizeï¼ˆæ–‡ä»¶ï¼‰</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$width</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$height</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$attr</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"img/flag.jpg"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"img/flag.jpg\"&nbsp;</span><span style="color: #0000BB">$attr</span><span style="color: #DD0000">&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    URL æ”¯æŒæ˜¯ PHP 4.0.5 æ·»åŠ çš„ã€‚
-    <div class="example" id="example-3268">
-     <p><strong>Example #2 getimagesizeï¼ˆURLï¼‰</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/logo.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;file&nbsp;name&nbsp;has&nbsp;space&nbsp;in&nbsp;it,&nbsp;encode&nbsp;it&nbsp;properly<br /></span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/lo%20go.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    å¯¹äº <acronym>JPG</acronym> å›¾åƒï¼Œè¿˜ä¼šå¤šè¿”å›ä¸¤ä¸ªç´¢å¼•ï¼š<em>channels</em>
-    å’Œ <em>bits</em>ã€‚<em>channels</em>
-    å¯¹äº RGB å›¾åƒå…¶å€¼ä¸º 3ï¼Œå¯¹äº CMYK å›¾åƒå…¶å€¼ä¸º 4ã€‚<em>bits</em>
-    æ˜¯æ¯ç§é¢œè‰²çš„ä½æ•°ã€‚
-   </p>
-   <p class="para">
-    è‡ª PHP 4.3.0 èµ·ï¼Œ<em>bits</em> å’Œ
-    <em>channels</em> å¯¹äºå…¶å®ƒå›¾åƒç±»å‹ä¹Ÿå­˜åœ¨ã€‚ä½†æ˜¯è¿™äº›å€¼å¯èƒ½ä¼šæŠŠäººæç³Šæ¶‚ã€‚ä¾‹å¦‚ï¼Œ<acronym title="Graphic Interchange Format">GIF</acronym>
-    æ€»æ˜¯å¯¹æ¯ä¸ªåƒç´ ä½¿ç”¨ 3 ä¸ª channelï¼Œä½†æ˜¯å¯¹äºåŠ¨ç”» <acronym title="Graphic Interchange Format">GIF</acronym>
-    æ¥è¯´æ¯ä¸ªåƒç´ çš„ä½æ•°æ— æ³•é€šè¿‡å…¨å±€é¢œè‰²è¡¨è®¡ç®—å‡ºæ¥ã€‚
-   </p>
-   <p class="para">
-    æŸäº›æ ¼å¼å¯èƒ½ä¸åŒ…å«å›¾åƒæˆ–è€…åŒ…å«å¤šä¸ªå›¾åƒã€‚æ­¤ç§æƒ…å†µä¸‹ï¼Œ<span class="function"><strong>getimagesize()</strong></span>
-    å¯èƒ½ä¸èƒ½ç”¨æ¥å‡†ç¡®æµ‹å®šå›¾åƒçš„å¤§å°ã€‚æ­¤æ—¶ <span class="function"><strong>getimagesize()</strong></span>
-    å°†è¿”å›é›¶ä½œä¸ºå®½åº¦å’Œé«˜åº¦ã€‚
-   </p>
-   <p class="para">
-    è‡ª PHP 4.3.0 èµ·ï¼Œ<span class="function"><strong>getimagesize()</strong></span> è¿˜ä¼šè¿”å›é¢å¤–çš„å‚æ•°
-    <em>mime</em>ï¼Œç¬¦åˆè¯¥å›¾åƒçš„ MIME ç±»å‹ã€‚æ­¤ä¿¡æ¯å¯ä»¥ç”¨æ¥åœ¨
-    HTTP Content-type å¤´ä¿¡æ¯ä¸­å‘é€æ­£ç¡®çš„ä¿¡æ¯ï¼š
-    <div class="example" id="example-3269">
-     <p><strong>Example #3 getimagesize() å’Œ MIME ç±»å‹</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fp</span><span style="color: #007700">=</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">$fp</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #DD0000">'mime'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">fpassthru</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br />&nbsp;&nbsp;exit;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;error<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    å¯é€‰çš„ <code class="parameter">imageinfo</code>
-    å‚æ•°å…è®¸ä»å›¾åƒæ–‡ä»¶ä¸­æå–ä¸€äº›æ‰©å±•ä¿¡æ¯ã€‚ç›®å‰ï¼Œè¿™å°†ä»¥ä¸€ä¸ªå…³è”æ•°ç»„è¿”å›ä¸åŒçš„
-    <acronym>JPG</acronym> APP æ ‡è¯†ã€‚æŸäº›ç¨‹åºç”¨è¿™äº› APP
-    æ ‡è¯†æ¥åœ¨å›¾åƒä¸­åµŒå…¥æ–‡æœ¬ä¿¡æ¯ã€‚ä¸€ä¸ªéå¸¸å¸¸è§çš„æ˜¯ APP13 æ ‡è¯†ä¸­åµŒå…¥çš„
-    <acronym>IPTC</acronym> <a href="http://www.iptc.org/" class="link external">&raquo;&nbsp;http://www.iptc.org/</a>
-    ä¿¡æ¯ã€‚å¯ä»¥ç”¨ <span class="function"><a href="function.iptcparse.html" class="function">iptcparse()</a></span> å‡½æ•°æ¥å°†äºŒè¿›åˆ¶çš„
-    APP13 æ ‡è¯†è§£æä¸ºå¯è¯»çš„ä¿¡æ¯ã€‚
-   </p>
-   <p class="para">
-    <div class="example" id="example-3270">
-     <p><strong>Example #4 getimagesize() è¿”å› IPTC</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"testimg.jpg"</span><span style="color: #007700">,&nbsp;&amp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">);<br />if&nbsp;(isset(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iptc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">iptcparse</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$iptc</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    å‚è§ <span class="function"><a href="function.image-type-to-mime-type.html" class="function">image_type_to_mime_type()</a></span>ï¼Œ<span class="function"><a href="function.exif-imagetype.html" class="function">exif_imagetype()</a></span>ï¼Œ<span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span>
-    å’Œ <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span>ã€‚
-   </p>
-  </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.getimagesize-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-        This parameter specifies the file you wish to retrieve information
-        about. It can reference a local file or (configuration permitting) a
-        remote file using one of the supported streams. 
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">imageinfo</code></dt>
-
-     <dd>
-
-      <p class="para">
-       This optional parameter allows you to extract some extended
-       information from the image file. Currently, this will return the
-       different <acronym>JPG</acronym> APP markers as an associative array.
-       Some programs use these APP markers to embed text information in 
-       images. A very common one is to embed 
-       <a href="http://www.iptc.org/" class="link external">&raquo;&nbsp;IPTC</a> information in the APP13 marker.
-       You can use the <span class="function"><a href="function.iptcparse.html" class="function">iptcparse()</a></span> function to parse the
-       binary APP13 marker into something readable.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.getimagesize-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an array with 7 elements.
-  </p>
-  <p class="para">
-   Index 0 and 1 contains respectively the width and the height of the image.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Some formats may contain no image or may contain multiple images. In these
-    cases, <span class="function"><strong>getimagesize()</strong></span> might not be able to properly
-    determine the image size. <span class="function"><strong>getimagesize()</strong></span> will return
-    zero for width and height in these cases.
-   </p>
-  </p></blockquote>
-  <p class="para">
-   Index 2 is one of the <em>IMAGETYPE_XXX</em> constants indicating 
-   the type of the image.
-  </p>
-  <p class="para">
-   Index 3 is a text string with the correct 
-   <em>height=&quot;yyy&quot; width=&quot;xxx&quot;</em> string that can be used
-   directly in an <acronym>IMG</acronym> tag.
-  </p>
-  <p class="para">
-   <em>mime</em> is the correspondant MIME type of the image.
-   This information can be used to deliver images with the correct HTTP 
-   <em>Content-type</em> header:
-   <div class="example" id="example-3271">
-    <p><strong>Example #5 <span class="function"><strong>getimagesize()</strong></span> and MIME types</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">$fp</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #DD0000">'mime'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fpassthru</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;error<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <em>channels</em> will be 3 for RGB pictures and 4 for CMYK
-   pictures.
-  </p>
-  <p class="para">
-   <em>bits</em> is the number of bits for each color.
-  </p>
-  <p class="para">
-   For some image types, the presence of <em>channels</em> and
-   <em>bits</em> values can be a bit
-   confusing. As an example, <acronym title="Graphic Interchange Format">GIF</acronym> always uses 3 channels
-   per pixel, but the number of bits per pixel cannot be calculated for an
-   animated <acronym title="Graphic Interchange Format">GIF</acronym> with a global color table.
-  </p>
-  <p class="para">
-   On failure, <strong><code>FALSE</code></strong> is returned.
-  </p>
- </div>
-
- 
- <div class="refsect1 errors" id="refsect1-function.getimagesize-errors">
-  <h3 class="title">é”™è¯¯ï¼å¼‚å¸¸</h3>
-  <p class="para">
-   If accessing the <code class="parameter">filename</code> image is impossible, or
-   if it isn&#039;t a valid picture, <span class="function"><strong>getimagesize()</strong></span> will
-   generate an error of level <strong><code>E_WARNING</code></strong>. On read error,
-   <span class="function"><strong>getimagesize()</strong></span> will generate an error of level
-   <strong><code>E_NOTICE</code></strong>.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >getimagesize</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="gd_info" HREF="function.gd-info.html"><LINK  REL="NEXT" TITLE="image_type_to_mime_type" HREF="function.image-type-to-mime-type.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.gd-info.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.image-type-to-mime-type.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.getimagesize" ></A
+>getimagesize</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38134" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>getimagesize&nbsp;--&nbsp;È¡µÃÍ¼Ïñ´óĞ¡</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38137" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >getimagesize</B
+> ( string filename [, array imageinfo])<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >getimagesize()</B
+> º¯Êı½«²â¶¨ÈÎºÎ
+    <SPAN  CLASS="acronym" >GIF</SPAN
+>£¬<SPAN  CLASS="acronym" >JPG</SPAN
+>£¬<SPAN  CLASS="acronym" >PNG</SPAN
+>£¬<SPAN  CLASS="acronym" >SWF</SPAN
+>£¬<SPAN  CLASS="acronym" >SWC</SPAN
+>£¬<SPAN  CLASS="acronym" >PSD</SPAN
+>£¬<SPAN  CLASS="acronym" >TIFF</SPAN
+>£¬<SPAN  CLASS="acronym" >BMP</SPAN
+>£¬<SPAN  CLASS="acronym" >IFF</SPAN
+>£¬<SPAN  CLASS="acronym" >JP2</SPAN
+>£¬<SPAN  CLASS="acronym" >JPX</SPAN
+>£¬<SPAN  CLASS="acronym" >JB2</SPAN
+>£¬<SPAN  CLASS="acronym" >JPC</SPAN
+>£¬<SPAN  CLASS="acronym" >XBM</SPAN
+>
+    »ò <SPAN  CLASS="acronym" >WBMP</SPAN
+> Í¼ÏñÎÄ¼şµÄ´óĞ¡²¢·µ»ØÍ¼ÏñµÄ³ß´çÒÔ¼°ÎÄ¼şÀàĞÍºÍÒ»¸ö¿ÉÒÔÓÃÓÚÆÕÍ¨
+    <SPAN  CLASS="acronym" >HTML</SPAN
+> ÎÄ¼şÖĞ <TT  CLASS="literal" >IMG</TT
+> ±ê¼ÇÖĞµÄ
+    height/width ÎÄ±¾×Ö·û´®¡£
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     ¶Ô <SPAN  CLASS="acronym" >JPC</SPAN
+>£¬<SPAN  CLASS="acronym" >JP2</SPAN
+>£¬<SPAN  CLASS="acronym" >JPX</SPAN
+>£¬<SPAN  CLASS="acronym" >JB2</SPAN
+>£¬<SPAN  CLASS="acronym" >XBM</SPAN
+>
+     ºÍ <SPAN  CLASS="acronym" >WBMP</SPAN
+> µÄÖ§³Ö×Ô PHP 4.3.2
+     Æğ¿ÉÓÃ¡£¶Ô <SPAN  CLASS="acronym" >SWC</SPAN
+> µÄÖ§³Ö×Ô PHP 4.3.0 Æğ¿ÉÓÃ¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    ·µ»ØÒ»¸ö¾ßÓĞËÄ¸öµ¥ÔªµÄÊı×é¡£Ë÷Òı 0 °üº¬Í¼Ïñ¿í¶ÈµÄÏñËØÖµ£¬Ë÷Òı 1
+    °üº¬Í¼Ïñ¸ß¶ÈµÄÏñËØÖµ¡£Ë÷Òı 2 ÊÇÍ¼ÏñÀàĞÍµÄ±ê¼Ç£º1 = GIF£¬2 = JPG£¬3 =
+    PNG£¬4 = SWF£¬5 = PSD£¬6 = BMP£¬7 = TIFF(intel byte order)£¬8 =
+    TIFF(motorola byte order)£¬9 = JPC£¬10 = JP2£¬11 = JPX£¬12 =
+    JB2£¬13 = SWC£¬14 = IFF£¬15 = WBMP£¬16 = XBM¡£ÕâĞ©±ê¼ÇÓë PHP 4.3
+    ĞÂ¼ÓµÄ IMAGETYPE ³£Á¿¶ÔÓ¦¡£Ë÷Òı 3 ÊÇÎÄ±¾×Ö·û´®£¬ÄÚÈİÎª¡°height="yyy"
+    width="xxx"¡±£¬¿ÉÖ±½ÓÓÃÓÚ IMG ±ê¼Ç¡£
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38177" ></A
+><P  ><B  >Àı×Ó 1. getimagesize (file)</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">list(</font><font  color="#0000BB">$width</font><font  color="#007700">, </font><font  color="#0000BB">$height</font><font  color="#007700">, </font><font  color="#0000BB">$type</font><font  color="#007700">, </font><font  color="#0000BB">$attr</font><font  color="#007700">) = </font><font  color="#0000BB">getimagesize</font><font  color="#007700">(</font><font  color="#DD0000">"img/flag.jpg"</font><font  color="#007700">);<br  />echo </font><font  color="#DD0000">"&lt;img src=\"img/flag.jpg\" $attr&gt;"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38181" ></A
+><P  ><B  >Àı×Ó 2. getimagesize (URL)</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$size </font><font  color="#007700">= </font><font  color="#0000BB">getimagesize</font><font  color="#007700">(</font><font  color="#DD0000">"http://www.example.com/gifs/logo.gif"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// if the file name has space in it, encode it properly<br  /></font><font  color="#0000BB">$size </font><font  color="#007700">= </font><font  color="#0000BB">getimagesize</font><font  color="#007700">(</font><font  color="#DD0000">"http://www.example.com/gifs/lo%20go.gif"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ¶ÔÓÚ <SPAN  CLASS="acronym" >JPG</SPAN
+> Í¼Ïñ£¬»¹»á¶à·µ»ØÁ½¸öË÷Òı£º<TT  CLASS="literal" >channels</TT
+>
+    ºÍ <TT  CLASS="literal" >bits</TT
+>¡£<TT  CLASS="literal" >channels</TT
+>
+    ¶ÔÓÚ RGB Í¼ÏñÆäÖµÎª 3£¬¶ÔÓÚ CMYK Í¼ÏñÆäÖµÎª 4¡£<TT  CLASS="literal" >bits</TT
+>
+    ÊÇÃ¿ÖÖÑÕÉ«µÄÎ»Êı¡£
+   </P
+><P  >&#13;    ×Ô PHP 4.3 Æğ£¬<TT  CLASS="literal" >bits</TT
+> ºÍ
+    <TT  CLASS="literal" >channels</TT
+> ¶ÔÓÚÆäËüÍ¼ÏñÀàĞÍÒ²´æÔÚ¡£µ«ÊÇÕâĞ©Öµ¿ÉÄÜ»á°ÑÈË¸ãºıÍ¿¡£ÀıÈç£¬<SPAN  CLASS="acronym" >GIF</SPAN
+>
+    ×ÜÊÇ¶ÔÃ¿¸öÏñËØÊ¹ÓÃ 3 ¸ö channel£¬µ«ÊÇ¶ÔÓÚ¶¯»­ <SPAN  CLASS="acronym" >GIF</SPAN
+>
+    À´ËµÃ¿¸öÏñËØµÄÎ»ÊıÎŞ·¨Í¨¹ıÈ«¾ÖÑÕÉ«±í¼ÆËã³öÀ´¡£
+   </P
+><P  >&#13;    Ä³Ğ©¸ñÊ½¿ÉÄÜ²»°üº¬Í¼Ïñ»òÕß°üº¬¶à¸öÍ¼Ïñ¡£´ËÖÖÇé¿öÏÂ£¬<B  CLASS="function" >getimagesize()</B
+>
+    ¿ÉÄÜ²»ÄÜÓÃÀ´×¼È·²â¶¨Í¼ÏñµÄ´óĞ¡¡£´ËÊ± <B  CLASS="function" >getimagesize()</B
+>
+    ½«·µ»ØÁã×÷Îª¿í¶ÈºÍ¸ß¶È¡£
+   </P
+><P  >&#13;    ×Ô PHP 4.3 Æğ£¬<B  CLASS="function" >getimagesize()</B
+> »¹»á·µ»Ø¶îÍâµÄ²ÎÊı
+    <TT  CLASS="literal" >mime</TT
+>£¬·ûºÏ¸ÃÍ¼ÏñµÄ MIME ÀàĞÍ¡£´ËĞÅÏ¢¿ÉÒÔÓÃÀ´ÔÚ
+    HTTP Content-type Í·ĞÅÏ¢ÖĞ·¢ËÍÕıÈ·µÄĞÅÏ¢£º
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38201" ></A
+><P  ><B  >Àı×Ó 3. getimagesize() ºÍ MIME ÀàĞÍ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$size </font><font  color="#007700">= </font><font  color="#0000BB">getimagesize </font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$fp</font><font  color="#007700">=</font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">, </font><font  color="#DD0000">"rb"</font><font  color="#007700">);<br  />if (</font><font  color="#0000BB">$size </font><font  color="#007700">&amp;&amp; </font><font  color="#0000BB">$fp</font><font  color="#007700">) {<br  />&nbsp;&nbsp;</font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: {$size['mime']}"</font><font  color="#007700">);<br  />&nbsp;&nbsp;</font><font  color="#0000BB">fpassthru</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />&nbsp;&nbsp;exit;<br  />} else {<br  />&nbsp;&nbsp;</font><font  color="#FF8000">// error<br  /></font><font  color="#007700">}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    Èç¹û²»ÄÜ·ÃÎÊ <TT  CLASS="parameter" ><I  >filename</I
+></TT
+>
+    Ö¸¶¨µÄÍ¼Ïñ»òÕßËü²»ÊÇºÏ·¨µÄÍ¼Æ¬£¬<B  CLASS="function" >getimagesize()</B
+>
+    ½«·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> ²¢²úÉúÒ»¸ö¾¯¸æ¡£
+   </P
+><P  >&#13;    ¿ÉÑ¡µÄ <TT  CLASS="parameter" ><I  >imageinfo</I
+></TT
+>
+    ²ÎÊıÔÊĞí´ÓÍ¼ÏñÎÄ¼şÖĞÌáÈ¡Ò»Ğ©À©Õ¹ĞÅÏ¢¡£Ä¿Ç°£¬Õâ½«ÒÔÒ»¸ö¹ØÁªÊı×é·µ»Ø²»Í¬µÄ
+    <SPAN  CLASS="acronym" >JPG</SPAN
+> APP ±êÊ¶¡£Ä³Ğ©³ÌĞòÓÃÕâĞ© APP
+    ±êÊ¶À´ÔÚÍ¼ÏñÖĞÇ¶ÈëÎÄ±¾ĞÅÏ¢¡£Ò»¸ö·Ç³£³£¼ûµÄÊÇ APP13 ±êÊ¶ÖĞÇ¶ÈëµÄ
+    <SPAN  CLASS="acronym" >IPTC</SPAN
+> <A  href="http://www.iptc.org/"  TARGET="_top" >http://www.iptc.org/</A
+>
+    ĞÅÏ¢¡£¿ÉÒÔÓÃ <A  HREF="function.iptcparse.html"  ><B  CLASS="function" >iptcparse()</B
+></A
+> º¯ÊıÀ´½«¶ş½øÖÆµÄ
+    APP13 ±êÊ¶½âÎöÎª¿É¶ÁµÄĞÅÏ¢¡£
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38214" ></A
+><P  ><B  >Àı×Ó 4. getimagesize() ·µ»Ø IPTC</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$size </font><font  color="#007700">= </font><font  color="#0000BB">getimagesize </font><font  color="#007700">(</font><font  color="#DD0000">"testimg.jpg"</font><font  color="#007700">,&amp;</font><font  color="#0000BB">$info</font><font  color="#007700">);<br  />if (isset (</font><font  color="#0000BB">$info</font><font  color="#007700">[</font><font  color="#DD0000">"APP13"</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$iptc </font><font  color="#007700">= </font><font  color="#0000BB">iptcparse </font><font  color="#007700">(</font><font  color="#0000BB">$info</font><font  color="#007700">[</font><font  color="#DD0000">"APP13"</font><font  color="#007700">]);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">var_dump </font><font  color="#007700">(</font><font  color="#0000BB">$iptc</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      JPEG 2000 Ö§³ÖÊÇ PHP 4.3.2 Ìí¼ÓµÄ¡£×¢Òâ JPC ºÍ JP2
+      ¿ÉÒÔÓĞ²»Í¬µÄÉ«²ÊÉî¶ÈµÄ³É·Ö¡£´ËÇé¿öÏÂ£¬¡°bits¡±µÄÖµÊÇÅöµ½µÄ×î¸ßµÄÎ»Éî¶È¡£´ËÍâ£¬JP2
+      ÎÄ¼ş¿ÉÄÜ°üº¬ÓĞ¶à¸ö JPEG 2000 ´úÂëÁ÷£¬´ËÇé¿öÏÂ£¬<B  CLASS="function" >getimagesize()</B
+>
+      ·µ»Ø´ËÎÄ¼ş¶¥²ãÖĞÅöµ½µÄµÚÒ»¸ö´úÂëÁ÷µÄÖµ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      TIFF Ö§³ÖÊÇ PHP 4.2 Ìí¼ÓµÄ¡£
+     </P
+><P  >&#13;      ±¾º¯Êı²»ĞèÒª GD Í¼Ïñ¿â¡£
+     </P
+><P  >&#13;      ²Î¼û <A  HREF="function.image-type-to-mime-type.html"  ><B  CLASS="function" >image_type_to_mime_type()</B
+></A
+>£¬<A  HREF="function.exif-imagetype.html"  ><B  CLASS="function" >exif_imagetype()</B
+></A
+>£¬<A  HREF="function.exif-read-data.html"  ><B  CLASS="function" >exif_read_data()</B
+></A
+>
+      ºÍ <A  HREF="function.exif-thumbnail.html"  ><B  CLASS="function" >exif_thumbnail()</B
+></A
+>¡£
+     </P
+><P  >&#13;      URL Ö§³ÖÊÇ PHP 4.0.5 Ìí¼ÓµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.gd-info.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.image-type-to-mime-type.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >gd_info</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >image_type_to_mime_type</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 changelog" id="refsect1-function.getimagesize-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        Added icon support.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.2.3</td>
-       <td>
-        Read errors generated by this function downgraded to
-        <strong><code>E_NOTICE</code></strong> from <strong><code>E_WARNING</code></strong>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.2</td>
-       <td>
-        Support for <acronym title="Japan Picture">JPC</acronym>, <acronym title="JPEG-2000">JP2</acronym>,
-        <acronym>JPX</acronym>, <acronym title="Joint Bilevel Image Experts Group">JB2</acronym>, 
-        <acronym title="X Bitmap">XBM</acronym>, and <acronym title="Wireless Bitmap">WBMP</acronym> became available.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.2</td>
-       <td>
-        JPEG 2000 support was added for the <code class="parameter">imageinfo</code>
-        parameter.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        <em>bits</em> and <em>channels</em> are present
-        for other image types, too.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        <em>mime</em> was added.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        Support for <acronym>SWC</acronym> and <acronym title="Interchange File Format">IFF</acronym> was
-        added.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        Support for <acronym title="Tagged Image File Format">TIFF</acronym> was added.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.6</td>
-       <td>
-        Support for <acronym title="Bitmap">BMP</acronym> and <acronym title="Photoshop Document">PSD</acronym> was
-        added.
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        URL support was added.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.getimagesize-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3272">
-    <p><strong>Example #6 <span class="function"><strong>getimagesize()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$width</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$height</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$type</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$attr</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"img/flag.jpg"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;img&nbsp;src=\"img/flag.jpg\"&nbsp;</span><span style="color: #0000BB">$attr</span><span style="color: #DD0000">&nbsp;alt=\"getimagesize()&nbsp;example\"&nbsp;/&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   <div class="example" id="example-3273">
-    <p><strong>Example #7 getimagesize (URL)</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/logo.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;if&nbsp;the&nbsp;file&nbsp;name&nbsp;has&nbsp;space&nbsp;in&nbsp;it,&nbsp;encode&nbsp;it&nbsp;properly<br /></span><span style="color: #0000BB">$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/lo%20go.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   <div class="example" id="example-3274">
-    <p><strong>Example #8 getimagesize() returning IPTC</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"testimg.jpg"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">);<br />if&nbsp;(isset(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iptc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">iptcparse</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$iptc</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 notes" id="refsect1-function.getimagesize-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">æ­¤å‡½æ•°ä¸éœ€è¦ GD å›¾è±¡åº“ã€‚</p></p></blockquote>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.getimagesize-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.image-type-to-mime-type.html" class="function" rel="rdfs-seeAlso">image_type_to_mime_type()</a> - å–å¾— getimagesizeï¼Œexif_read_dataï¼Œexif_thumbnailï¼Œexif_imagetype
-    æ‰€è¿”å›çš„å›¾åƒç±»å‹çš„ MIME ç±»å‹</span></li>
-    <li class="member"><span class="function"><a href="function.exif-imagetype.html" class="function" rel="rdfs-seeAlso">exif_imagetype()</a> - åˆ¤æ–­ä¸€ä¸ªå›¾åƒçš„ç±»å‹</span></li>
-    <li class="member"><span class="function"><a href="function.exif-read-data.html" class="function" rel="rdfs-seeAlso">exif_read_data()</a> - ä» JPEG æˆ– TIFF
-   æ–‡ä»¶ä¸­è¯»å– EXIF å¤´ä¿¡æ¯</span></li>
-    <li class="member"><span class="function"><a href="function.exif-thumbnail.html" class="function" rel="rdfs-seeAlso">exif_thumbnail()</a> - å–å¾—åµŒå…¥åœ¨ TIFF æˆ– JPEG å›¾åƒä¸­çš„ç¼©ç•¥å›¾</span></li>
-   </ul>
-  </p>
- </div>
-
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gd-info.html">gd_info</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.getimagesizefromstring.html">getimagesizefromstring</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

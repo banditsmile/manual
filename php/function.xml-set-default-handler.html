@@ -1,126 +1,99 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å»ºç«‹é»˜è®¤å¤„ç†å™¨</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xml-set-character-data-handler.html">xml_set_character_data_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xml-set-element-handler.html">xml_set_element_handler</a></div>
- <div class="up"><a href="ref.xml.html">XML è§£æå™¨å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.xml-set-default-handler" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">xml_set_default_handler</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">xml_set_default_handler</span> &mdash; <span class="dc-title">å»ºç«‹é»˜è®¤å¤„ç†å™¨</span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.xml-set-default-handler-description">
-  <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">bool</span> <span class="methodname"><strong>xml_set_default_handler</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parser</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$handler</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     ä¸º <code class="parameter">parser</code> æŒ‡å®šçš„ XML å¤„ç†å™¨å»ºç«‹é»˜è®¤å¤„ç†å‡½æ•°ã€‚
-     
-    </p>
-  </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.xml-set-default-handler-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">parser</code></dt>
-
-     <dd>
-
-      <p class="para">
-       XML è§£æå™¨çš„å¼•ç”¨ï¼Œç”¨äºå»ºç«‹é»˜è®¤å¤„ç†å™¨å‡½æ•°ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">handler</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">handler</code> ä¸ºè¡¨ç¤ºä¸€ä¸ªå‡½æ•°åç§°çš„å­—ç¬¦ä¸²ï¼Œè¯¥å‡½æ•°å¿…é¡»åœ¨ä¸º <code class="parameter">parser</code> æŒ‡å®šçš„è§£æå™¨è°ƒç”¨ <span class="function"><a href="function.xml-parse.html" class="function">xml_parse()</a></span> å‡½æ•°æ—¶å·²å­˜åœ¨ã€‚
-      </p>
-      <p class="para">
-       ç”± <code class="parameter">handler</code> å‚æ•°å‘½åçš„å‡½æ•°åå¿…é¡»æ¥å—ä¸¤ä¸ªå‚æ•°ï¼š
-       <div class="methodsynopsis dc-description">
-        <span class="methodname"><span class="replaceable">handler</span></span>
-         ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parser</code></span>
-        , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-        )</div>
-
-       <dl>
-
-        
-         <dt>
-
-          <code class="parameter">parser</code>
-         </dt>
- 
-         <dd>
-
-          <span class="simpara">
-           ç¬¬ä¸€ä¸ªå‚æ•° <span class="replaceable">parser</span> ä¸ºæŒ‡å‘è¦è°ƒç”¨å¤„ç†å™¨çš„ XML è§£æå™¨çš„æŒ‡é’ˆã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-
-          <code class="parameter">data</code>
-         </dt>
-
-         <dd>
-
-          <span class="simpara">
-           ç¬¬äºŒä¸ªå‚æ•° <code class="parameter">data</code> ä¸ºåŒ…å«æœ‰å­—ç¬¦æ•°æ®çš„å­—ç¬¦ä¸²ã€‚å…¶å†…å®¹å¯ä»¥æ˜¯ XML å£°æ˜ã€æ–‡æ¡£ç±»å‹å£°æ˜ã€å®ä½“åæˆ–è€…å…¶å®ƒæ²¡æœ‰å·²å­˜åœ¨å¤„ç†å™¨çš„åœ°æ•°æ®ã€‚
-          </span>
-         </dd>
-
-        
-       </dl>
-
-      </p>
-      <p class="para">
-       å¦‚æœå¤„ç†å™¨å‡½æ•°åè¢«è®¾ç½®ä¸ºç©ºå­—ç¬¦ä¸²æˆ–è€… <strong><code>FALSE</code></strong>ï¼Œåˆ™è¯¥æœ‰é—®é¢˜çš„å¤„ç†å™¨å°†è¢«å±è”½ã€‚
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">é™¤äº†å‡½æ•°åï¼Œå«æœ‰å¯¹è±¡å¼•ç”¨çš„æ•°ç»„å’Œæ–¹æ³•åä¹Ÿå¯ä»¥ä½œä¸ºå‚æ•°ã€‚</span></p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >xml_set_default_handler</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="XML Óï·¨½âÎöº¯Êı¿â" HREF="ref.xml.html"><LINK  REL="PREVIOUS" TITLE="xml_set_character_data_handler" HREF="function.xml-set-character-data-handler.html"><LINK  REL="NEXT" TITLE="xml_set_element_handler" HREF="function.xml-set-element-handler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.xml-set-character-data-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.xml-set-element-handler.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.xml-set-default-handler" ></A
+>xml_set_default_handler</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN117910" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>xml_set_default_handler&nbsp;--&nbsp;½¨Á¢Ä¬ÈÏ´¦ÀíÆ÷</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN117913" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >xml_set_default_handler</B
+> ( resource parser, callback handler)<BR  ></BR
+><P  >&#13;     Îª <TT  CLASS="parameter" ><I  >parser</I
+></TT
+> Ö¸¶¨µÄ XML ´¦ÀíÆ÷½¨Á¢Ä¬ÈÏ´¦Àíº¯Êı¡£<TT  CLASS="parameter" ><I  >handler</I
+></TT
+> Îª±íÊ¾Ò»¸öº¯ÊıÃû³ÆµÄ×Ö·û´®£¬¸Ãº¯Êı±ØĞëÔÚÎª <TT  CLASS="parameter" ><I  >parser</I
+></TT
+> Ö¸¶¨µÄ½âÎöÆ÷µ÷ÓÃ <A  HREF="function.xml-parse.html"  ><B  CLASS="function" >xml_parse()</B
+></A
+> º¯ÊıÊ±ÒÑ´æÔÚ¡£
+    </P
+><P  >	 
+     ÓÉ <TT  CLASS="parameter" ><I  >handler</I
+></TT
+> ²ÎÊıÃüÃûµÄº¯ÊıÃû±ØĞë½ÓÊÜÁ½¸ö²ÎÊı£º
+     <B  CLASS="methodname" ><TT  CLASS="replaceable" ><I  >handler</I
+></TT
+></B
+> ( resource parser, string data)<BR  ></BR
+>
+     <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="parameter" ><I  >parser</I
+></TT
+></DT
+><DD  ><P  >&#13;         µÚÒ»¸ö²ÎÊı <TT  CLASS="replaceable" ><I  >parser</I
+></TT
+> ÎªÖ¸ÏòÒªµ÷ÓÃ´¦ÀíÆ÷µÄ XML ½âÎöÆ÷µÄÖ¸Õë¡£
+        </P
+></DD
+><DT  ><TT  CLASS="parameter" ><I  >data</I
+></TT
+></DT
+><DD  ><P  >&#13;         µÚ¶ş¸ö²ÎÊı <TT  CLASS="parameter" ><I  >data</I
+></TT
+> Îª°üº¬ÓĞ×Ö·ûÊı¾İµÄ×Ö·û´®¡£ÆäÄÚÈİ¿ÉÒÔÊÇ XML ÉùÃ÷¡¢ÎÄµµÀàĞÍÉùÃ÷¡¢ÊµÌåÃû»òÕßÆäËüÃ»ÓĞÒÑ´æÔÚ´¦ÀíÆ÷µÄµØÊı¾İ¡£		 
+        </P
+></DD
+></DL
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹û´¦ÀíÆ÷º¯ÊıÃû±»ÉèÖÃÎª¿Õ×Ö·û´®»òÕß <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>£¬Ôò¸ÃÓĞÎÊÌâµÄ´¦ÀíÆ÷½«±»ÆÁ±Î¡£
+    </P
+><P  >&#13;     Èç¹û´¦ÀíÆ÷±»³É¹¦µÄ½¨Á¢£¬¸Ãº¯Êı½«·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Èç¹û <TT  CLASS="parameter" ><I  >parser</I
+></TT
+> Ö¸ÏòµÄ²»ÊÇºÏ·¨µÄ½âÎöÆ÷£¬º¯Êı¸Ãº¯Êı½«·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>µÚ¶ş¸ö²ÎÊıº¯ÊıÃû¿ÉÒÔÌæ»»ÎªÒ»¸öÊı×é£¬¸ÃÊı×éÓÉÒ»¸ö¶ÔÏóÃûºÍ¸Ã¶ÔÏóÃûµÄÒ»¸ö·½·¨ÃûÁ½¸öÔªËØ×é³É¡£
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.xml-set-character-data-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.xml-set-element-handler.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >xml_set_character_data_handler</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.xml.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >xml_set_element_handler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.xml-set-default-handler-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xml-set-character-data-handler.html">xml_set_character_data_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xml-set-element-handler.html">xml_set_element_handler</a></div>
- <div class="up"><a href="ref.xml.html">XML è§£æå™¨å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

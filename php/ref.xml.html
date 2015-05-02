@@ -1,232 +1,702 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>XML è§£æå™¨å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="example.xml-external-entity.html">XML å¤–éƒ¨å®ä½“ä¾‹ç¨‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.utf8-decode.html">utf8_decode</a></div>
- <div class="up"><a href="book.xml.html">XML è§£æå™¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.xml" class="reference">
- <h1 class="title">XML è§£æå™¨å‡½æ•°</h1>
-
- 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.utf8-decode.html">utf8_decode</a> â€” å°†ç”¨ UTF-8 æ–¹å¼ç¼–ç çš„ ISO-8859-1 å­—ç¬¦ä¸²è½¬æ¢æˆå•å­—èŠ‚çš„ ISO-8859-1 å­—ç¬¦ä¸²ã€‚</li><li><a href="function.utf8-encode.html">utf8_encode</a> â€” å°† ISO-8859-1 ç¼–ç çš„å­—ç¬¦ä¸²è½¬æ¢ä¸º UTF-8 ç¼–ç </li><li><a href="function.xml-error-string.html">xml_error_string</a> â€” è·å– XML è§£æå™¨çš„é”™è¯¯å­—ç¬¦ä¸²</li><li><a href="function.xml-get-current-byte-index.html">xml_get_current_byte_index</a> â€” è·å– XML è§£æå™¨çš„å½“å‰å­—èŠ‚ç´¢å¼•</li><li><a href="function.xml-get-current-column-number.html">xml_get_current_column_number</a> â€” è·å– XML è§£æå™¨çš„å½“å‰åˆ—å·</li><li><a href="function.xml-get-current-line-number.html">xml_get_current_line_number</a> â€” è·å– XML è§£æå™¨çš„å½“å‰è¡Œå·</li><li><a href="function.xml-get-error-code.html">xml_get_error_code</a> â€” è·å– XML è§£æå™¨é”™è¯¯ä»£ç </li><li><a href="function.xml-parse-into-struct.html">xml_parse_into_struct</a> â€” å°† XML æ•°æ®è§£æåˆ°æ•°ç»„ä¸­</li><li><a href="function.xml-parse.html">xml_parse</a> â€” å¼€å§‹è§£æä¸€ä¸ª XML æ–‡æ¡£</li><li><a href="function.xml-parser-create-ns.html">xml_parser_create_ns</a> â€” ç”Ÿæˆä¸€ä¸ªæ”¯æŒå‘½åç©ºé—´çš„ XML è§£æå™¨</li><li><a href="function.xml-parser-create.html">xml_parser_create</a> â€” å»ºç«‹ä¸€ä¸ª XML è§£æå™¨</li><li><a href="function.xml-parser-free.html">xml_parser_free</a> â€” é‡Šæ”¾æŒ‡å®šçš„ XML è§£æå™¨</li><li><a href="function.xml-parser-get-option.html">xml_parser_get_option</a> â€” ä» XML è§£æå™¨è·å–é€‰é¡¹è®¾ç½®ä¿¡æ¯</li><li><a href="function.xml-parser-set-option.html">xml_parser_set_option</a> â€” ä¸ºæŒ‡å®š XML è§£æè¿›è¡Œé€‰é¡¹è®¾ç½®</li><li><a href="function.xml-set-character-data-handler.html">xml_set_character_data_handler</a> â€” å»ºç«‹å­—ç¬¦æ•°æ®å¤„ç†å™¨</li><li><a href="function.xml-set-default-handler.html">xml_set_default_handler</a> â€” å»ºç«‹é»˜è®¤å¤„ç†å™¨</li><li><a href="function.xml-set-element-handler.html">xml_set_element_handler</a> â€” å»ºç«‹èµ·å§‹å’Œç»ˆæ­¢å…ƒç´ å¤„ç†å™¨</li><li><a href="function.xml-set-end-namespace-decl-handler.html">xml_set_end_namespace_decl_handler</a> â€” å»ºç«‹ç»ˆæ­¢å‘½åç©ºé—´å£°æ˜å¤„ç†å™¨</li><li><a href="function.xml-set-external-entity-ref-handler.html">xml_set_external_entity_ref_handler</a> â€” å»ºç«‹å¤–éƒ¨å®ä½“æŒ‡å‘å¤„ç†å™¨</li><li><a href="function.xml-set-notation-decl-handler.html">xml_set_notation_decl_handler</a> â€” å»ºç«‹æ³¨é‡Šå£°æ˜å¤„ç†å™¨</li><li><a href="function.xml-set-object.html">xml_set_object</a> â€” åœ¨å¯¹è±¡ä¸­ä½¿ç”¨ XML è§£æå™¨</li><li><a href="function.xml-set-processing-instruction-handler.html">xml_set_processing_instruction_handler</a> â€” å»ºç«‹å¤„ç†æŒ‡ä»¤ï¼ˆPIï¼‰å¤„ç†å™¨</li><li><a href="function.xml-set-start-namespace-decl-handler.html">xml_set_start_namespace_decl_handler</a> â€” å»ºç«‹èµ·å§‹å‘½åç©ºé—´å£°æ˜å¤„ç†å™¨</li><li><a href="function.xml-set-unparsed-entity-decl-handler.html">xml_set_unparsed_entity_decl_handler</a> â€” å»ºç«‹æœªè§£æå®ä½“å®šä¹‰å£°æ˜å¤„ç†å™¨</li></ul>
+<HTML  ><HEAD  ><TITLE  >XML Óï·¨½âÎöº¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="wddx_serialize_vars" HREF="function.wddx-serialize-vars.html"><LINK  REL="NEXT" TITLE="utf8_decode" HREF="function.utf8-decode.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.wddx-serialize-vars.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.utf8-decode.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.xml" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >CXVI. XML Óï·¨½âÎöº¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN117083" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;	 XML£¨eXtensible Markup Language£¬¿ÉÀ©Õ¹±ê¼ÇÓïÑÔ£©ÊÇÒ»ÖÖÔÚ WEB ÉÏ½øĞĞÎÄµµ½»»»µÄÊı¾İ¸ñÊ½¡£¸ÃÓïÑÔÊÇÓÉ W3C£¨World Wide Web Concortium£¬ÊÀ½çÍòÎ¬Íø×éÖ¯£©¶¨ÒåµÄÒ»ÖÖ±ê×¼¡£Äú¿ÉÒÔ·ÃÎÊ <A  href="http://www.w3.org/XML/"  TARGET="_top" >http://www.w3.org/XML/</A
+> ÒÔ»ñÈ¡¹ØÓÚ XML ¼°ÆäÏà¹Ø¼¼ÊõµÄ¸ü¶àĞÅÏ¢¡£
+    </P
+><P  >&#13;	 ±¾À©Õ¹Ä£¿é¿ÉÎª James Clark µÄ <SPAN  CLASS="productname" >expat</SPAN
+> Ìá¹©Ö§³Ö¡£¸Ã¹¤¾ß°ü°ïÖúÄú½âÎö XML ÎÄµµ£¨¶ø·Ç XML ÎÄµµµÄÓĞĞ§»¯£©¡£ËüÖ§³ÖÈıÖÖÔ´´úÂëµÄ<A  HREF="ref.xml.html#xml.encoding"  >±àÂë·½Ê½</A
+>£¬ÕâÈıÖÖ±àÂë·½Ê½Ò²±» PHP ±¾ÉíËùÖ§³Ö£¬ËüÃÇ·Ö±ğÊÇ£º<TT  CLASS="literal" >US-ASCII</TT
+>¡¢<TT  CLASS="literal" >ISO-8859-1</TT
+> ºÍ <TT  CLASS="literal" >UTF-8</TT
+>¡£
+     ¸ÃÏµÍ³ÉĞ²»Ö§³Ö <TT  CLASS="literal" >UTF-16</TT
+>¡£
+    </P
+><P  >&#13;	 ¸ÃÀ©Õ¹Ä£¿éÊ¹ÄúÄÜ¹»<A  HREF="function.xml-parser-create.html"  >½¨Á¢ XML Óï·¨½âÎöÆ÷</A
+>£¬²¢¶Ô²»Í¬µÄ XML ÊÂ¼ş¶¨Òå¶ÔÓ¦µÄ´¦ÀíÆ÷¡£Ã¿¸ö XML Óï·¨½âÎöÆ÷¶¼ÓĞÈô¸É¸öÄú¿ÉÒÔ¸ù¾İĞèÒªµ÷ÕûµÄ<A  HREF="function.xml-parser-set-option.html"  >²ÎÊı</A
+>¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.requirements" ></A
+>ĞèÇó</H1
+><P  >&#13;	 ¸ÃÀ©Õ¹Ä£¿éĞèÒªÊ¹ÓÃ <SPAN  CLASS="productname" >expat</SPAN
+>£¬Äú¿ÉÒÔ·ÃÎÊ <A  href="http://www.jclark.com/xml/expat.html"  TARGET="_top" >http://www.jclark.com/xml/expat.html</A
+> À´»ñÈ¡¡£expat ×Ô´øµÄ Makefile ÎÄ¼ş²»»áÉú³ÉÄ¬ÈÏµÄÀ©Õ¹¿â£¬Äú¿ÉÒÔÊ¹ÓÃÒÔÏÂµÄÉú³É¹æÔòÀ´ÊµÏÖ£º
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="makefile" >libexpat.a: $(OBJS)
+    ar -rc $@ $(OBJS)
+    ranlib $@</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Çë·ÃÎÊ <A  href="http://sourceforge.net/projects/expat/"  TARGET="_top" >http://sourceforge.net/projects/expat/</A
+> ÒÔ»ñÈ¡ expat Ô´ÎÄ¼şµÄ RPM °ü¡£
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.installation" ></A
+>°²×°</H1
+><P  >&#13;  ÕâĞ©º¯ÊıÄ¬ÈÏÎªÓĞĞ§µÄ£¬ËüÃÇÊ¹ÓÃÁËÀ¦°óµÄ expat ¿â¡£Äú¿ÉÒÔÍ¨¹ı²ÎÊı <TT  CLASS="option" >--disable-xml</TT
+> À´ÆÁ±Î XML µÄÖ§³Ö¡£Èç¹ûÄú½« PHP ±àÒëÎª Apache 1.3.9 »ò¸ü¸ß°æ±¾µÄÒ»¸öÄ£¿é£¬ PHP ½«×Ô¶¯Ê¹ÓÃ Apache À¦°óµÄ <SPAN  CLASS="productname" >expat</SPAN
+> ¿â¡£Èç¹ûÄú²»Ï£ÍûÊ¹ÓÃ¸ÃÀ¦°óµÄ expat ¿â£¬ÇëÔÚÔËĞĞ PHP µÄ configure ÅäÖÃ½Å±¾Ê±Ê¹ÓÃ²ÎÊı <TT  CLASS="option" >--with-expat-dir=DIR</TT
+>£¬ÆäÖĞ DIR Ó¦¸ÃÖ¸Ïò expat °²×°µÄ¸ùÄ¿Â¼¡£
+ </P
+><P  > <TT  CLASS="literal" >PHP</TT
+> µÄ Windows °æ±¾ÒÑ¾­ÄÚÖÃ¸ÃÀ©Õ¹Ä£¿éµÄÖ§³Ö¡£ÄúÎŞĞè¼ÓÔØÈÎºÎ¸½¼ÓµÄÀ©Õ¹¿â¼´¿ÉÊ¹ÓÃÕâĞ©º¯Êı¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎÉèÖÃÖ¸Áî¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><DIV  CLASS="section" ><H2  CLASS="section" ><A  NAME="xml.resources.xml" ></A
+><TT  CLASS="literal" >xml</TT
+></H2
+><P  >  
+      ×ÊÔ´ <TT  CLASS="literal" >xml</TT
+> ºÍÓÉº¯Êı <A  HREF="function.xml-parser-create.html"  ><B  CLASS="function" >xml_parser_create()</B
+></A
+> ¼°       <A  HREF="function.xml-parser-create-ns.html"  ><B  CLASS="function" >xml_parser_create_ns()</B
+></A
+> ·µ»ØµÄ×ÊÔ´ÀàËÆ£¬ËüÃÇÖ¸ÏòÒ»¸ö¿É±»±¾À©Õ¹ÖĞµÄº¯ÊıÊ¹ÓÃµÄ xml ½âÎö¶ÔÏó¡£
+      extension.  
+     </P
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_NONE</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_NO_MEMORY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_SYNTAX</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_NO_ELEMENTS</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_INVALID_TOKEN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_UNCLOSED_TOKEN</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_PARTIAL_CHAR</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_TAG_MISMATCH</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_DUPLICATE_ATTRIBUTE</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_JUNK_AFTER_DOC_ELEMENT</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_PARAM_ENTITY_REF</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_UNDEFINED_ENTITY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_RECURSIVE_ENTITY_REF</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_ASYNC_ENTITY</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_BAD_CHAR_REF</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_BINARY_ENTITY_REF</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_MISPLACED_XML_PI</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_UNKNOWN_ENCODING</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_INCORRECT_ENCODING</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_UNCLOSED_CDATA_SECTION</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_ERROR_EXTERNAL_ENTITY_HANDLING</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_OPTION_CASE_FOLDING</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_OPTION_TARGET_ENCODING</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_OPTION_SKIP_TAGSTART</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >XML_OPTION_SKIP_WHITE</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.eventhandlers" ></A
+>ÊÂ¼ş´¦ÀíÆ÷</H1
+><P  >&#13;	  XML ÊÂ¼ş´¦ÀíÆ÷¶¨ÒåÈçÏÂ£º
+      <DIV  CLASS="table" ><A  NAME="AEN117289" ></A
+><P  ><B  >±í¸ñ 1. ÒÑÖ§³ÖµÄ XML ÊÂ¼ş´¦ÀíÆ÷</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÓÃÀ´ÉèÖÃ´¦ÀíÆ÷µÄ PHP º¯Êı</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÊÂ¼şÃèÊö</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="function.xml-set-element-handler.html"  ><B  CLASS="function" >xml_set_element_handler()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   ÔªËØÊÂ¼ş£¨Element events£©½«ÔÚ XML ½âÎöÆ÷Óöµ½±ê¼Ç·ûµÄÆğÊ¼·û»òÕßÖÕÖ¹·ûÊ±·¢Éú¡£ÁíÍâ£¬¶ÔÓÚÆğÊ¼·ûºÍÖÕÖ¹·ûÒ²ÓĞ¶ÀÁ¢µÄ´¦ÀíÆ÷¡£
+          </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;           <A  HREF="function.xml-set-character-data-handler.html"  ><B  CLASS="function" >xml_set_character_data_handler()</B
+></A
+>
+          </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   ´ÖÂÔµÄËµ£¬×Ö·ûÊı¾İ£¨Character data£©ÊÇÖ¸ XML ÎÄµµÖĞËùÓĞ±ê¼Ç·ûÒÔÍâµÄÄÚÈİ£¬°üÀ¨±ê¼Ç·ûÖ®¼äµÄ¿Õ¸ñ¡£ĞèÒª×¢ÒâµÄÊÇ XML Óï·¨½âÎöÆ÷²»»á¼ÓÉÏ»òÕßÈ¥µôÈÎºÎ¿Õ¸ñ¡£¿Õ¸ñµÄÈ¡Éá½«ÓÉÓ¦ÓÃ³ÌĞò£¨Ò²¾ÍÊÇÄú×Ô¼º£©À´¾ö¶¨¡£
+          </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;           <A  HREF="function.xml-set-processing-instruction-handler.html"  ><B  CLASS="function" >xml_set_processing_instruction_handler()</B
+></A
+>
+          </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   PHP ³ÌĞòÔ±¶Ô¡°´¦ÀíÖ¸Áî¡±£¨Processing Instructions£¬PIs£©Ó¦¸ÃÒÑ¾­ºÜÊìÏ¤ÁË¡£&#60;?php ?&#62; ¾ÍÊÇÒ»¸ö´¦ÀíÖ¸Áî£¬ÆäÖĞ <TT  CLASS="replaceable" ><I  >php</I
+></TT
+> ±»³ÆÎª¡°PI target¡±¡£³ıÁËÒÔ¡°XML¡±¿ªÍ·µÄ PI target ÒÑ±»±£ÁôÒÔÍâ£¬¶ÔÕâĞ© PIs µÄ´¦Àí½«ÓÉÓ¦ÓÃ³ÌĞòÀ´Íê³É¡£
+          </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="function.xml-set-default-handler.html"  ><B  CLASS="function" >xml_set_default_handler()</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   ËùÓĞÎŞ·¨±»ÆäËü´¦ÀíÆ÷´¦ÀíµÄÊÂ¼ş½«ÓÉÄ¬ÈÏ´¦ÀíÆ÷À´´¦Àí¡£ÕâĞ©ÊÂ¼ş°üÀ¨ÖîÈç XML ºÍÎÄµµÀàĞÍÉùÃ÷µÈÄÚÈİ¡£
+          </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;           <A  HREF="function.xml-set-unparsed-entity-decl-handler.html"  ><B  CLASS="function" >xml_set_unparsed_entity_decl_handler()</B
+></A
+>
+          </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   ¸Ã´¦ÀíÆ÷½«ÔÚÓöµ½ÎŞ·¨½âÎöµÄÊµÌåÃû³Æ£¨NDATA£©ÉùÃ÷Ê±±»µ÷ÓÃ¡£
+          </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;           <A  HREF="function.xml-set-notation-decl-handler.html"  ><B  CLASS="function" >xml_set_notation_decl_handler()</B
+></A
+>
+          </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   ¸Ã´¦ÀíÆ÷½«ÔÚÉùÃ÷Ò»¸ö×¢ÊÍÊ±±»µ÷ÓÃ¡£
+          </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;           <A  HREF="function.xml-set-external-entity-ref-handler.html"  ><B  CLASS="function" >xml_set_external_entity_ref_handler()</B
+></A
+>
+          </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		   µ± XML ½âÎöÆ÷Óöµ½Ö¸ÏòÍâ²¿½âÎöµÄÒ»°ãÊµÌåÃûÊ±£¬¸Ã´¦ÀíÆ÷½«±»µ÷ÓÃ¡£¸ÃÖ¸ÏòµÄÄ¿±ê¿ÉÒÔÊÇÒ»¸öÎÄ¼ş£¬Ò²¿ÉÒÔÊÇ URL¡£Çë²ÎÔÄ¡°<A  HREF="ref.xml.html#example.xml-external-entity"  >Íâ²¿ÊµÌåÃû·¶Àı</A
+>¡±¡£
+          </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+     </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.case-folding" ></A
+>´óĞ¡Ğ´ÕÛµş£¨Case Folding£©</H1
+><P  >&#13;	  ÔªËØ´¦Àíº¯Êı¿ÉÄÜ»áµ¼ÖÂÔªËØÃû³Æ¡°´óĞ¡Ğ´ÕÛµş¡±£¨<I  CLASS="glossterm" >case-folded</I
+>£©¡£¡°´óĞ¡Ğ´ÕÛµş¡±±» XML ±ê×¼¶¨ÒåÎª¡°Ò»¸öÓ¦ÓÃÓÚÒ»ÏµÁĞ×Ö·ûµÄ¹ı³Ì£¬ÔÚ¸Ã¹ı³ÌÖĞ£¬ÕâĞ©×Ö·ûÖĞµÄËùÓĞµÄ·Ç´óĞ´×Ö·û½«±»Ìæ»»³ÉËüÃÇ¶ÔÓ¦´óĞ´µÈ¼Û×Ö·û¡±¡£»»¾ä»°Ëµ£¬¶ÔÓÚ XML£¬¡°´óĞ¡Ğ´ÕÛµş¡±¾ÍÊÇÖ¸½«×Ö·û´®×ª»»³É´óĞ´×Ö·û¡£
+     </P
+><P  >&#13;	  ËùÓĞ±»´«µİ¸ø´¦ÀíÆ÷º¯ÊıµÄÔªËØÃû³Æ½«Ä¬ÈÏµÄ·¢Éú¡°´óĞ¡Ğ´ÕÛµş¡±¡£¸Ã¹ı³Ì¿ÉÒÔ·Ö±ğ±» <A  HREF="function.xml-parser-get-option.html"  ><B  CLASS="function" >xml_parser_get_option()</B
+></A
+> ºÍ <A  HREF="function.xml-parser-set-option.html"  ><B  CLASS="function" >xml_parser_set_option()</B
+></A
+> º¯Êı²éÑ¯ºÍ¿ØÖÆ¡£
+     </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.error-codes" ></A
+>´íÎó´úÂë</H1
+><P  >&#13;	  ÒÔÏÂ³£Á¿±»¶¨ÒåÎª XML µÄ´íÎó´úÂë£¬½«ÓÉ <A  HREF="function.xml-parse.html"  ><B  CLASS="function" >xml_parse()</B
+></A
+> ·µ»Ø£º
+      <P  ></P
+><TABLE  BORDER="0" ><TBODY  ><TR  ><TD  >XML_ERROR_NONE</TD
+></TR
+><TR  ><TD  >XML_ERROR_NO_MEMORY</TD
+></TR
+><TR  ><TD  >XML_ERROR_SYNTAX</TD
+></TR
+><TR  ><TD  >XML_ERROR_NO_ELEMENTS</TD
+></TR
+><TR  ><TD  >XML_ERROR_INVALID_TOKEN</TD
+></TR
+><TR  ><TD  >XML_ERROR_UNCLOSED_TOKEN</TD
+></TR
+><TR  ><TD  >XML_ERROR_PARTIAL_CHAR</TD
+></TR
+><TR  ><TD  >XML_ERROR_TAG_MISMATCH</TD
+></TR
+><TR  ><TD  >XML_ERROR_DUPLICATE_ATTRIBUTE</TD
+></TR
+><TR  ><TD  >XML_ERROR_JUNK_AFTER_DOC_ELEMENT</TD
+></TR
+><TR  ><TD  >XML_ERROR_PARAM_ENTITY_REF</TD
+></TR
+><TR  ><TD  >XML_ERROR_UNDEFINED_ENTITY</TD
+></TR
+><TR  ><TD  >XML_ERROR_RECURSIVE_ENTITY_REF</TD
+></TR
+><TR  ><TD  >XML_ERROR_ASYNC_ENTITY</TD
+></TR
+><TR  ><TD  >XML_ERROR_BAD_CHAR_REF</TD
+></TR
+><TR  ><TD  >XML_ERROR_BINARY_ENTITY_REF</TD
+></TR
+><TR  ><TD  >XML_ERROR_ATTRIBUTE_EXTERNAL_ENTITY_REF</TD
+></TR
+><TR  ><TD  >XML_ERROR_MISPLACED_XML_PI</TD
+></TR
+><TR  ><TD  >XML_ERROR_UNKNOWN_ENCODING</TD
+></TR
+><TR  ><TD  >XML_ERROR_INCORRECT_ENCODING</TD
+></TR
+><TR  ><TD  >XML_ERROR_UNCLOSED_CDATA_SECTION</TD
+></TR
+><TR  ><TD  >XML_ERROR_EXTERNAL_ENTITY_HANDLING</TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+>
+     </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.encoding" ></A
+>×Ö·û±àÂë</H1
+><P  >&#13;	  PHP µÄ XML À©Õ¹¿âÖ§³Ö²»Í¬×Ö·û±àÂë£¨<I  CLASS="glossterm" >character encoding</I
+>£©µÄ <A  href="http://www.unicode.org/"  TARGET="_top" >Unicode</A
+> ×Ö·û¼¯¡£×Ö·û±àÂëÓĞÁ½ÖÖĞÎÊ½£¬ËüÃÇ·Ö±ğÊÇ¡°Ô´±àÂë¡±£¨<I  CLASS="glossterm" >source encoding</I
+>£©ºÍ¡°Ä¿±ê±àÂë¡±£¨<I  CLASS="glossterm" >target encoding</I
+>£©¡£PHP ¶ÔÎÄµµÄÚ²¿±íÊ¾µÄ±àÂë·½Ê½ÊÇ <TT  CLASS="literal" >UTF-8</TT
+>¡£
+     </P
+><P  >&#13;	  Ô´±àÂë½«ÔÚ XML ÎÄµµ±»<A  HREF="function.xml-parse.html"  >½âÎö</A
+>ºóÍê³É¡£Ô´±àÂë¿ÉÔÚ<A  HREF="function.xml-parser-create.html"  >½¨Á¢Ò»¸ö XML ½âÎöÆ÷</A
+>Ê±Ö¸Ã÷£¨¸Ã±àÂë·½Ê½ÔÚ XML ½âÎöÆ÷µÄÉúÃüÖÜÆÚÖĞ²»ÄÜ±»ÔÙ´Î¸Ä±ä£©¡£Ö§³ÖµÄ±àÂë·½Ê½°üÀ¨ <TT  CLASS="literal" >ISO-8859-1</TT
+>£¬<TT  CLASS="literal" >US-ASCII</TT
+> ºÍ <TT  CLASS="literal" >UTF-8</TT
+>¡£Ç°Á½ÖÖÎªµ¥×Ö½Ú±àÂë£¬¼´Ã¿¸ö×Ö·û±»Ò»¸öµ¥Ò»µÄ×Ö½Ú±íÊ¾¡£ <TT  CLASS="literal" >UTF-8</TT
+> Ö§³Ö 1 ÖÁ 4 ¸ö×Ö½ÚµÄ¶à bit£¨×î¶à 12£©×Ö·û±àÂë¡£PHP Ä¬ÈÏÊ¹ÓÃ <TT  CLASS="literal" >ISO-8859-1</TT
+> ×÷ÎªÔ´±àÂë·½Ê½¡£
+     </P
+><P  >&#13;	  Ä¿±ê±àÂë½«ÔÚ PHP Ïò XML ´¦ÀíÆ÷º¯Êı´«ËÍÊı¾İÊ±±»Íê³É¡£µ± XML ½âÎöÆ÷±»½¨Á¢ºó£¬Ä¿±ê±àÂë½«±»ÉèÖÃ³ÉÓëÔ´±àÂëÏàÍ¬µÄ±àÂë·½Ê½£¬µ«¸Ã·½Ê½¿ÉÔÚÈÎºÎÊ±ºò±»¸ü¸Ä¡£Ä¿±ê±àÂë½«Ó°Ïì×Ö·ûÊı¾İ¡¢±ê¼Ç·ûÃû³ÆÒÔ¼°´¦ÀíÖ¸ÁîÄ¿±ê£¨PI target£©¡£
+     </P
+><P  >&#13;	  Èç¹û XML ½âÎöÆ÷Óöµ½ÆäÔ´±àÂë·½Ê½±íÊ¾ÄÜÁ¦Ö®ÍâµÄ×Ö·û£¬Ëü½«·µ»ØÒ»¸ö´íÎó¡£
+     </P
+><P  >&#13;	  µ± PHP ÔÚ±»½âÎöµÄ XML ÎÄµµÖĞÓöµ½µ±Ç°Ä¿±ê±àÂëÎŞ·¨±íÊ¾µÄ×Ö·ûÊ±£¬ÕâĞ©×Ö·û½«±»¡°½µ¼¶¡±¡£¼òµ¥µÄËµ£¬ÕâĞ©×Ö·û½«±»ÎÊºÅÌæ»»¡£
+     </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="xml.examples" ></A
+>·¶Àı</H1
+><P  >&#13;	 ÒÔÏÂÊÇ PHP ½Å±¾½âÎö XML ÎÄµµµÄÒ»Ğ©·¶Àı¡£
+    </P
+><DIV  CLASS="section" ><H2  CLASS="section" ><A  NAME="example.xml-structure" ></A
+>XML ÔªËØ½á¹¹·¶Àı</H2
+><P  >&#13;	  µÚÒ»¸ö·¶ÀıÓÃËõ½ø¸ñÊ½ÏÔÊ¾Ò»¸öÎÄµµÖĞÆğÊ¼ÔªËØµÄ½á¹¹¡£
+      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117386" ></A
+><P  ><B  >Àı×Ó 1. ÏÔÊ¾ XML ÔªËØ½á¹¹</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$file </font><font  color="#007700">= </font><font  color="#DD0000">"data.xml"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$depth </font><font  color="#007700">= array();<br  /><br  />function </font><font  color="#0000BB">startElement</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$name</font><font  color="#007700">, </font><font  color="#0000BB">$attrs</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$depth</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;for (</font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i </font><font  color="#007700">&lt; </font><font  color="#0000BB">$depth</font><font  color="#007700">[</font><font  color="#0000BB">$parser</font><font  color="#007700">]; </font><font  color="#0000BB">$i</font><font  color="#007700">++) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&nbsp;&nbsp;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"$name\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$depth</font><font  color="#007700">[</font><font  color="#0000BB">$parser</font><font  color="#007700">]++;<br  />}<br  /><br  />function </font><font  color="#0000BB">endElement</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$name</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$depth</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$depth</font><font  color="#007700">[</font><font  color="#0000BB">$parser</font><font  color="#007700">]--;<br  />}<br  /><br  /></font><font  color="#0000BB">$xml_parser </font><font  color="#007700">= </font><font  color="#0000BB">xml_parser_create</font><font  color="#007700">();<br  /></font><font  color="#0000BB">xml_set_element_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"startElement"</font><font  color="#007700">, </font><font  color="#DD0000">"endElement"</font><font  color="#007700">);<br  />if (!(</font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"could not open XML input"</font><font  color="#007700">);<br  />}<br  /><br  />while (</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">4096</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">xml_parse</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#0000BB">sprintf</font><font  color="#007700">(</font><font  color="#DD0000">"XML error: %s at line %d"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_error_string</font><font  color="#007700">(</font><font  color="#0000BB">xml_get_error_code</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">)),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_get_current_line_number</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">)));<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /></font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+><DIV  CLASS="section" ><H2  CLASS="section" ><A  NAME="example.xml-map-tags" ></A
+>XML ±ê¼Ç·ûÓ³Éä·¶Àı</H2
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117392" ></A
+><P  ><B  >Àı×Ó 2. ½« XML Ó³ÉäÎª HTML</B
+></P
+><P  >&#13;	   ÒÔÏÂ·¶Àı½« XML ÎÄµµÖĞµÄ±ê¼Ç·ûÖ±½ÓÓ³Éä³É HTML ±ê¼Ç·û¡£ÔÚ¡°Ó³ÉäÊı×é¡±ÖĞ²»´æÔÚµÄÔªËØ½«±»ºöÂÔ¡£µ±È»£¬¸Ã·¶Àı½«Ö»¶ÔÒ»¸öÌØ¶¨µÄ XML ÎÄµµÓĞĞ§¡£
+       </P
+><P  >&#13;    <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$file </font><font  color="#007700">= </font><font  color="#DD0000">"data.xml"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$map_array </font><font  color="#007700">= array(<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"BOLD"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#DD0000">"B"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"EMPHASIS" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"I"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"LITERAL"&nbsp;&nbsp;</font><font  color="#007700">=&gt; </font><font  color="#DD0000">"TT"<br  /></font><font  color="#007700">);<br  /><br  />function </font><font  color="#0000BB">startElement</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$name</font><font  color="#007700">, </font><font  color="#0000BB">$attrs</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$map_array</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$htmltag </font><font  color="#007700">== </font><font  color="#0000BB">$map_array</font><font  color="#007700">[</font><font  color="#0000BB">$name</font><font  color="#007700">]) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&lt;$htmltag&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />function </font><font  color="#0000BB">endElement</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$name</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$map_array</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$htmltag </font><font  color="#007700">== </font><font  color="#0000BB">$map_array</font><font  color="#007700">[</font><font  color="#0000BB">$name</font><font  color="#007700">]) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&lt;/$htmltag&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />function </font><font  color="#0000BB">characterData</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#0000BB">$data</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$xml_parser </font><font  color="#007700">= </font><font  color="#0000BB">xml_parser_create</font><font  color="#007700">();<br  /></font><font  color="#FF8000">// Ê¹ÓÃ´óĞ¡Ğ´ÕÛµşÀ´±£Ö¤ÎÒÃÇÄÜÔÚÔªËØÊı×éÖĞÕÒµ½ÕâĞ©ÔªËØÃû³Æ<br  /></font><font  color="#0000BB">xml_parser_set_option</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">XML_OPTION_CASE_FOLDING</font><font  color="#007700">, </font><font  color="#0000BB">true</font><font  color="#007700">);<br  /></font><font  color="#0000BB">xml_set_element_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"startElement"</font><font  color="#007700">, </font><font  color="#DD0000">"endElement"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">xml_set_character_data_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"characterData"</font><font  color="#007700">);<br  />if (!(</font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"could not open XML input"</font><font  color="#007700">);<br  />}<br  /><br  />while (</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">4096</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">xml_parse</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#0000BB">sprintf</font><font  color="#007700">(</font><font  color="#DD0000">"XML error: %s at line %d"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_error_string</font><font  color="#007700">(</font><font  color="#0000BB">xml_get_error_code</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">)),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_get_current_line_number</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">)));<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /></font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+       </P
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+><DIV  CLASS="section" ><H2  CLASS="section" ><A  NAME="example.xml-external-entity" ></A
+>XML Íâ²¿ÊµÌå·¶Àı</H2
+><P  >&#13;	  ¸Ã·¶ÀıÄÜ¹»¸ßÁÁÏÔÊ¾ XML Ô´´úÂë¡£Ëü½«ËµÃ÷ÈçºÎÍâ²¿ÊµÌåÖ¸Ïò´¦ÀíÆ÷À´°üº¬ºÍ½âÎöÆäËüÎÄµµ£¬ÈçºÎ´¦Àí PIs£¬ÒÔ¼°Ò»ÖÖÈ·¶¨°üº¬ÓĞ PIs µÄ´úÂëµÄ¿ÉĞÅ¶È¡£
+     </P
+><P  >&#13;	  ÄÜ±»¸Ã·¶ÀıÊ¹ÓÃµÄµÄ XML ÎÄµµ£¨<TT  CLASS="filename" >xmltest.xml</TT
+> ºÍ <TT  CLASS="filename" >xmltest2.xml</TT
+>£©±»ÁĞÔÚ¸Ã·¶ÀıÖ®ºó¡£
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117404" ></A
+><P  ><B  >Àı×Ó 3. Íâ²¿ÊµÌå·¶Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$file </font><font  color="#007700">= </font><font  color="#DD0000">"xmltest.xml"</font><font  color="#007700">;<br  /><br  />function </font><font  color="#0000BB">trustedFile</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// only trust local files owned by ourselves<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">if (!</font><font  color="#0000BB">eregi</font><font  color="#007700">(</font><font  color="#DD0000">"^([a-z]+)://"</font><font  color="#007700">, </font><font  color="#0000BB">$file</font><font  color="#007700">) <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp; </font><font  color="#0000BB">fileowner</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">) == </font><font  color="#0000BB">getmyuid</font><font  color="#007700">()) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">startElement</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$name</font><font  color="#007700">, </font><font  color="#0000BB">$attribs</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&amp;lt;&lt;font color=\"#0000cc\"&gt;$name&lt;/font&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">sizeof</font><font  color="#007700">(</font><font  color="#0000BB">$attribs</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (list(</font><font  color="#0000BB">$k</font><font  color="#007700">, </font><font  color="#0000BB">$v</font><font  color="#007700">) = </font><font  color="#0000BB">each</font><font  color="#007700">(</font><font  color="#0000BB">$attribs</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">" &lt;font color=\"#009900\"&gt;$k&lt;/font&gt;=\"&lt;font <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=\"#990000\"&gt;$v&lt;/font&gt;\""</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&amp;gt;"</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">endElement</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$name</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&amp;lt;/&lt;font color=\"#0000cc\"&gt;$name&lt;/font&gt;&amp;gt;"</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">characterData</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"&lt;b&gt;$data&lt;/b&gt;"</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">PIHandler</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$target</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;switch (</font><font  color="#0000BB">strtolower</font><font  color="#007700">(</font><font  color="#0000BB">$target</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case </font><font  color="#DD0000">"php"</font><font  color="#007700">:<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$parser_file</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// If the parsed document is "trusted", we say it is safe<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// to execute PHP code inside it.&nbsp;&nbsp;If not, display the code<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// instead.<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">if (</font><font  color="#0000BB">trustedFile</font><font  color="#007700">(</font><font  color="#0000BB">$parser_file</font><font  color="#007700">[</font><font  color="#0000BB">$parser</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eval(</font><font  color="#0000BB">$data</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">"Untrusted PHP code: &lt;i&gt;%s&lt;/i&gt;"</font><font  color="#007700">, <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">htmlspecialchars</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />function </font><font  color="#0000BB">defaultHandler</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">) == </font><font  color="#DD0000">"&amp;" </font><font  color="#007700">&amp;&amp; </font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">) == </font><font  color="#DD0000">";"</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">'&lt;font color="#aa00aa"&gt;%s&lt;/font&gt;'</font><font  color="#007700">, <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">htmlspecialchars</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">'&lt;font size="-1"&gt;%s&lt;/font&gt;'</font><font  color="#007700">, <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">htmlspecialchars</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  />function </font><font  color="#0000BB">externalEntityRefHandler</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$openEntityNames</font><font  color="#007700">, </font><font  color="#0000BB">$base</font><font  color="#007700">, </font><font  color="#0000BB">$systemId</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$publicId</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$systemId</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!list(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$fp</font><font  color="#007700">) = </font><font  color="#0000BB">new_xml_parser</font><font  color="#007700">(</font><font  color="#0000BB">$systemId</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">"Could not open entity %s at %s\n"</font><font  color="#007700">, </font><font  color="#0000BB">$openEntityNames</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$systemId</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">4096</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">xml_parse</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">printf</font><font  color="#007700">(</font><font  color="#DD0000">"XML error: %s at line %d while parsing entity %s\n"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_error_string</font><font  color="#007700">(</font><font  color="#0000BB">xml_get_error_code</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">)),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_get_current_line_number</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">), </font><font  color="#0000BB">$openEntityNames</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$parser</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">true</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">new_xml_parser</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$parser_file</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$xml_parser </font><font  color="#007700">= </font><font  color="#0000BB">xml_parser_create</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_parser_set_option</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">XML_OPTION_CASE_FOLDING</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_set_element_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"startElement"</font><font  color="#007700">, </font><font  color="#DD0000">"endElement"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_set_character_data_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"characterData"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_set_processing_instruction_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"PIHandler"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_set_default_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"defaultHandler"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_set_external_entity_ref_handler</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#DD0000">"externalEntityRefHandler"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!(</font><font  color="#0000BB">$fp </font><font  color="#007700">= @</font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">, </font><font  color="#DD0000">"r"</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">false</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">is_array</font><font  color="#007700">(</font><font  color="#0000BB">$parser_file</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">settype</font><font  color="#007700">(</font><font  color="#0000BB">$parser_file</font><font  color="#007700">, </font><font  color="#DD0000">"array"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$parser_file</font><font  color="#007700">[</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">] = </font><font  color="#0000BB">$file</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;return array(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />}<br  /><br  />if (!(list(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">$fp</font><font  color="#007700">) = </font><font  color="#0000BB">new_xml_parser</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#DD0000">"could not open XML input"</font><font  color="#007700">);<br  />}<br  /><br  />print </font><font  color="#DD0000">"&lt;pre&gt;"</font><font  color="#007700">;<br  />while (</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">4096</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">xml_parse</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">, </font><font  color="#0000BB">$data</font><font  color="#007700">, </font><font  color="#0000BB">feof</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">))) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(</font><font  color="#0000BB">sprintf</font><font  color="#007700">(</font><font  color="#DD0000">"XML error: %s at line %d\n"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_error_string</font><font  color="#007700">(</font><font  color="#0000BB">xml_get_error_code</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">)),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">xml_get_current_line_number</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">)));<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  />print </font><font  color="#DD0000">"&lt;/pre&gt;"</font><font  color="#007700">;<br  />print </font><font  color="#DD0000">"parse complete\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">xml_parser_free</font><font  color="#007700">(</font><font  color="#0000BB">$xml_parser</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117408" ></A
+><P  ><B  >Àı×Ó 4. xmltest.xml</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="xml" >&#60;?xml version='1.0'?&#62;
+&#60;!DOCTYPE chapter SYSTEM "/just/a/test.dtd" [
+&#60;!ENTITY plainEntity "FOO entity"&#62;
+&#60;!ENTITY systemEntity SYSTEM "xmltest2.xml"&#62;
+]&#62;
+&#60;chapter&#62;
+ &#60;TITLE&#62;Title &#38;plainEntity;&#60;/TITLE&#62;
+ &#60;para&#62;
+  &#60;informaltable&#62;
+   &#60;tgroup cols="3"&#62;
+    &#60;tbody&#62;
+     &#60;row&#62;&#60;entry&#62;a1&#60;/entry&#62;&#60;entry morerows="1"&#62;b1&#60;/entry&#62;&#60;entry&#62;c1&#60;/entry&#62;&#60;/row&#62;
+     &#60;row&#62;&#60;entry&#62;a2&#60;/entry&#62;&#60;entry&#62;c2&#60;/entry&#62;&#60;/row&#62;
+     &#60;row&#62;&#60;entry&#62;a3&#60;/entry&#62;&#60;entry&#62;b3&#60;/entry&#62;&#60;entry&#62;c3&#60;/entry&#62;&#60;/row&#62;
+    &#60;/tbody&#62;
+   &#60;/tgroup&#62;
+  &#60;/informaltable&#62;
+ &#60;/para&#62;
+ &#38;systemEntity;
+ &#60;section id="about"&#62;
+  &#60;title&#62;About this Document&#60;/title&#62;
+  &#60;para&#62;
+   &#60;!-- this is a comment --&#62;
+   &#60;?php print 'Hi!  This is PHP version '.phpversion(); ?&#62;
+  &#60;/para&#62;
+ &#60;/section&#62;
+&#60;/chapter&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+><P  >&#13;      ÒÔÏÂÎÄµµ½«±» <TT  CLASS="filename" >xmltest.xml</TT
+> ÎÄ¼şµ÷ÓÃ£º
+      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN117413" ></A
+><P  ><B  >Àı×Ó 5. xmltest2.xml</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="xml" >&#60;?xml version="1.0"?&#62;
+&#60;!DOCTYPE foo [
+&#60;!ENTITY testEnt "test entity"&#62;
+]&#62;
+&#60;foo&#62;
+   &#60;element attrib="value"/&#62;
+   &#38;testEnt;
+   &#60;?php print "This is some more PHP code being executed."; ?&#62;
+&#60;/foo&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.utf8-decode.html"  >utf8_decode</A
+>&nbsp;--&nbsp;
+	 ½«ÓÃ UTF-8 ·½Ê½±àÂëµÄ ISO-8859-1 ×Ö·û´®×ª»»³Éµ¥×Ö½ÚµÄ ISO-8859-1 ×Ö·û´®¡£
+    </DT
+><DT  ><A  HREF="function.utf8-encode.html"  >utf8_encode</A
+>&nbsp;--&nbsp;½« ISO-8859-1 ±àÂëµÄ×Ö·û´®×ª»»Îª UTF-8 ±àÂë</DT
+><DT  ><A  HREF="function.xml-error-string.html"  >xml_error_string</A
+>&nbsp;--&nbsp;»ñÈ¡ XML ½âÎöÆ÷µÄ´íÎó×Ö·û´®</DT
+><DT  ><A  HREF="function.xml-get-current-byte-index.html"  >xml_get_current_byte_index</A
+>&nbsp;--&nbsp;»ñÈ¡ XML ½âÎöÆ÷µÄµ±Ç°×Ö½ÚË÷Òı£¨current byte index£©¡£</DT
+><DT  ><A  HREF="function.xml-get-current-column-number.html"  >xml_get_current_column_number</A
+>&nbsp;--&nbsp;
+     »ñÈ¡ XML ½âÎöÆ÷µÄµ±Ç°ÁĞºÅ
+    </DT
+><DT  ><A  HREF="function.xml-get-current-line-number.html"  >xml_get_current_line_number</A
+>&nbsp;--&nbsp;»ñÈ¡ XML ½âÎöÆ÷µÄµ±Ç°ĞĞºÅ</DT
+><DT  ><A  HREF="function.xml-get-error-code.html"  >xml_get_error_code</A
+>&nbsp;--&nbsp;»ñÈ¡ XML ½âÎöÆ÷´íÎó´úÂë</DT
+><DT  ><A  HREF="function.xml-parse-into-struct.html"  >xml_parse_into_struct</A
+>&nbsp;--&nbsp;½« XML Êı¾İ½âÎöµ½Êı×éÖĞ</DT
+><DT  ><A  HREF="function.xml-parse.html"  >xml_parse</A
+>&nbsp;--&nbsp;¿ªÊ¼½âÎöÒ»¸ö XML ÎÄµµ</DT
+><DT  ><A  HREF="function.xml-parser-create-ns.html"  >xml_parser_create_ns</A
+>&nbsp;--&nbsp;
+     Éú³ÉÒ»¸öÖ§³ÖÃüÃû¿Õ¼äµÄ XML ½âÎöÆ÷
+    </DT
+><DT  ><A  HREF="function.xml-parser-create.html"  >xml_parser_create</A
+>&nbsp;--&nbsp;½¨Á¢Ò»¸ö XML ½âÎöÆ÷</DT
+><DT  ><A  HREF="function.xml-parser-free.html"  >xml_parser_free</A
+>&nbsp;--&nbsp;ÊÍ·ÅÖ¸¶¨µÄ XML ½âÎöÆ÷</DT
+><DT  ><A  HREF="function.xml-parser-get-option.html"  >xml_parser_get_option</A
+>&nbsp;--&nbsp;´Ó XML ½âÎöÆ÷»ñÈ¡Ñ¡ÏîÉèÖÃĞÅÏ¢</DT
+><DT  ><A  HREF="function.xml-parser-set-option.html"  >xml_parser_set_option</A
+>&nbsp;--&nbsp;ÎªÖ¸¶¨ XML ½âÎö½øĞĞÑ¡ÏîÉèÖÃ</DT
+><DT  ><A  HREF="function.xml-set-character-data-handler.html"  >xml_set_character_data_handler</A
+>&nbsp;--&nbsp;½¨Á¢×Ö·ûÊı¾İ´¦ÀíÆ÷</DT
+><DT  ><A  HREF="function.xml-set-default-handler.html"  >xml_set_default_handler</A
+>&nbsp;--&nbsp;½¨Á¢Ä¬ÈÏ´¦ÀíÆ÷</DT
+><DT  ><A  HREF="function.xml-set-element-handler.html"  >xml_set_element_handler</A
+>&nbsp;--&nbsp;½¨Á¢ÆğÊ¼ºÍÖÕÖ¹ÔªËØ´¦ÀíÆ÷</DT
+><DT  ><A  HREF="function.xml-set-end-namespace-decl-handler.html"  >xml_set_end_namespace_decl_handler</A
+>&nbsp;--&nbsp;
+     ½¨Á¢ÖÕÖ¹ÃüÃû¿Õ¼äÉùÃ÷´¦ÀíÆ÷
+    </DT
+><DT  ><A  HREF="function.xml-set-external-entity-ref-handler.html"  >xml_set_external_entity_ref_handler</A
+>&nbsp;--&nbsp;½¨Á¢Íâ²¿ÊµÌåÖ¸Ïò´¦ÀíÆ÷</DT
+><DT  ><A  HREF="function.xml-set-notation-decl-handler.html"  >xml_set_notation_decl_handler</A
+>&nbsp;--&nbsp;½¨Á¢×¢ÊÍÉùÃ÷´¦ÀíÆ÷</DT
+><DT  ><A  HREF="function.xml-set-object.html"  >xml_set_object</A
+>&nbsp;--&nbsp;ÔÚ¶ÔÏóÖĞÊ¹ÓÃ XML ½âÎöÆ÷</DT
+><DT  ><A  HREF="function.xml-set-processing-instruction-handler.html"  >xml_set_processing_instruction_handler</A
+>&nbsp;--&nbsp;
+     ½¨Á¢´¦ÀíÖ¸Áî£¨PI£©´¦ÀíÆ÷
+    </DT
+><DT  ><A  HREF="function.xml-set-start-namespace-decl-handler.html"  >xml_set_start_namespace_decl_handler</A
+>&nbsp;--&nbsp;
+     ½¨Á¢ÆğÊ¼ÃüÃû¿Õ¼äÉùÃ÷´¦ÀíÆ÷
+    </DT
+><DT  ><A  HREF="function.xml-set-unparsed-entity-decl-handler.html"  >xml_set_unparsed_entity_decl_handler</A
+>&nbsp;--&nbsp;
+     ½¨Á¢Î´½âÎöÊµÌå¶¨ÒåÉùÃ÷´¦ÀíÆ÷
+    </DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.wddx-serialize-vars.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.utf8-decode.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >wddx_serialize_vars</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >utf8_decode</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="example.xml-external-entity.html">XML å¤–éƒ¨å®ä½“ä¾‹ç¨‹</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.utf8-decode.html">utf8_decode</a></div>
- <div class="up"><a href="book.xml.html">XML è§£æå™¨</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

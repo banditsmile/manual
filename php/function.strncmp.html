@@ -1,117 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>二进制安全比较字符串开头的若干个字符</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strncasecmp.html">strncasecmp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strpbrk.html">strpbrk</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.strncmp" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">strncmp</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">strncmp</span> &mdash; <span class="dc-title">二进制安全比较字符串开头的若干个字符</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.strncmp-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>strncmp</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$len</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   该函数与 <span class="function"><a href="function.strcmp.html" class="function">strcmp()</a></span> 类似，不同之处在于你可以指定两个字符串比较时使用的长度（即最大比较长度）。
-  </p>
-  <p class="para">
-   注意该比较区分大小写。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.strncmp-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str1</code></dt>
-
-     <dd>
-
-      <p class="para">
-       第一个字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">str2</code></dt>
-
-     <dd>
-
-      <p class="para">
-       第二个字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">len</code></dt>
-
-     <dd>
-
-      <p class="para">
-       最大比较长度。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >strncmp</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="strncasecmp" HREF="function.strncasecmp.html"><LINK  REL="NEXT" TITLE="strpos" HREF="function.strpos.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.strncasecmp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.strpos.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.strncmp" ></A
+>strncmp</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN110683" ></A
+><P  >    (PHP 4 )</P
+>strncmp&nbsp;--&nbsp;
+     Binary safe string comparison of the first n characters
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN110686" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >strncmp</B
+> ( string str1, string str2, int len)<BR  ></BR
+><P  >&#13;     This function is similar to <A  HREF="function.strcmp.html"  ><B  CLASS="function" >strcmp()</B
+></A
+>, with the
+     difference that you can specify the (upper limit of the) number
+     of characters (<TT  CLASS="parameter" ><I  >len</I
+></TT
+>) from each string to be
+     used in the comparison.</P
+><P  >&#13;     Returns &#60; 0 if <TT  CLASS="parameter" ><I  >str1</I
+></TT
+> is less than
+     <TT  CLASS="parameter" ><I  >str2</I
+></TT
+>; &#62; 0 if <TT  CLASS="parameter" ><I  >str1</I
+></TT
+>
+     is greater than <TT  CLASS="parameter" ><I  >str2</I
+></TT
+>, and 0 if they are
+     equal.
+    </P
+><P  >&#13;     Note that this comparison is case sensitive.
+    </P
+><P  >&#13;     See also <A  HREF="function.ereg.html"  ><B  CLASS="function" >ereg()</B
+></A
+>,
+     <A  HREF="function.strncasecmp.html"  ><B  CLASS="function" >strncasecmp()</B
+></A
+>,
+     <A  HREF="function.strcasecmp.html"  ><B  CLASS="function" >strcasecmp()</B
+></A
+>, <A  HREF="function.substr.html"  ><B  CLASS="function" >substr()</B
+></A
+>,
+     <A  HREF="function.stristr.html"  ><B  CLASS="function" >stristr()</B
+></A
+>, <A  HREF="function.strcmp.html"  ><B  CLASS="function" >strcmp()</B
+></A
+>, and
+     <A  HREF="function.strstr.html"  ><B  CLASS="function" >strstr()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.strncasecmp.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.strpos.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >strncasecmp</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >strpos</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.strncmp-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果 <code class="parameter">str1</code> 小于
-   <code class="parameter">str2</code> 返回 &lt; 0；
-   如果 <code class="parameter">str1</code>
-   大于 <code class="parameter">str2</code>
-   返回 &gt; 0；如果两者相等，返回 0。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.strncmp-seealso">
-  <h3 class="title">参见</h3>
-   <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.strncasecmp.html" class="function" rel="rdfs-seeAlso">strncasecmp()</a> - 二进制安全比较字符串开头的若干个字符（不区分大小写）</span></li>
-    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 执行一个正则表达式匹配</span></li>
-    <li class="member"><span class="function"><a href="function.substr-compare.html" class="function" rel="rdfs-seeAlso">substr_compare()</a> - 二进制安全比较字符串（从偏移位置比较指定长度）</span></li>
-    <li class="member"><span class="function"><a href="function.strcmp.html" class="function" rel="rdfs-seeAlso">strcmp()</a> - 二进制安全字符串比较</span></li>
-    <li class="member"><span class="function"><a href="function.strstr.html" class="function" rel="rdfs-seeAlso">strstr()</a> - 查找字符串的首次出现</span></li>
-    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 返回字符串的子串</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strncasecmp.html">strncasecmp</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strpbrk.html">strpbrk</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

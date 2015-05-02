@@ -1,202 +1,101 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›ç”±å¯¹è±¡å±æ€§ç»„æˆçš„å…³è”æ•°ç»„</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-declared-traits.html">get_declared_traits</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-parent-class.html">get_parent_class</a></div>
- <div class="up"><a href="ref.classobj.html">ç±»/å¯¹è±¡ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-object-vars" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">get_object_vars</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">get_object_vars</span> &mdash; <span class="dc-title">è¿”å›ç”±å¯¹è±¡å±æ€§ç»„æˆçš„å…³è”æ•°ç»„</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.get-object-vars-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>get_object_vars</strong></span>
-    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$obj</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   è¿”å›ç”± <code class="parameter">obj</code> 
-   æŒ‡å®šçš„å¯¹è±¡ä¸­å®šä¹‰çš„å±æ€§ç»„æˆçš„å…³è”æ•°ç»„ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    åœ¨ PHP 4.2.0 ä¹‹å‰çš„ç‰ˆæœ¬ä¸­ï¼Œå¦‚æœåœ¨ <code class="parameter">obj</code>
-    å¯¹è±¡å®ä¾‹ä¸­å£°æ˜çš„å˜é‡æ²¡æœ‰è¢«èµ‹å€¼ï¼Œåˆ™å®ƒä»¬å°†ä¸ä¼šåœ¨è¿”å›çš„æ•°ç»„ä¸­ã€‚è€Œåœ¨
-    PHP 4.2.0 ä¹‹åï¼Œè¿™äº›å˜é‡ä½œä¸ºé”®åå°†è¢«èµ‹äºˆ <strong><code>NULL</code></strong> å€¼ã€‚
-   </p>
-  </p></blockquote>
-  <p class="para">
-   <div class="example" id="example-5372">
-    <p><strong>Example #1 ä½¿ç”¨ <span class="function"><strong>get_object_vars()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Point2D&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$label</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">Point2D</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$x</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">setLabel</span><span style="color: #007700">(</span><span style="color: #0000BB">$label</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">label&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$label</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">getPoint</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;array(</span><span style="color: #DD0000">"x"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"y"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"label"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">label</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;"$label"&nbsp;is&nbsp;declared&nbsp;but&nbsp;not&nbsp;defined<br /></span><span style="color: #0000BB">$p1&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Point2D</span><span style="color: #007700">(</span><span style="color: #0000BB">1.233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3.445</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">get_object_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">$p1</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$p1</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLabel</span><span style="color: #007700">(</span><span style="color: #DD0000">"point&nbsp;#1"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">get_object_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">$p1</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div> 
-    <div class="example-contents screen">
-<div class="cdata"><pre>
- Array
+<HTML  ><HEAD  ><TITLE  >get_object_vars</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Àà£¯¶ÔÏóº¯Êı¿â" HREF="ref.classobj.html"><LINK  REL="PREVIOUS" TITLE="get_declared_classes" HREF="function.get-declared-classes.html"><LINK  REL="NEXT" TITLE="get_parent_class" HREF="function.get-parent-class.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.get-declared-classes.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-parent-class.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-object-vars" ></A
+>get_object_vars</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN13081" ></A
+><P  >    (PHP 4 )</P
+>get_object_vars&nbsp;--&nbsp;·µ»ØÓÉ¶ÔÏóÊôĞÔ×é³ÉµÄ¹ØÁªÊı×é</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN13084" ></A
+><H2  >ÃèÊö</H2
+>array <B  CLASS="methodname" >get_object_vars</B
+> ( object obj)<BR  ></BR
+><P  >&#13;     ·µ»ØÓÉ <TT  CLASS="parameter" ><I  >obj</I
+></TT
+> 
+     Ö¸¶¨µÄ¶ÔÏóÖĞ¶¨ÒåµÄÊôĞÔ×é³ÉµÄ¹ØÁªÊı×é¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÔÚ PHP 4.2.0 Ö®Ç°µÄ°æ±¾ÖĞ£¬Èç¹ûÔÚ <TT  CLASS="parameter" ><I  >obj</I
+></TT
+>
+      ¶ÔÏóÊµÀıÖĞÉùÃ÷µÄ±äÁ¿Ã»ÓĞ±»¸³Öµ£¬ÔòËüÃÇ½«²»»áÔÚ·µ»ØµÄÊı×éÖĞ¡£¶øÔÚ
+      PHP 4.2.0 Ö®ºó£¬ÕâĞ©±äÁ¿×÷Îª¼üÃû½«±»¸³Óè <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>
+      Öµ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN13099" ></A
+><P  ><B  >Àı×Ó 1. Ê¹ÓÃ <B  CLASS="function" >get_object_vars()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Point2D </font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#0000BB">$y</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;var </font><font  color="#0000BB">$label</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">Point2D</font><font  color="#007700">(</font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#0000BB">$y</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">x </font><font  color="#007700">= </font><font  color="#0000BB">$x</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">y </font><font  color="#007700">= </font><font  color="#0000BB">$y</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">setLabel</font><font  color="#007700">(</font><font  color="#0000BB">$label</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">label </font><font  color="#007700">= </font><font  color="#0000BB">$label</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">getPoint</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return array(</font><font  color="#DD0000">"x" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">x</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"y" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">y</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"label" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">label</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#FF8000">// "$label" is declared but not defined<br  /></font><font  color="#0000BB">$p1 </font><font  color="#007700">= new </font><font  color="#0000BB">Point2D</font><font  color="#007700">(</font><font  color="#0000BB">1.233</font><font  color="#007700">, </font><font  color="#0000BB">3.445</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_object_vars</font><font  color="#007700">(</font><font  color="#0000BB">$p1</font><font  color="#007700">));<br  /><br  /></font><font  color="#0000BB">$p1</font><font  color="#007700">-&gt;</font><font  color="#0000BB">setLabel</font><font  color="#007700">(</font><font  color="#DD0000">"point #1"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">get_object_vars</font><font  color="#007700">(</font><font  color="#0000BB">$p1</font><font  color="#007700">));<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     ÉÏ±ßµÄ³ÌĞò½«Êä³ö£º 
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
  (
-     [x] =&gt; 1.233
-     [y] =&gt; 3.445
-     [label] =&gt;
+     [x] =&#62; 1.233
+     [y] =&#62; 3.445
+     [label] =&#62;
  )
 
  Array
  (
-     [x] =&gt; 1.233
-     [y] =&gt; 3.445
-     [label] =&gt; point #1
- )
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="simpara">
-   å‚è§ <span class="function"><a href="function.get-class-methods.html" class="function">get_class_methods()</a></span> å’Œ
-   <span class="function"><a href="function.get-class-vars.html" class="function">get_class_vars()</a></span>ã€‚
-  </p>
- </div>
+     [x] =&#62; 1.233
+     [y] =&#62; 3.445
+     [label] =&#62; point #1
+ )</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.get-class-methods.html"  ><B  CLASS="function" >get_class_methods()</B
+></A
+> ºÍ
+     <A  HREF="function.get-class-vars.html"  ><B  CLASS="function" >get_class_vars()</B
+></A
+>£¡
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.get-declared-classes.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-parent-class.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >get_declared_classes</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.classobj.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_parent_class</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- <div class="refsect1 parameters" id="refsect1-function.get-object-vars-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
 
-    
-     <dt>
-<code class="parameter">object</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An object instance.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.get-object-vars-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an associative array of defined object accessible non-static properties 
-   for the specified <code class="parameter">object</code> in scope. If a property have 
-   not been assigned a value, it will be returned with a <strong><code>NULL</code></strong> value.
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.get-object-vars-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        This function now returns <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> if the 
-        <code class="parameter">object</code> isn&#039;t an object.
-       </td>
-      </tr>
-
-      <tr>
-       <td>prior to 5.3.0</td>
-       <td>
-        If the <code class="parameter">object</code> isn&#039;t an object, then 
-        <span class="function"><strong>get_object_vars()</strong></span> would return <strong><code>FALSE</code></strong>
-       </td>
-      </tr>
-
-      <tr>
-       <td>prior to 4.2.0</td>
-       <td>
-        If the variables declared in the class of which the
-        <code class="parameter">object</code> is an instance, have not been assigned a
-        value, those will not be returned in the array
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.get-object-vars-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5373">
-    <p><strong>Example #2 Use of <span class="function"><strong>get_object_vars()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$d</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_object_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$test&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_object_vars</span><span style="color: #007700">(</span><span style="color: #0000BB">$test</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$test</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">test</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(2) {
-  [&quot;b&quot;]=&gt;
-  int(1)
-  [&quot;c&quot;]=&gt;
-  NULL
-}
-array(4) {
-  [&quot;a&quot;]=&gt;
-  NULL
-  [&quot;b&quot;]=&gt;
-  int(1)
-  [&quot;c&quot;]=&gt;
-  NULL
-  [&quot;d&quot;]=&gt;
-  NULL
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.get-object-vars-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.get-class-methods.html" class="function" rel="rdfs-seeAlso">get_class_methods()</a> - è¿”å›ç”±ç±»çš„æ–¹æ³•åç»„æˆçš„æ•°ç»„</span></li>
-    <li class="member"><span class="function"><a href="function.get-class-vars.html" class="function" rel="rdfs-seeAlso">get_class_vars()</a> - è¿”å›ç”±ç±»çš„é»˜è®¤å±æ€§ç»„æˆçš„æ•°ç»„</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-declared-traits.html">get_declared_traits</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-parent-class.html">get_parent_class</a></div>
- <div class="up"><a href="ref.classobj.html">ç±»/å¯¹è±¡ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,41 +1,52 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>CLI 和 CGI</title>
+<HTML  ><HEAD  ><TITLE  >CLI and CGI</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Migrating from PHP 4 to PHP 5" HREF="migration5.html"><LINK  REL="PREVIOUS" TITLE="Backward Incompatible Changes" HREF="migration5.incompatible.html"><LINK  REL="NEXT" TITLE="Migrating Configuration Files" HREF="migration5.configuration.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="section" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="migration5.incompatible.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >��¼ B. Migrating from PHP 4 to PHP 5</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="migration5.configuration.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="migration5.cli-cgi" ></A
+>CLI and CGI</H1
+><P  >&#13;    In PHP 5 there were some changes in CLI and CGI filenames. In PHP 5, the
+    CGI version was renamed to <TT  CLASS="literal" >php-cgi.exe</TT
+> (previously
+    <TT  CLASS="literal" >php.exe</TT
+>) and the CLI version now sits in the main
+    directory (previously <TT  CLASS="literal" >cli/php.exe</TT
+>).
+   </P
+><P  >&#13;    In PHP 5 it was also introduced a new mode:
+    <TT  CLASS="literal" >php-win.exe</TT
+>. This is equal to the CLI version, except
+    that php-win doesn't output anything and thus provides no console (no "dos
+    box" appears on the screen). This behavior is similar to php-gtk.
+   </P
+><P  >&#13;    In PHP 5, the CLI version will always populate the global $argv and $argc
+    variables.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="migration5.incompatible.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="migration5.configuration.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Backward Incompatible Changes</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="migration5.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Migrating Configuration Files</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.incompatible.html">未向下兼容的改变</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.configuration.html">移植配置文件</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration5.cli-cgi" class="section">
-   <h2 class="title">CLI 和 CGI</h2>
-   <p class="para">
-    PHP 5 中对 CLI 和 CGI 文件名作了些改变。PHP 5 中，CGI
-    版本被改名为 <var class="filename">php-cgi.exe</var>（以前是
-    <var class="filename">php.exe</var>），现在主目录中的是 CLI 版本（之前是
-    <var class="filename">cli/php.exe</var>）。
-   </p>
-   <p class="para">
-    PHP 5 中引进了一种新模式：<var class="filename">php-win.exe</var>。这和 CLI
-    版本相同，只除了 php-win 不输出任何内容，因此不会提供控制台（屏幕上不会闪过“dos
-    窗口”）。此行为类似 php-gtk。
-   </p>
-   <p class="para">
-    PHP 5 中，CLI 版本总会产生全局变量
-    <var class="varname"><var class="varname"><a href="reserved.variables.argv.html" class="classname">$argv</a></var></var> 和 <var class="varname"><var class="varname"><a href="reserved.variables.argc.html" class="classname">$argc</a></var></var>
-    而不管 <var class="filename">php.ini</var> 是怎么设的。即使将
-    <a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a>
-    设为 <em>off</em> 也不影响 CLI。
-   </p>
-   <p class="para">
-    参见<a href="features.commandline.html" class="link">命令行模式</a>。
-   </p>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration5.incompatible.html">未向下兼容的改变</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration5.configuration.html">移植配置文件</a></div>
- <div class="up"><a href="migration5.html">从 PHP 4 移植到 PHP 5</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,150 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-flip.html">array_flip</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-intersect-key.html">array_intersect_key</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-intersect-assoc" class="refentry">
- <div class="refnamediv">   <h1 class="refname">array_intersect_assoc</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">array_intersect_assoc</span> &mdash; <span class="dc-title">å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.array-intersect-assoc-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>array_intersect_assoc</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$array1</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$array2</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$ ...</code></span>
-  ] )</div>
-
-  <p class="simpara">
-   <span class="function"><strong>array_intersect_assoc()</strong></span> è¿”å›ä¸€ä¸ªæ•°ç»„ï¼Œè¯¥æ•°ç»„åŒ…å«äº†æ‰€æœ‰åœ¨
-   <code class="parameter">array1</code> ä¸­ä¹ŸåŒæ—¶å‡ºç°åœ¨æ‰€æœ‰å…¶å®ƒå‚æ•°æ•°ç»„ä¸­çš„å€¼ã€‚æ³¨æ„å’Œ
-   <span class="function"><a href="function.array-intersect.html" class="function">array_intersect()</a></span> ä¸åŒçš„æ˜¯é”®åä¹Ÿç”¨äºæ¯”è¾ƒã€‚
-  </p>
-  </div>
-
- 
-  <div class="refsect1 parameters" id="refsect1-function.array-intersect-assoc-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">array1</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The array with master values to check.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">array2</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An array to compare values against.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">array</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦å¯¹æ¯”çš„æ•°ç»„å˜é‡çš„åˆ—è¡¨ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
-   <div class="refsect1 returnvalues" id="refsect1-function.array-intersect-assoc-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-    è¿”å›ä¸€ä¸ªæ•°ç»„ï¼Œè¯¥æ•°ç»„åŒ…å«äº†æ‰€æœ‰åœ¨
-   <code class="parameter">array1</code> ä¸­ä¹ŸåŒæ—¶å‡ºç°åœ¨æ‰€æœ‰å…¶å®ƒå‚æ•°æ•°ç»„ä¸­çš„å€¼ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.array-intersect-assoc-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5266">
-    <p><strong>Example #1 <span class="function"><strong>array_intersect_assoc()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array1&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"brown"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"red"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$array2&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"red"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$result_array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_intersect_assoc</span><span style="color: #007700">(</span><span style="color: #0000BB">$array1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$array2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$result_array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [a] =&gt; green
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="simpara">
-   ä¸Šé¢ä¾‹å­ä¸­å¯ä»¥çœ‹åˆ°åªæœ‰é”®å€¼å¯¹ <em>&quot;a&quot; =&gt;
-   &quot;green&quot;</em> åœ¨ä¸¤ä¸ªæ•°ç»„ä¸­éƒ½å­˜åœ¨ä»è€Œè¢«è¿”å›ã€‚å€¼
-   <em>&quot;red&quot;</em> æ²¡æœ‰è¢«è¿”å›æ˜¯å› ä¸ºåœ¨
-   <var class="varname"><var class="varname">$array1</var></var> ä¸­å®ƒçš„é”®åæ˜¯ <em>0</em>
-   è€Œåœ¨ <var class="varname"><var class="varname">$array2</var></var> ä¸­ <em>&quot;red&quot;</em>
-   çš„é”®åæ˜¯ <em>1</em>ï¼Œé”® <em>&quot;b&quot;</em> æ²¡æœ‰è¿”å›çš„åŸå› æ˜¯å®ƒçš„å€¼å’Œå…¶ä»–æ•°ç»„ä¸åŒã€‚
-  </p>
-  <p class="simpara">
-    é”®å€¼å¯¹ <em>key =&gt; value</em>
-   ä¸­çš„ä¸¤ä¸ªå€¼ä»…åœ¨ <em>(string) $elem1 === (string)
-   $elem2 </em> æ—¶è¢«è®¤ä¸ºç›¸ç­‰ã€‚ä¹Ÿå°±æ˜¯è¯´ä½¿ç”¨äº†ä¸¥æ ¼æ£€æŸ¥ï¼Œå­—ç¬¦ä¸²çš„è¡¨è¾¾å¿…é¡»ç›¸åŒã€‚
-   
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >array_intersect_assoc</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_flip" HREF="function.array-flip.html"><LINK  REL="NEXT" TITLE="array_intersect" HREF="function.array-intersect.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-flip.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-intersect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-intersect-assoc" ></A
+>array_intersect_assoc</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN8432" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>array_intersect_assoc&nbsp;--&nbsp;´øË÷Òı¼ì²é¼ÆËãÊı×éµÄ½»¼¯</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN8435" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >array_intersect_assoc</B
+> ( array array1, array array2 [, array ...])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_intersect_assoc()</B
+> ·µ»ØÒ»¸öÊı×é£¬¸ÃÊı×é°üº¬ÁËËùÓĞÔÚ
+     <TT  CLASS="parameter" ><I  >array1</I
+></TT
+> ÖĞÒ²Í¬Ê±³öÏÖÔÚËùÓĞÆäËü²ÎÊıÊı×éÖĞµÄÖµ¡£×¢ÒâºÍ
+     <B  CLASS="function" >array__intersect()</B
+> ²»Í¬µÄÊÇ¼üÃûÒ²ÓÃÓÚ±È½Ï¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8454" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >array_intersect_assoc()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$array1 </font><font  color="#007700">= array (</font><font  color="#DD0000">"a" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"green"</font><font  color="#007700">, </font><font  color="#DD0000">"b" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"brown"</font><font  color="#007700">, </font><font  color="#DD0000">"c" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"blue"</font><font  color="#007700">, </font><font  color="#DD0000">"red"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$array2 </font><font  color="#007700">= array (</font><font  color="#DD0000">"a" </font><font  color="#007700">=&gt; </font><font  color="#DD0000">"green"</font><font  color="#007700">, </font><font  color="#DD0000">"yellow"</font><font  color="#007700">, </font><font  color="#DD0000">"red"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$result_array </font><font  color="#007700">= </font><font  color="#0000BB">array_intersect_assoc</font><font  color="#007700">(</font><font  color="#0000BB">$array1</font><font  color="#007700">, </font><font  color="#0000BB">$array2</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* $result_array will look like:<br  /><br  />Array<br  />(<br  />&nbsp;&nbsp;&nbsp;&nbsp;[a] =&gt; green<br  />)<br  /><br  />*/<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÉÏÃæÀı×ÓÖĞ¿ÉÒÔ¿´µ½Ö»ÓĞ¼üÖµ¶Ô <TT  CLASS="literal" >"a" =&#62;
+     "green"</TT
+> ÔÚÁ½¸öÊı×éÖĞ¶¼´æÔÚ´Ó¶ø±»·µ»Ø¡£Öµ
+     <TT  CLASS="literal" >"red"</TT
+> Ã»ÓĞ±»·µ»ØÊÇÒòÎªÔÚ
+     <TT  CLASS="varname" >$array1</TT
+> ÖĞËüµÄ¼üÃûÊÇ <TT  CLASS="literal" >0</TT
+>
+     ¶øÔÚ <TT  CLASS="varname" >$array2</TT
+> ÖĞ <TT  CLASS="literal" >"red"</TT
+>
+     µÄ¼üÃûÊÇ <TT  CLASS="literal" >1</TT
+>¡£
+    </P
+><P  >&#13;     ¼üÖµ¶Ô <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >key =&#62; value</I
+></SPAN
+>
+     ÖĞµÄÁ½¸öÖµ½öÔÚ <TT  CLASS="literal" >(string) $elem1 === (string)
+     $elem2 </TT
+> Ê±±»ÈÏÎªÏàµÈ¡£Ò²¾ÍÊÇËµÊ¹ÓÃÁËÑÏ¸ñ¼ì²é£¬×Ö·û´®µÄ±í´ï±ØĞëÏàÍ¬¡£
+     
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.array-intersect.html"  ><B  CLASS="function" >array_intersect()</B
+></A
+>£¬<A  HREF="function.array-diff.html"  ><B  CLASS="function" >array_diff()</B
+></A
+>
+     ºÍ <A  HREF="function.array-diff-assoc.html"  ><B  CLASS="function" >array_diff_assoc()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-flip.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-intersect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_flip</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_intersect</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-  <div class="refsect1 seealso" id="refsect1-function.array-intersect-assoc-seealso">
-  <h3 class="title">å‚è§</h3>
-  <ul class="simplelist">
-   <li class="member"><span class="function"><a href="function.array-intersect.html" class="function" rel="rdfs-seeAlso">array_intersect()</a> - è®¡ç®—æ•°ç»„çš„äº¤é›†</span></li>
-   <li class="member"><span class="function"><a href="function.array-uintersect-assoc.html" class="function" rel="rdfs-seeAlso">array_uintersect_assoc()</a> - å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®</span></li>
-   <li class="member"><span class="function"><a href="function.array-intersect-uassoc.html" class="function" rel="rdfs-seeAlso">array_intersect_uassoc()</a> - å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒç´¢å¼•</span></li>
-   <li class="member"><span class="function"><a href="function.array-uintersect-uassoc.html" class="function" rel="rdfs-seeAlso">array_uintersect_uassoc()</a> - å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„äº¤é›†ï¼Œç”¨å›è°ƒå‡½æ•°æ¯”è¾ƒæ•°æ®å’Œç´¢å¼•</span></li>
-   <li class="member"><span class="function"><a href="function.array-diff.html" class="function" rel="rdfs-seeAlso">array_diff()</a> - è®¡ç®—æ•°ç»„çš„å·®é›†</span></li>
-   <li class="member"><span class="function"><a href="function.array-diff-assoc.html" class="function" rel="rdfs-seeAlso">array_diff_assoc()</a> - å¸¦ç´¢å¼•æ£€æŸ¥è®¡ç®—æ•°ç»„çš„å·®é›†</span></li>
-  </ul>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-flip.html">array_flip</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-intersect-key.html">array_intersect_key</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,62 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ°´å¹³åœ°ç”»ä¸€ä¸ªå­—ç¬¦</title>
+<HTML  ><HEAD  ><TITLE  >imagechar</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagearc" HREF="function.imagearc.html"><LINK  REL="NEXT" TITLE="imagecharup" HREF="function.imagecharup.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagearc.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagecharup.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagechar" ></A
+>imagechar</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38474" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imagechar&nbsp;--&nbsp;Ë®Æ½µØ»­Ò»¸ö×Ö·û</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38477" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >imagechar</B
+> ( resource image, int font, int x, int y, string c, int color)<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >imagechar()</B
+> ½«×Ö·û´®
+    <TT  CLASS="parameter" ><I  >c</I
+></TT
+> µÄµÚÒ»¸ö×Ö·û»­ÔÚ
+    <TT  CLASS="parameter" ><I  >image</I
+></TT
+> Ö¸¶¨µÄÍ¼ÏñÖĞ£¬Æä×óÉÏ½ÇÎ»ÓÚ
+    <TT  CLASS="parameter" ><I  >x</I
+></TT
+>£¬<TT  CLASS="parameter" ><I  >y</I
+></TT
+>£¨Í¼Ïñ×óÉÏ½ÇÎª 0,
+    0£©£¬ÑÕÉ«Îª <TT  CLASS="parameter" ><I  >color</I
+></TT
+>¡£Èç¹û <TT  CLASS="parameter" ><I  >font</I
+></TT
+>
+    ÊÇ 1£¬2£¬3£¬4 »ò 5£¬ÔòÊ¹ÓÃÄÚÖÃµÄ×ÖÌå£¨¸ü´óµÄÊı×Ö¶ÔÓ¦ÓÚ¸ü´óµÄ×ÖÌå£©¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38509" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >imagechar()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$im </font><font  color="#007700">= </font><font  color="#0000BB">imagecreate</font><font  color="#007700">(</font><font  color="#0000BB">100</font><font  color="#007700">,</font><font  color="#0000BB">100</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#DD0000">'PHP'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$bg </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$black </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// prints a black "P" in the top left corner<br  /></font><font  color="#0000BB">imagechar</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">, </font><font  color="#0000BB">$black</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'Content-type: image/png'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">imagepng</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ²Î¼û <A  HREF="function.imagecharup.html"  ><B  CLASS="function" >imagecharup()</B
+></A
+> ºÍ
+    <A  HREF="function.imageloadfont.html"  ><B  CLASS="function" >imageloadfont()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagearc.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagecharup.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagearc</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagecharup</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagearc.html">imagearc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecharup.html">imagecharup</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagechar" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagechar</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagechar</span> &mdash; <span class="dc-title">æ°´å¹³åœ°ç”»ä¸€ä¸ªå­—ç¬¦</span></p>
 
- </div>
- <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.imagechar-unknown-unknown-seealsq">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>imagechar</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$font</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$x</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$y</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$c</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$color</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>imagechar()</strong></span> å°†å­—ç¬¦ä¸²
-   <code class="parameter">c</code> çš„ç¬¬ä¸€ä¸ªå­—ç¬¦ç”»åœ¨
-   <code class="parameter">image</code> æŒ‡å®šçš„å›¾åƒä¸­ï¼Œå…¶å·¦ä¸Šè§’ä½äº
-   <code class="parameter">x</code>ï¼Œ<code class="parameter">y</code>ï¼ˆå›¾åƒå·¦ä¸Šè§’ä¸º 0,
-   0ï¼‰ï¼Œé¢œè‰²ä¸º <code class="parameter">color</code>ã€‚å¦‚æœ <code class="parameter">font</code>
-   æ˜¯ 1ï¼Œ2ï¼Œ3ï¼Œ4 æˆ– 5ï¼Œåˆ™ä½¿ç”¨å†…ç½®çš„å­—ä½“ï¼ˆæ›´å¤§çš„æ•°å­—å¯¹åº”äºæ›´å¤§çš„å­—ä½“ï¼‰ã€‚
-  </p>
-  <p class="para">
-   <div class="example" id="example-3282">
-    <p><strong>Example #1 <span class="function"><strong>imagechar()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreate</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">,</span><span style="color: #0000BB">100</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'PHP'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$bg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;prints&nbsp;a&nbsp;black&nbsp;"P"&nbsp;in&nbsp;the&nbsp;top&nbsp;left&nbsp;corner<br /></span><span style="color: #0000BB">imagechar</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$black</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-type:&nbsp;image/png'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   å‚è§ <span class="function"><a href="function.imagecharup.html" class="function">imagecharup()</a></span> å’Œ
-   <span class="function"><a href="function.imageloadfont.html" class="function">imageloadfont()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagearc.html">imagearc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecharup.html">imagecharup</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

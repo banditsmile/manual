@@ -1,153 +1,99 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Lists the column names in specified tables</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-columnprivileges.html">odbc_columnprivileges</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.odbc-commit.html">odbc_commit</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.odbc-columns" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">odbc_columns</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">odbc_columns</span> &mdash; <span class="dc-title">Lists the column names in specified tables</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.odbc-columns-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>odbc_columns</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection_id</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$qualifier</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$schema</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$table_name</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$column_name</code></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   Lists all columns in the requested range.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.odbc-columns-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">connection_id</code></dt>
-
-     <dd>
-
-      <p class="para">ODBC è¿æ¥æ ‡è¯†ç¬¦ï¼Œè¯¦è§
-<span class="function"><a href="function.odbc-connect.html" class="function">odbc_connect()</a></span>ã€‚</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">qualifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The qualifier.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">schema</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The owner.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">table_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The table name.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">column_name</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The column name.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
-  <p class="para">
-   The <code class="parameter">schema</code>, <code class="parameter">table_name</code>, and
-   <code class="parameter">column_name</code> accept search patterns (&#039;%&#039; to match
-   zero or more characters and &#039;_&#039; to match a single character).
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.odbc-columns-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an ODBC result identifier æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>.
-  </p>
-  <p class="para">
-   The result set has the following columns:
-   <ul class="itemizedlist">
-    <li class="listitem"><span class="simpara">TABLE_QUALIFIER</span></li>
-    <li class="listitem"><span class="simpara">TABLE_SCHEM</span></li>
-    <li class="listitem"><span class="simpara">TABLE_NAME</span></li>
-    <li class="listitem"><span class="simpara">COLUMN_NAME</span></li>
-    <li class="listitem"><span class="simpara">DATA_TYPE</span></li>
-    <li class="listitem"><span class="simpara">TYPE_NAME</span></li>
-    <li class="listitem"><span class="simpara">PRECISION</span></li>
-    <li class="listitem"><span class="simpara">LENGTH</span></li>
-    <li class="listitem"><span class="simpara">SCALE</span></li>
-    <li class="listitem"><span class="simpara">RADIX</span></li>
-    <li class="listitem"><span class="simpara">NULLABLE</span></li>
-    <li class="listitem"><span class="simpara">REMARKS</span></li>
-   </ul>
-  </p>
-  <p class="para">
-   The result set is ordered by TABLE_QUALIFIER, TABLE_SCHEM and
-   TABLE_NAME.
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.odbc-columns-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.odbc-columnprivileges.html" class="function" rel="rdfs-seeAlso">odbc_columnprivileges()</a> - Lists columns and associated privileges for the given table</span> to retrieve associated
-    privileges</li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >odbc_columns</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Unified ODBC Functions" HREF="ref.odbc.html"><LINK  REL="PREVIOUS" TITLE="odbc_columnprivileges" HREF="function.odbc-columnprivileges.html"><LINK  REL="NEXT" TITLE="odbc_commit" HREF="function.odbc-commit.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.odbc-columnprivileges.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.odbc-commit.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.odbc-columns" ></A
+>odbc_columns</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN77916" ></A
+><P  >    (PHP 4 )</P
+>odbc_columns&nbsp;--&nbsp;
+     Lists the column names in specified tables. Returns a result
+     identifier containing the information.
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN77919" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >odbc_columns</B
+> ( resource connection_id [, string qualifier [, string schema [, string table_name [, string column_name]]]])<BR  ></BR
+><P  >&#13;     Lists all columns in the requested range.  Returns an ODBC result
+     identifier or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+    </P
+><P  >&#13;     The result set has the following columns:
+     <P  ></P
+><UL  ><LI  ><P  >TABLE_QUALIFIER</P
+></LI
+><LI  ><P  >TABLE_SCHEM</P
+></LI
+><LI  ><P  >TABLE_NAME</P
+></LI
+><LI  ><P  >COLUMN_NAME</P
+></LI
+><LI  ><P  >DATA_TYPE</P
+></LI
+><LI  ><P  >TYPE_NAME</P
+></LI
+><LI  ><P  >PRECISION</P
+></LI
+><LI  ><P  >LENGTH</P
+></LI
+><LI  ><P  >SCALE</P
+></LI
+><LI  ><P  >RADIX</P
+></LI
+><LI  ><P  >NULLABLE</P
+></LI
+><LI  ><P  >REMARKS</P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     The result set is ordered by TABLE_QUALIFIER, TABLE_SCHEM and
+     TABLE_NAME.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >schema</I
+></TT
+>,
+     <TT  CLASS="parameter" ><I  >table_name</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >column_name</I
+></TT
+> arguments accept search
+     patterns ('%' to match zero or more characters and '_' to match a
+     single character).
+    </P
+><P  >&#13;     See also <A  HREF="function.odbc-columnprivileges.html"  ><B  CLASS="function" >odbc_columnprivileges()</B
+></A
+> to retrieve
+     associated privileges.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.odbc-columnprivileges.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.odbc-commit.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >odbc_columnprivileges</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.odbc.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >odbc_commit</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-columnprivileges.html">odbc_columnprivileges</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.odbc-commit.html">odbc_commit</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

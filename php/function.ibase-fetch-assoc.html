@@ -1,108 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetch a result row from a query as an associative array</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-execute.html">ibase_execute</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-fetch-object.html">ibase_fetch_object</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-fetch-assoc" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_fetch_assoc</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_fetch_assoc</span> &mdash; <span class="dc-title">Fetch a result row from a query as an associative array</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-fetch-assoc-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>ibase_fetch_assoc</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$fetch_flag</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Fetch a result row from a query as an associative array.
-  </p>
-  <p class="para">
-   <span class="function"><strong>ibase_fetch_assoc()</strong></span> fetches one row of data from the
-   <code class="parameter">result</code>.  If two or more columns of the result
-   have the same field names, the last column will take precedence. To
-   access the other column(s) of the same name, you either need to access
-   the result with numeric indices by using
-   <span class="function"><a href="function.ibase-fetch-row.html" class="function">ibase_fetch_row()</a></span> or use alias names in your query.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-fetch-assoc-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The result handle.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">fetch_flag</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">fetch_flag</code> is a combination of the constants
-       <strong><code>IBASE_TEXT</code></strong> and <strong><code>IBASE_UNIXTIME</code></strong>
-       ORed together. Passing <strong><code>IBASE_TEXT</code></strong> will cause this
-       function to return BLOB contents instead of BLOB ids. Passing
-       <strong><code>IBASE_UNIXTIME</code></strong> will cause this function to return
-       date/time values as Unix timestamps instead of as formatted strings.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_fetch_assoc</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_execute" HREF="function.ibase-execute.html"><LINK  REL="NEXT" TITLE="ibase_fetch_object" HREF="function.ibase-fetch-object.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-execute.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-fetch-object.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-fetch-assoc" ></A
+>ibase_fetch_assoc</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45323" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>ibase_fetch_assoc&nbsp;--&nbsp;
+     Fetch a result row from a query as an associative array
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45326" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >ibase_fetch_assoc</B
+> ( resource result [, int fetch_flag])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >ibase_fetch_assoc()</B
+> returns an associative array
+     that corresponds to the fetched row.  Subsequent calls will return 
+     the next row in the result set, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if there are no more
+     rows.
+    </P
+><P  >&#13;     <B  CLASS="function" >ibase_fetch_assoc()</B
+> fetches one row of data from the
+     <TT  CLASS="parameter" ><I  >result</I
+></TT
+>.  If two or more columns of the result
+     have the same field names, the last column will take precedence. To
+     access the other column(s) of the same name, you either need to access
+     the result with numeric indices by using
+     <A  HREF="function.ibase-fetch-row.html"  ><B  CLASS="function" >ibase_fetch_row()</B
+></A
+> or use alias names in your query.
+    </P
+><P  >&#13;    <TT  CLASS="parameter" ><I  >fetch_flag</I
+></TT
+> is a combination of the constants IBASE_TEXT and IBASE_UNIXTIME
+    ORed together. Passing IBASE_TEXT will cause this function to return BLOB contents
+    instead of BLOB ids. Passing IBASE_UNIXTIME will cause this function to return
+    date/time values as Unix timestamps instead of as formatted strings.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ibase-fetch-row.html"  ><B  CLASS="function" >ibase_fetch_row()</B
+></A
+> and 
+     <A  HREF="function.ibase-fetch-object.html"  ><B  CLASS="function" >ibase_fetch_object()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-execute.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-fetch-object.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_execute</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_fetch_object</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-fetch-assoc-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an associative array that corresponds to the fetched row.
-   Subsequent calls will return the next row in the result set, or <strong><code>FALSE</code></strong> if
-   there are no more rows.
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-fetch-assoc-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-fetch-row.html" class="function" rel="rdfs-seeAlso">ibase_fetch_row()</a> - Fetch a row from an InterBase database</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-fetch-object.html" class="function" rel="rdfs-seeAlso">ibase_fetch_object()</a> - Get an object from a InterBase database</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-execute.html">ibase_execute</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-fetch-object.html">ibase_fetch_object</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

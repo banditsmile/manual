@@ -1,65 +1,115 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ£€æµ‹å˜é‡æ˜¯å¦æ˜¯ä¸€ä¸ªæ ‡é‡</title>
+<HTML  ><HEAD  ><TITLE  >is_scalar</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿º¯Êı¿â" HREF="ref.variables.html"><LINK  REL="PREVIOUS" TITLE="is_resource" HREF="function.is-resource.html"><LINK  REL="NEXT" TITLE="is_string" HREF="function.is-string.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.is-resource.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.is-string.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.is-scalar" ></A
+>is_scalar</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN115859" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>is_scalar&nbsp;--&nbsp;
+     ¼ì²â±äÁ¿ÊÇ·ñÊÇÒ»¸ö±êÁ¿
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN115862" ></A
+><H2  >ÃèÊö</H2
+>bool <B  CLASS="methodname" >is_scalar</B
+> ( mixed var)<BR  ></BR
+><P  >&#13;     Èç¹û¸ø³öµÄ±äÁ¿²ÎÊı <TT  CLASS="parameter" ><I  >var</I
+></TT
+> ÊÇÒ»¸ö±êÁ¿£¬<B  CLASS="function" >is_scalar()</B
+>
+     ·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬·ñÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ±êÁ¿±äÁ¿ÊÇÖ¸ÄÇĞ©°üº¬ÁË
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>¡¢<A  HREF="language.types.float.html"  ><B  CLASS="type" >float</B
+></A
+>¡¢<A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+> 
+     »ò <A  HREF="language.types.boolean.html"  ><B  CLASS="type" >boolean</B
+></A
+>µÄ±äÁ¿£¬¶ø 
+     <A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+>¡¢<A  HREF="language.types.object.html"  ><B  CLASS="type" >object</B
+></A
+> ºÍ <A  HREF="language.types.resource.html"  ><B  CLASS="type" >resource</B
+></A
+> Ôò²»ÊÇ±êÁ¿¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN115883" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">show_var</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">is_scalar</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$var</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /></font><font  color="#0000BB">$pi </font><font  color="#007700">= </font><font  color="#0000BB">3.1416</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$proteins </font><font  color="#007700">= array(</font><font  color="#DD0000">"hemoglobin"</font><font  color="#007700">, </font><font  color="#DD0000">"cytochrome c oxidase"</font><font  color="#007700">, </font><font  color="#DD0000">"ferredoxin"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">show_var</font><font  color="#007700">(</font><font  color="#0000BB">$pi</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// ´òÓ¡£º3.1416<br  /><br  /></font><font  color="#0000BB">show_var</font><font  color="#007700">(</font><font  color="#0000BB">$proteins</font><font  color="#007700">)<br  /></font><font  color="#FF8000">// ´òÓ¡£º<br  />// array(3) {<br  />//&nbsp;&nbsp;&nbsp;[0]=&gt;<br  />//&nbsp;&nbsp;&nbsp;string(10) "hemoglobin"<br  />//&nbsp;&nbsp;&nbsp;[1]=&gt;<br  />//&nbsp;&nbsp;&nbsp;string(20) "cytochrome c oxidase"<br  />//&nbsp;&nbsp;&nbsp;[2]=&gt;<br  />//&nbsp;&nbsp;&nbsp;string(10) "ferredoxin"<br  />// }<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ¾¡¹Üµ±Ç°µÄ <A  HREF="language.types.resource.html"  ><B  CLASS="type" >resource</B
+></A
+> ÀàĞÍÊÇ¾ÓÓÚÕûÊıµÄ£¬µ« 
+      <B  CLASS="function" >is_scalar()</B
+> ²»»á°ÑËüÃÇµ±×÷ÊÇ±êÁ¿£¬ÒòÎª×ÊÔ´ÊÇ³éÏóÊı¾İÀàĞÍ¡£²»ÄÜÒÀÀµÓÚÖ´ĞĞÏ¸½Ú£¬ÒòÎªËü¿ÉÄÜ»á¸Ä±ä¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.is-bool.html"  ><B  CLASS="function" >is_bool()</B
+></A
+>¡¢<A  HREF="function.is-numeric.html"  ><B  CLASS="function" >is_numeric()</B
+></A
+>¡¢<A  HREF="function.is-float.html"  ><B  CLASS="function" >is_float()</B
+></A
+>¡¢<A  HREF="function.is-int.html"  ><B  CLASS="function" >is_int()</B
+></A
+>¡¢<A  HREF="function.is-real.html"  ><B  CLASS="function" >is_real()</B
+></A
+>¡¢<A  HREF="function.is-string.html"  ><B  CLASS="function" >is_string()</B
+></A
+>¡¢<A  HREF="function.is-object.html"  ><B  CLASS="function" >is_object()</B
+></A
+>¡¢<A  HREF="function.is-array.html"  ><B  CLASS="function" >is_array()</B
+></A
+>
+     ºÍ <A  HREF="function.is-integer.html"  ><B  CLASS="function" >is_integer()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.is-resource.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.is-string.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >is_resource</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >is_string</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.is-resource.html">is_resource</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-string.html">is_string</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.is-scalar" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">is_scalar</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">is_scalar</span> &mdash; <span class="dc-title">
-     æ£€æµ‹å˜é‡æ˜¯å¦æ˜¯ä¸€ä¸ªæ ‡é‡
-    </span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-seealsz" id="refsect1-function.is-scalar-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-unknown-seealsz">
-    <h3 class="title">æè¿°</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">bool</span> <span class="methodname"><strong>is_scalar</strong></span>
-       ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$var</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     å¦‚æœç»™å‡ºçš„å˜é‡å‚æ•° <code class="parameter">var</code> æ˜¯ä¸€ä¸ªæ ‡é‡ï¼Œ<span class="function"><strong>is_scalar()</strong></span>
-     è¿”å› <strong><code>TRUE</code></strong>ï¼Œå¦åˆ™è¿”å› <strong><code>FALSE</code></strong>ã€‚
-    </p>
-    <p class="para">
-     æ ‡é‡å˜é‡æ˜¯æŒ‡é‚£äº›åŒ…å«äº†
-     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>ã€<span class="type"><a href="language.types.float.html" class="type float">float</a></span>ã€<span class="type"><a href="language.types.string.html" class="type string">string</a></span> 
-     æˆ– <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>çš„å˜é‡ï¼Œè€Œ 
-     <span class="type"><a href="language.types.array.html" class="type array">array</a></span>ã€<span class="type"><a href="language.types.object.html" class="type object">object</a></span> å’Œ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> åˆ™ä¸æ˜¯æ ‡é‡ã€‚
-     <div class="informalexample">
-      <div class="example-contents">
-
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">show_var</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">is_scalar</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">$pi&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3.1416</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$proteins&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"hemoglobin"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cytochrome&nbsp;c&nbsp;oxidase"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ferredoxin"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">show_var</span><span style="color: #007700">(</span><span style="color: #0000BB">$pi</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°ï¼š3.1416<br /><br /></span><span style="color: #0000BB">show_var</span><span style="color: #007700">(</span><span style="color: #0000BB">$proteins</span><span style="color: #007700">)<br /></span><span style="color: #FF8000">//&nbsp;æ‰“å°ï¼š<br />//&nbsp;array(3)&nbsp;{<br />//&nbsp;&nbsp;&nbsp;[0]=&gt;<br />//&nbsp;&nbsp;&nbsp;string(10)&nbsp;"hemoglobin"<br />//&nbsp;&nbsp;&nbsp;[1]=&gt;<br />//&nbsp;&nbsp;&nbsp;string(20)&nbsp;"cytochrome&nbsp;c&nbsp;oxidase"<br />//&nbsp;&nbsp;&nbsp;[2]=&gt;<br />//&nbsp;&nbsp;&nbsp;string(10)&nbsp;"ferredoxin"<br />//&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      å°½ç®¡å½“å‰çš„ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> ç±»å‹æ˜¯å±…äºæ•´æ•°çš„ï¼Œä½† 
-      <span class="function"><strong>is_scalar()</strong></span> ä¸ä¼šæŠŠå®ƒä»¬å½“ä½œæ˜¯æ ‡é‡ï¼Œå› ä¸ºèµ„æºæ˜¯æŠ½è±¡æ•°æ®ç±»å‹ã€‚ä¸èƒ½ä¾èµ–äºæ‰§è¡Œç»†èŠ‚ï¼Œå› ä¸ºå®ƒå¯èƒ½ä¼šæ”¹å˜ã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.is-bool.html" class="function">is_bool()</a></span>ã€<span class="function"><a href="function.is-numeric.html" class="function">is_numeric()</a></span>ã€<span class="function"><a href="function.is-float.html" class="function">is_float()</a></span>ã€<span class="function"><a href="function.is-int.html" class="function">is_int()</a></span>ã€<span class="function"><a href="function.is-real.html" class="function">is_real()</a></span>ã€<span class="function"><a href="function.is-string.html" class="function">is_string()</a></span>ã€<span class="function"><a href="function.is-object.html" class="function">is_object()</a></span>ã€<span class="function"><a href="function.is-array.html" class="function">is_array()</a></span>
-     å’Œ <span class="function"><a href="function.is-integer.html" class="function">is_integer()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.is-resource.html">is_resource</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-string.html">is_string</a></div>
- <div class="up"><a href="ref.var.html">Variable handling å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

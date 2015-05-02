@@ -1,121 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Opens a database</title>
+<HTML  ><HEAD  ><TITLE  >dbase_open</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="dBase Functions" HREF="ref.dbase.html"><LINK  REL="PREVIOUS" TITLE="dbase_numrecords" HREF="function.dbase-numrecords.html"><LINK  REL="NEXT" TITLE="dbase_pack" HREF="function.dbase-pack.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbase-numrecords.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dbase-pack.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dbase-open" ></A
+>dbase_open</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN19190" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>dbase_open&nbsp;--&nbsp;Opens a dBase database</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN19193" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >dbase_open</B
+> ( string filename, int flags)<BR  ></BR
+><P  >&#13;     Returns a dbase_identifier for the opened database, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if
+     the database couldn't be opened.
+    </P
+><P  >&#13;     Parameter <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> correspond to those 
+     for the open() system call (Typically 0 means read-only, 1 means 
+     write-only, and 2 means read and write).
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>µ± <A  HREF="features.safe-mode.html"  >°²È«Ä£Ê½£¨safe mode£©</A
+> ±»¼¤»î£¬PHP ½«¼ì²éÄú½«Òª²Ù×÷µÄÎÄ¼ş»òÕßÄ¿Â¼ÓëÕıÔÚÖ´ĞĞµÄ½Å±¾ÊÇ·ñÓĞÏàÍ¬µÄ UID¡£</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbase-numrecords.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dbase-pack.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbase_numrecords</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dbase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dbase_pack</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbase-numrecords.html">dbase_numrecords</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbase-pack.html">dbase_pack</a></div>
- <div class="up"><a href="ref.dbase.html">dBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dbase-open" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dbase_open</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">dbase_open</span> &mdash; <span class="dc-title">Opens a database</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.dbase-open-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>dbase_open</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>dbase_open()</strong></span> opens a dBase database with the given
-   access mode.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">å½“å¯ç”¨
-<a href="features.safe-mode.html" class="link">å®‰å…¨æ¨¡å¼</a>æ—¶ï¼Œ
-PHP ä¼šæ£€æŸ¥è¢«æ“ä½œçš„æ–‡ä»¶æˆ–ç›®å½•æ˜¯å¦ä¸è¢«æ‰§è¡Œçš„è„šæœ¬æœ‰ç›¸åŒçš„ UIDï¼ˆæ‰€æœ‰è€…ï¼‰ã€‚</span></p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">æ­¤å‡½æ•°å—
-<a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> å½±å“ã€‚</p></p></blockquote>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.dbase-open-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The name of the database. It can be a relative or absolute path to
-       the file where dBase will store your data.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An integer which correspond to those for the <strong class="command">open()</strong> 
-       system call (Typically 0 means read-only, 1 means write-only, and 2 
-       means read and write).
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        You can&#039;t open a dBase file in write-only mode as the function will
-        fail to read the headers information and thus you can&#039;t use 1 as
-        <code class="parameter">mode</code>.
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.dbase-open-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1125">
-    <p><strong>Example #1 Opening a dBase database file</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;open&nbsp;in&nbsp;read-only&nbsp;mode<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbase_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/test.dbf'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$db</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;read&nbsp;some&nbsp;data&nbsp;..<br />&nbsp;&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">dbase_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.dbase-open-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a database link identifier if the database is successfully opened,
-   or <strong><code>FALSE</code></strong> if an error occurred.
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.dbase-open-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dbase-create.html" class="function" rel="rdfs-seeAlso">dbase_create()</a> - Creates a database</span></li>
-    <li class="member"><span class="function"><a href="function.dbase-close.html" class="function" rel="rdfs-seeAlso">dbase_close()</a> - Closes a database</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbase-numrecords.html">dbase_numrecords</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dbase-pack.html">dbase_pack</a></div>
- <div class="up"><a href="ref.dbase.html">dBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

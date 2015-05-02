@@ -1,81 +1,57 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Set field offset</title>
+<HTML  ><HEAD  ><TITLE  >msql_field_seek</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="mSQL Functions" HREF="ref.msql.html"><LINK  REL="PREVIOUS" TITLE="msql_field_name" HREF="function.msql-field-name.html"><LINK  REL="NEXT" TITLE="msql_field_table" HREF="function.msql-field-table.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.msql-field-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.msql-field-table.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.msql-field-seek" ></A
+>msql_field_seek</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN64486" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>msql_field_seek&nbsp;--&nbsp;Set field offset</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN64489" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >msql_field_seek</B
+> ( int query_identifier, int field_offset)<BR  ></BR
+><P  >&#13;     Seeks to the specified field offset.  If the next call to
+     <A  HREF="function.msql-fetch-field.html"  ><B  CLASS="function" >msql_fetch_field()</B
+></A
+> won't include a field
+     offset, this field would be returned.
+    </P
+><P  >&#13;     This function returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+    </P
+><P  > 
+     See also: <A  HREF="function.msql-fetch-field.html"  ><B  CLASS="function" >msql_fetch_field()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.msql-field-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.msql-field-table.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >msql_field_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.msql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >msql_field_table</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.msql-field-name.html">msql_field_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.msql-field-table.html">msql_field_table</a></div>
- <div class="up"><a href="ref.msql.html">mSQL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.msql-field-seek" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">msql_field_seek</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">msql_field_seek</span> &mdash; <span class="dc-title">Set field offset</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.msql-field-seek-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>msql_field_seek</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$field_offset</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Seeks to the specified field offset. If the next call to
-   <span class="function"><a href="function.msql-fetch-field.html" class="function">msql_fetch_field()</a></span> won&#039;t include a field offset, this 
-   field would be returned.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.msql-field-seek-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-result</code></dt>
-<dd>
-<p class="para"><span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>
-型的结果集。此结果集来自对 <span class="function"><a href="function.msql-query.html" class="function">msql_query()</a></span>
-的调用。</p></dd>
-
-    <dt>
-<code class="parameter">
-field_offset</code></dt>
-<dd>
-<p class="para">数值型字段偏移量。
-<code class="parameter">field_offset</code> 从 <em>1</em>
-开始。</p></dd>
-
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.msql-field-seek-returnvalues">
-  <h3 class="title">返回值</h3>  
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.msql-field-seek-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.msql-fetch-field.html" class="function" rel="rdfs-seeAlso">msql_fetch_field()</a> - Get field information</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.msql-field-name.html">msql_field_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.msql-field-table.html">msql_field_table</a></div>
- <div class="up"><a href="ref.msql.html">mSQL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

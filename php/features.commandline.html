@@ -1,735 +1,652 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>PHP 的命令行模式</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.safe-mode.functions.html">被安全模式限制或屏蔽的函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="features.commandline.webserver.html">内置Web Server</a></div>
- <div class="up"><a href="features.html">特点</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="features.commandline" class="chapter">
- <h1>PHP 的命令行模式</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="features.commandline.webserver.html">内置Web Server</a></li><li><a href="features.commandline.ini.html">INI 配置</a></li></ul>
-
-
- <p class="para">
-  从版本 4.3.0 开始，PHP 提供了一种新类型的 <acronym title="Command Line Interpreter/Interface">CLI</acronym> <acronym title="Server Application Programming Interface">SAPI</acronym>（Server
-  Application Programming Interface，服务端应用编程端口）支持，名为
-  <acronym title="Command Line Interpreter/Interface">CLI</acronym>，意为 <em class="emphasis">Command Line
-  Interface</em>，即命令行接口。顾名思义，该
-  <acronym title="Command Line Interpreter/Interface">CLI</acronym> <acronym title="Server Application Programming Interface">SAPI</acronym> 模块主要用作 PHP 的开发外壳应用。<em>CLI SAPI</em>
-  和其它 <acronym title="Command Line Interpreter/Interface">CLI</acronym> <acronym title="Server Application Programming Interface">SAPI</acronym>
-  模块相比有很多的不同之处，我们将在本章中详细阐述。值得一提的是，<acronym title="Command Line Interpreter/Interface">CLI</acronym>
-  和 <em>CGI</em> 是不同的 SAPI，尽管它们之间有很多共同的行为。
- </p>
-
- <p class="para">
-  <em>CLI SAPI</em> 最先是随 PHP 4.2.0
-  版本发布的，但仍旧只是一个实验性的版本，并需要在运行
-  <strong class="command">./configure</strong> 时加上
-  <strong class="option configure">--enable-cli</strong>
- 参数。从 PHP 4.3.0
-  版本开始，<em>CLI SAPI</em> 成为了正式模块，<strong class="option configure">--enable-cli</strong>
- 参数会被默认得设置为
-  on，也可以用参数 <strong class="option configure">--disable-cli</strong>
- 来屏蔽。
- </p>
-
- <p class="para">
-  从 PHP 4.3.0开始，CLI/CGI 二进制执行文件的文件名、位置和是否存在会根据
-  PHP 在系统上的安装而不同。在默认情况下，当运行
-  <strong class="command">make</strong> 时，CGI 和 CLI 都会被编译并且分别放置在
-  PHP 源文件目录的 <var class="filename">sapi/cgi/php</var> 和
-  <var class="filename">sapi/cli/php</var> 下。可以注意到两个文件都被命名为了
-  php。在 <strong class="command">make install</strong>
-  的过程中会发生什么取决于配置行。如果在配置的时候选择了一个
-  SAPI 模块，如 apxs，或者使用了
-  <strong class="option configure">--disable-cgi</strong>
- 参数，则在
-  <strong class="command">make install</strong> 的过程中，CLI 将被拷贝到
-  <var class="filename">{PREFIX}/bin/php</var>，除非 CGI
-  已经被放置在了那个位置。因此，例如，如果在配置行中有
-  <strong class="option configure">--with--apxs</strong>
-，则在
-  <em>make install</em> 的过程中，CLI 将被拷贝到
-  <em>{PREFIX}/bin/php</em>。如果希望撤销 CGI
-  执行文件的安装，请在 <strong class="command">make install</strong>
-  之后运行 <strong class="command">make install-cli</strong>。或者，也可以在配置行中加上
-  <strong class="option configure">--disable-cgi</strong>
- 参数。
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <p class="para">
-   由于 <strong class="option configure">--enable-cli</strong>
- 和
-   <strong class="option configure">--enable-cgi</strong>
-
-   同时默认有效，因此，不必再配置行中加上
-   <strong class="option configure">--enable-cli</strong>
- 来使得 CLI 在
-   <strong class="command">make install</strong> 过程中被拷贝到
-   <var class="filename">{PREFIX}/bin/php</var>。
-  </p>
- </p></blockquote>
-
- <p class="para">
-  在 PHP 4.2.0 到 PHP 4.2.3 之间的 Windows 发行包中，CLI 的文件名为
-  <var class="filename">php-cli.exe</var>，相同文件夹下的
-  <var class="filename">php.exe</var> 为 CGI。从 PHP 4.3.0 版本开始，Windows
-  的发行包中 CLI 的执行文件为
-  <var class="filename">php.exe</var>，被放置在一个单独的名为
-  <var class="filename">cli</var> 的文件夹下，即
-  <var class="filename">cli/php.exe</var>。在 PHP 5 中，CLI
-  存在于主文件夹中，名为 <var class="filename">php.exe</var>，而
-  CGI 版本名为  <var class="filename">php-cgi.exe</var>。
- </p>
-
- <p class="para">
-  从 PHP 5 起，一个名为 <var class="filename">php-win.exe</var>
-  的新文件随包发布。它相当于 CLI 版本，但是 php-win
-  不输出任何内容，便不提供控制台（不会弹出“DOS 窗口”）。这种方式类似于
-  php-gtk。需要使用
-  <strong class="option configure">--enable-cli-win32</strong>
- 选项来配置它。
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <strong>如何得知自己使用的是哪个 SAPI？</strong><br />
-  <p class="para">
-   在命令行下，运行 <strong class="command">php -v</strong> 便能得知该
-   <var class="filename">php</var> 是 CGI 还是 CLI。请参考函数
-   <span class="function"><a href="function.php-sapi-name.html" class="function">php_sapi_name()</a></span> 以及常量 <strong><code>PHP_SAPI</code></strong>。
-  </p>
- </p></blockquote>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <p class="para">
-   在 PHP 4.3.2 中加入了 Unix 的 <em>man</em> 页面。可以在命令行中键入
-   <strong class="command">man php</strong> 来查看。
-  </p>
- </p></blockquote>
-
- <p class="para">
-  以下为 <em>CLI SAPI</em> 和其它 <acronym title="Command Line Interpreter/Interface">CLI</acronym> <acronym title="Server Application Programming Interface">SAPI</acronym> 模块相比的显著区别：
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <p class="para">
-     与 <em>CGI SAPI</em> 不同，其输出没有任何头信息。
-    </p>
-    <p class="para">
-     尽管 <em>CGI SAPI</em> 提供了取消 HTTP 头信息的方法，但在
-     <em>CLI SAPI</em> 中并不存在类似的方法以开启 HTTP 头信息的输出。
-    </p>
-    <p class="para">
-     CLI 默认以安静模式开始，但为了保证兼容性，<strong class="option unknown">-q</strong>
- 和
-     <strong class="option unknown">--no-header</strong>
- 参数为了向后兼容仍然保留，使得可以使用旧的 CGI 脚本。
-    </p>
-    <p class="para">
-     在运行时，不会把工作目录改为脚本的当前目录（可以使用
-     <strong class="option unknown">-C</strong>
- 和 <strong class="option unknown">--no-chdir</strong>
- 参数来兼容 CGI 模式）。
-    </p>
-    <p class="para">
-     出错时输出纯文本的错误信息（非 HTML 格式）。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <em>CLI SAPI</em> 强制覆盖了 <var class="filename">php.ini</var>
-     中的某些设置，因为这些设置在外壳环境下是没有意义的。
-    </p>
-    <p class="para">
-     <table class="doctable table">
-      <caption><strong>覆盖 <var class="filename">php.ini</var> 设置选项</strong></caption>
-      
-       <thead>
-        <tr>
-         <th>设置选项</th>
-         <th><em>CLI SAPI</em> 默认值</th>
-         <th>备注</th>
-        </tr>
-
-       </thead>
-
-       <tbody class="tbody">
-        <tr>
-         <td><a href="errorfunc.configuration.html#ini.html-errors" class="link">html_errors</a></td>
-         <td><strong><code>FALSE</code></strong></td>
-         <td>
-          无意义的 HTML
-          标记符会使得出错信息很凌乱，所以在外壳下阅读报错信息是十分困难的。因此将该选项的默认值改为 <strong><code>FALSE</code></strong>。
-         </td>
-        </tr>
-
-        <tr>
-         <td><a href="outcontrol.configuration.html#ini.implicit-flush" class="link">implicit_flush</a></td>
-         <td><strong><code>TRUE</code></strong></td>
-         <td>
-          在命令行模式下，所有来自 <span class="function"><a href="function.print.html" class="function">print</a></span> 和
-          <span class="function"><a href="function.echo.html" class="function">echo</a></span> 的输出将被立即写到输出端，而不作任何地缓冲操作。如果希望延缓或控制标准输出，仍然可以使用
-          <a href="ref.outcontrol.html" class="link">output buffering</a> 设置项。
-         </td>
-        </tr>
-
-        <tr>
-         <td><a href="info.configuration.html#ini.max-execution-time" class="link">max_execution_time</a></td>
-         <td>0（无限值）</td>
-         <td>
-          鉴于在外壳环境下使用 PHP 的无穷的可能性，最大运行时间被设置为了无限值。为
-          web 开发的应用程序可能只需运行几秒钟时间，而外壳应用程序的运行时间可能会长的多。
-         </td>
-        </tr>
-
-        <tr>
-         <td><a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a></td>
-         <td><strong><code>TRUE</code></strong></td>
-         <td>
-         <p class="para">
-         由于该设置为 <strong><code>TRUE</code></strong>，将总是可以在 <em>CLI SAPI</em>
-         中访问到 <em class="emphasis">argc</em>（传送给应用程序参数的个数）和
-         <em class="emphasis">argv</em>（包含有实际参数的数组）。
-         </p>
-         <p class="para">
-          对于 PHP 4.3.0，在使用 <em>CLI SAPI</em> 时，PHP 变量
-          <em>$argc</em> 和 <em>$argv</em>
-          已被注册并且设定了对应的值。而在这之前的版本，这两个变量在
-          <em>CGI</em> 或者 <em>模块</em>
-          版本中的建立依赖于将 PHP 的设置选项
-          <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
-          设为 <em class="emphasis">on</em>。除了版本和
-          <em>register_globals</em> 设定以外，可以随时通过调用
-          <a href="reserved.variables.server.html" class="link">$_SERVER</a>
-          或者 <var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var>
-          来访问它们。例如：<var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER['argv']</a></var></var>
-         </p>
-         </td>
-        </tr>
-
-       </tbody>
-      
-     </table>
-
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      这些设置无法在设置文件 <var class="filename">php.ini</var>
-      或任何指定的其它文件中被初始化为其它值。这些默认值被限制在所有其它的设置文件被解析后改变。不过，它们的值可以在程序运行的过程中被改变（尽管对于该运行过程来说，这些设置项是没有意义的）。
-     </p>
-    </p></blockquote>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     为了减轻外壳环境下的工作，我们定义了如下常量：
-     <table class="doctable table">
-      <caption><strong>CLI 专用常量</strong></caption>
-      
-       <thead>
-        <tr>
-         <th>常量名称</th>
-         <th>描 述</th>
-        </tr>
-
-       </thead>
-
-       <tbody class="tbody">
-        <tr>
-         <td><strong><code>STDIN</code></strong></td>
-         <td>
-          一个已打开的指向 <em>stdin</em> 的流。可以用如下方法来调用：
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$stdin&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stdin'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-         </div>
-
-         如果想从 <em>stdin</em> 读取一行内容，可以使用
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$line&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">trim</span><span style="color: #007700">(</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">STDIN</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;从&nbsp;STDIN&nbsp;读取一行<br /></span><span style="color: #0000BB">fscanf</span><span style="color: #007700">(</span><span style="color: #0000BB">STDIN</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;从&nbsp;STDIN&nbsp;读取数字<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-         </div>
-
-         </td>
-        </tr>
-
-        <tr>
-         <td><strong><code>STDOUT</code></strong></td>
-         <td>
-          一个已打开的指向 <em>stdout</em> 的流。可以用如下方式来调用：
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$stdout&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stdout'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-         </div>
-
-         </td>
-        </tr>
-
-        <tr>
-         <td><strong><code>STDERR</code></strong></td>
-         <td>
-          一个已打开的指向 <em>stderr</em> 的流。可以用如下方式来调用：
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$stderr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stderr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-         </div>
-
-         </td>
-        </tr>
-
-       </tbody>
-      
-     </table>
-
-    </p>
-    <p class="para">
-     有了以上常量，就无需自己建立指向诸如 <em>stderr</em>
-     的流，只需简单的使用这些常量来代替流指向：
-     <div class="example-contents">
-<div class="shellcode"><pre class="shellcode">php -r &#039;fwrite(STDERR, &quot;stderr\n&quot;);&#039;</pre>
-</div>
-     </div>
-
-      无需自己来关闭这些流，PHP 会自动完成这些操作。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <em>CLI SAPI</em>
-     <em class="emphasis">不会</em>将当前目录改为已运行的脚本所在的目录。
-    </p>
-    <p class="para">
-     以下范例显示了本模块与 <em>CGI SAPI</em> 模块之间的不同：
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;名为&nbsp;test.php&nbsp;的简单测试程序<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">getcwd</span><span style="color: #007700">(),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </p>
-    <p class="para">
-     在使用 <em>CGI</em> 版本时，其输出为
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-$ pwd
+<HTML  ><HEAD  ><TITLE  >PHP ��������ģʽ</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ص�" HREF="features.html"><LINK  REL="PREVIOUS" TITLE="����ȫģʽ���ƻ����εĺ���" HREF="features.safe-mode.functions.html"><LINK  REL="NEXT" TITLE="�����ο�" HREF="funcref.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="chapter" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="features.safe-mode.functions.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="funcref.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="chapter" ><H1  ><A  NAME="features.commandline" >�� 23. PHP ��������ģʽ</A
+></H1
+><P  >&#13;  �Ӱ汾 4.3.0 ��ʼ��<TT  CLASS="literal" >PHP</TT
+> �ṩ��һ�������͵� <TT  CLASS="literal" >SAPI</TT
+>��Server Application Programming Interface�������Ӧ�ñ�̶˿ڣ�֧�֣���Ϊ <TT  CLASS="literal" >CLI</TT
+>����Ϊ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >Command Line Interface</I
+></SPAN
+>���������нӿڡ�����˼�壬�� <TT  CLASS="literal" >SAPI</TT
+> ģ����Ҫ���� PHP �Ŀ������Ӧ�á�<TT  CLASS="literal" >CLI SAPI</TT
+> ������ <TT  CLASS="literal" >SAPI</TT
+> ģ������кܶ�Ĳ�֮ͬ�������ǽ��ڱ�������ϸ������ֵ��һ����ǣ�<TT  CLASS="literal" >CLI</TT
+> �� <TT  CLASS="literal" >CGI</TT
+> �ǲ�ͬ�� SAPI����������֮���кܶ๲ͬ����Ϊ��
+ </P
+><P  >&#13;  <TT  CLASS="literal" >CLI SAPI</TT
+> �������� <TT  CLASS="literal" >PHP 4.2.0</TT
+> �汾�����ģ����Ծ�ֻ��һ��ʵ���Եİ汾������Ҫ������ <TT  CLASS="literal" >./configure</TT
+> ʱ���� <TT  CLASS="literal" >--enable-cli</TT
+> �������� <TT  CLASS="literal" >PHP 4.3.0</TT
+> �汾��ʼ��<TT  CLASS="literal" >CLI SAPI</TT
+> ��Ϊ����ʽģ�飬<TT  CLASS="literal" >--enable-cli</TT
+> �����ᱻĬ�ϵ�����Ϊ on����Ҳ�����ò��� <TT  CLASS="literal" >--disable-cli</TT
+> �����Ρ�
+ </P
+><P  >&#13;  �� PHP 4.3.0��ʼ��CLI/CGI ������ִ���ļ����ļ�����λ�ú��Ƿ���ڻ���� PHP ����ϵͳ�ϵİ�װ����ͬ����Ĭ������£������� <TT  CLASS="literal" >make</TT
+> ʱ��CGI �� CLI ���ᱻ���벢�ҷֱ�������� PHP Դ�ļ�Ŀ¼�� <TT  CLASS="literal" >sapi/cgi/php</TT
+> �� <TT  CLASS="literal" >sapi/cli/php</TT
+> �¡�������ע�⵽�����ļ���������Ϊ�� <TT  CLASS="literal" >php</TT
+>���� <TT  CLASS="literal" >make
+  install</TT
+> �Ĺ����лᷢ��ʲôȡ�������������С���������õ�ʱ��ѡ����һ�� SAPI ģ�飬�� apxs������ʹ���� <TT  CLASS="literal" >--disable-cgi</TT
+> ���������� <TT  CLASS="literal" >make install</TT
+> �Ĺ����У�CLI ���������� <TT  CLASS="literal" >{PREFIX}/bin/php</TT
+>������ CGI �Ѿ������������Ǹ�λ�á���ˣ����磬������������������� <TT  CLASS="literal" >--with--apxs
+  </TT
+>������ <TT  CLASS="literal" >make install</TT
+> �Ĺ����У�CLI ���������� <TT  CLASS="literal" >{PREFIX}/bin/php</TT
+>�������ϣ������ CGI ִ���ļ��İ�װ������ <TT  CLASS="literal" >make install</TT
+> ֮������ <TT  CLASS="literal" >make install-cli</TT
+>�����ߣ���Ҳ�����������������м��� <TT  CLASS="literal" >--disable-cgi</TT
+> ������
+ </P
+><P  >&#13;  <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+    ���� <TT  CLASS="literal" >--enable-cli</TT
+> �� <TT  CLASS="literal" >--enable-cgi</TT
+> ͬʱĬ����Ч����ˣ����������������м��� <TT  CLASS="literal" >--enable-cli</TT
+> ��ʹ�� CLI �� <TT  CLASS="literal" >make install</TT
+> �����б������� <TT  CLASS="literal" >&#13;    {PREFIX}/bin/php</TT
+>��
+   </P
+></BLOCKQUOTE
+></DIV
+>
+ </P
+><P  >&#13;  �� PHP 4.2.0 �� PHP 4.2.3 ֮��� Windows ���а��У�CLI ���ļ���Ϊ <TT  CLASS="filename" >php-cli.exe</TT
+>����ͬ�ļ����µ�  <TT  CLASS="filename" >php.exe</TT
+> Ϊ CGI���� PHP 4.3.0 �汾��ʼ��Windows �ķ��а��� CLI ��ִ���ļ�Ϊ <TT  CLASS="filename" >php.exe</TT
+>����������һ����������Ϊ <TT  CLASS="literal" >cli</TT
+> ���ļ����£��� <TT  CLASS="literal" >cli/php.exe</TT
+>��
+ </P
+><P  >&#13;  <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >�����ĸ� SAPI��: </B
+>
+    ����������£����� <TT  CLASS="literal" >php -v</TT
+> ���ܵ�֪�� <TT  CLASS="literal" >php</TT
+> �� CGI ���� CLI����ο����� <A  HREF="function.php-sapi-name.html"  ><B  CLASS="function" >php_sapi_name()</B
+></A
+> �Լ����� <TT  CLASS="constant" ><B  >PHP_SAPI</B
+></TT
+>��
+   </P
+></BLOCKQUOTE
+></DIV
+>
+  <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+    �� PHP 4.3.2 �м����� UNIX �� <TT  CLASS="literal" >man</TT
+> ҳ�档�����������������¼���
+    <TT  CLASS="literal" >man php</TT
+> ���鿴��
+   </P
+></BLOCKQUOTE
+></DIV
+>
+ </P
+><P  >&#13;  ����Ϊ <TT  CLASS="literal" >CLI SAPI</TT
+> ������ <TT  CLASS="literal" >SAPI</TT
+> ģ����ȵ���������
+  <P  ></P
+><UL  ><LI  ><P  >&#13;	 �� <TT  CLASS="literal" >CGI SAPI</TT
+> ��ͬ�������û���κ�ͷ��Ϣ��
+    </P
+><P  >&#13;	 ���� <TT  CLASS="literal" >CGI SAPI</TT
+> �ṩ��ȡ�� HTTP ͷ��Ϣ�ķ��������� <TT  CLASS="literal" >CLI SAPI</TT
+> �в����������Ƶķ����Կ��� HTTP ͷ��Ϣ�������
+    </P
+><P  >&#13;	  CLI Ĭ���԰���ģʽ��ʼ����Ϊ�˱�֤�����ԣ� <TT  CLASS="literal" >-q</TT
+> ����ʹ��������ʹ�þɵ� CGI �ű���
+    </P
+><P  >&#13;	  ������ʱ������ѹ���Ŀ¼��Ϊ�ű��ĵ�ǰĿ¼����������ʹ�� <TT  CLASS="literal" >-C</TT
+> ���������� CGI ģʽ����
+    </P
+><P  >&#13;	  ����ʱ������ı��Ĵ�����Ϣ���� HTML ��ʽ����
+    </P
+></LI
+><LI  ><P  >&#13;	 <TT  CLASS="literal" >CLI SAPI</TT
+> ǿ�Ƹ����� <TT  CLASS="filename" >php.ini</TT
+> �е�ĳЩ���ã���Ϊ��Щ��������ǻ�������û������ġ�
+    </P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN7212" ></A
+><P  ><B  >���� 23-1. �����ĵ� <TT  CLASS="filename" >php.ini</TT
+> ����ѡ��</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >����ѡ��</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >CLI SAPI</TT
+> Ĭ��ֵ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >��ע</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="ref.errorfunc.html#ini.html-errors"  >html_errors</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >FALSE</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		  ������� HTML ��Ƿ���ʹ�ó�����Ϣ�����ң�������������Ķ�������Ϣ��ʮ�����ѵġ���˽���ѡ���Ĭ��ֵ��Ϊ <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="ref.outcontrol.html#ini.implicit-flush"  >implicit_flush</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >TRUE</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		  ��������ģʽ�£��������� <A  HREF="function.print.html"  ><B  CLASS="function" >print()</B
+></A
+> �� <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+> �������������д������ˣ��������κεػ�������������ϣ���ӻ�����Ʊ�׼���������Ȼ����ʹ�� <A  HREF="ref.outcontrol.html"  >output buffering</A
+> �����
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="ref.info.html#ini.max-execution-time"  >max_execution_time</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >0 ������ֵ��</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		  ��������ǻ�����ʹ�� <TT  CLASS="literal" >PHP</TT
+> ������Ŀ����ԣ��������ʱ�䱻����Ϊ������ֵ��Ϊ WEB ������Ӧ�ó������ֻ�����м�����ʱ�䣬�����Ӧ�ó��������ʱ����᳤ܻ�Ķࡣ
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="configuration.directives.html#ini.register-argc-argv"  >register_argc_argv</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >TRUE</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         <P  >&#13;		  ���ڸ�����Ϊ <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>���������ǿ����� <TT  CLASS="literal" >CLI SAPI</TT
+> �з��ʵ� <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >argc</I
+></SPAN
+>�����͸�Ӧ�ó�������ĸ������� <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >argv</I
+></SPAN
+>��������ʵ�ʲ��������飩��
+         </P
+>
+         <P  >&#13;		  ���� PHP 4.3.0����ʹ�� <TT  CLASS="literal" >CLI SAPI</TT
+> ʱ��<TT  CLASS="literal" >PHP</TT
+> ���� <TT  CLASS="literal" >$argc</TT
+>
+          �� <TT  CLASS="literal" >$argv</TT
+> �ѱ�ע�Ტ���趨�˶�Ӧ��ֵ��������֮ǰ�İ汾�������������� <TT  CLASS="literal" >CGI</TT
+> ���� <TT  CLASS="literal" >ģ��</TT
+> �汾�еĽ��������ڽ� PHP ������ѡ�� <A  HREF="configuration.directives.html#ini.register-globals"  >register_globals</A
+> ��Ϊ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >on</I
+></SPAN
+>�����˰汾�� <TT  CLASS="literal" >register_globals</TT
+> �趨���⣬��������ʱͨ������ <A  HREF="reserved.variables.html#reserved.variables.server"  >$_SERVER</A
+> ���� <TT  CLASS="varname" >$HTTP_SERVER_VARS</TT
+>���������ǡ����磺<TT  CLASS="varname" >$_SERVER['argv']</TT
+>
+         </P
+>
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+	  ��Щ�����޷��������ļ� <TT  CLASS="filename" >php.ini</TT
+> ���κ�ָ���������ļ��б���ʼ��Ϊ����ֵ����ЩĬ��ֵ�����������������������ļ���������ı䡣���������ǵ�ֵ�����ڳ������еĹ����б��ı䣨���ܶ��ڸ����й�����˵����Щ��������û������ģ���
+     </P
+></BLOCKQUOTE
+></DIV
+></LI
+><LI  ><P  >&#13;	 Ϊ�˼�����ǻ����µĹ��������Ƕ��������³�����
+     <DIV  CLASS="table" ><A  NAME="AEN7274" ></A
+><P  ><B  >���� 23-2. CLI ר�ó���</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >��������</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >�� ��</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STDIN</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		 һ���Ѵ򿪵�ָ�� <TT  CLASS="literal" >stdin</TT
+> �����������������·��������ã�
+         <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$stdin = fopen('php://stdin', 'r');</font>
+</code></TD
+></TR
+></TABLE
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STDOUT</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		 һ���Ѵ򿪵�ָ�� <TT  CLASS="literal" >stdout</TT
+> �����������������·�ʽ�����ã�
+         <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$stdout = fopen('php://stdout', 'w');</font>
+</code></TD
+></TR
+></TABLE
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STDERR</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;		 һ���Ѵ򿪵�ָ�� <TT  CLASS="literal" >stderr</TT
+> �����������������·�ʽ�����ã�
+         <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$stderr = fopen('php://stderr', 'w');</font>
+</code></TD
+></TR
+></TABLE
+>
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;	 �������ϳ��������������Լ�����ָ������ <TT  CLASS="literal" >stderr</TT
+> ������ֻ��򵥵�ʹ����Щ������������ָ��
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+php -r 'fwrite(STDERR, "stderr\n");'</font>
+</code></TD
+></TR
+></TABLE
+>
+	 �������Լ����ر���Щ����PHP ���Զ������Щ������
+    </P
+></LI
+><LI  ><P  >&#13;	 <TT  CLASS="literal" >CLI SAPI</TT
+> <SPAN  CLASS="strong" ><B  CLASS="emphasis" >��</B
+></SPAN
+>�Ὣ��ǰĿ¼��Ϊ�����еĽű����ڵ�Ŀ¼��
+    </P
+><P  >&#13;	 ���·�����ʾ�˱�ģ���� <TT  CLASS="literal" >CGI SAPI</TT
+> ģ��֮��Ĳ�ͬ��
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Our simple test application named test.php*/ <br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#0000BB">getcwd</font><font  color="#007700">(), </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;	 ��ʹ�� <TT  CLASS="literal" >CGI</TT
+> �汾ʱ�������Ϊ
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ pwd
 /tmp
 
 $ php-cgi -f another_directory/test.php
-/tmp/another_directory
-</pre></div>
-     </div>
-    </p>
-    <p class="para">
-     明显可以看到 PHP 将当前目录改成了刚刚运行过的脚本所在的目录。
-    </p>
-    <p class="para">
-     使用 <em>CLI SAPI</em> 模式，得到：
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-$ pwd
+/tmp/another_directory</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;	 �������Կ��Կ��� <TT  CLASS="literal" >PHP</TT
+> ����ǰĿ¼�ĳ��˸ո����й��Ľű����ڵ�Ŀ¼��
+    </P
+><P  >&#13;	 ʹ�� <TT  CLASS="literal" >CLI SAPI</TT
+> ģʽ�����ǵõ���
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ pwd
 /tmp
 
 $ php -q another_directory/test.php
-/tmp
-</pre></div>
-     </div>
-     这使得在利用 PHP 编写外壳工具时获得了很大的便利。
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      可以在命令行运行时给该 <em>CGI SAPI</em> 加上
-      <strong class="option unknown">-C</strong>
- 参数，使其支持 <em>CLI SAPI</em> 的功能。
-     </p>
-    </p></blockquote>
-   </li>
-  </ul>
- </p>
- <p class="para">
-  以下是 PHP 二进制文件（即 <var class="filename">php.exe</var>
-  程序）提供的命令行模式的选项参数，随时可以运行带
-  <strong class="option unknown">-h</strong>
- 参数的 PHP 命令来查询这些参数。
-  <div class="example-contents screen">
-<div class="cdata"><pre>
-Usage: php [options] [-f] &lt;file&gt; [--] [args...]
-       php [options] -r &lt;code&gt; [--] [args...]
-       php [options] [-B &lt;begin_code&gt;] -R &lt;code&gt; [-E &lt;end_code&gt;] [--] [args...]
-       php [options] [-B &lt;begin_code&gt;] -F &lt;file&gt; [-E &lt;end_code&gt;] [--] [args...]
-       php [options] -- [args...]
-       php [options] -a
-
+/tmp</PRE
+></TD
+></TR
+></TABLE
+>
+	 ��ʹ������������ <TT  CLASS="literal" >PHP</TT
+> ��д��ǹ���ʱ����˺ܴ�ı�����
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+	  ������������������ʱ�� <TT  CLASS="literal" >CGI SAPI</TT
+> ���� <TT  CLASS="literal" >-C</TT
+> ������ʹ��֧�� <TT  CLASS="literal" >CLI SAPI</TT
+> �Ĺ��ܡ�
+     </P
+></BLOCKQUOTE
+></DIV
+></LI
+></UL
+>
+ </P
+><P  >&#13;  ������ <TT  CLASS="literal" >PHP</TT
+> �������ļ����� <TT  CLASS="filename" >php.exe</TT
+> �����ṩ��������ģʽ��ѡ�����������ʱ����ͨ�� <B  CLASS="command" >PHP -h </B
+> ��������ѯ��Щ������
+  <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Usage: php [options] [-f] &#60;file&#62; [args...]
+       php [options] -r &#60;code&#62; [args...]
+       php [options] [-- args...]
+  -s               Display colour syntax highlighted source.
+  -w               Display source with stripped comments and whitespace.
+  -f &#60;file&#62;        Parse &#60;file&#62;.
+  -v               Version number
+  -c &#60;path&#62;|&#60;file&#62; Look for php.ini file in this directory
   -a               Run interactively
-  -c &lt;path&gt;|&lt;file&gt; Look for php.ini file in this directory
-  -n               No php.ini file will be used
-  -d foo[=bar]     Define INI entry foo with value &#039;bar&#039;
+  -d foo[=bar]     Define INI entry foo with value 'bar'
   -e               Generate extended information for debugger/profiler
-  -f &lt;file&gt;        Parse &lt;file&gt;.
-  -h               This help
-  -i               PHP information
+  -z &#60;file&#62;        Load Zend extension &#60;file&#62;.
   -l               Syntax check only (lint)
   -m               Show compiled in modules
-  -r &lt;code&gt;        Run PHP &lt;code&gt; without using script tags &lt;?..?&gt;
-  -B &lt;begin_code&gt;  Run PHP &lt;begin_code&gt; before processing input lines
-  -R &lt;code&gt;        Run PHP &lt;code&gt; for every input line
-  -F &lt;file&gt;        Parse and execute &lt;file&gt; for every input line
-  -E &lt;end_code&gt;    Run PHP &lt;end_code&gt; after processing all input lines
-  -H               Hide any passed arguments from external tools.
-  -s               Display colour syntax highlighted source.
-  -v               Version number
-  -w               Display source with stripped comments and whitespace.
-  -z &lt;file&gt;        Load Zend extension &lt;file&gt;.
+  -i               PHP information
+  -r &#60;code&#62;        Run PHP &#60;code&#62; without using script tags &#60;?..?&#62;
+  -h               This help
 
-  args...          Arguments passed to script. Use -- args when first argument
-                   starts with - or script is read from stdin
-</pre></div>
-  </div>
- </p>
- <p class="para">
-  <em>CLI SAPI</em> 模块有以下三种不同的方法来获取要运行的 PHP 代码：
-  <ol type="1">
-   <li class="listitem">
-    <p class="para">
-     让 PHP 运行指定文件。
-    </p>
-    <p class="para">
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-php my_script.php
+  args...          Arguments passed to script. Use -- args when first argument 
+                   starts with - or script is read from stdin</PRE
+></TD
+></TR
+></TABLE
+>
+ </P
+><P  >&#13;  <TT  CLASS="literal" >CLI SAPI</TT
+> ģ�����������ֲ�ͬ�ķ�������ȡ��Ҫ���е� <TT  CLASS="literal" >PHP</TT
+> ���룺
+  <P  ></P
+><OL  TYPE="1" ><LI  ><P  >&#13;	 �� <TT  CLASS="literal" >PHP</TT
+> ����ָ���ļ��� 
+    </P
+><P  >&#13;     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >php my_script.php
 
-php -f my_script.php
-</pre></div>
-     </div>
-    </p>
-    <p class="para">
-     以上两种方法（使用或不使用 <strong class="option unknown">-f</strong>
- 参数）都能够运行给定的
-     <var class="filename">my_script.php</var> 文件。可以选择任何文件来运行，指定的
-     PHP 脚本并非必须要以 <em>.php</em>
-     为扩展名，它们可以有任意的文件名和扩展名。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     在命令行直接运行 PHP 代码。
-    </p>
-    <p class="para">
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-php -r &#039;print_r(get_defined_constants());&#039;
-</pre></div>
-     </div>
-    </p>
-    <p class="para">
-     在使用这种方法时，请注意外壳变量的替代及引号的使用。
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      请仔细阅读以上范例，在运行代码时没有开始和结束的标记符！加上
-      <strong class="option unknown">-r</strong>
- 参数后，这些标记符是不需要的，加上它们会导致语法错误。
-     </p>
-    </p></blockquote>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     通过标准输入（<em>stdin</em>）提供需要运行的 PHP 代码。
-    </p>
-    <p class="para">
-     以上用法提供了非常强大的功能，使得可以如下范例所示，动态地生成
-     PHP 代码并通过命令行运行这些代码：
-     <div class="example-contents screen">
-<div class="cdata"><pre>
-$ some_application | some_filter | php | sort -u &gt;final_output.txt
-</pre></div>
-     </div>
-    </p>
-   </li>
-  </ol>
- </p>
-
- <p class="para">
-  以上三种运行代码的方法不能同时使用。
- </p>
-
- <p class="para">
-  和所有的外壳应用程序一样，PHP 的二进制文件（<var class="filename">php.exe</var>
-  文件）及其运行的 PHP 脚本能够接受一系列的参数。PHP
-  没有限制传送给脚本程序的参数的个数（外壳程序对命令行的字符数有限制，但通常都不会超过该限制）。传递给脚本的参数可在全局变量
-  <var class="varname"><var class="varname"><a href="reserved.variables.argv.html" class="classname">$argv</a></var></var> 中获取。该数组中下标为零的成员为脚本的名称（当
-  PHP 代码来自标准输入获直接用 <strong class="option unknown">-r</strong>
-
-  参数以命令行方式运行时，该名称为“<em>-</em>”）。另外，全局变量
-  <var class="varname"><var class="varname"><a href="reserved.variables.argc.html" class="classname">$argc</a></var></var> 存有 <var class="varname"><var class="varname"><a href="reserved.variables.argv.html" class="classname">$argv</a></var></var>
-  数组中成员变量的个数（而非传送给脚本程序的参数的个数）。
- </p>
-
- <p class="para">
-  只要传送给脚本的参数不是以 <em>-</em>
-  符号开头，就无需过多的注意什么。向脚本传送以
-  <em>-</em> 开头的参数会导致错误，因为 PHP
-  会认为应该由它自身来处理这些参数。可以用参数列表分隔符
-  <em>--</em> 来解决这个问题。在 PHP
-  解析完参数后，该符号后所有的参数将会被原样传送给脚本程序。
- </p>
-
- <p class="para">
-  <div class="example-contents screen">
-<div class="cdata"><pre>
-# 以下命令将不会运行 PHP 代码，而只显示 PHP 命令行模式的使用说明：
-$ php -r &#039;var_dump($argv);&#039; -h
-Usage: php [options] [-f] &lt;file&gt; [args...]
+php -f my_script.php</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;	 �������ַ�����ʹ�û�ʹ�� <TT  CLASS="literal" >-f</TT
+> ���������ܹ����и����� <TT  CLASS="filename" >my_script.php</TT
+> �ļ���������ѡ���κ��ļ������У���ָ���� <TT  CLASS="literal" >PHP</TT
+> �ű����Ǳ���Ҫ�� <TT  CLASS="filename" >.php</TT
+> Ϊ��չ�������ǿ�����������ļ�������չ����
+    </P
+></LI
+><LI  ><P  >&#13;	 ��������ֱ������ <TT  CLASS="literal" >PHP</TT
+> ���롣
+    </P
+><P  >&#13;     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >php -r 'print_r(get_defined_constants());'</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;	 ��ʹ�����ַ���ʱ������ע����Ǳ�������������ŵ�ʹ�á�
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+	  ����ϸ�Ķ����Ϸ����������д���ʱû�п�ʼ�ͽ����ı�Ƿ������� <TT  CLASS="literal" >-r</TT
+> ��������Щ��Ƿ��ǲ���Ҫ�ģ��������ǻᵼ���﷨����
+     </P
+></BLOCKQUOTE
+></DIV
+></LI
+><LI  ><P  >&#13;	 ͨ����׼���루<TT  CLASS="literal" >stdin</TT
+>���ṩ��Ҫ���е� <TT  CLASS="literal" >PHP</TT
+> ���롣
+    </P
+><P  >&#13;	 �����÷��������ṩ�˷ǳ�ǿ��Ĺ��ܣ�ʹ�����ǿ������·�����ʾ����̬������ <TT  CLASS="literal" >PHP</TT
+> ���벢ͨ��������������Щ���룺
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ some_application | some_filter | php | sort -u &#62;final_output.txt</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+></LI
+></OL
+>
+ </P
+><P  >&#13;  �����������д���ķ�������ͬʱʹ�á�
+ </P
+><P  >&#13;  �����е����Ӧ�ó���һ����<TT  CLASS="literal" >PHP</TT
+> �Ķ������ļ���<TT  CLASS="filename" >php.exe</TT
+> �ļ����������е� <TT  CLASS="literal" >PHP</TT
+> �ű��ܹ�����һϵ�еĲ�����<TT  CLASS="literal" >PHP</TT
+> û�����ƴ��͸��ű�����Ĳ����ĸ�������ǳ���������е��ַ��������ƣ�����ͨ�������ᳬ�������ƣ������ݸ����ű��Ĳ�������ȫ�ֱ��� <TT  CLASS="literal" >$argv</TT
+> �л�ȡ�����������±�Ϊ��ĳ�ԱΪ�ű������ƣ��� <TT  CLASS="literal" >PHP</TT
+> �������Ա�׼�����ֱ���� <TT  CLASS="literal" >-r</TT
+> �����������з�ʽ����ʱ��������Ϊ��<TT  CLASS="literal" >-</TT
+>���������⣬ȫ�ֱ��� <TT  CLASS="literal" >$argc</TT
+> ���� <TT  CLASS="literal" >$argv</TT
+> �����г�Ա�����ĸ��������Ǵ��͸��ű�����Ĳ����ĸ�������
+ </P
+><P  >&#13;  ֻҪ�����͸����ű��Ĳ��������� <TT  CLASS="literal" >-</TT
+> ���ſ�ͷ��������������ע��ʲô�������Ľű������� <TT  CLASS="literal" >-</TT
+> ��ͷ�Ĳ����ᵼ�´�����Ϊ <TT  CLASS="literal" >PHP</TT
+> ����ΪӦ������������������Щ�������������ò����б��ָ��� <TT  CLASS="literal" >--</TT
+> �����������⡣�� <TT  CLASS="literal" >PHP</TT
+> ����������󣬸÷��ź����еĲ������ᱻԭ�����͸����Ľű�����
+ </P
+><P  >&#13;  <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" ># ��������������� PHP ���룬��ֻ��ʾ PHP ������ģʽ��ʹ��˵����
+$ php -r 'var_dump($argv);' -h
+Usage: php [options] [-f] &#60;file&#62; [args...]
 [...]
 
-# 以下命令将会把“-h”参数传送给脚本程序，PHP 不会显示命令行模式的使用说明：
-$ php -r &#039;var_dump($argv);&#039; -- -h
+# ���������ѡ�-h���������͸��ű�����PHP ������ʾ������ģʽ��ʹ��˵����
+$ php -r 'var_dump($argv);' -- -h
 array(2) {
-  [0]=&gt;
-  string(1) &quot;-&quot;
-  [1]=&gt;
-  string(2) &quot;-h&quot;
-}
-</pre></div>
- </div>
- </p>
-
- <p class="para">
-  除此之外，还有另一个方法将 PHP 用于外壳脚本。可以在写一个脚本，并在第一行以
-  <em>#!/usr/bin/php</em> 开头，在其后加上以 PHP
-  开始和结尾标记符包含的正常的 PHP
-  代码，然后为该文件设置正确的运行属性（例如：<strong class="command">chmod +x test</strong>）。该方法可以使得该文件能够像外壳脚本或 PERL 脚本一样被直接执行。
-  <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-#!/usr/bin/php<br /><span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$argv</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-  </div>
-
- </p>
-
- <p class="para">
-  假设改文件名为 <var class="filename">test</var> 并被放置在当前目录下，可以做如下操作：
-  <div class="example-contents screen">
-<div class="cdata"><pre>
-$ chmod +x test
+  [0]=&#62;
+  string(1) "-"
+  [1]=&#62;
+  string(2) "-h"
+}</PRE
+></TD
+></TR
+></TABLE
+>
+ </P
+><P  >&#13;  ����֮�⣬���ǻ�����һ�������� <TT  CLASS="literal" >PHP</TT
+> ������ǽű�����������дһ���ű������ڵ�һ���� <TT  CLASS="literal" >#!/usr/bin/php</TT
+> ��ͷ������������ <TT  CLASS="literal" >PHP</TT
+> ��ʼ�ͽ�β��Ƿ������������� <TT  CLASS="literal" >PHP</TT
+> ���룬Ȼ��Ϊ���ļ�������ȷ���������ԡ��÷�������ʹ�ø��ļ��ܹ�����ǽű��� PERL �ű�һ����ֱ��ִ�С�
+  <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+#!/usr/bin/php<br  /><font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$argv</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+ </P
+><P  >&#13;  ������ļ���Ϊ <TT  CLASS="filename" >test</TT
+> ���������ڵ�ǰĿ¼�£����ǿ��������²�����
+  <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ chmod 755 test
 $ ./test -h -- foo
 array(4) {
-  [0]=&gt;
-  string(6) &quot;./test&quot;
-  [1]=&gt;
-  string(2) &quot;-h&quot;
-  [2]=&gt;
-  string(2) &quot;--&quot;
-  [3]=&gt;
-  string(3) &quot;foo&quot;
-}
-</pre></div>
-  </div>
- </p>
+  [0]=&#62;
+  string(6) "./test"
+  [1]=&#62;
+  string(2) "-h"
+  [2]=&#62;
+  string(2) "--"
+  [3]=&#62;
+  string(3) "foo"
+}</PRE
+></TD
+></TR
+></TABLE
+>
+ </P
+><P  >&#13;  �������������ģ�������ýű������� <TT  CLASS="literal" >-</TT
+> ��ͷ�Ĳ���ʱ���ű���Ȼ�ܹ��������С�
+ </P
+><P  >&#13;  <DIV  CLASS="table" ><A  NAME="AEN7391" ></A
+><P  ><B  >���� 23-3. ������ѡ��</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ѡ������</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >�� ��</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-s</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ��ʾ���﷨����ɫ�ʵ�Դ�ļ���
+       </P
+>
+       <P  >&#13;	    �ò���ʹ���ڽ������������ļ���Ϊ������һ�� <TT  CLASS="literal" >HTML</TT
+> �����汾�������д����׼�������ע��ù���������ֻ��������һ�� <TT  CLASS="literal" >&#60;code&#62; [...] &#60;/code&#62;</TT
+> �� <TT  CLASS="literal" >HTML</TT
+> ��Ƿ��飬���������κε� <TT  CLASS="literal" >HTML</TT
+> ͷ��
+       </P
+>
+       <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+		 ��ѡ��ܺ� <TT  CLASS="literal" >-r</TT
+> ����ͬʱʹ�á�
+        </P
+></BLOCKQUOTE
+></DIV
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-w</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ��ʾ��ȥ��ע�ͺͿո��Դ���롣
+       </P
+>
+       <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+		 ��ѡ��ܺ� <TT  CLASS="literal" >-r</TT
+> ����ͬʱʹ�á�
+        </P
+></BLOCKQUOTE
+></DIV
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-f</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ���������и������ļ������ò���Ϊ��ѡ�����ҿ��Բ��ӣ���ָ����Ҫ���е��ļ������ɡ�
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-v</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    �� PHP��PHP SAPI �� Zend �İ汾��Ϣд��ı�׼��������磺
+        <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -v
+PHP 4.3.0-dev (cli), Copyright (c) 1997-2002 The PHP Group
+Zend Engine v1.3.0, Copyright (c) 1998-2002 Zend Technologies</PRE
+></TD
+></TR
+></TABLE
+>
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-c</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    �øò�����������ָ��һ������ <TT  CLASS="filename" >php.ini</TT
+> �ļ���Ŀ¼������ֱ��ָ��һ���Զ���� <TT  CLASS="literal" >INI</TT
+> �ļ������ļ������Բ��� <TT  CLASS="filename" >php.ini</TT
+>�����磺
+        <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -c /custom/directory/ my_script.php
 
- <p class="para">
-  正如所看到的，在向该脚本传送以 <em>-</em> 开头的参数时，脚本仍然能够正常运行。
- </p>
+$ php -c /custom/directory/custom-file.ini my_script.php</PRE
+></TD
+></TR
+></TABLE
+>
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-a</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ���������� PHP��
+        
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-d</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    �øò��������������� <TT  CLASS="filename" >php.ini</TT
+> �ļ������ñ�����ֵ�����﷨Ϊ��
+        <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >-d configuration_directive[=value]</PRE
+></TD
+></TR
+></TABLE
+>
+       </P
+>
+       <P  >&#13;        ������
+        <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" ># Ommiting the value part will set the given configuration directive to "1"
+$ php -d max_execution_time 
+       -r '$foo = ini_get("max_execution_time"); var_dump($foo);'
+string(1) "1"
 
- <p class="para">
-  PHP 4.3.3 以来有效的长选项:
-  <table class="doctable table">
-   <caption><strong>命令行选项</strong></caption>
-   
-    <thead>
-     <tr>
-      <th>选项名称</th>
-      <th>长名称</th>
-      <th>说明</th>
-     </tr>
+# Passing an empty value part will set the configuration directive to ""
+php -d max_execution_time= 
+       -r '$foo = ini_get("max_execution_time"); var_dump($foo);'
+string(0) ""
 
-    </thead>
-
-    <tbody class="tbody">
-     <tr>
-      <td>-a</td>
-      <td>--interactive</td>
-      <td>
-       <p class="para">
-        交互式运行 PHP。如果编译 PHP 时加入了 <a href="ref.readline.html" class="link">Readline</a> 扩展（Windows
-        下不可用），那将会得到一个很好的外壳，包括一个自动完成的功能（例如可以在键入变量名的时候，按下
-        TAB 键，PHP 会自动完成该变量名）以及命令历史记录，可以用上下键来访问。历史记录存在
-        <var class="filename">~/.php_history</var> 文件中。
-       </p>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         通过 <a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a> 和 <a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a>
-         包含的文件在此模式下会被解析，但有些限制，例如函数必须在被调用之前定义。
-        </p>
-       </p></blockquote>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-c</td>
-      <td>--php-ini</td>
-      <td>
-       <p class="para">
-        用该参数，可以指定一个放置 <var class="filename">php.ini</var>
-        文件的目录，或者直接指定一个自定义的 <em>INI</em>
-        文件（其文件名可以不是 <var class="filename">php.ini</var>），例如：
-        <div class="example-contents screen">
-<div class="cdata"><pre>
-$ php -c /custom/directory/ my_script.php
-
-$ php -c /custom/directory/custom-file.ini my_script.php
-</pre></div>
-        </div>
-        如果不指定此选项，PHP 将在<a href="configuration.file.html" class="link">默认位置</a>搜索文件。
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-n</td>
-      <td>--no-php-ini</td>
-      <td>
-       <p class="para">
-        完全忽略 <var class="filename">php.ini</var>。此参数在 PHP 4.3.0 以后有效。
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-d</td>
-      <td>--define</td>
-      <td>
-       <p class="para">
-        用该参数可以自行设置任何可以在 <var class="filename">php.ini</var>
-        文件中设置的配置选项的值，其语法为：
-        <div class="example-contents screen">
-<div class="cdata"><pre>
--d configuration_directive[=value]
-</pre></div>
-        </div>
-       </p>
-       <p class="para">
-        例子（因版面原因而折行显示）：
-        <div class="example-contents screen">
-<div class="cdata"><pre>
-# 取值部分被省略，将会把配置选项设为 &quot;1&quot;
-$ php -d max_execution_time
-        -r &#039;$foo = ini_get(&quot;max_execution_time&quot;); var_dump($foo);&#039;
-string(1) &quot;1&quot;
-
-# 取值部分为空白，将会把配置选项设为 &quot;&quot;
-php -d max_execution_time=
-        -r &#039;$foo = ini_get(&quot;max_execution_time&quot;); var_dump($foo);&#039;
-string(0) &quot;&quot;
-
-# 配置选项将被设置成为任何 &#039;=&#039; 字符之后的值
-$  php -d max_execution_time=20
-        -r &#039;$foo = ini_get(&quot;max_execution_time&quot;); var_dump($foo);&#039;
-string(2) &quot;20&quot;
-$  php
-        -d max_execution_time=doesntmakesense
-        -r &#039;$foo = ini_get(&quot;max_execution_time&quot;); var_dump($foo);&#039;
-string(15) &quot;doesntmakesense&quot;
-</pre></div>
-        </div>
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-e</td>
-      <td>--profile-info</td>
-      <td>
-       <p class="para">
-        激活扩展信息模式，被用于调试／测试。
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-f</td>
-      <td>--file</td>
-      <td>
-       <p class="para">
-        解析并运行 <strong class="option unknown">-f</strong>
-
-        选项给定的文件名。该参数为可选参数，可以省略，仅指明需要运行的文件名即可。
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-h and -?</td>
-      <td>--help and --usage</td>
-      <td>
-       使用该参数，可以得到完整的命令行参数的列表及这些参数作用的简单描述。
-      </td>
-     </tr>
-
-     <tr>
-      <td>-i</td>
-      <td>--info</td>
-      <td>
-       该命令行参数会调用 <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span>
-       函数并显示出结果。如果 PHP 没有正常工作，建议执行
-       <strong class="command">php -i</strong>
-       命令来查看在信息表格之前或者对应的地方是否有任何错误信息输出。请注意当使用
-       CGI 摸索时，输出的内容为 <em>HTML</em>
-       格式，因此输出的信息篇幅较大。
-      </td>
-     </tr>
-
-     <tr>
-      <td>-l</td>
-      <td>--syntax-check</td>
-      <td>
-       <p class="para">
-        该参数提供了对指定 PHP
-        代码进行语法检查的方便的方法。如果成功，则向标准输出写入
-        <em>No syntax errors detected in &lt;filename&gt;</em>
-        字符串，并且外壳返回值为
-        <em>0</em>。如果失败，则输出
-        <em>Errors parsing
-        &lt;filename&gt;</em>
-        以及内部解析器错误信息到标准输出，同时外壳返回值将别设置为
-        <em>255</em>。
-       </p>
-       <p class="para">
-        该参数将无法检查致命错误（如未定义函数），如果也希望检测致命错误，请使用
-        <strong class="option unknown">-f</strong>
- 参数。
-       </p>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         该参数不能和 <strong class="option unknown">-r</strong>
- 一同使用。
-        </p>
-       </p></blockquote>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-m</td>
-      <td>--modules</td>
-      <td>
-       <p class="para">
-        使用该参数，PHP 将打印出内置以及已加载的 PHP 及 Zend 模块：
-        <div class="example-contents screen">
-<div class="cdata"><pre>
-$ php -m
+# The configuration directive will be set to anything passed after the '=' character
+$  php -d max_execution_time=20 
+      -r '$foo = ini_get("max_execution_time"); var_dump($foo);'
+string(2) "20"
+$  php 
+       -d max_execution_time=doesntmakesense 
+       -r '$foo = ini_get("max_execution_time"); var_dump($foo);'
+string(15) "doesntmakesense"</PRE
+></TD
+></TR
+></TABLE
+>
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-e</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    Ϊ��������������չ��Ϣ��
+        
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-z</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ���� Zend ��չ�⡣���������һ���ļ�����PHP ����ͼ����ϵͳ��չ���Ĭ��·������ Linux ϵͳ�£���·��ͨ���� <TT  CLASS="filename" >/etc/ld.so.conf</TT
+> ָ�������ظ���չ�⡣�������һ������·��ָ���ļ�������ϵͳ����չ��Ĭ��·�������ᱻʹ�á���������·��ָ�����ļ�����PHP �����ͼ��������ڵ�ǰĿ¼����չ�⡣
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-l</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    �ò����ṩ�˶�ָ�� <TT  CLASS="literal" >PHP</TT
+> ��������﷨���ķ���ķ���������ɹ��������׼���д�� <TT  CLASS="literal" >No syntax errors detected in &#60;filename&#62;</TT
+> �ַ�����������Ƿ���ֵΪ <TT  CLASS="literal" >0</TT
+>�����ʧ�ܣ��� <TT  CLASS="literal" >Errors parsing
+        &#60;filename&#62;</TT
+> �Լ��ڲ�������������Ϣ��һ��д�뵽��׼�����ͬʱ��Ƿ���ֵ��������Ϊ <TT  CLASS="literal" >255</TT
+>��
+       </P
+>
+       <P  >&#13;	    �ò������޷��������������δ���庯�����������ϣ�����֮��������ʹ�� <TT  CLASS="literal" >-f</TT
+> ������
+       </P
+>
+       <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+		 �ò������ܺ� <TT  CLASS="literal" >-r</TT
+> һͬʹ�á�
+        </P
+></BLOCKQUOTE
+></DIV
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-m</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ʹ�øò�����PHP ����ӡ�������Լ��Ѽ��ص� PHP �� Zend ģ�飺
+        <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -m
 [PHP Modules]
 xml
 tokenizer
@@ -742,301 +659,185 @@ mysql
 mbstring
 ctype
 
-[Zend Modules]
-</pre></div>
-        </div>
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-r</td>
-      <td>--run</td>
-      <td>
-       <p class="para">
-        使用该参数可以在命令行内运行单行 PHP
-        代码。<em class="emphasis">无需</em>加上 PHP
-        的起始和结束标识符（<em>&lt;?php</em> 和
-        <em>?&gt;</em>），否则将会导致语法解析错误。
-       </p>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         使用这种形式的 PHP 时，应注意避免和外壳环境进行的命令行参数替换相冲突。
-        </p>
-        <p class="para">
-         显示语法解析错误的范例
-         <div class="example-contents screen">
-<div class="cdata"><pre>
-$ php -r &quot;$foo = get_defined_constants();&quot;
-Command line code(1) : Parse error - parse error, unexpected &#039;=&#039;
-</pre></div>
-         </div>
-         这里的问题在于即使使用了双引号
-         <em>&quot;</em>，sh/bash 仍然实行了参数替换。由于
-         <var class="varname"><var class="varname">$foo</var></var>
-         没有被定义，被替换后它所在的位置变成了空字符，因此在运行时，实际被
-         PHP 读取的代码为：
-         <div class="example-contents screen">
-<div class="cdata"><pre>
-$ php -r &quot; = get_defined_constants();&quot;
-</pre></div>
-         </div>
-         正确的方法是使用单引号
-         <em>&#039;</em>。在用单引号引用的字符串中，变量不会被
-         sh/bash 还原成其原值。
-         <div class="example-contents screen">
-<div class="cdata"><pre>
-$ php -r &#039;$foo = get_defined_constants(); var_dump($foo);&#039;
+[Zend Modules]</PRE
+></TD
+></TR
+></TABLE
+>
+       </P
+>
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-i</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;	   �������в�������� <A  HREF="function.phpinfo.html"  ><B  CLASS="function" >phpinfo()</B
+></A
+> ����������ӡ���������� <TT  CLASS="literal" >PHP</TT
+> û���������������ǽ�����ִ�� <B  CLASS="command" >php -i</B
+> �������鿴����Ϣ����֮ǰ���߶�Ӧ�ĵط��Ƿ����κδ�����Ϣ�������ע�����������Ϊ <TT  CLASS="literal" >HTML</TT
+> ��ʽ������������Ϣƪ���ϴ�
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-r</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       <P  >&#13;	    ʹ�øò������������������� <TT  CLASS="literal" >PHP</TT
+> ���롣��<SPAN  CLASS="strong" ><B  CLASS="emphasis" >����</B
+></SPAN
+>���� <TT  CLASS="literal" >PHP</TT
+> ����ʼ�ͽ�����ʶ����<TT  CLASS="literal" >&#60;?php</TT
+> �� <TT  CLASS="literal" >?&#62;</TT
+>�������򽫻ᵼ���﷨��������
+       </P
+>
+       <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+		 ʹ��������ʽ�� <TT  CLASS="literal" >PHP</TT
+> ʱ��Ӧ����ע��������ǻ������е������в����滻���ͻ��
+        </P
+><P  >&#13;		 ��ʾ�﷨��������ķ���
+         <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -r "$foo = get_defined_constants();"
+Command line code(1) : Parse error - parse error, unexpected '='</PRE
+></TD
+></TR
+></TABLE
+>
+        </P
+><P  >&#13;		 ������������ڼ�ʱʹ����˫���� <TT  CLASS="literal" >"</TT
+>��sh/bash ��Ȼʵ���˲����滻������ <TT  CLASS="literal" >$foo</TT
+> û�б����壬���滻�������ڵ�λ�ñ���˿��ַ������������ʱ��ʵ�ʱ� <TT  CLASS="literal" >PHP</TT
+> ��ȡ�Ĵ���Ϊ��
+         <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -r " = get_defined_constants();"</PRE
+></TD
+></TR
+></TABLE
+>
+        </P
+><P  >&#13;		 ��ȷ�ķ�����ʹ�õ����� <TT  CLASS="literal" >'</TT
+>�����õ��������õ��ַ����У��������ᱻ sh/bash ��ԭ����ԭֵ��
+         <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$ php -r '$foo = get_defined_constants(); var_dump($foo);'
 array(370) {
-  [&quot;E_ERROR&quot;]=&gt;
+  ["E_ERROR"]=&#62;
   int(1)
-  [&quot;E_WARNING&quot;]=&gt;
+  ["E_WARNING"]=&#62;
   int(2)
-  [&quot;E_PARSE&quot;]=&gt;
+  ["E_PARSE"]=&#62;
   int(4)
-  [&quot;E_NOTICE&quot;]=&gt;
+  ["E_NOTICE"]=&#62;
   int(8)
-  [&quot;E_CORE_ERROR&quot;]=&gt;
-  [...]
-</pre></div>
-         </div>
-         如果使用的外壳不是 sh/bash，可能会碰到更多问题。请将碰到的 Bug
-         向 <a href="http://bugs.php.net/" class="link external">&raquo;&nbsp;http://bugs.php.net/</a>
-         报告。注意，当试图将 shell 变量用到代码中或者使用反斜线时仍然很容易碰到问题。
-        </p>
-       </p></blockquote>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         <strong class="option unknown">-r</strong>
- 在 <em class="emphasis">CLI</em> SAPI
-         中有效，在 <em class="emphasis">CGI</em> SAPI 中无效。
-        </p>
-       </p></blockquote>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         此选项只用于非常基本的用途。因此一些配置指令（例如 <a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a> 和 <a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a>）在此模式下被忽略。
-        </p>
-       </p></blockquote>
-      </td>
-     </tr>
+  ["E_CORE_ERROR"]=&#62;
+  [...]</PRE
+></TD
+></TR
+></TABLE
+>
+        </P
+><P  >&#13;		 �����ʹ�õ���ǲ��� sh/bash�������ܻ��������������⡣�뱨���������� bug�����߷��ʼ��� phpdoc@lists.php.net��
+        </P
+><P  >&#13;		 ������ͼ����ǵĻ����������뵽�������÷�б����ת���ַ�ʱҲ�����������ָ��������⣬������ʹ��ʱע�⣡
+		 
+        </P
+></BLOCKQUOTE
+></DIV
+>
+       <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+> 
+          <TT  CLASS="literal" >-r</TT
+> �� <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >CLI</I
+></SPAN
+> SAPI ����Ч���� <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >CGI</I
+></SPAN
+> SAPI ����Ч��
+        </P
+></BLOCKQUOTE
+></DIV
+>
+	  </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >-h</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;	   ʹ�øò����������Եõ������������в������б�����Щ�������õļ�������
+      </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ </P
+><P  >&#13;  PHP ��������ģʽ��ʹ�� PHP �ű�����ȫ������ WEB �������������С������ʹ�� Unix ϵͳ������Ҫ������ PHP �ű�����ǰ�����һ������Ĵ��룬ʹ�����ܹ���ִ�У�����ϵͳ����֪����ʲô���ĳ���Ҫ���иýű����� Windows ƽ̨�������Խ� <TT  CLASS="literal" >php.exe</TT
+> �� <TT  CLASS="literal" >.php</TT
+> �ļ���˫���������������Ҳ���Ա�дһ���������ļ����� PHP ִ�нű���Ϊ Unix ϵͳ���ӵĵ�һ�д��벻��Ӱ��ýű��� Windows �µ����У������Ҳ�����ø÷�����д��ƽ̨�Ľű�����������һ���򵥵�PHP �����г���ķ�����
+ </P
+><P  >&#13;  <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN7518" ></A
+><P  ><B  >���� 23-1. ��ͼ�������з�ʽ���е� PHP �ű���script.php��</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+#!/usr/bin/php<br  /><font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$argc </font><font  color="#007700">!= </font><font  color="#0000BB">2 </font><font  color="#007700">|| </font><font  color="#0000BB">in_array</font><font  color="#007700">(</font><font  color="#0000BB">$argv</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">], array(</font><font  color="#DD0000">'--help'</font><font  color="#007700">, </font><font  color="#DD0000">'-help'</font><font  color="#007700">, </font><font  color="#DD0000">'-h'</font><font  color="#007700">, </font><font  color="#DD0000">'-?'</font><font  color="#007700">))) {<br  /></font><font  color="#0000BB">?&gt;<br  /></font><br  />This is a command line PHP script with one option.<br  /><br  />&nbsp;&nbsp;Usage:<br  />&nbsp;&nbsp;<font  color="#0000BB">&lt;?php </font><font  color="#007700">echo </font><font  color="#0000BB">$argv</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]; </font><font  color="#0000BB">?&gt;</font> &lt;option&gt;<br  /><br  />&nbsp;&nbsp;&lt;option&gt; can be some word you would like<br  />&nbsp;&nbsp;to print out. With the --help, -help, -h,<br  />&nbsp;&nbsp;or -? options, you can get this help.<br  /><br  /><font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$argv</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">];<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+ </P
+><P  >&#13;  �����Ͻű��У������õ�һ������Ĵ�����ָ�����ļ�Ӧ���� PHP ��ִ�С�����������ʹ�� CLI �İ汾����˲����� HTTP ͷ��Ϣ����������� PHP ��д������Ӧ�ó���ʱ��������ʹ������������<TT  CLASS="varname" >$argc</TT
+> �� <TT  CLASS="varname" >$argv</TT
+>��ǰ��һ����ֵ�ǱȲ��������� 1 �����������еĽű�����������Ҳ������һ�����������ڶ���ʱ�����в��������飬���һ��Ԫ��Ϊ�ű������ƣ��±�Ϊ���� 0��<TT  CLASS="varname" >$argv[0]</TT
+>����
+ </P
+><P  >&#13;  �����ϳ��������Ǽ���˲����ĸ����Ǵ��� 1 ������С�� 1 ������ʱ������ <TT  CLASS="literal" >--help</TT
+>��<TT  CLASS="literal" >-help</TT
+>��<TT  CLASS="literal" >-h</TT
+> �� <TT  CLASS="literal" >-?</TT
+>��������Ȼ��ӡ��������Ϣ����ͬʱ��̬����ű������ơ�������յ�����������������Ҳ��������ʾ������
+ </P
+><P  >&#13;  �����ϣ���� Unix ���������Ͻű�������Ҫʹ������Ϊ��ִ�нű���Ȼ��򵥵����� <TT  CLASS="literal" >script.php echothis</TT
+> �� <TT  CLASS="literal" >script.php -h</TT
+>���� Windows �£�������Ϊ�˱�дһ���������ļ���
+ </P
+><P  >&#13;  <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN7534" ></A
+><P  ><B  >���� 23-2. ���� PHP �����нű����������ļ���script.bat��</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="winbat" >@c:\php\cli\php.exe script.php %1 %2 %3 %4</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+ </P
+><P  >&#13;  ��������������������Ϊ <TT  CLASS="filename" >script.php</TT
+>�������� CLI <TT  CLASS="filename" >php.exe</TT
+> �ļ������� <TT  CLASS="filename" >c:\php\cli\php.exe</TT
+>�����������ļ�������������ӵĲ��������ű����� <TT  CLASS="literal" >script.bat echothis</TT
+> ��
+  <TT  CLASS="literal" >script.bat -h</TT
+>��
+ </P
+><P  >&#13;  ����� <A  HREF="ref.readline.html"  >Readline</A
+> ��չģ����й��ĵ����Ի�ȡ����ĺ�������Ϣ����Щ�������԰������������� PHP ������Ӧ�ó���
+ </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="features.safe-mode.functions.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >����ȫģʽ���ƻ����εĺ���</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="features.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >�����ο�</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-     <tr>
-      <td>-B</td>
-      <td>--process-begin</td>
-      <td>
-       <p class="para">
-        在处理 stdin 之前先执行 PHP 代码。PHP 5 新加。
-       </p>
-      </td>
-     </tr>
 
-     <tr>
-      <td>-R</td>
-      <td>--process-code</td>
-      <td>
-       <p class="para">
-        对每个输入行都执行 PHP 代码。PHP 5 新加。
-       </p>
-       <p class="para">
-        此模式下有两个特殊变量：<var class="varname"><var class="varname">$argn</var></var>
-        和 <var class="varname"><var class="varname">$argi</var></var>。<var class="varname"><var class="varname">$argn</var></var>
-        包含 PHP 当前处理的行内容，而
-        <var class="varname"><var class="varname">$argi</var></var> 则包含该行号。
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-F</td>
-      <td>--process-file</td>
-      <td>
-       <p class="para">
-        对每个输入行都执行 PHP 文件。PHP 5 新加。
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-E</td>
-      <td>--process-end</td>
-      <td>
-       <p class="para">
-        在处理完输入后执行的 PHP 代码。PHP 5 新加。
-       </p>
-       <p class="para">
-        使用 <strong class="option unknown">-B</strong>
-，<strong class="option unknown">-R</strong>
- 和
-        <strong class="option unknown">-E</strong>
- 选项来计算一个项目总行数的例子。
-        <div class="example-contents screen">
-<div class="cdata"><pre>
-$ find my_proj | php -B &#039;$l=0;&#039; -R &#039;$l += count(@file($argn));&#039; -E &#039;echo &quot;Total Lines: $l\n&quot;;&#039;
-Total Lines: 37328
-</pre></div>
-        </div>
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-s</td>
-      <td>--syntax-highlight and --syntax-highlight</td>
-      <td>
-       <p class="para">
-        显示有语法高亮色彩的源代码。
-       </p>
-       <p class="para">
-        该参数使用内建机制来解析文件并为其生成一个 <em>HTML</em>
-        高亮版本并将结果写到标准输出。请注意该过程所做的只是生成了一个
-        <em>&lt;code&gt; [...] &lt;/code&gt;</em> 的
-        <em>HTML</em> 标记的块，并不包含任何的 <em>HTML</em> 头。
-       </p>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         该选项不能和 <strong class="option unknown">-r</strong>
- 参数同时使用。
-        </p>
-       </p></blockquote>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-v</td>
-      <td>--version</td>
-      <td>
-       <p class="para">
-        将 PHP，PHP SAPI 和 Zend 的版本信息写入标准输出。例如：
-        <div class="example-contents screen">
-<div class="cdata"><pre>
-$ php -v
-PHP 4.3.0 (cli), Copyright (c) 1997-2002 The PHP Group
-Zend Engine v1.3.0, Copyright (c) 1998-2002 Zend Technologies
-</pre></div>
-        </div>
-       </p>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-w</td>
-      <td>--strip</td>
-      <td>
-       <p class="para">
-        显示除去了注释和多余空白的源代码。
-       </p>
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         该选项不能和 <strong class="option unknown">-r</strong>
- 参数同时使用。
-        </p>
-       </p></blockquote>
-      </td>
-     </tr>
-
-     <tr>
-      <td>-z</td>
-      <td>--zend-extension</td>
-      <td>
-       <p class="para">
-        加载 Zend 扩展库。如果仅给定一个文件名，PHP
-        将试图从当前系统扩展库的默认路径（在 Linux
-        系统下，该路径通常由 <var class="filename">/etc/ld.so.conf</var>
-        指定）加载该扩展库。如果用一个绝对路径指定文件名，则不会使用系统的扩展库默认路径。如果用相对路径指定的文件名，则
-        PHP 仅试图在当前目录的相对目录加载扩展库。
-       </p>
-      </td>
-     </tr>
-
-    </tbody>
-   
-  </table>
-
- </p>
-
- <p class="para">
-  PHP 的命令行模式能使得 PHP 脚本能完全独立于 web 服务器单独运行。如果使用
-  Unix 系统，需要在 PHP
-  脚本的最前面加上一行特殊的代码，使得它能够被执行，这样系统就能知道用哪个程序去运行该脚本。在
-  Windows 平台下可以将 <var class="filename">php.exe</var> 和 <em>.php</em>
-  文件的双击属性相关联，也可以编写一个批处理文件来用 PHP
-  执行脚本。为 Unix 系统增加的第一行代码不会影响该脚本在
-  Windows 下的运行，因此也可以用该方法编写跨平台的脚本程序。以下是一个简单的
-  PHP 命令行程序的范例。
- </p>
-
- <p class="para">
-  <div class="example" id="example-376">
-   <p><strong>Example #1 试图以命令行方式运行的 PHP 脚本（script.php）</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-#!/usr/bin/php<br /><span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$argc&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">in_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$argv</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">],&nbsp;array(</span><span style="color: #DD0000">'--help'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-help'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-h'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-?'</span><span style="color: #007700">)))&nbsp;{<br /></span><span style="color: #0000BB">?&gt;<br /></span><br />This&nbsp;is&nbsp;a&nbsp;command&nbsp;line&nbsp;PHP&nbsp;script&nbsp;with&nbsp;one&nbsp;option.<br /><br />&nbsp;&nbsp;Usage:<br />&nbsp;&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$argv</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #0000BB">?&gt;</span>&nbsp;&lt;option&gt;<br /><br />&nbsp;&nbsp;&lt;option&gt;&nbsp;can&nbsp;be&nbsp;some&nbsp;word&nbsp;you&nbsp;would&nbsp;like<br />&nbsp;&nbsp;to&nbsp;print&nbsp;out.&nbsp;With&nbsp;the&nbsp;--help,&nbsp;-help,&nbsp;-h,<br />&nbsp;&nbsp;or&nbsp;-?&nbsp;options,&nbsp;you&nbsp;can&nbsp;get&nbsp;this&nbsp;help.<br /><br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$argv</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
-
- <p class="para">
-  在以上脚本中，用第一行特殊的代码来指明该文件应该由 PHP
-  来执行。在这里使用 CLI 的版本，因此不会有 HTTP 头信息输出。在用
-  PHP 编写命令行应用程序时，可以使用两个参数：<var class="varname"><var class="varname"><a href="reserved.variables.argc.html" class="classname">$argc</a></var></var>
-  和 <var class="varname"><var class="varname"><a href="reserved.variables.argv.html" class="classname">$argv</a></var></var>。前面一个的值是比参数个数大 1
-  的整数（运行的脚本本身的名称也被当作一个参数）。第二个是包含有参数的数组，其第一个元素为脚本的名称，下标为数字
-  0（<var class="varname"><var class="varname"><a href="reserved.variables.argv.html" class="classname">$argv[0]</a></var></var>）。
- </p>
-
- <p class="para">
-  以上程序中检查了参数的个数是大于 1 个还是小于 1
-  个。此外如果参数是 <strong class="option unknown">--help</strong>
-，<strong class="option unknown">-help</strong>
-，<strong class="option unknown">-h</strong>
-
-  或 <strong class="option unknown">-?</strong>
-
-  时，打印出帮助信息，并同时动态输出脚本的名称。如果还收到了其它参数，将其显示出来。
- </p>
-
- <p class="para">
-  如果希望在 Unix 下运行以上脚本，需要使其属性为可执行文件，然后简单的运行
-  <strong class="command">script.php echothis</strong> 或 <strong class="command">script.php -h</strong>。在
-  Windows 下，可以为此编写一个批处理文件：
- </p>
-
- <p class="para">
-  <div class="example" id="example-377">
-   <p><strong>Example #2 运行 PHP 命令行脚本的批处理文件（script.bat）</strong></p>
-   <div class="example-contents">
-<div class="shellcode"><pre class="shellcode">@C:\php\php.exe script.php %1 %2 %3 %</pre>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-   </div>
-
-  </div>
- </p>
-
- <p class="para">
-  假设将上述程序命名为 <var class="filename">script.php</var>，且
-  CLI 版的 <var class="filename">php.exe</var> 文件放置在
-  <var class="filename">c:\php\cli\php.exe</var>，该批处理文件会帮助将附加的参数传给脚本程序：<strong class="command">script.bat
-  echothis</strong> 或 <strong class="command">script.bat -h</strong>。
- </p>
-
- <p class="para">
-  请参阅 <a href="ref.readline.html" class="link">Readline</a>
-  扩展模块的有关文档，以获取更多的函数的信息。这些函数可以帮助完善 PHP 命令行应用程序。
- </p>
-
- 
- 
- 
-
-  
-
-</div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="features.safe-mode.functions.html">被安全模式限制或屏蔽的函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="features.commandline.webserver.html">内置Web Server</a></div>
- <div class="up"><a href="features.html">特点</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

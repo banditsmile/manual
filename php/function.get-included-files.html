@@ -1,137 +1,137 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回被 include 和 require 文件名的 array</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-include-path.html">get_include_path</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-loaded-extensions.html">get_loaded_extensions</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-included-files" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">get_included_files</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">get_included_files</span> &mdash; <span class="dc-title">返回被 include 和 require 文件名的 array</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.get-included-files-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>get_included_files</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   返回所有被
-   <span class="function"><a href="function.include.html" class="function">include</a></span>、 <span class="function"><a href="function.include-once.html" class="function">include_once</a></span>、
-   <span class="function"><a href="function.require.html" class="function">require</a></span> 和 <span class="function"><a href="function.require-once.html" class="function">require_once</a></span>
-   的文件名。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.get-included-files-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回所有文件名称的 array。
-  </p>
-  <p class="para">
-   脚本最初被称为”被包含的文件“，所以脚本自身也会和 <span class="function"><a href="function.include.html" class="function">include</a></span> 系列函数引用的脚本列在一起。
-  </p>
-  <p class="para">
-   被多次 include 和 require 的文件在返回的 array 里只会列出一次。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.get-included-files-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.0.1</td>
-       <td>
-        在 PHP 4.0.1 和之前的版本，本函数会假设所有被 required 的文件以 <em>.php</em> 结尾；
-        其他扩展名结尾的文件不会被返回。<span class="function"><strong>get_included_files()</strong></span> 返回的 array 仅仅列出被 <span class="function"><a href="function.include.html" class="function">include</a></span> 和
-        <span class="function"><a href="function.include-once.html" class="function">include_once</a></span> 所包含的文件。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.get-included-files-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-482">
-    <p><strong>Example #1 <span class="function"><strong>get_included_files()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;本文件是&nbsp;abc.php<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'test1.php'</span><span style="color: #007700">;<br />include_once&nbsp;</span><span style="color: #DD0000">'test2.php'</span><span style="color: #007700">;<br />require&nbsp;</span><span style="color: #DD0000">'test3.php'</span><span style="color: #007700">;<br />require_once&nbsp;</span><span style="color: #DD0000">'test4.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$included_files&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_included_files</span><span style="color: #007700">();<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$included_files&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$filename</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$filename</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-abc.php
+<HTML  ><HEAD  ><TITLE  >get_included_files</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="PHP Options&Information" HREF="ref.info.html"><LINK  REL="PREVIOUS" TITLE="get_include_path" HREF="function.get-include-path.html"><LINK  REL="NEXT" TITLE="get_loaded_extensions" HREF="function.get-loaded-extensions.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.get-include-path.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-loaded-extensions.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-included-files" ></A
+>get_included_files</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN87964" ></A
+><P  >    (PHP 4 )</P
+>get_included_files&nbsp;--&nbsp;
+     Returns an array with the names of included or required files
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN87967" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >get_included_files</B
+> ( void )<BR  ></BR
+><P  >&#13;     Returns an array of the names of all files that have been
+     included using <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>,
+     <A  HREF="function.include-once.html"  ><B  CLASS="function" >include_once()</B
+></A
+>, <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>
+     or <A  HREF="function.require-once.html"  ><B  CLASS="function" >require_once()</B
+></A
+>.
+    </P
+><P  >&#13;     The script originally called is considered an "included file," so
+     it will be listed together with the files referenced by
+     <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> and family.
+    </P
+><P  >&#13;     Files that are included or required multiple times only show up
+     once in the returned array.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Files included using the <TT  CLASS="literal" >auto_prepend_file</TT
+>
+      configuration directive are not included in the returned array.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN87985" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >get_included_files()</B
+> example (<TT  CLASS="filename" >abc.php</TT
+>)</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">include </font><font  color="#DD0000">'test1.php'</font><font  color="#007700">;<br  />include_once </font><font  color="#DD0000">'test2.php'</font><font  color="#007700">;<br  />require </font><font  color="#DD0000">'test3.php'</font><font  color="#007700">;<br  />require_once </font><font  color="#DD0000">'test4.php'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$included_files </font><font  color="#007700">= </font><font  color="#0000BB">get_included_files</font><font  color="#007700">();<br  /><br  />foreach (</font><font  color="#0000BB">$included_files </font><font  color="#007700">as </font><font  color="#0000BB">$filename</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$filename\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       will generate the following output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >abc.php
 test1.php
 test2.php
 test3.php
-test4.php
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+test4.php</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      In PHP 4.0.1pl2 and previous versions
+      <B  CLASS="function" >get_included_files()</B
+> assumed that the
+      required files ended in the extension <TT  CLASS="literal" >.php</TT
+>;
+      other extensions would not be returned.  The array returned by
+      <B  CLASS="function" >get_included_files()</B
+> was an associative array
+      and only listed files included by <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>
+      and <A  HREF="function.include-once.html"  ><B  CLASS="function" >include_once()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also
+     <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>,
+     <A  HREF="function.include-once.html"  ><B  CLASS="function" >include_once()</B
+></A
+>, 
+     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+>,
+     <A  HREF="function.require-once.html"  ><B  CLASS="function" >require_once()</B
+></A
+>, and
+     <A  HREF="function.get-required-files.html"  ><B  CLASS="function" >get_required_files()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.get-include-path.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-loaded-extensions.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >get_include_path</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.info.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_loaded_extensions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.get-included-files-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    使用 <em>auto_prepend_file</em> 配置指令所包含的文件不会包含在返回的数组里。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.get-included-files-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.include.html" class="function" rel="rdfs-seeAlso">include</a> - include</span></li>
-    <li class="member"><span class="function"><a href="function.include-once.html" class="function" rel="rdfs-seeAlso">include_once</a> - include_once</span></li>
-    <li class="member"><span class="function"><a href="function.require.html" class="function" rel="rdfs-seeAlso">require</a> - require</span></li>
-    <li class="member"><span class="function"><a href="function.require-once.html" class="function" rel="rdfs-seeAlso">require_once</a> - require_once</span></li>
-    <li class="member"><span class="function"><a href="function.get-required-files.html" class="function" rel="rdfs-seeAlso">get_required_files()</a> - 别名 get_included_files</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.get-include-path.html">get_include_path</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-loaded-extensions.html">get_loaded_extensions</a></div>
- <div class="up"><a href="ref.info.html">PHP 选项/信息 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,120 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Sort a result from a dbx_query by a custom sort function</title>
+<HTML  ><HEAD  ><TITLE  >dbx_sort</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="dbx Functions" HREF="ref.dbx.html"><LINK  REL="PREVIOUS" TITLE="dbx_query" HREF="function.dbx-query.html"><LINK  REL="NEXT" TITLE="DB++ Functions" HREF="ref.dbplus.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dbx-query.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.dbplus.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dbx-sort" ></A
+>dbx_sort</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN20092" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>dbx_sort&nbsp;--&nbsp;
+     Sort a result from a dbx_query by a custom sort function
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN20095" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >dbx_sort</B
+> ( object result, string user_compare_function)<BR  ></BR
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      It is always better to use <TT  CLASS="literal" >ORDER BY</TT
+>
+      <TT  CLASS="literal" >SQL</TT
+> clause instead of <B  CLASS="function" >dbx_sort()</B
+>,
+      if possible.
+     </P
+></BLOCKQUOTE
+></DIV
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN20114" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >dbx_sort()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">user_re_order</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">) <br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rv </font><font  color="#007700">= </font><font  color="#0000BB">dbx_compare</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">, </font><font  color="#DD0000">"parentid"</font><font  color="#007700">, </font><font  color="#0000BB">DBX_CMP_DESC</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">$rv</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rv </font><font  color="#007700">= </font><font  color="#0000BB">dbx_compare</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">, </font><font  color="#DD0000">"id"</font><font  color="#007700">, </font><font  color="#0000BB">DBX_CMP_NUMBER</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$rv</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$link&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">dbx_connect</font><font  color="#007700">(</font><font  color="#0000BB">DBX_ODBC</font><font  color="#007700">, </font><font  color="#DD0000">""</font><font  color="#007700">, </font><font  color="#DD0000">"db"</font><font  color="#007700">, </font><font  color="#DD0000">"username"</font><font  color="#007700">, </font><font  color="#DD0000">"password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">dbx_query</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">, </font><font  color="#DD0000">"SELECT id, parentid, description FROM tbl ORDER BY id"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// data in $result is now ordered by id<br  /><br  /></font><font  color="#0000BB">dbx_sort</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">, </font><font  color="#DD0000">"user_re_order"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// data in $result is now ordered by parentid (descending), then by id<br  /><br  /></font><font  color="#0000BB">dbx_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also <A  HREF="function.dbx-compare.html"  ><B  CLASS="function" >dbx_compare()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dbx-query.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.dbplus.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dbx_query</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dbx.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >DB++ Functions</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-query.html">dbx_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.uodbc.html">ODBC</a></div>
- <div class="up"><a href="ref.dbx.html">dbx å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dbx-sort" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dbx_sort</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5 &lt;= 5.0.5, PECL dbx &gt;= 1.1.0)</p><p class="refpurpose"><span class="refname">dbx_sort</span> &mdash; <span class="dc-title">
-   Sort a result from a dbx_query by a custom sort function
-  </span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.dbx-sort-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>dbx_sort</strong></span>
-    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$result</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$user_compare_function</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Sort a result from a <span class="function"><a href="function.dbx-query.html" class="function">dbx_query()</a></span> call with a custom sort
-   function.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.dbx-sort-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A result set returned by <span class="function"><a href="function.dbx-query.html" class="function">dbx_query()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">user_compare_function</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The user-defined comparison function. It must accept two arguments and
-       return an integer less than, equal to, or greater than zero if the 
-       first argument is considered to be respectively less than, equal to, 
-       or greater than the second.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.dbx-sort-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.dbx-sort-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-913">
-    <p><strong>Example #1 <span class="function"><strong>dbx_sort()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">user_re_order</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"parentid"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DBX_CMP_DESC</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$rv</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"id"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DBX_CMP_NUMBER</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$rv</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$link&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">DBX_ODBC</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"db"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dbx_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;id,&nbsp;parentid,&nbsp;description&nbsp;FROM&nbsp;tbl&nbsp;ORDER&nbsp;BY&nbsp;id"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;data&nbsp;in&nbsp;$result&nbsp;is&nbsp;now&nbsp;ordered&nbsp;by&nbsp;id<br /><br /></span><span style="color: #0000BB">dbx_sort</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"user_re_order"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;data&nbsp;in&nbsp;$result&nbsp;is&nbsp;now&nbsp;ordered&nbsp;by&nbsp;parentid&nbsp;(descending),&nbsp;then&nbsp;by&nbsp;id<br /><br /></span><span style="color: #0000BB">dbx_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.dbx-sort-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    It is always better to use <em>ORDER BY</em> 
-    <em>SQL</em> clause instead of <span class="function"><strong>dbx_sort()</strong></span>
-    if possible.
-   </p>
-  </p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.dbx-sort-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dbx-compare.html" class="function" rel="rdfs-seeAlso">dbx_compare()</a> - Compare two rows for sorting purposes</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dbx-query.html">dbx_query</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.uodbc.html">ODBC</a></div>
- <div class="up"><a href="ref.dbx.html">dbx å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

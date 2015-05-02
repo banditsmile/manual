@@ -1,185 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回规范化的绝对路径名</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.realpath-cache-size.html">realpath_cache_size</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.rename.html">rename</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.realpath" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">realpath</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">realpath</span> &mdash; <span class="dc-title">返回规范化的绝对路径名</span></p>
-
- </div>
- 
-  <div class="refsect1 description" id="refsect1-function.realpath-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>realpath</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>realpath()</strong></span> 扩展所有的符号连接并且处理输入的
-   <code class="parameter">path</code> 中的 &#039;/./&#039;, &#039;/../&#039; 以及多余的 &#039;/&#039;
-   并返回规范化后的绝对路径名。返回的路径中没有符号连接，&#039;/./&#039;
-   或 &#039;/../&#039; 成分。
-  </p>
- </div>
-
- 
-  <div class="refsect1 parameters" id="refsect1-function.realpath-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要检查的路径。
-       <blockquote class="note"><p><strong class="note">Note</strong>: 
-        <p class="para">
-         Whilst a path must be supplied, the value can be blank or <strong><code>NULL</code></strong>
-         In these cases, the value is interpreted as the current directory.
-        </p>
-       </p></blockquote>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
-  <div class="refsect1 returnvalues" id="refsect1-function.realpath-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns the canonicalized absolute pathname on success. The resulting path 
-   will have no symbolic link, &#039;/./&#039; or &#039;/../&#039; components.
-  </p>
-  <p class="para">
-   <span class="function"><strong>realpath()</strong></span> 失败时返回 <strong><code>FALSE</code></strong>，比如说文件不存在的话。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    The running script must have executable permissions on all directories in
-    the hierarchy, otherwise <span class="function"><strong>realpath()</strong></span> will return
-    <strong><code>FALSE</code></strong>.
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">
-因为 PHP 的整数类型是有符号整型而且很多平台使用 32 位整型，对 2GB
-以上的文件，一些文件系统函数可能返回无法预期的结果 。</span></p></blockquote>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.realpath-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        在之前的版本中，在 *BSD
-   系统上，如果仅仅是 <code class="parameter">path</code> 不存在的话，<span class="function"><strong>realpath()</strong></span>
-   并不会像其它系统那样返回 <strong><code>FALSE</code></strong>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        在此之前的版本中，如果 <code class="parameter">path</code> 传入了空或者 
- <strong><code>NULL</code></strong>，将导致 <span class="function"><strong>realpath()</strong></span> 返回脚本当前的目录。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >realpath</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ļ�ϵͳ������" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="readlink" HREF="function.readlink.html"><LINK  REL="NEXT" TITLE="rename" HREF="function.rename.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.readlink.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.rename.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.realpath" ></A
+>realpath</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29554" ></A
+><P  >    (PHP 4 )</P
+>realpath&nbsp;--&nbsp;���ع淶���ľ���·����</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29557" ></A
+><H2  >˵��</H2
+>string <B  CLASS="methodname" >realpath</B
+> ( string path)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >realpath()</B
+> ��չ���еķ������Ӳ��Ҵ��������
+     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> �е� '/./', '/../' �Լ������ '/'
+     �����ع淶����ľ���·���������ص�·����û�з������ӣ�'/./'
+     �� '/../' �ɷ֡�
+    </P
+><P  >&#13;     <B  CLASS="function" >realpath()</B
+> ʧ��ʱ���� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>����������ļ������ڵĻ���
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN29572" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >realpath()</B
+> ����</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$real_path </font><font  color="#007700">= </font><font  color="#0000BB">realpath </font><font  color="#007700">(</font><font  color="#DD0000">"../../index.php"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     �μ� <A  HREF="function.basename.html"  ><B  CLASS="function" >basename()</B
+></A
+>��<A  HREF="function.dirname.html"  ><B  CLASS="function" >dirname()</B
+></A
+> ��
+     <A  HREF="function.pathinfo.html"  ><B  CLASS="function" >pathinfo()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.readlink.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.rename.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >readlink</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >rename</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.realpath-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2523">
-    <p><strong>Example #1 <span class="function"><strong>realpath()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />chdir</span><span style="color: #007700">(</span><span style="color: #DD0000">'/var/www/'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'./../../etc/passwd'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-/etc/passwd
-</pre></div>
-    </div>
-   </div>
-   <div class="example" id="example-2524">
-    <p><strong>Example #2 Windows 上的 <span class="function"><strong>realpath()</strong></span></strong></p>
-    <div class="example-contents"><p>
-     在 Windows 上，<span class="function"><strong>realpath()</strong></span> 会将 unix 风格的路径改成 Windows 风格的。
-    </p></div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'/windows/system32'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-C:\WINDOWS\System32
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- 
-  <div class="refsect1 seealso" id="refsect1-function.realpath-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.basename.html" class="function" rel="rdfs-seeAlso">basename()</a> - 返回路径中的文件名部分</span></li>
-    <li class="member"><span class="function"><a href="function.dirname.html" class="function" rel="rdfs-seeAlso">dirname()</a> - 返回路径中的目录部分</span></li>
-    <li class="member"><span class="function"><a href="function.pathinfo.html" class="function" rel="rdfs-seeAlso">pathinfo()</a> - 返回文件路径的信息</span></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.realpath-cache-size.html">realpath_cache_size</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.rename.html">rename</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

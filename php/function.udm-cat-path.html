@@ -1,131 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get the path to the current category</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.udm-cat-list.html">udm_cat_list</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.udm-check-charset.html">udm_check_charset</a></div>
- <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.udm-cat-path" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">udm_cat_path</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5 &lt;= 5.0.5, PECL mnogosearch &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">udm_cat_path</span> &mdash; <span class="dc-title">Get the path to the current category</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.udm-cat-path-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>udm_cat_path</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$agent</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$category</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Returns an array describing the path in the categories tree from the tree
-   root to the current one, specified by <code class="parameter">category</code>.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.udm-cat-path-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">agent</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A link to Agent, received after call to
-       <span class="function"><a href="function.udm-alloc-agent.html" class="function">udm_alloc_agent()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">category</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.udm-cat-path-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   The returned array consists of pairs. Elements with even index numbers
-   contain the category paths, odd elements contain the corresponding category
-   names.
-  </p>
-  <p class="para">
-   For example, the call <em>$array=udm_cat_path($agent, &#039;02031D&#039;);</em>
-   may return the following array:
-  <div class="example-contents screen">
-<div class="cdata"><pre>
- $array[0] will contain &#039;&#039;
- $array[1] will contain &#039;Root&#039;
- $array[2] will contain &#039;02&#039;
- $array[3] will contain &#039;Sport&#039;
- $array[4] will contain &#039;0203&#039;
- $array[5] will contain &#039;Auto&#039;
- $array[4] will contain &#039;02031D&#039;
- $array[5] will contain &#039;Ferrari&#039;
-</pre></div>
-  </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >udm_cat_path</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="mnoGoSearch Functions" HREF="ref.mnogo.html"><LINK  REL="PREVIOUS" TITLE="udm_cat_list" HREF="function.udm-cat-list.html"><LINK  REL="NEXT" TITLE="udm_check_charset" HREF="function.udm-check-charset.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.udm-cat-list.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.udm-check-charset.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.udm-cat-path" ></A
+>udm_cat_path</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN63454" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>udm_cat_path&nbsp;--&nbsp;Get the path to the current category.</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN63457" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >udm_cat_path</B
+> ( resource agent, string category)<BR  ></BR
+><P  >&#13;    Returns an array describing the path in the categories tree from the tree
+    root to the current one, specified by <TT  CLASS="parameter" ><I  >category</I
+></TT
+>.
+    <TT  CLASS="parameter" ><I  >agent</I
+></TT
+> is the agent identifier returned by a previous
+    call to <B  CLASS="function" >&#62;udm_alloc_agent()</B
+>.
+   </P
+><P  >&#13;    The returned array consists of pairs. Elements with even index numbers
+    contain the category paths, odd elements contain the corresponding category
+    names.
+   </P
+><P  >&#13;    For example, the call <TT  CLASS="literal" >$array=udm_cat_path($agent, '02031D');</TT
+> 
+    may return the following array:
+   <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >$array[0] will contain ''
+ $array[1] will contain 'Root'
+ $array[2] will contain '02'
+ $array[3] will contain 'Sport'
+ $array[4] will contain '0203'
+ $array[5] will contain 'Auto'
+ $array[4] will contain '02031D'
+ $array[5] will contain 'Ferrari'</PRE
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN63477" ></A
+><P  ><B  >Àı×Ó 1. 
+      Specifying path to the current category in the following format: 
+      '&#62; Root &#62; Sport &#62; Auto &#62; Ferrari'
+     </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;$cat_path_arr </font><font  color="#007700">= </font><font  color="#0000BB">udm_cat_path</font><font  color="#007700">(</font><font  color="#0000BB">$udm_agent</font><font  color="#007700">, </font><font  color="#0000BB">$cat</font><font  color="#007700">);<br  />&nbsp;&nbsp;</font><font  color="#0000BB">$cat_path </font><font  color="#007700">= </font><font  color="#DD0000">''</font><font  color="#007700">;<br  />&nbsp;&nbsp;for (</font><font  color="#0000BB">$i</font><font  color="#007700">=</font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#0000BB">$i</font><font  color="#007700">&lt;</font><font  color="#0000BB">count</font><font  color="#007700">(</font><font  color="#0000BB">$cat_path_arr</font><font  color="#007700">); </font><font  color="#0000BB">$i</font><font  color="#007700">+=</font><font  color="#0000BB">2</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$path </font><font  color="#007700">= </font><font  color="#0000BB">$cat_path_arr</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$name </font><font  color="#007700">= </font><font  color="#0000BB">$cat_path_arr</font><font  color="#007700">[</font><font  color="#0000BB">$i</font><font  color="#007700">+</font><font  color="#0000BB">1</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$cat_path </font><font  color="#007700">.= </font><font  color="#DD0000">" &gt; &lt;a href=\"$_SERVER[PHP_SELF]?cat=$path\"&gt;$name&lt;/a&gt; "</font><font  color="#007700">;<br  />&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    See also <A  HREF="function.udm-cat-list.html"  ><B  CLASS="function" >udm_cat_list()</B
+></A
+>.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.udm-cat-list.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.udm-check-charset.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >udm_cat_list</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mnogo.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >udm_check_charset</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.udm-cat-path-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-4987">
-    <p><strong>Example #1 
-     Specifying path to the current category in the following format:
-     &#039;&gt; Root &gt; Sport &gt; Auto &gt; Ferrari&#039;
-    </strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;$cat_path_arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">udm_cat_path</span><span style="color: #007700">(</span><span style="color: #0000BB">$udm_agent</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$cat</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$cat_path&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$cat_path_arr</span><span style="color: #007700">);&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">+=</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$path&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$cat_path_arr</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$cat_path_arr</span><span style="color: #007700">[</span><span style="color: #0000BB">$i</span><span style="color: #007700">+</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cat_path&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"&nbsp;&gt;&nbsp;&lt;a&nbsp;href=\"</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #0000BB">PHP_SELF</span><span style="color: #007700">]</span><span style="color: #DD0000">?cat=</span><span style="color: #0000BB">$path</span><span style="color: #DD0000">\"&gt;</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">&lt;/a&gt;&nbsp;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.udm-cat-path-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.udm-cat-list.html" class="function" rel="rdfs-seeAlso">udm_cat_list()</a> - Get all the categories on the same level with the current one</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.udm-cat-list.html">udm_cat_list</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.udm-check-charset.html">udm_check_charset</a></div>
- <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

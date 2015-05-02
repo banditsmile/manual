@@ -1,296 +1,174 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>产生一条回溯跟踪(backtrace)</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.errorfunc.html">错误处理 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></div>
- <div class="up"><a href="ref.errorfunc.html">错误处理 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.debug-backtrace" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">debug_backtrace</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">debug_backtrace</span> &mdash; <span class="dc-title">产生一条回溯跟踪(backtrace)</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.debug-backtrace-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>debug_backtrace</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = DEBUG_BACKTRACE_PROVIDE_OBJECT</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$limit</code><span class="initializer"> = 0</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>debug_backtrace()</strong></span> 产生一条 PHP 的回溯跟踪(backtrace)。
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.debug-backtrace-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       截至 5.3.6，这个参数是以下选项的位掩码：
-       <table class="doctable table">
-        <caption><strong><span class="function"><strong>debug_backtrace()</strong></span> 选项</strong></caption>
-        
-         <tbody class="tbody">
-          <tr>
-           <td>DEBUG_BACKTRACE_PROVIDE_OBJECT</td>
-           <td>
-            是否填充 &quot;object&quot; 的索引。
-           </td>
-          </tr>
-
-          <tr>
-           <td>DEBUG_BACKTRACE_IGNORE_ARGS</td>
-           <td>
-            是否忽略 &quot;args&quot; 的索引，包括所有的 function/method 的参数，能够节省内存开销。
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-       在 5.3.6 之前，仅仅能使用的值是 <strong><code>TRUE</code></strong> 或者 <strong><code>FALSE</code></strong>，分别等于是否设置 <strong><code>DEBUG_BACKTRACE_PROVIDE_OBJECT</code></strong> 选项。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">limit</code></dt>
-
-     <dd>
-
-      <p class="para">
-       截至 5.4.0，这个参数能够用于限制返回堆栈帧的数量。
-       默认为 (<code class="parameter">limit</code>=<em>0</em>) ，返回所有的堆栈帧。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.debug-backtrace-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回一个包含众多关联数组的 <span class="type"><a href="language.types.array.html" class="type array">array</a></span>。
-   以为为有可能返回的元素：
-  </p>
-  <p class="para">
-   <table class="doctable table">
-    <caption><strong>有可能从 <span class="function"><strong>debug_backtrace()</strong></span> 返回的元素</strong></caption>
-    
-     <thead>
-      <tr>
-       <th>名字</th>
-       <th>类型</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>function</td>
-       <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
-       <td>
-        当前的函数名，参见：
-        <a href="language.constants.predefined.html" class="link">__FUNCTION__</a>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>line</td>
-       <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
-       <td>
-        当前的行号。参见：
-        <a href="language.constants.predefined.html" class="link">__LINE__</a>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>file</td>
-       <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
-       <td>
-        当前的文件名。参见：
-        <a href="language.constants.predefined.html" class="link">__FILE__</a>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>class</td>
-       <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
-       <td>
-        当前 <a href="language.oop5.html" class="link">class</a> 的名称。参见
-        <a href="language.constants.predefined.html" class="link">__CLASS__</a>
-       </td>
-      </tr>
-
-      <tr>
-       <td>object</td>
-       <td><span class="type"><a href="language.types.object.html" class="type object">object</a></span></td>
-       <td>
-        当前的 <a href="language.oop5.html" class="link">object</a>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>type</td>
-       <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
-       <td>
-        当前调用的类型。如果是一个方法，会返回 &quot;-&gt;&quot;。如果是一个静态方法，会返回 &quot;::&quot;。
-        如果是一个函数调用，则返回空。
-       </td>
-      </tr>
-
-      <tr>
-       <td>args</td>
-       <td><span class="type"><a href="language.types.array.html" class="type array">array</a></span></td>
-       <td>
-        如果在一个函数里，这会列出函数的参数。
-        如果是在一个被包含的文件里，会列出包含的文件名。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.debug-backtrace-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.4.0</td>
-       <td>
-        添加了可选的参数 <code class="parameter">limit</code>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.6</td>
-       <td>
-        参数 <code class="parameter">provide_object</code> 改成 <code class="parameter">options</code>，并且增加了可选参数
-        <strong><code>DEBUG_BACKTRACE_IGNORE_ARGS</code></strong>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.2.5</td>
-       <td>
-        添加了可选参数 <code class="parameter">provide_object</code>。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.1</td>
-       <td>
-        添加了当前的 <span class="type"><a href="language.types.object.html" class="type object">object</a></span> 为可能返回的元素。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.debug-backtrace-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-443">
-    <p><strong>Example #1 <span class="function"><strong>debug_backtrace()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;filename:&nbsp;/tmp/a.php<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">a_test</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\nHi:&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">debug_backtrace</span><span style="color: #007700">());<br />}<br /><br /></span><span style="color: #0000BB">a_test</span><span style="color: #007700">(</span><span style="color: #DD0000">'friend'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;filename:&nbsp;/tmp/b.php<br /></span><span style="color: #007700">include_once&nbsp;</span><span style="color: #DD0000">'/tmp/a.php'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     执行 <var class="filename">/tmp/b.php</var> 返回的结果类似于以下：
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Hi: friend
+<HTML  ><HEAD  ><TITLE  >debug_backtrace</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Error Handling and Logging Functions" HREF="ref.errorfunc.html"><LINK  REL="PREVIOUS" TITLE="Error Handling and Logging Functions" HREF="ref.errorfunc.html"><LINK  REL="NEXT" TITLE="debug_print_backtrace" HREF="function.debug-print-backtrace.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.errorfunc.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.debug-print-backtrace.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.debug-backtrace" ></A
+>debug_backtrace</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN24841" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>debug_backtrace&nbsp;--&nbsp;
+     Generates a backtrace
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN24844" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >debug_backtrace</B
+> ( void )<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >debug_backtrace()</B
+> generates a PHP backtrace
+     and returns this information as an associative <A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+>.  The 
+     possible returned elements are listed in the following table:
+    </P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN24854" ></A
+><P  ><B  >���� 1. Possible returned elements from <B  CLASS="function" >debug_backtrace()</B
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Name</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Type</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Description</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >function</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The current function name.  See also 
+          <A  HREF="language.constants.predefined.html"  >__FUNCTION__</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >line</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The current line number.  See also 
+          <A  HREF="language.constants.predefined.html"  >__LINE__</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >file</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The current file name.  See also 
+          <A  HREF="language.constants.predefined.html"  >__FILE__</A
+>.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >class</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The current <A  HREF="language.oop.html"  >class</A
+> name.  See also 
+          <A  HREF="language.constants.predefined.html"  >__CLASS__</A
+>
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >type</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The current call type. If a method call, "-&#62;" is returned. If a static
+          method call, "::" is returned. If a function call, nothing is returned.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >args</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          If inside a function, this lists the functions arguments.  If
+          inside an included file, this lists the included file name(s).
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     The following is a simple example.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN24901" ></A
+><P  ><B  >���� 1. 
+       <B  CLASS="function" >debug_backtrace()</B
+> example
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+// filename: a.php<br  /><font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">a_test</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">) <br  />{<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"\nHi: $str"</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">debug_backtrace</font><font  color="#007700">());<br  />}<br  /><br  /></font><font  color="#0000BB">a_test</font><font  color="#007700">(</font><font  color="#DD0000">'friend'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;<br  /></font><br  />// filename: b.php<br  /><font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">include_once </font><font  color="#DD0000">'/tmp/a.php'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Results when executing <TT  CLASS="filename" >/tmp/b.php</TT
+>:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Hi: friend
 array(2) {
-[0]=&gt;
-array(4) {
-    [&quot;file&quot;] =&gt; string(10) &quot;/tmp/a.php&quot;
-    [&quot;line&quot;] =&gt; int(10)
-    [&quot;function&quot;] =&gt; string(6) &quot;a_test&quot;
-    [&quot;args&quot;]=&gt;
+  [0]=&#62;
+  array(4) {
+    ["file"] =&#62; string(10) "/tmp/a.php"
+    ["line"] =&#62; int(10)
+    ["function"] =&#62; string(6) "a_test"
+    ["args"]=&#62;
     array(1) {
-      [0] =&gt; &amp;string(6) &quot;friend&quot;
+      [0] =&#62; &#38;string(6) "friend"
     }
-}
-[1]=&gt;
-array(4) {
-    [&quot;file&quot;] =&gt; string(10) &quot;/tmp/b.php&quot;
-    [&quot;line&quot;] =&gt; int(2)
-    [&quot;args&quot;] =&gt;
-    array(1) {
-      [0] =&gt; string(10) &quot;/tmp/a.php&quot;
-    }
-    [&quot;function&quot;] =&gt; string(12) &quot;include_once&quot;
   }
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+  [1]=&#62;
+  array(4) {
+    ["file"] =&#62; string(10) "/tmp/b.php"
+    ["line"] =&#62; int(2)
+    ["args"] =&#62; 
+    array(1) {
+      [0] =&#62; string(10) "/tmp/a.php"
+    }
+    ["function"] =&#62; string(12) "include_once"
+  }
+}</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.trigger-error.html"  ><B  CLASS="function" >trigger_error()</B
+></A
+> and
+     <A  HREF="function.debug-print-backtrace.html"  ><B  CLASS="function" >debug_print_backtrace()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.errorfunc.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.debug-print-backtrace.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Error Handling and Logging Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.errorfunc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >debug_print_backtrace</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- 
- <div class="refsect1 seealso" id="refsect1-function.debug-backtrace-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.trigger-error.html" class="function" rel="rdfs-seeAlso">trigger_error()</a> - 产生一个用户级别的 error/warning/notice 信息</span></li>
-    <li class="member"><span class="function"><a href="function.debug-print-backtrace.html" class="function" rel="rdfs-seeAlso">debug_print_backtrace()</a> - 打印一条回溯。</span></li>
-   </ul>
-  </p>
- </div>
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.errorfunc.html">错误处理 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.debug-print-backtrace.html">debug_print_backtrace</a></div>
- <div class="up"><a href="ref.errorfunc.html">错误处理 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,80 +1,102 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å‘é€å¼‚æ­¥æŸ¥è¯¢</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-send-query-params.html">pg_send_query_params</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-set-client-encoding.html">pg_set_client_encoding</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-send-query" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_send_query</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_send_query</span> &mdash; <span class="dc-title">
-     å‘é€å¼‚æ­¥æŸ¥è¯¢
-    </span></p>
-
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.pg-send-query-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">bool</span> <span class="methodname"><strong>pg_send_query</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-      , <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-      )</div>
-
-     <div class="methodsynopsis dc-description">
-      <span class="type">bool</span> <span class="methodname"><strong>pg_send_query</strong></span>
-       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_send_query()</strong></span> å‘ <code class="parameter">connection</code>
-     è¿æ¥å‘é€å¼‚æ­¥æŸ¥è¯¢ã€‚å’Œ <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span> ä¸åŒï¼Œå®ƒå¯ä»¥å‘ PostgreSQL
-     å‘é€å¤šä¸ªæŸ¥è¯¢å¹¶ç”¨ <span class="function"><a href="function.pg-get-result.html" class="function">pg_get_result()</a></span>
-     ä¾æ¬¡å¾—åˆ°ç»“æœã€‚å½“æ‰§è¡ŒæŸ¥è¯¢æ—¶è„šæœ¬çš„æ‰§è¡Œä¸ä¼šè¢«é”å®šã€‚ç”¨
-     <span class="function"><a href="function.pg-connection-busy.html" class="function">pg_connection_busy()</a></span> æ¥æ£€æŸ¥è¿æ¥è¿æ¥æ˜¯å¦ä¸ºå¿™ï¼ˆå³æŸ¥è¯¢æ­£åœ¨æ‰§è¡Œä¸­ï¼‰ã€‚è°ƒç”¨
-     <span class="function"><a href="function.pg-cancel-query.html" class="function">pg_cancel_query()</a></span> åˆ™æœ‰å¯èƒ½å–æ¶ˆæŸ¥è¯¢ã€‚
-    </p>
-    <p class="para">
-     å°½ç®¡ç”¨æˆ·å¯ä»¥ä¸€æ¬¡å‘é€å¤šä¸ªæŸ¥è¯¢ï¼Œä½†ç”¨æˆ·ä¸èƒ½é€šè¿‡æ­£å¿™çš„è¿æ¥å‘é€å¤šä¸ªæŸ¥è¯¢ã€‚å¦‚æœå‘æ­£å¿™çš„è¿æ¥å‘é€äº†æŸ¥è¯¢ï¼Œåˆ™ä¼šç­‰å¾…ä¸Šä¸€æ¡æŸ¥è¯¢ç»“æŸå¹¶ä¸¢å¼ƒæ‰€æœ‰ç»“æœã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-2219">
-      <p><strong>Example #1 å¼‚æ­¥æŸ¥è¯¢</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">pg_connection_busy</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pg_send_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">,</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;authors;&nbsp;select&nbsp;count(*)&nbsp;from&nbsp;authors;"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_get_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"First&nbsp;call&nbsp;to&nbsp;pg_get_result():&nbsp;</span><span style="color: #0000BB">$res1</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rows1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_num_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$res1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$res1</span><span style="color: #DD0000">&nbsp;has&nbsp;</span><span style="color: #0000BB">$rows1</span><span style="color: #DD0000">&nbsp;records\n\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_get_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"second&nbsp;call&nbsp;to&nbsp;pg_get_result():&nbsp;</span><span style="color: #0000BB">$res2</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rows2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_num_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$res2</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$res2</span><span style="color: #DD0000">&nbsp;has&nbsp;</span><span style="color: #0000BB">$rows2</span><span style="color: #DD0000">&nbsp;records\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>
-       ä¸Šä¾‹è¾“å‡ºå¦‚ä¸‹ï¼š
-      </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-first call to pg_get_result(): Resource id #3
+<HTML  ><HEAD  ><TITLE  >pg_send_query</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_select" HREF="function.pg-select.html"><LINK  REL="NEXT" TITLE="pg_set_client_encoding" HREF="function.pg-set-client-encoding.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-select.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-set-client-encoding.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-send-query" ></A
+>pg_send_query</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN92588" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>pg_send_query&nbsp;--&nbsp;
+     ·¢ËÍÒì²½²éÑ¯
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN92591" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >pg_send_query</B
+> ( resource connection, string query)<BR  ></BR
+>bool <B  CLASS="methodname" >pg_send_query</B
+> ( string query)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_send_query()</B
+> Ïò <TT  CLASS="parameter" ><I  >connection</I
+></TT
+>
+     Á¬½Ó·¢ËÍÒì²½²éÑ¯¡£ºÍ <A  HREF="function.pg-query.html"  ><B  CLASS="function" >pg_query()</B
+></A
+> ²»Í¬£¬Ëü¿ÉÒÔÏò PostgreSQL
+     ·¢ËÍ¶à¸ö²éÑ¯²¢ÓÃ <A  HREF="function.pg-get-result.html"  ><B  CLASS="function" >pg_get_result()</B
+></A
+>
+     ÒÀ´ÎµÃµ½½á¹û¡£µ±Ö´ĞĞ²éÑ¯Ê±½Å±¾µÄÖ´ĞĞ²»»á±»Ëø¶¨¡£ÓÃ
+     <A  HREF="function.pg-connection-busy.html"  ><B  CLASS="function" >pg_connection_busy()</B
+></A
+> À´¼ì²éÁ¬½ÓÁ¬½ÓÊÇ·ñÎªÃ¦£¨¼´²éÑ¯ÕıÔÚÖ´ĞĞÖĞ£©¡£µ÷ÓÃ
+     <A  HREF="function.pg-cancel-query.html"  ><B  CLASS="function" >pg_cancel_query()</B
+></A
+> ÔòÓĞ¿ÉÄÜÈ¡Ïû²éÑ¯¡£
+    </P
+><P  >&#13;     ¾¡¹ÜÓÃ»§¿ÉÒÔÒ»´Î·¢ËÍ¶à¸ö²éÑ¯£¬µ«ÓÃ»§²»ÄÜÍ¨¹ıÕıÃ¦µÄÁ¬½Ó·¢ËÍ¶à¸ö²éÑ¯¡£Èç¹ûÏòÕıÃ¦µÄÁ¬½Ó·¢ËÍÁË²éÑ¯£¬Ôò»áµÈ´ıÉÏÒ»Ìõ²éÑ¯½áÊø²¢¶ªÆúËùÓĞ½á¹û¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN92617" ></A
+><P  ><B  >Àı×Ó 1. Òì²½²éÑ¯</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn </font><font  color="#007700">= </font><font  color="#0000BB">pg_connect</font><font  color="#007700">(</font><font  color="#DD0000">"dbname=publisher"</font><font  color="#007700">) or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">pg_connection_busy</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">pg_send_query</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">,</font><font  color="#DD0000">"select * from authors; select count(*) from authors;"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$res1 </font><font  color="#007700">= </font><font  color="#0000BB">pg_get_result</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"First call to pg_get_result(): $res1\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rows1 </font><font  color="#007700">= </font><font  color="#0000BB">pg_num_rows</font><font  color="#007700">(</font><font  color="#0000BB">$res1</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$res1 has $rows1 records\n\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$res2 </font><font  color="#007700">= </font><font  color="#0000BB">pg_get_result</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"second call to pg_get_result(): $res2\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rows2 </font><font  color="#007700">= </font><font  color="#0000BB">pg_num_rows</font><font  color="#007700">(</font><font  color="#0000BB">$res2</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$res2 has $rows2 records\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÉÏÀıÊä³öÈçÏÂ£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >first call to pg_get_result(): Resource id #3
 Resource id #3 has 3 records
 
 second call to pg_get_result(): Resource id #4
-Resource id #4 has 1 records
-</pre></div>
-      </div>
-     </div>
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>ï¼Œ<span class="function"><a href="function.pg-cancel-query.html" class="function">pg_cancel_query()</a></span>ï¼Œ<span class="function"><a href="function.pg-get-result.html" class="function">pg_get_result()</a></span>
-     å’Œ <span class="function"><a href="function.pg-connection-busy.html" class="function">pg_connection_busy()</a></span>ã€‚
-    </p>
-   </div>
+Resource id #4 has 1 records</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.pg-query.html"  ><B  CLASS="function" >pg_query()</B
+></A
+>£¬<A  HREF="function.pg-cancel-query.html"  ><B  CLASS="function" >pg_cancel_query()</B
+></A
+>£¬<A  HREF="function.pg-get-result.html"  ><B  CLASS="function" >pg_get_result()</B
+></A
+>
+     ºÍ <A  HREF="function.pg-connection-busy.html"  ><B  CLASS="function" >pg_connection_busy()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-select.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-set-client-encoding.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_select</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_set_client_encoding</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-send-query-params.html">pg_send_query_params</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-set-client-encoding.html">pg_set_client_encoding</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

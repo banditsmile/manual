@@ -1,122 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>shell 元字符转义</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.escapeshellarg.html">escapeshellarg</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.exec.html">exec</a></div>
- <div class="up"><a href="ref.exec.html">程序执行 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.escapeshellcmd" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">escapeshellcmd</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">escapeshellcmd</span> &mdash; <span class="dc-title">shell 元字符转义</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.escapeshellcmd-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>escapeshellcmd</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$command</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>escapeshellcmd()</strong></span> 对字符串中可能会欺骗 
-   shell 命令执行任意命令的字符进行转义。
-   此函数保证用户输入的数据在传送到 
-   <span class="function"><a href="function.exec.html" class="function">exec()</a></span> 或
-   <span class="function"><a href="function.system.html" class="function">system()</a></span> 函数，或者 <a href="language.operators.execution.html" class="link">执行操作符</a> 之前进行转义。
-  </p>
-  <p class="para">
-    反斜线（\）会在以下字符之前插入：
-   <em>#&amp;;`|*?~&lt;&gt;^()[]{}$\</em>, <em>\x0A</em>
-   和 <em>\xFF</em>。 <em>&#039;</em> 和 <em>&quot;</em>
-   仅在不配对儿的时候被转义。
-   在 Windows 平台上，所有这些字符以及 % 都会被空格代替。（译注：实际测试发现在 Windows 平台是前缀 ^ 来转义的。）
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.escapeshellcmd-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">command</code></dt>
-
-     <dd>
-
-      <p class="para">
-        要转义的命令。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.escapeshellcmd-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   转义后的字符串。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.escapeshellcmd-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-3950">
-    <p><strong>Example #1 <span class="function"><strong>escapeshellcmd()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;我们故意允许任意数量的参数<br /></span><span style="color: #0000BB">$command&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'./configure&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'configure_options'</span><span style="color: #007700">];<br /><br /></span><span style="color: #0000BB">$escaped_command&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">escapeshellcmd</span><span style="color: #007700">(</span><span style="color: #0000BB">$command</span><span style="color: #007700">);<br />&nbsp;<br /></span><span style="color: #0000BB">system</span><span style="color: #007700">(</span><span style="color: #0000BB">$escaped_command</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >escapeshellcmd</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Program Execution Functions" HREF="ref.exec.html"><LINK  REL="PREVIOUS" TITLE="escapeshellarg" HREF="function.escapeshellarg.html"><LINK  REL="NEXT" TITLE="exec" HREF="function.exec.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.escapeshellarg.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.exec.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.escapeshellcmd" ></A
+>escapeshellcmd</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93567" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>escapeshellcmd&nbsp;--&nbsp;escape shell metacharacters</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93570" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >escapeshellcmd</B
+> ( string command)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >escapeshellcmd()</B
+> escapes any characters in a
+     string that might be used to trick a shell command into executing
+     arbitrary commands.  This function should be used to make sure
+     that any data coming from user input is escaped before this data
+     is passed to the <A  HREF="function.exec.html"  ><B  CLASS="function" >exec()</B
+></A
+> or
+     <A  HREF="function.system.html"  ><B  CLASS="function" >system()</B
+></A
+> functions, or to the <A  HREF="language.operators.execution.html"  >backtick
+     operator</A
+>. A standard use would be:</P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN93584" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$e </font><font  color="#007700">= </font><font  color="#0000BB">escapeshellcmd</font><font  color="#007700">(</font><font  color="#0000BB">$userinput</font><font  color="#007700">);<br  /> <br  /></font><font  color="#FF8000">// here we don't care if $e has spaces<br  /></font><font  color="#0000BB">system</font><font  color="#007700">(</font><font  color="#DD0000">"echo $e"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$f </font><font  color="#007700">= </font><font  color="#0000BB">escapeshellcmd</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">);<br  /> <br  /></font><font  color="#FF8000">// and here we do, so we use quotes<br  /></font><font  color="#0000BB">system</font><font  color="#007700">(</font><font  color="#DD0000">"touch \"/tmp/$f\"; ls -l \"/tmp/$f\""</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.escapeshellarg.html"  ><B  CLASS="function" >escapeshellarg()</B
+></A
+>, <A  HREF="function.exec.html"  ><B  CLASS="function" >exec()</B
+></A
+>, 
+     <A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+>, <A  HREF="function.system.html"  ><B  CLASS="function" >system()</B
+></A
+>, and the <A  HREF="language.operators.execution.html"  >backtick operator</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.escapeshellarg.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.exec.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >escapeshellarg</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.exec.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >exec</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.escapeshellcmd-notes">
-   <div class="warning"><strong class="warning">Warning</strong>
-    <p class="para">
-     <span class="function"><strong>escapeshellcmd()</strong></span> 应被用在完整的命令字符串上。
-     即使如此，攻击者还是可以传入任意数量的参数。
-     请使用 <span class="function"><a href="function.escapeshellarg.html" class="function">escapeshellarg()</a></span> 函数
-     对单个参数进行转义。
-    </p>
-   </div>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.escapeshellcmd-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.escapeshellarg.html" class="function" rel="rdfs-seeAlso">escapeshellarg()</a> - 把字符串转码为可以在 shell 命令里使用的参数</span></li>
-    <li class="member"><span class="function"><a href="function.exec.html" class="function" rel="rdfs-seeAlso">exec()</a> - 执行一个外部程序</span></li>
-    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - 打开进程文件指针</span></li>
-    <li class="member"><span class="function"><a href="function.system.html" class="function" rel="rdfs-seeAlso">system()</a> - 执行外部程序，并且显示输出</span></li>
-    <li class="member"><a href="language.operators.execution.html" class="link">执行运算符</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.escapeshellarg.html">escapeshellarg</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.exec.html">exec</a></div>
- <div class="up"><a href="ref.exec.html">程序执行 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

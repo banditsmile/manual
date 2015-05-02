@@ -1,256 +1,247 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Open database</title>
+<HTML  ><HEAD  ><TITLE  >dba_open</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Database (dbm-style) Abstraction Layer Functions" HREF="ref.dba.html"><LINK  REL="PREVIOUS" TITLE="dba_nextkey" HREF="function.dba-nextkey.html"><LINK  REL="NEXT" TITLE="dba_optimize" HREF="function.dba-optimize.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.dba-nextkey.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.dba-optimize.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.dba-open" ></A
+>dba_open</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN17832" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>dba_open&nbsp;--&nbsp;Open database</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN17835" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >dba_open</B
+> ( string path, string mode, string handler [, ...])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >dba_open()</B
+> establishes a database instance for
+     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> with <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> using
+     <TT  CLASS="parameter" ><I  >handler</I
+></TT
+>.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> is commonly a regular path in your filesystem.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> is "r" for read access, "w" for read/write
+     access to an already existing database, "c" for read/write access
+     and database creation if it doesn't currently exist, and "n" for
+     create, truncate and read/write access. Additional you can set the database
+     lock method with the next char. Use "l" to lock the database with an .lck 
+     file or "d" to lock the databasefile itself. It is important that all of 
+     your applications do this consistently. If you want to test the access and 
+     do not want to wait for the lock you can add "t" as third character. When 
+     you are absolutely sure that you do not require database locking you can do 
+     so by using "-" instead of "l" or "d". When none of "d", "l" or "-" is used
+     dba will lock on the database file as it would with "d".
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >handler</I
+></TT
+> is the <A  HREF="ref.dba.html#dba.requirements"  >name
+     of the handler</A
+> which shall be
+     used for accessing <TT  CLASS="parameter" ><I  >path</I
+></TT
+>. It is passed all optional
+     parameters given to <B  CLASS="function" >dba_open()</B
+> and can act on behalf of
+     them.
+    </P
+><P  >&#13;     <B  CLASS="function" >dba_open()</B
+> returns a positive handle or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>, in
+     the case the database was opened successfull or fails, respectively.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      There can only be one writer for one database file. When you use dba on 
+      a webserver and more than one request requires write operations they can
+      only be done one after another. Also read during write is not allowed.
+      The dba extension uses locks to prevent this. See the following table:
+      <DIV  CLASS="table" ><A  NAME="AEN17870" ></A
+><P  ><B  >±Ì∏Ò 1. DBA locking</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >already open</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "rl"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "rlt"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "wl"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "wlt"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "rd"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "rdt"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "wd"</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "wdt"</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >not open</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "rl"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >wait</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >false</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "wl"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >wait</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >false</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >wait</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >false</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "rd"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ok</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >wait</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >false</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="parameter" ><I  >mode</I
+></TT
+> = "wd"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >illegal</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >wait</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >false</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >wait</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >false</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+      <P  ></P
+><TABLE  BORDER="0" ><TBODY  ><TR  ><TD  >ok: the second call will be successfull.</TD
+></TR
+><TR  ><TD  >wait: the second call waits until <A  HREF="function.dba-close.html"  ><B  CLASS="function" >dba_close()</B
+></A
+> is called for the first.</TD
+></TR
+><TR  ><TD  >false: the second call returns false.</TD
+></TR
+><TR  ><TD  >illegal: you must not mix "l" and "d" modifiers for <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> parameter.</TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      Since PHP 4.3.0 it is possible to open database files over network connection.
+      However in cases a socket connection will be used (as with http or ftp) the
+      connection will be locked instead of the resource itself. This is important to
+      know since in such cases locking is simply ignored on the resource and other
+      solutions have to be found.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      Locking and the <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> modifiers "l", "d", "-" and "t" were
+      added in PHP 4.3.0.
+      In PHP versions before PHP 4.3.0 you must use semaphores to guard against
+      simultaneous database access for any database handler with the exception of
+      GDBM. See <A  HREF="ref.sem.html"  >System V semaphore support</A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      Up to PHP 4.3.5 open mode 'c' is broken for several internal handlers and 
+      truncates the database instead of appending data to an existant database. 
+      Also dbm and ndbm fail on mode 'c' in typical configurations (this cannot 
+      be fixed).
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also:
+     <A  HREF="function.dba-popen.html"  ><B  CLASS="function" >dba_popen()</B
+></A
+>
+     <A  HREF="function.dba-close.html"  ><B  CLASS="function" >dba_close()</B
+></A
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.dba-nextkey.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.dba-optimize.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >dba_nextkey</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.dba.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >dba_optimize</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dba-nextkey.html">dba_nextkey</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dba-optimize.html">dba_optimize</a></div>
- <div class="up"><a href="ref.dba.html">DBA ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.dba-open" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">dba_open</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">dba_open</span> &mdash; <span class="dc-title">Open database</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.dba-open-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>dba_open</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$handler</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>dba_open()</strong></span> establishes a database instance for
-   <code class="parameter">path</code> with <code class="parameter">mode</code> using
-   <code class="parameter">handler</code>.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.dba-open-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Commonly a regular path in your filesystem.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       It is <em>r</em> for read access, <em>w</em> for
-       read/write access to an already existing database, <em>c</em>
-       for read/write access and database creation if it doesn&#039;t currently exist,
-       and <em>n</em> for create, truncate and read/write access.
-       The database is created in BTree mode, other modes (like Hash or Queue)
-       are not supported.
-      </p>
-      <p class="para">
-       Additionally you can set the database lock method with the next char. 
-       Use <em>l</em> to lock the database with a <var class="filename">.lck</var>
-       file or <em>d</em> to lock the databasefile itself. It is 
-       important that all of your applications do this consistently.
-      </p>
-      <p class="para">
-       If you want to test the access and do not want to wait for the lock 
-       you can add <em>t</em> as third character. When you are 
-       absolutely sure that you do not require database locking you can do 
-       so by using <em>-</em> instead of <em>l</em> or
-       <em>d</em>. When none of <em>d</em>, 
-       <em>l</em> or <em>-</em> is used, dba will lock
-       on the database file as it would with <em>d</em>.
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: 
-       <p class="para">
-        There can only be one writer for one database file. When you use dba on 
-        a web server and more than one request requires write operations they can
-        only be done one after another. Also read during write is not allowed.
-        The dba extension uses locks to prevent this. See the following table:
-        <table class="doctable table">
-         <caption><strong>DBA locking</strong></caption>
-         
-          <thead>
-           <tr>
-            <th>already open</th>
-            <th><code class="parameter">mode</code> = &quot;rl&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;rlt&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;wl&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;wlt&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;rd&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;rdt&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;wd&quot;</th>
-            <th><code class="parameter">mode</code> = &quot;wdt&quot;</th>
-           </tr>
-
-          </thead>
-
-          <tbody class="tbody">
-           <tr>
-            <td>not open</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>ok</td>
-           </tr>
-
-           <tr>
-            <td><code class="parameter">mode</code> = &quot;rl&quot;</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>wait</td>
-            <td>false</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-           </tr>
-
-           <tr>
-            <td><code class="parameter">mode</code> = &quot;wl&quot;</td>
-            <td>wait</td>
-            <td>false</td>
-            <td>wait</td>
-            <td>false</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-           </tr>
-
-           <tr>
-            <td><code class="parameter">mode</code> = &quot;rd&quot;</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>ok</td>
-            <td>ok</td>
-            <td>wait</td>
-            <td>false</td>
-           </tr>
-
-           <tr>
-            <td><code class="parameter">mode</code> = &quot;wd&quot;</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>illegal</td>
-            <td>wait</td>
-            <td>false</td>
-            <td>wait</td>
-            <td>false</td>
-           </tr>
-
-          </tbody>
-         
-        </table>
-
-        <ul class="simplelist">
-         <li class="member">ok: the second call will be successfull.</li>
-         <li class="member">wait: the second call waits until <span class="function"><a href="function.dba-close.html" class="function">dba_close()</a></span> is called for the first.</li>
-         <li class="member">false: the second call returns false.</li>
-         <li class="member">illegal: you must not mix <em>&quot;l&quot;</em> and <em>&quot;d&quot;</em> modifiers for <code class="parameter">mode</code> parameter.</li>
-        </ul>
-       </p>
-      </p></blockquote>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">handler</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The name of the <a href="dba.requirements.html" class="link">handler</a> which
-       shall be used for accessing <code class="parameter">path</code>. It is passed 
-       all optional parameters given to <span class="function"><strong>dba_open()</strong></span> and 
-       can act on behalf of them.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.dba-open-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns a positive handle on success ÊàñËÄÖÂú®Â§±Ë¥•Êó∂ËøîÂõû <strong><code>FALSE</code></strong>.
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.dba-open-changelog">
-  <h3 class="title">Êõ¥Êñ∞Êó•Âøó</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ÁâàÊú¨</th>
-       <th>ËØ¥Êòé</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        It&#039;s possible to open database files over network connection. However
-        in cases a socket connection will be used (as with http or ftp) the
-        connection will be locked instead of the resource itself. This is important 
-        to know since in such cases locking is simply ignored on the resource 
-        and other solutions have to be found.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.dba-open-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dba-popen.html" class="function" rel="rdfs-seeAlso">dba_popen()</a> - Open database persistently</span></li>
-    <li class="member"><span class="function"><a href="function.dba-close.html" class="function" rel="rdfs-seeAlso">dba_close()</a> - Close a DBA database</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.dba-nextkey.html">dba_nextkey</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.dba-optimize.html">dba_optimize</a></div>
- <div class="up"><a href="ref.dba.html">DBA ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

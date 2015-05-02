@@ -1,122 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get len bytes data from open blob</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-blob-echo.html">ibase_blob_echo</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-blob-import.html">ibase_blob_import</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-blob-get" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_blob_get</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_blob_get</span> &mdash; <span class="dc-title">Get len bytes data from open blob</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-blob-get-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>ibase_blob_get</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$blob_handle</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$len</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   This function returns at most <code class="parameter">len</code> bytes from a BLOB
-   that has been opened for reading by <span class="function"><a href="function.ibase-blob-open.html" class="function">ibase_blob_open()</a></span>.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    It is not possible to read from a BLOB that has been opened for writing
-    by <span class="function"><a href="function.ibase-blob-create.html" class="function">ibase_blob_create()</a></span>.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-blob-get-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">blob_handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A BLOB handle opened with <span class="function"><a href="function.ibase-blob-open.html" class="function">ibase_blob_open()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">len</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Size of returned data.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-blob-get-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns at most <code class="parameter">len</code> bytes from the BLOB, or <strong><code>FALSE</code></strong>
-   on failure.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_blob_get</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_blob_echo" HREF="function.ibase-blob-echo.html"><LINK  REL="NEXT" TITLE="ibase_blob_import" HREF="function.ibase-blob-import.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-blob-echo.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-blob-import.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-blob-get" ></A
+>ibase_blob_get</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45026" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>ibase_blob_get&nbsp;--&nbsp;
+     Get len bytes data from open blob
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45029" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >ibase_blob_get</B
+> ( resource blob_handle, int len)<BR  ></BR
+><P  >&#13;     This function returns at most <TT  CLASS="parameter" ><I  >len</I
+></TT
+> bytes from a BLOB 
+     that has been opened for reading by <A  HREF="function.ibase-blob-open.html"  ><B  CLASS="function" >ibase_blob_open()</B
+></A
+>.
+     Returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.
+     <DIV  CLASS="informalexample" ><A  NAME="AEN45044" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$sql&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#DD0000">"SELECT blob_value FROM table"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$result&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">ibase_query</font><font  color="#007700">(</font><font  color="#0000BB">$sql</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">ibase_fetch_object</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$blob_data </font><font  color="#007700">= </font><font  color="#0000BB">ibase_blob_info</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">-&gt;</font><font  color="#0000BB">BLOB_VALUE</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$blob_hndl </font><font  color="#007700">= </font><font  color="#0000BB">ibase_blob_open</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">-&gt;</font><font  color="#0000BB">BLOB_VALUE</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">ibase_blob_get</font><font  color="#007700">(</font><font  color="#0000BB">$blob_hndl</font><font  color="#007700">, </font><font  color="#0000BB">$blob_data</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+      Whilst this example doesn't do much more than a 'ibase_blob_echo($data-&#62;BLOB_VALUE)' would do, 
+      it does show you how to get information into a $variable to manipulate as you please. 
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      It is not possible to read from a BLOB that has been opened for writing 
+      by <A  HREF="function.ibase-blob-create.html"  ><B  CLASS="function" >ibase_blob_create()</B
+></A
+>.
+      </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also
+     <A  HREF="function.ibase-blob-open.html"  ><B  CLASS="function" >ibase_blob_open()</B
+></A
+>,
+     <A  HREF="function.ibase-blob-close.html"  ><B  CLASS="function" >ibase_blob_close()</B
+></A
+> and
+     <A  HREF="function.ibase-blob-echo.html"  ><B  CLASS="function" >ibase_blob_echo()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-blob-echo.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-blob-import.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_blob_echo</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_blob_import</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.ibase-blob-get-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1128">
-    <p><strong>Example #1 <span class="function"><strong>ibase_blob_get()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$result&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;blob_value&nbsp;FROM&nbsp;table"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_fetch_object</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$blob_data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_blob_info</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">BLOB_VALUE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$blob_hndl&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ibase_blob_open</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">BLOB_VALUE</span><span style="color: #007700">);<br />echo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ibase_blob_get</span><span style="color: #007700">(</span><span style="color: #0000BB">$blob_hndl</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$blob_data</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   Whilst this example doesn&#039;t do much more than a
-   &#039;ibase_blob_echo($data-&gt;BLOB_VALUE)&#039; would do, it does show you how to get
-   information into a $variable to manipulate as you please. 
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ibase-blob-get-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-blob-open.html" class="function" rel="rdfs-seeAlso">ibase_blob_open()</a> - Open blob for retrieving data parts</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-close.html" class="function" rel="rdfs-seeAlso">ibase_blob_close()</a> - Close blob</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-echo.html" class="function" rel="rdfs-seeAlso">ibase_blob_echo()</a> - Output blob contents to browser</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-blob-echo.html">ibase_blob_echo</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-blob-import.html">ibase_blob_import</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

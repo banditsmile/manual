@@ -1,87 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>建立一个临时文件</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.tempnam.html">tempnam</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.touch.html">touch</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.tmpfile" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">tmpfile</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">tmpfile</span> &mdash; <span class="dc-title">建立一个临时文件</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.tmpfile-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>tmpfile</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   以读写（w+）模式建立一个具有唯一文件名的临时文件，返回一个文件句柄。</p>
-  <p class="para">
-   文件会在关闭后（用
-   <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>）自动被删除，或当脚本结束后。
-  </p>
-  <p class="para">
-   详细信息请参考系统手册中的
-   <em>tmpfile(3)</em> 函数，以及
-   <var class="filename">stdio.h</var> 头文件。
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.tmpfile-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回一个与 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> 所打开返回类似的新文件句柄， 或者在失败时返回 <strong><code>FALSE</code></strong>.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.tmpfile-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2532">
-    <p><strong>Example #1 <span class="function"><strong>tmpfile()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$temp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tmpfile</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"writing&nbsp;to&nbsp;tempfile"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fseek</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1024</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;this&nbsp;removes&nbsp;the&nbsp;file<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-writing to tempfile
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.tmpfile-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.tempnam.html" class="function" rel="rdfs-seeAlso">tempnam()</a> - 建立一个具有唯一文件名的文件</span></li>
-    <li class="member"><span class="function"><a href="function.sys-get-temp-dir.html" class="function" rel="rdfs-seeAlso">sys_get_temp_dir()</a> - 返回用于临时文件的目录</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >tmpfile</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ļ�ϵͳ������" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="tempnam" HREF="function.tempnam.html"><LINK  REL="NEXT" TITLE="touch" HREF="function.touch.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.tempnam.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.touch.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.tmpfile" ></A
+>tmpfile</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29823" ></A
+><P  >    (PHP 3&#62;= 3.0.13, PHP 4 )</P
+>tmpfile&nbsp;--&nbsp;����һ����ʱ�ļ�</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29826" ></A
+><H2  >˵��</H2
+>resource <B  CLASS="methodname" >tmpfile</B
+> ( void )<BR  ></BR
+><P  >&#13;     ��дģʽ����һ������Ψһ�ļ�������ʱ�ļ�������һ����
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> ���������Ƶ��ļ�������ļ����ڹرպ���
+     <A  HREF="function.fclose.html"  ><B  CLASS="function" >fclose()</B
+></A
+>���Զ���ɾ�����򵱽ű�������
+    </P
+><P  >&#13;     ��ϸ��Ϣ��ο�ϵͳ�ֲ��е�
+     <TT  CLASS="literal" >tmpfile(3)</TT
+> �������Լ�
+     <TT  CLASS="filename" >stdio.h</TT
+> ͷ�ļ���
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN29839" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >tmpfile()</B
+> ����</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$temp </font><font  color="#007700">= </font><font  color="#0000BB">tmpfile</font><font  color="#007700">();<br  /></font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$temp</font><font  color="#007700">, </font><font  color="#DD0000">"writing to tempfile"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$temp</font><font  color="#007700">); </font><font  color="#FF8000">// this removes the file<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     �μ� <A  HREF="function.tempnam.html"  ><B  CLASS="function" >tempnam()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.tempnam.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.touch.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >tempnam</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >touch</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.tempnam.html">tempnam</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.touch.html">touch</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

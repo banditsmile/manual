@@ -1,122 +1,110 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Allocate mnoGoSearch session</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.udm-api-version.html">udm_api_version</a></div>
- <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.udm-alloc-agent" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">udm_alloc_agent</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5 &lt;= 5.0.5, PECL mnogosearch &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">udm_alloc_agent</span> &mdash; <span class="dc-title">Allocate mnoGoSearch session</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.udm-alloc-agent-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>udm_alloc_agent</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$dbaddr</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$dbmode</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Allocate a mnoGoSearch session.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.udm-alloc-agent-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">dbaddr</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">dbaddr</code> - URL-style database description, with
-       options (type, host, database name, port, user and password) to connect
-       to SQL database. Do not matter for built-in text files support. Format for
-       <code class="parameter">dbaddr</code>:
-       <em>DBType:[//[DBUser[:DBPass]@]DBHost[:DBPort]]/DBName/</em>.
-       Currently supported DBType values are: mysql, pgsql, msql, solid, mssql, oracle,
-       and ibase. Actually, it does not matter for native libraries support, but
-       ODBC users should specify one of the supported values. If your database
-       type is not supported, you may use <em>unknown</em> instead.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">dbmode</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">dbmode</code> - You may select the SQL database mode of
-       words storage. Possible values of <code class="parameter">dbmode</code> are:
-       <em>single</em>, <em>multi</em>, <em>crc</em>,
-       or <em>crc-multi</em>. When <em>single</em> is
-       specified, all words are stored in the same table. If <em>multi
-       </em> is selected, words will be located in different tables depending
-       of their lengths. &quot;multi&quot; mode is usually faster, but requires more tables
-       in the database. If &quot;crc&quot; mode is selected, mnoGoSearch will store 32 bit
-       integer word IDs calculated by CRC32 algorithm instead of words. This mode
-       requires less disk space and it is faster comparing with &quot;single&quot; and
-       &quot;multi&quot; modes. <em>crc-multi</em> uses the same storage structure
-       with the &quot;crc&quot; mode, but also stores words in different tables depending on
-       words lengths like in &quot;multi&quot; mode.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <code class="parameter">dbaddr</code> and <code class="parameter">dbmode</code> must match
-    those used during indexing.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.udm-alloc-agent-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns a mnogosearch agent identifier on success, <strong><code>FALSE</code></strong> on failure. This
-   function creates a session with database parameters.
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.udm-alloc-agent-notes">
-  <h3 class="title">Ê≥®Èáä</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    In fact this function does not open a connection to the database and
-    thus does not check the entered login and password. Establishing a
-    connection to the database and login/password verification is done by
-    <span class="function"><a href="function.udm-find.html" class="function">udm_find()</a></span>.
-   </p>
-  </p></blockquote>
- </div>
+<HTML  ><HEAD  ><TITLE  >udm_alloc_agent</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="mnoGoSearch Functions" HREF="ref.mnogo.html"><LINK  REL="PREVIOUS" TITLE="udm_alloc_agent_array" HREF="function.udm-alloc-agent-array.html"><LINK  REL="NEXT" TITLE="udm_api_version" HREF="function.udm-api-version.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.udm-alloc-agent-array.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.udm-api-version.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.udm-alloc-agent" ></A
+>udm_alloc_agent</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN63366" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>udm_alloc_agent&nbsp;--&nbsp;Allocate mnoGoSearch session</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN63369" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >udm_alloc_agent</B
+> ( string dbaddr [, string dbmode])<BR  ></BR
+><P  >&#13;    Returns a mnogosearch agent identifier on success, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure. This
+    function creates a session with database parameters.
+   </P
+><P  >&#13;    <TT  CLASS="parameter" ><I  >dbaddr</I
+></TT
+> - URL-style database description, with
+    options (type, host, database name, port, user and password) to connect 
+    to SQL database. Do not matter for built-in text files support. Format for
+    <TT  CLASS="parameter" ><I  >dbaddr</I
+></TT
+>:
+    <TT  CLASS="literal" >DBType:[//[DBUser[:DBPass]@]DBHost[:DBPort]]/DBName/</TT
+>.
+    Currently supported DBType values are: mysql, pgsql, msql, solid, mssql, oracle, 
+    and ibase. Actually, it does not matter for native libraries support, but
+    ODBC users should specify one of the supported values. If your database 
+    type is not supported, you may use <TT  CLASS="literal" >unknown</TT
+> instead.
+  </P
+><P  >&#13;    <TT  CLASS="parameter" ><I  >dbmode</I
+></TT
+> - You may select the SQL database mode of
+    words storage. Possible values of <TT  CLASS="parameter" ><I  >dbmode</I
+></TT
+> are:
+    <TT  CLASS="literal" >single</TT
+>, <TT  CLASS="literal" >multi</TT
+>, <TT  CLASS="literal" >crc</TT
+>,
+    or <TT  CLASS="literal" >crc-multi</TT
+>. When <TT  CLASS="literal" >single</TT
+> is
+    specified, all words are stored in the same table. If <TT  CLASS="literal" >multi
+    </TT
+> is selected, words will be located in different tables depending
+    of their lengths. "multi" mode is usually faster, but requires more tables
+    in the database. If "crc" mode is selected, mnoGoSearch will store 32 bit
+    integer word IDs calculated by CRC32 algorithm instead of words. This mode
+    requires less disk space and it is faster comparing with "single" and
+    "multi" modes. <TT  CLASS="literal" >crc-multi</TT
+> uses the same storage structure
+    with the "crc" mode, but also stores words in different tables depending on
+    words lengths like in "multi" mode.
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+     <TT  CLASS="parameter" ><I  >dbaddr</I
+></TT
+> and <TT  CLASS="parameter" ><I  >dbmode</I
+></TT
+> must match 
+     those used during indexing.
+    </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+     In fact this function does not open a connection to the database and
+     thus does not check the entered login and password. Establishing a
+     connection to the database and login/password verification is done by
+     <A  HREF="function.udm-find.html"  ><B  CLASS="function" >udm_find()</B
+></A
+>.
+    </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.udm-alloc-agent-array.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.udm-api-version.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >udm_alloc_agent_array</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mnogo.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >udm_api_version</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.udm-alloc-agent-array.html">udm_alloc_agent_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.udm-api-version.html">udm_api_version</a></div>
- <div class="up"><a href="ref.mnogosearch.html">mnoGoSearch ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

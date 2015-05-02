@@ -1,122 +1,95 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Begin a transaction</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-set-event-handler.html">ibase_set_event_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-wait-event.html">ibase_wait_event</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-trans" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_trans</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_trans</span> &mdash; <span class="dc-title">Begin a transaction</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-trans-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ibase_trans</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$trans_args</code></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ]] )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ibase_trans</strong></span>
-    ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$trans_args</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   Begins a transaction.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    The first call to <span class="function"><strong>ibase_trans()</strong></span> will not return the default transaction
-    of a connection. All transactions started by <span class="function"><strong>ibase_trans()</strong></span>
-    will be rolled back at the end of the script if they were not committed or
-    rolled back by either <span class="function"><a href="function.ibase-commit.html" class="function">ibase_commit()</a></span> or
-    <span class="function"><a href="function.ibase-rollback.html" class="function">ibase_rollback()</a></span>.
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    This function will accept multiple <code class="parameter">trans_args</code>
-    and <code class="parameter">link_identifier</code> arguments. This allows transactions
-    over multiple database connections, which are committed using a 2-phase commit
-    algorithm. This means you can rely on the updates to either succeed in every
-    database, or fail in every database. It does NOT mean you can use tables from
-    different databases in the same query!
-   </p>
-   <p class="para">
-    If you use transactions over multiple databases, you will have to specify both
-    the <code class="parameter">link_id</code> and <code class="parameter">transaction_id</code>
-    in calls to <span class="function"><a href="function.ibase-query.html" class="function">ibase_query()</a></span> and <span class="function"><a href="function.ibase-prepare.html" class="function">ibase_prepare()</a></span>.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-trans-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">trans_args</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">trans_args</code> can be a combination of
-       <strong><code>IBASE_READ</code></strong>,
-       <strong><code>IBASE_WRITE</code></strong>,
-       <strong><code>IBASE_COMMITTED</code></strong>, 
-       <strong><code>IBASE_CONSISTENCY</code></strong>,
-       <strong><code>IBASE_CONCURRENCY</code></strong>, 
-       <strong><code>IBASE_REC_VERSION</code></strong>, 
-       <strong><code>IBASE_REC_NO_VERSION</code></strong>,
-       <strong><code>IBASE_WAIT</code></strong> and 
-       <strong><code>IBASE_NOWAIT</code></strong>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An InterBase link identifier. If omitted, the last opened link is
-       assumed.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_trans</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_timefmt" HREF="function.ibase-timefmt.html"><LINK  REL="NEXT" TITLE="ibase_wait_event" HREF="function.ibase-wait-event.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-timefmt.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-wait-event.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-trans" ></A
+>ibase_trans</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN45806" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>ibase_trans&nbsp;--&nbsp;Begin a transaction</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN45809" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >ibase_trans</B
+> ( [int trans_args [, resource link_identifier]])<BR  ></BR
+><P  >&#13;     Begins a transaction.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >trans_args</I
+></TT
+> can be a combination of
+     IBASE_READ, IBASE_WRITE, IBASE_COMMITTED, IBASE_CONSISTENCY,
+     IBASE_CONCURRENCY, IBASE_REC_VERSION, IBASE_REC_NO_VERSION,
+     IBASE_WAIT and IBASE_NOWAIT.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      The behaviour of this function has been changed in PHP 5.0.0. The first call
+      to <B  CLASS="function" >ibase_trans()</B
+> will not return the default transaction
+      of a connection. All transactions started by <B  CLASS="function" >ibase_trans()</B
+>
+      will be rolled back at the end of the script if they were not committed or
+      rolled back by either <A  HREF="function.ibase-commit.html"  ><B  CLASS="function" >ibase_commit()</B
+></A
+> or 
+      <A  HREF="function.ibase-rollback.html"  ><B  CLASS="function" >ibase_rollback()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+>
+      In PHP 5.0.0. and up, this function will accept multiple <TT  CLASS="parameter" ><I  >trans_args</I
+></TT
+>
+      and <TT  CLASS="parameter" ><I  >link_identifier</I
+></TT
+> arguments. This allows transactions 
+      over multiple database connections, which are committed using a 2-phase commit 
+      algorithm. This means you can rely on the updates to either succeed in every 
+      database, or fail in every database. It does NOT mean you can use tables from 
+      different databases in the same query!
+     </P
+><P  >&#13;      If you use transactions over multiple databases, you will have to specify both 
+      the <TT  CLASS="parameter" ><I  >link_id</I
+></TT
+> and <TT  CLASS="parameter" ><I  >transaction_id</I
+></TT
+> 
+      in calls to <A  HREF="function.ibase-query.html"  ><B  CLASS="function" >ibase_query()</B
+></A
+> and <A  HREF="function.ibase-prepare.html"  ><B  CLASS="function" >ibase_prepare()</B
+></A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-timefmt.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-wait-event.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_timefmt</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_wait_event</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-trans-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns a transaction handle, or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-set-event-handler.html">ibase_set_event_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-wait-event.html">ibase_wait_event</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

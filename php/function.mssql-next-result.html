@@ -1,93 +1,69 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Move the internal result pointer to the next result</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-min-message-severity.html">mssql_min_message_severity</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-num-fields.html">mssql_num_fields</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-next-result" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_next_result</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_next_result</span> &mdash; <span class="dc-title">Move the internal result pointer to the next result</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mssql-next-result-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>mssql_next_result</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result_id</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   When sending more than one SQL statement to the server or
-   executing a stored procedure with multiple results, it will cause
-   the server to return multiple result sets. This function will
-   test for additional results available form the server. If an
-   additional result set exists it will free the existing result set
-   and prepare to fetch the rows from the new result set.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-next-result-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result_id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The result resource that is being evaluated. This result comes from a
-       call to <span class="function"><a href="function.mssql-query.html" class="function">mssql_query()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mssql-next-result-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns <strong><code>TRUE</code></strong> if an additional result set was available or <strong><code>FALSE</code></strong>
-   otherwise.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_next_result</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_min_message_severity" HREF="function.mssql-min-message-severity.html"><LINK  REL="NEXT" TITLE="mssql_num_fields" HREF="function.mssql-num-fields.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-min-message-severity.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-num-fields.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-next-result" ></A
+>mssql_next_result</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN58969" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>mssql_next_result&nbsp;--&nbsp;Move the internal result pointer to the next result</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN58972" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >mssql_next_result</B
+> ( resource result_id)<BR  ></BR
+><P  >&#13;     When sending more than one SQL statement to the server or
+     executing a stored procedure with multiple results, it will cause
+     the server to return multiple result sets. This function will
+     test for additional results available form the server. If an
+     additional result set exists it will free the existing result set
+     and prepare to fetch the rows from the new result set. The
+     function will return <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if an additional result set was
+     available or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> otherwise.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN58983" ></A
+><P  ><B  >¿˝◊” 1. <B  CLASS="function" >mssql_next_result()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">mssql_connect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"userid"</font><font  color="#007700">, </font><font  color="#DD0000">"secret"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mssql_select_db</font><font  color="#007700">(</font><font  color="#DD0000">"MyDB"</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$SQL </font><font  color="#007700">= </font><font  color="#DD0000">"Select * from table1 select * from table2"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rs </font><font  color="#007700">= </font><font  color="#0000BB">mssql_query</font><font  color="#007700">(</font><font  color="#0000BB">$SQL</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;do {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (</font><font  color="#0000BB">$row </font><font  color="#007700">= </font><font  color="#0000BB">mssql_fetch_row</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;} while (</font><font  color="#0000BB">mssql_next_result</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mssql_free_result</font><font  color="#007700">(</font><font  color="#0000BB">$rs</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mssql_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-min-message-severity.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-num-fields.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_min_message_severity</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_num_fields</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.mssql-next-result-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1666">
-    <p><strong>Example #1 <span class="function"><strong>mssql_next_result()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Connect&nbsp;to&nbsp;MSSQL&nbsp;and&nbsp;select&nbsp;the&nbsp;database<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'MANGO\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Send&nbsp;a&nbsp;query&nbsp;to&nbsp;MSSQL<br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;[name],&nbsp;[age]&nbsp;FROM&nbsp;[php].[dbo].[persons]'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Iterate&nbsp;through&nbsp;returned&nbsp;records<br /></span><span style="color: #007700">do&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_fetch_row</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Handle&nbsp;record&nbsp;...<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}&nbsp;while&nbsp;(</span><span style="color: #0000BB">mssql_next_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Clean&nbsp;up<br /></span><span style="color: #0000BB">mssql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-min-message-severity.html">mssql_min_message_severity</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-num-fields.html">mssql_num_fields</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

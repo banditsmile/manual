@@ -1,239 +1,156 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è½»ä¾¿çš„å’¨è¯¢æ–‡ä»¶é”å®š</title>
+<HTML  ><HEAD  ><TITLE  >flock</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="filetype" HREF="function.filetype.html"><LINK  REL="NEXT" TITLE="fnmatch" HREF="function.fnmatch.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.filetype.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fnmatch.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.flock" ></A
+>flock</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28356" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>flock&nbsp;--&nbsp;Çá±ãµÄ×ÉÑ¯ÎÄ¼şËø¶¨</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28359" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >flock</B
+> ( int handle, int operation [, int &#38;wouldblock])<BR  ></BR
+><P  >&#13;     PHP Ö§³ÖÒÔ×ÉÑ¯·½Ê½£¨Ò²¾ÍÊÇËµËùÓĞ·ÃÎÊ³ÌĞò±ØĞëÊ¹ÓÃÍ¬Ò»·½Ê½Ëø¶¨, ·ñÔòËü²»»á¹¤×÷£©Ëø¶¨È«²¿ÎÄ¼şµÄÒ»ÖÖÇá±ã·½·¨¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >flock()</B
+> ²Ù×÷µÄ <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>
+     ±ØĞëÊÇÒ»¸öÒÑ¾­´ò¿ªµÄÎÄ¼şÖ¸Õë¡£<TT  CLASS="parameter" ><I  >operation</I
+></TT
+>
+     ¿ÉÒÔÊÇÒÔÏÂÖµÖ®Ò»£º
+    </P
+><P  >&#13;     <P  ></P
+><UL  ><LI  ><P  >&#13;        ÒªÈ¡µÃ¹²ÏíËø¶¨£¨¶ÁÈ¡³ÌĞò£©£¬½«
+        <TT  CLASS="parameter" ><I  >operation</I
+></TT
+> ÉèÎª <TT  CLASS="constant" ><B  >LOCK_SH</B
+></TT
+>£¨PHP 4.0.1 ÒÔÇ°µÄ°æ±¾ÉèÖÃÎª 1£©¡£
+       </P
+></LI
+><LI  ><P  >&#13;        ÒªÈ¡µÃ¶ÀÕ¼Ëø¶¨£¨Ğ´Èë³ÌĞò£©£¬½«
+        <TT  CLASS="parameter" ><I  >operation</I
+></TT
+> ÉèÎª <TT  CLASS="constant" ><B  >LOCK_EX</B
+></TT
+>£¨PHP 4.0.1 ÒÔÇ°µÄ°æ±¾ÖĞÉèÖÃÎª 2£©¡£
+       </P
+></LI
+><LI  ><P  >&#13;        ÒªÊÍ·ÅËø¶¨£¨ÎŞÂÛ¹²Ïí»ò¶ÀÕ¼£©£¬½«
+        <TT  CLASS="parameter" ><I  >operation</I
+></TT
+> ÉèÎª <TT  CLASS="constant" ><B  >LOCK_UN</B
+></TT
+>£¨PHP 4.0.1 ÒÔÇ°µÄ°æ±¾ÖĞÉèÖÃÎª 3£©¡£
+       </P
+></LI
+><LI  ><P  >&#13;        Èç¹ûÄã²»Ï£Íû <B  CLASS="function" >flock()</B
+> ÔÚËø¶¨Ê±¶ÂÈû£¬Ôò¸ø
+        <TT  CLASS="parameter" ><I  >operation</I
+></TT
+> ¼ÓÉÏ <TT  CLASS="constant" ><B  >LOCK_NB</B
+></TT
+>£¨PHP 4.0.1 ÒÔÇ°µÄ°æ±¾ÖĞÉèÖÃÎª 4£©¡£
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     <B  CLASS="function" >flock()</B
+> ÔÊĞíÄãÖ´ĞĞÒ»¸ö¼òµ¥µÄ¿ÉÒÔÔÚÈÎºÎÆ½Ì¨ÖĞÊ¹ÓÃµÄ¶ÁÈ¡/Ğ´ÈëÄ£ĞÍ£¨°üÀ¨´ó²¿·ÖµÄ
+     Unix ÅÉÉú°æºÍÉõÖÁÊÇ Windows£©¡£Èç¹ûËø¶¨»á¶ÂÈûµÄ»°£¨EWOULDBLOCK ´íÎóÂëÇé¿öÏÂ£©£¬Çë½«¿ÉÑ¡µÄµÚÈı¸ö²ÎÊıÉèÖÃÎª <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN28404" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >flock()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">"/tmp/lock.txt"</font><font  color="#007700">, </font><font  color="#DD0000">"w+"</font><font  color="#007700">);<br  /><br  />if (</font><font  color="#0000BB">flock</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">LOCK_EX</font><font  color="#007700">)) { </font><font  color="#FF8000">// ½øĞĞÅÅËüĞÍËø¶¨<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fwrite</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#DD0000">"Write something here\n"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">flock</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">LOCK_UN</font><font  color="#007700">); </font><font  color="#FF8000">// ÊÍ·ÅËø¶¨<br  /></font><font  color="#007700">} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Couldn't lock the file !"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÓÉÓÚ <B  CLASS="function" >flock()</B
+>
+      ĞèÒªÒ»¸öÎÄ¼şÖ¸Õë£¬ Òò´ËÄã¿ÉÄÜĞèÒªÒ»¸öËø¶¨ÎÄ¼şÀ´±£»¤µ½Äã´òËãÍ¨¹ıĞ´Ä£Ê½´ò¿ªÀ´½Ø¶ÏµÄÎÄ¼şµÄ·ÃÎÊ£¨ÔÚ
+      <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> º¯ÊıÖĞ¼ÓÈë "w" »ò "w+"£©¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      <B  CLASS="function" >flock()</B
+> ²»ÄÜÔÚ NFS
+      ÒÔ¼°ÆäËûµÄÒ»Ğ©ÍøÂçÎÄ¼şÏµÍ³ÖĞÕı³£¹¤×÷¡£ÏêÏ¸×ÊÁÏÇë¼ì²éÄãµÄ²Ù×÷ÏµÍ³ÎÄµµ¡£
+     </P
+><P  >&#13;      ÔÚ²¿·Ö²Ù×÷ÏµÍ³ÖĞ£¬<B  CLASS="function" >flock()</B
+> ÒÔ´¦Àí¼¶Ö´ĞĞ¡£µ±ÓÃÒ»¸ö¶àÏß³Ì·şÎñÆ÷
+      API£¨±ÈÈç ISAPI£©Ê±£¬Äú¿ÉÄÜ²»¿ÉÒÔÒÀ¿¿
+      <B  CLASS="function" >flock()</B
+> À´±£»¤ÎÄ¼ş£¬ÒòÎªÔÚÍ¬Ò»·şÎñÆ÷ÄÚÔËĞĞÔÚÆäËüÏß³ÌµÄ
+      PHP ½Å±¾¿ÉÒÔ¶Ô¸ÃÎÄ¼ş½øĞĞ´¦Àí¡£
+     </P
+><P  >&#13;      <B  CLASS="function" >flock()</B
+> ²»Ö§³Ö¾ÉµÄÎÄ¼şÏµÍ³£¬Èç <TT  CLASS="literal" >FAT</TT
+>
+      ÒÔ¼°ËüµÄÅÉÉúÏµÍ³¡£Òò´Ë£¬ËüÔÚÕâÖÖÇé¿öÏÂ¾­³£»á·µ»ØÒ»¸ö <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>
+      Öµ£¨ÓÈÆäÊÇÖ¸ Windows 98 µÄÓÃ»§£©¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.filetype.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fnmatch.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >filetype</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fnmatch</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.filetype.html">filetype</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fnmatch.html">fnmatch</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.flock" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">flock</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">flock</span> &mdash; <span class="dc-title">è½»ä¾¿çš„å’¨è¯¢æ–‡ä»¶é”å®š</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.flock-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>flock</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$operation</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter reference">&$wouldblock</code></span>
-  ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>flock()</strong></span> å…è®¸æ‰§è¡Œä¸€ä¸ªç®€å•çš„å¯ä»¥åœ¨ä»»ä½•å¹³å°ä¸­ä½¿ç”¨çš„è¯»å–/å†™å…¥æ¨¡å‹ï¼ˆåŒ…æ‹¬å¤§éƒ¨åˆ†çš„
-   Unix æ´¾ç”Ÿç‰ˆå’Œç”šè‡³æ˜¯ Windowsï¼‰ã€‚
-  </p>
-    <p class="para">
-     åœ¨ PHP 5.3.2ç‰ˆæœ¬ä¹‹å‰ï¼Œé”ä¹Ÿä¼šè¢« <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> é‡Šæ”¾ï¼ˆåœ¨è„šæœ¬ç»“æŸåä¼šè‡ªåŠ¨è°ƒç”¨ï¼‰ã€‚
-  </p>
-  <p class="para">
-   PHP æ”¯æŒä»¥å’¨è¯¢æ–¹å¼ï¼ˆä¹Ÿå°±æ˜¯è¯´æ‰€æœ‰è®¿é—®ç¨‹åºå¿…é¡»ä½¿ç”¨åŒä¸€æ–¹å¼é”å®š, å¦åˆ™å®ƒä¸ä¼šå·¥ä½œï¼‰é”å®šå…¨éƒ¨æ–‡ä»¶çš„ä¸€ç§è½»ä¾¿æ–¹æ³•ã€‚
-    é»˜è®¤æƒ…å†µä¸‹ï¼Œè¿™ä¸ªå‡½æ•°ä¼šé˜»å¡åˆ°è·å–é”ï¼›è¿™å¯ä»¥é€šè¿‡ä¸‹é¢æ–‡æ¡£ä¸­ <strong><code>LOCK_NB</code></strong> é€‰é¡¹æ¥æ§åˆ¶ï¼ˆåœ¨é Windows å¹³å°ä¸Šï¼‰ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.flock-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">æ–‡ä»¶ç³»ç»ŸæŒ‡é’ˆï¼Œæ˜¯å…¸å‹åœ°ç”±
-<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> åˆ›å»ºçš„ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>(èµ„æº)ã€‚</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">operation</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">operation</code>
-   å¯ä»¥æ˜¯ä»¥ä¸‹å€¼ä¹‹ä¸€ï¼š
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <span class="simpara">
-         <strong><code>LOCK_SH</code></strong>å–å¾—å…±äº«é”å®šï¼ˆè¯»å–çš„ç¨‹åºï¼‰ã€‚
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-         <strong><code>LOCK_EX</code></strong> å–å¾—ç‹¬å é”å®šï¼ˆå†™å…¥çš„ç¨‹åºã€‚
-         </span>
-        </li>
-        <li class="listitem">
-         <span class="simpara">
-          <strong><code>LOCK_UN</code></strong> é‡Šæ”¾é”å®šï¼ˆæ— è®ºå…±äº«æˆ–ç‹¬å ï¼‰ã€‚
-         </span>
-        </li>
-       </ul>
-      </p>
-      <p class="para">
-       å¦‚æœä¸å¸Œæœ› <span class="function"><strong>flock()</strong></span> åœ¨é”å®šæ—¶å µå¡ï¼Œåˆ™æ˜¯
-       <strong><code>LOCK_NB</code></strong>ï¼ˆWindows ä¸Šè¿˜ä¸æ”¯æŒï¼‰ã€‚
-
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">wouldblock</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœé”å®šä¼šå µå¡çš„è¯ï¼ˆEWOULDBLOCK
-   é”™è¯¯ç æƒ…å†µä¸‹ï¼‰ï¼Œå¯é€‰çš„ç¬¬ä¸‰ä¸ªå‚æ•°ä¼šè¢«è®¾ç½®ä¸º <strong><code>TRUE</code></strong>ã€‚ï¼ˆWindows ä¸Šä¸æ”¯æŒï¼‰
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.flock-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 changelog" id="refsect1-function.flock-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.2</td>
-       <td>
-        åœ¨æ–‡ä»¶èµ„æºå¥æŸ„å…³é—­æ—¶ä¸å†è‡ªåŠ¨è§£é”ã€‚ç°åœ¨è¦è§£é”å¿…é¡»æ‰‹åŠ¨è¿›è¡Œã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.1</td>
-       <td>
-        å¢åŠ äº†å¸¸é‡ <em>LOCK_XXX</em>ã€‚
-        ä¹‹å‰ä½ å¿…é¡»ä½¿ç”¨ 1 ä»£è¡¨ <strong><code>LOCK_SH</code></strong>ï¼Œ2 ä»£è¡¨
-        <strong><code>LOCK_EX</code></strong>ï¼Œ3 ä»£è¡¨<strong><code>LOCK_UN</code></strong>ï¼Œ4 ä»£è¡¨
-         <strong><code>LOCK_NB</code></strong>ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.flock-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2479">
-    <p><strong>Example #1 <span class="function"><strong>flock()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/tmp/lock.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r+"</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">flock</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">LOCK_EX</span><span style="color: #007700">))&nbsp;{&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;è¿›è¡Œæ’å®ƒå‹é”å®š<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ftruncate</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;truncate&nbsp;file<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Write&nbsp;something&nbsp;here\n"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fflush</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;flush&nbsp;output&nbsp;before&nbsp;releasing&nbsp;the&nbsp;lock<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">flock</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">LOCK_UN</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;é‡Šæ”¾é”å®š<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Couldn't&nbsp;get&nbsp;the&nbsp;lock!"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2480">
-    <p><strong>Example #2 <span class="function"><strong>flock()</strong></span> ä½¿ç”¨ <strong><code>LOCK_NB</code></strong> é€‰é¡¹</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/lock.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r+'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Activate&nbsp;the&nbsp;LOCK_NB&nbsp;option&nbsp;on&nbsp;an&nbsp;LOCK_EX&nbsp;operation&nbsp;*/<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">flock</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">LOCK_EX&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">LOCK_NB</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Unable&nbsp;to&nbsp;obtain&nbsp;lock'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit(-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 notes" id="refsect1-function.flock-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>flock()</strong></span> uses mandatory locking instead of advisory
-    locking on Windows. Mandatory locking is also supported on Linux and
-    System V based operating systems via the usual mechanism supported by the
-    fcntl() system call: that is, if the file in question has the setgid
-    permission bit set and the group execution bit cleared. On Linux, the file
-    system will also need to be mounted with the mand option for this to work.
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    ç”±äº <span class="function"><strong>flock()</strong></span>
-    éœ€è¦ä¸€ä¸ªæ–‡ä»¶æŒ‡é’ˆï¼Œ å› æ­¤å¯èƒ½ä¸å¾—ä¸ç”¨ä¸€ä¸ªç‰¹æ®Šçš„é”å®šæ–‡ä»¶æ¥ä¿æŠ¤æ‰“ç®—é€šè¿‡å†™æ¨¡å¼æ‰“å¼€çš„æ–‡ä»¶çš„è®¿é—®ï¼ˆåœ¨
-    <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> å‡½æ•°ä¸­åŠ å…¥ &quot;w&quot; æˆ– &quot;w+&quot;ï¼‰ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    May only be used on file pointers returned by <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
-    for local files, or file pointers pointing to userspace streams that
-    implement the <span class="function"><a href="streamwrapper.stream-lock.html" class="function">streamWrapper::stream_lock()</a></span> method.
-   </p>
-  </p></blockquote>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    Assigning another value to <code class="parameter">handle</code> argument in
-    subsequent code will release the lock.
-   </p>
-  </div>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    åœ¨éƒ¨åˆ†æ“ä½œç³»ç»Ÿä¸­ <span class="function"><strong>flock()</strong></span> ä»¥è¿›ç¨‹çº§å®ç°ã€‚å½“ç”¨ä¸€ä¸ªå¤šçº¿ç¨‹æœåŠ¡å™¨
-    APIï¼ˆæ¯”å¦‚ ISAPIï¼‰æ—¶ï¼Œå¯èƒ½ä¸å¯ä»¥ä¾é 
-    <span class="function"><strong>flock()</strong></span> æ¥ä¿æŠ¤æ–‡ä»¶ï¼Œå› ä¸ºè¿è¡ŒäºåŒä¸€æœåŠ¡å™¨å®ä¾‹ä¸­å…¶å®ƒå¹¶è¡Œçº¿ç¨‹çš„
-    PHP è„šæœ¬å¯ä»¥å¯¹è¯¥æ–‡ä»¶è¿›è¡Œå¤„ç†ã€‚
-   </p>
-   <p class="para">
-    <span class="function"><strong>flock()</strong></span> ä¸æ”¯æŒæ—§çš„æ–‡ä»¶ç³»ç»Ÿï¼Œå¦‚ <em>FAT</em>
-    ä»¥åŠå®ƒçš„æ´¾ç”Ÿç³»ç»Ÿã€‚å› æ­¤ï¼Œæ­¤ç¯å¢ƒä¸‹æ€»æ˜¯è¿”å› <strong><code>FALSE</code></strong>ï¼ˆå°¤å…¶æ˜¯å¯¹ Windows 98 ç”¨æˆ·æ¥è¯´ï¼‰ã€‚
-   </p>
-  </div>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.filetype.html">filetype</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fnmatch.html">fnmatch</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

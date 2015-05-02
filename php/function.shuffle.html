@@ -1,119 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å°†æ•°ç»„æ‰“ä¹±</title>
+<HTML  ><HEAD  ><TITLE  >shuffle</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="rsort" HREF="function.rsort.html"><LINK  REL="NEXT" TITLE="sizeof" HREF="function.sizeof.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.rsort.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sizeof.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.shuffle" ></A
+>shuffle</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN10400" ></A
+><P  >    (PHP 3&#62;= 3.0.8, PHP 4 )</P
+>shuffle&nbsp;--&nbsp;½«Êı×é´òÂÒ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN10403" ></A
+><H2  >ËµÃ÷</H2
+>void <B  CLASS="methodname" >shuffle</B
+> ( array array)<BR  ></BR
+><P  >&#13;     ±¾º¯Êı´òÂÒ£¨Ëæ»úÅÅÁĞµ¥ÔªµÄË³Ğò£©Ò»¸öÊı×é¡£±ØĞëÓÃ <A  HREF="function.srand.html"  ><B  CLASS="function" >srand()</B
+></A
+>
+     ²¥ÏÂ±¾º¯ÊıµÄËæ»úÊı·¢ÉúÆ÷ÖÖ×Ó¡£
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN10413" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >shuffle()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$numbers </font><font  color="#007700">= </font><font  color="#0000BB">range </font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">,</font><font  color="#0000BB">20</font><font  color="#007700">);<br  /></font><font  color="#0000BB">srand </font><font  color="#007700">((float)</font><font  color="#0000BB">microtime</font><font  color="#007700">()*</font><font  color="#0000BB">1000000</font><font  color="#007700">);<br  /></font><font  color="#0000BB">shuffle </font><font  color="#007700">(</font><font  color="#0000BB">$numbers</font><font  color="#007700">);<br  />while (list (, </font><font  color="#0000BB">$number</font><font  color="#007700">) = </font><font  color="#0000BB">each </font><font  color="#007700">(</font><font  color="#0000BB">$numbers</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"$number "</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>ÔÚ PHP 4.2.0 ÖĞ£¬ÎŞĞèÓÃº¯Êı <A  HREF="function.srand.html"  ><B  CLASS="function" >srand()</B
+></A
+> »ò
+<A  HREF="function.mt-srand.html"  ><B  CLASS="function" >mt_srand()</B
+></A
+>À´ËÑÑ°Ëæ»úÊıÉú³ÉÆ÷£¬Ëü½«±»×Ô¶¯Íê³É¡£
+</P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.arsort.html"  ><B  CLASS="function" >arsort()</B
+></A
+>£¬<A  HREF="function.asort.html"  ><B  CLASS="function" >asort()</B
+></A
+>£¬<A  HREF="function.ksort.html"  ><B  CLASS="function" >ksort()</B
+></A
+>£¬<A  HREF="function.rsort.html"  ><B  CLASS="function" >rsort()</B
+></A
+>£¬<A  HREF="function.sort.html"  ><B  CLASS="function" >sort()</B
+></A
+>
+     ºÍ <A  HREF="function.usort.html"  ><B  CLASS="function" >usort()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.rsort.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sizeof.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >rsort</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sizeof</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.rsort.html">rsort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sizeof.html">sizeof</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.shuffle" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">shuffle</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">shuffle</span> &mdash; <span class="dc-title">å°†æ•°ç»„æ‰“ä¹±</span></p>
 
-   </div>
- <div class="refsect1 description" id="refsect1-function.shuffle-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>shuffle</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
-   )</div>
-
-    <p class="para rdfs-comment">
-     æœ¬å‡½æ•°æ‰“ä¹±ï¼ˆéšæœºæ’åˆ—å•å…ƒçš„é¡ºåºï¼‰ä¸€ä¸ªæ•°ç»„ã€‚
-    </p>
-   </div>
-
- <div class="refsect1 parameters" id="refsect1-function.shuffle-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">array</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¾…æ“ä½œçš„æ•°ç»„ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.shuffle-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.shuffle-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5348">
-    <p><strong>Example #1 <span class="function"><strong>shuffle()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$numbers&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">shuffle</span><span style="color: #007700">(</span><span style="color: #0000BB">$numbers</span><span style="color: #007700">);<br />foreach&nbsp;(</span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$number</span><span style="color: #DD0000">&nbsp;"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.shuffle-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr><td>4.2.0</td><td>éšæœºæ•°å‘ç”Ÿå™¨è‡ªåŠ¨è¿›è¡Œæ’­ç§ã€‚</td></tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.shuffle-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°ä¸º <code class="parameter">array</code>
-ä¸­çš„å…ƒç´ èµ‹ä¸æ–°çš„é”®åã€‚è¿™å°†åˆ é™¤åŸæœ‰çš„é”®åï¼Œè€Œä¸æ˜¯ä»…ä»…å°†é”®åé‡æ–°æ’åºã€‚</span></p></blockquote>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.shuffle-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><a href="array.sorting.html" class="link">æ•°ç»„æ’åºå‡½æ•°å¯¹æ¯”</a></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.rsort.html">rsort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sizeof.html">sizeof</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

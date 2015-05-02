@@ -1,150 +1,111 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>得到指定年份的3月21日到复活节之间的天数</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.easter-date.html">easter_date</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.frenchtojd.html">FrenchToJD</a></div>
- <div class="up"><a href="ref.calendar.html">日历 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.easter-days" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">easter_days</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">easter_days</span> &mdash; <span class="dc-title">得到指定年份的3月21日到复活节之间的天数</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.easter-days-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>easter_days</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$year</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$method</code><span class="initializer"> = CAL_EASTER_DEFAULT</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   返回指定年份的3月21日到复活节之间的天数，如果没有指定年份，默认是当年。
-  </p>
-  <p class="para">
-   这个函数可以用来代替<span class="function"><a href="function.easter-date.html" class="function">easter_date()</a></span>函数来计算Unix时间戳以外年份的复活节日期。（比如1970年以前或2037年以后）
-  </p>
-  <p class="para">
-    复活节的日期是由尼西亚议会在AD325年确定的为每年春分月圆后的第一个星期日。春分一般是在3月21日，这就简化为只要计算满月的日期和紧挨的星期日的日期。这里所用的算法是在532年由Dionysius Exiguus所介绍的，参考了Julian历法和Gregorian历法这两个历法来提高精确度。（在1753年以前用Julian历法计算，该历法是一个以19年为周期来确定月亮的相位的历法。在1753年以后用Gregorian历法计算，该历法由Clavius和Lilius发明，由Pope Gregory 8世在1582年推广）
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.easter-days-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">year</code></dt>
-
-     <dd>
-
-      <p class="para">
-       正数形式的年份
-      </p>
-     </dd>
-
-      
-    
-     <dt>
-<code class="parameter">method</code></dt>
-
-     <dd>
-
-      <p class="para"> 
-       当设置为<strong><code>CAL_EASTER_ROMAN</code></strong>时可以用Gregorian历法来计算1582－1752之间的复活节日期。更多可用的常量参考<a href="calendar.constants.html" class="link">calendar constants</a>。    
-       </p>
-     </dd>
-
-      
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.easter-days-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   根据给定参数<code class="parameter">year</code>年份而返回的3月21日至复活节的天数。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.easter-days-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>Since 4.3.0</td>
-       <td>
-        参数<code class="parameter">year</code> 可选，缺省默认值是当年。
-       </td>
-      </tr>
-
-      <tr>
-       <td>Since 4.3.0</td>
-       <td>
-        引入参数 <code class="parameter">method</code>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >easter_days</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Calendar Functions" HREF="ref.calendar.html"><LINK  REL="PREVIOUS" TITLE="easter_date" HREF="function.easter-date.html"><LINK  REL="NEXT" TITLE="FrenchToJD" HREF="function.frenchtojd.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.easter-date.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.frenchtojd.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.easter-days" ></A
+>easter_days</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN11643" ></A
+><P  >    (PHP 3&#62;= 3.0.9, PHP 4 )</P
+>easter_days&nbsp;--&nbsp;
+     Get number of days after March 21 on which Easter falls for a
+     given year
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN11646" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >easter_days</B
+> ( [int year [, int method]])<BR  ></BR
+><P  >&#13;     Returns the number of days after March 21 on which Easter falls
+     for a given year. If no year is specified, the current year is
+     assumed.
+    </P
+><P  >&#13;     Since <TT  CLASS="literal" >PHP</TT
+> 4.3.0, the <TT  CLASS="parameter" ><I  >year</I
+></TT
+>
+     parameter is optional and defaults to the current year according to the
+     localtime if omitted.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >method</I
+></TT
+> parameter was also introduced in
+     <TT  CLASS="literal" >PHP</TT
+> 4.3.0 and allows to calculate easter dates based
+     on the Gregorian calendar during the years 1582 - 1752 when set to
+     <TT  CLASS="constant" ><B  >CAL_EASTER_ROMAN</B
+></TT
+>. See the <A  HREF="ref.calendar.html#calendar.constants"  >calendar constants</A
+> for more valid
+     constants.
+    </P
+><P  >&#13;     This function can be used instead of
+     <A  HREF="function.easter-date.html"  ><B  CLASS="function" >easter_date()</B
+></A
+> to calculate Easter for years
+     which fall outside the range of Unix timestamps (i.e. before 1970
+     or after 2037).
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11668" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >easter_days()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#007700">echo </font><font  color="#0000BB">easter_days</font><font  color="#007700">(</font><font  color="#0000BB">1999</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// 14, i.e. April 4<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">easter_days</font><font  color="#007700">(</font><font  color="#0000BB">1492</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// 32, i.e. April 22<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">easter_days</font><font  color="#007700">(</font><font  color="#0000BB">1913</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">//&nbsp;&nbsp;2, i.e. March 23<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     The date of Easter Day was defined by the Council of Nicaea in
+     AD325 as the Sunday after the first full moon which falls on or
+     after the Spring Equinox.  The Equinox is assumed to always fall
+     on 21st March, so the calculation reduces to determining the date
+     of the full moon and the date of the following Sunday.  The
+     algorithm used here was introduced around the year 532 by
+     Dionysius Exiguus.  Under the Julian Calendar (for years before
+     1753) a simple 19-year cycle is used to track the phases of the
+     Moon.  Under the Gregorian Calendar (for years after 1753 -
+     devised by Clavius and Lilius, and introduced by Pope Gregory
+     XIII in October 1582, and into Britain and its then colonies in
+     September 1752) two correction factors are added to make the
+     cycle more accurate.
+    </P
+><P  >&#13;     (The code is based on a C program by Simon Kershaw,
+     &#60;webmaster at ely.anglican dot org&#62;)
+    </P
+><P  >&#13;     See also <A  HREF="function.easter-date.html"  ><B  CLASS="function" >easter_date()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.easter-date.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.frenchtojd.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >easter_date</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.calendar.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >FrenchToJD</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.easter-days-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2341">
-    <p><strong>Example #1 <span class="function"><strong>easter_days()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">easter_days</span><span style="color: #007700">(</span><span style="color: #0000BB">1999</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;14,&nbsp;i.e.&nbsp;April&nbsp;4<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">easter_days</span><span style="color: #007700">(</span><span style="color: #0000BB">1492</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;32,&nbsp;i.e.&nbsp;April&nbsp;22<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">easter_days</span><span style="color: #007700">(</span><span style="color: #0000BB">1913</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;2,&nbsp;i.e.&nbsp;March&nbsp;23<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.easter-days-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.easter-date.html" class="function" rel="rdfs-seeAlso">easter_date()</a> - 得到指定年份的复活节午夜时的Unix时间戳。</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.easter-date.html">easter_date</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.frenchtojd.html">FrenchToJD</a></div>
- <div class="up"><a href="ref.calendar.html">日历 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

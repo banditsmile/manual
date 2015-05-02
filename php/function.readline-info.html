@@ -1,88 +1,52 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取/设置readline内部的各个变量</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.readline-completion-function.html">readline_completion_function</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.readline-list-history.html">readline_list_history</a></div>
- <div class="up"><a href="ref.readline.html">Readline 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.readline-info" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">readline_info</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">readline_info</span> &mdash; <span class="dc-title">获取/设置readline内部的各个变量</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.readline-info-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>readline_info</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$varname</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$newvalue</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   获取/设置readline内部的各个变量.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.readline-info-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">varname</code></dt>
-
-     <dd>
-
-      <p class="para">
-       变量名.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">newvalue</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果提供，将被设置成这个值.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >readline_info</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="GNU Readline" HREF="ref.readline.html"><LINK  REL="PREVIOUS" TITLE="readline_completion_function" HREF="function.readline-completion-function.html"><LINK  REL="NEXT" TITLE="readline_list_history" HREF="function.readline-list-history.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.readline-completion-function.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.readline-list-history.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.readline-info" ></A
+>readline_info</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN95667" ></A
+><P  >    (PHP 4 )</P
+>readline_info&nbsp;--&nbsp;Gets/sets various internal readline variables</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN95670" ></A
+><H2  >Description</H2
+>mixed <B  CLASS="methodname" >readline_info</B
+> ( [string varname [, string newvalue]])<BR  ></BR
+><P  >&#13;     If called with no parameters, this function returns an array of
+     values for all the setting readline uses.  The elements will
+     be indexed by the following values: done, end, erase_empty_line,
+     library_version, line_buffer, mark, pending_input, point, prompt,
+     readline_name, and terminal_name.
+    </P
+><P  >&#13;     If called with one parameter, the value of that setting is
+     returned.  If called with two parameters, the setting will be
+     changed to the given value.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.readline-completion-function.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.readline-list-history.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >readline_completion_function</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.readline.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >readline_list_history</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.readline-info-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果调用时没有参数，这个函数将返回一个包括了所有已采用的readline设置的数组.
-   数组元素将索引是以下这些值：done, end, erase_empty_line,
-   library_version, line_buffer, mark, pending_input, point, prompt,
-   readline_name, and terminal_name.
-  </p>
-  <p class="para">
-   如果调用是提供了一个或两个参数，原来的值将被返回.
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.readline-completion-function.html">readline_completion_function</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.readline-list-history.html">readline_list_history</a></div>
- <div class="up"><a href="ref.readline.html">Readline 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

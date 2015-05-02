@@ -1,99 +1,81 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Output a gz-file</title>
+<HTML  ><HEAD  ><TITLE  >readgzfile</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Zlib Compression Functions" HREF="ref.zlib.html"><LINK  REL="PREVIOUS" TITLE="gzwrite" HREF="function.gzwrite.html"><LINK  REL="NEXT" TITLE="zlib_get_coding_type" HREF="function.zlib-get-coding-type.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.gzwrite.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.zlib-get-coding-type.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.readgzfile" ></A
+>readgzfile</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN121511" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>readgzfile&nbsp;--&nbsp;Output a gz-file</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN121514" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >readgzfile</B
+> ( string filename [, int use_include_path])<BR  ></BR
+><P  > 
+     Reads a file, decompresses it and writes it to standard
+     output.
+    </P
+><P  >&#13;     <B  CLASS="function" >readgzfile()</B
+> can be used to read a file which
+     is not in gzip format; in this case
+     <B  CLASS="function" >readgzfile()</B
+> will directly read from the file
+     without decompression.
+    </P
+><P  > 
+     Returns the number of (uncompressed) bytes read from the file. If
+     an error occurs, <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> is returned and unless the function was
+     called as <TT  CLASS="literal" >@readgzfile</TT
+>, an error message is
+     printed.
+    </P
+><P  > 
+     The file <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> will be opened from the
+     filesystem and its contents written to standard output.
+    </P
+><P  >&#13;     You can use the optional second parameter and set it to "1", if
+     you want to search for the file in the <A  HREF="configuration.directives.html#ini.include-path"  >include_path</A
+>, too.
+    </P
+><P  >&#13;     See also <A  HREF="function.gzpassthru.html"  ><B  CLASS="function" >gzpassthru()</B
+></A
+>,
+     <A  HREF="function.gzfile.html"  ><B  CLASS="function" >gzfile()</B
+></A
+>, and <A  HREF="function.gzopen.html"  ><B  CLASS="function" >gzopen()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.gzwrite.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.zlib-get-coding-type.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >gzwrite</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.zlib.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >zlib_get_coding_type</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gzwrite.html">gzwrite</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.zlib-decode.html">zlib_decode</a></div>
- <div class="up"><a href="ref.zlib.html">Zlib å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.readgzfile" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">readgzfile</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">readgzfile</span> &mdash; <span class="dc-title">Output a gz-file</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.readgzfile-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>readgzfile</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$use_include_path</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment"> 
-   Reads a file, decompresses it and writes it to standard output.
-  </p>
-  <p class="para">
-   <span class="function"><strong>readgzfile()</strong></span> can be used to read a file which is not in
-   gzip format; in this case <span class="function"><strong>readgzfile()</strong></span> will directly 
-   read from the file without decompression.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.readgzfile-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The file name. This file will be opened from the filesystem and its
-       contents written to standard output.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">use_include_path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       You can set this optional parameter to <em>1</em>, if you
-       want to search for the file in the <a href="ini.core.html#ini.include-path" class="link">include_path</a> too.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.readgzfile-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para"> 
-   Returns the number of (uncompressed) bytes read from the file. If
-   an error occurs, <strong><code>FALSE</code></strong> is returned and unless the function was
-   called as <em>@readgzfile</em>, an error message is
-   printed.
-  </p>
- </div>
-
- <div class="refsect1 seealso" id="refsect1-function.readgzfile-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.gzpassthru.html" class="function" rel="rdfs-seeAlso">gzpassthru()</a> - Output all remaining data on a gz-file pointer</span></li>
-    <li class="member"><span class="function"><a href="function.gzfile.html" class="function" rel="rdfs-seeAlso">gzfile()</a> - Read entire gz-file into an array</span></li>
-    <li class="member"><span class="function"><a href="function.gzopen.html" class="function" rel="rdfs-seeAlso">gzopen()</a> - Open gz-file</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.gzwrite.html">gzwrite</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.zlib-decode.html">zlib_decode</a></div>
- <div class="up"><a href="ref.zlib.html">Zlib å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

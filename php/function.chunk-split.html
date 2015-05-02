@@ -1,127 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>将字符串分割成小块</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.chr.html">chr</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.convert-cyr-string.html">convert_cyr_string</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.chunk-split" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">chunk_split</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">chunk_split</span> &mdash; <span class="dc-title">将字符串分割成小块</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.chunk-split-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>chunk_split</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$body</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$chunklen</code><span class="initializer"> = 76</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$end</code><span class="initializer"> = &quot;\r\n&quot;</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   使用此函数将字符串分割成小块非常有用。例如将
-   <span class="function"><a href="function.base64-encode.html" class="function">base64_encode()</a></span> 的输出转换成符合 RFC 2045 语义的字符串。它会在每
-   <code class="parameter">chunklen</code> 个字符后边插入
-   <code class="parameter">end</code>。
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.chunk-split-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">body</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要分割的字符。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">chunklen</code></dt>
-
-     <dd>
-
-      <p class="para">
-       分割的尺寸。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">end</code></dt>
-
-     <dd>
-
-      <p class="para">
-       行尾序列符号。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >chunk_split</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="chr" HREF="function.chr.html"><LINK  REL="NEXT" TITLE="convert_cyr_string" HREF="function.convert-cyr-string.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.chr.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.convert-cyr-string.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.chunk-split" ></A
+>chunk_split</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN107775" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>chunk_split&nbsp;--&nbsp;Split a string into smaller chunks</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN107778" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >chunk_split</B
+> ( string body [, int chunklen [, string end]])<BR  ></BR
+><P  >&#13;     Can be used to split a string into smaller chunks which is useful for
+     e.g. converting <A  HREF="function.base64-encode.html"  >base64_encode</A
+> output to match RFC
+     2045 semantics. It inserts <TT  CLASS="parameter" ><I  >end</I
+></TT
+> (defaults to
+     "\r\n") every <TT  CLASS="parameter" ><I  >chunklen</I
+></TT
+> characters (defaults to
+     76). It returns the new string leaving the original string untouched.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107796" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >chunk_split()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// format $data using RFC 2045 semantics<br  /></font><font  color="#0000BB">$new_string </font><font  color="#007700">= </font><font  color="#0000BB">chunk_split</font><font  color="#007700">(</font><font  color="#0000BB">base64_encode</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.str-split.html"  ><B  CLASS="function" >str_split()</B
+></A
+>,
+     <A  HREF="function.explode.html"  ><B  CLASS="function" >explode()</B
+></A
+>, <A  HREF="function.split.html"  ><B  CLASS="function" >split()</B
+></A
+>, 
+     <A  HREF="function.wordwrap.html"  ><B  CLASS="function" >wordwrap()</B
+></A
+> and
+     <A  href="http://www.faqs.org/rfcs/rfc2045/"  TARGET="_top" >RFC 2045</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.chr.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.convert-cyr-string.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >chr</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >convert_cyr_string</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.chunk-split-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回分割后的字符。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.chunk-split-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5134">
-    <p><strong>Example #1 <span class="function"><strong>chunk_split()</strong></span>  例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;使用&nbsp;RFC&nbsp;2045&nbsp;语义格式化&nbsp;$data<br /></span><span style="color: #0000BB">$new_string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">chunk_split</span><span style="color: #007700">(</span><span style="color: #0000BB">base64_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.chunk-split-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.str-split.html" class="function" rel="rdfs-seeAlso">str_split()</a> - 将字符串转换为数组</span></li>
-    <li class="member"><span class="function"><a href="function.explode.html" class="function" rel="rdfs-seeAlso">explode()</a> - 使用一个字符串分割另一个字符串</span></li>
-    <li class="member"><span class="function"><a href="function.split.html" class="function" rel="rdfs-seeAlso">split()</a> - 用正则表达式将字符串分割到数组中</span></li>
-    <li class="member"><span class="function"><a href="function.wordwrap.html" class="function" rel="rdfs-seeAlso">wordwrap()</a> - 打断字符串为指定数量的字串</span></li>
-    <li class="member"><a href="http://www.faqs.org/rfcs/rfc2045" class="link external">&raquo;&nbsp;RFC 2045</a></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.chr.html">chr</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.convert-cyr-string.html">convert_cyr_string</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

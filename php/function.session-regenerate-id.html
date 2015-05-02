@@ -1,144 +1,89 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>使用新生成的会话 ID 更新现有会话 ID</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-name.html">session_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-register-shutdown.html">session_register_shutdown</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.session-regenerate-id" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">session_regenerate_id</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.2, PHP 5)</p><p class="refpurpose"><span class="refname">session_regenerate_id</span> &mdash; <span class="dc-title">
-   使用新生成的会话 ID 更新现有会话 ID
-  </span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.session-regenerate-id-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>session_regenerate_id</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$delete_old_session</code><span class="initializer"> = false</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>session_regenerate_id()</strong></span> 
-   在不修改当前会话中数据的前提下使用新的 ID 替换原有会话 ID。
-  </p>
-  <p class="para">
-   如果启用了 <a href="session.configuration.html#ini.session.use-trans-sid" class="link">session.use_trans_sid</a> 选项，
-   那么必须在调用 <span class="function"><strong>session_regenerate_id()</strong></span> 函数之后开始进行输出工作，
-   否则会导致使用原有的会话 ID。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.session-regenerate-id-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">delete_old_session</code></dt>
-
-      <dd>
-
-       <p class="para">
-        是否删除原 ID 所关联的会话存储文件。
-       </p>
-      </dd>
-
-     
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.session-regenerate-id-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.session-regenerate-id-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.3</td>
-       <td>
-        如果启用会话 cookie，
-        调用 <span class="function"><strong>session_regenerate_id()</strong></span> 函数
-        会使用新的会话 ID 来生成 cookie 并发送给客户端。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.1.0</td>
-       <td>
-        加入 <code class="parameter">delete_old_session</code> 参数。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >session_regenerate_id</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Session Handling Functions" HREF="ref.session.html"><LINK  REL="PREVIOUS" TITLE="session_name" HREF="function.session-name.html"><LINK  REL="NEXT" TITLE="session_register" HREF="function.session-register.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.session-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.session-register.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.session-regenerate-id" ></A
+>session_regenerate_id</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN99233" ></A
+><P  >    (PHP 4 &#62;= 4.3.2)</P
+>session_regenerate_id&nbsp;--&nbsp;
+     Update the current session id with a newly generated one
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN99236" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >session_regenerate_id</B
+> ( void )<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >session_regenerate_id()</B
+> will replace the current
+     session id with a new one, and keep the current session information.
+    </P
+><P  >&#13;     ����ɹ��򷵻� <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>��ʧ���򷵻� <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>��
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN99248" ></A
+><P  ><B  >���� 1. A <B  CLASS="function" >session_regenerate_id()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />session_start</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">$old_sessionid </font><font  color="#007700">= </font><font  color="#0000BB">session_id</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">session_regenerate_id</font><font  color="#007700">();<br  /><br  /></font><font  color="#0000BB">$new_sessionid </font><font  color="#007700">= </font><font  color="#0000BB">session_id</font><font  color="#007700">();<br  /><br  />echo </font><font  color="#DD0000">"Old Session: $old_sessionid&lt;br /&gt;"</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"New Session: $new_sessionid&lt;br /&gt;"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$_SESSION</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      As of PHP 4.3.3, if session cookies are enabled, use of
+      <B  CLASS="function" >session_regenerate_id()</B
+> will also submit a new
+      session cookie with the new session id.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.session-id.html"  ><B  CLASS="function" >session_id()</B
+></A
+>,
+     <A  HREF="function.session-start.html"  ><B  CLASS="function" >session_start()</B
+></A
+>, and 
+     <A  HREF="function.session-name.html"  ><B  CLASS="function" >session_name()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.session-name.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.session-register.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >session_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.session.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >session_register</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.session-regenerate-id-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5084">
-    <p><strong>Example #1 A <span class="function"><strong>session_regenerate_id()</strong></span> 示例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />session_start</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$old_sessionid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">session_id</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">session_regenerate_id</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$new_sessionid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">session_id</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Old&nbsp;Session:&nbsp;</span><span style="color: #0000BB">$old_sessionid</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"New&nbsp;Session:&nbsp;</span><span style="color: #0000BB">$new_sessionid</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.session-regenerate-id-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.session-id.html" class="function" rel="rdfs-seeAlso">session_id()</a> - 获取/设置当前会话 ID</span></li>
-    <li class="member"><span class="function"><a href="function.session-start.html" class="function" rel="rdfs-seeAlso">session_start()</a> - 启动新会话或者重用现有会话</span></li>
-    <li class="member"><span class="function"><a href="function.session-name.html" class="function" rel="rdfs-seeAlso">session_name()</a> - 读取/设置会话名称</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.session-name.html">session_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.session-register-shutdown.html">session_register_shutdown</a></div>
- <div class="up"><a href="ref.session.html">Session 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

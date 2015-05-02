@@ -1,165 +1,95 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç”¨å›è°ƒå‡½æ•°è¿­ä»£åœ°å°†æ•°ç»„ç®€åŒ–ä¸ºå•ä¸€çš„å€¼</title>
+<HTML  ><HEAD  ><TITLE  >array_reduce</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_rand" HREF="function.array-rand.html"><LINK  REL="NEXT" TITLE="array_reverse" HREF="function.array-reverse.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-rand.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-reverse.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-reduce" ></A
+>array_reduce</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN8912" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>array_reduce&nbsp;--&nbsp;
+     ÓÃ»Øµ÷º¯Êıµü´úµØ½«Êı×é¼ò»¯Îªµ¥Ò»µÄÖµ
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN8915" ></A
+><H2  >ËµÃ÷</H2
+>mixed <B  CLASS="methodname" >array_reduce</B
+> ( array input, callback function [, int initial])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_reduce()</B
+> ½«»Øµ÷º¯Êı
+     <TT  CLASS="parameter" ><I  >function</I
+></TT
+> µü´úµØ×÷ÓÃµ½
+     <TT  CLASS="parameter" ><I  >input</I
+></TT
+> Êı×éÖĞµÄÃ¿Ò»¸öµ¥ÔªÖĞ£¬´Ó¶ø½«Êı×é¼ò»¯Îªµ¥Ò»µÄÖµ¡£Èç¹ûÖ¸¶¨ÁË¿ÉÑ¡²ÎÊı
+     <TT  CLASS="parameter" ><I  >initial</I
+></TT
+>£¬¸Ã²ÎÊı½«±»µ±³ÉÊÇÊı×éÖĞµÄµÚÒ»¸öÖµÀ´´¦Àí£¬»òÕßÈç¹ûÊı×éÎª¿ÕµÄ»°¾Í×÷Îª×îÖÕ·µ»ØÖµ¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8935" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >array_reduce()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">rsum</font><font  color="#007700">(</font><font  color="#0000BB">$v</font><font  color="#007700">, </font><font  color="#0000BB">$w</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$v </font><font  color="#007700">+= </font><font  color="#0000BB">$w</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$v</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">rmul</font><font  color="#007700">(</font><font  color="#0000BB">$v</font><font  color="#007700">, </font><font  color="#0000BB">$w</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$v </font><font  color="#007700">*= </font><font  color="#0000BB">$w</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$v</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= array(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$x </font><font  color="#007700">= array();<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">array_reduce</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#DD0000">"rsum"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$c </font><font  color="#007700">= </font><font  color="#0000BB">array_reduce</font><font  color="#007700">(</font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#DD0000">"rmul"</font><font  color="#007700">, </font><font  color="#0000BB">10</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$d </font><font  color="#007700">= </font><font  color="#0000BB">array_reduce</font><font  color="#007700">(</font><font  color="#0000BB">$x</font><font  color="#007700">, </font><font  color="#DD0000">"rsum"</font><font  color="#007700">, </font><font  color="#0000BB">1</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Õâ½«Ê¹ <TT  CLASS="varname" >$b</TT
+> µÄÖµÎª
+     <TT  CLASS="literal" >15</TT
+>£¬<TT  CLASS="varname" >$c</TT
+> µÄÖµÎª
+     <TT  CLASS="literal" >1200</TT
+>£¨= 1*2*3*4*5*10£©£¬ÒÔ¼°
+     <TT  CLASS="varname" >$d</TT
+> µÄÖµÎª <TT  CLASS="literal" >1</TT
+>¡£
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.array-filter.html"  ><B  CLASS="function" >array_filter()</B
+></A
+>£¬<A  HREF="function.array-map.html"  ><B  CLASS="function" >array_map()</B
+></A
+>£¬<A  HREF="function.array-unique.html"  ><B  CLASS="function" >array_unique()</B
+></A
+>
+     ºÍ <A  HREF="function.array-count-values.html"  ><B  CLASS="function" >array_count_values()</B
+></A
+>¡£
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-rand.html">array_rand</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-replace-recursive.html">array_replace_recursive</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-reduce" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">array_reduce</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">array_reduce</span> &mdash; <span class="dc-title">ç”¨å›è°ƒå‡½æ•°è¿­ä»£åœ°å°†æ•°ç»„ç®€åŒ–ä¸ºå•ä¸€çš„å€¼</span></p>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-rand.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-reverse.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_rand</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_reverse</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.array-reduce-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>array_reduce</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$input</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$function</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$initial</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ] )</div>
 
-  <p class="para rdfs-comment">
-   <span class="function"><strong>array_reduce()</strong></span> å°†å›è°ƒå‡½æ•°
-   <code class="parameter">function</code> è¿­ä»£åœ°ä½œç”¨åˆ°
-   <code class="parameter">input</code> æ•°ç»„ä¸­çš„æ¯ä¸€ä¸ªå•å…ƒä¸­ï¼Œä»è€Œå°†æ•°ç»„ç®€åŒ–ä¸ºå•ä¸€çš„å€¼ã€‚
-     </p>
- </div>
-
-  <div class="refsect1 parameters" id="refsect1-function.array-reduce-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">input</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The input array.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">function</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The callback function.
-      </p>
-      <div class="methodsynopsis dc-description">
-       <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><span class="replaceable">callback</span></span>
-        ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter reference">&$result</code></span>
-       , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$item</code></span>
-       )</div>
-
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">initial</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœæŒ‡å®šäº†å¯é€‰å‚æ•°
-   <code class="parameter">initial</code>ï¼Œè¯¥å‚æ•°å°†è¢«å½“æˆæ˜¯æ•°ç»„ä¸­çš„ç¬¬ä¸€ä¸ªå€¼æ¥å¤„ç†ï¼Œæˆ–è€…å¦‚æœæ•°ç»„ä¸ºç©ºçš„è¯å°±ä½œä¸ºæœ€ç»ˆè¿”å›å€¼ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.array-reduce-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ç»“æœå€¼ã€‚
-  </p>
-  <p class="para">
-   <code class="parameter">initial</code> å‚æ•°ï¼Œ<span class="function"><strong>array_reduce()</strong></span> è¿”å› <strong><code>NULL</code></strong>ã€‚
-  </p>
- </div>
-
-  <div class="refsect1 changelog" id="refsect1-function.array-reduce-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        Changed <code class="parameter">initial</code> to allow <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>, previously <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.array-reduce-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5293">
-    <p><strong>Example #1 <span class="function"><strong>array_reduce()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">rsum</span><span style="color: #007700">(</span><span style="color: #0000BB">$v</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$v&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">rmul</span><span style="color: #007700">(</span><span style="color: #0000BB">$v</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$v&nbsp;</span><span style="color: #007700">*=&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$x&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reduce</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rsum"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reduce</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rmul"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reduce</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rsum"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"No&nbsp;data&nbsp;to&nbsp;reduce"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     è¿™å°†ä½¿ <var class="varname"><var class="varname">$b</var></var> çš„å€¼ä¸º
-   <em>15</em>ï¼Œ<var class="varname"><var class="varname">$c</var></var> çš„å€¼ä¸º
-   <em>1200</em>ï¼ˆ= 10*1*2*3*4*5ï¼‰ï¼Œä»¥åŠ
-   <var class="varname"><var class="varname">$d</var></var> çš„å€¼ä¸º <em>1</em>ã€‚
-    </p></div>
-   </div>
-  </p>
- </div>
-
-  <div class="refsect1 seealso" id="refsect1-function.array-reduce-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.array-filter.html" class="function" rel="rdfs-seeAlso">array_filter()</a> - ç”¨å›è°ƒå‡½æ•°è¿‡æ»¤æ•°ç»„ä¸­çš„å•å…ƒ</span></li>
-    <li class="member"><span class="function"><a href="function.array-map.html" class="function" rel="rdfs-seeAlso">array_map()</a> - å°†å›è°ƒå‡½æ•°ä½œç”¨åˆ°ç»™å®šæ•°ç»„çš„å•å…ƒä¸Š</span></li>
-    <li class="member"><span class="function"><a href="function.array-unique.html" class="function" rel="rdfs-seeAlso">array_unique()</a> - ç§»é™¤æ•°ç»„ä¸­é‡å¤çš„å€¼</span></li>
-    <li class="member"><span class="function"><a href="function.array-count-values.html" class="function" rel="rdfs-seeAlso">array_count_values()</a> - ç»Ÿè®¡æ•°ç»„ä¸­æ‰€æœ‰çš„å€¼å‡ºç°çš„æ¬¡æ•°</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-rand.html">array_rand</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-replace-recursive.html">array_replace_recursive</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

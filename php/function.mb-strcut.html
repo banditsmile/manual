@@ -1,121 +1,86 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取字符的一部分</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-split.html">mb_split</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-strimwidth.html">mb_strimwidth</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mb-strcut" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mb_strcut</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">mb_strcut</span> &mdash; <span class="dc-title">获取字符的一部分</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mb-strcut-description">
-  <h3 class="title">说明</h3>
-<div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mb_strcut</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$start</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = NULL</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$encoding</code><span class="initializer"> = mb_internal_encoding()</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mb_strcut()</strong></span> 和 <span class="function"><a href="function.mb-substr.html" class="function">mb_substr()</a></span> 类似，都是从一个字符串中提取子字符串，但是按字节数来执行，而不是字符个数。
-   如果截断位置位于多字节字符两个字节的中间，将于该字符的第一个字节开始执行。
-   这也是和 <span class="function"><a href="function.substr.html" class="function">substr()</a></span> 函数的不同之处，后者简单地将字符串在字节之间截断，这将导致一个畸形的字节序列。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mb-strcut-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要截断的 <span class="type"><a href="language.types.string.html" class="type string">string</a></span>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">start</code></dt>
-
-     <dd>
-
-      <p class="para">
-       起始位置，以<em class="emphasis">字节</em>为单位。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <em class="emphasis">字节</em>长度。If omitted or <em>NULL</em>
-       is passed, extract all bytes to the end of the string.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">encoding</code></dt>
-
-     <dd>
-
-      <p class="para"><code class="parameter">encoding</code>
-参数为字符编码。如果省略，则使用内部字符编码。</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mb_strcut</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Multi-Byte String Functions" HREF="ref.mbstring.html"><LINK  REL="PREVIOUS" TITLE="mb_split" HREF="function.mb-split.html"><LINK  REL="NEXT" TITLE="mb_strimwidth" HREF="function.mb-strimwidth.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mb-split.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mb-strimwidth.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mb-strcut" ></A
+>mb_strcut</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN52238" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>mb_strcut&nbsp;--&nbsp;Get part of string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN52241" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mb_strcut</B
+> ( string str, int start [, int length [, string encoding]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mb_strcut()</B
+> returns the portion of
+     <TT  CLASS="parameter" ><I  >str</I
+></TT
+> specified by the
+     <TT  CLASS="parameter" ><I  >start</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> parameters.
+    </P
+><P  >&#13;     <B  CLASS="function" >mb_strcut()</B
+> performs equivalent operation as
+     <A  HREF="function.mb-substr.html"  ><B  CLASS="function" >mb_substr()</B
+></A
+> with different method. If
+     <TT  CLASS="parameter" ><I  >start</I
+></TT
+> position is multi-byte character's
+     second byte or larger, it starts from first byte of multi-byte
+     character. 
+    </P
+><P  >&#13;     It subtracts string from <TT  CLASS="parameter" ><I  >str</I
+></TT
+> that is
+     shorter than <TT  CLASS="parameter" ><I  >length</I
+></TT
+> AND character that is
+     not part of multi-byte string or not being middle of shift
+     sequence. 
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >encoding</I
+></TT
+> is character encoding. If it is
+     not set, internal character encoding is used.
+    </P
+><P  >&#13;     See also <A  HREF="function.mb-substr.html"  ><B  CLASS="function" >mb_substr()</B
+></A
+>,
+     <A  HREF="function.mb-internal-encoding.html"  ><B  CLASS="function" >mb_internal_encoding()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mb-split.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mb-strimwidth.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mb_split</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mbstring.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mb_strimwidth</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.mb-strcut-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   <span class="function"><strong>mb_strcut()</strong></span> 根据 <code class="parameter">start</code> 和 <code class="parameter">length</code> 参数返回 <code class="parameter">str</code> 的一部分。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mb-strcut-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mb-substr.html" class="function" rel="rdfs-seeAlso">mb_substr()</a> - 获取字符串的部分</span></li>
-    <li class="member"><span class="function"><a href="function.mb-internal-encoding.html" class="function" rel="rdfs-seeAlso">mb_internal_encoding()</a> - 设置/获取内部字符编码</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-split.html">mb_split</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-strimwidth.html">mb_strimwidth</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

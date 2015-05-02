@@ -1,149 +1,72 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Open persistent MS SQL connection</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-num-rows.html">mssql_num_rows</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-query.html">mssql_query</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-pconnect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_pconnect</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_pconnect</span> &mdash; <span class="dc-title">Open persistent MS SQL connection</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mssql-pconnect-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>mssql_pconnect</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$servername</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$new_link</code><span class="initializer"> = false</span></span>
-  ]]]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mssql_pconnect()</strong></span> acts very much like
-   <span class="function"><a href="function.mssql-connect.html" class="function">mssql_connect()</a></span> with two major differences.
-  </p>
-  <p class="para">
-   First, when connecting, the function would first try to find a
-   (persistent) link that&#039;s already open with the same host,
-   username and password.  If one is found, an identifier for it
-   will be returned instead of opening a new connection.
-  </p>
-  <p class="para">
-   Second, the connection to the SQL server will not be closed when
-   the execution of the script ends.  Instead, the link will remain
-   open for future use (<span class="function"><a href="function.mssql-close.html" class="function">mssql_close()</a></span> will not
-   close links established by <span class="function"><strong>mssql_pconnect()</strong></span>).
-  </p>
-  <p class="para">
-   This type of links is therefore called &#039;persistent&#039;.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-pconnect-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">servername</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The MS SQL server. It can also include a port number. e.g. 
-       <em>hostname:port</em>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">username</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The username. 
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">password</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The password. 
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">new_link</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If a second call is made to <span class="function"><strong>mssql_pconnect()</strong></span> with
-       the same arguments, no new link will be established, but instead, the
-       link identifier of the already opened link will be returned. This
-       parameter modifies this behavior and makes
-       <span class="function"><strong>mssql_pconnect()</strong></span> always open a new link, even if
-       <span class="function"><strong>mssql_pconnect()</strong></span> was called before with the same
-       parameters.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_pconnect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_num_rows" HREF="function.mssql-num-rows.html"><LINK  REL="NEXT" TITLE="mssql_query" HREF="function.mssql-query.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-num-rows.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-query.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-pconnect" ></A
+>mssql_pconnect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN59023" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mssql_pconnect&nbsp;--&nbsp;Open persistent MS SQL connection</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN59026" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >mssql_pconnect</B
+> ( [string servername [, string username [, string password]]])<BR  ></BR
+><P  > 
+     Returns: A positive MS SQL persistent link identifier on success,
+     or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >&#13;     <B  CLASS="function" >mssql_pconnect()</B
+> acts very much like
+     <A  HREF="function.mssql-connect.html"  ><B  CLASS="function" >mssql_connect()</B
+></A
+> with two major differences.
+    </P
+><P  > 
+     First, when connecting, the function would first try to find a
+     (persistent) link that's already open with the same host,
+     username and password.  If one is found, an identifier for it
+     will be returned instead of opening a new connection.
+    </P
+><P  > 
+     Second, the connection to the SQL server will not be closed when
+     the execution of the script ends.  Instead, the link will remain
+     open for future use (<A  HREF="function.mssql-close.html"  ><B  CLASS="function" >mssql_close()</B
+></A
+> will not
+     close links established by <B  CLASS="function" >mssql_pconnect()</B
+>).
+    </P
+><P  > 
+     This type of links is therefore called 'persistent'.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-num-rows.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-query.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_num_rows</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_query</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.mssql-pconnect-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns a positive MS SQL persistent link identifier on success, or
-   <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mssql-pconnect-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-1669">
-    <p><strong>Example #1 <span class="function"><strong>mssql_pconnect()</strong></span> using the <code class="parameter">new_link</code> parameter</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Connect&nbsp;to&nbsp;MSSQL&nbsp;and&nbsp;select&nbsp;the&nbsp;database<br /></span><span style="color: #0000BB">$link1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">'MANGO\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;new&nbsp;link<br /></span><span style="color: #0000BB">$link2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">'MANGO\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'random'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-num-rows.html">mssql_num_rows</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-query.html">mssql_query</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,210 +1,130 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>foreach</title>
+<HTML  ><HEAD  ><TITLE  >foreach</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Á÷³Ì¿ØÖÆ" HREF="control-structures.html"><LINK  REL="PREVIOUS" TITLE="for" HREF="control-structures.for.html"><LINK  REL="NEXT" TITLE="break" HREF="control-structures.break.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="control-structures.for.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 11. Á÷³Ì¿ØÖÆ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="control-structures.break.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="control-structures.foreach" ></A
+><TT  CLASS="literal" >foreach</TT
+></H1
+><P  >&#13;    PHP 4£¨²»ÊÇ PHP 3£©°üÀ¨ÁË <TT  CLASS="literal" >foreach</TT
+> ½á¹¹£¬ºÍ Perl ÒÔ¼°ÆäËûÓïÑÔºÜÏñ¡£ÕâÖ»ÊÇÒ»ÖÖ±éÀúÊı×é¼ò±ã·½·¨¡£<TT  CLASS="literal" >foreach</TT
+> ½öÄÜÓÃÓÚÊı×é£¬µ±ÊÔÍ¼½«ÆäÓÃÓÚÆäËüÊı¾İÀàĞÍ»òÕßÒ»¸öÎ´³õÊ¼»¯µÄ±äÁ¿Ê±»á²úÉú´íÎó¡£ÓĞÁ½ÖÖÓï·¨£¬µÚ¶şÖÖ±È½Ï´ÎÒªµ«È´ÊÇµÚÒ»ÖÖµÄÓĞÓÃµÄÀ©Õ¹¡£
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5138" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >foreach (array_expression as $value) statement
+foreach (array_expression as $key =&#62; $value) statement</PRE
+></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    µÚÒ»ÖÖ¸ñÊ½±éÀú¸ø¶¨µÄ <TT  CLASS="literal" >array_expression</TT
+> Êı×é¡£Ã¿´ÎÑ­»·ÖĞ£¬µ±Ç°µ¥ÔªµÄÖµ±»¸³¸ø <TT  CLASS="literal" >$value</TT
+> ²¢ÇÒÊı×éÄÚ²¿µÄÖ¸ÕëÏòÇ°ÒÆÒ»²½£¨Òò´ËÏÂÒ»´ÎÑ­»·ÖĞ½«»áµÃµ½ÏÂÒ»¸öµ¥Ôª£©¡£
+   </P
+><P  >&#13;    µÚ¶şÖÖ¸ñÊ½×öÍ¬ÑùµÄÊÂ£¬Ö»³ıÁËµ±Ç°µ¥ÔªµÄ¼üÖµÒ²»áÔÚÃ¿´ÎÑ­»·ÖĞ±»¸³¸ø±äÁ¿ <TT  CLASS="literal" >$key</TT
+>¡£
+   </P
+><P  >&#13;    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      µ± <TT  CLASS="literal" >foreach</TT
+> ¿ªÊ¼Ö´ĞĞÊ±£¬Êı×éÄÚ²¿µÄÖ¸Õë»á×Ô¶¯Ö¸ÏòµÚÒ»¸öµ¥Ôª¡£ÕâÒâÎ¶×Å²»ĞèÒªÔÚ <TT  CLASS="literal" >foreach</TT
+> Ñ­»·Ö®Ç°µ÷ÓÃ <A  HREF="function.reset.html"  ><B  CLASS="function" >reset()</B
+></A
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+><P  >&#13;    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ´ËÍâ×¢Òâ <TT  CLASS="literal" >foreach</TT
+> Ëù²Ù×÷µÄÊÇÖ¸¶¨Êı×éµÄÒ»¸ö¿½±´£¬¶ø²»ÊÇ¸ÃÊı×é±¾Éí¡£Òò´Ë¼´Ê¹ÓĞ
+      <A  HREF="function.each.html"  ><B  CLASS="function" >each()</B
+></A
+> µÄ¹¹Ôì£¬Ô­Êı×éÖ¸ÕëÒ²Ã»ÓĞ±ä£¬Êı×éµ¥ÔªµÄÖµÒ²²»ÊÜÓ°Ïì¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+><P  >&#13;    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="literal" >foreach</TT
+> ²»Ö§³ÖÓÃ¡°@¡±À´½ûÖ¹´íÎóĞÅÏ¢µÄÄÜÁ¦¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+><P  >&#13;    Äã¿ÉÄÜ×¢Òâµ½ÁËÒÔÏÂµÄ´úÂë¹¦ÄÜÍêÈ«ÏàÍ¬£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5161" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$arr </font><font  color="#007700">= array(</font><font  color="#DD0000">"one"</font><font  color="#007700">, </font><font  color="#DD0000">"two"</font><font  color="#007700">, </font><font  color="#DD0000">"three"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">reset </font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">);<br  />while (list(, </font><font  color="#0000BB">$value</font><font  color="#007700">) = </font><font  color="#0000BB">each </font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Value: $value&lt;br&gt;\n"</font><font  color="#007700">;<br  />}<br  /><br  />foreach (</font><font  color="#0000BB">$arr </font><font  color="#007700">as </font><font  color="#0000BB">$value</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Value: $value&lt;br&gt;\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    ÒÔÏÂ´úÂë¹¦ÄÜÒ²ÍêÈ«ÏàÍ¬£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5163" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />reset </font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">);<br  />while (list(</font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$value</font><font  color="#007700">) = </font><font  color="#0000BB">each </font><font  color="#007700">(</font><font  color="#0000BB">$arr</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Key: $key; Value: $value&lt;br&gt;\n"</font><font  color="#007700">;<br  />}<br  /><br  />foreach (</font><font  color="#0000BB">$arr </font><font  color="#007700">as </font><font  color="#0000BB">$key </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$value</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Key: $key; Value: $value&lt;br&gt;\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    Ê¾·¶ÓÃ·¨µÄ¸ü¶àÀı×Ó£º
+    <DIV  CLASS="informalexample" ><A  NAME="AEN5166" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* foreach example 1: value only */<br  /><br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">17</font><font  color="#007700">);<br  /><br  />foreach (</font><font  color="#0000BB">$a </font><font  color="#007700">as </font><font  color="#0000BB">$v</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"Current value of \$a: $v.\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">/* foreach example 2: value (with key printed for illustration) */<br  /><br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= array (</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">17</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">$i </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">; </font><font  color="#FF8000">/* for illustrative purposes only */<br  /><br  /></font><font  color="#007700">foreach (</font><font  color="#0000BB">$a </font><font  color="#007700">as </font><font  color="#0000BB">$v</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"\$a[$i] =&gt; $v.\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$i</font><font  color="#007700">++;<br  />}<br  /><br  /></font><font  color="#FF8000">/* foreach example 3: key and value */<br  /><br  /></font><font  color="#0000BB">$a </font><font  color="#007700">= array (<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"one" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">1</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"two" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">2</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"three" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">3</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#DD0000">"seventeen" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">17<br  /></font><font  color="#007700">);<br  /><br  />foreach (</font><font  color="#0000BB">$a </font><font  color="#007700">as </font><font  color="#0000BB">$k </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$v</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"\$a[$k] =&gt; $v.\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">/* foreach example 4: multi-dimensional arrays */<br  /><br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">][</font><font  color="#0000BB">0</font><font  color="#007700">] = </font><font  color="#DD0000">"a"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">][</font><font  color="#0000BB">1</font><font  color="#007700">] = </font><font  color="#DD0000">"b"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">][</font><font  color="#0000BB">0</font><font  color="#007700">] = </font><font  color="#DD0000">"y"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">][</font><font  color="#0000BB">1</font><font  color="#007700">] = </font><font  color="#DD0000">"z"</font><font  color="#007700">;<br  /><br  />foreach (</font><font  color="#0000BB">$a </font><font  color="#007700">as </font><font  color="#0000BB">$v1</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;foreach (</font><font  color="#0000BB">$v1 </font><font  color="#007700">as </font><font  color="#0000BB">$v2</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"$v2\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#FF8000">/* foreach example 5: dynamic arrays */<br  /><br  /></font><font  color="#007700">foreach (array(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">4</font><font  color="#007700">, </font><font  color="#0000BB">5</font><font  color="#007700">) as </font><font  color="#0000BB">$v</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#DD0000">"$v\n"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="control-structures.for.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="control-structures.break.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><TT  CLASS="literal" >for</TT
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="control-structures.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><TT  CLASS="literal" >break</TT
+></TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="control-structures.for.html">for</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="control-structures.break.html">break</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="control-structures.foreach" class="sect1">
- <h2 class="title"><em>foreach</em></h2>
- <p class="verinfo">(PHP 4, PHP 5)</p>
- <p class="para">
-  <em>foreach</em> è¯­æ³•ç»“æ„æä¾›äº†éå†æ•°ç»„çš„ç®€å•æ–¹å¼ã€‚<em>foreach</em>
-  ä»…èƒ½å¤Ÿåº”ç”¨äºæ•°ç»„å’Œå¯¹è±¡ï¼Œå¦‚æœå°è¯•åº”ç”¨äºå…¶ä»–æ•°æ®ç±»å‹çš„å˜é‡ï¼Œæˆ–è€…æœªåˆå§‹åŒ–çš„å˜é‡å°†å‘å‡ºé”™è¯¯ä¿¡æ¯ã€‚æœ‰ä¸¤ç§è¯­æ³•ï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="cdata"><pre>
-foreach (array_expression as $value)
-    statement
-foreach (array_expression as $key =&gt; $value)
-    statement
-</pre></div>
-   </div>
 
-  </div>
- </p>
- <p class="simpara">
-  ç¬¬ä¸€ç§æ ¼å¼éå†ç»™å®šçš„ <em>array_expression</em>
-  æ•°ç»„ã€‚æ¯æ¬¡å¾ªç¯ä¸­ï¼Œå½“å‰å•å…ƒçš„å€¼è¢«èµ‹ç»™ <em>$value</em>
-  å¹¶ä¸”æ•°ç»„å†…éƒ¨çš„æŒ‡é’ˆå‘å‰ç§»ä¸€æ­¥ï¼ˆå› æ­¤ä¸‹ä¸€æ¬¡å¾ªç¯ä¸­å°†ä¼šå¾—åˆ°ä¸‹ä¸€ä¸ªå•å…ƒï¼‰ã€‚
- </p>
- <p class="simpara">
-  ç¬¬äºŒç§æ ¼å¼åšåŒæ ·çš„äº‹ï¼Œåªé™¤äº†å½“å‰å•å…ƒçš„é”®åä¹Ÿä¼šåœ¨æ¯æ¬¡å¾ªç¯ä¸­è¢«èµ‹ç»™å˜é‡
-  <em>$key</em>ã€‚
- </p>
- <p class="simpara">
-  è¿˜èƒ½å¤Ÿè‡ªå®šä¹‰<a href="language.oop5.iterations.html" class="link">éå†å¯¹è±¡</a>ã€‚
- </p>
- <p class="para">
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å½“ <em>foreach</em>
-    å¼€å§‹æ‰§è¡Œæ—¶ï¼Œæ•°ç»„å†…éƒ¨çš„æŒ‡é’ˆä¼šè‡ªåŠ¨æŒ‡å‘ç¬¬ä¸€ä¸ªå•å…ƒã€‚è¿™æ„å‘³ç€ä¸éœ€è¦åœ¨
-    <em>foreach</em> å¾ªç¯ä¹‹å‰è°ƒç”¨ <span class="function"><a href="function.reset.html" class="function">reset()</a></span>ã€‚
-   </p>
-   <p class="para">
-    ç”±äº <em>foreach</em> ä¾èµ–å†…éƒ¨æ•°ç»„æŒ‡é’ˆï¼Œåœ¨å¾ªç¯ä¸­ä¿®æ”¹å…¶å€¼å°†å¯èƒ½å¯¼è‡´æ„å¤–çš„è¡Œä¸ºã€‚
-   </p>
-  </p></blockquote>
- </p>
- <p class="para">
-  å¯ä»¥å¾ˆå®¹æ˜“åœ°é€šè¿‡åœ¨ <em>$value</em> ä¹‹å‰åŠ ä¸Š
-  &amp; æ¥ä¿®æ”¹æ•°ç»„çš„å…ƒç´ ã€‚æ­¤æ–¹æ³•å°†ä»¥<a href="language.references.html" class="link">å¼•ç”¨</a>èµ‹å€¼è€Œä¸æ˜¯æ‹·è´ä¸€ä¸ªå€¼ã€‚
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br />foreach&nbsp;(</span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">as&nbsp;&amp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;$arr&nbsp;is&nbsp;now&nbsp;array(2,&nbsp;4,&nbsp;6,&nbsp;8)<br /></span><span style="color: #007700">unset(</span><span style="color: #0000BB">$value</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;æœ€åå–æ¶ˆæ‰å¼•ç”¨<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  <em>$value</em> çš„å¼•ç”¨ä»…åœ¨è¢«éå†çš„æ•°ç»„å¯ä»¥è¢«å¼•ç”¨æ—¶æ‰å¯ç”¨ï¼ˆä¾‹å¦‚æ˜¯ä¸ªå˜é‡ï¼‰ã€‚ä»¥ä¸‹ä»£ç åˆ™æ— æ³•è¿è¡Œï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">foreach&nbsp;(array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">)&nbsp;as&nbsp;&amp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-   
-  </div>
- </p> 
- <div class="warning"><strong class="warning">Warning</strong>
-  <p class="para">
-   æ•°ç»„æœ€åä¸€ä¸ªå…ƒç´ çš„ <em>$value</em> å¼•ç”¨åœ¨
-   <em>foreach</em> å¾ªç¯ä¹‹åä»ä¼šä¿ç•™ã€‚å»ºè®®ä½¿ç”¨
-   <span class="function"><a href="function.unset.html" class="function">unset()</a></span> æ¥å°†å…¶é”€æ¯ã€‚
-  </p>
- </div>  
- <p class="para">
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <em>foreach</em> ä¸æ”¯æŒç”¨â€œ@â€æ¥æŠ‘åˆ¶é”™è¯¯ä¿¡æ¯çš„èƒ½åŠ›ã€‚
-   </p>
-  </p></blockquote>
- </p>
- <p class="para">
-  ç”¨æˆ·å¯èƒ½æ³¨æ„åˆ°äº†ä»¥ä¸‹çš„ä»£ç åŠŸèƒ½å®Œå…¨ç›¸åŒï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"one"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"two"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"three"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">reset</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);<br />while&nbsp;(list(,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Value:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">&lt;br&gt;\n"</span><span style="color: #007700">;<br />}<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Value:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  ä»¥ä¸‹ä»£ç åŠŸèƒ½ä¹Ÿå®Œå…¨ç›¸åŒï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"one"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"two"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"three"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">reset</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);<br />while&nbsp;(list(</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Key:&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">;&nbsp;Value:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Key:&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">;&nbsp;Value:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- <p class="para">
-  ç¤ºèŒƒç”¨æ³•çš„æ›´å¤šä¾‹å­ï¼š
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;foreach&nbsp;example&nbsp;1:&nbsp;value&nbsp;only&nbsp;*/<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">17</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Current&nbsp;value&nbsp;of&nbsp;\$a:&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;foreach&nbsp;example&nbsp;2:&nbsp;value&nbsp;(with&nbsp;its&nbsp;manual&nbsp;access&nbsp;notation&nbsp;printed&nbsp;for&nbsp;illustration)&nbsp;*/<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">17</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">/*&nbsp;for&nbsp;illustrative&nbsp;purposes&nbsp;only&nbsp;*/<br /><br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\$a[</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;foreach&nbsp;example&nbsp;3:&nbsp;key&nbsp;and&nbsp;value&nbsp;*/<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"one"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"two"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"three"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"seventeen"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">17<br /></span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$k&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\$a[</span><span style="color: #0000BB">$k</span><span style="color: #DD0000">]&nbsp;=&gt;&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #DD0000">.\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;foreach&nbsp;example&nbsp;4:&nbsp;multi-dimensional&nbsp;arrays&nbsp;*/<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"y"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"z"</span><span style="color: #007700">;<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$v1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$v1&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$v2</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$v2</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;foreach&nbsp;example&nbsp;5:&nbsp;dynamic&nbsp;arrays&nbsp;*/<br /><br /></span><span style="color: #007700">foreach&nbsp;(array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$v</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </p>
- 
- 
- <div class="sect2" id="control-structures.foreach.list">
-  <h3 class="title">ç”¨ list() ç»™åµŒå¥—çš„æ•°ç»„è§£åŒ…</h3>
-  <p class="verinfo">(PHP 5 &gt;= 5.5.0)</p>
-
-  <p class="para">
-   PHP 5.5 å¢æ·»äº†éå†ä¸€ä¸ªæ•°ç»„çš„æ•°ç»„çš„åŠŸèƒ½å¹¶ä¸”æŠŠåµŒå¥—çš„æ•°ç»„è§£åŒ…åˆ°å¾ªç¯å˜é‡ä¸­ï¼Œåªéœ€å°†
-   <span class="function"><a href="function.list.html" class="function">list()</a></span> ä½œä¸ºå€¼æä¾›ã€‚
-  </p>
-
-  <p class="para">
-   ä¾‹å¦‚ï¼š
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">],<br />];<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;contains&nbsp;the&nbsp;first&nbsp;element&nbsp;of&nbsp;the&nbsp;nested&nbsp;array,<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;and&nbsp;$b&nbsp;contains&nbsp;the&nbsp;second&nbsp;element.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"A:&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">;&nbsp;B:&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-A: 1; B: 2
-A: 3; B: 4
-</pre></div>
-    </div>
-   </div>
-  </p>
-
-  <p class="para">
-   <span class="function"><a href="function.list.html" class="function">list()</a></span> ä¸­çš„å•å…ƒå¯ä»¥å°‘äºåµŒå¥—æ•°ç»„çš„ï¼Œæ­¤æ—¶å¤šå‡ºæ¥çš„æ•°ç»„å•å…ƒå°†è¢«å¿½ç•¥ï¼š
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">],<br />];<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Note&nbsp;that&nbsp;there&nbsp;is&nbsp;no&nbsp;$b&nbsp;here.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-1
-3
-</pre></div>
-    </div>
-   </div>
-  </p>
-
-  <p class="para">
-   å¦‚æœ <span class="function"><a href="function.list.html" class="function">list()</a></span> ä¸­åˆ—å‡ºçš„å•å…ƒå¤šäºåµŒå¥—æ•°ç»„åˆ™ä¼šå‘å‡ºä¸€æ¡æ¶ˆæ¯çº§åˆ«çš„é”™è¯¯ä¿¡æ¯ï¼š
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">],<br />];<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">as&nbsp;list(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"A:&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">;&nbsp;B:&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #DD0000">;&nbsp;C:&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-
-Notice: Undefined offset: 2 in example.php on line 7
-A: 1; B: 2; C: 
-
-Notice: Undefined offset: 2 in example.php on line 7
-A: 3; B: 4; C: 
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="control-structures.for.html">for</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="control-structures.break.html">break</a></div>
- <div class="up"><a href="language.control-structures.html">æµç¨‹æ§åˆ¶</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,932 +1,983 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>GD å’Œå›¾åƒå¤„ç† å‡½æ•°</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="image.examples.merged-watermark.html">ä½¿ç”¨ imagecopymerge å‡½æ•°åˆ›å»ºåŠé€æ˜æ°´å°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gd-info.html">gd_info</a></div>
- <div class="up"><a href="book.image.html">GD</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="ref.image" class="reference">
- <h1 class="title">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</h1>
-
- 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.gd-info.html">gd_info</a> â€” å–å¾—å½“å‰å®‰è£…çš„ GD åº“çš„ä¿¡æ¯</li><li><a href="function.getimagesize.html">getimagesize</a> â€” å–å¾—å›¾åƒå¤§å°</li><li><a href="function.getimagesizefromstring.html">getimagesizefromstring</a> â€” ä»å­—ç¬¦ä¸²ä¸­è·å–å›¾åƒå°ºå¯¸ä¿¡æ¯</li><li><a href="function.image-type-to-extension.html">image_type_to_extension</a> â€” å–å¾—å›¾åƒç±»å‹çš„æ–‡ä»¶åç¼€</li><li><a href="function.image-type-to-mime-type.html">image_type_to_mime_type</a> â€” å–å¾— getimagesizeï¼Œexif_read_dataï¼Œexif_thumbnailï¼Œexif_imagetype
-    æ‰€è¿”å›çš„å›¾åƒç±»å‹çš„ MIME ç±»å‹</li><li><a href="function.image2wbmp.html">image2wbmp</a> â€” ä»¥ WBMP æ ¼å¼å°†å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.imageaffine.html">imageaffine</a> â€” è¿”å›ç»è¿‡ä»¿å°„å˜æ¢åçš„å›¾åƒï¼Œå‰ªåˆ‡åŒºåŸŸå¯é€‰</li><li><a href="function.imageaffinematrixconcat.html">imageaffinematrixconcat</a> â€” Concat two matrices (as in doing many ops in one go)</li><li><a href="function.imageaffinematrixget.html">imageaffinematrixget</a> â€” Return an image containing the affine tramsformed src image, using an optional clipping area</li><li><a href="function.imagealphablending.html">imagealphablending</a> â€” è®¾å®šå›¾åƒçš„æ··è‰²æ¨¡å¼</li><li><a href="function.imageantialias.html">imageantialias</a> â€” æ˜¯å¦ä½¿ç”¨æŠ—é”¯é½¿ï¼ˆantialiasï¼‰åŠŸèƒ½</li><li><a href="function.imagearc.html">imagearc</a> â€” ç”»æ¤­åœ†å¼§</li><li><a href="function.imagechar.html">imagechar</a> â€” æ°´å¹³åœ°ç”»ä¸€ä¸ªå­—ç¬¦</li><li><a href="function.imagecharup.html">imagecharup</a> â€” å‚ç›´åœ°ç”»ä¸€ä¸ªå­—ç¬¦</li><li><a href="function.imagecolorallocate.html">imagecolorallocate</a> â€” ä¸ºä¸€å¹…å›¾åƒåˆ†é…é¢œè‰²</li><li><a href="function.imagecolorallocatealpha.html">imagecolorallocatealpha</a> â€” ä¸ºä¸€å¹…å›¾åƒåˆ†é…é¢œè‰² + alpha</li><li><a href="function.imagecolorat.html">imagecolorat</a> â€” å–å¾—æŸåƒç´ çš„é¢œè‰²ç´¢å¼•å€¼</li><li><a href="function.imagecolorclosest.html">imagecolorclosest</a> â€” å–å¾—ä¸æŒ‡å®šçš„é¢œè‰²æœ€æ¥è¿‘çš„é¢œè‰²çš„ç´¢å¼•å€¼</li><li><a href="function.imagecolorclosestalpha.html">imagecolorclosestalpha</a> â€” å–å¾—ä¸æŒ‡å®šçš„é¢œè‰²åŠ é€æ˜åº¦æœ€æ¥è¿‘çš„é¢œè‰²</li><li><a href="function.imagecolorclosesthwb.html">imagecolorclosesthwb</a> â€” å–å¾—ä¸ç»™å®šé¢œè‰²æœ€æ¥è¿‘çš„è‰²åº¦çš„é»‘ç™½è‰²çš„ç´¢å¼•</li><li><a href="function.imagecolordeallocate.html">imagecolordeallocate</a> â€” å–æ¶ˆå›¾åƒé¢œè‰²çš„åˆ†é…</li><li><a href="function.imagecolorexact.html">imagecolorexact</a> â€” å–å¾—æŒ‡å®šé¢œè‰²çš„ç´¢å¼•å€¼</li><li><a href="function.imagecolorexactalpha.html">imagecolorexactalpha</a> â€” å–å¾—æŒ‡å®šçš„é¢œè‰²åŠ é€æ˜åº¦çš„ç´¢å¼•å€¼</li><li><a href="function.imagecolormatch.html">imagecolormatch</a> â€” ä½¿ä¸€ä¸ªå›¾åƒä¸­è°ƒè‰²æ¿ç‰ˆæœ¬çš„é¢œè‰²ä¸çœŸå½©è‰²ç‰ˆæœ¬æ›´èƒ½åŒ¹é…</li><li><a href="function.imagecolorresolve.html">imagecolorresolve</a> â€” å–å¾—æŒ‡å®šé¢œè‰²çš„ç´¢å¼•å€¼æˆ–æœ‰å¯èƒ½å¾—åˆ°çš„æœ€æ¥è¿‘çš„æ›¿ä»£å€¼</li><li><a href="function.imagecolorresolvealpha.html">imagecolorresolvealpha</a> â€” å–å¾—æŒ‡å®šé¢œè‰² + alpha çš„ç´¢å¼•å€¼æˆ–æœ‰å¯èƒ½å¾—åˆ°çš„æœ€æ¥è¿‘çš„æ›¿ä»£å€¼</li><li><a href="function.imagecolorset.html">imagecolorset</a> â€” ç»™æŒ‡å®šè°ƒè‰²æ¿ç´¢å¼•è®¾å®šé¢œè‰²</li><li><a href="function.imagecolorsforindex.html">imagecolorsforindex</a> â€” å–å¾—æŸç´¢å¼•çš„é¢œè‰²</li><li><a href="function.imagecolorstotal.html">imagecolorstotal</a> â€” å–å¾—ä¸€å¹…å›¾åƒçš„è°ƒè‰²æ¿ä¸­é¢œè‰²çš„æ•°ç›®</li><li><a href="function.imagecolortransparent.html">imagecolortransparent</a> â€” å°†æŸä¸ªé¢œè‰²å®šä¹‰ä¸ºé€æ˜è‰²</li><li><a href="function.imageconvolution.html">imageconvolution</a> â€” ç”¨ç³»æ•° div å’Œ offset ç”³è¯·ä¸€ä¸ª 3x3 çš„å·ç§¯çŸ©é˜µ</li><li><a href="function.imagecopy.html">imagecopy</a> â€” æ‹·è´å›¾åƒçš„ä¸€éƒ¨åˆ†</li><li><a href="function.imagecopymerge.html">imagecopymerge</a> â€” æ‹·è´å¹¶åˆå¹¶å›¾åƒçš„ä¸€éƒ¨åˆ†</li><li><a href="function.imagecopymergegray.html">imagecopymergegray</a> â€” ç”¨ç°åº¦æ‹·è´å¹¶åˆå¹¶å›¾åƒçš„ä¸€éƒ¨åˆ†</li><li><a href="function.imagecopyresampled.html">imagecopyresampled</a> â€” é‡é‡‡æ ·æ‹·è´éƒ¨åˆ†å›¾åƒå¹¶è°ƒæ•´å¤§å°</li><li><a href="function.imagecopyresized.html">imagecopyresized</a> â€” æ‹·è´éƒ¨åˆ†å›¾åƒå¹¶è°ƒæ•´å¤§å°</li><li><a href="function.imagecreate.html">imagecreate</a> â€” æ–°å»ºä¸€ä¸ªåŸºäºè°ƒè‰²æ¿çš„å›¾åƒ</li><li><a href="function.imagecreatefromgd2.html">imagecreatefromgd2</a> â€” ä» GD2 æ–‡ä»¶æˆ– URL æ–°å»ºä¸€å›¾åƒ</li><li><a href="function.imagecreatefromgd2part.html">imagecreatefromgd2part</a> â€” ä»ç»™å®šçš„ GD2 æ–‡ä»¶æˆ– URL ä¸­çš„éƒ¨åˆ†æ–°å»ºä¸€å›¾åƒ</li><li><a href="function.imagecreatefromgd.html">imagecreatefromgd</a> â€” ä» GD æ–‡ä»¶æˆ– URL æ–°å»ºä¸€å›¾åƒ</li><li><a href="function.imagecreatefromgif.html">imagecreatefromgif</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatefromjpeg.html">imagecreatefromjpeg</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatefrompng.html">imagecreatefrompng</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatefromstring.html">imagecreatefromstring</a> â€” ä»å­—ç¬¦ä¸²ä¸­çš„å›¾åƒæµæ–°å»ºä¸€å›¾åƒ</li><li><a href="function.imagecreatefromwbmp.html">imagecreatefromwbmp</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatefromwebp.html">imagecreatefromwebp</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatefromxbm.html">imagecreatefromxbm</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatefromxpm.html">imagecreatefromxpm</a> â€” ç”±æ–‡ä»¶æˆ– URL åˆ›å»ºä¸€ä¸ªæ–°å›¾è±¡ã€‚</li><li><a href="function.imagecreatetruecolor.html">imagecreatetruecolor</a> â€” æ–°å»ºä¸€ä¸ªçœŸå½©è‰²å›¾åƒ</li><li><a href="function.imagecrop.html">imagecrop</a> â€” Crop an image using the given coordinates and size, x, y, width and height</li><li><a href="function.imagecropauto.html">imagecropauto</a> â€” Crop an image automatically using one of the available modes</li><li><a href="function.imagedashedline.html">imagedashedline</a> â€” ç”»ä¸€è™šçº¿</li><li><a href="function.imagedestroy.html">imagedestroy</a> â€” é”€æ¯ä¸€å›¾åƒ</li><li><a href="function.imageellipse.html">imageellipse</a> â€” ç”»ä¸€ä¸ªæ¤­åœ†</li><li><a href="function.imagefill.html">imagefill</a> â€” åŒºåŸŸå¡«å……</li><li><a href="function.imagefilledarc.html">imagefilledarc</a> â€” ç”»ä¸€æ¤­åœ†å¼§ä¸”å¡«å……</li><li><a href="function.imagefilledellipse.html">imagefilledellipse</a> â€” ç”»ä¸€æ¤­åœ†å¹¶å¡«å……</li><li><a href="function.imagefilledpolygon.html">imagefilledpolygon</a> â€” ç”»ä¸€å¤šè¾¹å½¢å¹¶å¡«å……</li><li><a href="function.imagefilledrectangle.html">imagefilledrectangle</a> â€” ç”»ä¸€çŸ©å½¢å¹¶å¡«å……</li><li><a href="function.imagefilltoborder.html">imagefilltoborder</a> â€” åŒºåŸŸå¡«å……åˆ°æŒ‡å®šé¢œè‰²çš„è¾¹ç•Œä¸ºæ­¢</li><li><a href="function.imagefilter.html">imagefilter</a> â€” å¯¹å›¾åƒä½¿ç”¨è¿‡æ»¤å™¨</li><li><a href="function.imageflip.html">imageflip</a> â€” Flips an image using a given mode</li><li><a href="function.imagefontheight.html">imagefontheight</a> â€” å–å¾—å­—ä½“é«˜åº¦</li><li><a href="function.imagefontwidth.html">imagefontwidth</a> â€” å–å¾—å­—ä½“å®½åº¦</li><li><a href="function.imageftbbox.html">imageftbbox</a> â€” ç»™å‡ºä¸€ä¸ªä½¿ç”¨ FreeType 2 å­—ä½“çš„æ–‡æœ¬æ¡†</li><li><a href="function.imagefttext.html">imagefttext</a> â€” ä½¿ç”¨ FreeType 2 å­—ä½“å°†æ–‡æœ¬å†™å…¥å›¾åƒ</li><li><a href="function.imagegammacorrect.html">imagegammacorrect</a> â€” å¯¹ GD å›¾åƒåº”ç”¨ gamma ä¿®æ­£</li><li><a href="function.imagegd2.html">imagegd2</a> â€” å°† GD2 å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.imagegd.html">imagegd</a> â€” å°† GD å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.imagegif.html">imagegif</a> â€” è¾“å‡ºå›¾è±¡åˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶ã€‚</li><li><a href="function.imagegrabscreen.html">imagegrabscreen</a> â€” Captures the whole screen</li><li><a href="function.imagegrabwindow.html">imagegrabwindow</a> â€” Captures a window</li><li><a href="function.imageinterlace.html">imageinterlace</a> â€” æ¿€æ´»æˆ–ç¦æ­¢éš”è¡Œæ‰«æ</li><li><a href="function.imageistruecolor.html">imageistruecolor</a> â€” æ£€æŸ¥å›¾åƒæ˜¯å¦ä¸ºçœŸå½©è‰²å›¾åƒ</li><li><a href="function.imagejpeg.html">imagejpeg</a> â€” è¾“å‡ºå›¾è±¡åˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶ã€‚</li><li><a href="function.imagelayereffect.html">imagelayereffect</a> â€” è®¾å®š alpha æ··è‰²æ ‡å¿—ä»¥ä½¿ç”¨ç»‘å®šçš„ libgd åˆ†å±‚æ•ˆæœ</li><li><a href="function.imageline.html">imageline</a> â€” ç”»ä¸€æ¡çº¿æ®µ</li><li><a href="function.imageloadfont.html">imageloadfont</a> â€” è½½å…¥ä¸€æ–°å­—ä½“</li><li><a href="function.imagepalettecopy.html">imagepalettecopy</a> â€” å°†è°ƒè‰²æ¿ä»ä¸€å¹…å›¾åƒæ‹·è´åˆ°å¦ä¸€å¹…</li><li><a href="function.imagepalettetotruecolor.html">imagepalettetotruecolor</a> â€” Converts a palette based image to true color</li><li><a href="function.imagepng.html">imagepng</a> â€” ä»¥ PNG æ ¼å¼å°†å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.imagepolygon.html">imagepolygon</a> â€” ç”»ä¸€ä¸ªå¤šè¾¹å½¢</li><li><a href="function.imagepsbbox.html">imagepsbbox</a> â€” ç»™å‡ºä¸€ä¸ªä½¿ç”¨ PostScript Type1 å­—ä½“çš„æ–‡æœ¬æ–¹æ¡†</li><li><a href="function.imagepsencodefont.html">imagepsencodefont</a> â€” æ”¹å˜å­—ä½“ä¸­çš„å­—ç¬¦ç¼–ç çŸ¢é‡</li><li><a href="function.imagepsextendfont.html">imagepsextendfont</a> â€” æ‰©å……æˆ–ç²¾ç®€å­—ä½“</li><li><a href="function.imagepsfreefont.html">imagepsfreefont</a> â€” é‡Šæ”¾ä¸€ä¸ª PostScript Type 1 å­—ä½“æ‰€å ç”¨çš„å†…å­˜</li><li><a href="function.imagepsloadfont.html">imagepsloadfont</a> â€” ä»æ–‡ä»¶ä¸­åŠ è½½ä¸€ä¸ª PostScript Type 1 å­—ä½“</li><li><a href="function.imagepsslantfont.html">imagepsslantfont</a> â€” å€¾æ–œæŸå­—ä½“</li><li><a href="function.imagepstext.html">imagepstext</a> â€” ç”¨ PostScript Type1 å­—ä½“æŠŠæ–‡æœ¬å­—ç¬¦ä¸²ç”»åœ¨å›¾åƒä¸Š</li><li><a href="function.imagerectangle.html">imagerectangle</a> â€” ç”»ä¸€ä¸ªçŸ©å½¢</li><li><a href="function.imagerotate.html">imagerotate</a> â€” ç”¨ç»™å®šè§’åº¦æ—‹è½¬å›¾åƒ</li><li><a href="function.imagesavealpha.html">imagesavealpha</a> â€” è®¾ç½®æ ‡è®°ä»¥åœ¨ä¿å­˜ PNG å›¾åƒæ—¶ä¿å­˜å®Œæ•´çš„ alpha é€šé“ä¿¡æ¯ï¼ˆä¸å•ä¸€é€æ˜è‰²ç›¸åï¼‰</li><li><a href="function.imagescale.html">imagescale</a> â€” Scale an image using the given new width and height</li><li><a href="function.imagesetbrush.html">imagesetbrush</a> â€” è®¾å®šç”»çº¿ç”¨çš„ç”»ç¬”å›¾åƒ</li><li><a href="function.imagesetinterpolation.html">imagesetinterpolation</a> â€” Set the interpolation method</li><li><a href="function.imagesetpixel.html">imagesetpixel</a> â€” ç”»ä¸€ä¸ªå•ä¸€åƒç´ </li><li><a href="function.imagesetstyle.html">imagesetstyle</a> â€” è®¾å®šç”»çº¿çš„é£æ ¼</li><li><a href="function.imagesetthickness.html">imagesetthickness</a> â€” è®¾å®šç”»çº¿çš„å®½åº¦</li><li><a href="function.imagesettile.html">imagesettile</a> â€” è®¾å®šç”¨äºå¡«å……çš„è´´å›¾</li><li><a href="function.imagestring.html">imagestring</a> â€” æ°´å¹³åœ°ç”»ä¸€è¡Œå­—ç¬¦ä¸²</li><li><a href="function.imagestringup.html">imagestringup</a> â€” å‚ç›´åœ°ç”»ä¸€è¡Œå­—ç¬¦ä¸²</li><li><a href="function.imagesx.html">imagesx</a> â€” å–å¾—å›¾åƒå®½åº¦</li><li><a href="function.imagesy.html">imagesy</a> â€” å–å¾—å›¾åƒé«˜åº¦</li><li><a href="function.imagetruecolortopalette.html">imagetruecolortopalette</a> â€” å°†çœŸå½©è‰²å›¾åƒè½¬æ¢ä¸ºè°ƒè‰²æ¿å›¾åƒ</li><li><a href="function.imagettfbbox.html">imagettfbbox</a> â€” å–å¾—ä½¿ç”¨ TrueType å­—ä½“çš„æ–‡æœ¬çš„èŒƒå›´</li><li><a href="function.imagettftext.html">imagettftext</a> â€” ç”¨ TrueType å­—ä½“å‘å›¾åƒå†™å…¥æ–‡æœ¬</li><li><a href="function.imagetypes.html">imagetypes</a> â€” è¿”å›å½“å‰ PHP ç‰ˆæœ¬æ‰€æ”¯æŒçš„å›¾åƒç±»å‹</li><li><a href="function.imagewbmp.html">imagewbmp</a> â€” ä»¥ WBMP æ ¼å¼å°†å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.imagewebp.html">imagewebp</a> â€” å°† WebP æ ¼å¼çš„å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.imagexbm.html">imagexbm</a> â€” å°† XBM å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</li><li><a href="function.iptcembed.html">iptcembed</a> â€” å°†äºŒè¿›åˆ¶ IPTC æ•°æ®åµŒå…¥åˆ°ä¸€å¹… JPEG å›¾åƒä¸­</li><li><a href="function.iptcparse.html">iptcparse</a> â€” å°†äºŒè¿›åˆ¶ IPTC å—è§£æä¸ºå•ä¸ªæ ‡è®°</li><li><a href="function.jpeg2wbmp.html">jpeg2wbmp</a> â€” å°† JPEG å›¾åƒæ–‡ä»¶è½¬æ¢ä¸º WBMP å›¾åƒæ–‡ä»¶</li><li><a href="function.png2wbmp.html">png2wbmp</a> â€” å°† PNG å›¾åƒæ–‡ä»¶è½¬æ¢ä¸º WBMP å›¾åƒæ–‡ä»¶</li></ul>
+<HTML  ><HEAD  ><TITLE  >Í¼Ïñº¯Êı¿â</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı²Î¿¼" HREF="funcref.html"><LINK  REL="PREVIOUS" TITLE="ob_iconv_handler" HREF="function.ob-iconv-handler.html"><LINK  REL="NEXT" TITLE="exif_imagetype" HREF="function.exif-imagetype.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="reference" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ob-iconv-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.exif-imagetype.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="reference" ><A  NAME="ref.image" ></A
+><DIV  CLASS="TITLEPAGE" ><H1  CLASS="title" >XLI. Í¼Ïñº¯Êı¿â</H1
+><DIV  CLASS="PARTINTRO" ><A  NAME="AEN37318" ></A
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.intro" ></A
+>½éÉÜ</H1
+><P  >&#13;     PHP ²»½öÏŞÓÚÖ»²úÉú HTML µÄÊä³ö¡£»¹¿ÉÒÔ´´½¨¼°²Ù×÷¶àÖÖ²»Í¬Í¼Ïñ¸ñÊ½µÄÍ¼ÏñÎÄ¼ş£¬°üÀ¨
+     gif£¬png£¬jpg£¬wbmp ºÍ xpm¡£¸ü·½±ãµÄÊÇ£¬PHP
+     ¿ÉÒÔÖ±½Ó½«Í¼ÏñÁ÷Êä³öµ½ä¯ÀÀÆ÷¡£Òª´¦ÀíÍ¼Ïñ£¬ĞèÒªÔÚ±àÒë PHP Ê±¼ÓÉÏÍ¼Ïñº¯ÊıµÄ GD ¿â¡£GD
+     ºÍ PHP »¹¿ÉÄÜĞèÒªÆäËüµÄ¿â£¬ÊÓºõĞèÒªÖ§³ÖÄÄĞ©Í¼Ïñ¸ñÊ½¶ø¶¨¡£
+    </P
+><P  >&#13;     ¿ÉÒÔÔÚ PHP ÖĞÊ¹ÓÃÍ¼Ïñº¯ÊıÀ´µÃµ½
+     <SPAN  CLASS="acronym" >JPEG</SPAN
+>£¬<SPAN  CLASS="acronym" >GIF</SPAN
+>£¬<SPAN  CLASS="acronym" >PNG</SPAN
+>£¬<SPAN  CLASS="acronym" >SWF</SPAN
+>£¬<SPAN  CLASS="acronym" >TIFF</SPAN
+>
+     ºÍ <SPAN  CLASS="acronym" >JPEG2000</SPAN
+> Í¼ÏñµÄ´óĞ¡¡£
+    </P
+><P  >&#13;     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ÔÄ¶ÁĞèÇóÒ»½ÚÒÔÁË½âÔõÑùÀ©Õ¹Í¼ÏñÄÜÁ¦À´¶ÁÈ¡£¬Ğ´ÈëºÍĞŞ¸ÄÍ¼ÏñÒÔ¼°¶ÁÈ¡ÊıÂëÏà»úÅÄÉãµÄÕÕÆ¬ÖĞµÄÔªÊı¾İ¡£
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.requirements" ></A
+>ĞèÇó</H1
+><P  >&#13;     Èç¹ûÓĞ <SPAN  CLASS="acronym" >GD</SPAN
+> ¿â£¨ÔÚ <A  href="http://www.boutell.com/gd/"  TARGET="_top" >http://www.boutell.com/gd/</A
+>£©£¬Äã¿ÉÒÔ´´½¨¼°²Ù×÷Í¼Ïñ¡£
+    </P
+><P  >&#13;     ËùÄÜ´¦ÀíµÄÍ¼Ïñ¸ñÊ½È¡¾öÓÚÄãËù°²×°µÄ <SPAN  CLASS="acronym" >GD</SPAN
+>
+     °æ±¾£¬ÒÔ¼°ÆäËü <SPAN  CLASS="acronym" >GD</SPAN
+> ¿ÉÄÜÓÃµ½µÄÀ´·ÃÎÊÕâĞ©Í¼Ïñ¸ñÊ½µÄ¿â¡£µÍÓÚ
+     gd-1.6 °æ±¾µÄ <SPAN  CLASS="acronym" >GD</SPAN
+> Ö§³Ö GIF Í¼Ïñ¸ñÊ½£¬²»Ö§³Ö
+     PNG£¬¸ßÓÚ gd-1.6 µÄ°æ±¾Ö§³Ö PNG£¬²»Ö§³Ö GIF¡£
+      <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        ×Ô PHP 4.3 Æğ°ó¶¨ÁËÒ»¸ö GD ¿âµÄ°æ±¾¡£Õâ¸ö°ó¶¨µÄ°æ±¾¾ßÓĞÒ»Ğ©¸½¼ÓµÄÌØÉ«ÀıÈç
+        alpha blending£¬Ó¦ÓÅÏÈÊ¹ÓÃ´Ë°æ±¾£¬ÒòÎªËüµÄ´úÂëÎ¬»¤µÃ¸üºÃÒÔ¼°¸ü¼ÓÎÈ¶¨¡£
+       </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >&#13;     Äã¿ÉÄÜÏëÒªÔö¼Ó GD ´¦ÀíµÄÍ¼Ïñ¸ñÊ½¡£
+     <DIV  CLASS="table" ><A  NAME="AEN37344" ></A
+><P  ><B  >±í¸ñ 1. ËùÖ§³ÖµÄÍ¼Ïñ¸ñÊ½</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Í¼Ïñ¸ñÊ½</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÒªÏÂÔØµÄ¿â</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×¢½â</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >gif</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          ½öÔÚµÍÓÚ gd-1.6 µÄ GD °æ±¾ÖĞÖ§³Ö¡£PHP 4.3.0 ÒÔ¼°°ó¶¨µÄ GD
+          ¿âÖĞÖ§³Ö<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >Ö»¶Á</I
+></SPAN
+>µÄ GIF ¡£
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >jpeg-6b</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  href="ftp://ftp.uu.net/graphics/jpeg/"  TARGET="_top" >ftp://ftp.uu.net/graphics/jpeg/</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >png</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  href="http://www.libpng.org/pub/png/libpng.html"  TARGET="_top" >http://www.libpng.org/pub/png/libpng.html</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          ½öÔÚ¸ßÓÚ gd-1.6 µÄ GD °æ±¾ÖĞÖ§³Ö¡£
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >xpm</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  href="ftp://metalab.unc.edu/pub/Linux/libs/X/!INDEX.html"  TARGET="_top" >ftp://metalab.unc.edu/pub/Linux/libs/X/!INDEX.html</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Èç¹ûÄãµÄÏµÍ³ÖĞ°²×°ÁË X »·¾³£¬ÔòºÜ¿ÉÄÜÒÑ¾­ÓĞÁËÕâ¸ö¿â¡£
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     Äã¿ÉÄÜÏëÒªÔöÇ¿ GD ´¦Àí²»Í¬×ÖÌåµÄÄÜÁ¦¡£Ö§³ÖÏÂÁĞ×Ö¿â£º
+     <DIV  CLASS="table" ><A  NAME="AEN37378" ></A
+><P  ><B  >±í¸ñ 2. ËùÖ§³ÖµÄ×Ö¿â</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×Ö¿â</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÏÂÔØÎ»ÖÃ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×¢½â</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >FreeType 1.x</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  href="http://www.freetype.org/"  TARGET="_top" >http://www.freetype.org/</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >FreeType 2</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  href="http://www.freetype.org/"  TARGET="_top" >http://www.freetype.org/</A
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >T1lib</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><A  href="ftp://sunsite.unc.edu/pub/Linux/libs/graphics/"  TARGET="_top" >ftp://sunsite.unc.edu/pub/Linux/libs/graphics/</A
+>)</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Ö§³Ö Type 1 ×ÖÌå¡£
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹û PHP ±àÒëÊ±Ö¸¶¨ÁË
+     <TT  CLASS="option" >--enable-exif</TT
+>£¬¾Í¿ÉÒÔ²Ù×÷´æ´¢ÓÚ
+     <SPAN  CLASS="acronym" >JPEG</SPAN
+> ºÍ <SPAN  CLASS="acronym" >TIFF</SPAN
+>
+     Í¼ÏñÎÄ¼şÍ·ÖĞµÄĞÅÏ¢¡£ÕâÑù¾Í¿ÉÒÔ¶ÁÈ¡ÉÏÃæÌáµ½µÄÊıÂëÏà»úÉú³ÉµÄÕÕÆ¬ÖĞµÄÔªÊı¾İ¡£ÕâĞ©º¯Êı²»ĞèÒª
+     <SPAN  CLASS="acronym" >GD</SPAN
+> ¿â¡£
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       PHP ²»ĞèÒªÈÎºÎ¸½¼ÓµÄ¿âÀ´Ö§³Ö exif Ä£¿é¡£
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.installation" ></A
+>°²×°</H1
+><P  >&#13;  Òª¼¤»î GD Ö§³Ö£¬ÅäÖÃ PHP Ê±¼ÓÉÏ
+  <TT  CLASS="option" >--with-gd[=DIR]</TT
+>£¬DIR ÊÇ GD
+  µÄ»ù±¾°²×°Ä¿Â¼¡£ÒªÊ¹ÓÃÍÆ¼öµÄ°ó¶¨µÄ GD ¿â°æ±¾£¨Ê×´Î°ó¶¨ÓÚ PHP 4.3.0£©£¬Ê¹ÓÃ
+  <TT  CLASS="option" >--with-gd</TT
+>¡£ÔÚ Windows
+  ÏÂ£¬ÒªÔÚ <TT  CLASS="filename" >php.ini</TT
+> ÖĞ°Ñ GD2 DLL <TT  CLASS="filename" >php_gd2.dll</TT
+>
+  ¼Óµ½À©Õ¹¿âÖĞ¡£GD1 DLL <TT  CLASS="filename" >php_gd.dll</TT
+> ×Ô PHP 4.3.2
+  ÆğÒÑ¾­ÒÆ³ıÁË¡£´ËÍâ×¢ÒâÊ×Ñ¡µÄÕæ²ÊÉ«Í¼Ïñº¯ÊıÀıÈç
+  <A  HREF="function.imagecreatetruecolor.html"  ><B  CLASS="function" >imagecreatetruecolor()</B
+></A
+>£¬ĞèÒª GD2¡£
+ </P
+><P  >&#13;  ÒªÔÚ <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >PHP 3</I
+></SPAN
+> ÖĞ½ûÖ¹ GD Ö§³Ö£¬ÔÚÅäÖÃÊ±¼ÓÉÏ
+  <TT  CLASS="option" >--without-gd</TT
+>¡£
+ </P
+><P  >&#13;  ÒªÔöÇ¿ GD µÄÄÜÁ¦ÒÔ´¦Àí¸ü¶àµÄÍ¼Ïñ¸ñÊ½£¬ÔÚÅäÖÃ PHP Ê±Ö¸¶¨
+  <TT  CLASS="literal" >--with-XXXX</TT
+> µÄÅäÖÃ¿ª¹Ø¡£
+  <DIV  CLASS="table" ><A  NAME="AEN37426" ></A
+><P  ><B  >±í¸ñ 3. ËùÖ§³ÖµÄÍ¼Ïñ¸ñÊ½</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Í¼Ïñ¸ñÊ½</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÅäÖÃ¿ª¹Ø</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >jpeg-6b</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î jpeg-6b µÄÖ§³Ö£¬¼ÓÉÏ
+       <TT  CLASS="option" >--with-jpeg-dir=DIR</TT
+>.
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >png</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î png µÄÖ§³Ö£¬¼ÓÉÏ
+       <TT  CLASS="option" >--with-png-dir=DIR</TT
+>¡£×¢Òâ£¬libpng
+       ĞèÒª <A  HREF="ref.zlib.html#zlib.requirements"  >zlib library</A
+>£¬Òò´ËÅäÖÃÖĞ»¹Òª¼ÓÉÏ
+       <TT  CLASS="option" >--with-zlib-dir[=DIR]</TT
+>¡£
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >xpm</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î xpm µÄÖ§³Ö£¬¼ÓÉÏ
+       <TT  CLASS="option" >--with-xpm-dir=DIR</TT
+>¡£Èç¹ûÅäÖÃÊ±ÌáÊ¾ÕÒ²»µ½ËùĞèÒªµÄ¿â£¬¿ÉÒÔ¼ÓÉÏµ½
+       X11 ¿âµÄÂ·¾¶¡£
+      </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ </P
+><P  >&#13;  ÒªÔöÇ¿ GD µÄÄÜÁ¦ÒÔ´¦Àí¸ü¶àµÄ×ÖÌå£¬ÔÚÅäÖÃ PHP Ê±Ö¸¶¨
+  <TT  CLASS="literal" >--with-XXXX</TT
+> µÄÅäÖÃ¿ª¹Ø¡£
+  <DIV  CLASS="table" ><A  NAME="AEN37453" ></A
+><P  ><B  >±í¸ñ 4. ËùÖ§³ÖµÄ×Ö¿â</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >×Ö¿â</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÅäÖÃ¿ª¹Ø</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >FreeType 1.x</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î FreeType 1.x µÄÖ§³Ö£¬¼ÓÉÏ
+       <TT  CLASS="option" >--with-ttf[=DIR]</TT
+>¡£
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >FreeType 2</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î FreeType 2 µÄÖ§³Ö£¬¼ÓÉÏ
+       <TT  CLASS="option" >--with-freetype-dir=DIR</TT
+>¡£
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >T1lib</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î T1lib£¨Type 1 ×ÖÌå£©£¬¼ÓÉÏ
+       <TT  CLASS="option" >--with-t1lib[=DIR]</TT
+>¡£
+      </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >±¾µØ TrueType ×Ö·û´®º¯Êı</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;       Òª¼¤»î±¾µØ TrueType ×Ö·û´®º¯ÊıµÄÖ§³Ö£¬¼ÓÉÏ
+       <TT  CLASS="option" >--enable-gd-native-ttf</TT
+>¡£
+      </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.configuration" ></A
+>ÔËĞĞÊ±ÅäÖÃ</H1
+><P  >ÕâĞ©º¯ÊıµÄĞĞÎªÊÜµ½È«¾Ö<A  HREF="configuration.html#configuration.file"  >ÅäÖÃÎÄ¼ş</A
+> <TT  CLASS="filename" >php.ini</TT
+> µÄÓ°Ïì¡£</P
+><P  >&#13;  µ± <A  HREF="ref.mbstring.html"  >mbstring</A
+> Ä£¿é¿ÉÓÃÊ±£¬exif
+  Ö§³ÖÓÃ»§×¢ÊÍÖĞµÄ Unicode ºÍ JIS
+  ×Ö·û±àÂëµÄ×Ô¶¯×ª»»¡£ÕâÊÇÍ¨¹ıÏÈÓÃÖ¸¶¨×Ö·û¼¯½«×¢ÊÍ½âÂë£¬°Ñ½á¹ûÔÙÓÃÁíÒ»¸ö·ûºÏÄãµÄ
+  <TT  CLASS="literal" >HTTP</TT
+> Êä³öµÄ×Ö·û¼¯±àÂëÀ´ÊµÏÖµÄ¡£
+ <DIV  CLASS="table" ><A  NAME="AEN37489" ></A
+><P  ><B  >±í¸ñ 5. Exif ÅäÖÃÑ¡Ïî</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ãû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >¿É±ä·¶Î§</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.encode_unicode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"ISO-8859-15"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_unicode_motorola</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"UCS-2BE"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_unicode_intel</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"UCS-2LE"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.encode_jis</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >""</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_jis_motorola</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"JIS"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >exif.decode_jis_intel</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >"JIS"</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >PHP_INI_ALL</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+  ÓĞ¹Ø PHP_INI_* ³£Á¿µÄ¸ü¶àÏ¸½ÚºÍ¶¨Òå¼û <A  HREF="function.ini-set.html"  ><B  CLASS="function" >ini_set()</B
+></A
+>¡£
+ </P
+><P  >ÒÔÏÂÊÇ¸ÃÅäÖÃÑ¡ÏîµÄ¼òÒª½âÊÍ¡£</P
+><P  >&#13;  <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><A  NAME="ini.exif.encode_unicode" ></A
+><TT  CLASS="parameter" ><I  >exif.encode_unicode</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;     <TT  CLASS="literal" >exif.encode_unicode</TT
+> ¶¨ÒåÁË UNICODE
+     ÓÃ»§×¢ÊÍ±»´¦ÀíµÄ×Ö·û¼¯¡£Ä¬ÈÏÎª
+     ISO-8859-15£¬¿ÉÓÃÓÚ´ó¶àÊı·ÇÑÇÖŞ¹ú¼Ò¡£±¾ÉèÖÃ¿ÉÒÔÎª¿Õ»òÕß±ØĞëÎªÒ»¸ö
+     mbstring ËùÖ§³ÖµÄ±àÂë¡£Èç¹ûÎª¿Õ£¬ÔòÊ¹ÓÃµ±Ç° mbstring
+     ÄÚ²¿Ê¹ÓÃµÄ±àÂë¡£
+    </P
+></DD
+><DT  ><A  NAME="ini.exif.decode_unicode_motorola" ></A
+><TT  CLASS="parameter" ><I  >exif.decode_unicode_motorola</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      <TT  CLASS="literal" >exif.decode_unicode_motorola</TT
+> ¶¨ÒåÁË Unicode
+      ±àÂëµÄÓÃ»§×¢ÊÍµÄÍ¼ÏñÄÚ²¿×Ö·û¼¯£¬Èç¹ûÍ¼ÏñÊÇÄ¦ÍĞÂŞÀ­×Ö½ÚË³Ğò£¨big-endian£©µÄ»°¡£±¾ÉèÖÃ²»ÄÜÎª¿Õµ«¿ÉÒÔÖ¸¶¨Ò»¸ö
+      mbstring Ö§³ÖµÄ±àÂëÁĞ±í¡£Ä¬ÈÏÎª UCS-2BE¡£
+     </P
+></DD
+><DT  ><A  NAME="ini.exif.decode_unicode_intel" ></A
+><TT  CLASS="parameter" ><I  >exif.decode_unicode_intel</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      <TT  CLASS="literal" >exif.decode_unicode_intel</TT
+> ¶¨ÒåÁË Unicode
+      ±àÂëµÄÓÃ»§×¢ÊÍµÄÍ¼ÏñÄÚ²¿×Ö·û¼¯£¬Èç¹ûÍ¼ÏñÊÇÓ¢ÌØ¶û×Ö½ÚË³Ğò£¨little-endian£©µÄ»°¡£±¾ÉèÖÃ²»ÄÜÎª¿Õµ«¿ÉÒÔÖ¸¶¨Ò»¸ö
+      mbstring Ö§³ÖµÄ±àÂëÁĞ±í¡£Ä¬ÈÏÎª UCS-2LE¡£
+     </P
+></DD
+><DT  ><A  NAME="ini.exif.encode_jis" ></A
+><TT  CLASS="parameter" ><I  >exif.encode_jis</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      <TT  CLASS="literal" >exif.encode_jis</TT
+> ¶¨ÒåÁË JIS
+      ÓÃ»§×¢ÊÍ±»´¦ÀíµÄ×Ö·û¼¯¡£Ä¬ÈÏÎª¿ÕÖµ£¬ÆÈÊ¹º¯ÊıÊ¹ÓÃµ±Ç°
+      mbstring Ê¹ÓÃµÄÄÚ²¿±àÂë¡£
+     </P
+></DD
+><DT  ><A  NAME="ini.exif.decode_jis_motorola" ></A
+><TT  CLASS="parameter" ><I  >exif.decode_jis_motorola</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      <TT  CLASS="literal" >exif.decode_jis_motorola</TT
+> ¶¨ÒåÁË JIS
+      ±àÂëµÄÓÃ»§×¢ÊÍµÄÍ¼ÏñÄÚ²¿×Ö·û¼¯£¬Èç¹ûÍ¼ÏñÊÇÄ¦ÍĞÂŞÀ­×Ö½ÚË³Ğò£¨big-endian£©µÄ»°¡£±¾ÉèÖÃ²»ÄÜÎª¿Õµ«¿ÉÒÔÖ¸¶¨Ò»¸ö
+      mbstring Ö§³ÖµÄ±àÂëÁĞ±í¡£Ä¬ÈÏÎª JIS¡£
+     </P
+></DD
+><DT  ><A  NAME="ini.exif.decode_jis_intel" ></A
+><TT  CLASS="parameter" ><I  >exif.decode_jis_intel</I
+></TT
+>
+     <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+></DT
+><DD  ><P  >&#13;      <TT  CLASS="literal" >exif.decode_jis_intel</TT
+> ¶¨ÒåÁË JIS
+      ±àÂëµÄÓÃ»§×¢ÊÍµÄÍ¼ÏñÄÚ²¿×Ö·û¼¯£¬Èç¹ûÍ¼ÏñÊÇÓ¢ÌØ¶û×Ö½ÚË³Ğò£¨litle-endian£©µÄ»°¡£±¾ÉèÖÃ²»ÄÜÎª¿Õµ«¿ÉÒÔÖ¸¶¨Ò»¸ö
+      mbstring Ö§³ÖµÄ±àÂëÁĞ±í¡£Ä¬ÈÏÎª JIS¡£
+     </P
+></DD
+></DL
+></DIV
+>
+ </P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.resources" ></A
+>×ÊÔ´ÀàĞÍ</H1
+><P  >¸ÃÀ©Õ¹Ä£¿éÎ´¶¨ÒåÈÎºÎ×ÊÔ´ÀàĞÍ¡£</P
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.constants" ></A
+>Ô¤¶¨Òå³£Á¿</H1
+><P  >&#13;ÓÉÓÚÕâĞ©³£Á¿ÊÇÓÉ¸ÃÀ©Õ¹Ä£¿é¶¨ÒåµÄ£¬Òò´ËÖ»ÓĞÔÚ¸ÃÀ©Õ¹Ä£¿é±»±àÒëµ½ PHP ÖĞ£¬»òÕßÔÚÔËĞĞÊ±±»¶¯Ì¬¼ÓÔØºó£¬ÕâĞ©³£Á¿²ÅÓĞĞ§¡£</P
+><P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="constant" ><B  >IMG_GIF</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_JPG</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_JPEG</B
+></TT
+>
+     (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_PNG</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_WBMP</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_XPM</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_COLOR_TILED</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_COLOR_STYLED</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_COLOR_BRUSHED</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_COLOR_STYLEDBRUSHED</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_COLOR_TRANSPARENT</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_ARC_ROUNDED</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_ARC_PIE</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_ARC_CHORD</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_ARC_NOFILL</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMG_ARC_EDGED</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_GIF</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_JPEG</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_PNG</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_SWF</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_PSD</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_BMP</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_WBMP</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_XBM</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_TIFF_II</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_TIFF_MM</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_IFF</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_JB2</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_JPC</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_JP2</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_JPX</B
+></TT
+>
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;
+    </P
+></DD
+><DT  ><TT  CLASS="constant" ><B  >IMAGETYPE_SWC</B
+></TT
+> 
+    (<A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+>)</DT
+><DD  ><P  >&#13;     
+    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="image.examples" ></A
+>·¶Àı</H1
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN37770" ></A
+><P  ><B  >Àı×Ó 1. ÓÃ PHP ´´½¨ PNG Í¼Ïñ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;header</font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: image/png"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$string </font><font  color="#007700">= </font><font  color="#0000BB">$_GET</font><font  color="#007700">[</font><font  color="#DD0000">'text'</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$im&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">imagecreatefrompng</font><font  color="#007700">(</font><font  color="#DD0000">"images/button1.png"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$orange </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">220</font><font  color="#007700">, </font><font  color="#0000BB">210</font><font  color="#007700">, </font><font  color="#0000BB">60</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$px&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= (</font><font  color="#0000BB">imagesx</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">) - </font><font  color="#0000BB">7.5 </font><font  color="#007700">* </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$string</font><font  color="#007700">)) / </font><font  color="#0000BB">2</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">imagestring</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">, </font><font  color="#0000BB">$px</font><font  color="#007700">, </font><font  color="#0000BB">9</font><font  color="#007700">, </font><font  color="#0000BB">$string</font><font  color="#007700">, </font><font  color="#0000BB">$orange</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">imagepng</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">imagedestroy</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     ±¾ÀıÓ¦¸ÃÔÚÒ»¸ö¾ßÓĞÀàËÆ£º&#60;img
+     src="button.php?text=text"&#62; ±êÇ©µÄÒ³ÃæÖĞ±»µ÷ÓÃ¡£ÉÏÊöµÄ
+     button.php ½Å±¾»áÈ¡µÃ
+     "text" ×Ö·û´®½«Æä¸²¸ÇÔÚÔ­Í¼ÉÏ£¨±¾ÀıÖĞµÄ
+     "images/button1.png"£©²¢Êä³ö×÷Îª½á¹ûµÄÍ¼Ïñ¡£ÓÃ´Ë·½·¨¿ÉÒÔºÜ·½±ãµØĞŞ¸Ä°´Å¥ÉÏµÄÎÄ×Ö´Ó¶ø±ÜÃâÁËÃ¿´Î¶¼ÒªĞÂ»­Ò»¸ö°´Å¥µÄÍ¼Ïñ¡£ÓÃ´Ë·½·¨¾Í¿ÉÒÔ¶¯Ì¬Éú³ÉÁË¡£
+    </P
+></DIV
+></DIV
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="function.exif-imagetype.html"  >exif_imagetype</A
+>&nbsp;--&nbsp;ÅĞ¶ÏÒ»¸öÍ¼ÏñµÄÀàĞÍ</DT
+><DT  ><A  HREF="function.exif-read-data.html"  >exif_read_data</A
+>&nbsp;--&nbsp;
+     ´Ó <SPAN  CLASS="acronym" >JPEG</SPAN
+> »ò <SPAN  CLASS="acronym" >TIFF</SPAN
+>
+     ÎÄ¼şÖĞ¶ÁÈ¡ <SPAN  CLASS="acronym" >EXIF</SPAN
+> Í·ĞÅÏ¢£¬ÕâÑù¾Í¿ÉÒÔ¶ÁÈ¡ÊıÂëÏà»ú²úÉúµÄÔªÊı¾İ
+    </DT
+><DT  ><A  HREF="function.exif-thumbnail.html"  >exif_thumbnail</A
+>&nbsp;--&nbsp;È¡µÃÇ¶ÈëÔÚ TIFF »ò JPEG Í¼ÏñÖĞµÄËõÂÔÍ¼</DT
+><DT  ><A  HREF="function.gd-info.html"  >gd_info</A
+>&nbsp;--&nbsp;È¡µÃµ±Ç°°²×°µÄ GD ¿âµÄĞÅÏ¢</DT
+><DT  ><A  HREF="function.getimagesize.html"  >getimagesize</A
+>&nbsp;--&nbsp;È¡µÃÍ¼Ïñ´óĞ¡</DT
+><DT  ><A  HREF="function.image-type-to-mime-type.html"  >image_type_to_mime_type</A
+>&nbsp;--&nbsp;
+    È¡µÃ getimagesize£¬exif_read_data£¬exif_thumbnail£¬exif_imagetype
+    Ëù·µ»ØµÄÍ¼ÏñÀàĞÍµÄ MIME ÀàĞÍ
+   </DT
+><DT  ><A  HREF="function.image2wbmp.html"  >image2wbmp</A
+>&nbsp;--&nbsp;ÒÔ WBMP ¸ñÊ½½«Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DT
+><DT  ><A  HREF="function.imagealphablending.html"  >imagealphablending</A
+>&nbsp;--&nbsp;Éè¶¨Í¼ÏñµÄ»ìÉ«Ä£Ê½</DT
+><DT  ><A  HREF="function.imageantialias.html"  >imageantialias</A
+>&nbsp;--&nbsp;ÊÇ·ñÊ¹ÓÃ antialias ¹¦ÄÜ</DT
+><DT  ><A  HREF="function.imagearc.html"  >imagearc</A
+>&nbsp;--&nbsp;»­ÍÖÔ²»¡</DT
+><DT  ><A  HREF="function.imagechar.html"  >imagechar</A
+>&nbsp;--&nbsp;Ë®Æ½µØ»­Ò»¸ö×Ö·û</DT
+><DT  ><A  HREF="function.imagecharup.html"  >imagecharup</A
+>&nbsp;--&nbsp;´¹Ö±µØ»­Ò»¸ö×Ö·û</DT
+><DT  ><A  HREF="function.imagecolorallocate.html"  >imagecolorallocate</A
+>&nbsp;--&nbsp;ÎªÒ»·ùÍ¼Ïñ·ÖÅäÑÕÉ«</DT
+><DT  ><A  HREF="function.imagecolorallocatealpha.html"  >imagecolorallocatealpha</A
+>&nbsp;--&nbsp;ÎªÒ»·ùÍ¼Ïñ·ÖÅäÑÕÉ« + alpha</DT
+><DT  ><A  HREF="function.imagecolorat.html"  >imagecolorat</A
+>&nbsp;--&nbsp;È¡µÃÄ³ÏñËØµÄÑÕÉ«Ë÷ÒıÖµ</DT
+><DT  ><A  HREF="function.imagecolorclosest.html"  >imagecolorclosest</A
+>&nbsp;--&nbsp;È¡µÃÓëÖ¸¶¨µÄÑÕÉ«×î½Ó½üµÄÑÕÉ«µÄË÷ÒıÖµ</DT
+><DT  ><A  HREF="function.imagecolorclosestalpha.html"  >imagecolorclosestalpha</A
+>&nbsp;--&nbsp;È¡µÃÓëÖ¸¶¨µÄÑÕÉ« + alpha ×î½Ó½üµÄÑÕÉ«</DT
+><DT  ><A  HREF="function.imagecolorclosesthwb.html"  >imagecolorclosesthwb</A
+>&nbsp;--&nbsp;
+     È¡µÃÓë¸ø¶¨ÑÕÉ«×î½Ó½üµÄÉ«¶ÈµÄºÚ°×É«µÄË÷Òı
+    </DT
+><DT  ><A  HREF="function.imagecolordeallocate.html"  >imagecolordeallocate</A
+>&nbsp;--&nbsp;È¡ÏûÍ¼ÏñÑÕÉ«µÄ·ÖÅä</DT
+><DT  ><A  HREF="function.imagecolorexact.html"  >imagecolorexact</A
+>&nbsp;--&nbsp;È¡µÃÖ¸¶¨ÑÕÉ«µÄË÷ÒıÖµ</DT
+><DT  ><A  HREF="function.imagecolorexactalpha.html"  >imagecolorexactalpha</A
+>&nbsp;--&nbsp;È¡µÃÖ¸¶¨µÄÑÕÉ« + alpha µÄË÷ÒıÖµ</DT
+><DT  ><A  HREF="function.imagecolormatch.html"  >imagecolormatch</A
+>&nbsp;--&nbsp;
+    Ê¹Ò»¸öÍ¼ÏñÖĞµ÷É«°å°æ±¾µÄÑÕÉ«ÓëÕæ²ÊÉ«°æ±¾¸üÄÜÆ¥Åä
+   </DT
+><DT  ><A  HREF="function.imagecolorresolve.html"  >imagecolorresolve</A
+>&nbsp;--&nbsp;
+    È¡µÃÖ¸¶¨ÑÕÉ«µÄË÷ÒıÖµ»òÓĞ¿ÉÄÜµÃµ½µÄ×î½Ó½üµÄÌæ´úÖµ
+   </DT
+><DT  ><A  HREF="function.imagecolorresolvealpha.html"  >imagecolorresolvealpha</A
+>&nbsp;--&nbsp;
+    È¡µÃÖ¸¶¨ÑÕÉ« + alpha µÄË÷ÒıÖµ»òÓĞ¿ÉÄÜµÃµ½µÄ×î½Ó½üµÄÌæ´úÖµ
+   </DT
+><DT  ><A  HREF="function.imagecolorset.html"  >imagecolorset</A
+>&nbsp;--&nbsp;¸øÖ¸¶¨µ÷É«°åË÷ÒıÉè¶¨ÑÕÉ«</DT
+><DT  ><A  HREF="function.imagecolorsforindex.html"  >imagecolorsforindex</A
+>&nbsp;--&nbsp;È¡µÃÄ³Ë÷ÒıµÄÑÕÉ«</DT
+><DT  ><A  HREF="function.imagecolorstotal.html"  >imagecolorstotal</A
+>&nbsp;--&nbsp;È¡µÃÒ»·ùÍ¼ÏñµÄµ÷É«°åÖĞÑÕÉ«µÄÊıÄ¿</DT
+><DT  ><A  HREF="function.imagecolortransparent.html"  >imagecolortransparent</A
+>&nbsp;--&nbsp;½«Ä³¸öÑÕÉ«¶¨ÒåÎªÍ¸Ã÷É«</DT
+><DT  ><A  HREF="function.imagecopy.html"  >imagecopy</A
+>&nbsp;--&nbsp;¿½±´Í¼ÏñµÄÒ»²¿·Ö</DT
+><DT  ><A  HREF="function.imagecopymerge.html"  >imagecopymerge</A
+>&nbsp;--&nbsp;¿½±´²¢ºÏ²¢Í¼ÏñµÄÒ»²¿·Ö</DT
+><DT  ><A  HREF="function.imagecopymergegray.html"  >imagecopymergegray</A
+>&nbsp;--&nbsp;ÓÃ»Ò¶È¿½±´²¢ºÏ²¢Í¼ÏñµÄÒ»²¿·Ö</DT
+><DT  ><A  HREF="function.imagecopyresampled.html"  >imagecopyresampled</A
+>&nbsp;--&nbsp;ÖØ²ÉÑù¿½±´²¿·ÖÍ¼Ïñ²¢µ÷Õû´óĞ¡</DT
+><DT  ><A  HREF="function.imagecopyresized.html"  >imagecopyresized</A
+>&nbsp;--&nbsp;¿½±´²¿·ÖÍ¼Ïñ²¢µ÷Õû´óĞ¡</DT
+><DT  ><A  HREF="function.imagecreate.html"  >imagecreate</A
+>&nbsp;--&nbsp;ĞÂ½¨Ò»¸ö»ùÓÚµ÷É«°åµÄÍ¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromgd2.html"  >imagecreatefromgd2</A
+>&nbsp;--&nbsp;´Ó GD2 ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromgd2part.html"  >imagecreatefromgd2part</A
+>&nbsp;--&nbsp;´Ó¸ø¶¨µÄ GD2 ÎÄ¼ş»ò URL ÖĞµÄ²¿·ÖĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromgd.html"  >imagecreatefromgd</A
+>&nbsp;--&nbsp;´Ó GD ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromgif.html"  >imagecreatefromgif</A
+>&nbsp;--&nbsp;´Ó GIF ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromjpeg.html"  >imagecreatefromjpeg</A
+>&nbsp;--&nbsp;´Ó JPEG ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefrompng.html"  >imagecreatefrompng</A
+>&nbsp;--&nbsp;´Ó PNG ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromstring.html"  >imagecreatefromstring</A
+>&nbsp;--&nbsp;´Ó×Ö·û´®ÖĞµÄÍ¼ÏñÁ÷ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromwbmp.html"  >imagecreatefromwbmp</A
+>&nbsp;--&nbsp;´Ó WBMP ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromxbm.html"  >imagecreatefromxbm</A
+>&nbsp;--&nbsp;´Ó XBM ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatefromxpm.html"  >imagecreatefromxpm</A
+>&nbsp;--&nbsp;´Ó XPM ÎÄ¼ş»ò URL ĞÂ½¨Ò»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagecreatetruecolor.html"  >imagecreatetruecolor</A
+>&nbsp;--&nbsp;ĞÂ½¨Ò»¸öÕæ²ÊÉ«Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagedashedline.html"  >imagedashedline</A
+>&nbsp;--&nbsp;»­Ò»ĞéÏß</DT
+><DT  ><A  HREF="function.imagedestroy.html"  >imagedestroy</A
+>&nbsp;--&nbsp;Ïú»ÙÒ»Í¼Ïñ</DT
+><DT  ><A  HREF="function.imageellipse.html"  >imageellipse</A
+>&nbsp;--&nbsp;»­Ò»¸öÍÖÔ²</DT
+><DT  ><A  HREF="function.imagefill.html"  >imagefill</A
+>&nbsp;--&nbsp;ÇøÓòÌî³ä</DT
+><DT  ><A  HREF="function.imagefilledarc.html"  >imagefilledarc</A
+>&nbsp;--&nbsp;»­Ò»ÍÖÔ²»¡ÇÒÌî³ä</DT
+><DT  ><A  HREF="function.imagefilledellipse.html"  >imagefilledellipse</A
+>&nbsp;--&nbsp;»­Ò»ÍÖÔ²²¢Ìî³ä</DT
+><DT  ><A  HREF="function.imagefilledpolygon.html"  >imagefilledpolygon</A
+>&nbsp;--&nbsp;»­Ò»¶à±ßĞÎ²¢Ìî³ä</DT
+><DT  ><A  HREF="function.imagefilledrectangle.html"  >imagefilledrectangle</A
+>&nbsp;--&nbsp;»­Ò»¾ØĞÎ²¢Ìî³ä</DT
+><DT  ><A  HREF="function.imagefilltoborder.html"  >imagefilltoborder</A
+>&nbsp;--&nbsp;ÇøÓòÌî³äµ½Ö¸¶¨ÑÕÉ«µÄ±ß½çÎªÖ¹</DT
+><DT  ><A  HREF="function.imagefontheight.html"  >imagefontheight</A
+>&nbsp;--&nbsp;È¡µÃ×ÖÌå¸ß¶È</DT
+><DT  ><A  HREF="function.imagefontwidth.html"  >imagefontwidth</A
+>&nbsp;--&nbsp;È¡µÃ×ÖÌå¿í¶È</DT
+><DT  ><A  HREF="function.imageftbbox.html"  >imageftbbox</A
+>&nbsp;--&nbsp;È¡µÃÊ¹ÓÃÁË FreeType 2 ×ÖÌåµÄÎÄ±¾µÄ·¶Î§</DT
+><DT  ><A  HREF="function.imagefttext.html"  >imagefttext</A
+>&nbsp;--&nbsp;Ê¹ÓÃ FreeType 2 ×ÖÌå½«ÎÄ±¾Ğ´ÈëÍ¼Ïñ</DT
+><DT  ><A  HREF="function.imagegammacorrect.html"  >imagegammacorrect</A
+>&nbsp;--&nbsp;¶Ô GD Í¼ÏñÓ¦ÓÃ gamma ĞŞÕı</DT
+><DT  ><A  HREF="function.imagegd2.html"  >imagegd2</A
+>&nbsp;--&nbsp;Êä³ö GD2 Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagegd.html"  >imagegd</A
+>&nbsp;--&nbsp;½« GD Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DT
+><DT  ><A  HREF="function.imagegif.html"  >imagegif</A
+>&nbsp;--&nbsp;ÒÔ GIF ¸ñÊ½½«Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DT
+><DT  ><A  HREF="function.imageinterlace.html"  >imageinterlace</A
+>&nbsp;--&nbsp;¼¤»î»ò½ûÖ¹¸ôĞĞÉ¨Ãè</DT
+><DT  ><A  HREF="function.imageistruecolor.html"  >imageistruecolor</A
+>&nbsp;--&nbsp;¼ì²éÍ¼ÏñÊÇ·ñÎªÕæ²ÊÉ«Í¼Ïñ</DT
+><DT  ><A  HREF="function.imagejpeg.html"  >imagejpeg</A
+>&nbsp;--&nbsp;ÒÔ JPEG ¸ñÊ½½«Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DT
+><DT  ><A  HREF="function.imagelayereffect.html"  >imagelayereffect</A
+>&nbsp;--&nbsp;
+     Set the alpha blending flag to use the bundled libgd layering effects
+    </DT
+><DT  ><A  HREF="function.imageline.html"  >imageline</A
+>&nbsp;--&nbsp;»­Ò»ÌõÖ±Ïß</DT
+><DT  ><A  HREF="function.imageloadfont.html"  >imageloadfont</A
+>&nbsp;--&nbsp;ÔØÈëÒ»ĞÂ×ÖÌå</DT
+><DT  ><A  HREF="function.imagepalettecopy.html"  >imagepalettecopy</A
+>&nbsp;--&nbsp;½«µ÷É«°å´ÓÒ»·ùÍ¼Ïñ¿½±´µ½ÁíÒ»·ù</DT
+><DT  ><A  HREF="function.imagepng.html"  >imagepng</A
+>&nbsp;--&nbsp;ÒÔ PNG ¸ñÊ½½«Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DT
+><DT  ><A  HREF="function.imagepolygon.html"  >imagepolygon</A
+>&nbsp;--&nbsp;»­Ò»¸ö¶à±ßĞÎ</DT
+><DT  ><A  HREF="function.imagepsbbox.html"  >imagepsbbox</A
+>&nbsp;--&nbsp;È¡µÃÊ¹ÓÃ PostScript Type1 ×ÖÌåµÄÎÄ±¾µÄ·¶Î§</DT
+><DT  ><A  HREF="function.imagepscopyfont.html"  >imagepscopyfont</A
+>&nbsp;--&nbsp;
+     ¿½±´Ò»¸öÒÑ¼ÓÔØµÄ×ÖÌåÒÔ±¸¸ü¸Ä
+    </DT
+><DT  ><A  HREF="function.imagepsencodefont.html"  >imagepsencodefont</A
+>&nbsp;--&nbsp;¸Ä±ä×ÖÌåÖĞµÄ×Ö·û±àÂëÊ¸Á¿</DT
+><DT  ><A  HREF="function.imagepsextendfont.html"  >imagepsextendfont</A
+>&nbsp;--&nbsp;À©³ä»òÑ¹Ëõ×ÖÌå</DT
+><DT  ><A  HREF="function.imagepsfreefont.html"  >imagepsfreefont</A
+>&nbsp;--&nbsp;ÊÍ·ÅÒ»¸ö PostScript Type 1 ×ÖÌåËùÕ¼ÓÃµÄÄÚ´æ</DT
+><DT  ><A  HREF="function.imagepsloadfont.html"  >imagepsloadfont</A
+>&nbsp;--&nbsp;´ÓÎÄ¼şÖĞ¼ÓÔØÒ»¸ö PostScript Type 1 ×ÖÌå</DT
+><DT  ><A  HREF="function.imagepsslantfont.html"  >imagepsslantfont</A
+>&nbsp;--&nbsp;ÇãĞ±Ä³×ÖÌå</DT
+><DT  ><A  HREF="function.imagepstext.html"  >imagepstext</A
+>&nbsp;--&nbsp;ÓÃ PostScript Type1 ×ÖÌå°ÑÎÄ±¾×Ö·û´®»­ÔÚÍ¼ÏñÉÏ</DT
+><DT  ><A  HREF="function.imagerectangle.html"  >imagerectangle</A
+>&nbsp;--&nbsp;»­Ò»¸ö¾ØĞÎ</DT
+><DT  ><A  HREF="function.imagerotate.html"  >imagerotate</A
+>&nbsp;--&nbsp;ÓÃ¸ø¶¨½Ç¶ÈĞı×ªÍ¼Ïñ</DT
+><DT  ><A  HREF="function.imagesavealpha.html"  >imagesavealpha</A
+>&nbsp;--&nbsp;
+    ÉèÖÃ±ê¼ÇÒÔÔÚ±£´æ PNG Í¼ÏñÊ±±£´æÍêÕûµÄ alpha Í¨µÀĞÅÏ¢£¨Óëµ¥Ò»Í¸Ã÷É«Ïà·´£©
+   </DT
+><DT  ><A  HREF="function.imagesetbrush.html"  >imagesetbrush</A
+>&nbsp;--&nbsp;Éè¶¨»­ÏßÓÃµÄ»­±ÊÍ¼Ïñ</DT
+><DT  ><A  HREF="function.imagesetpixel.html"  >imagesetpixel</A
+>&nbsp;--&nbsp;»­Ò»¸öµ¥Ò»ÏñËØ</DT
+><DT  ><A  HREF="function.imagesetstyle.html"  >imagesetstyle</A
+>&nbsp;--&nbsp;Éè¶¨»­ÏßµÄ·ç¸ñ</DT
+><DT  ><A  HREF="function.imagesetthickness.html"  >imagesetthickness</A
+>&nbsp;--&nbsp;Éè¶¨»­ÏßµÄ¿í¶È</DT
+><DT  ><A  HREF="function.imagesettile.html"  >imagesettile</A
+>&nbsp;--&nbsp;Éè¶¨ÓÃÓÚÌî³äµÄÌùÍ¼</DT
+><DT  ><A  HREF="function.imagestring.html"  >imagestring</A
+>&nbsp;--&nbsp;Ë®Æ½µØ»­Ò»ĞĞ×Ö·û´®</DT
+><DT  ><A  HREF="function.imagestringup.html"  >imagestringup</A
+>&nbsp;--&nbsp;´¹Ö±µØ»­Ò»ĞĞ×Ö·û´®</DT
+><DT  ><A  HREF="function.imagesx.html"  >imagesx</A
+>&nbsp;--&nbsp;È¡µÃÍ¼Ïñ¿í¶È</DT
+><DT  ><A  HREF="function.imagesy.html"  >imagesy</A
+>&nbsp;--&nbsp;È¡µÃÍ¼Ïñ¸ß¶È</DT
+><DT  ><A  HREF="function.imagetruecolortopalette.html"  >imagetruecolortopalette</A
+>&nbsp;--&nbsp;½«Õæ²ÊÉ«Í¼Ïñ×ª»»Îªµ÷É«°åÍ¼Ïñ</DT
+><DT  ><A  HREF="function.imagettfbbox.html"  >imagettfbbox</A
+>&nbsp;--&nbsp;È¡µÃÊ¹ÓÃ TrueType ×ÖÌåµÄÎÄ±¾µÄ·¶Î§</DT
+><DT  ><A  HREF="function.imagettftext.html"  >imagettftext</A
+>&nbsp;--&nbsp;ÓÃ TrueType ×ÖÌåÏòÍ¼ÏñĞ´ÈëÎÄ±¾</DT
+><DT  ><A  HREF="function.imagetypes.html"  >imagetypes</A
+>&nbsp;--&nbsp;·µ»Øµ±Ç° PHP °æ±¾ËùÖ§³ÖµÄÍ¼ÏñÀàĞÍ</DT
+><DT  ><A  HREF="function.imagewbmp.html"  >imagewbmp</A
+>&nbsp;--&nbsp;ÒÔ WBMP ¸ñÊ½½«Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DT
+><DT  ><A  HREF="function.iptcembed.html"  >iptcembed</A
+>&nbsp;--&nbsp;½«¶ş½øÖÆ IPTC Êı¾İÇ¶Èëµ½Ò»·ù JPEG Í¼ÏñÖĞ</DT
+><DT  ><A  HREF="function.iptcparse.html"  >iptcparse</A
+>&nbsp;--&nbsp;
+     ½«¶ş½øÖÆ IPTC <A  href="http://www.iptc.org/"  TARGET="_top" >http://www.iptc.org/</A
+> ¿é½âÎöÎªµ¥¸ö±ê¼Ç
+    </DT
+><DT  ><A  HREF="function.jpeg2wbmp.html"  >jpeg2wbmp</A
+>&nbsp;--&nbsp;½« JPEG Í¼ÏñÎÄ¼ş×ª»»Îª WBMP Í¼ÏñÎÄ¼ş</DT
+><DT  ><A  HREF="function.png2wbmp.html"  >png2wbmp</A
+>&nbsp;--&nbsp;½« PNG Í¼ÏñÎÄ¼ş×ª»»Îª WBMP Í¼ÏñÎÄ¼ş</DT
+><DT  ><A  HREF="function.read-exif-data.html"  >read_exif_data</A
+>&nbsp;--&nbsp;<A  HREF="function.exif-read-data.html"  ><B  CLASS="function" >exif_read_data()</B
+></A
+> µÄ±ğÃû</DT
+></DL
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ob-iconv-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.exif-imagetype.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ob_iconv_handler</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="funcref.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >exif_imagetype</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
+
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="image.examples.merged-watermark.html">ä½¿ç”¨ imagecopymerge å‡½æ•°åˆ›å»ºåŠé€æ˜æ°´å°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gd-info.html">gd_info</a></div>
- <div class="up"><a href="book.image.html">GD</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

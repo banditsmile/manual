@@ -1,125 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>将字符串解析成多个变量</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ord.html">ord</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.print.html">print</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.parse-str" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">parse_str</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">parse_str</span> &mdash; <span class="dc-title">将字符串解析成多个变量</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.parse-str-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>parse_str</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$arr</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   如果 <code class="parameter">str</code> 是 URL 传递入的查询字符串（query string），则将它解析为变量并设置到当前作用域。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    获取当前的 <em>QUERY_STRING</em>，你可以使用 <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER['QUERY_STRING']</a></var></var> 变量。
-    同时，你也许该阅读 <a href="language.variables.external.html" class="link">来自 PHP 之外的变量</a> 这一节。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a> 影响到了 <span class="function"><strong>parse_str()</strong></span> 这个函数的输出，和 PHP 用于填充 <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var>、
-    <var class="varname"><var class="varname"><a href="reserved.variables.post.html" class="classname">$_POST</a></var></var> 及其他变量的机制一致。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.parse-str-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       输入的字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">arr</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设置了第二个变量 <code class="parameter">arr</code>，变量将会以数组元素的形式存入到这个数组，作为替代。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.parse-str-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   没有返回值。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.parse-str-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5170">
-    <p><strong>Example #1 <span class="function"><strong>parse_str()</strong></span> 的使用</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"first=value&amp;arr[]=foo+bar&amp;arr[]=baz"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$first</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;value<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;bar<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;baz<br /><br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'first'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;value<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'arr'</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;bar<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'arr'</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;baz<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >parse_str</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="ord" HREF="function.ord.html"><LINK  REL="NEXT" TITLE="print" HREF="function.print.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ord.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.print.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.parse-str" ></A
+>parse_str</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN109405" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>parse_str&nbsp;--&nbsp;Parses the string into variables</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN109408" ></A
+><H2  >Description</H2
+>void <B  CLASS="methodname" >parse_str</B
+> ( string str [, array arr])<BR  ></BR
+><P  >&#13;     Parses <TT  CLASS="parameter" ><I  >str</I
+></TT
+> as if it were the query string
+     passed via a URL and sets variables in the current scope. If 
+     the second parameter <TT  CLASS="parameter" ><I  >arr</I
+></TT
+> is present, 
+     variables are stored in this variable as array elements instead. 
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      Support for the optional second parameter was added in PHP 4.0.3.
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      To get the current <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >QUERY_STRING</I
+></SPAN
+>, you may use the variable 
+      <A  HREF="reserved.variables.html#reserved.variables.server"  >$_SERVER['QUERY_STRING']</A
+>.
+      Also, you may want to read the section on 
+      <A  HREF="language.variables.external.html"  >variables from outside of PHP</A
+>.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN109430" ></A
+><P  ><B  >���� 1. Using <B  CLASS="function" >parse_str()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$str </font><font  color="#007700">= </font><font  color="#DD0000">"first=value&amp;arr[]=foo+bar&amp;arr[]=baz"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">parse_str</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$first</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// value<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">]; </font><font  color="#FF8000">// foo bar<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$arr</font><font  color="#007700">[</font><font  color="#0000BB">1</font><font  color="#007700">]; </font><font  color="#FF8000">// baz<br  /><br  /></font><font  color="#0000BB">parse_str</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">, </font><font  color="#0000BB">$output</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$output</font><font  color="#007700">[</font><font  color="#DD0000">'first'</font><font  color="#007700">];&nbsp;&nbsp;</font><font  color="#FF8000">// value<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$output</font><font  color="#007700">[</font><font  color="#DD0000">'arr'</font><font  color="#007700">][</font><font  color="#0000BB">0</font><font  color="#007700">]; </font><font  color="#FF8000">// foo bar<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$output</font><font  color="#007700">[</font><font  color="#DD0000">'arr'</font><font  color="#007700">][</font><font  color="#0000BB">1</font><font  color="#007700">]; </font><font  color="#FF8000">// baz<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.parse-url.html"  ><B  CLASS="function" >parse_url()</B
+></A
+>, <A  HREF="function.pathinfo.html"  ><B  CLASS="function" >pathinfo()</B
+></A
+>,
+     <A  HREF="function.set-magic-quotes-runtime.html"  ><B  CLASS="function" >set_magic_quotes_runtime()</B
+></A
+>, and <A  HREF="function.urldecode.html"  ><B  CLASS="function" >urldecode()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ord.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.print.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ord</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >print</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.parse-str-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.parse-url.html" class="function" rel="rdfs-seeAlso">parse_url()</a> - 解析 URL，返回其组成部分</span></li>
-    <li class="member"><span class="function"><a href="function.pathinfo.html" class="function" rel="rdfs-seeAlso">pathinfo()</a> - 返回文件路径的信息</span></li>
-    <li class="member"><span class="function"><a href="function.http-build-query.html" class="function" rel="rdfs-seeAlso">http_build_query()</a> - 生成 URL-encode 之后的请求字符串</span></li>
-    <li class="member"><span class="function"><a href="function.get-magic-quotes-gpc.html" class="function" rel="rdfs-seeAlso">get_magic_quotes_gpc()</a> - 获取当前 magic_quotes_gpc 的配置选项设置</span></li>
-    <li class="member"><span class="function"><a href="function.urldecode.html" class="function" rel="rdfs-seeAlso">urldecode()</a> - 解码已编码的 URL 字符串</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ord.html">ord</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.print.html">print</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

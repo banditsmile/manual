@@ -1,187 +1,155 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取浏览器具有的功能</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.exit.html">exit</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.halt-compiler.html">__halt_compiler</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.get-browser" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">get_browser</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">get_browser</span> &mdash; <span class="dc-title">获取浏览器具有的功能</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.get-browser-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>get_browser</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$user_agent</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$return_array</code><span class="initializer"> = false</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   通过查找 <var class="filename">browscap.ini</var> 文件中的浏览器信息，尝试检测用户的浏览器所具有的功能。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.get-browser-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">user_agent</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要分析的用户代理。默认使用HTTP头中User-Agent的值，不过，你可以通过传递该参数改变User-Agent。(比如查找另一个浏览器的信息) 
-      </p>
-      <p class="para">
-       你可以传递一个 <strong><code>NULL</code></strong> 来忽略该参数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">return_array</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设置为 <strong><code>TRUE</code></strong>，该函数会返回一个 <span class="type"><a href="language.types.array.html" class="type array">array</a></span>，而不是 <span class="type"><a href="language.types.object.html" class="type object">object</a></span>。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.get-browser-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   信息会以包含一系列数据的数组或者对象返回。例如：浏览器的主版本号、次版本号和ID字符串；框架、JavaScript、cookies等功能是否支持 <strong><code>TRUE</code></strong>/<strong><code>FALSE</code></strong> 的值。
-  </p>
-  <p class="para">
-   <em>cookies</em> 的值仅意味着浏览器是否具有接收cookies的功能，不代表用户是否已允许启用cookies。
-   测试的唯一办法，只有通过 <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> 设置一个cookie，刷新页面并检测该cookie的值。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.get-browser-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.2</td>
-       <td>
-        添加了可选参数 <code class="parameter">return_array</code>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.get-browser-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4081">
-    <p><strong>Example #1 列出所有用户浏览器的信息</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'HTTP_USER_AGENT'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$browser&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_browser</span><span style="color: #007700">(</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$browser</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7) Gecko/20040803 Firefox/0.9.3
-
-Array
-(
-    [browser_name_regex] =&gt; ^mozilla/5\.0 (windows; .; windows nt 5\.1; .*rv:.*) gecko/.* firefox/0\.9.*$
-    [browser_name_pattern] =&gt; Mozilla/5.0 (Windows; ?; Windows NT 5.1; *rv:*) Gecko/* Firefox/0.9*
-    [parent] =&gt; Firefox 0.9
-    [platform] =&gt; WinXP
-    [browser] =&gt; Firefox
-    [version] =&gt; 0.9
-    [majorver] =&gt; 0
-    [minorver] =&gt; 9
-    [cssversion] =&gt; 2
-    [frames] =&gt; 1
-    [iframes] =&gt; 1
-    [tables] =&gt; 1
-    [cookies] =&gt; 1
-    [backgroundsounds] =&gt;
-    [vbscript] =&gt;
-    [javascript] =&gt; 1
-    [javaapplets] =&gt; 1
-    [activexcontrols] =&gt;
-    [cdf] =&gt;
-    [aol] =&gt;
-    [beta] =&gt; 1
-    [win16] =&gt;
-    [crawler] =&gt;
-    [stripper] =&gt;
-    [wap] =&gt;
-    [netclr] =&gt;
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >get_browser</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Miscellaneous Functions" HREF="ref.misc.html"><LINK  REL="PREVIOUS" TITLE="exit" HREF="function.exit.html"><LINK  REL="NEXT" TITLE="highlight_file" HREF="function.highlight-file.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.exit.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.highlight-file.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.get-browser" ></A
+>get_browser</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN62339" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>get_browser&nbsp;--&nbsp;
+     Tells what the user's browser is capable of
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN62342" ></A
+><H2  >Description</H2
+>object <B  CLASS="methodname" >get_browser</B
+> ( [string user_agent])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >get_browser()</B
+> attempts to determine the
+     capabilities of the user's browser. This is done by looking up
+     the browser's information in the <TT  CLASS="filename" >browscap.ini</TT
+>
+     file. By default, the value of <TT  CLASS="varname" >HTTP_USER_AGENT</TT
+> is
+     used; however, you can alter this (i.e., look up another browser's
+     info) by passing the optional 
+     <TT  CLASS="parameter" ><I  >user_agent</I
+></TT
+> parameter to
+     <B  CLASS="function" >get_browser()</B
+>.
+    </P
+><P  >&#13;     The information is returned in an <A  HREF="language.types.object.html"  ><B  CLASS="type" >object</B
+></A
+>, which will contain
+     various data elements representing, for instance, the browser's
+     major and minor version numbers and ID string; <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>/<TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> values
+     for features such as frames, JavaScript, and cookies; and so
+     forth.
+    </P
+><P  >&#13;     While <TT  CLASS="filename" >browscap.ini</TT
+> contains information on
+     many browsers, it relies on user updates to keep the database
+     current. The format of the file is fairly self-explanatory.
+    </P
+><P  >&#13;     The following example shows how one might list all available
+     information retrieved about the user's browser.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN62363" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >get_browser()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">$_SERVER</font><font  color="#007700">[</font><font  color="#DD0000">'HTTP_USER_AGENT'</font><font  color="#007700">] . </font><font  color="#DD0000">"&lt;hr /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">$browser </font><font  color="#007700">= </font><font  color="#0000BB">get_browser</font><font  color="#007700">();<br  /><br  />foreach (</font><font  color="#0000BB">$browser </font><font  color="#007700">as </font><font  color="#0000BB">$name </font><font  color="#007700">=&gt; </font><font  color="#0000BB">$value</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;b&gt;$name&lt;/b&gt; $value &lt;br /&gt;\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       The output of the above script would look something like this:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >Mozilla/4.5 [en] (X11; U; Linux 2.2.9 i586)&#60;hr /&#62;
+&#60;b&#62;browser_name_pattern:&#60;/b&#62; Mozilla/4\.5.*&#60;br /&#62;
+&#60;b&#62;parent:&#60;/b&#62; Netscape 4.0&#60;br /&#62;
+&#60;b&#62;platform:&#60;/b&#62; Linux&#60;br /&#62;
+&#60;b&#62;majorver:&#60;/b&#62; 4&#60;br /&#62;
+&#60;b&#62;minorver:&#60;/b&#62; 5&#60;br /&#62;
+&#60;b&#62;browser:&#60;/b&#62; Netscape&#60;br /&#62;
+&#60;b&#62;version:&#60;/b&#62; 4&#60;br /&#62;
+&#60;b&#62;frames:&#60;/b&#62; 1&#60;br /&#62;
+&#60;b&#62;tables:&#60;/b&#62; 1&#60;br /&#62;
+&#60;b&#62;cookies:&#60;/b&#62; 1&#60;br /&#62;
+&#60;b&#62;backgroundsounds:&#60;/b&#62; &#60;br /&#62;
+&#60;b&#62;vbscript:&#60;/b&#62; &#60;br /&#62;
+&#60;b&#62;javascript:&#60;/b&#62; 1&#60;br /&#62;
+&#60;b&#62;javaapplets:&#60;/b&#62; 1&#60;br /&#62;
+&#60;b&#62;activexcontrols:&#60;/b&#62; &#60;br /&#62;
+&#60;b&#62;beta:&#60;/b&#62; &#60;br /&#62;
+&#60;b&#62;crawler:&#60;/b&#62; &#60;br /&#62;
+&#60;b&#62;authenticodeupdate:&#60;/b&#62; &#60;br /&#62;
+&#60;b&#62;msn:&#60;/b&#62; &#60;br /&#62;</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     In order for this to work, your <A  HREF="ref.misc.html#ini.browscap"  >browscap</A
+> configuration setting in
+     <TT  CLASS="filename" >php.ini</TT
+> must point to the correct location of the
+     <TT  CLASS="filename" >browscap.ini</TT
+> file on your system.  
+     <TT  CLASS="filename" >browscap.ini</TT
+> is not bundled with PHP but you
+     may find an up-to-date <A  href="http://www.garykeith.com/browsers/downloads.asp"  TARGET="_top" >&#13;     browscap.ini file here</A
+>.  By default, the 
+     <A  HREF="ref.misc.html#ini.browscap"  >browscap</A
+> directive is commented out.
+    </P
+><P  >&#13;     The <TT  CLASS="literal" >cookies</TT
+> value simply means that the browser
+     itself is capable of accepting cookies and does not mean the user has 
+     enabled the browser to accept cookies or not.  The only way to test if
+     cookies are accepted is to set one with <A  HREF="function.setcookie.html"  ><B  CLASS="function" >setcookie()</B
+></A
+>,
+     reload, and check for the value.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      On versions older than PHP 4.0.6, you will have to pass the
+      user agent in via the optional <TT  CLASS="parameter" ><I  >user_agent</I
+></TT
+>
+      parameter if the PHP directive <A  HREF="configuration.directives.html#ini.register-globals"  >&#13;      register_globals</A
+> is <TT  CLASS="literal" >off</TT
+>.  In this case,
+      you will pass in <TT  CLASS="varname" >$HTTP_SERVER_VARS['HTTP_USER_AGENT']</TT
+>. 
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.exit.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.highlight-file.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >exit</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.misc.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >highlight_file</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.get-browser-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    为了能让该函数运作，在 <var class="filename">php.ini</var> 中配置的 <a href="misc.configuration.html#ini.browscap" class="link">browscap</a> 必须指向 <var class="filename">browscap.ini</var> 文件的正确位置。
-   </p>
-   <p class="para">
-    <var class="filename">browscap.ini</var> 并未内置在PHP中，不过你可以在这里找到最新的 <a href="http://browscap.org/" class="link external">&raquo;&nbsp;php_browscap.ini</a>。
-   </p>
-   <p class="para">
-    <var class="filename">browscap.ini</var> 包含的诸多浏览器信息依赖于用户更新该数据库。该文件的格式不言自明。
-   </p>
-  </p></blockquote>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.exit.html">exit</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.halt-compiler.html">__halt_compiler</a></div>
- <div class="up"><a href="ref.misc.html">杂项 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

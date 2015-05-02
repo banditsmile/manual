@@ -1,58 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¿”å›å—å½±å“çš„è®°å½•æ•°ç›®</title>
+<HTML  ><HEAD  ><TITLE  >pg_affected_rows</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="NEXT" TITLE="pg_cancel_query" HREF="function.pg-cancel-query.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.pgsql.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-cancel-query.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-affected-rows" ></A
+>pg_affected_rows</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN90905" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>pg_affected_rows&nbsp;--&nbsp;·µ»ØÊÜÓ°ÏìµÄ¼ÇÂ¼ÊıÄ¿</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN90908" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >pg_affected_rows</B
+> ( resource result)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_affected_rows()</B
+> ·µ»ØÔÚ <A  HREF="function.pg-query.html"  ><B  CLASS="function" >pg_query()</B
+></A
+>
+     ÖĞÖ´ĞĞ INSERT£¬UPDATE ºÍ DELETE
+     ²éÑ¯ºóÊÜµ½Ó°ÏìµÄ¼ÇÂ¼ÊıÄ¿£¨°üÀ¨ÊµÀı£¯¼ÇÂ¼£¯ĞĞ£©¡£Èç¹û±¾º¯ÊıÃ»ÓĞÓ°Ïìµ½ÈÎºÎ¼ÇÂ¼£¬Ôò·µ»Ø 0¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN90920" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >pg_affected_rows()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$result </font><font  color="#007700">= </font><font  color="#0000BB">pg_query</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#DD0000">"INSERT INTO authors VALUES ('Orwell', 2002, 'Animal Farm')"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$cmdtuples </font><font  color="#007700">= </font><font  color="#0000BB">pg_affected_rows</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">);<br  />echo </font><font  color="#0000BB">$cmdtuples </font><font  color="#007700">. </font><font  color="#DD0000">" tuples are affected.\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ±¾º¯ÊıÒÔÇ°±»³ÆÎª <TT  CLASS="literal" >pg_cmdtuples()</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.pg-query.html"  ><B  CLASS="function" >pg_query()</B
+></A
+> ºÍ <A  HREF="function.pg-num-rows.html"  ><B  CLASS="function" >pg_num_rows()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-cancel-query.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >PostgreSQL Êı¾İ¿âº¯Êı¿â</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_cancel_query</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-cancel-query.html">pg_cancel_query</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-affected-rows" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_affected_rows</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_affected_rows</span> &mdash; <span class="dc-title">è¿”å›å—å½±å“çš„è®°å½•æ•°ç›®</span></p>
 
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.pg-affected-rows-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">int</span> <span class="methodname"><strong>pg_affected_rows</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_affected_rows()</strong></span> è¿”å›åœ¨ <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>
-     ä¸­æ‰§è¡Œ INSERTï¼ŒUPDATE å’Œ DELETE
-     æŸ¥è¯¢åå—åˆ°å½±å“çš„è®°å½•æ•°ç›®ï¼ˆåŒ…æ‹¬å®ä¾‹ï¼è®°å½•ï¼è¡Œï¼‰ã€‚å¦‚æœæœ¬å‡½æ•°æ²¡æœ‰å½±å“åˆ°ä»»ä½•è®°å½•ï¼Œåˆ™è¿”å› 0ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-2173">
-      <p><strong>Example #1 <span class="function"><strong>pg_affected_rows()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;authors&nbsp;VALUES&nbsp;('Orwell',&nbsp;2002,&nbsp;'Animal&nbsp;Farm')"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cmdtuples&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_affected_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$cmdtuples&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;tuples&nbsp;are&nbsp;affected.\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      æœ¬å‡½æ•°ä»¥å‰è¢«ç§°ä¸º <em>pg_cmdtuples()</em>ã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span> å’Œ <span class="function"><a href="function.pg-num-rows.html" class="function">pg_num_rows()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-cancel-query.html">pg_cancel_query</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

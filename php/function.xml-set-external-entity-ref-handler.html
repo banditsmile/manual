@@ -1,161 +1,129 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å»ºç«‹å¤–éƒ¨å®ä½“æŒ‡å‘å¤„ç†å™¨</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xml-set-end-namespace-decl-handler.html">xml_set_end_namespace_decl_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xml-set-notation-decl-handler.html">xml_set_notation_decl_handler</a></div>
- <div class="up"><a href="ref.xml.html">XML è§£æå™¨å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.xml-set-external-entity-ref-handler" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">xml_set_external_entity_ref_handler</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">xml_set_external_entity_ref_handler</span> &mdash; <span class="dc-title">å»ºç«‹å¤–éƒ¨å®ä½“æŒ‡å‘å¤„ç†å™¨</span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.xml-set-external-entity-ref-handler-description">
-  <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">bool</span> <span class="methodname"><strong>xml_set_external_entity_ref_handler</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parser</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$handler</code></span>
-     )</div>
-
-    <p class="para rdfs-comment">
-     ä¸º <code class="parameter">parser</code> å‚æ•°æŒ‡å®šçš„ XML è§£æå™¨å»ºç«‹å¤–éƒ¨å®ä½“æŒ‡å‘å¤„ç†å™¨å‡½æ•°ã€‚
-    </p>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.xml-set-external-entity-ref-handler-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">parser</code></dt>
-
-     <dd>
-
-      <p class="para">
-       XML è§£æå™¨çš„å¼•ç”¨ï¼Œç”¨äºå»ºç«‹å¤–éƒ¨å®ä½“æŒ‡å‘å¤„ç†å™¨ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">handler</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å‚æ•° <code class="parameter">handler</code> ä¸ºè¡¨ç¤ºå‡½æ•°åç§°çš„å­—ç¬¦ä¸²ï¼Œå‡½æ•°å¿…é¡»åœ¨ä¸º <code class="parameter">parser</code> æŒ‡å®šçš„è§£æå™¨è°ƒç”¨ <span class="function"><a href="function.xml-parse.html" class="function">xml_parse()</a></span> å‡½æ•°æ—¶å·²å­˜åœ¨ã€‚
-      </p>
-      <p class="para">
-       ç”± <code class="parameter">handler</code> å‚æ•°å‘½åçš„å‡½æ•°åå¿…é¡»æ¥å—äº”ä¸ªå‚æ•°ï¼Œå¹¶åº”è¯¥è¿”å›ä¸€ä¸ªæ•´å‹å€¼ã€‚å¦‚æœå¤„ç†å™¨çš„è¿”å›å€¼ä¸º <strong><code>FALSE</code></strong>ï¼ˆè¿™ä¹Ÿæ˜¯å‡½æ•°æ²¡æœ‰ç¡®å®šè¿”å›å€¼æ—¶çš„è¿”å›å€¼ï¼‰ï¼ŒXML è§£æå™¨å°†åœæ­¢è§£æï¼Œ <span class="function"><a href="function.xml-get-error-code.html" class="function">xml_get_error_code()</a></span> å‡½æ•°å°†è¿”å›  <strong><code>XML_ERROR_EXTERNAL_ENTITY_HANDLING</code></strong>ã€‚
-       <div class="methodsynopsis dc-description">
-        <span class="methodname"><span class="replaceable">handler</span></span>
-         ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parser</code></span>
-        , <span class="methodparam"><span class="type">string</span> <code class="parameter">$open_entity_names</code></span>
-        , <span class="methodparam"><span class="type">string</span> <code class="parameter">$base</code></span>
-        , <span class="methodparam"><span class="type">string</span> <code class="parameter">$system_id</code></span>
-        , <span class="methodparam"><span class="type">string</span> <code class="parameter">$public_id</code></span>
-        )</div>
-
-       <dl>
-
-        
-         <dt>
-<code class="parameter">parser</code></dt>
-
-         <dd>
-
-          <span class="simpara">
-            ç¬¬ä¸€ä¸ªå‚æ•° <span class="replaceable">parser</span> ä¸ºæŒ‡å‘è¦è°ƒç”¨å¤„ç†å™¨çš„ XML è§£æå™¨çš„æŒ‡é’ˆã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<code class="parameter">open_entity_names</code></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ç¬¬äºŒä¸ªå‚æ•° <code class="parameter">open_entity_names</code> æ˜¯ä¸ºè¯¥å®ä½“çš„è§£æå¼€æ”¾çš„å®ä½“ååˆ—è¡¨ï¼ˆåŒ…æ‹¬è¢«æŒ‡å‘çš„å®ä½“åï¼‰ï¼Œè¿™äº›å®ä½“åç”±ç©ºæ ¼éš”å¼€ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<code class="parameter">base</code></dt>
-
-         <dd>
-
-          <span class="simpara">
-          è¿™ä¸ªå‚æ•°æ˜¯è§£æå¤–éƒ¨å®ä½“çš„ç³»ç»Ÿæ ‡è¯†ç¬¦ï¼ˆ<code class="parameter">system_id</code>ï¼‰çš„åŸºç¡€ã€‚å½“å‰è¯¥å‚æ•°é€šå¸¸éƒ½è¢«è®¾ç½®ä¸ºç©ºå­—ç¬¦ä¸²ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<code class="parameter">system_id</code></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ç¬¬å››ä¸ªå‚æ•° <code class="parameter">system_id</code> æ˜¯åœ¨å®ä½“å®šä¹‰å£°æ˜ä¸­æŒ‡å®šçš„ç³»ç»Ÿæ ‡è¯†ç¬¦ã€‚
-          </span>
-         </dd>
-
-        
-        
-         <dt>
-<code class="parameter">public_id</code></dt>
-
-         <dd>
-
-          <span class="simpara">
-           ç¬¬äº”ä¸ªå‚æ•° <code class="parameter">public_id</code> æ˜¯åœ¨å®ä½“å®šä¹‰å£°æ˜ä¸­æŒ‡å®šçš„å…¬å…±æ ‡è¯†ç¬¦ï¼Œå¦‚æœæœªæŒ‡å®šä»»ä½•æ ‡è¯†ç¬¦ï¼Œåˆ™è¯¥å­—ç¬¦ä¸²ä¸ºç©ºã€‚å…¬å…±æ ‡è¯†ç¬¦ä¸­çš„ç©ºæ ¼å°†æŒ‰ç…§ XML çš„è¦æ±‚è¢«æ­£å¸¸åŒ–ã€‚
-          </span>
-         </dd>
-
-        
-       </dl>
-
-      </p>
-      <p class="para">
-       å¦‚æœå¤„ç†å™¨å‡½æ•°åè¢«è®¾ç½®ä¸ºç©ºå­—ç¬¦ä¸²æˆ–è€… <strong><code>FALSE</code></strong>ï¼Œåˆ™è¯¥æœ‰é—®é¢˜çš„å¤„ç†å™¨å°†è¢«å±è”½ã€‚
-      </p>
-      <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">é™¤äº†å‡½æ•°åï¼Œå«æœ‰å¯¹è±¡å¼•ç”¨çš„æ•°ç»„å’Œæ–¹æ³•åä¹Ÿå¯ä»¥ä½œä¸ºå‚æ•°ã€‚</span></p></blockquote>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >xml_set_external_entity_ref_handler</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="XML Óï·¨½âÎöº¯Êı¿â" HREF="ref.xml.html"><LINK  REL="PREVIOUS" TITLE="xml_set_end_namespace_decl_handler" HREF="function.xml-set-end-namespace-decl-handler.html"><LINK  REL="NEXT" TITLE="xml_set_notation_decl_handler" HREF="function.xml-set-notation-decl-handler.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.xml-set-end-namespace-decl-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.xml-set-notation-decl-handler.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.xml-set-external-entity-ref-handler" ></A
+>xml_set_external_entity_ref_handler</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN118078" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>xml_set_external_entity_ref_handler&nbsp;--&nbsp;½¨Á¢Íâ²¿ÊµÌåÖ¸Ïò´¦ÀíÆ÷</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN118081" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >xml_set_external_entity_ref_handler</B
+> ( resource parser, callback handler)<BR  ></BR
+><P  >&#13;     Îª <TT  CLASS="parameter" ><I  >parser</I
+></TT
+> ²ÎÊıÖ¸¶¨µÄ XML ½âÎöÆ÷½¨Á¢Íâ²¿ÊµÌåÖ¸Ïò´¦ÀíÆ÷º¯Êı¡£²ÎÊı <TT  CLASS="parameter" ><I  >start_element_handler</I
+></TT
+> ºÍ <TT  CLASS="parameter" ><I  >end_element_handler</I
+></TT
+> Îª±íÊ¾º¯ÊıÃû³ÆµÄ×Ö·û´®£¬ÕâĞ©º¯Êı±ØĞëÔÚÎª <TT  CLASS="parameter" ><I  >parser</I
+></TT
+> Ö¸¶¨µÄ½âÎöÆ÷µ÷ÓÃ <A  HREF="function.xml-parse.html"  ><B  CLASS="function" >xml_parse()</B
+></A
+> º¯ÊıÊ±ÒÑ´æÔÚ¡£
+    </P
+><P  >&#13;     ÓÉ <TT  CLASS="parameter" ><I  >handler</I
+></TT
+> ²ÎÊıÃüÃûµÄº¯ÊıÃû±ØĞë½ÓÊÜÎå¸ö²ÎÊı£¬²¢Ó¦¸Ã·µ»ØÒ»¸öÕûĞÍÖµ¡£Èç¹û´¦ÀíÆ÷µÄ·µ»ØÖµÎª <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>£¨ÕâÒ²ÊÇº¯ÊıÃ»ÓĞÈ·¶¨·µ»ØÖµÊ±µÄ·µ»ØÖµ£©£¬XML ½âÎöÆ÷½«Í£Ö¹½âÎö£¬ <A  HREF="function.xml-get-error-code.html"  ><B  CLASS="function" >xml_get_error_code()</B
+></A
+> º¯Êı½«·µ»Ø  <SPAN  CLASS="systemitem" >XML_ERROR_EXTERNAL_ENTITY_HANDLING</SPAN
+>¡£
+     <B  CLASS="methodname" ><TT  CLASS="replaceable" ><I  >handler</I
+></TT
+></B
+> ( resource parser, string open_entity_names, string base, string system_id, string public_id)<BR  ></BR
+>
+     <P  ></P
+><DIV  CLASS="variablelist" ><DL  ><DT  ><TT  CLASS="parameter" ><I  >parser</I
+></TT
+></DT
+><DD  ><P  >&#13;         µÚÒ»¸ö²ÎÊı <TT  CLASS="replaceable" ><I  >parser</I
+></TT
+> ÎªÖ¸ÏòÒªµ÷ÓÃ´¦ÀíÆ÷µÄ XML ½âÎöÆ÷µÄÖ¸Õë¡£
+        </P
+></DD
+><DT  ><TT  CLASS="parameter" ><I  >open_entity_names</I
+></TT
+></DT
+><DD  ><P  >&#13;         µÚ¶ş¸ö²ÎÊı <TT  CLASS="parameter" ><I  >open_entity_names</I
+></TT
+> ÊÇÎª¸ÃÊµÌåµÄ½âÎö¿ª·ÅµÄÊµÌåÃûÁĞ±í£¨°üÀ¨±»Ö¸ÏòµÄÊµÌåÃû£©£¬ÕâĞ©ÊµÌåÃûÓÉ¿Õ¸ñ¸ô¿ª¡£
+        </P
+></DD
+><DT  ><TT  CLASS="parameter" ><I  >base</I
+></TT
+></DT
+><DD  ><P  >&#13;         Õâ¸ö²ÎÊıÊÇ½âÎöÍâ²¿ÊµÌåµÄÏµÍ³±êÊ¶·û£¨<TT  CLASS="parameter" ><I  >system_id</I
+></TT
+>£©µÄ»ù´¡¡£µ±Ç°¸Ã²ÎÊıÍ¨³£¶¼±»ÉèÖÃÎª¿Õ×Ö·û´®¡£
+        </P
+></DD
+><DT  ><TT  CLASS="parameter" ><I  >system_id</I
+></TT
+></DT
+><DD  ><P  >&#13;         µÚËÄ¸ö²ÎÊı <TT  CLASS="parameter" ><I  >system_id</I
+></TT
+> ÊÇÔÚÊµÌå¶¨ÒåÉùÃ÷ÖĞÖ¸¶¨µÄÏµÍ³±êÊ¶·û¡£
+        </P
+></DD
+><DT  ><TT  CLASS="parameter" ><I  >public_id</I
+></TT
+></DT
+><DD  ><P  >&#13;         µÚÎå¸ö²ÎÊı <TT  CLASS="parameter" ><I  >public_id</I
+></TT
+> ÊÇÔÚÊµÌå¶¨ÒåÉùÃ÷ÖĞÖ¸¶¨µÄ¹«¹²±êÊ¶·û£¬Èç¹ûÎ´Ö¸¶¨ÈÎºÎ±êÊ¶·û£¬Ôò¸Ã×Ö·û´®Îª¿Õ¡£¹«¹²±êÊ¶·ûÖĞµÄ¿Õ¸ñ½«°´ÕÕ XML µÄÒªÇó±»Õı³£»¯¡£
+        </P
+></DD
+></DL
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹û´¦ÀíÆ÷º¯ÊıÃû±»ÉèÖÃÎª¿Õ×Ö·û´®»òÕß <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>£¬Ôò¸ÃÓĞÎÊÌâµÄ´¦ÀíÆ÷½«±»ÆÁ±Î¡£
+    </P
+><P  >&#13;     Èç¹û´¦ÀíÆ÷±»³É¹¦µÄ½¨Á¢£¬¸Ãº¯Êı½«·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£»Èç¹û <TT  CLASS="parameter" ><I  >parser</I
+></TT
+> Ö¸ÏòµÄ²»ÊÇºÏ·¨µÄ½âÎöÆ÷£¬º¯Êı¸Ãº¯Êı½«·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>µÚ¶ş¸ö²ÎÊıº¯ÊıÃû¿ÉÒÔÌæ»»ÎªÒ»¸öÊı×é£¬¸ÃÊı×éÓÉÒ»¸ö¶ÔÏóÃûºÍ¸Ã¶ÔÏóÃûµÄÒ»¸ö·½·¨ÃûÁ½¸öÔªËØ×é³É¡£
+</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.xml-set-end-namespace-decl-handler.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.xml-set-notation-decl-handler.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >xml_set_end_namespace_decl_handler</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.xml.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >xml_set_notation_decl_handler</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.xml-set-external-entity-ref-handler-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xml-set-end-namespace-decl-handler.html">xml_set_end_namespace_decl_handler</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xml-set-notation-decl-handler.html">xml_set_notation_decl_handler</a></div>
- <div class="up"><a href="ref.xml.html">XML è§£æå™¨å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

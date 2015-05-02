@@ -1,98 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>在当前进程空间执行指定程序</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-errno.html">pcntl_errno</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-fork.html">pcntl_fork</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pcntl-exec" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pcntl_exec</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">pcntl_exec</span> &mdash; <span class="dc-title">在当前进程空间执行指定程序</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pcntl-exec-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>pcntl_exec</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$args</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$envs</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   以给定参数执行程序。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pcntl-exec-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">path</code>必须时可执行二进制文件路径或一个在文件第一行指定了
-       一个可执行文件路径标头的脚本（比如文件第一行是#!/usr/local/bin/perl的perl脚本）。
-       更多的信息请查看您系统的execve（2）手册。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">args</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">args</code>是一个要传递给程序的参数的字符串数组。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">envs</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">envs</code>是一个要传递给程序作为环境变量的字符串数组。这个数组是
-       key =&gt; value格式的，key代表要传递的环境变量的名称，value代表该环境变量值。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >pcntl_exec</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Process Control Functions" HREF="ref.pcntl.html"><LINK  REL="PREVIOUS" TITLE="pcntl_alarm" HREF="function.pcntl-alarm.html"><LINK  REL="NEXT" TITLE="pcntl_fork" HREF="function.pcntl-fork.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pcntl-alarm.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pcntl-fork.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pcntl-exec" ></A
+>pcntl_exec</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN93089" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>pcntl_exec&nbsp;--&nbsp;
+     Executes specified program in current process space
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN93092" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >pcntl_exec</B
+> ( string path [, array args [, array envs]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pcntl_exec()</B
+>  executes the program
+     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> with arguments <TT  CLASS="parameter" ><I  >args</I
+></TT
+>.
+     <TT  CLASS="parameter" ><I  >path</I
+></TT
+> must be the path to a binary executable or a
+     script with a valid path pointing to an executable in the shebang (
+     #!/usr/local/bin/perl for example) as the first line.  See your system's
+     man execve(2) page for additional information.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >args</I
+></TT
+> is an array of argument strings passed to the
+     program.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >envs</I
+></TT
+> is an array of strings which are passed as
+     environment to the program.  The array is in the format of name =&#62; value,
+     the key being the name of the environmental variable and the value being
+     the value of that variable.
+    </P
+><P  >&#13;     <B  CLASS="function" >pcntl_exec()</B
+> returns <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error and does not
+     return on success.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pcntl-alarm.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pcntl-fork.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pcntl_alarm</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pcntl.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pcntl_fork</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.pcntl-exec-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   当发生错误时返回 <strong><code>FALSE</code></strong> ，没有错误时没有返回。
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pcntl-errno.html">pcntl_errno</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pcntl-fork.html">pcntl_fork</a></div>
- <div class="up"><a href="ref.pcntl.html">PCNTL 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

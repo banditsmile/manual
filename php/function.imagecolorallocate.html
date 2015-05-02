@@ -1,68 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä¸ºä¸€å¹…å›¾åƒåˆ†é…é¢œè‰²</title>
+<HTML  ><HEAD  ><TITLE  >imagecolorallocate</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="imagecharup" HREF="function.imagecharup.html"><LINK  REL="NEXT" TITLE="imagecolorallocatealpha" HREF="function.imagecolorallocatealpha.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.imagecharup.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagecolorallocatealpha.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.imagecolorallocate" ></A
+>imagecolorallocate</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38560" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>imagecolorallocate&nbsp;--&nbsp;ÎªÒ»·ùÍ¼Ïñ·ÖÅäÑÕÉ«</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38563" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >imagecolorallocate</B
+> ( resource image, int red, int green, int blue)<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >imagecolorallocate()</B
+> ·µ»ØÒ»¸ö±êÊ¶·û£¬´ú±íÁËÓÉ¸ø¶¨µÄ
+    <SPAN  CLASS="acronym" >RGB</SPAN
+> ³É·Ö×é³ÉµÄÑÕÉ«¡£<TT  CLASS="parameter" ><I  >image</I
+></TT
+>
+    ²ÎÊıÊÇ <A  HREF="function.imagecreate.html"  ><B  CLASS="function" >imagecreate()</B
+></A
+>
+    º¯ÊıµÄ·µ»ØÖµ¡£<TT  CLASS="parameter" ><I  >red</I
+></TT
+>£¬<TT  CLASS="parameter" ><I  >green</I
+></TT
+> ºÍ
+    <TT  CLASS="parameter" ><I  >blue</I
+></TT
+> ·Ö±ğÊÇËùĞèÒªµÄÑÕÉ«µÄºì£¬ÂÌ£¬À¶³É·Ö¡£ÕâĞ©²ÎÊıÊÇ
+    0 µ½ 255 µÄÕûÊı»òÕßÊ®Áù½øÖÆµÄ  0x00 µ½ 0xFF¡£<B  CLASS="function" >imagecolorallocate()</B
+>
+    ±ØĞë±»µ÷ÓÃÒÔ´´½¨Ã¿Ò»ÖÖÓÃÔÚ <TT  CLASS="parameter" ><I  >image</I
+></TT
+> Ëù´ú±íµÄÍ¼ÏñÖĞµÄÑÕÉ«¡£
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     µÚÒ»¸ö¶Ô <B  CLASS="function" >imagecolorallocate()</B
+> µÄµ÷ÓÃÌî³ä±³¾°É«¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    <DIV  CLASS="informalexample" ><A  NAME="AEN38594" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  /></font><font  color="#FF8000">// ±³¾°ÉèÎªºìÉ«<br  /></font><font  color="#0000BB">$background </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Éè¶¨Ò»Ğ©ÑÕÉ«<br  /></font><font  color="#0000BB">$white </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">, </font><font  color="#0000BB">255</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$black </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// Ê®Áù½øÖÆ·½Ê½<br  /></font><font  color="#0000BB">$white </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0xFF</font><font  color="#007700">, </font><font  color="#0000BB">0xFF</font><font  color="#007700">, </font><font  color="#0000BB">0xFF</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$black </font><font  color="#007700">= </font><font  color="#0000BB">imagecolorallocate</font><font  color="#007700">(</font><font  color="#0000BB">$im</font><font  color="#007700">, </font><font  color="#0000BB">0x00</font><font  color="#007700">, </font><font  color="#0000BB">0x00</font><font  color="#007700">, </font><font  color="#0000BB">0x00</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    Èç¹û·ÖÅäÊ§°ÜÔò·µ»Ø -1¡£
+   </P
+><P  >&#13;    ²Î¼û <A  HREF="function.imagecolorallocatealpha.html"  ><B  CLASS="function" >imagecolorallocatealpha()</B
+></A
+> ºÍ
+    <A  HREF="function.imagecolordeallocate.html"  ><B  CLASS="function" >imagecolordeallocate()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.imagecharup.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagecolorallocatealpha.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >imagecharup</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagecolorallocatealpha</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagecharup.html">imagecharup</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecolorallocatealpha.html">imagecolorallocatealpha</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.imagecolorallocate" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">imagecolorallocate</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagecolorallocate</span> &mdash; <span class="dc-title">ä¸ºä¸€å¹…å›¾åƒåˆ†é…é¢œè‰²</span></p>
 
- </div>
- <div class="refsect1 unknown-unknown-unknown-unknown-seealss" id="refsect1-function.imagecolorallocate-unknown-unknown-unknown-unknown-seealss">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>imagecolorallocate</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$red</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$green</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$blue</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>imagecolorallocate()</strong></span> è¿”å›ä¸€ä¸ªæ ‡è¯†ç¬¦ï¼Œä»£è¡¨äº†ç”±ç»™å®šçš„
-   <acronym title="Red-Green-Blue">RGB</acronym> æˆåˆ†ç»„æˆçš„é¢œè‰²ã€‚<code class="parameter">red</code>ï¼Œ<code class="parameter">green</code> å’Œ
-   <code class="parameter">blue</code> åˆ†åˆ«æ˜¯æ‰€éœ€è¦çš„é¢œè‰²çš„çº¢ï¼Œç»¿ï¼Œè“æˆåˆ†ã€‚è¿™äº›å‚æ•°æ˜¯
-   0 åˆ° 255 çš„æ•´æ•°æˆ–è€…åå…­è¿›åˆ¶çš„  0x00 åˆ° 0xFFã€‚<span class="function"><strong>imagecolorallocate()</strong></span>
-   å¿…é¡»è¢«è°ƒç”¨ä»¥åˆ›å»ºæ¯ä¸€ç§ç”¨åœ¨ <code class="parameter">image</code> æ‰€ä»£è¡¨çš„å›¾åƒä¸­çš„é¢œè‰²ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    ç¬¬ä¸€æ¬¡å¯¹ <span class="function"><strong>imagecolorallocate()</strong></span>
-    çš„è°ƒç”¨ä¼šç»™åŸºäºè°ƒè‰²æ¿çš„å›¾åƒå¡«å……èƒŒæ™¯è‰²ï¼Œå³ç”¨ <span class="function"><a href="function.imagecreate.html" class="function">imagecreate()</a></span> å»ºç«‹çš„å›¾åƒã€‚
-   </p>
-  </p></blockquote>
-  <p class="para">
-   <div class="example" id="example-3284">
-    <p><strong>Example #1 <span class="function"><strong>imagecolorallocate()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreate</span><span style="color: #007700">(</span><span style="color: #DD0000">'example.jpg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;èƒŒæ™¯è®¾ä¸ºçº¢è‰²<br /></span><span style="color: #0000BB">$background&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;è®¾å®šä¸€äº›é¢œè‰²<br /></span><span style="color: #0000BB">$white&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;åå…­è¿›åˆ¶æ–¹å¼<br /></span><span style="color: #0000BB">$white&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0xFF</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0xFF</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0xFF</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0x00</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0x00</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0x00</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   å¦‚æœåˆ†é…å¤±è´¥åˆ™è¿”å› -1ã€‚
-  </p>
-  <p class="para">
-   å‚è§ <span class="function"><a href="function.imagecolorallocatealpha.html" class="function">imagecolorallocatealpha()</a></span> å’Œ
-   <span class="function"><a href="function.imagecolordeallocate.html" class="function">imagecolordeallocate()</a></span>ã€‚
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagecharup.html">imagecharup</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imagecolorallocatealpha.html">imagecolorallocatealpha</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

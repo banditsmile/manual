@@ -1,149 +1,121 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Create a config used to open a dictionary</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pspell-clear-session.html">pspell_clear_session</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pspell-config-data-dir.html">pspell_config_data_dir</a></div>
- <div class="up"><a href="ref.pspell.html">Pspell ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pspell-config-create" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pspell_config_create</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">pspell_config_create</span> &mdash; <span class="dc-title">Create a config used to open a dictionary</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pspell-config-create-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>pspell_config_create</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$language</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$spelling</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$jargon</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$encoding</code></span>
-  ]]] )</div>
-
-  <p class="para rdfs-comment">
-   Create a config used to open a dictionary.
-  </p>
-  <p class="para">
-   <span class="function"><strong>pspell_config_create()</strong></span> has a very similar syntax to
-   <span class="function"><a href="function.pspell-new.html" class="function">pspell_new()</a></span>. In fact, using
-   <span class="function"><strong>pspell_config_create()</strong></span> immediately followed by
-   <span class="function"><a href="function.pspell-new-config.html" class="function">pspell_new_config()</a></span> will produce the exact same result.
-   However, after creating a new config, you can also use
-   <span class="function"><strong>pspell_config_*()</strong></span> functions before calling
-   <span class="function"><a href="function.pspell-new-config.html" class="function">pspell_new_config()</a></span> to take advantage of some
-   advanced functionality.
-  </p>
-  <p class="para">
-   For more information and examples, check out inline manual pspell
-   website:<a href="http://aspell.net/" class="link external">&raquo;&nbsp;http://aspell.net/</a>.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pspell-config-create-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">language</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The language parameter is the language code which consists of the
-       two letter ISO 639 language code and an optional two letter ISO
-       3166 country code after a dash or underscore.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">spelling</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The spelling parameter is the requested spelling for languages
-       with more than one spelling such as English. Known values are
-       &#039;american&#039;, &#039;british&#039;, and &#039;canadian&#039;.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">jargon</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The jargon parameter contains extra information to distinguish
-       two different words lists that have the same language and
-       spelling parameters.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">encoding</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The encoding parameter is the encoding that words are expected to
-       be in.  Valid values are &#039;utf-8&#039;, &#039;iso8859-*&#039;, &#039;koi8-r&#039;,
-       &#039;viscii&#039;, &#039;cp1252&#039;, &#039;machine unsigned 16&#039;, &#039;machine unsigned
-       32&#039;. This parameter is largely untested, so be careful when
-       using.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >pspell_config_create</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Pspell Functions" HREF="ref.pspell.html"><LINK  REL="PREVIOUS" TITLE="pspell_clear_session" HREF="function.pspell-clear-session.html"><LINK  REL="NEXT" TITLE="pspell_config_ignore" HREF="function.pspell-config-ignore.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pspell-clear-session.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pspell-config-ignore.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pspell-config-create" ></A
+>pspell_config_create</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN95175" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>pspell_config_create&nbsp;--&nbsp;Create a config used to open a dictionary</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN95178" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pspell_config_create</B
+> ( string language [, string spelling [, string jargon [, string encoding]]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pspell_config_create()</B
+> has a very similar syntax to
+     <A  HREF="function.pspell-new.html"  ><B  CLASS="function" >pspell_new()</B
+></A
+>. In fact, using 
+     <B  CLASS="function" >pspell_config_create()</B
+> immediately followed by 
+     <A  HREF="function.pspell-new-config.html"  ><B  CLASS="function" >pspell_new_config()</B
+></A
+> will produce the exact same result.
+     However, after creating a new config, you can also use
+     <B  CLASS="function" >pspell_config_*()</B
+> functions before calling
+     <A  HREF="function.pspell-new-config.html"  ><B  CLASS="function" >pspell_new_config()</B
+></A
+> to take advantage of some
+     advanced functionality.
+    </P
+><P  >&#13;     The language parameter is the language code which consists of the
+     two letter ISO 639 language code and an optional two letter ISO
+     3166 country code after a dash or underscore. 
+    </P
+><P  >&#13;     The spelling parameter is the requested spelling for languages
+     with more than one spelling such as English. Known values are
+     'american', 'british', and 'canadian'.
+    </P
+><P  >&#13;     The jargon parameter contains extra information to distinguish
+     two different words lists that have the same language and
+     spelling parameters.
+    </P
+><P  >&#13;     The encoding parameter is the encoding that words are expected to
+     be in.  Valid values are 'utf-8', 'iso8859-*', 'koi8-r',
+     'viscii', 'cp1252', 'machine unsigned 16', 'machine unsigned
+     32'. This parameter is largely untested, so be careful when
+     using.
+    </P
+><P  >&#13;     The mode parameter is the mode in which spellchecker will work.
+     There are several modes available:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >PSPELL_FAST</B
+></TT
+> - Fast mode (least number of
+        suggestions)
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >PSPELL_NORMAL</B
+></TT
+> - Normal mode (more suggestions)
+       </P
+></LI
+><LI  ><P  >&#13;        <TT  CLASS="constant" ><B  >PSPELL_BAD_SPELLERS</B
+></TT
+> - Slow mode (a lot of
+        suggestions)
+       </P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     For more information and examples, check out inline manual pspell
+     website:<A  href="http://aspell.net/"  TARGET="_top" >http://aspell.net/</A
+>.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN95220" ></A
+><P  ><B  >¿˝◊” 1. <B  CLASS="function" >pspell_config_create()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$pspell_config </font><font  color="#007700">= </font><font  color="#0000BB">pspell_config_create</font><font  color="#007700">(</font><font  color="#DD0000">"en"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">pspell_config_personal</font><font  color="#007700">(</font><font  color="#0000BB">$pspell_config</font><font  color="#007700">, </font><font  color="#DD0000">"/var/dictionaries/custom.pws"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">pspell_config_repl</font><font  color="#007700">(</font><font  color="#0000BB">$pspell_config</font><font  color="#007700">, </font><font  color="#DD0000">"/var/dictionaries/custom.repl"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$pspell_link </font><font  color="#007700">= </font><font  color="#0000BB">pspell_new_personal</font><font  color="#007700">(</font><font  color="#0000BB">$pspell_config</font><font  color="#007700">, </font><font  color="#DD0000">"en"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pspell-clear-session.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pspell-config-ignore.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pspell_clear_session</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pspell.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pspell_config_ignore</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.pspell-config-create-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Retuns a pspell config identifier, or <strong><code>FALSE</code></strong> on error.
-  </p>
- </div>
-
-
-
- <div class="refsect1 examples" id="refsect1-function.pspell-config-create-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-2825">
-    <p><strong>Example #1 <span class="function"><strong>pspell_config_create()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$pspell_config&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pspell_config_create</span><span style="color: #007700">(</span><span style="color: #DD0000">"en"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_config_personal</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/dictionaries/custom.pws"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">pspell_config_repl</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/dictionaries/custom.repl"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pspell_link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pspell_new_personal</span><span style="color: #007700">(</span><span style="color: #0000BB">$pspell_config</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"en"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pspell-clear-session.html">pspell_clear_session</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pspell-config-data-dir.html">pspell_config_data_dir</a></div>
- <div class="up"><a href="ref.pspell.html">Pspell ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

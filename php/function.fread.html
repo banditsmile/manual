@@ -1,210 +1,160 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>è¯»å–æ–‡ä»¶ï¼ˆå¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶æ–‡ä»¶ï¼‰</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fputs.html">fputs</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fscanf.html">fscanf</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fread" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fread</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">fread</span> &mdash; <span class="dc-title">è¯»å–æ–‡ä»¶ï¼ˆå¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶æ–‡ä»¶ï¼‰</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fread-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>fread</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>fread()</strong></span> ä»æ–‡ä»¶æŒ‡é’ˆ
-   <code class="parameter">handle</code> è¯»å–æœ€å¤š
-   <code class="parameter">length</code> ä¸ªå­—èŠ‚ã€‚
-   
-   è¯¥å‡½æ•°åœ¨é‡ä¸Šä»¥ä¸‹å‡ ç§æƒ…å†µæ—¶åœæ­¢è¯»å–æ–‡ä»¶ï¼š
-   <ul class="itemizedlist">
-    <li class="listitem">
-     <span class="simpara">
-      è¯»å–äº† <code class="parameter">length</code> ä¸ªå­—èŠ‚
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      åˆ°è¾¾äº†æ–‡ä»¶æœ«å°¾ï¼ˆEOFï¼‰
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      a packet becomes available or the <a href="function.socket-set-timeout.html" class="link">
-      socket timeout</a> occurs (for network streams)
-     </span>
-    </li>
-    <li class="listitem">
-     <span class="simpara">
-      if the stream is read buffered and it does not represent a plain file, at
-      most one read of up to a number of bytes equal to the chunk size (usually
-      8192) is made; depending on the previously buffered data, the size of the
-      returned data may be larger than the chunk size.
-     </span>
-    </li>
-   </ul>
-  </p>
- </div>
-
- 
-  <div class="refsect1 parameters" id="refsect1-function.fread-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">æ–‡ä»¶ç³»ç»ŸæŒ‡é’ˆï¼Œæ˜¯å…¸å‹åœ°ç”±
-<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> åˆ›å»ºçš„ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>(èµ„æº)ã€‚</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       æœ€å¤šè¯»å– <code class="parameter">length</code> ä¸ªå­—èŠ‚ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
-  <div class="refsect1 returnvalues" id="refsect1-function.fread-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›æ‰€è¯»å–çš„å­—ç¬¦ä¸²ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚ 
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.fread-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2485">
-    <p><strong>Example #1 ä¸€ä¸ªç®€å•çš„ <span class="function"><strong>fread()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;get&nbsp;contents&nbsp;of&nbsp;a&nbsp;file&nbsp;into&nbsp;a&nbsp;string<br /></span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/usr/local/something.txt"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$contents&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2486">
-    <p><strong>Example #2 Binary <span class="function"><strong>fread()</strong></span> example</strong></p>
-    <div class="warning"><strong class="warning">Warning</strong>
-     <p class="para">
-     åœ¨åŒºåˆ†äºŒè¿›åˆ¶æ–‡ä»¶å’Œæ–‡æœ¬æ–‡ä»¶çš„ç³»ç»Ÿä¸Šï¼ˆå¦‚
-    Windowsï¼‰æ‰“å¼€æ–‡ä»¶æ—¶ï¼Œ<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> å‡½æ•°çš„ mode å‚æ•°è¦åŠ ä¸Š &#039;b&#039;ã€‚
-     </p>
-    </div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"c:\\files\\somepic.gif"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$contents&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2487">
-    <p><strong>Example #3 Remote <span class="function"><strong>fread()</strong></span> examples</strong></p>
-    <div class="warning"><strong class="warning">Warning</strong>
-     <p class="para">
-      å½“ä»ä»»ä½•ä¸æ˜¯æ™®é€šæœ¬åœ°æ–‡ä»¶è¯»å–æ—¶ï¼Œä¾‹å¦‚åœ¨è¯»å–ä»<a href="features.remote-files.html" class="link">è¿œç¨‹æ–‡ä»¶</a>æˆ–
-    <span class="function"><a href="function.popen.html" class="function">popen()</a></span> ä»¥åŠ <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span>
-    è¿”å›çš„æµæ—¶ï¼Œè¯»å–ä¼šåœ¨ä¸€ä¸ªåŒ…å¯ç”¨ä¹‹ååœæ­¢ã€‚è¿™æ„å‘³ç€åº”è¯¥å¦‚ä¸‹ä¾‹æ‰€ç¤ºå°†æ•°æ®æ”¶é›†èµ·æ¥åˆå¹¶æˆå¤§å—ã€‚
-     </p>
-    </div>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å¯¹&nbsp;PHP&nbsp;5&nbsp;åŠæ›´é«˜ç‰ˆæœ¬<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$contents&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_get_contents</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$contents&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br />while&nbsp;(!</span><span style="color: #0000BB">feof</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$contents&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fread</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fputs" HREF="function.fputs.html"><LINK  REL="NEXT" TITLE="fscanf" HREF="function.fscanf.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fputs.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fscanf.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fread" ></A
+>fread</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28672" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>fread&nbsp;--&nbsp;¶ÁÈ¡ÎÄ¼ş£¨¿É°²È«ÓÃÓÚ¶ş½øÖÆÎÄ¼ş£©</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28675" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >fread</B
+> ( int handle, int length)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >fread()</B
+> ´ÓÎÄ¼şÖ¸Õë
+     <TT  CLASS="parameter" ><I  >handle</I
+></TT
+> ¶ÁÈ¡×î¶à
+     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> ¸ö×Ö½Ú¡£
+     ¸Ãº¯ÊıÔÚ¶ÁÈ¡Íê
+     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> ¸ö×Ö½ÚÊı£¬»òµ½´ï
+     EOF µÄÊ±ºò£¬»ò£¨¶ÔÓÚÍøÂçÁ÷£©µ±Ò»¸ö°ü¿ÉÓÃÊ±¾Í»áÍ£Ö¹¶ÁÈ¡ÎÄ¼ş£¬ÊÓºõÏÈÅöµ½ÄÄÖÖÇé¿ö¡£
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN28692" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+// get contents of a file into a string<br  />$filename = "/usr/local/something.txt";<br  />$handle = fopen ($filename, "r");<br  />$contents = fread ($handle, filesize ($filename));<br  />fclose ($handle);</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      ÔÚÇø·Ö¶ş½øÖÆÎÄ¼şºÍÎÄ±¾ÎÄ¼şµÄÏµÍ³ÉÏ£¨Èç
+      Windows£©´ò¿ªÎÄ¼şÊ±£¬<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+> º¯ÊıµÄ mode ²ÎÊıÒª¼ÓÉÏ 'b'¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN28698" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$filename = "c:\\files\\somepic.gif";<br  />$handle = fopen ($filename, "rb");<br  />$contents = fread ($handle, filesize ($filename));<br  />fclose ($handle);</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >&#13;      µ±´ÓÍøÂçÁ÷»òÕß¹ÜµÀ¶ÁÈ¡Ê±£¬ÀıÈçÔÚ¶ÁÈ¡´Ó<A  HREF="features.remote-files.html"  >Ô¶³ÌÎÄ¼ş</A
+>»ò
+      <A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+> ÒÔ¼° <A  HREF="function.proc-open.html"  ><B  CLASS="function" >proc_open()</B
+></A
+>
+      µÄ·µ»ØÊ±£¬¶ÁÈ¡»áÔÚÒ»¸ö°ü¿ÉÓÃÖ®ºóÍ£Ö¹¡£ÕâÒâÎ¶×ÅÄãÓ¦¸ÃÈçÏÂÀıËùÊ¾½«Êı¾İÊÕ¼¯ÆğÀ´ºÏ²¢³É´ó¿é¡£
+     </P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN28706" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$handle </font><font  color="#007700">= </font><font  color="#0000BB">fopen </font><font  color="#007700">(</font><font  color="#DD0000">"http://www.example.com/"</font><font  color="#007700">, </font><font  color="#DD0000">"rb"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$contents </font><font  color="#007700">= </font><font  color="#DD0000">""</font><font  color="#007700">;<br  />do {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">, </font><font  color="#0000BB">8192</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">) == </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$contents </font><font  color="#007700">.= </font><font  color="#0000BB">$data</font><font  color="#007700">;<br  />} while(</font><font  color="#0000BB">true</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fclose </font><font  color="#007700">(</font><font  color="#0000BB">$handle</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÉÏÀı±È´«Í³µÄÊ¹ÓÃ while(!<A  HREF="function.feof.html"  ><B  CLASS="function" >feof()</B
+></A
+>)
+      µÄ·½·¨ĞÔÄÜÒªºÃ£¬ÒòÎªÔÚÃ¿¸öÑ­»·ÖĞ½ÚÔ¼ÁËº¯Êıµ÷ÓÃµÄ»¨·Ñ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Èç¹ûÄãÖ»ÊÇÏë½«Ò»¸öÎÄ¼şµÄÄÚÈİ¶ÁÈëµ½Ò»¸ö×Ö·û´®ÖĞ£¬ÓÃ
+      <A  HREF="function.file-get-contents.html"  ><B  CLASS="function" >file_get_contents()</B
+></A
+>£¬ËüµÄĞÔÄÜ±ÈÉÏÃæµÄ´úÂëºÃµÃ¶à¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.fwrite.html"  ><B  CLASS="function" >fwrite()</B
+></A
+>£¬<A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>£¬<A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+>£¬<A  HREF="function.popen.html"  ><B  CLASS="function" >popen()</B
+></A
+>£¬<A  HREF="function.fgets.html"  ><B  CLASS="function" >fgets()</B
+></A
+>£¬<A  HREF="function.fgetss.html"  ><B  CLASS="function" >fgetss()</B
+></A
+>£¬<A  HREF="function.fscanf.html"  ><B  CLASS="function" >fscanf()</B
+></A
+>£¬<A  HREF="function.file.html"  ><B  CLASS="function" >file()</B
+></A
+>
+     ºÍ <A  HREF="function.fpassthru.html"  ><B  CLASS="function" >fpassthru()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fputs.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fscanf.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fputs</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fscanf</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.fread-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¦‚æœåªæ˜¯æƒ³å°†ä¸€ä¸ªæ–‡ä»¶çš„å†…å®¹è¯»å…¥åˆ°ä¸€ä¸ªå­—ç¬¦ä¸²ä¸­ï¼Œç”¨
-    <span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span>ï¼Œå®ƒçš„æ€§èƒ½æ¯”ä¸Šé¢çš„ä»£ç å¥½å¾—å¤šã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Note that <span class="function"><strong>fread()</strong></span> reads from the current position of 
-    the file pointer. Use <span class="function"><a href="function.ftell.html" class="function">ftell()</a></span> to find the current 
-    position of the pointer and <span class="function"><a href="function.rewind.html" class="function">rewind()</a></span> to rewind the 
-    pointer position.
-   </p>
-  </p></blockquote>
- </div>
-
- 
-  <div class="refsect1 seealso" id="refsect1-function.fread-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - å†™å…¥æ–‡ä»¶ï¼ˆå¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶æ–‡ä»¶ï¼‰</span></li>
-    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - æ‰“å¼€æ–‡ä»¶æˆ–è€… URL</span></li>
-    <li class="member"><span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - æ‰“å¼€ä¸€ä¸ªç½‘ç»œè¿æ¥æˆ–è€…ä¸€ä¸ªUnixå¥—æ¥å­—è¿æ¥</span></li>
-    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - æ‰“å¼€è¿›ç¨‹æ–‡ä»¶æŒ‡é’ˆ</span></li>
-    <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œ</span></li>
-    <li class="member"><span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - ä»æ–‡ä»¶æŒ‡é’ˆä¸­è¯»å–ä¸€è¡Œå¹¶è¿‡æ»¤æ‰ HTML æ ‡è®°</span></li>
-    <li class="member"><span class="function"><a href="function.fscanf.html" class="function" rel="rdfs-seeAlso">fscanf()</a> - ä»æ–‡ä»¶ä¸­æ ¼å¼åŒ–è¾“å…¥</span></li>
-    <li class="member"><span class="function"><a href="function.file.html" class="function" rel="rdfs-seeAlso">file()</a> - æŠŠæ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªæ•°ç»„ä¸­</span></li>
-    <li class="member"><span class="function"><a href="function.fpassthru.html" class="function" rel="rdfs-seeAlso">fpassthru()</a> - è¾“å‡ºæ–‡ä»¶æŒ‡é’ˆå¤„çš„æ‰€æœ‰å‰©ä½™æ•°æ®</span></li>
-    <li class="member"><span class="function"><a href="function.ftell.html" class="function" rel="rdfs-seeAlso">ftell()</a> - è¿”å›æ–‡ä»¶æŒ‡é’ˆè¯»/å†™çš„ä½ç½®</span></li>
-    <li class="member"><span class="function"><a href="function.rewind.html" class="function" rel="rdfs-seeAlso">rewind()</a> - å€’å›æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fputs.html">fputs</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fscanf.html">fscanf</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

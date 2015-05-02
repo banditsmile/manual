@@ -1,91 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>获取本地或者远程的套接字名称</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-socket-enable-crypto.html">stream_socket_enable_crypto</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-socket-pair.html">stream_socket_pair</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-socket-get-name" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_socket_get_name</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">stream_socket_get_name</span> &mdash; <span class="dc-title">获取本地或者远程的套接字名称</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.stream-socket-get-name-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>stream_socket_get_name</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">bool</span> <code class="parameter">$want_peer</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   返回给定的本地或者远程套接字连接的名称。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.stream-socket-get-name-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       需要获取其名称的套接字连接。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">want_peer</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设置为 <strong><code>TRUE</code></strong> ，那么将返回 <em>remote</em> 套接字连接名称；如果设置为 <strong><code>FALSE</code></strong> 则返回 <em>local</em> 套接字连接名称。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stream_socket_get_name</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_socket_client" HREF="function.stream-socket-client.html"><LINK  REL="NEXT" TITLE="stream_socket_recvfrom" HREF="function.stream-socket-recvfrom.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-socket-client.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-socket-recvfrom.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-socket-get-name" ></A
+>stream_socket_get_name</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN106995" ></A
+><P  >    (PHP 5 CVS only)</P
+>stream_socket_get_name&nbsp;--&nbsp;Retrieve the name of the local or remote sockets</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN106998" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_socket_get_name</B
+> ( resource handle, bool want_peer)<BR  ></BR
+><P  >&#13;     Returns the local or remote name of a given socket connection.
+     If <TT  CLASS="parameter" ><I  >want_peer</I
+></TT
+> is set to <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> the remote
+     socket name will be returned, if it is set to <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> the local
+     socket name will be returned.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.stream-socket-accept.html"  ><B  CLASS="function" >stream_socket_accept()</B
+></A
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-socket-client.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-socket-recvfrom.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_socket_client</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_socket_recvfrom</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.stream-socket-get-name-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   套接字连接的名称。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.stream-socket-get-name-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.stream-socket-accept.html" class="function" rel="rdfs-seeAlso">stream_socket_accept()</a> - 接受由 stream_socket_server 创建的套接字连接</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-socket-enable-crypto.html">stream_socket_enable_crypto</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-socket-pair.html">stream_socket_pair</a></div>
- <div class="up"><a href="ref.stream.html">Stream 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

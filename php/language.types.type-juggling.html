@@ -1,223 +1,200 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ç±»å‹è½¬æ¢çš„åˆ¤åˆ«</title>
+<HTML  ><HEAD  ><TITLE  >ÀàĞÍÏ··¨</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÀàĞÍ" HREF="language.types.html"><LINK  REL="PREVIOUS" TITLE="±¾ÎÄµµÖĞÊ¹ÓÃµÄÎ±ÀàĞÍ" HREF="language.pseudo-types.html"><LINK  REL="NEXT" TITLE="±äÁ¿" HREF="language.variables.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="language.pseudo-types.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 6. ÀàĞÍ</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="language.variables.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="language.types.type-juggling" ></A
+>ÀàĞÍÏ··¨</H1
+><P  >&#13;    PHP ÔÚ±äÁ¿¶¨ÒåÖĞ²»ĞèÒª£¨»ò²»Ö§³Ö£©Ã÷Ê¾µÄÀàĞÍ¶¨Òå£»±äÁ¿ÀàĞÍÊÇ¸ù¾İÊ¹ÓÃ¸Ã±äÁ¿µÄÉÏÏÂÎÄËù¾ö¶¨µÄ¡£Ò²¾ÍÊÇËµ£¬Èç¹ûÄã°ÑÒ»¸ö×Ö·û´®Öµ¸³¸ø±äÁ¿
+    <TT  CLASS="parameter" ><I  >var</I
+></TT
+>£¬<TT  CLASS="parameter" ><I  >var</I
+></TT
+> ¾Í³ÉÁËÒ»¸ö×Ö·û´®¡£Èç¹ûÄãÓÖ°ÑÒ»¸öÕûĞÍÖµ¸³¸ø
+    <TT  CLASS="parameter" ><I  >var</I
+></TT
+>£¬ÄÇËü¾Í³ÉÁËÒ»¸öÕûÊı¡£
+   </P
+><P  >&#13;    PHP µÄ×Ô¶¯ÀàĞÍ×ª»»µÄÒ»¸öÀı×ÓÊÇ¼ÓºÅ¡°+¡±¡£Èç¹ûÈÎºÎÒ»¸öÔËËãÊıÊÇ¸¡µãÊı£¬ÔòËùÓĞµÄÔËËãÊı¶¼±»µ±³É¸¡µãÊı£¬½á¹ûÒ²ÊÇ¸¡µãÊı¡£·ñÔòÔËËãÊı»á±»½âÊÍÎªÕûÊı£¬½á¹ûÒ²ÊÇÕûÊı¡£×¢ÒâÕâ²¢Ã»ÓĞ¸Ä±äÕâĞ©ÔËËãÊı±¾ÉíµÄÀàĞÍ£»¸Ä±äµÄ½öÊÇÕâĞ©ÔËËãÊıÈçºÎ±»ÇóÖµ¡£
+    <DIV  CLASS="informalexample" ><A  NAME="AEN4011" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo </font><font  color="#007700">= </font><font  color="#DD0000">"0"</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is string (ASCII 48)<br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">+= </font><font  color="#0000BB">2</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is now an integer (2)<br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#0000BB">$foo </font><font  color="#007700">+ </font><font  color="#0000BB">1.3</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is now a float (3.3)<br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#0000BB">5 </font><font  color="#007700">+ </font><font  color="#DD0000">"10 Little Piggies"</font><font  color="#007700">; </font><font  color="#FF8000">// $foo is integer (15)<br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= </font><font  color="#0000BB">5 </font><font  color="#007700">+ </font><font  color="#DD0000">"10 Small Pigs"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is integer (15)<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+   </P
+><P  >&#13;    Èç¹ûÉÏÃæÁ½¸öÀı×Ó¿´ÉÏÈ¥¹Å¹ÖµÄ»°£¬²Î¼û<A  HREF="language.types.string.html#language.types.string.conversion"  >×Ö·û´®×ª»»ÎªÊıÖµ</A
+>¡£
+   </P
+><P  >&#13;    Èç¹ûÄãÒªÇ¿ÖÆ½«Ò»¸ö±äÁ¿µ±×÷Ä³ÖÖÀàĞÍÀ´ÇóÖµ£¬²Î¼û<A  HREF="language.types.type-juggling.html#language.types.typecasting"  >ÀàĞÍÇ¿ÖÆ×ª»»</A
+>Ò»½Ú¡£Èç¹ûÄãÒª¸Ä±äÒ»¸ö±äÁ¿µÄÀàĞÍ£¬²Î¼û <A  HREF="function.settype.html"  ><B  CLASS="function" >settype()</B
+></A
+>¡£
+   </P
+><P  >&#13;    Èç¹ûÄãÏëÒª²âÊÔ±¾½ÚÖĞÈÎºÎÀı×ÓµÄ»°£¬¿ÉÒÔÓÃ <A  HREF="function.var-dump.html"  ><B  CLASS="function" >var_dump()</B
+></A
+> º¯Êı¡£
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     Êı×éµÄ×Ô¶¯×ª»»ĞĞÎªÄ¿Ç°Ã»ÓĞ¶¨Òå¡£
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN4023" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= </font><font  color="#DD0000">"1"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $a ÊÇ×Ö·û´®<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">[</font><font  color="#0000BB">0</font><font  color="#007700">] = </font><font  color="#DD0000">"f"</font><font  color="#007700">;&nbsp;&nbsp;</font><font  color="#FF8000">// ÊÇ×Ö·û´®Æ«ÒÆÁ¿Âğ£¿½á¹û»áÊÇÊ²Ã´£¿<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     ÓÉÓÚÒ»Ğ©ÀúÊ·Ô­Òò£¬PHP Ö§³ÖÍ¨¹ıÆ«ÒÆÁ¿½øĞĞµÄ×Ö·û´®Ë÷Òı£¬ÕâºÍÊı×éË÷ÒıµÄÓï·¨Ò»Ñù¡£ÒÔÉÏµÄÀı×Ó¾Í²úÉúÁËÒ»¸öÎÊÌâ£º$a
+     Ó¦¸Ã±ä³ÉÒ»¸öµÚÒ»¸öÔªËØÊÇ¡°f¡±µÄÊı×éÄØ£¬»¹ÊÇ¡°f¡±³ÉÁË×Ö·û´® $a µÄµÚÒ»¸ö×Ö·û£¿
+    </P
+><P  >&#13;     Ä¿Ç°°æ±¾µÄ PHP ½«ÒÔÉÏµÚ¶ş¸ö¸³ÖµÀí½â³É×Ö·û´®µÄÆ«ÒÆÁ¿±êÊ¶£¬¼´ $a ±ä³ÉÁË "f"£¬¾¡¹ÜÈç´Ë£¬ÕâÖÖ×Ô¶¯×ª»»µÄµØ½á¹ûÓ¦¸Ã±»ÈÏÎªÎ´¶¨Òå¡£PHP 4 ÒıÈëÁËĞÂµÄ»¨À¨ºÅÓï·¨À´·ÃÎÊ×Ö·û´®µÄ×Ö·û£¬ÇëÊ¹ÓÃ¸ÃÓï·¨À´Ìæ´úÒÔÉÏµÄ²Ù×÷£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN4027" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#DD0000">"abc"</font><font  color="#007700">; </font><font  color="#FF8000">// $a ÎªÒ»¸ö×Ö·û´®<br  /></font><font  color="#0000BB">$a</font><font  color="#007700">{</font><font  color="#0000BB">1</font><font  color="#007700">} = </font><font  color="#DD0000">"f"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $a Ä¿Ç°Îª "afc"<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     Çë²ÎÔÄÌâÎª¡°<A  HREF="language.types.string.html#language.types.string.substr"  >ÓÃ×Ö·û·ÃÎÊ×Ö·û´®</A
+>¡±µÄÕÂ½ÚÒÔ»ñÈ¡¸ü¶àĞÅÏ¢¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.types.typecasting" ></A
+>ÀàĞÍÇ¿ÖÆ×ª»»</H2
+><P  >&#13;     PHP ÖĞµÄÀàĞÍÇ¿ÖÆ×ª»»ºÍ C ÖĞµÄ·Ç³£Ïñ£ºÔÚÒª×ª»»µÄ±äÁ¿Ö®Ç°¼ÓÉÏÓÃÀ¨ºÅÀ¨ÆğÀ´µÄÄ¿±êÀàĞÍ¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN4033" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo </font><font  color="#007700">= </font><font  color="#0000BB">10</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is an integer<br  /></font><font  color="#0000BB">$bar </font><font  color="#007700">= (boolean) </font><font  color="#0000BB">$foo</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $bar is a boolean<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     ÔÊĞíµÄÇ¿ÖÆ×ª»»ÓĞ£º
+     <P  ></P
+><UL  ><LI  ><P  >(int), (integer) - ×ª»»³ÉÕûĞÍ</P
+></LI
+><LI  ><P  >(bool), (boolean) - ×ª»»³É²¼¶ûĞÍ</P
+></LI
+><LI  ><P  >(float), (double), (real) - ×ª»»³É¸¡µãĞÍ</P
+></LI
+><LI  ><P  >(string) - ×ª»»³É×Ö·û´®</P
+></LI
+><LI  ><P  >(array) - ×ª»»³ÉÊı×é</P
+></LI
+><LI  ><P  >(object) - ×ª»»³É¶ÔÏó</P
+></LI
+></UL
+>
+    </P
+><P  >&#13;     ×¢ÒâÔÚÀ¨ºÅÄÚÔÊĞíÓĞ¿Õ¸ñºÍÖÆ±í·û£¬ËùÒÔÏÂÃæÁ½¸öÀı×Ó¹¦ÄÜÏàÍ¬£º
+     <DIV  CLASS="informalexample" ><A  NAME="AEN4050" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo </font><font  color="#007700">= (int) </font><font  color="#0000BB">$bar</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= ( int ) </font><font  color="#0000BB">$bar</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ÎªÁË½«Ò»¸ö±äÁ¿»¹Ô­Îª×Ö·û´®£¬Äú»¹¿ÉÒÔ½«±äÁ¿·ÅÖÃÔÚË«ÒıºÅÖÖ¡£
+     <DIV  CLASS="informalexample" ><A  NAME="AEN4054" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$foo </font><font  color="#007700">= </font><font  color="#0000BB">10</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $foo is an integer<br  /></font><font  color="#0000BB">$str </font><font  color="#007700">= </font><font  color="#DD0000">"$foo"</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// $str is a string<br  /></font><font  color="#0000BB">$fst </font><font  color="#007700">= (string) </font><font  color="#0000BB">$foo</font><font  color="#007700">; </font><font  color="#FF8000">// $fst is also a string<br  /><br  />// This prints out that "they are the same"<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$fst </font><font  color="#007700">=== </font><font  color="#0000BB">$str</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"they are the same"</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     µ±ÔÚÄ³Ğ©ÀàĞÍÖ®¼äÇ¿ÖÆ×ª»»Ê±È·ÇĞµØ»á·¢ÉúÊ²Ã´¿ÉÄÜ²»ÊÇºÜÃ÷ÏÔ¡£¸ü¶àĞÅÏ¢¼ûÈçÏÂĞ¡½Ú£º
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.pseudo-types.html">æœ¬æ–‡æ¡£ä¸­ä½¿ç”¨çš„ä¼ªç±»å‹ä¸å˜é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.html">å˜é‡</a></div>
- <div class="up"><a href="language.types.html">ç±»å‹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="language.types.type-juggling" class="sect1">
- <h2 class="title">ç±»å‹è½¬æ¢çš„åˆ¤åˆ«</h2>
-
- <p class="simpara">
-  PHP åœ¨å˜é‡å®šä¹‰ä¸­ä¸éœ€è¦ï¼ˆæˆ–ä¸æ”¯æŒï¼‰æ˜ç¡®çš„ç±»å‹å®šä¹‰ï¼›å˜é‡ç±»å‹æ˜¯æ ¹æ®ä½¿ç”¨è¯¥å˜é‡çš„ä¸Šä¸‹æ–‡æ‰€å†³å®šçš„ã€‚ä¹Ÿå°±æ˜¯è¯´ï¼Œå¦‚æœæŠŠä¸€ä¸ª <span class="type"><a href="language.types.string.html" class="type string">string</a></span> å€¼èµ‹ç»™å˜é‡
-<var class="varname"><var class="varname">$var</var></var>ï¼Œ<var class="varname"><var class="varname">$var</var></var>
-  å°±æˆäº†ä¸€ä¸ª <span class="type"><a href="language.types.string.html" class="type string">string</a></span>ã€‚å¦‚æœåˆæŠŠä¸€ä¸ª<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> èµ‹ç»™
-  <var class="varname"><var class="varname">$var</var></var>ï¼Œé‚£å®ƒå°±æˆäº†ä¸€ä¸ª<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>ã€‚
- </p>
-
- <p class="para">
-  PHP çš„è‡ªåŠ¨ç±»å‹è½¬æ¢çš„ä¸€ä¸ªä¾‹å­æ˜¯åŠ æ³•è¿ç®—ç¬¦â€œ+â€ã€‚å¦‚æœä»»ä½•ä¸€ä¸ªæ“ä½œæ•°æ˜¯<span class="type"><a href="language.types.float.html" class="type float">float</a></span>ï¼Œåˆ™æ‰€æœ‰çš„æ“ä½œæ•°éƒ½è¢«å½“æˆ<span class="type"><a href="language.types.float.html" class="type float">float</a></span>ï¼Œç»“æœä¹Ÿæ˜¯<span class="type"><a href="language.types.float.html" class="type float">float</a></span>ã€‚å¦åˆ™æ“ä½œæ•°ä¼šè¢«è§£é‡Šä¸º<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>ï¼Œç»“æœä¹Ÿæ˜¯<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>ã€‚æ³¨æ„è¿™å¹¶<em class="emphasis">æ²¡æœ‰</em>æ”¹å˜è¿™äº›æ“ä½œæ•°æœ¬èº«çš„ç±»å‹ï¼›æ”¹å˜çš„ä»…æ˜¯è¿™äº›æ“ä½œæ•°å¦‚ä½•è¢«æ±‚å€¼ä»¥åŠè¡¨è¾¾å¼æœ¬èº«çš„ç±»å‹ã€‚
- </p>
-
- <div class="informalexample">
-  <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"0"</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;æ˜¯å­—ç¬¦ä¸²&nbsp;(ASCII&nbsp;48)<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;ç°åœ¨æ˜¯ä¸€ä¸ªæ•´æ•°&nbsp;(2)<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">1.3</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;ç°åœ¨æ˜¯ä¸€ä¸ªæµ®ç‚¹æ•°&nbsp;(3.3)<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #DD0000">"10&nbsp;Little&nbsp;Piggies"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;æ˜¯æ•´æ•°&nbsp;(15)<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #DD0000">"10&nbsp;Small&nbsp;Pigs"</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;æ˜¯æ•´æ•°&nbsp;(15)<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-
-  </div>
-
- </div>
-
- <p class="simpara">
-  å¦‚æœä¸Šé¢ä¸¤ä¸ªä¾‹å­çœ‹ä¸Šå»å¤æ€ªçš„è¯ï¼Œå‚è§<a href="language.types.string.html#language.types.string.conversion" class="link">å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ•°å€¼</a>ã€‚
- </p>
-
- <p class="simpara">
-  å¦‚æœè¦å¼ºåˆ¶å°†ä¸€ä¸ªå˜é‡å½“ä½œæŸç§ç±»å‹æ¥æ±‚å€¼ï¼Œå‚è§<a href="language.types.type-juggling.html#language.types.typecasting" class="link">ç±»å‹å¼ºåˆ¶è½¬æ¢</a>ä¸€èŠ‚ã€‚å¦‚æœè¦æ”¹å˜ä¸€ä¸ªå˜é‡çš„ç±»å‹ï¼Œå‚è§ <span class="function"><a href="function.settype.html" class="function">settype()</a></span>ã€‚
- </p>
-
- <p class="para">
-  å¦‚æœæƒ³è¦æµ‹è¯•æœ¬èŠ‚ä¸­ä»»ä½•ä¾‹å­çš„è¯ï¼Œå¯ä»¥ç”¨ <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> å‡½æ•°ã€‚
- </p>
-
- <blockquote class="note"><p><strong class="note">Note</strong>: 
-  <p class="para">
-   è‡ªåŠ¨è½¬æ¢ä¸º <span class="type"><span class="type æ•°ç»„">æ•°ç»„</span></span> çš„è¡Œä¸ºç›®å‰æ²¡æœ‰å®šä¹‰ã€‚
-  </p>
-
-  <p class="para">
-   æ­¤å¤–ï¼Œç”±äº PHP æ”¯æŒä½¿ç”¨å’Œæ•°ç»„ä¸‹æ ‡åŒæ ·çš„è¯­æ³•è®¿é—®å­—ç¬¦ä¸²ä¸‹æ ‡ï¼Œä»¥ä¸‹ä¾‹å­åœ¨æ‰€æœ‰ PHP ç‰ˆæœ¬ä¸­éƒ½æœ‰æ•ˆï¼š
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'car'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;is&nbsp;a&nbsp;string<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$a&nbsp;is&nbsp;still&nbsp;a&nbsp;string<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bar<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   è¯·å‚é˜…<a href="language.types.string.html#language.types.string.substr" class="link">å­˜å–å’Œä¿®æ”¹å­—ç¬¦ä¸²ä¸­çš„å­—ç¬¦</a>ä¸€èŠ‚ä»¥è·å–æ›´å¤šä¿¡æ¯ã€‚
-  </p>
- </p></blockquote>
-
- <div class="sect2" id="language.types.typecasting">
-  <h3 class="title">ç±»å‹å¼ºåˆ¶è½¬æ¢</h3>
-
-  <p class="para">
-   PHP ä¸­çš„ç±»å‹å¼ºåˆ¶è½¬æ¢å’Œ C ä¸­çš„éå¸¸åƒï¼šåœ¨è¦è½¬æ¢çš„å˜é‡ä¹‹å‰åŠ ä¸Šç”¨æ‹¬å·æ‹¬èµ·æ¥çš„ç›®æ ‡ç±»å‹ã€‚
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;is&nbsp;an&nbsp;integer<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;(boolean)&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$bar&nbsp;is&nbsp;a&nbsp;boolean<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   å…è®¸çš„å¼ºåˆ¶è½¬æ¢æœ‰ï¼š
-  </p>
-
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">(int), (integer) - è½¬æ¢ä¸ºæ•´å½¢ <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">(bool), (boolean) - è½¬æ¢ä¸ºå¸ƒå°”ç±»å‹ <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">(float), (double), (real) - è½¬æ¢ä¸ºæµ®ç‚¹å‹ <span class="type"><a href="language.types.float.html" class="type float">float</a></span></span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">(string) - è½¬æ¢ä¸ºå­—ç¬¦ä¸² <span class="type"><a href="language.types.string.html" class="type string">string</a></span></span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">(array) - è½¬æ¢ä¸ºæ•°ç»„ <span class="type"><a href="language.types.array.html" class="type array">array</a></span></span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">(object) - è½¬æ¢ä¸ºå¯¹è±¡ <span class="type"><a href="language.types.object.html" class="type object">object</a></span></span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">(unset) - è½¬æ¢ä¸º <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> (PHP 5)</span>
-   </li>
-  </ul>
-
-  <p class="para">
-   (binary) è½¬æ¢å’Œ b å‰ç¼€è½¬æ¢æ”¯æŒä¸º PHP 5.2.1 æ–°å¢ã€‚
-  </p>
-
-  <p class="para">
-   æ³¨æ„åœ¨æ‹¬å·å†…å…è®¸æœ‰ç©ºæ ¼å’Œåˆ¶è¡¨ç¬¦ï¼Œæ‰€ä»¥ä¸‹é¢ä¸¤ä¸ªä¾‹å­åŠŸèƒ½ç›¸åŒï¼š
-  </p>
-   
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;(int)&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;(&nbsp;int&nbsp;)&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
+     <P  ></P
+><UL  ><LI  ><P  ><A  HREF="language.types.boolean.html#language.types.boolean.casting"  >×ª»»Îª²¼¶ûÖµ</A
+></P
+></LI
+><LI  ><P  ><A  HREF="language.types.integer.html#language.types.integer.casting"  >×ª»»ÎªÕûĞÍ</A
+></P
+></LI
+><LI  ><P  ><A  HREF="language.types.float.html#language.types.float.casting"  >×ª»»Îª¸¡µãĞÍ</A
+></P
+></LI
+><LI  ><P  ><A  HREF="language.types.string.html#language.types.string.casting"  >×ª»»Îª×Ö·û´®</A
+></P
+></LI
+><LI  ><P  ><A  HREF="language.types.array.html#language.types.array.casting"  >×ª»»ÎªÊı×é</A
+></P
+></LI
+><LI  ><P  ><A  HREF="language.types.object.html#language.types.object.casting"  >×ª»»Îª¶ÔÏó</A
+></P
+></LI
+><LI  ><P  ><A  HREF="language.types.resource.html#language.types.resource.casting"  >×ª»»Îª×ÊÔ´</A
+></P
+></LI
+><LI  ><P  >&#13;        <A  HREF="types.comparisons.html"  >ÀàĞÍ±È½Ï±í</A
+>
+       </P
+></LI
+></UL
+>
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="language.pseudo-types.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="language.variables.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >±¾ÎÄµµÖĞÊ¹ÓÃµÄÎ±ÀàĞÍ</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="language.types.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >±äÁ¿</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-   <p class="para">
-    å°†å­—ç¬¦ä¸²æ–‡å­—å’Œå˜é‡è½¬æ¢ä¸ºäºŒè¿›åˆ¶å­—ç¬¦ä¸²ï¼š
-   </p>
-
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$binary&nbsp;</span><span style="color: #007700">=&nbsp;(binary)</span><span style="color: #0000BB">$string</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$binary&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">b"binary&nbsp;string"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¯ä»¥å°†å˜é‡æ”¾ç½®åœ¨åŒå¼•å·ä¸­çš„æ–¹å¼æ¥ä»£æ›¿å°†å˜é‡è½¬æ¢æˆå­—ç¬¦ä¸²ï¼š
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$foo&nbsp;æ˜¯ä¸€ä¸ªæ•´æ•°<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$foo</span><span style="color: #DD0000">"</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$str&nbsp;æ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²<br /></span><span style="color: #0000BB">$fst&nbsp;</span><span style="color: #007700">=&nbsp;(string)&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;$fst&nbsp;ä¹Ÿæ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²<br /><br />//&nbsp;è¾“å‡º&nbsp;"they&nbsp;are&nbsp;the&nbsp;same"<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$fst&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"they&nbsp;are&nbsp;the&nbsp;same"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p></blockquote>
-   
-  <p class="para">
-   æœ‰æ—¶åœ¨ç±»å‹ä¹‹é—´å¼ºåˆ¶è½¬æ¢æ—¶ç¡®åˆ‡åœ°ä¼šå‘ç”Ÿä»€ä¹ˆå¯èƒ½ä¸æ˜¯å¾ˆæ˜æ˜¾ã€‚æ›´å¤šä¿¡æ¯è§å¦‚ä¸‹å°èŠ‚ï¼š
-  </p>
-  
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.boolean.html#language.types.boolean.casting" class="link">è½¬æ¢ä¸ºå¸ƒå°”å‹</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.integer.html#language.types.integer.casting" class="link">è½¬æ¢ä¸ºæ•´å‹</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.float.html#language.types.float.casting" class="link">è½¬æ¢ä¸ºæµ®ç‚¹å‹</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.string.html#language.types.string.casting" class="link">è½¬æ¢ä¸ºå­—ç¬¦ä¸²</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.array.html#language.types.array.casting" class="link">è½¬æ¢ä¸ºæ•°ç»„</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.object.html#language.types.object.casting" class="link">è½¬æ¢ä¸ºå¯¹è±¡</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.resource.html#language.types.resource.casting" class="link">è½¬æ¢ä¸ºèµ„æº</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="language.types.null.html#language.types.null.casting" class="link">è½¬æ¢ä¸º NULL</a>
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <a href="types.comparisons.html" class="link">ç±»å‹æ¯”è¾ƒè¡¨</a>
-    </span>
-   </li>
-  </ul>
-
- </div>
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.pseudo-types.html">æœ¬æ–‡æ¡£ä¸­ä½¿ç”¨çš„ä¼ªç±»å‹ä¸å˜é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.html">å˜é‡</a></div>
- <div class="up"><a href="language.types.html">ç±»å‹</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

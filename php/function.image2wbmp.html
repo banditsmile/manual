@@ -1,66 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä»¥ WBMP æ ¼å¼å°†å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</title>
+<HTML  ><HEAD  ><TITLE  >image2wbmp</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="image_type_to_mime_type" HREF="function.image-type-to-mime-type.html"><LINK  REL="NEXT" TITLE="imagealphablending" HREF="function.imagealphablending.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.image-type-to-mime-type.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.imagealphablending.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.image2wbmp" ></A
+>image2wbmp</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38345" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>image2wbmp&nbsp;--&nbsp;ÒÔ WBMP ¸ñÊ½½«Í¼ÏñÊä³öµ½ä¯ÀÀÆ÷»òÎÄ¼ş</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38348" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >image2wbmp</B
+> ( resource image [, string filename [, int threshold]])<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >image2wbmp()</B
+> ´Ó
+    <TT  CLASS="parameter" ><I  >image</I
+></TT
+> Í¼Ïñ´´½¨Ò»¸öÃûÎª <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> µÄ
+    <SPAN  CLASS="acronym" >WBMP</SPAN
+> ÎÄ¼ş¡£<TT  CLASS="parameter" ><I  >image</I
+></TT
+>
+    ²ÎÊıÊÇ <A  HREF="function.imagecreate.html"  ><B  CLASS="function" >imagecreate()</B
+></A
+> µÄ·µ»ØÖµ¡£
+   </P
+><P  >&#13;    <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> ²ÎÊıÊÇ¿ÉÑ¡Ïî£¬Èç¹ûÊ¡ÂÔ£¬ÔòÖ±½Ó½«Ô­Í¼ÏñÁ÷Êä³ö¡£Í¨¹ıÓÃ
+    <A  HREF="function.header.html"  ><B  CLASS="function" >header()</B
+></A
+> ·¢ËÍ <SPAN  CLASS="acronym" >image/vnd.wap.wbmp</SPAN
+>
+    µÄ Content-type£¬¿ÉÒÔ´´½¨Ö±½ÓÊä³ö WBMP Í¼ÏñµÄ PHP ½Å±¾¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38374" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >image2wbmp()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$file </font><font  color="#007700">= </font><font  color="#DD0000">'php.jpg'</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">header</font><font  color="#007700">(</font><font  color="#DD0000">'Content-type: ' </font><font  color="#007700">. </font><font  color="#0000BB">image_type_to_mime</font><font  color="#007700">(</font><font  color="#0000BB">IMAGETYPE_WBMP</font><font  color="#007700">));<br  /></font><font  color="#0000BB">image2wbmp</font><font  color="#007700">(</font><font  color="#0000BB">$file</font><font  color="#007700">); </font><font  color="#FF8000">// output the stream directly<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+     WBMP Ö§³Ö½öÄÜÓÃÓÚ PHP ±àÒëÊ±¼ÓÈëÁË GD-1.8 »ò¸ü¸ß°æ±¾Ê±¡£
+    </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;    ²Î¼û <A  HREF="function.imagewbmp.html"  ><B  CLASS="function" >imagewbmp()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.image-type-to-mime-type.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.imagealphablending.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >image_type_to_mime_type</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >imagealphablending</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.image-type-to-mime-type.html">image_type_to_mime_type</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imageaffine.html">imageaffine</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.image2wbmp" class="refentry">
-  <div class="refnamediv">
-   <h1 class="refname">image2wbmp</h1>
-   <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">image2wbmp</span> &mdash; <span class="dc-title">ä»¥ WBMP æ ¼å¼å°†å›¾åƒè¾“å‡ºåˆ°æµè§ˆå™¨æˆ–æ–‡ä»¶</span></p>
 
-  </div>
-  <div class="refsect1 unknown-unknown-noteu" id="refsect1-function.image2wbmp-unknown-unknown-noteu">
-   <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">int</span> <span class="methodname"><strong>image2wbmp</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-     [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$threshold</code></span>
-    ]] )</div>
-
-   <p class="para rdfs-comment">
-    <span class="function"><strong>image2wbmp()</strong></span> ä»
-    <code class="parameter">image</code> å›¾åƒåˆ›å»ºä¸€ä¸ªåä¸º <code class="parameter">filename</code> çš„
-    <acronym title="Wireless Bitmap">WBMP</acronym> æ–‡ä»¶ã€‚<code class="parameter">image</code>
-    å‚æ•°æ˜¯æŸä¸ªå›¾åƒåˆ›å»ºå‡½æ•°çš„è¿”å›å€¼ï¼Œä¾‹å¦‚ <span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>ã€‚
-   </p>
-   <p class="para">
-    <code class="parameter">filename</code> å‚æ•°æ˜¯å¯é€‰é¡¹ï¼Œå¦‚æœçœç•¥ï¼Œåˆ™ç›´æ¥å°†åŸå›¾åƒæµè¾“å‡ºã€‚é€šè¿‡ç”¨
-    <span class="function"><a href="function.header.html" class="function">header()</a></span> å‘é€ <acronym>image/vnd.wap.wbmp</acronym>
-    çš„ Content-typeï¼Œå¯ä»¥åˆ›å»ºç›´æ¥è¾“å‡º WBMP å›¾åƒçš„ PHP è„šæœ¬ã€‚
-   </p>
-   <p class="para">
-    <div class="example" id="example-3278">
-     <p><strong>Example #1 <span class="function"><strong>image2wbmp()</strong></span> ä¾‹å­</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'php.jpg'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$image&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefrompng</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-type:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">image_type_to_mime</span><span style="color: #007700">(</span><span style="color: #0000BB">IMAGETYPE_WBMP</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">image2wbmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;output&nbsp;the&nbsp;stream&nbsp;directly<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <blockquote class="note"><p><strong class="note">Note</strong>: 
-    <p class="para">
-     WBMP æ”¯æŒä»…åœ¨ PHP ç¼–è¯‘æ—¶åŠ å…¥äº† GD-1.8 æˆ–æ›´é«˜ç‰ˆæœ¬æ—¶å¯ç”¨ã€‚
-    </p>
-   </p></blockquote>
-   <p class="para">
-    å‚è§ <span class="function"><a href="function.imagewbmp.html" class="function">imagewbmp()</a></span>ã€‚
-   </p>
-  </div>
-
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.image-type-to-mime-type.html">image_type_to_mime_type</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.imageaffine.html">imageaffine</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

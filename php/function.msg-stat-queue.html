@@ -1,166 +1,115 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns information from the message queue data structure</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.msg-set-queue.html">msg_set_queue</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sem-acquire.html">sem_acquire</a></div>
- <div class="up"><a href="ref.sem.html">Semaphore ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.msg-stat-queue" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">msg_stat_queue</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">msg_stat_queue</span> &mdash; <span class="dc-title">Returns information from the message queue data structure</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.msg-stat-queue-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>msg_stat_queue</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$queue</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>msg_stat_queue()</strong></span> returns the message queue meta data
-   for the message queue specified by the <code class="parameter">queue</code>.
-   This is useful, for example, to determine which process sent the message
-   that was just received.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.msg-stat-queue-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">queue</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Message queue resource handle
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.msg-stat-queue-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   The return value is an array whose keys and values have the following
-   meanings:
-   <table class="doctable table">
-    <caption><strong>Array structure for msg_stat_queue</strong></caption>
-    
-     <tbody class="tbody">
-      <tr>
-       <td><em>msg_perm.uid</em></td>
-       <td>
-        The uid of the owner of the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_perm.gid</em></td>
-       <td>
-        The gid of the owner of the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_perm.mode</em></td>
-       <td>
-        The file access mode of the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_stime</em></td>
-       <td>
-        The time that the last message was sent to the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_rtime</em></td>
-       <td>
-        The time that the last message was received from the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_ctime</em></td>
-       <td>
-        The time that the queue was last changed.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_qnum</em></td>
-       <td>
-        The number of messages waiting to be read from the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_qbytes</em></td>
-       <td>
-        The maximum number of bytes allowed in one message queue. On
-        Linux, this value may be read and modified via
-        <var class="filename">/proc/sys/kernel/msgmnb</var>.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_lspid</em></td>
-       <td>
-        The pid of the process that sent the last message to the queue.
-       </td>
-      </tr>
-
-      <tr>
-       <td><em>msg_lrpid</em></td>
-       <td>
-        The pid of the process that received the last message from the queue.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >msg_stat_queue</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Semaphore, Shared Memory and IPC Functions" HREF="ref.sem.html"><LINK  REL="PREVIOUS" TITLE="msg_set_queue" HREF="function.msg-set-queue.html"><LINK  REL="NEXT" TITLE="sem_acquire" HREF="function.sem-acquire.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.msg-set-queue.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sem-acquire.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.msg-stat-queue" ></A
+>msg_stat_queue</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN97083" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>msg_stat_queue&nbsp;--&nbsp;
+     Returns information from the message queue data structure
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN97086" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >msg_stat_queue</B
+> ( int queue)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >msg_stat_queue()</B
+> returns the message queue meta data
+     for the message queue specified by the <TT  CLASS="parameter" ><I  >queue</I
+></TT
+>.
+     This is useful, for example, to determine which process sent the message
+     that was just received.
+    </P
+><P  >&#13;     The return value is an array whose keys and values have the following
+     meanings:
+     <DIV  CLASS="table" ><A  NAME="AEN97098" ></A
+><P  ><B  >±Ì∏Ò 1. Array structure for msg_stat_queue</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_perm.uid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The uid of the owner of the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_perm.gid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The gid of the owner of the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_perm.mode</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The file access mode of the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_stime</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The time that the last message was sent to the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_rtime</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The time that the last message was received from the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_ctime</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The time that the queue was last changed.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_qnum</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The number of messages waiting to be read from the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_qbytes</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The number of bytes of space currently available in the queue to
+          hold sent messages until they are received.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_lspid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The pid of the process that sent the last message to the queue.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >msg_lrpid</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          The pid of the process that received the last message from the queue.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.msg-remove-queue.html"  ><B  CLASS="function" >msg_remove_queue()</B
+></A
+>,
+     <A  HREF="function.msg-receive.html"  ><B  CLASS="function" >msg_receive()</B
+></A
+>,
+     <B  CLASS="function" >msg_stat_queue()</B
+> and
+     <A  HREF="function.msg-set-queue.html"  ><B  CLASS="function" >msg_set_queue()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.msg-set-queue.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sem-acquire.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >msg_set_queue</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sem.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sem_acquire</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.msg-stat-queue-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.msg-remove-queue.html" class="function" rel="rdfs-seeAlso">msg_remove_queue()</a> - Destroy a message queue</span></li>
-    <li class="member"><span class="function"><a href="function.msg-receive.html" class="function" rel="rdfs-seeAlso">msg_receive()</a> - Receive a message from a message queue</span></li>
-    <li class="member"><span class="function"><a href="function.msg-get-queue.html" class="function" rel="rdfs-seeAlso">msg_get_queue()</a> - Create or attach to a message queue</span></li>
-    <li class="member"><span class="function"><a href="function.msg-set-queue.html" class="function" rel="rdfs-seeAlso">msg_set_queue()</a> - Set information in the message queue data structure</span></li>
-   </ul>
-  </p>
- </div>
-  
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.msg-set-queue.html">msg_set_queue</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sem-acquire.html">sem_acquire</a></div>
- <div class="up"><a href="ref.sem.html">Semaphore ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,116 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>将提供的源码按 PHP 标记进行分割</title>
+<HTML  ><HEAD  ><TITLE  >token_get_all</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Tokenizer Functions" HREF="ref.tokenizer.html"><LINK  REL="PREVIOUS" TITLE="Tokenizer Functions" HREF="ref.tokenizer.html"><LINK  REL="NEXT" TITLE="token_name" HREF="function.token-name.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="ref.tokenizer.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.token-name.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.token-get-all" ></A
+>token_get_all</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN114917" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>token_get_all&nbsp;--&nbsp;Split given source into PHP tokens</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN114920" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >token_get_all</B
+> ( string source)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >token_get_all()</B
+> parses the given <TT  CLASS="parameter" ><I  >source</I
+></TT
+> 
+     string into PHP language tokens using the Zend engine's lexical scanner.
+     The function returns an array of token identifiers.  Each individual token
+     identifier is either a single character (i.e.: <TT  CLASS="constant" ><B  >;</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >.</B
+></TT
+>, <TT  CLASS="constant" ><B  >&#62;</B
+></TT
+>, <TT  CLASS="constant" ><B  >!</B
+></TT
+>, etc...),
+     or a two element array containing the token index in element 0, and the string
+     content of the original token in element 1.
+    </P
+><P  >&#13;     For a list of parser tokens, see <A  HREF="tokens.html"  >��¼ M</A
+>, or use 
+     <A  HREF="function.token-name.html"  ><B  CLASS="function" >token_name()</B
+></A
+> to translate a token value into its string
+     representation.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN114938" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >token_get_all()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;$tokens </font><font  color="#007700">= </font><font  color="#0000BB">token_get_all</font><font  color="#007700">(</font><font  color="#DD0000">'&lt;?php'</font><font  color="#007700">); </font><font  color="#FF8000">// =&gt; array(array(T_OPEN_TAG, '&lt;?'));<br  />&nbsp;&nbsp;</font><font  color="#0000BB">$tokens </font><font  color="#007700">= </font><font  color="#0000BB">token_get_all</font><font  color="#007700">(</font><font  color="#DD0000">'&lt;?php echo; ?&gt;'</font><font  color="#007700">); </font><font  color="#FF8000">/* =&gt; array(<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(T_OPEN_TAG, '&lt;?php'), <br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(T_ECHO, 'echo'),<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';',<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(T_CLOSE_TAG, '?&gt;') ); */<br  /><br  />/* Note in the following example that the string is parsed as T_INLINE_HTML<br  />&nbsp;&nbsp;&nbsp;rather than the otherwise expected T_COMMENT (T_ML_COMMENT in PHP &lt;5).<br  />&nbsp;&nbsp;&nbsp;This is because no open/close tags were used in the "code" provided.<br  />&nbsp;&nbsp;&nbsp;This would be equivalent to putting a comment outside of &lt;?php ?&gt; tags in a normal file. */<br  />&nbsp;&nbsp;</font><font  color="#0000BB">$tokens </font><font  color="#007700">= </font><font  color="#0000BB">token_get_all</font><font  color="#007700">(</font><font  color="#DD0000">'/* comment */'</font><font  color="#007700">); </font><font  color="#FF8000">// =&gt; array(array(T_INLINE_HTML, '/* comment */'));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="ref.tokenizer.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.token-name.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Tokenizer Functions</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.tokenizer.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >token_name</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.tokenizer.html">Tokenizer 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.token-name.html">token_name</a></div>
- <div class="up"><a href="ref.tokenizer.html">Tokenizer 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.token-get-all" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">token_get_all</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">token_get_all</span> &mdash; <span class="dc-title">将提供的源码按 PHP 标记进行分割</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.token-get-all-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>token_get_all</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$source</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>token_get_all()</strong></span> 解析提供的 <code class="parameter">source</code> 
-   源码字符，然后使用 Zend 引擎的语法分析器获取源码中的 PHP 语言的解析器代号
-  </p>
-  <p class="para">
-   解析器代号列表见<a href="tokens.html" class="xref">解析器代号列表</a>, 或者使用 
-   <span class="function"><a href="function.token-name.html" class="function">token_name()</a></span> 翻译获取这个代号的字符串表示.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.token-get-all-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">source</code></dt>
-
-     <dd>
-
-      <p class="para">
-       需要解析的 PHP 源码.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.token-get-all-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   An array of token identifiers. Each individual token identifier is either
-   a single character (i.e.: <em>;</em>, <em>.</em>, 
-   or a three element array containing the token index in element 0, the string
-   content of the original token in element 1 and the line number in element 2.
-  </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.token-get-all-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-4381">
-    <p><strong>Example #1 <span class="function"><strong>token_get_all()</strong></span> examples</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$tokens&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">token_get_all</span><span style="color: #007700">(</span><span style="color: #DD0000">'&lt;?php&nbsp;echo;&nbsp;?&gt;'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">/*&nbsp;=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(T_OPEN_TAG,&nbsp;'&lt;?php'),&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(T_ECHO,&nbsp;'echo'),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';',<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array(T_CLOSE_TAG,&nbsp;'?&gt;')&nbsp;);&nbsp;*/<br /><br />/*&nbsp;Note&nbsp;in&nbsp;the&nbsp;following&nbsp;example&nbsp;that&nbsp;the&nbsp;string&nbsp;is&nbsp;parsed&nbsp;as&nbsp;T_INLINE_HTML<br />&nbsp;&nbsp;&nbsp;rather&nbsp;than&nbsp;the&nbsp;otherwise&nbsp;expected&nbsp;T_COMMENT&nbsp;(T_ML_COMMENT&nbsp;in&nbsp;PHP&nbsp;&lt;5).<br />&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;because&nbsp;no&nbsp;open/close&nbsp;tags&nbsp;were&nbsp;used&nbsp;in&nbsp;the&nbsp;"code"&nbsp;provided.<br />&nbsp;&nbsp;&nbsp;This&nbsp;would&nbsp;be&nbsp;equivalent&nbsp;to&nbsp;putting&nbsp;a&nbsp;comment&nbsp;outside&nbsp;of&nbsp;&lt;?php&nbsp;?&gt;&nbsp;tags&nbsp;in&nbsp;a&nbsp;normal&nbsp;file.&nbsp;*/<br /></span><span style="color: #0000BB">$tokens&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">token_get_all</span><span style="color: #007700">(</span><span style="color: #DD0000">'/*&nbsp;comment&nbsp;*/'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;=&gt;&nbsp;array(array(T_INLINE_HTML,&nbsp;'/*&nbsp;comment&nbsp;*/'));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.token-get-all-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.2</td>
-       <td>Line numbers are returned in element 2
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="ref.tokenizer.html">Tokenizer 函数</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.token-name.html">token_name</a></div>
- <div class="up"><a href="ref.tokenizer.html">Tokenizer 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

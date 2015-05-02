@@ -1,275 +1,299 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å˜é‡èŒƒå›´</title>
+<HTML  ><HEAD  ><TITLE  >±äÁ¿·¶Î§</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="±äÁ¿" HREF="language.variables.html"><LINK  REL="PREVIOUS" TITLE="Ô¤¶¨Òå±äÁ¿" HREF="language.variables.predefined.html"><LINK  REL="NEXT" TITLE="¿É±ä±äÁ¿" HREF="language.variables.variable.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="language.variables.predefined.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 7. ±äÁ¿</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="language.variables.variable.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="language.variables.scope" ></A
+>±äÁ¿·¶Î§</H1
+><P  >&#13;    ±äÁ¿µÄ·¶Î§¼´Ëü¶¨ÒåµÄÉÏÏÂÎÄ±³¾°£¨ÒëÕß:Ëµ°×ÁË£¬Ò²¾ÍÊÇËüµÄÉúĞ§·¶Î§£©¡£´ó²¿·ÖµÄ
+    PHP ±äÁ¿Ö»ÓĞÒ»¸öµ¥¶ÀµÄ·¶Î§¡£Õâ¸öµ¥¶ÀµÄ·¶Î§¿ç¶ÈÍ¬Ñù°üº¬ÁË
+    include ºÍ require ÒıÈëµÄÎÄ¼ş¡£·¶Àı:
+   </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN4215" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  />include </font><font  color="#DD0000">"b.inc"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;    ÕâÀï±äÁ¿ <TT  CLASS="varname" >$a</TT
+> ½«»áÔÚ°üº¬ÎÄ¼ş <TT  CLASS="filename" >b.inc</TT
+> ÖĞÉúĞ§¡£µ«ÊÇ£¬ÔÚÓÃ»§×Ô¶¨Òåº¯ÊıÖĞ£¬Ò»¸ö¾Ö²¿º¯Êı·¶Î§½«±»ÒıÈë¡£ÈÎºÎÓÃÓÚº¯ÊıÄÚ²¿µÄ±äÁ¿°´È±Ê¡Çé¿ö½«±»ÏŞÖÆÔÚ¾Ö²¿º¯Êı·¶Î§ÄÚ¡£·¶Àı£º
+   </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN4220" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">; </font><font  color="#FF8000">/* global scope */<br  /><br  /></font><font  color="#007700">function </font><font  color="#0000BB">Test</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$a</font><font  color="#007700">; </font><font  color="#FF8000">/* reference to local scope variable */<br  /></font><font  color="#007700">}<br  /><br  /></font><font  color="#0000BB">Test</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;    Õâ¸ö½Å±¾²»»áÓĞÈÎºÎÊä³ö£¬ÒòÎª echo Óï¾äÒıÓÃÁËÒ»¸ö¾Ö²¿°æ±¾µÄ±äÁ¿
+    <TT  CLASS="varname" >$a</TT
+>£¬¶øÇÒÔÚÕâ¸ö·¶Î§ÄÚ£¬Ëü²¢Ã»ÓĞ±»¸³Öµ¡£Äã¿ÉÄÜ×¢Òâµ½
+    PHP µÄÈ«¾Ö±äÁ¿ºÍ C ÓïÑÔÓĞÒ»µãµã²»Í¬£¬ÔÚ C
+    ÓïÑÔÖĞ£¬È«¾Ö±äÁ¿ÔÚº¯ÊıÖĞ×Ô¶¯ÉúĞ§£¬³ı·Ç±»¾Ö²¿±äÁ¿¸²¸Ç¡£Õâ¿ÉÄÜÒıÆğÒ»Ğ©ÎÊÌâ£¬ÓĞĞ©ÈË¿ÉÄÜÂş²»¾­ĞÄµÄ¸Ä±äÒ»¸öÈ«¾Ö±äÁ¿¡£PHP
+    ÖĞÈ«¾Ö±äÁ¿ÔÚº¯ÊıÖĞÊ¹ÓÃÊ±±ØĞëÉêÃ÷ÎªÈ«¾Ö¡£
+   </P
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.scope.global" ></A
+>The global keyword</H2
+><P  >&#13;     Ê×ÏÈ£¬Ò»¸öÊ¹ÓÃ <TT  CLASS="literal" >global</TT
+> µÄÀı×Ó£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4229" ></A
+><P  ><B  >Àı×Ó 7-1. Ê¹ÓÃ global</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">2</font><font  color="#007700">;<br  /><br  />function </font><font  color="#0000BB">Sum</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$a</font><font  color="#007700">, </font><font  color="#0000BB">$b</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">$a </font><font  color="#007700">+ </font><font  color="#0000BB">$b</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">Sum</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">$b</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÒÔÉÏ½Å±¾µÄÊä³ö½«ÊÇ "3"¡£ÔÚº¯ÊıÖĞÉêÃ÷ÁËÈ«¾Ö±äÁ¿
+     <TT  CLASS="varname" >$a</TT
+> ºÍ <TT  CLASS="varname" >$b</TT
+>£¬ÈÎºÎ±äÁ¿µÄËùÓĞÒıÓÃ±äÁ¿¶¼»áÖ¸Ïòµ½È«¾Ö±äÁ¿¡£¶ÔÓÚÒ»¸öº¯ÊıÄÜ¹»ÉêÃ÷µÄÈ«¾Ö±äÁ¿µÄ×î´ó¸öÊı£¬PHP Ã»ÓĞÏŞÖÆ¡£
+    </P
+><P  >&#13;     ÔÚÈ«¾Ö·¶Î§ÄÚ·ÃÎÊ±äÁ¿µÄµÚ¶ş¸ö°ì·¨£¬ÊÇÓÃÌØÊâµÄ PHP ×Ô¶¨Òå <TT  CLASS="varname" >$GLOBALS</TT
+> Êı×é¡£Ç°ÃæµÄÀı×Ó¿ÉÒÔĞ´³É£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4238" ></A
+><P  ><B  >Àı×Ó 7-2. Ê¹ÓÃ <TT  CLASS="varname" >$GLOBALS</TT
+> Ìæ´ú global</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$a </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$b </font><font  color="#007700">= </font><font  color="#0000BB">2</font><font  color="#007700">;<br  /><br  />function </font><font  color="#0000BB">Sum</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#DD0000">"b"</font><font  color="#007700">] = </font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#DD0000">"a"</font><font  color="#007700">] + </font><font  color="#0000BB">$GLOBALS</font><font  color="#007700">[</font><font  color="#DD0000">"b"</font><font  color="#007700">];<br  />}<br  /><br  /></font><font  color="#0000BB">Sum</font><font  color="#007700">();<br  />echo </font><font  color="#0000BB">$b</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÔÚ <TT  CLASS="varname" >$GLOBALS</TT
+>
+     Êı×éÖĞ£¬Ã¿Ò»¸ö±äÁ¿ÎªÒ»¸öÔªËØ£¬¼üÃû¶ÔÓ¦±äÁ¿Ãû£¬Öµ±äÁ¿µÄÄÚÈİ¡£<TT  CLASS="varname" >$GLOBALS</TT
+>
+     Ö®ËùÒÔÔÚÈ«¾Ö·¶Î§ÄÚ´æÔÚ£¬ÊÇÒòÎª $GLOBALS ÊÇÒ»¸ö<A  HREF="language.variables.predefined.html#language.variables.superglobals"  >³¬È«¾Ö±äÁ¿</A
+>¡£ÒÔÏÂ·¶ÀıÏÔÊ¾ÁË³¬È«¾Ö±äÁ¿µÄÓÃ´¦£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4247" ></A
+><P  ><B  >Àı×Ó 7-3. ÑİÊ¾³¬È«¾Ö±äÁ¿ºÍ×÷ÓÃÓòµÄÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">test_global</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ´ó¶àÊıµÄÔ¤¶¨Òå±äÁ¿²¢²» "super"£¬ËüÃÇĞèÒªÓÃ 'global' ¹Ø¼ü×ÖÀ´Ê¹ËüÃÇÔÚº¯ÊıµÄ±¾µØÇøÓòÖĞÓĞĞ§¡£<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">global </font><font  color="#0000BB">$HTTP_POST_VARS</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;print </font><font  color="#0000BB">$HTTP_POST_VARS</font><font  color="#007700">[</font><font  color="#DD0000">'name'</font><font  color="#007700">];<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Superglobals ÔÚÈÎºÎ·¶Î§ÄÚ¶¼ÓĞĞ§£¬ËüÃÇ²¢²»ĞèÒª 'global' ÉùÃ÷¡£Superglobals ÊÇÔÚ PHP 4.1.0 ÒıÈëµÄ¡£<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">print </font><font  color="#0000BB">$_POST</font><font  color="#007700">[</font><font  color="#DD0000">'name'</font><font  color="#007700">];<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.scope.static" ></A
+>Ê¹ÓÃ¾²Ì¬±äÁ¿</H2
+><P  >&#13;     ±äÁ¿·¶Î§µÄÁíÒ»¸öÖØÒªÌØĞÔÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >¾²Ì¬±äÁ¿</I
+></SPAN
+>£¨static
+     variable£©¡£¾²Ì¬±äÁ¿½öÔÚ¾Ö²¿º¯ÊıÓòÖĞ´æÔÚ£¬µ«µ±³ÌĞòÖ´ĞĞÀë¿ª´Ë×÷ÓÃÓòÊ±£¬ÆäÖµ²¢²»¶ªÊ§¡£¿´¿´ÏÂÃæµÄÀı×Ó£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4255" ></A
+><P  ><B  >Àı×Ó 7-4. ÑİÊ¾ĞèÒª¾²Ì¬±äÁ¿µÄÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">Test </font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$a </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$a</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$a</font><font  color="#007700">++;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ±¾º¯ÊıÃ»Ê²Ã´ÓÃ´¦£¬ÒòÎªÃ¿´Îµ÷ÓÃÊ±¶¼»á½«
+     <TT  CLASS="varname" >$a</TT
+> µÄÖµÉèÎª <TT  CLASS="literal" >0</TT
+> ²¢Êä³ö
+     "0"¡£½«±äÁ¿¼ÓÒ»µÄ <TT  CLASS="varname" >$a</TT
+>++
+     Ã»ÓĞ×÷ÓÃ£¬ÒòÎªÒ»µ©ÍË³ö±¾º¯ÊıÔò±äÁ¿
+     <TT  CLASS="varname" >$a</TT
+> ¾Í²»´æÔÚÁË¡£ÒªĞ´Ò»¸ö²»»á¶ªÊ§±¾´Î¼ÆÊıÖµµÄ¼ÆÊıº¯Êı£¬Òª½«±äÁ¿
+     <TT  CLASS="varname" >$a</TT
+> ¶¨ÒåÎª¾²Ì¬µÄ£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4265" ></A
+><P  ><B  >Àı×Ó 7-5. Ê¹ÓÃ¾²Ì¬±äÁ¿µÄÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">Test</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;static </font><font  color="#0000BB">$a </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$a</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$a</font><font  color="#007700">++;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ÏÖÔÚ£¬Ã¿´Îµ÷ÓÃ Test() º¯Êı¶¼»áÊä³ö
+     <TT  CLASS="varname" >$a</TT
+> µÄÖµ²¢¼ÓÒ»¡£
+    </P
+><P  >&#13;     ¾²Ì¬±äÁ¿Ò²Ìá¹©ÁËÒ»ÖÖ´¦Àíµİ¹éº¯ÊıµÄ·½·¨¡£µİ¹éº¯ÊıÊÇÒ»ÖÖµ÷ÓÃ×Ô¼ºµÄº¯Êı¡£Ğ´µİ¹éº¯ÊıÊ±ÒªĞ¡ĞÄ£¬ÒòÎª¿ÉÄÜ»áÎŞÇîµİ¹éÏÂÈ¥¡£±ØĞëÈ·±£ÓĞ³ä·ÖµÄ·½·¨À´ÖĞÖ¹µİ¹é¡£Ò»ÏÂÕâ¸ö¼òµ¥µÄº¯Êıµİ¹é¼ÆÊıµ½
+     10£¬Ê¹ÓÃ¾²Ì¬±äÁ¿
+     <TT  CLASS="varname" >$count</TT
+> À´ÅĞ¶ÏºÎÊ±Í£Ö¹£º
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4273" ></A
+><P  ><B  >Àı×Ó 7-6. ¾²Ì¬±äÁ¿Óëµİ¹éº¯Êı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">Test</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;static </font><font  color="#0000BB">$count </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$count</font><font  color="#007700">++;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$count</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$count </font><font  color="#007700">&lt; </font><font  color="#0000BB">10</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">Test </font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$count</font><font  color="#007700">--;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ¾²Ì¬±äÁ¿¿ÉÒÔ°´ÕÕÉÏÃæµÄÀı×ÓÉùÃ÷¡£Èç¹ûÔÚÉùÃ÷ÖĞÓÃ±í´ïÊ½µÄ½á¹û¶ÔÆä¸³Öµ»áµ¼ÖÂ½âÎö´íÎó¡£
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN4279" ></A
+><P  ><B  >Àı×Ó 7-7. ÉùÃ÷¾²Ì¬±äÁ¿</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">(){<br  />&nbsp;&nbsp;&nbsp;&nbsp;static </font><font  color="#0000BB">$int </font><font  color="#007700">= </font><font  color="#0000BB">0</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// correct<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">static </font><font  color="#0000BB">$int </font><font  color="#007700">= </font><font  color="#0000BB">1</font><font  color="#007700">+</font><font  color="#0000BB">2</font><font  color="#007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// wrong&nbsp;&nbsp;(as it is an expression)<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">static </font><font  color="#0000BB">$int </font><font  color="#007700">= </font><font  color="#0000BB">sqrt</font><font  color="#007700">(</font><font  color="#0000BB">121</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// wrong&nbsp;&nbsp;(as it is an expression too)<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$int</font><font  color="#007700">++;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$int</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV  CLASS="sect2" ><H2  CLASS="sect2" ><A  NAME="language.variables.scope.references" ></A
+>È«¾ÖºÍ¾²Ì¬±äÁ¿µÄÒıÓÃ</H2
+><P  >&#13;     ÔÚ Zend ÒıÇæ 1 ´ú£¬Çı¶¯ÁË <TT  CLASS="literal" >PHP4</TT
+>£¬¶ÔÓÚ±äÁ¿µÄ
+     <A  HREF="language.variables.scope.html#language.variables.scope.static"  >static</A
+> ºÍ
+     <A  HREF="language.variables.scope.html#language.variables.scope.global"  >global</A
+>
+     ¶¨ÒåÊÇÒÔ <A  HREF="language.references.html"  >references</A
+>
+     µÄ·½Ê½ÊµÏÖµÄ¡£ÀıÈç£¬ÔÚÒ»¸öº¯ÊıÓòÄÚ²¿ÓÃ
+     <TT  CLASS="literal" >global</TT
+>
+     Óï¾äµ¼ÈëµÄÒ»¸öÕæÕıµÄÈ«¾Ö±äÁ¿Êµ¼ÊÉÏÊÇ½¨Á¢ÁËÒ»¸öµ½È«¾Ö±äÁ¿µÄÒıÓÃ¡£ÕâÓĞ¿ÉÄÜµ¼ÖÂÔ¤ÁÏÖ®ÍâµÄĞĞÎª£¬ÈçÒÔÏÂÀı×ÓËùÑİÊ¾µÄ£º
+    </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN4290" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">test_global_ref</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$obj </font><font  color="#007700">= &amp;new </font><font  color="#0000BB">stdclass</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">test_global_noref</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;global </font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$obj </font><font  color="#007700">= new </font><font  color="#0000BB">stdclass</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">test_global_ref</font><font  color="#007700">();<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">);<br  /></font><font  color="#0000BB">test_global_noref</font><font  color="#007700">();<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;     Ö´ĞĞÒÔÉÏÀı×Ó»áµ¼ÖÂÈçÏÂÊä³ö£º
+    </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >NULL
+object(stdClass)(0) {
+}</PRE
+></TD
+></TR
+></TABLE
+><P  >&#13;     ÀàËÆµÄĞĞÎªÒ²ÊÊÓÃÓÚ
+     <TT  CLASS="literal" >static</TT
+> Óï¾ä¡£ÒıÓÃ²¢²»ÊÇ¾²Ì¬µØ´æ´¢µÄ£º
+    </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN4296" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function &amp;</font><font  color="#0000BB">get_instance_ref</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;static </font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Static object: "</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!isset(</font><font  color="#0000BB">$obj</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ½«Ò»¸öÒıÓÃ¸³Öµ¸ø¾²Ì¬±äÁ¿<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$obj </font><font  color="#007700">= &amp;new </font><font  color="#0000BB">stdclass</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$obj</font><font  color="#007700">-&gt;</font><font  color="#0000BB">property</font><font  color="#007700">++;<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  />}<br  /><br  />function &amp;</font><font  color="#0000BB">get_instance_noref</font><font  color="#007700">() {<br  />&nbsp;&nbsp;&nbsp;&nbsp;static </font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Static object: "</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$obj</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!isset(</font><font  color="#0000BB">$obj</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ½«Ò»¸ö¶ÔÏó¸³Öµ¸ø¾²Ì¬±äÁ¿<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$obj </font><font  color="#007700">= new </font><font  color="#0000BB">stdclass</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$obj</font><font  color="#007700">-&gt;</font><font  color="#0000BB">property</font><font  color="#007700">++;<br  />&nbsp;&nbsp;&nbsp;&nbsp;return </font><font  color="#0000BB">$obj</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$obj1 </font><font  color="#007700">= </font><font  color="#0000BB">get_instance_ref</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$still_obj1 </font><font  color="#007700">= </font><font  color="#0000BB">get_instance_ref</font><font  color="#007700">();<br  />echo </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$obj2 </font><font  color="#007700">= </font><font  color="#0000BB">get_instance_noref</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$still_obj2 </font><font  color="#007700">= </font><font  color="#0000BB">get_instance_noref</font><font  color="#007700">();<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+><P  >&#13;     Ö´ĞĞÒÔÉÏÀı×Ó»áµ¼ÖÂÈçÏÂÊä³ö£º
+    </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Static object: NULL
+Static object: NULL
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.variables.predefined.html">é¢„å®šä¹‰å˜é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.variable.html">å¯å˜å˜é‡</a></div>
- <div class="up"><a href="language.variables.html">å˜é‡</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="language.variables.scope" class="sect1">
-   <h2 class="title">å˜é‡èŒƒå›´</h2>
+Static object: NULL
+Static object: object(stdClass)(1) {
+  ["property"]=&#62;
+  int(1)
+}</PRE
+></TD
+></TR
+></TABLE
+><P  >&#13;     ÉÏÀıÑİÊ¾ÁËµ±°ÑÒ»¸öÒıÓÃ¸³Öµ¸øÒ»¸ö¾²Ì¬±äÁ¿Ê±£¬µÚ¶ş´Îµ÷ÓÃ
+     <TT  CLASS="literal" >&#38;get_instance_ref()</TT
+> º¯ÊıÊ±ÆäÖµ²¢Ã»ÓĞ±»<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >¼Ç×¡</I
+></SPAN
+>¡£
+    </P
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="language.variables.predefined.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="language.variables.variable.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Ô¤¶¨Òå±äÁ¿</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="language.variables.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >¿É±ä±äÁ¿</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-   <p class="simpara">
-    å˜é‡çš„èŒƒå›´å³å®ƒå®šä¹‰çš„ä¸Šä¸‹æ–‡èƒŒæ™¯ï¼ˆä¹Ÿå°±æ˜¯å®ƒçš„ç”Ÿæ•ˆèŒƒå›´ï¼‰ã€‚å¤§éƒ¨åˆ†çš„
-    PHP å˜é‡åªæœ‰ä¸€ä¸ªå•ç‹¬çš„èŒƒå›´ã€‚è¿™ä¸ªå•ç‹¬çš„èŒƒå›´è·¨åº¦åŒæ ·åŒ…å«äº†
-    include å’Œ require å¼•å…¥çš„æ–‡ä»¶ã€‚ä¾‹å¦‚ï¼š
-   </p>
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />include&nbsp;</span><span style="color: #DD0000">'b.inc'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
 
-   </div>
-   <p class="simpara">
-    è¿™é‡Œå˜é‡ <var class="varname"><var class="varname">$a</var></var> å°†ä¼šåœ¨åŒ…å«æ–‡ä»¶
-    <var class="filename">b.inc</var> ä¸­ç”Ÿæ•ˆã€‚ä½†æ˜¯ï¼Œåœ¨ç”¨æˆ·è‡ªå®šä¹‰å‡½æ•°ä¸­ï¼Œä¸€ä¸ªå±€éƒ¨å‡½æ•°èŒƒå›´å°†è¢«å¼•å…¥ã€‚ä»»ä½•ç”¨äºå‡½æ•°å†…éƒ¨çš„å˜é‡æŒ‰ç¼ºçœæƒ…å†µå°†è¢«é™åˆ¶åœ¨å±€éƒ¨å‡½æ•°èŒƒå›´å†…ã€‚ä¾‹å¦‚ï¼š
-   </p>
-
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">/*&nbsp;global&nbsp;scope&nbsp;*/<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">/*&nbsp;reference&nbsp;to&nbsp;local&nbsp;scope&nbsp;variable&nbsp;*/<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">Test</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-
-   <p class="simpara">
-    è¿™ä¸ªè„šæœ¬ä¸ä¼šæœ‰ä»»ä½•è¾“å‡ºï¼Œå› ä¸º echo è¯­å¥å¼•ç”¨äº†ä¸€ä¸ªå±€éƒ¨ç‰ˆæœ¬çš„å˜é‡
-    <var class="varname"><var class="varname">$a</var></var>ï¼Œè€Œä¸”åœ¨è¿™ä¸ªèŒƒå›´å†…ï¼Œå®ƒå¹¶æ²¡æœ‰è¢«èµ‹å€¼ã€‚ä½ å¯èƒ½æ³¨æ„åˆ°
-    PHP çš„å…¨å±€å˜é‡å’Œ C è¯­è¨€æœ‰ä¸€ç‚¹ç‚¹ä¸åŒï¼Œåœ¨ C
-    è¯­è¨€ä¸­ï¼Œå…¨å±€å˜é‡åœ¨å‡½æ•°ä¸­è‡ªåŠ¨ç”Ÿæ•ˆï¼Œé™¤éè¢«å±€éƒ¨å˜é‡è¦†ç›–ã€‚è¿™å¯èƒ½å¼•èµ·ä¸€äº›é—®é¢˜ï¼Œæœ‰äº›äººå¯èƒ½ä¸å°å¿ƒå°±æ”¹å˜äº†ä¸€ä¸ªå…¨å±€å˜é‡ã€‚PHP
-    ä¸­å…¨å±€å˜é‡åœ¨å‡½æ•°ä¸­ä½¿ç”¨æ—¶å¿…é¡»å£°æ˜ä¸º globalã€‚
-   </p>
-
-   <div class="sect2" id="language.variables.scope.global">
-    <h3 class="title">global å…³é”®å­—</h3>
-    <p class="simpara">
-     é¦–å…ˆï¼Œä¸€ä¸ªä½¿ç”¨ <em>global</em> çš„ä¾‹å­ï¼š
-    </p>
-    <p class="para">
-     <div class="example" id="example-112">
-      <p><strong>Example #1 ä½¿ç”¨ global</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">Sum</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">Sum</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-    <p class="simpara">
-     ä»¥ä¸Šè„šæœ¬çš„è¾“å‡ºå°†æ˜¯â€œ3â€ã€‚åœ¨å‡½æ•°ä¸­å£°æ˜äº†å…¨å±€å˜é‡
-     <var class="varname"><var class="varname">$a</var></var> å’Œ <var class="varname"><var class="varname">$b</var></var>
-     ä¹‹åï¼Œå¯¹ä»»ä¸€å˜é‡çš„æ‰€æœ‰å¼•ç”¨éƒ½ä¼šæŒ‡å‘å…¶å…¨å±€ç‰ˆæœ¬ã€‚å¯¹äºä¸€ä¸ªå‡½æ•°èƒ½å¤Ÿå£°æ˜çš„å…¨å±€å˜é‡çš„æœ€å¤§ä¸ªæ•°ï¼ŒPHP æ²¡æœ‰é™åˆ¶ã€‚
-    </p>
-
-    <p class="simpara">
-     åœ¨å…¨å±€èŒƒå›´å†…è®¿é—®å˜é‡çš„ç¬¬äºŒä¸ªåŠæ³•ï¼Œæ˜¯ç”¨ç‰¹æ®Šçš„ PHP è‡ªå®šä¹‰
-     <var class="varname"><var class="varname"><a href="reserved.variables.globals.html" class="classname">$GLOBALS</a></var></var> æ•°ç»„ã€‚å‰é¢çš„ä¾‹å­å¯ä»¥å†™æˆï¼š
-    </p>
-
-    <p class="para">
-     <div class="example" id="example-113">
-      <p><strong>Example #2 ä½¿ç”¨ <var class="varname"><var class="varname"><a href="reserved.variables.globals.html" class="classname">$GLOBALS</a></var></var> æ›¿ä»£ global</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /><br />function&nbsp;</span><span style="color: #0000BB">Sum</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">'b'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">'a'</span><span style="color: #007700">]&nbsp;+&nbsp;</span><span style="color: #0000BB">$GLOBALS</span><span style="color: #007700">[</span><span style="color: #DD0000">'b'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #0000BB">Sum</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-    <p class="simpara">
-     <var class="varname"><var class="varname"><a href="reserved.variables.globals.html" class="classname">$GLOBALS</a></var></var>
-     æ˜¯ä¸€ä¸ªå…³è”æ•°ç»„ï¼Œæ¯ä¸€ä¸ªå˜é‡ä¸ºä¸€ä¸ªå…ƒç´ ï¼Œé”®åå¯¹åº”å˜é‡åï¼Œå€¼å¯¹åº”å˜é‡çš„å†…å®¹ã€‚<var class="varname"><var class="varname"><a href="reserved.variables.globals.html" class="classname">$GLOBALS</a></var></var>
-     ä¹‹æ‰€ä»¥åœ¨å…¨å±€èŒƒå›´å†…å­˜åœ¨ï¼Œæ˜¯å› ä¸º $GLOBALS æ˜¯ä¸€ä¸ª<a href="language.variables.superglobals.html" class="link">è¶…å…¨å±€å˜é‡</a>ã€‚ä»¥ä¸‹èŒƒä¾‹æ˜¾ç¤ºäº†è¶…å…¨å±€å˜é‡çš„ç”¨å¤„ï¼š
-    </p>
-
-    <p class="para">
-     <div class="example" id="example-114">
-      <p><strong>Example #3 æ¼”ç¤ºè¶…å…¨å±€å˜é‡å’Œä½œç”¨åŸŸçš„ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test_global</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å¤§å¤šæ•°çš„é¢„å®šä¹‰å˜é‡å¹¶ä¸&nbsp;"super"ï¼Œå®ƒä»¬éœ€è¦ç”¨&nbsp;'global'&nbsp;å…³é”®å­—æ¥ä½¿å®ƒä»¬åœ¨å‡½æ•°çš„æœ¬åœ°åŒºåŸŸä¸­æœ‰æ•ˆã€‚<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">global&nbsp;</span><span style="color: #0000BB">$HTTP_POST_VARS</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$HTTP_POST_VARS</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Superglobals&nbsp;åœ¨ä»»ä½•èŒƒå›´å†…éƒ½æœ‰æ•ˆï¼Œå®ƒä»¬å¹¶ä¸éœ€è¦&nbsp;'global'&nbsp;å£°æ˜ã€‚Superglobals&nbsp;æ˜¯åœ¨&nbsp;PHP&nbsp;4.1.0&nbsp;å¼•å…¥çš„ã€‚<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-   </div>
-
-   <div class="sect2" id="language.variables.scope.static">
-    <h3 class="title">ä½¿ç”¨é™æ€å˜é‡</h3>
-
-    <p class="simpara">
-     å˜é‡èŒƒå›´çš„å¦ä¸€ä¸ªé‡è¦ç‰¹æ€§æ˜¯<em class="emphasis">é™æ€å˜é‡</em>ï¼ˆstatic
-     variableï¼‰ã€‚é™æ€å˜é‡ä»…åœ¨å±€éƒ¨å‡½æ•°åŸŸä¸­å­˜åœ¨ï¼Œä½†å½“ç¨‹åºæ‰§è¡Œç¦»å¼€æ­¤ä½œç”¨åŸŸæ—¶ï¼Œå…¶å€¼å¹¶ä¸ä¸¢å¤±ã€‚çœ‹çœ‹ä¸‹é¢çš„ä¾‹å­ï¼š
-    </p>
-
-    <p class="para">
-     <div class="example" id="example-115">
-      <p><strong>Example #4 æ¼”ç¤ºéœ€è¦é™æ€å˜é‡çš„ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">++;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-    <p class="simpara">
-     æœ¬å‡½æ•°æ²¡ä»€ä¹ˆç”¨å¤„ï¼Œå› ä¸ºæ¯æ¬¡è°ƒç”¨æ—¶éƒ½ä¼šå°†
-     <var class="varname"><var class="varname">$a</var></var> çš„å€¼è®¾ä¸º <em>0</em> å¹¶è¾“å‡º
-     <em>0</em>ã€‚å°†å˜é‡åŠ ä¸€çš„ <var class="varname"><var class="varname">$a</var></var>++
-     æ²¡æœ‰ä½œç”¨ï¼Œå› ä¸ºä¸€æ—¦é€€å‡ºæœ¬å‡½æ•°åˆ™å˜é‡
-     <var class="varname"><var class="varname">$a</var></var> å°±ä¸å­˜åœ¨äº†ã€‚è¦å†™ä¸€ä¸ªä¸ä¼šä¸¢å¤±æœ¬æ¬¡è®¡æ•°å€¼çš„è®¡æ•°å‡½æ•°ï¼Œè¦å°†å˜é‡
-     <var class="varname"><var class="varname">$a</var></var> å®šä¹‰ä¸ºé™æ€çš„ï¼š
-    </p>
-
-    <p class="para">
-     <div class="example" id="example-116">
-      <p><strong>Example #5 ä½¿ç”¨é™æ€å˜é‡çš„ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">++;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-    <p class="simpara">
-     ç°åœ¨ï¼Œå˜é‡ <var class="varname"><var class="varname">$a</var></var> ä»…åœ¨ç¬¬ä¸€æ¬¡è°ƒç”¨ test() å‡½æ•°æ—¶è¢«åˆå§‹åŒ–ï¼Œä¹‹åæ¯æ¬¡è°ƒç”¨ test() å‡½æ•°éƒ½ä¼šè¾“å‡º
-     <var class="varname"><var class="varname">$a</var></var> çš„å€¼å¹¶åŠ ä¸€ã€‚
-    </p>
-
-    <p class="simpara">
-     é™æ€å˜é‡ä¹Ÿæä¾›äº†ä¸€ç§å¤„ç†é€’å½’å‡½æ•°çš„æ–¹æ³•ã€‚é€’å½’å‡½æ•°æ˜¯ä¸€ç§è°ƒç”¨è‡ªå·±çš„å‡½æ•°ã€‚å†™é€’å½’å‡½æ•°æ—¶è¦å°å¿ƒï¼Œå› ä¸ºå¯èƒ½ä¼šæ— ç©·é€’å½’ä¸‹å»ã€‚å¿…é¡»ç¡®ä¿æœ‰å……åˆ†çš„æ–¹æ³•æ¥ä¸­æ­¢é€’å½’ã€‚ä»¥ä¸‹è¿™ä¸ªç®€å•çš„å‡½æ•°é€’å½’è®¡æ•°åˆ°
-     10ï¼Œä½¿ç”¨é™æ€å˜é‡ <var class="varname"><var class="varname">$count</var></var> æ¥åˆ¤æ–­ä½•æ—¶åœæ­¢ï¼š
-    </p>
-
-    <p class="para">
-     <div class="example" id="example-117">
-      <p><strong>Example #6 é™æ€å˜é‡ä¸é€’å½’å‡½æ•°</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">--;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      é™æ€å˜é‡å¯ä»¥æŒ‰ç…§ä¸Šé¢çš„ä¾‹å­å£°æ˜ã€‚å¦‚æœåœ¨å£°æ˜ä¸­ç”¨è¡¨è¾¾å¼çš„ç»“æœå¯¹å…¶èµ‹å€¼ä¼šå¯¼è‡´è§£æé”™è¯¯ã€‚
-     </p>
-     <p class="para">
-      <div class="example" id="example-118">
-       <p><strong>Example #7 å£°æ˜é™æ€å˜é‡</strong></p>
-       <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(){<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$int&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;correct<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">static&nbsp;</span><span style="color: #0000BB">$int&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">+</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;wrong&nbsp;&nbsp;(as&nbsp;it&nbsp;is&nbsp;an&nbsp;expression)<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">static&nbsp;</span><span style="color: #0000BB">$int&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sqrt</span><span style="color: #007700">(</span><span style="color: #0000BB">121</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;wrong&nbsp;&nbsp;(as&nbsp;it&nbsp;is&nbsp;an&nbsp;expression&nbsp;too)<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$int</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$int</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-       </div>
-
-      </div>
-     </p>
-    </p></blockquote>
-    <p class="para">
-     é™æ€å£°æ˜æ˜¯åœ¨ç¼–è¯‘æ—¶è§£æçš„ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      åœ¨å‡½æ•°ä¹‹å¤–ä½¿ç”¨ <em>global</em> å…³é”®å­—ä¸ç®—é”™ã€‚å¯ä»¥ç”¨äºåœ¨ä¸€ä¸ªå‡½æ•°ä¹‹å†…åŒ…å«æ–‡ä»¶æ—¶ã€‚
-     </p>
-    </p></blockquote>
-   </div>
-
-   <div class="sect2" id="language.variables.scope.references">
-    <h3 class="title">å…¨å±€å’Œé™æ€å˜é‡çš„å¼•ç”¨</h3>
-    <p class="simpara">
-     åœ¨ Zend å¼•æ“ 1 ä»£ï¼Œå®ƒé©±åŠ¨äº† PHP4ï¼Œå¯¹äºå˜é‡çš„
-     <a href="language.variables.scope.html#language.variables.scope.static" class="link">static</a> å’Œ
-     <a href="language.variables.scope.html#language.variables.scope.global" class="link">global</a>
-     å®šä¹‰æ˜¯ä»¥<a href="language.references.html" class="link">å¼•ç”¨</a>çš„æ–¹å¼å®ç°çš„ã€‚ä¾‹å¦‚ï¼Œåœ¨ä¸€ä¸ªå‡½æ•°åŸŸå†…éƒ¨ç”¨
-     <em>global</em>
-     è¯­å¥å¯¼å…¥çš„ä¸€ä¸ªçœŸæ­£çš„å…¨å±€å˜é‡å®é™…ä¸Šæ˜¯å»ºç«‹äº†ä¸€ä¸ªåˆ°å…¨å±€å˜é‡çš„å¼•ç”¨ã€‚è¿™æœ‰å¯èƒ½å¯¼è‡´é¢„æ–™ä¹‹å¤–çš„è¡Œä¸ºï¼Œå¦‚ä»¥ä¸‹ä¾‹å­æ‰€æ¼”ç¤ºçš„ï¼š
-    </p>
-
-    <div class="informalexample">
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test_global_ref</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;&amp;new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">test_global_noref</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">test_global_ref</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">test_global_noref</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-
-   <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-
-    <div class="example-contents screen"><br />
-NULL<br />
-object(stdClass)(0) {<br />
-}<br />
-    </div>
-
-    <p class="simpara">
-     ç±»ä¼¼çš„è¡Œä¸ºä¹Ÿé€‚ç”¨äº
-     <em>static</em> è¯­å¥ã€‚å¼•ç”¨å¹¶ä¸æ˜¯é™æ€åœ°å­˜å‚¨çš„ï¼š
-    </p>
-
-    <div class="informalexample">
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;&amp;</span><span style="color: #0000BB">get_instance_ref</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Static&nbsp;object:&nbsp;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!isset(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å°†ä¸€ä¸ªå¼•ç”¨èµ‹å€¼ç»™é™æ€å˜é‡<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;&amp;new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">property</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;&amp;</span><span style="color: #0000BB">get_instance_noref</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Static&nbsp;object:&nbsp;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!isset(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;å°†ä¸€ä¸ªå¯¹è±¡èµ‹å€¼ç»™é™æ€å˜é‡<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">property</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$obj1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_instance_ref</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$still_obj1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_instance_ref</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$obj2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_instance_noref</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$still_obj2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_instance_noref</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-
-   <p class="para">ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p>
-
-    <div class="example-contents screen"><br />
-Static object: NULL<br />
-Static object: NULL<br />
-<br />
-Static object: NULL<br />
-Static object: object(stdClass)(1) {<br />
-  [&quot;property&quot;]=&gt;<br />
-  int(1)<br />
-}<br />
-    </div>
-
-    <p class="simpara">
-     ä¸Šä¾‹æ¼”ç¤ºäº†å½“æŠŠä¸€ä¸ªå¼•ç”¨èµ‹å€¼ç»™ä¸€ä¸ªé™æ€å˜é‡æ—¶ï¼Œç¬¬äºŒæ¬¡è°ƒç”¨
-     <em>&amp;get_instance_ref()</em> å‡½æ•°æ—¶å…¶å€¼å¹¶æ²¡æœ‰è¢«<em class="emphasis">è®°ä½</em>ã€‚
-    </p>
-   </div>
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="language.variables.predefined.html">é¢„å®šä¹‰å˜é‡</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="language.variables.variable.html">å¯å˜å˜é‡</a></div>
- <div class="up"><a href="language.variables.html">å˜é‡</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

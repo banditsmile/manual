@@ -1,140 +1,84 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Add entries to LDAP directory</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ldap-8859-to-t61.html">ldap_8859_to_t61</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ldap-bind.html">ldap_bind</a></div>
- <div class="up"><a href="ref.ldap.html">LDAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ldap-add" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ldap_add</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">ldap_add</span> &mdash; <span class="dc-title">Add entries to LDAP directory</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ldap-add-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>ldap_add</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$dn</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$entry</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Add entries in the LDAP directory. 
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ldap-add-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">link_identifier</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An LDAP link identifier, returned by <span class="function"><a href="function.ldap-connect.html" class="function">ldap_connect()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">dn</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The distinguished name of an LDAP entity.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">entry</code></dt>
-
-     <dd>
-
-      <p class="para">
-       An array that specifies the information about the entry. The values in
-       the entries are indexed by individual attributes.
-       In case of multiple values for an attribute, they are indexed using
-       integers starting with 0.
-       <div class="informalexample">
-        <div class="example-contents">
-     <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$entry</span><span style="color: #007700">[</span><span style="color: #DD0000">"attribute1"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"value"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$entry</span><span style="color: #007700">[</span><span style="color: #DD0000">"attribute2"</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"value1"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$entry</span><span style="color: #007700">[</span><span style="color: #DD0000">"attribute2"</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"value2"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-        </div>
-
-       </div>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ldap_add</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="LDAP Functions" HREF="ref.ldap.html"><LINK  REL="PREVIOUS" TITLE="ldap_8859_to_t61" HREF="function.ldap-8859-to-t61.html"><LINK  REL="NEXT" TITLE="ldap_bind" HREF="function.ldap-bind.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ldap-8859-to-t61.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ldap-bind.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ldap-add" ></A
+>ldap_add</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN47684" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>ldap_add&nbsp;--&nbsp;Add entries to LDAP directory</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN47687" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >ldap_add</B
+> ( resource link_identifier, string dn, array entry)<BR  ></BR
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  > 
+     The <B  CLASS="function" >ldap_add()</B
+> function is used to add entries
+     in the LDAP directory. The DN of the entry to be added is
+     specified by <TT  CLASS="parameter" ><I  >dn</I
+></TT
+>.
+     Array <TT  CLASS="parameter" ><I  >entry</I
+></TT
+> specifies the information about the
+     entry. The values in the entries are indexed by individual attributes.
+     In case of multiple values for an attribute, they are indexed using
+     integers starting with 0.
+    </P
+><DIV  CLASS="informalexample" ><A  NAME="AEN47708" ></A
+><P  ></P
+><P  CLASS="literallayout" ><br >
+&nbsp;&nbsp;&nbsp;&nbsp;entry["attribute1"]&nbsp;=&nbsp;value<br >
+&nbsp;&nbsp;&nbsp;&nbsp;entry["attribute2"][0]&nbsp;=&nbsp;value1<br >
+&nbsp;&nbsp;&nbsp;&nbsp;entry["attribute2"][1]&nbsp;=&nbsp;value2<br >
+</P
+><P  ></P
+></DIV
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN47710" ></A
+><P  ><B  >Àı×Ó 1. Complete example with authenticated bind</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$ds</font><font  color="#007700">=</font><font  color="#0000BB">ldap_connect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// assuming the LDAP server is on this host<br  /><br  /></font><font  color="#007700">if (</font><font  color="#0000BB">$ds</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// bind with appropriate dn to give update access<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$r</font><font  color="#007700">=</font><font  color="#0000BB">ldap_bind</font><font  color="#007700">(</font><font  color="#0000BB">$ds</font><font  color="#007700">, </font><font  color="#DD0000">"cn=root, o=My Company, c=US"</font><font  color="#007700">, </font><font  color="#DD0000">"secret"</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// prepare data<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$info</font><font  color="#007700">[</font><font  color="#DD0000">"cn"</font><font  color="#007700">]=</font><font  color="#DD0000">"John Jones"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$info</font><font  color="#007700">[</font><font  color="#DD0000">"sn"</font><font  color="#007700">]=</font><font  color="#DD0000">"Jones"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$info</font><font  color="#007700">[</font><font  color="#DD0000">"mail"</font><font  color="#007700">]=</font><font  color="#DD0000">"jonj@example.com"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$info</font><font  color="#007700">[</font><font  color="#DD0000">"objectclass"</font><font  color="#007700">]=</font><font  color="#DD0000">"person"</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// add data to directory<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$r</font><font  color="#007700">=</font><font  color="#0000BB">ldap_add</font><font  color="#007700">(</font><font  color="#0000BB">$ds</font><font  color="#007700">, </font><font  color="#DD0000">"cn=John Jones, o=My Company, c=US"</font><font  color="#007700">, </font><font  color="#0000BB">$info</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">ldap_close</font><font  color="#007700">(</font><font  color="#0000BB">$ds</font><font  color="#007700">);<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Unable to connect to LDAP server"</font><font  color="#007700">; <br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ldap-8859-to-t61.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ldap-bind.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ldap_8859_to_t61</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ldap.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ldap_bind</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ldap-add-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.ldap-add-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-4670">
-    <p><strong>Example #1 Complete example with authenticated bind</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$ds&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ldap_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;assuming&nbsp;the&nbsp;LDAP&nbsp;server&nbsp;is&nbsp;on&nbsp;this&nbsp;host<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$ds</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;bind&nbsp;with&nbsp;appropriate&nbsp;dn&nbsp;to&nbsp;give&nbsp;update&nbsp;access<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ldap_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$ds</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cn=root,&nbsp;o=My&nbsp;Company,&nbsp;c=US"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"secret"</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;prepare&nbsp;data<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"cn"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"John&nbsp;Jones"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"sn"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"Jones"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"objectclass"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"person"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;add&nbsp;data&nbsp;to&nbsp;directory<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ldap_add</span><span style="color: #007700">(</span><span style="color: #0000BB">$ds</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cn=John&nbsp;Jones,&nbsp;o=My&nbsp;Company,&nbsp;c=US"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ldap_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ds</span><span style="color: #007700">);<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Unable&nbsp;to&nbsp;connect&nbsp;to&nbsp;LDAP&nbsp;server"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.ldap-add-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">æ­¤å‡½æ•°å¯å®‰å…¨ç”¨äºäºŒè¿›åˆ¶å¯¹è±¡ã€‚</span></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ldap-add-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ldap-delete.html" class="function" rel="rdfs-seeAlso">ldap_delete()</a> - Delete an entry from a directory</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ldap-8859-to-t61.html">ldap_8859_to_t61</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ldap-bind.html">ldap_bind</a></div>
- <div class="up"><a href="ref.ldap.html">LDAP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

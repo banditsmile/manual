@@ -1,104 +1,61 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Free statement memory</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-free-result.html">mssql_free_result</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-get-last-message.html">mssql_get_last_message</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mssql-free-statement" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mssql_free_statement</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.3.2, PHP 5, PECL odbtp &gt;= 1.1.1)</p><p class="refpurpose"><span class="refname">mssql_free_statement</span> &mdash; <span class="dc-title">Free statement memory</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mssql-free-statement-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>mssql_free_statement</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$stmt</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mssql_free_statement()</strong></span> only needs to be called
-   if you are worried about using too much memory while your script
-   is running. All statement memory will automatically be freed when
-   the script ends. You may call <span class="function"><strong>mssql_free_statement()</strong></span>
-   with the statement identifier as an argument and the associated
-   statement memory will be freed.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mssql-free-statement-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">stmt</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Statement resource, obtained with <span class="function"><a href="function.mssql-init.html" class="function">mssql_init()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mssql_free_statement</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Microsoft SQL Server Functions" HREF="ref.mssql.html"><LINK  REL="PREVIOUS" TITLE="mssql_free_result" HREF="function.mssql-free-result.html"><LINK  REL="NEXT" TITLE="mssql_get_last_message" HREF="function.mssql-get-last-message.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mssql-free-result.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mssql-get-last-message.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mssql-free-statement" ></A
+>mssql_free_statement</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN58872" ></A
+><P  >    (PHP 4 &#62;= 4.3.2)</P
+>mssql_free_statement&nbsp;--&nbsp;Free statement memory</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN58875" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >mssql_free_statement</B
+> ( resource statement)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mssql_free_statement()</B
+> only needs to be called
+     if you are worried about using too much memory while your script
+     is running. All statement memory will automatically be freed when
+     the script ends. You may call <B  CLASS="function" >mssql_free_statement()</B
+>
+     with the statement identifier as an argument and the associated
+     statement memory will be freed.
+    </P
+><P  >&#13;     See also <A  HREF="function.mssql-bind.html"  ><B  CLASS="function" >mssql_bind()</B
+></A
+>,
+     <A  HREF="function.mssql-execute.html"  ><B  CLASS="function" >mssql_execute()</B
+></A
+>, and
+     <A  HREF="function.mssql-init.html"  ><B  CLASS="function" >mssql_init()</B
+></A
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mssql-free-result.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mssql-get-last-message.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mssql_free_result</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mssql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mssql_get_last_message</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.mssql-free-statement-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mssql-free-statement-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1660">
-    <p><strong>Example #1 <span class="function"><strong>mssql_free_statement()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;new&nbsp;statement<br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Bind&nbsp;values&nbsp;here&nbsp;and&nbsp;execute&nbsp;the&nbsp;statement<br /><br />//&nbsp;once&nbsp;we're&nbsp;done,&nbsp;we&nbsp;clear&nbsp;it&nbsp;from&nbsp;the&nbsp;memory<br />//&nbsp;using&nbsp;mssql_free_statement&nbsp;like&nbsp;so:<br /></span><span style="color: #0000BB">mssql_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mssql-free-statement-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mssql-bind.html" class="function" rel="rdfs-seeAlso">mssql_bind()</a> - Adds a parameter to a stored procedure or a remote stored procedure</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-execute.html" class="function" rel="rdfs-seeAlso">mssql_execute()</a> - Executes a stored procedure on a MS SQL server database</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-init.html" class="function" rel="rdfs-seeAlso">mssql_init()</a> - Initializes a stored procedure or a remote stored procedure</span></li>
-    <li class="member"><span class="function"><a href="function.mssql-free-result.html" class="function" rel="rdfs-seeAlso">mssql_free_result()</a> - Free result memory</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mssql-free-result.html">mssql_free_result</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mssql-get-last-message.html">mssql_get_last_message</a></div>
- <div class="up"><a href="ref.mssql.html">Mssql å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

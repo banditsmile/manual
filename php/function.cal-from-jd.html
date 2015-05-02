@@ -1,130 +1,103 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>转换Julian Day计数到一个支持的历法。</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.cal-days-in-month.html">cal_days_in_month</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.cal-info.html">cal_info</a></div>
- <div class="up"><a href="ref.calendar.html">日历 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.cal-from-jd" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">cal_from_jd</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">cal_from_jd</span> &mdash; <span class="dc-title">转换Julian Day计数到一个支持的历法。</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.cal-from-jd-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>cal_from_jd</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$jd</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$calendar</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>cal_from_jd()</strong></span>函数根据给定的Julian day的<code class="parameter">jd</code> 天数转换成特定历法<code class="parameter">calendar</code>中的日期。<code class="parameter">calendar</code>支持的值有<strong><code>CAL_GREGORIAN</code></strong>，<strong><code>CAL_JULIAN</code></strong>，<strong><code>CAL_JEWISH</code></strong> 和<strong><code>CAL_FRENCH</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.cal-from-jd-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">jd</code></dt>
-
-     <dd>
-
-      <p class="para">
-       一个Julian day天数的整数数字
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">calendar</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要转换成的历法
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.cal-from-jd-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-    返回一个数组，包含的历法信息有月，日，年，星期，星期的缩写和全写，月份的缩写和全写，日期的形式是“月/日/年”。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.cal-from-jd-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2338">
-    <p><strong>Example #1 <span class="function"><strong>cal_from_jd()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$today&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unixtojd</span><span style="color: #007700">(</span><span style="color: #0000BB">mktime</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">16</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2003</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">cal_from_jd</span><span style="color: #007700">(</span><span style="color: #0000BB">$today</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">CAL_GREGORIAN</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >cal_from_jd</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Calendar Functions" HREF="ref.calendar.html"><LINK  REL="PREVIOUS" TITLE="cal_days_in_month" HREF="function.cal-days-in-month.html"><LINK  REL="NEXT" TITLE="cal_info" HREF="function.cal-info.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.cal-days-in-month.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.cal-info.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.cal-from-jd" ></A
+>cal_from_jd</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN11528" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>cal_from_jd&nbsp;--&nbsp;Converts from Julian Day Count to a supported calendar</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN11531" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >cal_from_jd</B
+> ( int jd, int calendar)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >cal_from_jd()</B
+> converts the Julian day given in
+     <TT  CLASS="parameter" ><I  >jd</I
+></TT
+> into a date of the specified
+     <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+>. Supported
+     <TT  CLASS="parameter" ><I  >calendar</I
+></TT
+> values are
+     <TT  CLASS="constant" ><B  >CAL_GREGORIAN</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JULIAN</B
+></TT
+>,
+     <TT  CLASS="constant" ><B  >CAL_JEWISH</B
+></TT
+> and
+     <TT  CLASS="constant" ><B  >CAL_FRENCH</B
+></TT
+>.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN11552" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >cal_from_jd()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$today </font><font  color="#007700">= </font><font  color="#0000BB">unixtojd</font><font  color="#007700">(</font><font  color="#0000BB">mktime</font><font  color="#007700">(</font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">8</font><font  color="#007700">, </font><font  color="#0000BB">16</font><font  color="#007700">, </font><font  color="#0000BB">2003</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">cal_from_jd</font><font  color="#007700">(</font><font  color="#0000BB">$today</font><font  color="#007700">, </font><font  color="#0000BB">CAL_GREGORIAN</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       This will output :
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [date] =&gt; 8/16/2003
-    [month] =&gt; 8
-    [day] =&gt; 16
-    [year] =&gt; 2003
-    [dow] =&gt; 6
-    [abbrevdayname] =&gt; Sat
-    [dayname] =&gt; Saturday
-    [abbrevmonth] =&gt; Aug
-    [monthname] =&gt; August
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+    [date] =&#62; 8/16/2003
+    [month] =&#62; 8
+    [day] =&#62; 16
+    [year] =&#62; 2003
+    [dow] =&#62; 6
+    [abbrevdayname] =&#62; Sat
+    [dayname] =&#62; Saturday
+    [abbrevmonth] =&#62; Aug
+    [monthname] =&#62; August
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.cal-to-jd.html"  ><B  CLASS="function" >cal_to_jd()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.cal-days-in-month.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.cal-info.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >cal_days_in_month</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.calendar.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >cal_info</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.cal-from-jd-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.cal-to-jd.html" class="function" rel="rdfs-seeAlso">cal_to_jd()</a> - 从一个支持的历法转变为Julian Day计数。</span></li>
-    <li class="member"><span class="function"><a href="function.jdtofrench.html" class="function" rel="rdfs-seeAlso">jdtofrench()</a> - 转变一个Julian Day计数到French Republican历法的日期</span></li>  
-    <li class="member"><span class="function"><a href="function.jdtogregorian.html" class="function" rel="rdfs-seeAlso">jdtogregorian()</a> - 转变一个Julian Day计数为Gregorian历法日期</span></li>
-    <li class="member"><span class="function"><a href="function.jdtojewish.html" class="function" rel="rdfs-seeAlso">jdtojewish()</a> - 转换一个julian天数为Jewish历法的日期</span></li>  
-    <li class="member"><span class="function"><a href="function.jdtojulian.html" class="function" rel="rdfs-seeAlso">jdtojulian()</a> - 转变一个Julian Day计数到Julian历法的日期</span></li>
-    <li class="member"><span class="function"><a href="function.jdtounix.html" class="function" rel="rdfs-seeAlso">jdtounix()</a> - 转变Julian Day计数为一个Unix时间戳</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.cal-days-in-month.html">cal_days_in_month</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.cal-info.html">cal_info</a></div>
- <div class="up"><a href="ref.calendar.html">日历 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

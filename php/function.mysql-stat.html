@@ -1,75 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—å½“å‰ç³»ç»ŸçŠ¶æ€</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-set-charset.html">mysql_set_charset</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-tablename.html">mysql_tablename</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-stat" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">mysql_stat</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_stat</span> &mdash; <span class="dc-title">å–å¾—å½“å‰ç³»ç»ŸçŠ¶æ€</span></p>
-
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.mysql-stat-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">string</span> <span class="methodname"><strong>mysql_stat</strong></span>
-      ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>mysql_stat()</strong></span> è¿”å›å½“å‰æœåŠ¡å™¨çŠ¶æ€ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      <span class="function"><strong>mysql_stat()</strong></span>
-      ç›®å‰åªè¿”å›
-      uptimeï¼Œthreadsï¼Œqueriesï¼Œopen tablesï¼Œflush tables å’Œ queries per
-      secondã€‚è¦å¾—åˆ°å…¶å®ƒçŠ¶æ€å˜é‡çš„å®Œæ•´åˆ—è¡¨ï¼Œåªèƒ½ä½¿ç”¨ SQL å‘½ä»¤
-      SHOW STATUSã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     <div class="example" id="example-1737">
-      <p><strong>Example #1 <span class="function"><strong>mysql_stat()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mysql_user"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"mysql_password"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$status&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mysql_stat</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$status</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-      <div class="example-contents"><p>
-       ä»¥ä¸Šä¾‹å­å°†äº§ç”Ÿå¦‚ä¸‹è¾“å‡ºï¼š
-      </p></div>
-      <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >mysql_stat</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_select_db" HREF="function.mysql-select-db.html"><LINK  REL="NEXT" TITLE="mysql_tablename" HREF="function.mysql-tablename.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-select-db.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-tablename.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-stat" ></A
+>mysql_stat</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN66504" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>mysql_stat&nbsp;--&nbsp;È¡µÃµ±Ç°ÏµÍ³×´Ì¬</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN66507" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >mysql_stat</B
+> ( [resource link_identifier])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mysql_stat()</B
+> ·µ»Øµ±Ç°·şÎñÆ÷×´Ì¬¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >mysql_stat()</B
+>
+      Ä¿Ç°Ö»·µ»Ø
+      uptime£¬threads£¬queries£¬open tables£¬flush tables ºÍ queries per
+      second¡£ÒªµÃµ½ÆäËü×´Ì¬±äÁ¿µÄÍêÕûÁĞ±í£¬Ö»ÄÜÊ¹ÓÃ SQL ÃüÁî
+      SHOW STATUS¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN66521" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >mysql_stat()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">'localhost'</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$status </font><font  color="#007700">= </font><font  color="#0000BB">explode</font><font  color="#007700">(</font><font  color="#DD0000">'&nbsp;&nbsp;'</font><font  color="#007700">, </font><font  color="#0000BB">mysql_stat</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">));<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$status</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÒÔÉÏÀı×Ó½«²úÉúÈçÏÂÊä³ö£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [0] =&gt; Uptime: 5380
-    [1] =&gt; Threads: 2
-    [2] =&gt; Questions: 1321299
-    [3] =&gt; Slow queries: 0
-    [4] =&gt; Opens: 26
-    [5] =&gt; Flush tables: 1
-    [6] =&gt; Open tables: 17
-    [7] =&gt; Queries per second avg: 245.595
-)
-</pre></div>
-      </div>
-     </div>
-    </p>
-   </div>
+    [0] =&#62; Uptime: 5380
+    [1] =&#62; Threads: 2
+    [2] =&#62; Questions: 1321299
+    [3] =&#62; Slow queries: 0
+    [4] =&#62; Opens: 26
+    [5] =&#62; Flush tables: 1
+    [6] =&#62; Open tables: 17
+    [7] =&#62; Queries per second avg: 245.595
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-select-db.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-tablename.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_select_db</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_tablename</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-set-charset.html">mysql_set_charset</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-tablename.html">mysql_tablename</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

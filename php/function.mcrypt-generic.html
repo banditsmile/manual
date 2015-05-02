@@ -1,122 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>加密数据</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-generic-init.html">mcrypt_generic_init</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-get-block-size.html">mcrypt_get_block_size</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mcrypt-generic" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mcrypt_generic</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">mcrypt_generic</span> &mdash; <span class="dc-title">加密数据</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mcrypt-generic-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mcrypt_generic</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$td</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-    本函数用来加密数据。
-    传入数据长度必须是 n * 分组大小，否则需要后补 &quot;<em>\0</em>&quot;。
-    本函数返回加密后的数据。
-    注意，根据数据补齐不同，
-    返回的数据可能比输入的数据长度有所增加。
-  </p>
-  <p class="para">
-    如果你需要把加密后的数据保存到数据库，
-    请确保保存 mcrypt_generic 返回的完整的字符串，
-    否则将无法正确解密。
-    如果原始数据有 10 个字符，分组大小为 8 
-    （使用 <span class="function"><a href="function.mcrypt-enc-get-block-size.html" class="function">mcrypt_enc_get_block_size()</a></span> 获取分组大小），
-    则数据库中至少需要 16 个字符来保存数据。
-    请注意 <span class="function"><a href="function.mdecrypt-generic.html" class="function">mdecrypt_generic()</a></span> 函数返回的数据也会是 16 个字符。
-    使用 rtrim($str, &quot;\0&quot;) 移除字符串末尾的 0 。
-  </p>
-  <p class="para">
-    如果你在例如 MySQL 这样的数据库中存储数据，
-    请注意 varchar 类型的字段会在插入数据时自动移除字符串末尾的“空格”。
-    由于加密后的数据可能是以空格（ASCII 32）结尾，
-    这种特性会导致数据损坏。
-    请使用 tinyblob/tinytext（或 larger）字段来存储加密数据。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mcrypt-generic-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">td</code></dt>
-
-     <dd>
-
-      <p class="para">
-       加密描述符。
-      </p>
-      <p class="para">
-        在调用本函数之前，
-        请使用 <span class="function"><a href="function.mcrypt-generic-init.html" class="function">mcrypt_generic_init()</a></span> 函数初始化加密句柄。
-        在加密完成之后，
-        需要调用 <span class="function"><a href="function.mcrypt-generic-deinit.html" class="function">mcrypt_generic_deinit()</a></span> 函数进行必要的清理工作。
-        请参见 <span class="function"><a href="function.mcrypt-module-open.html" class="function">mcrypt_module_open()</a></span> 。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要加密的数据。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mcrypt_generic</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_generic_init" HREF="function.mcrypt-generic-init.html"><LINK  REL="NEXT" TITLE="mcrypt_get_block_size" HREF="function.mcrypt-get-block-size.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-generic-init.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mcrypt-get-block-size.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mcrypt-generic" ></A
+>mcrypt_generic</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN54562" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>mcrypt_generic&nbsp;--&nbsp;This function encrypts data</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN54565" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mcrypt_generic</B
+> ( resource td, string data)<BR  ></BR
+><P  >&#13;     This function encrypts data. The data is padded with "<TT  CLASS="literal" >\0</TT
+>"
+     to make sure the length of the data is n * blocksize. This
+     function returns the encrypted data. Note that the length
+     of the returned string can in fact be longer then the input,
+     due to the padding of the data.
+    </P
+><P  >&#13;     If you want to store the encrypted data in a database make sure to store
+     the entire string as returned by mcrypt_generic, or the string will not
+     entirely decrypt properly.  If your original string is 10 characters long
+     and the block size is 8 (use
+     <A  HREF="function.mcrypt-enc-get-block-size.html"  ><B  CLASS="function" >mcrypt_enc_get_block_size()</B
+></A
+> to determine the
+     blocksize), you would need at least 16 characters in your database field.
+     Note the string returned by <A  HREF="function.mdecrypt-generic.html"  ><B  CLASS="function" >mdecrypt_generic()</B
+></A
+> will be
+     16 characters as well...use <A  HREF="function.rtrim.html"  ><B  CLASS="function" >rtrim()</B
+></A
+>($str, "\0") to
+     remove the padding.
+    </P
+><P  >&#13;     If you are for example storing the data in a MySQL database remember that
+     varchar fields automatically have trailing spaces removed during
+     insertion. As encrypted data can end in a space (ASCII 32), the data will
+     be damaged by this removal.  Store data in a tinyblob/tinytext (or
+     larger) field instead.
+    </P
+><P  >&#13;     The encryption handle should always be initialized with
+     <A  HREF="function.mcrypt-generic-init.html"  ><B  CLASS="function" >mcrypt_generic_init()</B
+></A
+> with a key and an IV before
+     calling this function. Where the encryption is done, you should free the
+     encryption buffers by calling <A  HREF="function.mcrypt-generic-deinit.html"  ><B  CLASS="function" >mcrypt_generic_deinit()</B
+></A
+>.
+     See <A  HREF="function.mcrypt-module-open.html"  ><B  CLASS="function" >mcrypt_module_open()</B
+></A
+> for an example.
+    </P
+><P  >&#13;     See also <A  HREF="function.mdecrypt-generic.html"  ><B  CLASS="function" >mdecrypt_generic()</B
+></A
+>,
+     <A  HREF="function.mcrypt-generic-init.html"  ><B  CLASS="function" >mcrypt_generic_init()</B
+></A
+>, and
+     <A  HREF="function.mcrypt-generic-deinit.html"  ><B  CLASS="function" >mcrypt_generic_deinit()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-generic-init.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mcrypt-get-block-size.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_generic_init</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mcrypt_get_block_size</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-generic-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回加密后的数据。
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mcrypt-generic-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mdecrypt-generic.html" class="function" rel="rdfs-seeAlso">mdecrypt_generic()</a> - 解密数据</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic-init.html" class="function" rel="rdfs-seeAlso">mcrypt_generic_init()</a> - 初始化加密所需的缓冲区</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic-deinit.html" class="function" rel="rdfs-seeAlso">mcrypt_generic_deinit()</a> - 对加密模块进行清理工作</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-generic-init.html">mcrypt_generic_init</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-get-block-size.html">mcrypt_get_block_size</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

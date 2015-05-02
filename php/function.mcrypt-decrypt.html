@@ -1,156 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>使用给定参数解密密文</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-create-iv.html">mcrypt_create_iv</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-ecb.html">mcrypt_ecb</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mcrypt-decrypt" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mcrypt_decrypt</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">mcrypt_decrypt</span> &mdash; <span class="dc-title">使用给定参数解密密文</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.mcrypt-decrypt-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>mcrypt_decrypt</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$cipher</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$iv</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   解密 <code class="parameter">data</code> 并返回明文。
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.mcrypt-decrypt-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">cipher</code></dt>
-
-     <dd>
-
-      <p class="para"><strong><code>MCRYPT_ciphername</code></strong> 常量中的一个，或者是字符串值的算法名称。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">key</code></dt>
-
-     <dd>
-
-      <p class="para">
-       数据加密密钥。
-       如果密钥长度不是加解密算法能够支持的有效长度，
-       那么会产生警告并且返回 <strong><code>FALSE</code></strong>
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要使用给定的 <code class="parameter">cipher</code> 和
-       <code class="parameter">mode</code> 解密的数据。
-       如果数据大小不是 n * 分组大小，则在其后追加 &#039;<em>\0</em>&#039; 来补齐。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para"><strong><code>MCRYPT_MODE_modename</code></strong> 常量中的一个，或以下字符串中的一个：&quot;ecb&quot;，&quot;cbc&quot;，&quot;cfb&quot;，&quot;ofb&quot;，&quot;nofb&quot; 和 &quot;stream&quot;。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">iv</code></dt>
-
-     <dd>
-
-      <p class="para">Used for the initialization in CBC, CFB, OFB modes, and in some algorithms in STREAM mode. If the provided IV size is not supported by the chaining mode or no IV was provided, but the chaining mode requires one, the function will emit a warning and return <strong><code>FALSE</code></strong>.</p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-decrypt-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   以字符串格式返回解密后的数据，  或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
- <div class="refsect1 changelog" id="refsect1-function.mcrypt-decrypt-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.6.0</td>
-       <td>
-        不再接受无效长度的 <code class="parameter">key</code> and <code class="parameter">iv</code> 参数。
-        如果参数长度无效，则 <span class="function"><strong>mcrypt_decrypt()</strong></span> 函数会产生警告并且返回 <strong><code>FALSE</code></strong>。
-        之前版本中，对于长度不足的密钥和初始向量会在其后补齐 &#039;<em>\0</em>&#039; 
-        使其达到有效长度。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mcrypt_decrypt</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_create_iv" HREF="function.mcrypt-create-iv.html"><LINK  REL="NEXT" TITLE="mcrypt_ecb" HREF="function.mcrypt-ecb.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-create-iv.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mcrypt-ecb.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mcrypt-decrypt" ></A
+>mcrypt_decrypt</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN54195" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>mcrypt_decrypt&nbsp;--&nbsp;Decrypts crypttext with given parameters</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN54198" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >mcrypt_decrypt</B
+> ( string cipher, string key, string data, string mode [, string iv])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mcrypt_decrypt()</B
+> decrypts the data
+     and returns the unencrypted data.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Cipher</I
+></TT
+> is one of the MCRYPT_ciphername
+     constants of the name of the algorithm as string.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Key</I
+></TT
+> is the key with which the data
+     is encrypted. If it's smaller that the required keysize, it
+     is padded with '<TT  CLASS="literal" >\0</TT
+>'.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Data</I
+></TT
+> is the data that will be decrypted
+     with the given cipher and mode. If the size of the data is not
+     n * blocksize, the data will be padded with '<TT  CLASS="literal" >\0</TT
+>'.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >Mode</I
+></TT
+> is one of the MCRYPT_MODE_modename
+     constants of one of "ecb", "cbc", "cfb", "ofb", "nofb" or 
+     "stream".
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >IV</I
+></TT
+> parameter is used for the
+     initialisation in CBC, CFB, OFB modes, and in some algorithms
+     in STREAM mode. If you do not supply an IV, while it is needed
+     for an algorithm, the function issues a warning and uses an
+     IV with all bytes set to '<TT  CLASS="literal" >\0</TT
+>'.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-create-iv.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mcrypt-ecb.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_create_iv</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mcrypt_ecb</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.mcrypt-decrypt-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mcrypt-encrypt.html" class="function" rel="rdfs-seeAlso">mcrypt_encrypt()</a> - 使用给定参数加密明文</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-create-iv.html">mcrypt_create_iv</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-ecb.html">mcrypt_ecb</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

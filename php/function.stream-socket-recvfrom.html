@@ -1,182 +1,110 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Receives data from a socket, connected or not</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-socket-pair.html">stream_socket_pair</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-socket-sendto.html">stream_socket_sendto</a></div>
- <div class="up"><a href="ref.stream.html">Stream ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stream-socket-recvfrom" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stream_socket_recvfrom</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">stream_socket_recvfrom</span> &mdash; <span class="dc-title">Receives data from a socket, connected or not </span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.stream-socket-recvfrom-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>stream_socket_recvfrom</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$address</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>stream_socket_recvfrom()</strong></span> accepts
-   data from a remote socket up to <code class="parameter">length</code> bytes.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.stream-socket-recvfrom-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The remote socket.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The number of bytes to receive from the <code class="parameter">socket</code>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The value of <code class="parameter">flags</code> can be any combination
-       of the following:
-       <table class="doctable table">
-        <caption><strong>Possible values for <code class="parameter">flags</code></strong></caption>
-        
-         <tbody class="tbody">
-          <tr>
-           <td><strong><code>STREAM_OOB</code></strong></td>
-           <td>
-            Process OOB (<em>out-of-band</em>) data.
-           </td>
-          </tr>
-
-          <tr>
-           <td><strong><code>STREAM_PEEK</code></strong></td>
-           <td>
-            Retrieve data from the socket, but do not consume the buffer.
-            Subsequent calls to <span class="function"><a href="function.fread.html" class="function">fread()</a></span> or
-            <span class="function"><strong>stream_socket_recvfrom()</strong></span> will see
-            the same data.
-           </td>
-          </tr>
-
-         </tbody>
-        
-       </table>
-
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">address</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If <code class="parameter">address</code> is provided it will be populated with
-       the address of the remote socket.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stream_socket_recvfrom</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Stream Functions" HREF="ref.stream.html"><LINK  REL="PREVIOUS" TITLE="stream_socket_get_name" HREF="function.stream-socket-get-name.html"><LINK  REL="NEXT" TITLE="stream_socket_sendto" HREF="function.stream-socket-sendto.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stream-socket-get-name.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stream-socket-sendto.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stream-socket-recvfrom" ></A
+>stream_socket_recvfrom</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN107016" ></A
+><P  >    (no version information, might be only in CVS)</P
+>stream_socket_recvfrom&nbsp;--&nbsp;Receives data from a socket, connected or not </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN107019" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stream_socket_recvfrom</B
+> ( resource socket, int length [, int flags [, string &#38;address]])<BR  ></BR
+><P  >&#13;     The function <B  CLASS="function" >stream_socket_recvfrom()</B
+> accepts
+     data from a remote socket up to <TT  CLASS="parameter" ><I  >length</I
+></TT
+> bytes.
+     If <TT  CLASS="parameter" ><I  >address</I
+></TT
+> is provided it will be populated with
+     the address of the remote socket.
+    </P
+><P  >&#13;     The value of <TT  CLASS="parameter" ><I  >flags</I
+></TT
+> can be any combination
+     of the following:
+     <DIV  CLASS="table" ><A  NAME="AEN107042" ></A
+><P  ><B  >±Ì∏Ò 1. possible values for <TT  CLASS="parameter" ><I  >flags</I
+></TT
+></B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STREAM_OOB</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Process OOB (out-of-band) data.
+         </TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >STREAM_PEEK</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          Retrieve data from the socket, but do not consume the buffer.
+          Subsequent calls to <A  HREF="function.fread.html"  ><B  CLASS="function" >fread()</B
+></A
+> or 
+          <B  CLASS="function" >stream_socket_recvfrom()</B
+> will see
+          the same data.
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN107057" ></A
+><P  ><B  >¿˝◊” 1. <A  HREF="function.stream-socket-sendto.html"  ><B  CLASS="function" >stream_socket_sendto()</B
+></A
+> Example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* Open a server socket to port 1234 on localhost */<br  /></font><font  color="#0000BB">$server </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_server</font><font  color="#007700">(</font><font  color="#DD0000">'tcp://127.0.0.1:1234'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Accept a connection */<br  /></font><font  color="#0000BB">$socket </font><font  color="#007700">= </font><font  color="#0000BB">stream_socket_accept</font><font  color="#007700">(</font><font  color="#0000BB">$server</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Grab a packet (1500 is a typical MTU size) of OOB data */<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Received Out-Of-Band: '" </font><font  color="#007700">. </font><font  color="#0000BB">stream_socket_recvfrom</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#0000BB">1500</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_OOB</font><font  color="#007700">) . </font><font  color="#DD0000">"'\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Take a peek at the normal in-band data, but don't comsume it. */<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Data: '" </font><font  color="#007700">. </font><font  color="#0000BB">stream_socket_recvfrom</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#0000BB">1500</font><font  color="#007700">, </font><font  color="#0000BB">STREAM_PEEK</font><font  color="#007700">) . </font><font  color="#DD0000">"'\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Get the exact same packet again, but remove it from the buffer this time. */<br  /></font><font  color="#007700">echo </font><font  color="#DD0000">"Data: '" </font><font  color="#007700">. </font><font  color="#0000BB">stream_socket_recvfrom</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">, </font><font  color="#0000BB">1500</font><font  color="#007700">) . </font><font  color="#DD0000">"'\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Close it up */<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$socket</font><font  color="#007700">);<br  /></font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$server</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also 
+     <A  HREF="function.stream-socket-sendto.html"  ><B  CLASS="function" >stream_socket_sendto()</B
+></A
+>,
+     <A  HREF="function.stream-socket-client.html"  ><B  CLASS="function" >stream_socket_client()</B
+></A
+>, and
+     <A  HREF="function.stream-socket-server.html"  ><B  CLASS="function" >stream_socket_server()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stream-socket-get-name.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stream-socket-sendto.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stream_socket_get_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.stream.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stream_socket_sendto</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.stream-socket-recvfrom-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns the read data, as a string
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.stream-socket-recvfrom-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-4341">
-    <p><strong>Example #1 <span class="function"><strong>stream_socket_recvfrom()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Open&nbsp;a&nbsp;server&nbsp;socket&nbsp;to&nbsp;port&nbsp;1234&nbsp;on&nbsp;localhost&nbsp;*/<br /></span><span style="color: #0000BB">$server&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_socket_server</span><span style="color: #007700">(</span><span style="color: #DD0000">'tcp://127.0.0.1:1234'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Accept&nbsp;a&nbsp;connection&nbsp;*/<br /></span><span style="color: #0000BB">$socket&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_socket_accept</span><span style="color: #007700">(</span><span style="color: #0000BB">$server</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Grab&nbsp;a&nbsp;packet&nbsp;(1500&nbsp;is&nbsp;a&nbsp;typical&nbsp;MTU&nbsp;size)&nbsp;of&nbsp;OOB&nbsp;data&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Received&nbsp;Out-Of-Band:&nbsp;'"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">stream_socket_recvfrom</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1500</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">STREAM_OOB</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"'\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;Take&nbsp;a&nbsp;peek&nbsp;at&nbsp;the&nbsp;normal&nbsp;in-band&nbsp;data,&nbsp;but&nbsp;don't&nbsp;comsume&nbsp;it.&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Data:&nbsp;'"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">stream_socket_recvfrom</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1500</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">STREAM_PEEK</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"'\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;Get&nbsp;the&nbsp;exact&nbsp;same&nbsp;packet&nbsp;again,&nbsp;but&nbsp;remove&nbsp;it&nbsp;from&nbsp;the&nbsp;buffer&nbsp;this&nbsp;time.&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Data:&nbsp;'"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">stream_socket_recvfrom</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1500</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"'\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;Close&nbsp;it&nbsp;up&nbsp;*/<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$server</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.stream-socket-recvfrom-notes">
-  <h3 class="title">Ê≥®Èáä</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    If a message received is longer than the <code class="parameter">length</code>
-    parameter, excess bytes may be discarded depending on the type of socket
-    the message is received from (such as UDP).
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Calls to <span class="function"><strong>stream_socket_recvfrom()</strong></span> on socket-based
-    streams, after calls to buffer-based stream functions (like
-    <span class="function"><a href="function.fread.html" class="function">fread()</a></span> or <span class="function"><a href="function.stream-get-line.html" class="function">stream_get_line()</a></span>) read
-    data directly from the socket and bypass the stream buffer.
-    </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.stream-socket-recvfrom-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <ul class="simplelist">
-   <li class="member"><span class="function"><a href="function.stream-socket-sendto.html" class="function" rel="rdfs-seeAlso">stream_socket_sendto()</a> - Sends a message to a socket, whether it is connected or not</span></li>
-   <li class="member"><span class="function"><a href="function.stream-socket-client.html" class="function" rel="rdfs-seeAlso">stream_socket_client()</a> - Open Internet or Unix domain socket connection</span></li>
-   <li class="member"><span class="function"><a href="function.stream-socket-server.html" class="function" rel="rdfs-seeAlso">stream_socket_server()</a> - Create an Internet or Unix domain server socket</span></li>
-  </ul>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stream-socket-pair.html">stream_socket_pair</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stream-socket-sendto.html">stream_socket_sendto</a></div>
- <div class="up"><a href="ref.stream.html">Stream ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

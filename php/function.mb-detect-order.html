@@ -1,140 +1,161 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>设置/获取 字符编码的检测顺序</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-detect-encoding.html">mb_detect_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-encode-mimeheader.html">mb_encode_mimeheader</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mb-detect-order" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mb_detect_order</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">mb_detect_order</span> &mdash; <span class="dc-title">设置/获取 字符编码的检测顺序</span></p>
-
- </div>
-   
- <div class="refsect1 description" id="refsect1-function.mb-detect-order-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>mb_detect_order</strong></span>
-    ([ <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$encoding_list</code><span class="initializer"> = mb_detect_order()</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   为编码列表 <code class="parameter">encoding_list</code> 设置自动检测字符编码的顺序。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mb-detect-order-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">encoding_list</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">encoding_list</code> 是一个 <span class="type"><a href="language.types.array.html" class="type array">array</a></span> 或者逗号分隔的字符编码列表。
-       参见<a href="mbstring.supported-encodings.html" class="link">支持的编码</a>。
-      </p>
-      <p class="para">
-       如果省略了 <code class="parameter">encoding_list</code> 参数，它将返回当前字符编码检测顺序的数组。
-      </p>
-      <p class="para">
-       该设置会影响 <span class="function"><a href="function.mb-detect-encoding.html" class="function">mb_detect_encoding()</a></span> 和 <span class="function"><a href="function.mb-send-mail.html" class="function">mb_send_mail()</a></span>。
-      </p>
-      <p class="para">
-       <em>mbstring</em> 当前实现了以下编码检测筛选器。
-       如有以下编码列表的无效字节序列，编码的检测将会失败。
-      </p>
-      <span class="simpara">
-       <em>UTF-8</em>, <em>UTF-7</em>,
-       <em>ASCII</em>,
-       <em>EUC-JP</em>,<em>SJIS</em>,
-       <em>eucJP-win</em>, <em>SJIS-win</em>,
-       <em>JIS</em>, <em>ISO-2022-JP</em> 
-      </span>
-      <p class="para">
-       对于 <em>ISO-8859-*</em>，<em>mbstring</em>
-       总是检测为 <em>ISO-8859-*</em>。
-      </p>
-      <p class="para">
-       对于 <em>UTF-16</em>、<em>UTF-32</em>、
-       <em>UCS2</em> 和 <em>UCS4</em>，编码检测总是会失败。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.mb-detect-order-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功时返回 <strong><code>TRUE</code></strong>， 或者在失败时返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mb-detect-order-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2803">
-    <p><strong>Example #1 <span class="function"><strong>mb_detect_order()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;为检测顺序设置枚举列表&nbsp;*/<br /></span><span style="color: #0000BB">mb_detect_order</span><span style="color: #007700">(</span><span style="color: #DD0000">"eucjp-win,sjis-win,UTF-8"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;通过数组设置检测顺序&nbsp;*/<br /></span><span style="color: #0000BB">$ary</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"ASCII"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ary</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"JIS"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ary</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"EUC-JP"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mb_detect_order</span><span style="color: #007700">(</span><span style="color: #0000BB">$ary</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;显示当前的检测顺序&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">",&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mb_detect_order</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-      <p class="para">
-       <div class="example" id="example-2804">
-        <p><strong>Example #2 案例展示了无效的检测顺序</strong></p>
-        <div class="example-contents">
-<div class="cdata"><pre>
-; 总是检测为 ISO-8859-1
+<HTML  ><HEAD  ><TITLE  >mb_detect_order</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Multi-Byte String Functions" HREF="ref.mbstring.html"><LINK  REL="PREVIOUS" TITLE="mb_detect_encoding" HREF="function.mb-detect-encoding.html"><LINK  REL="NEXT" TITLE="mb_encode_mimeheader" HREF="function.mb-encode-mimeheader.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mb-detect-encoding.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mb-encode-mimeheader.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mb-detect-order" ></A
+>mb_detect_order</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN51352" ></A
+><P  >    (PHP 4 &#62;= 4.0.6)</P
+>mb_detect_order&nbsp;--&nbsp;
+     Set/Get character encoding detection order
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN51355" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >mb_detect_order</B
+> ( [mixed encoding-list])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >mb_detect_order()</B
+> sets automatic character
+     encoding detection order to <TT  CLASS="parameter" ><I  >encoding-list</I
+></TT
+>.
+     It returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> for success,
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> for failure.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >encoding-list</I
+></TT
+> is array or comma separated
+     list of character encoding. ("auto" is expanded to
+     "ASCII, JIS, UTF-8, EUC-JP, SJIS")
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >encoding-list</I
+></TT
+> is omitted, it returns
+     current character encoding detection order as array.
+    </P
+><P  >&#13;     This setting affects <A  HREF="function.mb-detect-encoding.html"  ><B  CLASS="function" >mb_detect_encoding()</B
+></A
+> and
+     <A  HREF="function.mb-send-mail.html"  ><B  CLASS="function" >mb_send_mail()</B
+></A
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      <TT  CLASS="literal" >mbstring</TT
+> currently implements following
+      encoding detection filters. If there is an invalid byte sequence
+      for following encoding, encoding detection will fail.
+     </P
+><P  ><B  >ע: </B
+>
+       <TT  CLASS="literal" >UTF-8</TT
+>, <TT  CLASS="literal" >UTF-7</TT
+>,
+       <TT  CLASS="literal" >ASCII</TT
+>,
+       <TT  CLASS="literal" >EUC-JP</TT
+>,<TT  CLASS="literal" >SJIS</TT
+>,
+       <TT  CLASS="literal" >eucJP-win</TT
+>, <TT  CLASS="literal" >SJIS-win</TT
+>,
+       <TT  CLASS="literal" >JIS</TT
+>, <TT  CLASS="literal" >ISO-2022-JP</TT
+> 
+     </P
+><P  >&#13;      For <TT  CLASS="literal" >ISO-8859-*</TT
+>, <TT  CLASS="literal" >mbstring</TT
+>
+      always detects as <TT  CLASS="literal" >ISO-8859-*</TT
+>.
+     </P
+><P  >&#13;      For <TT  CLASS="literal" >UTF-16</TT
+>, <TT  CLASS="literal" >UTF-32</TT
+>,
+      <TT  CLASS="literal" >UCS2</TT
+> and <TT  CLASS="literal" >UCS4</TT
+>, encoding
+      detection will fail always.
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN51398" ></A
+><P  ><B  >���� 1. Useless detect order example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >; Always detect as ISO-8859-1
 detect_order = ISO-8859-1, UTF-8
 
-; 总是检测为 UTF-8，由于 ASCII/UTF-7 的值对  UTF-8 是有效的
-detect_order = UTF-8, ASCII, UTF-7
-</pre></div>
-        </div>
+; Always detect as UTF-8, since ASCII/UTF-7 values are 
+; valid for UTF-8
+detect_order = UTF-8, ASCII, UTF-7</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN51402" ></A
+><P  ><B  >���� 2. <B  CLASS="function" >mb_detect_order()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* Set detection order by enumerated list */<br  /></font><font  color="#0000BB">mb_detect_order</font><font  color="#007700">(</font><font  color="#DD0000">"eucjp-win,sjis-win,UTF-8"</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Set detection order by array */<br  /></font><font  color="#0000BB">$ary</font><font  color="#007700">[] = </font><font  color="#DD0000">"ASCII"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$ary</font><font  color="#007700">[] = </font><font  color="#DD0000">"JIS"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$ary</font><font  color="#007700">[] = </font><font  color="#DD0000">"EUC-JP"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">mb_detect_order</font><font  color="#007700">(</font><font  color="#0000BB">$ary</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">/* Display current detection order */<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">implode</font><font  color="#007700">(</font><font  color="#DD0000">", "</font><font  color="#007700">, </font><font  color="#0000BB">mb_detect_order</font><font  color="#007700">());<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.mb-internal-encoding.html"  ><B  CLASS="function" >mb_internal_encoding()</B
+></A
+>,
+     <A  HREF="function.mb-http-input.html"  ><B  CLASS="function" >mb_http_input()</B
+></A
+>,
+     <A  HREF="function.mb-http-output.html"  ><B  CLASS="function" >mb_http_output()</B
+></A
+> and
+     <A  HREF="function.mb-send-mail.html"  ><B  CLASS="function" >mb_send_mail()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mb-detect-encoding.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mb-encode-mimeheader.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mb_detect_encoding</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mbstring.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mb_encode_mimeheader</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-       </div>
-      </p>
- </div>
 
-
- <div class="refsect1 seealso" id="refsect1-function.mb-detect-order-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mb-internal-encoding.html" class="function" rel="rdfs-seeAlso">mb_internal_encoding()</a> - 设置/获取内部字符编码</span></li>
-    <li class="member"><span class="function"><a href="function.mb-http-input.html" class="function" rel="rdfs-seeAlso">mb_http_input()</a> - 检测 HTTP 输入字符编码</span></li>
-    <li class="member"><span class="function"><a href="function.mb-http-output.html" class="function" rel="rdfs-seeAlso">mb_http_output()</a> - 设置/获取 HTTP 输出字符编码</span></li>
-    <li class="member"><span class="function"><a href="function.mb-send-mail.html" class="function" rel="rdfs-seeAlso">mb_send_mail()</a> - 发送编码过的邮件</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mb-detect-encoding.html">mb_detect_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mb-encode-mimeheader.html">mb_encode_mimeheader</a></div>
- <div class="up"><a href="ref.mbstring.html">多字节字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

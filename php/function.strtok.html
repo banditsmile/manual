@@ -1,167 +1,138 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>标记分割字符串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strstr.html">strstr</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strtolower.html">strtolower</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.strtok" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">strtok</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">strtok</span> &mdash; <span class="dc-title">标记分割字符串</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.strtok-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>strtok</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$token</code></span>
-   )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>strtok</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$token</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>strtok()</strong></span> 将字符串 <code class="parameter">str</code> 分割为若干子字符串，每个子字符串以 <code class="parameter">token</code> 中的字符分割。这也就意味着，如果有个字符串是 &quot;This is an example string&quot;，你可以使用空格字符将这句话分割成独立的单词。
-  </p>
-  <p class="para">
-   注意仅第一次调用 strtok 函数时使用 string 参数。后来每次调用 strtok，都将只使用 token 参数，因为它会记住它在字符串 string 中的位置。如果要重新开始分割一个新的字符串，你需要再次使用 string 来调用 strtok 函数，以便完成初始化工作。注意可以在 token 参数中使用多个字符。字符串将被该参数中任何一个字符分割。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.strtok-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       被分成若干子字符串的原始<span class="type"><span class="type 字符串">字符串</span></span>。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">token</code></dt>
-
-     <dd>
-
-      <p class="para">
-       分割 <code class="parameter">str</code> 时使用的分界字符。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.strtok-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   标记后的<span class="type"><span class="type 字符串">字符串</span></span>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.strtok-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5222">
-    <p><strong>Example #1 <span class="function"><strong>strtok()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is\tan&nbsp;example\nstring"</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">/*&nbsp;使用制表符和换行符作为分界符&nbsp;*/<br /></span><span style="color: #0000BB">$tok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtok</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&nbsp;\n\t"</span><span style="color: #007700">);<br /><br />while&nbsp;(</span><span style="color: #0000BB">$tok&nbsp;</span><span style="color: #007700">!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Word=</span><span style="color: #0000BB">$tok</span><span style="color: #DD0000">&lt;br&nbsp;/&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtok</span><span style="color: #007700">(</span><span style="color: #DD0000">"&nbsp;\n\t"</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p> 
-  <p class="para">
-   对于空串的处理机制，PHP 从 4.1.0 开始发生了变化。旧的运行机制返回空字符串，而新的运行机制选择恰当地跳过这一部分：
-  </p>
-  <p class="para">
-   <div class="example" id="example-5223">
-    <p><strong>Example #2 旧的 <span class="function"><strong>strtok()</strong></span> 运行机制</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$first_token&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtok</span><span style="color: #007700">(</span><span style="color: #DD0000">'/something'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$second_token&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtok</span><span style="color: #007700">(</span><span style="color: #DD0000">'/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$first_token</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$second_token</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-    string(0) &quot;&quot;
-    string(9) &quot;something&quot;
-</pre></div>
-    </div>
-   </div>
-   <div class="example" id="example-5224">
-    <p><strong>Example #3 新的 <span class="function"><strong>strtok()</strong></span> 运行机制</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$first_token&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtok</span><span style="color: #007700">(</span><span style="color: #DD0000">'/something'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$second_token&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtok</span><span style="color: #007700">(</span><span style="color: #DD0000">'/'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$first_token</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$second_token</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-    string(9) &quot;something&quot;
-    bool(false)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >strtok</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="strstr" HREF="function.strstr.html"><LINK  REL="NEXT" TITLE="strtolower" HREF="function.strtolower.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.strstr.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.strtolower.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.strtok" ></A
+>strtok</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN110988" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>strtok&nbsp;--&nbsp;Tokenize string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN110991" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >strtok</B
+> ( string arg1, string arg2)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >strtok()</B
+> splits a string (<TT  CLASS="parameter" ><I  >arg1</I
+></TT
+>)
+     into smaller strings (tokens), with each token being delimited by any 
+     character from <TT  CLASS="parameter" ><I  >arg2</I
+></TT
+>.
+     That is, if you have a string like "This is an example string" you
+     could tokenize this string into its individual words by using the
+     space character as the token.
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111006" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >strtok()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$string </font><font  color="#007700">= </font><font  color="#DD0000">"This is\tan example\nstring"</font><font  color="#007700">;<br  /></font><font  color="#FF8000">/* Use tab and newline as tokenizing characters as well&nbsp;&nbsp;*/<br  /></font><font  color="#0000BB">$tok </font><font  color="#007700">= </font><font  color="#0000BB">strtok</font><font  color="#007700">(</font><font  color="#0000BB">$string</font><font  color="#007700">, </font><font  color="#DD0000">" \n\t"</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">$tok</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Word=$tok&lt;br /&gt;"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$tok </font><font  color="#007700">= </font><font  color="#0000BB">strtok</font><font  color="#007700">(</font><font  color="#DD0000">" \n\t"</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Note that only the first call to strtok uses the string argument.
+     Every subsequent call to strtok only needs the token to use, as
+     it keeps track of where it is in the current string.  To start
+     over, or to tokenize a new string you simply call strtok with the
+     string argument again to initialize it.  Note that you may put
+     multiple tokens in the token parameter.  The string will be
+     tokenized when any one of the characters in the argument are
+     found.
+    </P
+><P  >&#13;     The behavior when an empty part was found changed with PHP 4.1.0. The old
+     behavior returned an empty string, while the new, correct, behavior
+     simply skips the part of the string:
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111012" ></A
+><P  ><B  >���� 2. Old <B  CLASS="function" >strtok()</B
+> behavior</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$first_token&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">strtok</font><font  color="#007700">(</font><font  color="#DD0000">'/something'</font><font  color="#007700">, </font><font  color="#DD0000">'/'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$second_token </font><font  color="#007700">= </font><font  color="#0000BB">strtok</font><font  color="#007700">(</font><font  color="#DD0000">'/'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$first_token</font><font  color="#007700">, </font><font  color="#0000BB">$second_token</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >string(0) ""
+    string(9) "something"</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111018" ></A
+><P  ><B  >���� 3. New <B  CLASS="function" >strtok()</B
+> behavior</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$first_token&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">strtok</font><font  color="#007700">(</font><font  color="#DD0000">'/something'</font><font  color="#007700">, </font><font  color="#DD0000">'/'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$second_token </font><font  color="#007700">= </font><font  color="#0000BB">strtok</font><font  color="#007700">(</font><font  color="#DD0000">'/'</font><font  color="#007700">);<br  /></font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">$first_token</font><font  color="#007700">, </font><font  color="#0000BB">$second_token</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >string(9) "something"
+    bool(false)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Also be careful that your tokens may be equal to "0". This
+     evaluates to <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> in conditional expressions.
+    </P
+><P  >&#13;     See also <A  HREF="function.split.html"  ><B  CLASS="function" >split()</B
+></A
+> and
+     <A  HREF="function.explode.html"  ><B  CLASS="function" >explode()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.strstr.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.strtolower.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >strstr</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >strtolower</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.strtok-notes">
-  <h3 class="title">注释</h3>
-  
-  <div class="warning"><strong class="warning">Warning</strong><p class="simpara">此函数可能返回布尔值
-<strong><code>FALSE</code></strong>，但也可能返回等同于 <strong><code>FALSE</code></strong> 的非布尔值。请阅读 <a href="language.types.boolean.html" class="link">布尔类型</a>章节以获取更多信息。应使用
-<a href="language.operators.comparison.html" class="link">===
-运算符</a>来测试此函数的返回值。</p></div>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.strtok-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.split.html" class="function" rel="rdfs-seeAlso">split()</a> - 用正则表达式将字符串分割到数组中</span></li>
-    <li class="member"><span class="function"><a href="function.explode.html" class="function" rel="rdfs-seeAlso">explode()</a> - 使用一个字符串分割另一个字符串</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.strstr.html">strstr</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.strtolower.html">strtolower</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

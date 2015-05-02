@@ -1,32 +1,256 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ‰€æ”¯æŒçš„å¥—æŽ¥å­—ä¼ è¾“å™¨ï¼ˆSocket Transportsï¼‰åˆ—è¡¨</title>
+<HTML  ><HEAD  ><TITLE  >ËùÖ§³ÖµÄÌ×½Ó×Ö´«ÊäÆ÷£¨Socket Transports£©ÁÐ±í</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="¸½Â¼" HREF="appendixes.html"><LINK  REL="PREVIOUS" TITLE="Ñ¹ËõÁ÷" HREF="wrappers.compression.html"><LINK  REL="NEXT" TITLE="Unix ÁìÓò£ºUNIX ºÍ UDG" HREF="transports.unix.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="appendix" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="wrappers.compression.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="transports.unix.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="appendix" ><H1  ><A  NAME="transports" >¸½Â¼ K. ËùÖ§³ÖµÄÌ×½Ó×Ö´«ÊäÆ÷£¨Socket Transports£©ÁÐ±í</A
+></H1
+><DIV  CLASS="TOC" ><DL  ><DT  ><B  >Ä¿Â¼</B
+></DT
+><DT  ><A  HREF="transports.html#transports.inet"  >Internet ÁìÓò£ºTCP£¬UDP£¬SSL ºÍ TLS</A
+></DT
+><DT  ><A  HREF="transports.unix.html"  >Unix ÁìÓò£ºUNIX ºÍ UDG</A
+></DT
+></DL
+></DIV
+><P  >&#13;  ÒÔÏÂÊÇ PHP ÄÚÖÃÓÃÓÚ»ùÓÚÁ÷µÄÌ×½Ó×Öº¯ÊýÀýÈç <A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+>
+  ºÍ <A  HREF="function.stream-socket-client.html"  ><B  CLASS="function" >stream_socket_client()</B
+></A
+> µÄ¸÷ÖÖ URL
+  ·ç¸ñµÄÌ×½Ó×Ö´«ÊäÆ÷¡£ÕâÐ©´«ÊäÆ÷<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >²»ÊÊÓÃ</I
+></SPAN
+>ÓÚ
+  <A  HREF="ref.sockets.html"  >Sockets À©Õ¹¿â</A
+>¡£
+ </P
+><P  >&#13;  ÒªµÃµ½×Ô¼ºµÄ
+  <TT  CLASS="literal" >PHP</TT
+> °æ±¾ÖÐËù°²×°µÄ´«ÊäÆ÷ÁÐ±í£¬Ê¹ÓÃ
+  <A  HREF="function.stream-get-transports.html"  ><B  CLASS="function" >stream_get_transports()</B
+></A
+>¡£
+ </P
+><DIV  CLASS="section" ><H1  CLASS="section" ><A  NAME="transports.inet" ></A
+>Internet ÁìÓò£ºTCP£¬UDP£¬SSL ºÍ TLS</H1
+><P  >PHP 3£¬PHP 4¡£<TT  CLASS="literal" >ssl://</TT
+> &#38; <TT  CLASS="literal" >tls://</TT
+> ×Ô PHP 4.3 Æð¡£</P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+    Èç¹ûÃ»ÓÐÖ¸¶¨´«ÊäÆ÷£¬Ôò¼Ù¶¨Îª <TT  CLASS="literal" >tcp://</TT
+>¡£
+   </P
+></BLOCKQUOTE
+></DIV
+><P  ></P
+><UL  ><LI  ><P  ><TT  CLASS="literal" >127.0.0.1</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >fe80::1</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >www.example.com</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >tcp://127.0.0.1</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >tcp://fe80::1</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >tcp://www.example.com</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >udp://www.example.com</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >ssl://www.example.com</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >tls://www.example.com</TT
+></P
+></LI
+></UL
+><P  >&#13;   Internet ÁìÓòÌ×½Ó×ÖÔÚÄ¿±êµØÖ·ÖÐ»¹ÆÚÍûÓÐÒ»¸ö¶Ë¿ÚºÅ¡£ÔÚ
+   <A  HREF="function.fsockopen.html"  ><B  CLASS="function" >fsockopen()</B
+></A
+> ÖÐÔÚµÚ¶þ¸ö²ÎÊýÖÐÖ¸¶¨£¬ÕâÑù¾Í²»»áÓ°Ïì´«ÊäÆ÷µÄ
+   URL¡£È»¶øÔÚ <A  HREF="function.stream-socket-client.html"  ><B  CLASS="function" >stream_socket_client()</B
+></A
+> ºÍÏà¹ØµÄº¯ÊýÖÐÊÇÓÃ´«Í³µÄ
+   URL£¬¶Ë¿ÚºÅÔÚ´«ÊäÆ÷ URL ºóÃæÒÔÃ°ºÅ·Ö¸ô¶øÖ¸¶¨¡£
+  </P
+><P  ></P
+><UL  ><LI  ><P  ><TT  CLASS="literal" >tcp://127.0.0.1:80</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >tcp://[fe80::1]:80</TT
+></P
+></LI
+><LI  ><P  ><TT  CLASS="literal" >tcp://www.example.com:80</TT
+></P
+></LI
+></UL
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >´ø¶Ë¿ÚºÅµÄ IPv6 Êý×ÖµØÖ·: </B
+>
+    ÔÚÉÏÃæµÄµÚ¶þ¸öÀý×ÓÖÐ£¬IPv4 ºÍÖ÷»úÃûµÄÀý×ÓÖ»¼ÓÁËÒ»¸öÃ°ºÅºÍ¶Ë¿ÚºÅ£¬µ«
+    IPv6 µÄµØÖ·±»·ÅÔÚ·½À¨ºÅÖÐ£º<TT  CLASS="literal" >[fe80::1]</TT
+>¡£ÕâÊÇÎªÁË½«
+    IPv6 µØÖ·ÖÐµÄÃ°ºÅºÍÓÃÀ´·Ö¸ô¶Ë¿ÚºÅµÄÃ°ºÅÇø±ð¿ªÀ´¡£
+   </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;   <TT  CLASS="literal" >ssl://</TT
+> ºÍ <TT  CLASS="literal" >tls://</TT
+> ´«ÊäÆ÷£¨½öÔÚ
+   openssl Ö§³ÖÒÑ±àÒëÈë PHP ºó¿ÉÓÃ£©ÊÇ
+   <TT  CLASS="literal" >tcp://</TT
+> ´«ÊäÆ÷¼ÓÈë SSL ¼ÓÃÜºóµÄÀ©Õ¹¡£ÔÚ
+   <TT  CLASS="literal" >PHP 4.3.0</TT
+> ÖÐ OpenSSL Ö§³Ö±ØÐë±»¾²Ì¬±àÒëÈë
+   <TT  CLASS="literal" >PHP</TT
+>£¬ÔÚ <TT  CLASS="literal" >PHP 5.0.0</TT
+>
+   ÖÐ¿ÉÒÔ±àÒëÎªÄ£¿é»òÕß¾²Ì¬µÄ¡£
+  </P
+><P  >&#13;   <DIV  CLASS="table" ><A  NAME="AEN133755" ></A
+><P  ><B  >±í¸ñ K-1. 
+     <TT  CLASS="literal" >ssl://</TT
+> ºÍ <TT  CLASS="literal" >tls://</TT
+>
+     ´«ÊäÆ÷µÄÉÏÏÂÎÄÑ¡Ïî£¨×Ô <TT  CLASS="literal" >PHP 4.3.2</TT
+> Æð£©
+    </B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ãû³Æ</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ÓÃ·¨</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Ä¬ÈÏÖµ</TH
+><TD  >&nbsp;</TD
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >verify_peer</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> »ò <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£ÓÃÓÚ SSL Ö¤ÊéÇëÇóÑéÖ¤¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >FALSE</B
+></TT
+></TD
+><TD  >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >allow_self_signed</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> »ò <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£ÔÊÐí×ÔÇ©ÃûµÄÖ¤Êé¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >FALSE</B
+></TT
+></TD
+><TD  >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >cafile</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        ±¾µØÎÄ¼þÏµÍ³ÖÐÖ¤ÊéÊÚÈ¨»ú¹¹ÎÄ¼þµÄÎ»ÖÃ£¬Ó¦ºÍ
+        <TT  CLASS="literal" >verify_peer</TT
+> ÉÏÏÂÎÄÑ¡ÏîÒ»ÆðÊ¹ÓÃÀ´ÈÏÖ¤Ô¶¶ËµÄÉí·Ý¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+><TD  >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >capath</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        Èç¹ûÃ»ÓÐÖ¸¶¨ <TT  CLASS="literal" >cafile</TT
+> »òÕßÈç¹û¸Ã´¦Ã»ÕÒµ½Ö¤Êé£¬ÔòÔÚ
+        <TT  CLASS="literal" >capath</TT
+> Ö¸¶¨µÄÄ¿Â¼ÖÐËÑË÷ÏàÅäµÄÖ¤Êé¡£<TT  CLASS="literal" >capath</TT
+>
+        ±ØÐëÊÇÒ»¸öÕýÈ·µÄ±»É¢ÁÐ»¯µÄÖ¤ÊéÄ¿Â¼¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+><TD  >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >local_cert</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        ÎÄ¼þÏµÍ³ÖÐ±¾µØÖ¤ÊéÎÄ¼þµÄÂ·¾¶¡£±ØÐëÊÇÒ»¸öÓÃ PEM
+        ±àÂë²¢°üº¬ÄãµÄÖ¤ÊéºÍË½ÈËÃÜÔ¿µÄÎÄ¼þ¡£¿ÉÒÔÑ¡Ôñ°üÀ¨·¢ÐÐÕßµÄÖ¤ÊéÁ´¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+><TD  >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >passphrase</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        ÄãµÄ <TT  CLASS="literal" >local_cert</TT
+> ÎÄ¼þ±àÂëµÄ passphrase¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+><TD  >&nbsp;</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >CN_match</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;        ËùÆÚ´ýµÄ Common Name¡£PHP ÄÜ½øÐÐÓÐÏÞµÄÍ¨Åä·ûÆ¥Åä¡£Èç¹û
+        Common Name Óë´Ë²»Æ¥Åä£¬Á¬½Ó³¢ÊÔ»áÊ§°Ü¡£
+       </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&nbsp;</TD
+><TD  >&nbsp;</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+  </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+    ÒòÎª <TT  CLASS="literal" >ssl://</TT
+> ÊÇ
+    <A  HREF="wrappers.html#wrappers.http"  ><TT  CLASS="literal" >https://</TT
+></A
+> ºÍ
+    <A  HREF="wrappers.ftp.html"  ><TT  CLASS="literal" >ftps://</TT
+></A
+>
+    ·â×°Ð­ÒéµÄµ×²ã´«ÊäÆ÷£¬ÊÊÓÃÓÚ
+    <TT  CLASS="literal" >ssl://</TT
+> µÄÈÎºÎÉÏÏÂÎÄÑ¡ÏîÒ²ÊÊÓÃÓÚ
+    <TT  CLASS="literal" >https://</TT
+> ºÍ <TT  CLASS="literal" >ftps://</TT
+>¡£
+   </P
+></BLOCKQUOTE
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="wrappers.compression.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æðµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="transports.unix.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Ñ¹ËõÁ÷</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="appendixes.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >Unix ÁìÓò£ºUNIX ºÍ UDG</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="filters.encryption.html">åŠ å¯†è¿‡æ»¤å™¨</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="transports.inet.html">Internet é¢†åŸŸï¼šTCPï¼ŒUDPï¼ŒSSL å’Œ TLS</a></div>
- <div class="up"><a href="appendices.html">é™„å½•</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="transports" class="appendix">
-  <h1>æ‰€æ”¯æŒçš„å¥—æŽ¥å­—ä¼ è¾“å™¨ï¼ˆSocket Transportsï¼‰åˆ—è¡¨</h1>
-<h2>Table of Contents</h2><ul class="chunklist chunklist_appendix"><li><a href="transports.inet.html">Internet é¢†åŸŸï¼šTCPï¼ŒUDPï¼ŒSSL å’Œ TLS</a></li><li><a href="transports.unix.html">Unix é¢†åŸŸï¼šUnix å’Œ UDG</a></li></ul>
 
-  <p class="para">ä»¥ä¸‹æ˜¯ PHP å†…ç½®ç”¨äºŽåŸºäºŽæµçš„å¥—æŽ¥å­—å‡½æ•°ä¾‹å¦‚ 
-  <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span>å’Œ 
-  <span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span>çš„å„ç§ URL é£Žæ ¼çš„å¥—æŽ¥å­—ä¼ è¾“å™¨ã€‚è¿™äº›ä¼ è¾“å™¨
-  <em class="emphasis">ä¸é€‚ç”¨</em>äºŽ 
-  <a href="ref.sockets.html" class="link">Sockets æ‰©å±•åº“</a>ã€‚</p>
-  <p class="para">è¦å¾—åˆ°è‡ªå·±çš„ PHP ç‰ˆæœ¬ä¸­æ‰€å®‰è£…çš„ä¼ è¾“å™¨åˆ—è¡¨ï¼Œä½¿ç”¨ 
-  <span class="function"><a href="function.stream-get-transports.html" class="function">stream_get_transports()</a></span>ã€‚</p>
-  
-  
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="filters.encryption.html">åŠ å¯†è¿‡æ»¤å™¨</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="transports.inet.html">Internet é¢†åŸŸï¼šTCPï¼ŒUDPï¼ŒSSL å’Œ TLS</a></div>
- <div class="up"><a href="appendices.html">é™„å½•</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

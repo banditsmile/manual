@@ -1,209 +1,191 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾—æ—¥æœŸï¼æ—¶é—´ä¿¡æ¯</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.date.html">date</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gettimeofday.html">gettimeofday</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.getdate" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">getdate</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">getdate</span> &mdash; <span class="dc-title">å–å¾—æ—¥æœŸï¼æ—¶é—´ä¿¡æ¯</span></p>
-
- </div>
- <div class="refsect1 description" id="refsect1-function.getdate-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>getdate</strong></span>
-    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$timestamp</code><span class="initializer"> = time()</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   è¿”å›ä¸€ä¸ªæ ¹æ® <code class="parameter">timestamp</code>
-   å¾—å‡ºçš„åŒ…å«æœ‰æ—¥æœŸä¿¡æ¯çš„å…³è”æ•°ç»„ <span class="type"><a href="language.types.array.html" class="type array">array</a></span>ã€‚å¦‚æœæ²¡æœ‰ç»™å‡ºæ—¶é—´æˆ³åˆ™è®¤ä¸ºæ˜¯å½“å‰æœ¬åœ°æ—¶é—´ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.getdate-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-    <dt>
-<code class="parameter">timestamp</code></dt>
-<dd>
-<p class="para">
-å¯é€‰çš„ <code class="parameter">timestamp</code> å‚æ•°æ˜¯ä¸€ä¸ª <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> çš„ Unix
-æ—¶é—´æˆ³ï¼Œå¦‚æœªæŒ‡å®šï¼Œå‚æ•°å€¼é»˜è®¤ä¸ºå½“å‰æœ¬åœ°æ—¶é—´ã€‚ä¹Ÿå°±æ˜¯è¯´ï¼Œå…¶å€¼é»˜è®¤ä¸º
-<span class="function"><a href="function.time.html" class="function">time()</a></span> çš„è¿”å›å€¼ã€‚</p></dd>
-
-   
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.getdate-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   è¿”å›ä¸€ä¸ªæ ¹æ® <code class="parameter">timestamp</code>
-   å¾—å‡ºçš„åŒ…å«æœ‰æ—¥æœŸä¿¡æ¯çš„å…³è”æ•°ç»„ <span class="type"><a href="language.types.array.html" class="type array">array</a></span>ã€‚
-   è¿”å›çš„å…³è”æ•°ç»„ä¸­çš„é”®åå•å…ƒæœ‰ä»¥ä¸‹å‡ ä¸ªï¼š
-  </p>
-  <p class="para">
-   <table class="doctable table">
-    <caption><strong>è¿”å›çš„å…³è”æ•°ç»„ä¸­çš„é”®åå•å…ƒ</strong></caption>
-    
-     <thead>
-      <tr>
-       <th>é”®å</th>
-       <th>è¯´æ˜</th>
-       <th>è¿”å›å€¼ä¾‹å­</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td><em>&quot;seconds&quot;</em></td>
-       <td>ç§’çš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>0</em> åˆ° <em>59</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;minutes&quot;</em></td>
-       <td>åˆ†é’Ÿçš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>0</em> åˆ° <em>59</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;hours&quot;</em></td>
-       <td>å°æ—¶çš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>0</em> åˆ° <em>23</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;mday&quot;</em></td>
-       <td>æœˆä»½ä¸­ç¬¬å‡ å¤©çš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>1</em> åˆ° <em>31</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;wday&quot;</em></td>
-       <td>æ˜ŸæœŸä¸­ç¬¬å‡ å¤©çš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>0</em> (å‘¨æ—¥) åˆ° <em>6</em> (å‘¨å…­)</td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;mon&quot;</em></td>
-       <td>æœˆä»½çš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>1</em> åˆ° <em>12</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;year&quot;</em></td>
-       <td>4 ä½æ•°å­—è¡¨ç¤ºçš„å®Œæ•´å¹´ä»½</td>
-       <td>æ¯”å¦‚ï¼š <em>1999</em> æˆ– <em>2003</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;yday&quot;</em></td>
-       <td>ä¸€å¹´ä¸­ç¬¬å‡ å¤©çš„æ•°å­—è¡¨ç¤º</td>
-       <td><em>0</em> åˆ° <em>365</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;weekday&quot;</em></td>
-       <td>æ˜ŸæœŸå‡ çš„å®Œæ•´æ–‡æœ¬è¡¨ç¤º</td>
-       <td><em>Sunday</em> åˆ° <em>Saturday</em></td>
-      </tr>
-
-      <tr>
-       <td><em>&quot;month&quot;</em></td>
-       <td>æœˆä»½çš„å®Œæ•´æ–‡æœ¬è¡¨ç¤ºï¼Œæ¯”å¦‚ January æˆ– March</td>
-       <td><em>January</em> åˆ° <em>December</em></td>
-      </tr>
-
-      <tr>
-       <td><em>0</em></td>
-       <td>
-        è‡ªä» Unix çºªå…ƒå¼€å§‹è‡³ä»Šçš„ç§’æ•°ï¼Œå’Œ <span class="function"><a href="function.time.html" class="function">time()</a></span>
-        çš„è¿”å›å€¼ä»¥åŠç”¨äº <span class="function"><a href="function.date.html" class="function">date()</a></span> çš„å€¼ç±»ä¼¼ã€‚
-       </td>
-       <td>
-        ç³»ç»Ÿç›¸å…³ï¼Œå…¸å‹å€¼ä¸ºä» <em>-2147483648</em> åˆ°
-        <em>2147483647</em>ã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.getdate-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2404">
-    <p><strong>Example #1 <span class="function"><strong>getdate()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$today&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getdate</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$today</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >getdate</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ê±¼äÈÕÆÚº¯Êı¿â" HREF="ref.datetime.html"><LINK  REL="PREVIOUS" TITLE="date" HREF="function.date.html"><LINK  REL="NEXT" TITLE="gettimeofday" HREF="function.gettimeofday.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.date.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.gettimeofday.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.getdate" ></A
+>getdate</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN18442" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>getdate&nbsp;--&nbsp;È¡µÃÈÕÆÚ£¯Ê±¼äĞÅÏ¢</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN18445" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >getdate</B
+> ( [int timestamp])<BR  ></BR
+><P  >&#13;     ·µ»ØÒ»¸ö¸ù¾İ <TT  CLASS="parameter" ><I  >timestamp</I
+></TT
+>
+     µÃ³öµÄ°üº¬ÓĞÈÕÆÚĞÅÏ¢µÄ½áºÏÊı×é¡£Èç¹ûÃ»ÓĞ¸ø³öÊ±¼ä´ÁÔòÈÏÎªÊÇµ±Ç°±¾µØÊ±¼ä¡£Êı×éÖĞµÄµ¥ÔªÈçÏÂ£º
+    </P
+><P  >&#13;     <DIV  CLASS="table" ><A  NAME="AEN18456" ></A
+><P  ><B  >±í¸ñ 1. ·µ»ØµÄ¹ØÁªÊı×éÖĞµÄ¼üÃûµ¥Ôª</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >¼üÃû</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >ËµÃ÷</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >·µ»ØÖµÀı×Ó</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"seconds"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÃëµÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> µ½ <TT  CLASS="literal" >59</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"minutes"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >·ÖÖÓµÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> µ½ <TT  CLASS="literal" >59</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"hours"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Ğ¡Ê±µÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> µ½ <TT  CLASS="literal" >23</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"mday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÔÂ·İÖĞµÚ¼¸ÌìµÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> µ½ <TT  CLASS="literal" >31</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"wday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ĞÇÆÚÖĞµÚ¼¸ÌìµÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+>£¨±íÊ¾ĞÇÆÚÌì£©µ½ <TT  CLASS="literal" >6</TT
+>£¨±íÊ¾ĞÇÆÚÁù£©</TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"mon"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÔÂ·İµÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >1</TT
+> µ½ <TT  CLASS="literal" >12</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"year"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >4 Î»Êı×Ö±íÊ¾µÄÍêÕûÄê·İ</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÀıÈç£º<TT  CLASS="literal" >1999</TT
+> »ò <TT  CLASS="literal" >2003</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"yday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >Ò»ÄêÖĞµÚ¼¸ÌìµÄÊı×Ö±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+> µ½ <TT  CLASS="literal" >366</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"weekday"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ĞÇÆÚ¼¸µÄÍêÕûÎÄ±¾±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >Sunday</TT
+> µ½ <TT  CLASS="literal" >Saturday</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >"month"</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >ÔÂ·İµÄÍêÕûÎÄ±¾±íÊ¾</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >January&#62;</TT
+> µ½ <TT  CLASS="literal" >December</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >0</TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          ×Ô´Ó Unix ¼ÍÔª¿ªÊ¼ÖÁ½ñµÄÃëÊı£¬ºÍ <A  HREF="function.time.html"  ><B  CLASS="function" >time()</B
+></A
+>
+          µÄ·µ»ØÖµÒÔ¼°ÓÃÓÚ <A  HREF="function.date.html"  ><B  CLASS="function" >date()</B
+></A
+> µÄÖµÀàËÆ¡£
+         </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;          ÏµÍ³Ïà¹Ø£¬µäĞÍÖµÎª´Ó <TT  CLASS="literal" >-2147483648</TT
+> µ½
+          <TT  CLASS="literal" >2147483647</TT
+>¡£
+         </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN18545" ></A
+><P  ><B  >Àı×Ó 1. 
+       <B  CLASS="function" >getdate()</B
+> Àı×Ó
+      </B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$today </font><font  color="#007700">= </font><font  color="#0000BB">getdate</font><font  color="#007700">();<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$today</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       Êä³öÀàËÆÓÚ£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [seconds] =&gt; 40
-    [minutes] =&gt; 58
-    [hours]   =&gt; 21
-    [mday]    =&gt; 17
-    [wday]    =&gt; 2
-    [mon]     =&gt; 6
-    [year]    =&gt; 2003
-    [yday]    =&gt; 167
-    [weekday] =&gt; Tuesday
-    [month]   =&gt; June
-    [0]       =&gt; 1055901520
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+    [seconds] =&#62; 40
+    [minutes] =&#62; 58
+    [hours]   =&#62; 21
+    [mday]    =&#62; 17
+    [wday]    =&#62; 2
+    [mon]     =&#62; 6
+    [year]    =&#62; 2003
+    [yday]    =&#62; 167
+    [weekday] =&#62; Tuesday
+    [month]   =&#62; June
+    [0]       =&#62; 1055901520
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.date.html"  ><B  CLASS="function" >date()</B
+></A
+>£¬<A  HREF="function.time.html"  ><B  CLASS="function" >time()</B
+></A
+>
+     ºÍ <A  HREF="function.setlocale.html"  ><B  CLASS="function" >setlocale()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.date.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.gettimeofday.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >date</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.datetime.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >gettimeofday</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.getdate-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.date.html" class="function" rel="rdfs-seeAlso">date()</a> - æ ¼å¼åŒ–ä¸€ä¸ªæœ¬åœ°æ—¶é—´ï¼æ—¥æœŸ</span></li>
-    <li class="member"><span class="function"><a href="function.idate.html" class="function" rel="rdfs-seeAlso">idate()</a> - å°†æœ¬åœ°æ—¶é—´æ—¥æœŸæ ¼å¼åŒ–ä¸ºæ•´æ•°</span></li>
-    <li class="member"><span class="function"><a href="function.localtime.html" class="function" rel="rdfs-seeAlso">localtime()</a> - å–å¾—æœ¬åœ°æ—¶é—´</span></li>
-    <li class="member"><span class="function"><a href="function.time.html" class="function" rel="rdfs-seeAlso">time()</a> - è¿”å›å½“å‰çš„ Unix æ—¶é—´æˆ³</span></li>
-    <li class="member"><span class="function"><a href="function.setlocale.html" class="function" rel="rdfs-seeAlso">setlocale()</a> - è®¾ç½®åœ°åŒºä¿¡æ¯</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.date.html">date</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.gettimeofday.html">gettimeofday</a></div>
- <div class="up"><a href="ref.datetime.html">Date/Time å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

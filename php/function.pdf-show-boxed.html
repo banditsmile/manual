@@ -1,46 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Output text in a box [deprecated]</title>
+<HTML  ><HEAD  ><TITLE  >pdf_show_boxed</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP 手册" HREF="index-2.html"><LINK  REL="UP" TITLE="PDF functions " HREF="ref.pdf.html"><LINK  REL="PREVIOUS" TITLE="pdf_setrgbcolor" HREF="function.pdf-setrgbcolor.html"><LINK  REL="NEXT" TITLE="pdf_show_xy" HREF="function.pdf-show-xy.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP 手册</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pdf-setrgbcolor.html"  ACCESSKEY="P" >后退</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pdf-show-xy.html"  ACCESSKEY="N" >前进</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pdf-show-boxed" ></A
+>pdf_show_boxed</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN86957" ></A
+><P  >    (PHP 4 )</P
+>pdf_show_boxed&nbsp;--&nbsp;Output text in a box</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN86960" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >pdf_show_boxed</B
+> ( resource pdfdoc, string text, float left, float top, float width, float height, string mode [, string feature])<BR  ></BR
+><P  >&#13;     Format <TT  CLASS="parameter" ><I  >text</I
+></TT
+> in the current font and size into the
+     supplied text box according to the requested formatting 
+     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+>, which must be one of <TT  CLASS="literal" >left</TT
+>,
+     <TT  CLASS="literal" >right</TT
+>, <TT  CLASS="literal" >center</TT
+>, <TT  CLASS="literal" >justify</TT
+>
+     or <TT  CLASS="literal" >fulljustify</TT
+>.
+     If <TT  CLASS="parameter" ><I  >width</I
+></TT
+> and <TT  CLASS="parameter" ><I  >height</I
+></TT
+> are 0, 
+     only a single line is placed at the point (<TT  CLASS="parameter" ><I  >left</I
+></TT
+>, 
+     <TT  CLASS="parameter" ><I  >top</I
+></TT
+>) in the requested <TT  CLASS="parameter" ><I  >mode</I
+></TT
+>.
+    </P
+><P  >&#13;    Returns the number of characters that did not fit in the specified
+    box.  Returns 0 if all characters fit or the
+    <TT  CLASS="parameter" ><I  >width</I
+></TT
+> and <TT  CLASS="parameter" ><I  >height</I
+></TT
+>
+    parameters were set to 0 for single-line formatting.
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pdf-setrgbcolor.html"  ACCESSKEY="P" >后退</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >起点</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pdf-show-xy.html"  ACCESSKEY="N" >前进</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pdf_setrgbcolor</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pdf.html"  ACCESSKEY="U" >上一级</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pdf_show_xy</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pdf-shfill.html">PDF_shfill</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pdf-show-xy.html">PDF_show_xy</a></div>
- <div class="up"><a href="ref.pdf.html">PDF 鍑芥暟</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pdf-show-boxed" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">PDF_show_boxed</h1>
-  <p class="verinfo">(PHP 4, PECL pdflib &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">PDF_show_boxed</span> &mdash; <span class="dc-title">Output text in a box [deprecated]</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.pdf-show-boxed-description">
-  <h3 class="title">璇存槑</h3>
-   <div class="methodsynopsis dc-description">
-    <span class="type">int</span> <span class="methodname"><strong>PDF_show_boxed</strong></span>
-     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$p</code></span>
-    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$text</code></span>
-    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$left</code></span>
-    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$top</code></span>
-    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$width</code></span>
-    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$height</code></span>
-    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$feature</code></span>
-    )</div>
-
-  <p class="para rdfs-comment">
-   This function is deprecated since PDFlib version 6, use
-   <span class="function"><a href="function.pdf-fit-textline.html" class="function">PDF_fit_textline()</a></span> for single lines, or the
-   <span class="function"><strong>PDF_*_textflow()</strong></span> functions for multi-line formatting
-   instead.
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pdf-shfill.html">PDF_shfill</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pdf-show-xy.html">PDF_show_xy</a></div>
- <div class="up"><a href="ref.pdf.html">PDF 鍑芥暟</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

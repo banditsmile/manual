@@ -1,111 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Create a CLOB</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-create-blob.html">fbsql_create_blob</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-create-db.html">fbsql_create_db</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fbsql-create-clob" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fbsql_create_clob</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">fbsql_create_clob</span> &mdash; <span class="dc-title">Create a CLOB</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fbsql-create-clob-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>fbsql_create_clob</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$clob_data</code></span>
-   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   Creates a CLOB from the given data.  
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fbsql-create-clob-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">clob_data</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The CLOB data.
-      </p>
-     </dd>
-
-    
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para">由
-<span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 或
-<span class="function"><a href="function.fbsql-pconnect.html" class="function">fbsql_pconnect()</a></span> 返回的 FrontBase 链接标识符.</p>
-<p class="para">如可选并未指定，函数会尝试查找一个到 FrontBase 服务器的开放链接，且如没有找到这样的链接，会尝试通过不带参数调用 <span class="function"><a href="function.fbsql-connect.html" class="function">fbsql_connect()</a></span> 来创建一个。</p>
-</dd>
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fbsql-create-clob-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns a resource handle to the newly created CLOB, which can be used
-   with insert and update commands to store the CLOB in the database.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fbsql_create_clob</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="FrontBase Functions" HREF="ref.fbsql.html"><LINK  REL="PREVIOUS" TITLE="fbsql_create_blob" HREF="function.fbsql-create-blob.html"><LINK  REL="NEXT" TITLE="fbsql_create_db" HREF="function.fbsql-create-db.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fbsql-create-blob.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fbsql-create-db.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fbsql-create-clob" ></A
+>fbsql_create_clob</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN25894" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>fbsql_create_clob&nbsp;--&nbsp;Create a CLOB</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN25897" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >fbsql_create_clob</B
+> ( string clob_data [, resource link_identifier])<BR  ></BR
+><P  > 
+     Returns: A resource handle to the newly created CLOB.
+    </P
+><P  > 
+     <B  CLASS="function" >fbsql_create_clob()</B
+> creates a clob from
+     clob_data.  The returned resource handle can be used with insert
+     and update commands to store the clob in the database.
+    </P
+><TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN25911" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >fbsql_create_clob()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_pconnect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"_SYSTEM"</font><font  color="#007700">, </font><font  color="#DD0000">"secret"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$filename </font><font  color="#007700">= </font><font  color="#DD0000">"clob_file.txt"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">, </font><font  color="#DD0000">"rb"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$clobdata </font><font  color="#007700">= </font><font  color="#0000BB">fread</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">filesize</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">fclose</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$clobHandle </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_create_clob</font><font  color="#007700">(</font><font  color="#0000BB">$clobdata</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$sql </font><font  color="#007700">= </font><font  color="#DD0000">"INSERT INTO CLOB_TABLE (CLOB_COLUMN) VALUES ($clobHandle);"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$rs </font><font  color="#007700">= </font><font  color="#0000BB">fbsql_query</font><font  color="#007700">(</font><font  color="#0000BB">$sql</font><font  color="#007700">, </font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+><P  >&#13;     See also: <A  HREF="function.fbsql-create-blob.html"  ><B  CLASS="function" >fbsql_create_blob()</B
+></A
+>,
+     <A  HREF="function.fbsql-read-blob.html"  ><B  CLASS="function" >fbsql_read_blob()</B
+></A
+>,
+     <A  HREF="function.fbsql-read-clob.html"  ><B  CLASS="function" >fbsql_read_clob()</B
+></A
+>, and
+     <A  HREF="function.fbsql-set-lob-mode.html"  ><B  CLASS="function" >fbsql_set_lob_mode()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fbsql-create-blob.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fbsql-create-db.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fbsql_create_blob</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.fbsql.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fbsql_create_db</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.fbsql-create-clob-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-1141">
-    <p><strong>Example #1 <span class="function"><strong>fbsql_create_clob()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"_SYSTEM"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"secret"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"clob_file.txt"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$clobdata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">filesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$clobHandle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_create_clob</span><span style="color: #007700">(</span><span style="color: #0000BB">$clobdata</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;CLOB_TABLE&nbsp;(CLOB_COLUMN)&nbsp;VALUES&nbsp;(</span><span style="color: #0000BB">$clobHandle</span><span style="color: #DD0000">);"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$rs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fbsql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.fbsql-create-clob-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.fbsql-create-blob.html" class="function" rel="rdfs-seeAlso">fbsql_create_blob()</a> - Create a BLOB</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-read-blob.html" class="function" rel="rdfs-seeAlso">fbsql_read_blob()</a> - Read a BLOB from the database</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-read-clob.html" class="function" rel="rdfs-seeAlso">fbsql_read_clob()</a> - Read a CLOB from the database</span></li>
-    <li class="member"><span class="function"><a href="function.fbsql-set-lob-mode.html" class="function" rel="rdfs-seeAlso">fbsql_set_lob_mode()</a> - Set the LOB retrieve mode for a FrontBase result set</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fbsql-create-blob.html">fbsql_create_blob</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fbsql-create-db.html">fbsql_create_db</a></div>
- <div class="up"><a href="ref.fbsql.html">FrontBase 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

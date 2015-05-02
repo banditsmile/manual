@@ -1,69 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æå–ä¸€è¡Œä½œä¸ºå…³è”æ•°ç»„</title>
+<HTML  ><HEAD  ><TITLE  >pg_fetch_assoc</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_fetch_array" HREF="function.pg-fetch-array.html"><LINK  REL="NEXT" TITLE="pg_fetch_object" HREF="function.pg-fetch-object.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-fetch-array.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-fetch-object.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-fetch-assoc" ></A
+>pg_fetch_assoc</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN91413" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>pg_fetch_assoc&nbsp;--&nbsp;ÌáÈ¡Ò»ĞĞ×÷Îª¹ØÁªÊı×é</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN91416" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >pg_fetch_assoc</B
+> ( resource result [, int row])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_fetch_assoc()</B
+> ºÍµ÷ÓÃ <A  HREF="function.pg-fetch-array.html"  ><B  CLASS="function" >pg_fetch_array()</B
+></A
+>
+     ¼ÓÉÏµÚÈı¸ö¿ÉÑ¡²ÎÊı PGSQL_ASSOC ÊÇµÈ¼ÛµÄ¡£ËüÖ»·µ»ØÒ»¸ö¹ØÁªÊı×é¡£Èç¹ûĞèÒªÊı×ÖË÷Òı£¬ÓÃ
+     <A  HREF="function.pg-fetch-row.html"  ><B  CLASS="function" >pg_fetch_row()</B
+></A
+>¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >pg_fetch_assoc()</B
+> ÊÇ
+     <A  HREF="function.pg-fetch-row.html"  ><B  CLASS="function" >pg_fetch_row()</B
+></A
+>
+     µÄÀ©Õ¹°æ±¾¡£³ıÁË½«Êı¾İ´æ´¢ÔÚÊı×ÖË÷Òı£¨×Ö¶Î±àºÅ£©Ö®Íâ£¬Ä¬ÈÏ»¹½«Êı×é´æ´¢ÔÚ¹ØÁªË÷Òı£¨×Ö¶ÎÃû£©ÖĞ¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >row</I
+></TT
+> ÊÇÒª±»ÌáÈ¡µÄĞĞ£¨¼ÇÂ¼£©±àºÅ¡£µÚÒ»ĞĞÎª 0¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >pg_fetch_assoc()</B
+> ²¢²»Ã÷ÏÔ±È
+     <A  HREF="function.pg-fetch-row.html"  ><B  CLASS="function" >pg_fetch_row()</B
+></A
+>
+     Âı£¬¶øÇÒ»¹ÏÔÖø¸ü±ãÓÚÊ¹ÓÃ¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN91440" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >pg_fetch_assoc()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$conn </font><font  color="#007700">= </font><font  color="#0000BB">pg_pconnect</font><font  color="#007700">(</font><font  color="#DD0000">"dbname=publisher"</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$conn</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"An error occured.\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br  />}<br  /><br  /></font><font  color="#0000BB">$result </font><font  color="#007700">= </font><font  color="#0000BB">pg_query</font><font  color="#007700">(</font><font  color="#0000BB">$conn</font><font  color="#007700">, </font><font  color="#DD0000">"SELECT id, author, email FROM authors"</font><font  color="#007700">);<br  />if (!</font><font  color="#0000BB">$result</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"An error occured.\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br  />}<br  />while (</font><font  color="#0000BB">$row </font><font  color="#007700">= </font><font  color="#0000BB">pg_fetch_assoc</font><font  color="#007700">(</font><font  color="#0000BB">$result</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">'id'</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">'author'</font><font  color="#007700">];<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$row</font><font  color="#007700">[</font><font  color="#DD0000">'email'</font><font  color="#007700">];<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û
+     <A  HREF="function.pg-fetch-row.html"  ><B  CLASS="function" >pg_fetch_row()</B
+></A
+>£¬<A  HREF="function.pg-fetch-array.html"  ><B  CLASS="function" >pg_fetch_array()</B
+></A
+>£¬<A  HREF="function.pg-fetch-object.html"  ><B  CLASS="function" >pg_fetch_object()</B
+></A
+> ºÍ
+    <A  HREF="function.pg-fetch-result.html"  ><B  CLASS="function" >pg_fetch_result()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-fetch-array.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-fetch-object.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_fetch_array</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_fetch_object</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-fetch-array.html">pg_fetch_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-fetch-object.html">pg_fetch_object</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-fetch-assoc" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_fetch_assoc</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_fetch_assoc</span> &mdash; <span class="dc-title">æå–ä¸€è¡Œä½œä¸ºå…³è”æ•°ç»„</span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-unknown-seealsr" id="refsect1-function.pg-fetch-assoc-unknown-unknown-unknown-seealsr">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">array</span> <span class="methodname"><strong>pg_fetch_assoc</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-      [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>
-     ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_fetch_assoc()</strong></span> å’Œè°ƒç”¨ <span class="function"><a href="function.pg-fetch-array.html" class="function">pg_fetch_array()</a></span>
-     åŠ ä¸Šç¬¬ä¸‰ä¸ªå¯é€‰å‚æ•° PGSQL_ASSOC æ˜¯ç­‰ä»·çš„ã€‚å®ƒåªè¿”å›ä¸€ä¸ªå…³è”æ•°ç»„ã€‚å¦‚æœéœ€è¦æ•°å­—ç´¢å¼•ï¼Œç”¨
-     <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span>ã€‚
-    </p>
-    <p class="para">
-     <span class="function"><strong>pg_fetch_assoc()</strong></span> æ˜¯
-     <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span>
-     çš„æ‰©å±•ç‰ˆæœ¬ã€‚é™¤äº†å°†æ•°æ®å­˜å‚¨åœ¨æ•°å­—ç´¢å¼•ï¼ˆå­—æ®µç¼–å·ï¼‰ä¹‹å¤–ï¼Œé»˜è®¤è¿˜å°†æ•°ç»„å­˜å‚¨åœ¨å…³è”ç´¢å¼•ï¼ˆå­—æ®µåï¼‰ä¸­ã€‚
-    </p>
-    <p class="para">
-     <code class="parameter">row</code> æ˜¯è¦è¢«æå–çš„è¡Œï¼ˆè®°å½•ï¼‰ç¼–å·ã€‚ç¬¬ä¸€è¡Œä¸º 0ã€‚
-    </p>
-    <p class="para">
-     <span class="function"><strong>pg_fetch_assoc()</strong></span> å¹¶ä¸æ˜æ˜¾æ¯”
-     <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span>
-     æ…¢ï¼Œè€Œä¸”è¿˜æ˜¾è‘—æ›´ä¾¿äºä½¿ç”¨ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-2191">
-      <p><strong>Example #1 <span class="function"><strong>pg_fetch_assoc()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occured.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;id,&nbsp;author,&nbsp;email&nbsp;FROM&nbsp;authors"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occured.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br />while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_fetch_assoc</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'id'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'author'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'email'</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     å‚è§
-     <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span>ï¼Œ<span class="function"><a href="function.pg-fetch-array.html" class="function">pg_fetch_array()</a></span>ï¼Œ<span class="function"><a href="function.pg-fetch-object.html" class="function">pg_fetch_object()</a></span> å’Œ
-    <span class="function"><a href="function.pg-fetch-result.html" class="function">pg_fetch_result()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-fetch-array.html">pg_fetch_array</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-fetch-object.html">pg_fetch_object</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

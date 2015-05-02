@@ -1,105 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns Scan Response result</title>
+<HTML  ><HEAD  ><TITLE  >yaz_scan_result</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="YAZ Functions" HREF="ref.yaz.html"><LINK  REL="PREVIOUS" TITLE="yaz_record" HREF="function.yaz-record.html"><LINK  REL="NEXT" TITLE="yaz_scan" HREF="function.yaz-scan.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.yaz-record.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.yaz-scan.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.yaz-scan-result" ></A
+>yaz_scan_result</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN119961" ></A
+><P  >    (PHP 4 &#62;= 4.0.5)</P
+>yaz_scan_result&nbsp;--&nbsp;Returns Scan Response result</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN119964" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >yaz_scan_result</B
+> ( resource id [, array &#38; result])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >yaz_scan_result()</B
+> returns terms and associated
+     information as received from the server in the last performed
+     <A  HREF="function.yaz-scan.html"  ><B  CLASS="function" >yaz_scan()</B
+></A
+>.
+     This function returns an array (0..n-1) where n is the number
+     of terms returned. Each value is a pair where the first item is the
+     term, and the second item is the result-count.
+     If the optional parameter <TT  CLASS="parameter" ><I  >result</I
+></TT
+> is given it will be
+     modified to hold additional information taken from the Scan Response:
+     <TT  CLASS="literal" >number</TT
+> (number of entries returned),
+     <TT  CLASS="literal" >stepsize</TT
+> (Step-size),
+     <TT  CLASS="literal" >position</TT
+> (position of term),
+     <TT  CLASS="literal" >status</TT
+> (Scan Status).
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.yaz-record.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.yaz-scan.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >yaz_record</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.yaz.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >yaz_scan</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-record.html">yaz_record</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-scan.html">yaz_scan</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.yaz-scan-result" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">yaz_scan_result</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PECL yaz &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">yaz_scan_result</span> &mdash; <span class="dc-title">Returns Scan Response result</span></p>
 
- </div>
- <div class="refsect1 description" id="refsect1-function.yaz-scan-result-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>yaz_scan_result</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$id</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$result</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>yaz_scan_result()</strong></span> returns terms and associated
-   information as received from the server in the last performed
-   <span class="function"><a href="function.yaz-scan.html" class="function">yaz_scan()</a></span>.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.yaz-scan-result-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The connection resource returned by <span class="function"><a href="function.yaz-connect.html" class="function">yaz_connect()</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       If given, this array will be modified to hold additional information 
-       taken from the Scan Response:
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <p class="para">
-          <em>number</em> - Number of entries returned
-         </p>
-        </li> 
-        <li class="listitem">
-         <p class="para">
-          <em>stepsize</em> - Step size
-         </p>
-        </li> 
-        <li class="listitem">
-         <p class="para">
-          <em>position</em> - Position of term
-         </p>
-        </li> 
-        <li class="listitem">
-         <p class="para">
-          <em>status</em> - Scan status
-         </p>
-        </li> 
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- <div class="refsect1 returnvalues" id="refsect1-function.yaz-scan-result-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns an array (0..n-1) where n is the number of terms returned. Each 
-   value is a pair where the first item is the term, and the second item is 
-   the result-count.
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.yaz-record.html">yaz_record</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.yaz-scan.html">yaz_scan</a></div>
- <div class="up"><a href="ref.yaz.html">YAZ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

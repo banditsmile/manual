@@ -1,275 +1,142 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æ‰“å¼€ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„è¿æ¥</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-close.html">mysql_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-create-db.html">mysql_create_db</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-connect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mysql_connect</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_connect</span> &mdash; <span class="dc-title">æ‰“å¼€ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„è¿æ¥</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mysql-connect-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>mysql_connect</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$server</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$new_link</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$client_flags</code></span>
-  ]]]]] )</div>
-
-  <p class="para rdfs-comment">
-   æ‰“å¼€æˆ–é‡å¤ä½¿ç”¨ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„è¿æ¥ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mysql-connect-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">server</code></dt>
-
-     <dd>
-
-      <p class="para">
-       MySQL æœåŠ¡å™¨ã€‚å¯ä»¥åŒ…æ‹¬ç«¯å£å·ï¼Œä¾‹å¦‚
-       &quot;hostname:port&quot;ï¼Œæˆ–è€…åˆ°æœ¬åœ°å¥—æ¥å­—çš„è·¯å¾„ï¼Œä¾‹å¦‚å¯¹äº localhost çš„ &quot;:/path/to/socket&quot;ã€‚
-      </p>
-      <p class="para">
-       å¦‚æœ PHP æŒ‡ä»¤ <a href="mysql.configuration.html#ini.mysql.default-host" class="link">
-       mysql.default_host</a> æœªå®šä¹‰ï¼ˆé»˜è®¤æƒ…å†µï¼‰ï¼Œåˆ™é»˜è®¤å€¼æ˜¯ &#039;localhost:3306&#039;ã€‚
-       åœ¨ <a href="ini.core.html#ini.sql.safe-mode" class="link">SQL å®‰å…¨æ¨¡å¼</a> æ—¶ï¼Œå‚æ•°è¢«å¿½ç•¥ï¼Œæ€»æ˜¯ä½¿ç”¨ &#039;localhost:3306&#039;ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">username</code></dt>
-
-     <dd>
-
-      <p class="para">
-       ç”¨æˆ·åã€‚é»˜è®¤å€¼ç”± <a href="mysql.configuration.html#ini.mysql.default-user" class="link">mysql.default_user</a> å®šä¹‰ã€‚
-       åœ¨ <a href="ini.core.html#ini.sql.safe-mode" class="link">SQL å®‰å…¨æ¨¡å¼</a> æ—¶ï¼Œå‚æ•°è¢«å¿½ç•¥ï¼Œæ€»æ˜¯ä½¿ç”¨æœåŠ¡å™¨è¿›ç¨‹æ‰€æœ‰è€…çš„ç”¨æˆ·åã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">password</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¯†ç ã€‚é»˜è®¤å€¼ç”±<a href="mysql.configuration.html#ini.mysql.default-password" class="link">mysql.default_password</a>å®šä¹‰ã€‚åœ¨ <a href="ini.core.html#ini.sql.safe-mode" class="link">SQL å®‰å…¨æ¨¡å¼</a> æ—¶ï¼Œå‚æ•°è¢«å¿½ç•¥ï¼Œæ€»æ˜¯ä½¿ç”¨ç©ºå¯†ç ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">new_link</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœç”¨åŒæ ·çš„å‚æ•°ç¬¬äºŒæ¬¡è°ƒç”¨
-       <span class="function"><strong>mysql_connect()</strong></span>ï¼Œå°†ä¸ä¼šå»ºç«‹æ–°è¿æ¥ï¼Œè€Œå°†è¿”å›å·²ç»æ‰“å¼€çš„è¿æ¥æ ‡è¯†ã€‚å‚æ•°
-       <code class="parameter">new_link</code> æ”¹å˜æ­¤è¡Œä¸ºå¹¶ä½¿
-       <span class="function"><strong>mysql_connect()</strong></span> æ€»æ˜¯æ‰“å¼€æ–°çš„è¿æ¥ï¼Œç”šè‡³å½“
-       <span class="function"><strong>mysql_connect()</strong></span> æ›¾åœ¨å‰é¢è¢«ç”¨åŒæ ·çš„å‚æ•°è°ƒç”¨è¿‡ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">client_flags</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">client_flags</code>
-       å‚æ•°å¯ä»¥æ˜¯ä»¥ä¸‹å¸¸é‡çš„ç»„åˆï¼š<strong><code>MYSQL_CLIENT_SSL</code></strong>ï¼Œ<strong><code>MYSQL_CLIENT_COMPRESS</code></strong>ï¼Œ<strong><code>MYSQL_CLIENT_IGNORE_SPACE</code></strong>
-       æˆ– <strong><code>MYSQL_CLIENT_INTERACTIVE</code></strong>ã€‚è¿›ä¸€æ­¥ä¿¡æ¯è§<a href="mysql.constants.html#mysql.client-flags" class="xref">MySQL å®¢æˆ·ç«¯å¸¸é‡</a>ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mysql-connect-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   å¦‚æœæˆåŠŸåˆ™è¿”å›ä¸€ä¸ª MySQL è¿æ¥æ ‡è¯†ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.mysql-connect-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        æ·»åŠ  <code class="parameter">client_flags</code> å‚æ•°ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.2.0</td>
-       <td>
-        æ·»åŠ  <code class="parameter">new_link</code> å‚æ•°ã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>3.0.10</td>
-       <td>
-        å¯¹ <code class="parameter">server</code> æ·»åŠ  &quot;:/path/to/socket&quot; æ”¯æŒã€‚
-       </td>
-      </tr>
-
-      <tr>
-       <td>3.0.0</td>
-       <td>
-        å¯¹ <code class="parameter">server</code> æ·»åŠ  &quot;:port&quot; æ”¯æŒã€‚
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mysql_connect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_close" HREF="function.mysql-close.html"><LINK  REL="NEXT" TITLE="mysql_create_db" HREF="function.mysql-create-db.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-close.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-create-db.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-connect" ></A
+>mysql_connect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65199" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_connect&nbsp;--&nbsp;´ò¿ªÒ»¸öµ½ MySQL ·şÎñÆ÷µÄÁ¬½Ó</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65202" ></A
+><H2  >ËµÃ÷</H2
+>resource <B  CLASS="methodname" >mysql_connect</B
+> ( [string server [, string username [, string password [, bool new_link [, int client_flags]]]]])<BR  ></BR
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»ØÒ»¸ö MySQL Á¬½Ó±êÊ¶£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >mysql_connect()</B
+> ½¨Á¢Ò»¸öµ½ MySQL
+     ·şÎñÆ÷µÄÁ¬½Ó¡£µ±Ã»ÓĞÌá¹©¿ÉÑ¡²ÎÊıÊ±Ê¹ÓÃÒÔÏÂÄ¬ÈÏÖµ£º<TT  CLASS="parameter" ><I  >server</I
+></TT
+>
+     = 'localhost:3306'£¬<TT  CLASS="parameter" ><I  >username</I
+></TT
+>
+     = ·şÎñÆ÷½ø³ÌËùÓĞÕßµÄÓÃ»§Ãû£¬<TT  CLASS="parameter" ><I  >password</I
+></TT
+>
+     = ¿ÕÃÜÂë¡£
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >server</I
+></TT
+> ²ÎÊı¿ÉÒÔ°üÀ¨¶Ë¿ÚºÅ¡£ÀıÈç
+     "hostname:port" »òÕßÊÇµ½±¾µØÌ×½Ó×ÖµÄÂ·¾¶£¬ÀıÈç±¾»úÉÏµÄ
+     ":/path/to/socket"¡£
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ÎŞÂÛÖ¸¶¨ "localhost" »òÕß
+       "localhost:port" ×÷Îª
+       <TT  CLASS="parameter" ><I  >server</I
+></TT
+>£¬MySQL ¿Í»§¶Ë¿â½«¸²¸ÇÖ®²¢³¢ÊÔÁ¬½Óµ½±¾µØÌ×½Ó×Ö£¨Windows
+       ÖĞµÄÃû×Ö¹ÜµÀ£©¡£Èç¹ûÏ£ÍûÊ¹ÓÃ TCP/IP Á¬½Ó£¬ÓÃ "127.0.0.1" Ìæ´ú
+       "localhost"¡£Èç¹û MySQL
+       ¿Í»§¶Ë¿âÊÔÍ¼Á¬½Óµ½´íÎóµÄ±¾µØÌ×½Ó×Ö£¬ÔòÓ¦¸ÃÔÚ PHP ÅäÖÃÖĞ½«
+       mysql.default_host ÉèÎªÕıÈ·µÄÂ·¾¶²¢Ê¹ server ×Ö¶ÎÎª¿Õ¡£
+      </P
+><P  >&#13;       ":port" µÄÖ§³ÖÊÇ PHP 3.0B4 Æğ¼ÓÈëµÄ¡£
+      </P
+><P  >&#13;       ":/path/to/socket" µÄÖ§³ÖÊÇ PHP 3.0.10 Æğ¼ÓÈëµÄ¡£
+      </P
+><P  >&#13;       ¿ÉÒÔÔÚº¯ÊıÃûÇ°¼ÓÉÏ <A  HREF="language.operators.errorcontrol.html"  >@</A
+>
+       À´ÒÖÖÆÊ§°ÜÊ±²úÉúµÄ´íÎóĞÅÏ¢¡£
+      </P
+></BLOCKQUOTE
+></DIV
+>
+    </P
+><P  >&#13;     Èç¹ûÓÃÍ¬ÑùµÄ²ÎÊıµÚ¶ş´Îµ÷ÓÃ
+     <B  CLASS="function" >mysql_connect()</B
+>£¬½«²»»á½¨Á¢ĞÂÁ¬½Ó£¬¶ø½«·µ»ØÒÑ¾­´ò¿ªµÄÁ¬½Ó±êÊ¶¡£²ÎÊı
+     <TT  CLASS="parameter" ><I  >new_link</I
+></TT
+> ¸Ä±ä´ËĞĞÎª²¢Ê¹
+     <B  CLASS="function" >mysql_connect()</B
+> ×ÜÊÇ´ò¿ªĞÂµÄÁ¬½Ó£¬ÉõÖÁµ±
+     <B  CLASS="function" >mysql_connect()</B
+> ÔøÔÚÇ°Ãæ±»ÓÃÍ¬ÑùµÄ²ÎÊıµ÷ÓÃ¹ı¡£²ÎÊı
+     <TT  CLASS="parameter" ><I  >client_flags</I
+></TT
+> ¿ÉÒÔÊÇÒÔÏÂ³£Á¿µÄ×éºÏ£ºMYSQL_CLIENT_COMPRESS£¬MYSQL_CLIENT_IGNORE_SPACE
+     »òÕß MYSQL_CLIENT_INTERACTIVE¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >new_link</I
+></TT
+> ²ÎÊı×Ô PHP 4.2.0 Æğ¿ÉÓÃ¡£
+     </P
+><P  >&#13;      <TT  CLASS="parameter" ><I  >client_flags</I
+></TT
+> ²ÎÊı×Ô PHP 4.3.0 Æğ¿ÉÓÃ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     Ò»µ©½Å±¾½áÊø£¬µ½·şÎñÆ÷µÄÁ¬½Ó¾Í»á±»¹Ø±Õ¡£³ı·ÇÖ®Ç°ÒÑ¾­µ÷ÓÃÁË
+     <A  HREF="function.mysql-close.html"  ><B  CLASS="function" >mysql_close()</B
+></A
+> À´¹Ø±ÕËü¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65252" ></A
+><P  ><B  >Àı×Ó 1. MySQL Á¬½ÓÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  />&nbsp;&nbsp;&nbsp;&nbsp;print (</font><font  color="#DD0000">"Connected successfully"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.mysql-pconnect.html"  ><B  CLASS="function" >mysql_pconnect()</B
+></A
+> ºÍ
+     <A  HREF="function.mysql-close.html"  ><B  CLASS="function" >mysql_close()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-close.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-create-db.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_close</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_create_db</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.mysql-connect-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1690">
-    <p><strong>Example #1 <span class="function"><strong>mysql_connect()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br />echo&nbsp;</span><span style="color: #DD0000">'Connected&nbsp;successfully'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-1691">
-    <p><strong>Example #2 <span class="function"><strong>mysql_connect()</strong></span> ä¾‹å­ï¼šä½¿ç”¨ <em>hostname:port</em> è¯­æ³•</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;connect&nbsp;to&nbsp;example.com&nbsp;and&nbsp;port&nbsp;3307<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'example.com:3307'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br />echo&nbsp;</span><span style="color: #DD0000">'Connected&nbsp;successfully'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;connect&nbsp;to&nbsp;localhost&nbsp;at&nbsp;port&nbsp;3307<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'127.0.0.1:3307'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br />echo&nbsp;</span><span style="color: #DD0000">'Connected&nbsp;successfully'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-1692">
-    <p><strong>Example #3 <span class="function"><strong>mysql_connect()</strong></span> ä¾‹å­ï¼šä½¿ç”¨ &quot;:/path/to/socket&quot; è¯­æ³•</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;we&nbsp;connect&nbsp;to&nbsp;localhost&nbsp;and&nbsp;socket&nbsp;e.g.&nbsp;/tmp/mysql.sock<br /><br />//variant&nbsp;1:&nbsp;ommit&nbsp;localhost<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/mysql'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br />echo&nbsp;</span><span style="color: #DD0000">'Connected&nbsp;successfully'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br /><br /></span><span style="color: #FF8000">//&nbsp;variant&nbsp;2:&nbsp;with&nbsp;localhost<br /></span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost:/tmp/mysql.sock'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br />echo&nbsp;</span><span style="color: #DD0000">'Connected&nbsp;successfully'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.mysql-connect-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">æœ¬æ‰©å±•è‡ª PHP 5.5.0
-èµ·å·²åºŸå¼ƒï¼Œå¹¶åœ¨å°†æ¥ä¼šè¢«ç§»é™¤ã€‚åº”ä½¿ç”¨ <a href="book.mysqli.html" class="link">MySQLi</a> 
-æˆ– <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> æ‰©å±•æ¥æ›¿æ¢ä¹‹ã€‚å‚è§
-<a href="mysqlinfo.api.choosing.html" class="link">MySQLï¼šé€‰æ‹© API</a> æŒ‡å—ä»¥åŠ<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">ç›¸å…³ FAQ</a> ä»¥è·å–æ›´å¤šä¿¡æ¯ã€‚ç”¨ä»¥æ›¿ä»£æœ¬å‡½æ•°çš„æœ‰ï¼š</p>
-   <p class="para">
-    <ul class="simplelist">
-     <li class="member"><span class="function"><a href="function.mysqli-connect.html" class="function">mysqli_connect()</a></span></li>
-     <li class="member"><span class="methodname"><a href="pdo.construct.html" class="methodname">PDO::__construct()</a></span></li>
-    </ul>
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    åªè¦å°† server æŒ‡å®šä¸º &quot;localhost&quot; æˆ–
-    &quot;localhost:port&quot;ï¼ŒMySQL å®¢æˆ·ç«¯åº“ä¼šè¶Šè¿‡æ­¤å€¼å¹¶å°è¯•è¿æ¥åˆ°æœ¬åœ°å¥—æ¥å­—ï¼ˆWindows
-    ä¸­çš„åå­—ç®¡é“ï¼‰ã€‚å¦‚æœæƒ³ç”¨ TCP/IPï¼Œåº”è¯¥ç”¨ &quot;127.0.0.1&quot;
-    ä»£æ›¿ &quot;localhost&quot;ã€‚å¦‚æœ MySQL å®¢æˆ·ç«¯åº“è¯•å›¾è¿æ¥åˆ°ä¸€ä¸ªé”™è¯¯çš„æœ¬åœ°å¥—æ¥å­—ï¼Œåˆ™åº”è¯¥åœ¨
-    PHP é…ç½®ä¸­è®¾å®š <a href="mysql.configuration.html#ini.mysql.default-host" class="xref"></a>
-    çš„æ­£ç¡®è·¯å¾„å¹¶æŠŠ server ç•™ç©ºã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    è„šæœ¬ä¸€ç»“æŸï¼Œåˆ°æœåŠ¡å™¨çš„è¿æ¥å°±è¢«å…³é—­ï¼Œé™¤éä¹‹å‰å·²ç»æ˜ç¡®è°ƒç”¨
-    <span class="function"><a href="function.mysql-close.html" class="function">mysql_close()</a></span> å…³é—­äº†ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¯ä»¥åœ¨å‡½æ•°åå‰åŠ ä¸Šä¸€ä¸ª
-    <a href="language.operators.errorcontrol.html" class="link">@</a>
-    æ¥æŠ‘åˆ¶å‡ºé”™æ—¶çš„é”™è¯¯ä¿¡æ¯ã€‚
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.mysql-connect-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mysql-pconnect.html" class="function" rel="rdfs-seeAlso">mysql_pconnect()</a> - æ‰“å¼€ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„æŒä¹…è¿æ¥</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-close.html" class="function" rel="rdfs-seeAlso">mysql_close()</a> - å…³é—­ MySQL è¿æ¥</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-close.html">mysql_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-create-db.html">mysql_create_db</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

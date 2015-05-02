@@ -1,168 +1,110 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Return info about a group by group id</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.posix-getgid.html">posix_getgid</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.posix-getgrnam.html">posix_getgrnam</a></div>
- <div class="up"><a href="ref.posix.html">POSIX å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.posix-getgrgid" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">posix_getgrgid</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">posix_getgrgid</span> &mdash; <span class="dc-title">Return info about a group by group id</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.posix-getgrgid-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>posix_getgrgid</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$gid</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Gets information about a group provided its id.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.posix-getgrgid-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">gid</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The group id.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.posix-getgrgid-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   The array elements returned are:
-   <table class="doctable table">
-    <caption><strong>The group information array</strong></caption>
-    
-     <thead>
-      <tr>
-       <th>Element</th>
-       <th>Description</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>name</td>
-       <td>
-        The name element contains the name of the group. This is
-        a short, usually less than 16 character &quot;handle&quot; of the
-        group, not the real, full name.
-       </td>
-      </tr>
-
-      <tr>
-       <td>passwd</td>
-       <td>
-        The passwd element contains the group&#039;s password in an
-        encrypted format. Often, for example on a system employing
-        &quot;shadow&quot; passwords, an asterisk is returned instead.
-       </td>
-      </tr>
-
-      <tr>
-       <td>gid</td>
-       <td>
-        Group ID, should be the same as the
-        <code class="parameter">gid</code> parameter used when calling the
-        function, and hence redundant.
-       </td>
-      </tr>
-
-      <tr>
-       <td>members</td>
-       <td>
-        This consists of an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of
-        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>&#039;s for all the members in the group.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.posix-getgrgid-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-3930">
-    <p><strong>Example #1 Example use of <span class="function"><strong>posix_getgrgid()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$groupid&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">posix_getegid</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$groupinfo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">posix_getgrgid</span><span style="color: #007700">(</span><span style="color: #0000BB">$groupid</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$groupinfo</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹çš„è¾“å‡ºç±»ä¼¼äºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >posix_getgrgid</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="POSIX Functions" HREF="ref.posix.html"><LINK  REL="PREVIOUS" TITLE="posix_getgid" HREF="function.posix-getgid.html"><LINK  REL="NEXT" TITLE="posix_getgrnam" HREF="function.posix-getgrnam.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.posix-getgid.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.posix-getgrnam.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.posix-getgrgid" ></A
+>posix_getgrgid</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN90022" ></A
+><P  >    (PHP 3&#62;= 3.0.13, PHP 4 )</P
+>posix_getgrgid&nbsp;--&nbsp;Return info about a group by group id</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN90025" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >posix_getgrgid</B
+> ( int gid)<BR  ></BR
+><P  >&#13;     Returns an <A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+> of information about a group and
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on failure.  If <TT  CLASS="parameter" ><I  >gid</I
+></TT
+> isn't a number
+     then <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> is returned and an <TT  CLASS="constant" ><B  >E_WARNING</B
+></TT
+> 
+     level error is generated.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN90040" ></A
+><P  ><B  >Àı×Ó 1. Example use of <B  CLASS="function" >posix_getgrgid()</B
+></B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$groupid&nbsp;&nbsp;&nbsp;</font><font  color="#007700">= </font><font  color="#0000BB">posix_getegid</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$groupinfo </font><font  color="#007700">= </font><font  color="#0000BB">posix_getgrgid</font><font  color="#007700">(</font><font  color="#0000BB">$groupid</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$groupinfo</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       An example output:
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [name]    =&gt; toons
-    [passwd]  =&gt; x
-    [members] =&gt; Array
-        (
-            [0] =&gt; tom
-            [1] =&gt; jerry
+    [name]    =&#62; toons
+    [passwd]  =&#62; x
+    [members] =&#62; Array 
+        ( 
+            [0] =&#62; tom
+            [1] =&#62; jerry
         )
-    [gid]     =&gt; 42
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+    [gid]     =&#62; 42
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      As of PHP 4.2.0, members is returned as an array of member
+      usernames in the group.  Before this time it was simply an 
+      integer (the number of members in the group) and the member
+      names were returned with numerical indices.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     See also <A  HREF="function.posix-getegid.html"  ><B  CLASS="function" >posix_getegid()</B
+></A
+>,  
+     <A  HREF="function.filegroup.html"  ><B  CLASS="function" >filegroup()</B
+></A
+>,
+     <A  HREF="function.stat.html"  ><B  CLASS="function" >stat()</B
+></A
+>, and 
+     <A  HREF="features.safe-mode.html#ini.safe-mode-gid"  >safe_mode_gid</A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.posix-getgid.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.posix-getgrnam.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >posix_getgid</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.posix.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >posix_getgrnam</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.posix-getgrgid-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.posix-getegid.html" class="function" rel="rdfs-seeAlso">posix_getegid()</a> - Return the effective group ID of the current process</span></li>
-    <li class="member"><span class="function"><a href="function.posix-getgrnam.html" class="function" rel="rdfs-seeAlso">posix_getgrnam()</a> - Return info about a group by name</span></li>
-    <li class="member"><span class="function"><a href="function.filegroup.html" class="function" rel="rdfs-seeAlso">filegroup()</a> - å–å¾—æ–‡ä»¶çš„ç»„</span></li>
-    <li class="member"><span class="function"><a href="function.stat.html" class="function" rel="rdfs-seeAlso">stat()</a> - ç»™å‡ºæ–‡ä»¶çš„ä¿¡æ¯</span></li>
-    <li class="member"><a href="ini.sect.safe-mode.html#ini.safe-mode-gid" class="link">safe_mode_gid</a></li>
-    <li class="member">POSIX man page GETGRNAM(3)</li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.posix-getgid.html">posix_getgid</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.posix-getgrnam.html">posix_getgrnam</a></div>
- <div class="up"><a href="ref.posix.html">POSIX å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

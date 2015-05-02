@@ -1,207 +1,119 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>替换字符串的子串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.substr-count.html">substr_count</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.substr.html">substr</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.substr-replace" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">substr_replace</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">substr_replace</span> &mdash; <span class="dc-title">替换字符串的子串</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.substr-replace-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>substr_replace</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$string</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$replacement</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$start</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$length</code></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>substr_replace()</strong></span> 在字符串 <code class="parameter">string</code> 的副本中将由 <code class="parameter">start</code> 和可选的 <code class="parameter">length</code> 参数限定的子字符串使用 <code class="parameter">replacement</code> 进行替换。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.substr-replace-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">string</code></dt>
-
-     <dd>
-
-      <p class="para">
-       输入字符串。
-      </p>
-      <p class="para">
-       An <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of <span class="type"><a href="language.types.string.html" class="type string">string</a></span>s can be provided, in which
-       case the replacements will occur on each string in turn. In this case,
-       the <code class="parameter">replacement</code>, <code class="parameter">start</code>
-       and <code class="parameter">length</code> parameters may be provided either as
-       scalar values to be applied to each input string in turn, or as
-       <span class="type"><a href="language.types.array.html" class="type array">array</a></span>s, in which case the corresponding array element will
-       be used for each input string.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">replacement</code></dt>
-
-     <dd>
-
-      <p class="para">
-       替换字符串。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">start</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果 <code class="parameter">start</code> 为正数，替换将从 <code class="parameter">string</code> 的 <code class="parameter">start</code> 位置开始。
-      </p>
-      <p class="para">
-       如果 <code class="parameter">start</code> 为负数，替换将从 <code class="parameter">string</code> 的倒数第 <code class="parameter">start</code> 个位置开始。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">length</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果设定了这个参数并且为正数，表示 <code class="parameter">string</code> 中被替换的子字符串的长度。如果设定为负数，它表示待替换的子字符串结尾处距离 <code class="parameter">string</code> 末端的字符个数。如果没有提供此参数，那么它默认为 strlen( <code class="parameter">string</code> ) （字符串的长度）。当然，如果 <code class="parameter">length</code> 为 0，那么这个函数的功能为将 <code class="parameter">replacement</code> 插入到 <code class="parameter">string</code> 的 <code class="parameter">start</code> 位置处。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.substr-replace-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回结果字符串。如果 <code class="parameter">string</code> 是个数组，那么也将返回一个数组。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.substr-replace-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.3</td>
-       <td>
-        All parameters now accept <span class="type"><a href="language.types.array.html" class="type array">array</a></span>s.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >substr_replace</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="substr_count" HREF="function.substr-count.html"><LINK  REL="NEXT" TITLE="substr" HREF="function.substr.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.substr-count.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.substr.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.substr-replace" ></A
+>substr_replace</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN111187" ></A
+><P  >    (PHP 4 )</P
+>substr_replace&nbsp;--&nbsp;Replace text within a portion of a string</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN111190" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >substr_replace</B
+> ( string string, string replacement, int start [, int length])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >substr_replace()</B
+> replaces a copy of
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> delimited by the
+     <TT  CLASS="parameter" ><I  >start</I
+></TT
+> and (optionally)
+     <TT  CLASS="parameter" ><I  >length</I
+></TT
+> parameters with the string given in
+     <TT  CLASS="parameter" ><I  >replacement</I
+></TT
+>. The result is returned.
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >start</I
+></TT
+> is positive, the replacing will
+     begin at the <TT  CLASS="parameter" ><I  >start</I
+></TT
+>'th offset into
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+>.
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >start</I
+></TT
+> is negative, the replacing will
+     begin at the <TT  CLASS="parameter" ><I  >start</I
+></TT
+>'th character from the
+     end of <TT  CLASS="parameter" ><I  >string</I
+></TT
+>.
+    </P
+><P  >&#13;     If <TT  CLASS="parameter" ><I  >length</I
+></TT
+> is given and is positive, it
+     represents the length of the portion of
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> which is to be replaced. If it is
+     negative, it represents the number of characters from the end of
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> at which to stop replacing. If it
+     is not given, then it will default to strlen(
+     <TT  CLASS="parameter" ><I  >string</I
+></TT
+> ); i.e. end the replacing at the
+     end of <TT  CLASS="parameter" ><I  >string</I
+></TT
+>.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111228" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >substr_replace()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$var </font><font  color="#007700">= </font><font  color="#DD0000">'ABCDEFGH:/MNRPQR/'</font><font  color="#007700">;<br  />echo </font><font  color="#DD0000">"Original: $var&lt;hr /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* These two examples replace all of $var with 'bob'. */<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">substr_replace</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#DD0000">'bob'</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">substr_replace</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#DD0000">'bob'</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">strlen</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">)) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Insert 'bob' right at the beginning of $var. */<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">substr_replace</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#DD0000">'bob'</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* These next two replace 'MNRPQR' in $var with 'bob'. */<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">substr_replace</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#DD0000">'bob'</font><font  color="#007700">, </font><font  color="#0000BB">10</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">substr_replace</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#DD0000">'bob'</font><font  color="#007700">, -</font><font  color="#0000BB">7</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">/* Delete 'MNRPQR' from $var. */<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">substr_replace</font><font  color="#007700">(</font><font  color="#0000BB">$var</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#0000BB">10</font><font  color="#007700">, -</font><font  color="#0000BB">1</font><font  color="#007700">) . </font><font  color="#DD0000">"&lt;br /&gt;\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.str-replace.html"  ><B  CLASS="function" >str_replace()</B
+></A
+> and
+     <A  HREF="function.substr.html"  ><B  CLASS="function" >substr()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.substr-count.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.substr.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >substr_count</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >substr</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.substr-replace-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5232">
-    <p><strong>Example #1 <span class="function"><strong>substr_replace()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'ABCDEFGH:/MNRPQR/'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Original:&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #DD0000">&lt;hr&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;这两个例子使用&nbsp;“bob”&nbsp;替换整个&nbsp;$var。*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">))&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;将&nbsp;“bob”&nbsp;插入到&nbsp;$var&nbsp;的开头处。*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;下面两个例子使用&nbsp;“bob”&nbsp;替换&nbsp;$var&nbsp;中的&nbsp;“MNRPQR”。*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">7</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;从&nbsp;$var&nbsp;中删除&nbsp;“MNRPQR”。*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-  </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5233">
-    <p><strong>Example #2 
-     Using <span class="function"><strong>substr_replace()</strong></span> to replace multiple strings at
-     once
-    </strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'A:&nbsp;XXX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'B:&nbsp;XXX'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'C:&nbsp;XXX'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;A&nbsp;simple&nbsp;case:&nbsp;replace&nbsp;XXX&nbsp;in&nbsp;each&nbsp;string&nbsp;with&nbsp;YYY.<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">';&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'YYY'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">)).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;A&nbsp;more&nbsp;complicated&nbsp;case&nbsp;where&nbsp;each&nbsp;replacement&nbsp;is&nbsp;different.<br /></span><span style="color: #0000BB">$replace&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'AAA'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'BBB'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'CCC'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">';&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$replace</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">)).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Replace&nbsp;a&nbsp;different&nbsp;number&nbsp;of&nbsp;characters&nbsp;each&nbsp;time.<br /></span><span style="color: #0000BB">$length&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">';&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$replace</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$length</span><span style="color: #007700">)).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-A: YYY; B: YYY; C: YYY
-A: AAA; B: BBB; C: CCC
-A: AAAXX; B: BBBX; C: CCC
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.substr-replace-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <span class="simpara">此函数可安全用于二进制对象。</span></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.substr-replace-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.str-replace.html" class="function" rel="rdfs-seeAlso">str_replace()</a> - 子字符串替换</span></li>
-    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 返回字符串的子串</span></li>
-    <li class="member"><a href="language.types.string.html#language.types.string.substr" class="link">字符串访问与修改</a></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.substr-count.html">substr_count</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.substr.html">substr</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

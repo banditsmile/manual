@@ -1,109 +1,80 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯é€šè¿‡ HTTP POST ä¸Šä¼ çš„</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.is-readable.html">is_readable</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-writable.html">is_writable</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.is-uploaded-file" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">is_uploaded_file</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5)</p><p class="refpurpose"><span class="refname">is_uploaded_file</span> &mdash; <span class="dc-title">åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯é€šè¿‡ HTTP POST ä¸Šä¼ çš„</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.is-uploaded-file-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>is_uploaded_file</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-    å¦‚æœ <code class="parameter">filename</code> æ‰€ç»™å‡ºçš„æ–‡ä»¶æ˜¯é€šè¿‡
-   HTTP POST ä¸Šä¼ çš„åˆ™è¿”å› <strong><code>TRUE</code></strong>ã€‚è¿™å¯ä»¥ç”¨æ¥ç¡®ä¿æ¶æ„çš„ç”¨æˆ·æ— æ³•æ¬ºéª—è„šæœ¬å»è®¿é—®æœ¬ä¸èƒ½è®¿é—®çš„æ–‡ä»¶ï¼Œä¾‹å¦‚
-   <var class="filename">/etc/passwd</var>ã€‚
-  </p>
-  <p class="para">
-   è¿™ç§æ£€æŸ¥æ˜¾å¾—æ ¼å¤–é‡è¦ï¼Œå¦‚æœä¸Šä¼ çš„æ–‡ä»¶æœ‰å¯èƒ½ä¼šé€ æˆå¯¹ç”¨æˆ·æˆ–æœ¬ç³»ç»Ÿçš„å…¶ä»–ç”¨æˆ·æ˜¾ç¤ºå…¶å†…å®¹çš„è¯ã€‚
-  </p>
-  <p class="para">
-   ä¸ºäº†èƒ½ä½¿ <span class="function"><strong>is_uploaded_file()</strong></span> å‡½æ•°æ­£å¸¸å·¥ä½œï¼Œå¿…æ®µæŒ‡å®šç±»ä¼¼äº
-   <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['tmp_name']</a></var></var> çš„å˜é‡ï¼Œè€Œåœ¨ä»å®¢æˆ·ç«¯ä¸Šä¼ çš„æ–‡ä»¶å
-   <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name']</a></var></var> ä¸èƒ½æ­£å¸¸è¿ä½œã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 parameters" id="refsect1-function.is-uploaded-file-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦æ£€æŸ¥çš„æ–‡ä»¶åã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.is-uploaded-file-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.is-uploaded-file-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2501">
-    <p><strong>Example #1 <span class="function"><strong>is_uploaded_file()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">is_uploaded_file</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"File&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'name'</span><span style="color: #007700">]&nbsp;.</span><span style="color: #DD0000">"&nbsp;uploaded&nbsp;successfully.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Displaying&nbsp;contents\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">readfile</span><span style="color: #007700">(</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]);<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Possible&nbsp;file&nbsp;upload&nbsp;attack:&nbsp;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"filename&nbsp;'"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_FILES</span><span style="color: #007700">[</span><span style="color: #DD0000">'userfile'</span><span style="color: #007700">][</span><span style="color: #DD0000">'tmp_name'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"'."</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >is_uploaded_file</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="is_readable" HREF="function.is-readable.html"><LINK  REL="NEXT" TITLE="is_writable" HREF="function.is-writable.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.is-readable.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.is-writable.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.is-uploaded-file" ></A
+>is_uploaded_file</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29139" ></A
+><P  >    (PHP 3&#62;= 3.0.17, PHP 4 &#62;= 4.0.3)</P
+>is_uploaded_file&nbsp;--&nbsp;ÅĞ¶ÏÎÄ¼şÊÇ·ñÊÇÍ¨¹ı HTTP POST ÉÏ´«µÄ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29142" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >is_uploaded_file</B
+> ( string filename)<BR  ></BR
+><P  >&#13;     Èç¹û <TT  CLASS="parameter" ><I  >filename</I
+></TT
+> Ëù¸ø³öµÄÎÄ¼şÊÇÍ¨¹ı
+     HTTP POST ÉÏ´«µÄÔò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>¡£Õâ¿ÉÒÔÓÃÀ´È·±£¶ñÒâµÄÓÃ»§ÎŞ·¨ÆÛÆ­½Å±¾È¥·ÃÎÊ±¾²»ÄÜ·ÃÎÊµÄÎÄ¼ş£¬ÀıÈç
+     <TT  CLASS="filename" >/etc/passwd</TT
+>¡£
+    </P
+><P  >&#13;     ÕâÖÖ¼ì²éÏÔµÃ¸ñÍâÖØÒª£¬Èç¹ûÉÏ´«µÄÎÄ¼şÓĞ¿ÉÄÜ»áÔì³É¶ÔÓÃ»§»ò±¾ÏµÍ³µÄÆäËûÓÃ»§ÏÔÊ¾ÆäÄÚÈİµÄ»°¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >is_uploaded_file()</B
+> ½ö¿ÉÓÃÓÚ
+     PHP 3 µÄ 3.0.16 °æÖ®ºó£¬ÒÔ¼° PHP 4 µÄ 4.0.2
+     °æÖ®ºó¡£Èç¹ûÄãÖ´ÒâÒªÓÃÀÏ°æ±¾£¬¿ÉÒÔÓÃÏÂÃæµÄº¯ÊıÀ´±£»¤×Ô¼º£º
+     <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+       ÒÔÏÂÀı×Ó<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >²»ÄÜ</I
+></SPAN
+>ÓÃÓÚ
+       PHP 4 µÄ 4.0.2 °æÖ®ºó¡£ËüÒÀÀµµÄ PHP ÄÚ²¿º¯ÊıÔÚ¸Ã°æ±¾Ö®ºó¸Ä±äÁË¡£
+      </P
+></BLOCKQUOTE
+></DIV
+>
+     <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">/* Userland test for uploaded file. */<br  /></font><font  color="#007700">function </font><font  color="#0000BB">is_uploaded_file</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (!</font><font  color="#0000BB">$tmp_file </font><font  color="#007700">= </font><font  color="#0000BB">get_cfg_var</font><font  color="#007700">(</font><font  color="#DD0000">'upload_tmp_dir'</font><font  color="#007700">)) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$tmp_file </font><font  color="#007700">= </font><font  color="#0000BB">dirname</font><font  color="#007700">(</font><font  color="#0000BB">tempnam</font><font  color="#007700">(</font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$tmp_file </font><font  color="#007700">.= </font><font  color="#DD0000">'/' </font><font  color="#007700">. </font><font  color="#0000BB">basename</font><font  color="#007700">(</font><font  color="#0000BB">$filename</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* User might have trailing slash in php.ini... */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">return (</font><font  color="#0000BB">ereg_replace</font><font  color="#007700">(</font><font  color="#DD0000">'/+'</font><font  color="#007700">, </font><font  color="#DD0000">'/'</font><font  color="#007700">, </font><font  color="#0000BB">$tmp_file</font><font  color="#007700">) == </font><font  color="#0000BB">$filename</font><font  color="#007700">);<br  />}<br  /><br  /></font><font  color="#FF8000">/* This is how to use it, since you also don't have<br  /> * move_uploaded_file() in these older versions: */<br  /></font><font  color="#007700">if (</font><font  color="#0000BB">is_uploaded_file</font><font  color="#007700">(</font><font  color="#0000BB">$HTTP_POST_FILES</font><font  color="#007700">[</font><font  color="#DD0000">'userfile'</font><font  color="#007700">])) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">copy</font><font  color="#007700">(</font><font  color="#0000BB">$HTTP_POST_FILES</font><font  color="#007700">[</font><font  color="#DD0000">'userfile'</font><font  color="#007700">], </font><font  color="#DD0000">"/place/to/put/uploaded/file"</font><font  color="#007700">);<br  />} else {<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Possible file upload attack: filename '$HTTP_POST_FILES[userfile]'."</font><font  color="#007700">;<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.move-uploaded-file.html"  ><B  CLASS="function" >move_uploaded_file()</B
+></A
+>£¬ÒÔ¼°<A  HREF="http://shouce.jb51.net/php/features.file-upload.html"  >ÎÄ¼şÉÏ´«´¦Àí</A
+>Ò»ÕÂÖĞµÄ¼òµ¥Ê¹ÓÃÀı×Ó¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.is-readable.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.is-writable.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >is_readable</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >is_writable</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.is-uploaded-file-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.move-uploaded-file.html" class="function" rel="rdfs-seeAlso">move_uploaded_file()</a> - å°†ä¸Šä¼ çš„æ–‡ä»¶ç§»åŠ¨åˆ°æ–°ä½ç½®</span></li>
-    <li class="member"><var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var></li>
-    <li class="member">å…³äºç”¨æ³•çš„ç®€å•ä¾‹å­ 
-     <a href="features.file-upload.html" class="link">æ–‡ä»¶ä¸Šä¼ å¤„ç†</a></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.is-readable.html">is_readable</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.is-writable.html">is_writable</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

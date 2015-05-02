@@ -1,113 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å…³é—­ä¸€ä¸ª PostgreSQL è¿æ¥</title>
+<HTML  ><HEAD  ><TITLE  >pg_close</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_client_encoding" HREF="function.pg-client-encoding.html"><LINK  REL="NEXT" TITLE="pg_connect" HREF="function.pg-connect.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-client-encoding.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-connect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-close" ></A
+>pg_close</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN90971" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>pg_close&nbsp;--&nbsp;¹Ø±ÕÒ»¸ö PostgreSQL Á¬½Ó</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN90974" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >pg_close</B
+> ( resource connection)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_close()</B
+> ¹Ø±ÕÓÉËù¸ø×ÊÔ´ <TT  CLASS="parameter" ><I  >connection</I
+></TT
+>
+     Ö¸¶¨µÄµ½ PostgreSQL Êı¾İ¿âµÄ·Ç³Ö¾ÃÁ¬½Ó¡£Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      Ê¹ÓÃ <B  CLASS="function" >pg_close()</B
+> ²¢²»ºÜ±ØÒª£¬ÒòÎª·Ç³Ö¾ÃÁ¬½ÓÔÚ±¾½Å±¾Ö´ĞĞ½áÊøºó»á×Ô¶¯¹Ø±Õ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN90991" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >pg_close()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn </font><font  color="#007700">= </font><font  color="#0000BB">pg_connect</font><font  color="#007700">(</font><font  color="#DD0000">"host=localhost port=5432 dbname=mary"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;print(</font><font  color="#DD0000">"Connected successfully"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">pg_close</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     Èç¹ûÔÚ´ËÁ¬½ÓÖĞ´ò¿ªÁË large object ×ÊÔ´£¬ÔòÔÚ¹Ø±ÕËùÓĞ large object ×ÊÔ´Ö®Ç°²»Òª¹Ø±ÕÁ¬½Ó¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-client-encoding.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-connect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_client_encoding</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_connect</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-client-encoding.html">pg_client_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-connect-poll.html">pg_connect_poll</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-close" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_close</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">pg_close</span> &mdash; <span class="dc-title">å…³é—­ä¸€ä¸ª PostgreSQL è¿æ¥</span></p>
 
-   </div>
- 
- <div class="refsect1 description" id="refsect1-function.pg-close-description">
-  <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">bool</span> <span class="methodname"><strong>pg_close</strong></span>
-    ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_close()</strong></span> å…³é—­ç”±æ‰€ç»™èµ„æº <code class="parameter">connection</code>
-     æŒ‡å®šçš„åˆ° PostgreSQL æ•°æ®åº“çš„éæŒä¹…è¿æ¥ã€‚
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      ä½¿ç”¨ <span class="function"><strong>pg_close()</strong></span> å¹¶ä¸å¾ˆå¿…è¦ï¼Œå› ä¸ºéæŒä¹…è¿æ¥åœ¨æœ¬è„šæœ¬æ‰§è¡Œç»“æŸåä¼šè‡ªåŠ¨å…³é—­ã€‚
-     </p>
-    </p></blockquote>
-    <p class="para">
-     å¦‚æœåœ¨æ­¤è¿æ¥ä¸­æ‰“å¼€äº† large object èµ„æºï¼Œåˆ™åœ¨å…³é—­æ‰€æœ‰ large object èµ„æºä¹‹å‰ä¸è¦å…³é—­è¿æ¥ã€‚
-    </p>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pg-close-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">connection</code></dt>
-
-     <dd>
-
-      <p class="para">
-       PostgreSQL database connection resource.  When 
-       <code class="parameter">connection</code> is not present, the default connection 
-       is used. The default connection is the last connection made by 
-       <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span> or <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.pg-close-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.pg-close-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2174">
-    <p><strong>Example #1 <span class="function"><strong>pg_close()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=localhost&nbsp;port=5432&nbsp;dbname=mary"</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Connected&nbsp;successfully"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">pg_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Connected successfully
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.pg-close-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.pg-connect.html" class="function" rel="rdfs-seeAlso">pg_connect()</a> - æ‰“å¼€ä¸€ä¸ª PostgreSQL è¿æ¥</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-client-encoding.html">pg_client_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-connect-poll.html">pg_connect_poll</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

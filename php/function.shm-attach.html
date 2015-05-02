@@ -1,172 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Creates or open a shared memory segment</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sem-remove.html">sem_remove</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.shm-detach.html">shm_detach</a></div>
- <div class="up"><a href="ref.sem.html">Semaphore å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.shm-attach" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">shm_attach</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">shm_attach</span> &mdash; <span class="dc-title">Creates or open a shared memory segment</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.shm-attach-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>shm_attach</strong></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$key</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$memsize</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$perm</code><span class="initializer"> = 0666</span></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>shm_attach()</strong></span> returns an id that can be used to access
-   the System V shared memory with the given <code class="parameter">key</code>, the
-   first call creates the shared memory segment with 
-   <code class="parameter">memsize</code> and the optional perm-bits 
-   <code class="parameter">perm</code>.
-  </p>
-  <p class="para">
-   A second call to <span class="function"><strong>shm_attach()</strong></span> for the same
-   <code class="parameter">key</code> will return a different shared memory
-   identifier, but both identifiers access the same underlying
-   shared memory. <code class="parameter">memsize</code> and
-   <code class="parameter">perm</code> will be ignored.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.shm-attach-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">key</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A numeric shared memory segment ID
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">memsize</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The memory size. If not provided, default to the
-       <em>sysvshm.init_mem</em> in the <var class="filename">php.ini</var>, otherwise 10000
-       bytes.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">perm</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The optional permission bits. Default to 0666.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >shm_attach</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Semaphore, Shared Memory and IPC Functions" HREF="ref.sem.html"><LINK  REL="PREVIOUS" TITLE="sem_remove" HREF="function.sem-remove.html"><LINK  REL="NEXT" TITLE="shm_detach" HREF="function.shm-detach.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sem-remove.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.shm-detach.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.shm-attach" ></A
+>shm_attach</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN97239" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>shm_attach&nbsp;--&nbsp;Creates or open a shared memory segment</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN97242" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >shm_attach</B
+> ( int key [, int memsize [, int perm]])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >shm_attach()</B
+> returns an id that that can be
+     used to access the System V shared memory with the given key, the
+     first call creates the shared memory segment with <TT  CLASS="parameter" ><I  >memsize</I
+></TT
+>
+     (default: sysvshm.init_mem in the <TT  CLASS="filename" >php.ini</TT
+>, otherwise
+     10000 bytes) and the optional perm-bits <TT  CLASS="parameter" ><I  >perm</I
+></TT
+>
+     (default: 0666).
+    </P
+><P  >&#13;     A second call to <B  CLASS="function" >shm_attach()</B
+> for the same
+     <TT  CLASS="parameter" ><I  >key</I
+></TT
+> will return a different shared memory
+     identifier, but both identifiers access the same underlying
+     shared memory. <TT  CLASS="parameter" ><I  >Memsize</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >perm</I
+></TT
+> will be ignored.
+    </P
+><P  >&#13;     See also: <A  HREF="function.ftok.html"  ><B  CLASS="function" >ftok()</B
+></A
+>.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      This function does not work on Windows systems.
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sem-remove.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.shm-detach.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sem_remove</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >shm_detach</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.shm-attach-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a shared memory segment identifier.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.shm-attach-changelog">
-  <h3 class="title">æ›´æ–°æ—¥å¿—</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>ç‰ˆæœ¬</th>
-       <th>è¯´æ˜</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-         This function now returns a <a href="language.types.resource.html" class="link">èµ„æº(resource)</a> instead of an 
-         <a href="language.types.integer.html" class="link">integer</a>.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.shm-attach-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    This function used to return an integer value prior to 
-    PHP 5.3.0. To achieve the same value in a portable manner, the 
-    return value can be cast to an integer like:
-   </p>
-   <p class="para">
-    <div class="example" id="example-4003">
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;a&nbsp;temporary&nbsp;file&nbsp;and&nbsp;return&nbsp;its&nbsp;path<br /></span><span style="color: #0000BB">$tmp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tempnam</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'PHP'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Get&nbsp;the&nbsp;file&nbsp;token&nbsp;key<br /></span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftok</span><span style="color: #007700">(</span><span style="color: #0000BB">$tmp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'a'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Attach&nbsp;the&nbsp;SHM&nbsp;resource,&nbsp;notice&nbsp;the&nbsp;cast&nbsp;afterwards<br /></span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">shm_attach</span><span style="color: #007700">(</span><span style="color: #0000BB">$key</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Unable&nbsp;to&nbsp;create&nbsp;the&nbsp;shared&nbsp;memory&nbsp;segment'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Cast&nbsp;to&nbsp;integer,&nbsp;since&nbsp;prior&nbsp;to&nbsp;PHP&nbsp;5.3.0&nbsp;the&nbsp;resource&nbsp;id&nbsp;<br />//&nbsp;is&nbsp;returned&nbsp;which&nbsp;can&nbsp;be&nbsp;exposed&nbsp;when&nbsp;casting&nbsp;a&nbsp;resource<br />//&nbsp;to&nbsp;an&nbsp;integer<br /></span><span style="color: #0000BB">$id&nbsp;</span><span style="color: #007700">=&nbsp;(integer)&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.shm-attach-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.shm-detach.html" class="function" rel="rdfs-seeAlso">shm_detach()</a> - Disconnects from shared memory segment</span></li>
-    <li class="member"><span class="function"><a href="function.ftok.html" class="function" rel="rdfs-seeAlso">ftok()</a> - Convert a pathname and a project identifier to a System V IPC key</span></li>
-   </ul>
-  </p>
- </div>
-  
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sem-remove.html">sem_remove</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.shm-detach.html">shm_detach</a></div>
- <div class="up"><a href="ref.sem.html">Semaphore å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

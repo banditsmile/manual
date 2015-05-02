@@ -1,126 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get result data</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-result-all.html">odbc_result_all</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.odbc-rollback.html">odbc_rollback</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.odbc-result" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">odbc_result</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">odbc_result</span> &mdash; <span class="dc-title">Get result data</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.odbc-result-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>odbc_result</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result_id</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$field</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Get result data
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.odbc-result-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result_id</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The ODBC <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">field</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The field name being retrieved. It can either be an integer containing
-       the column number of the field you want; or it can be a string
-       containing the name of the field.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >odbc_result</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Unified ODBC Functions" HREF="ref.odbc.html"><LINK  REL="PREVIOUS" TITLE="odbc_result_all" HREF="function.odbc-result-all.html"><LINK  REL="NEXT" TITLE="odbc_rollback" HREF="function.odbc-rollback.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.odbc-result-all.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.odbc-rollback.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.odbc-result" ></A
+>odbc_result</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN78849" ></A
+><P  >    (PHP 3&#62;= 3.0.6, PHP 4 )</P
+>odbc_result&nbsp;--&nbsp;Get result data</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN78852" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >odbc_result</B
+> ( resource result_id, mixed field)<BR  ></BR
+><P  >&#13;     Returns the contents of the field.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >field</I
+></TT
+> can either be an integer containing
+     the column number of the field you want; or it can be a string
+     containing the name of the field. For example:
+     <DIV  CLASS="informalexample" ><A  NAME="AEN78866" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+$item_3 = odbc_result($Query_ID, 3);<br  />$item_val = odbc_result($Query_ID, "val");</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     The first call to <B  CLASS="function" >odbc_result()</B
+> returns the
+     value of the third field in the current record of the query
+     result. The second function call to
+     <B  CLASS="function" >odbc_result()</B
+> returns the value of the field
+     whose field name is "val" in the current record of the query
+     result. An error occurs if a column number parameter for a field
+     is less than one or exceeds the number of columns (or fields) in
+     the current record. Similarly, an error occurs if a field with a
+     name that is not one of the fieldnames of the table(s) that
+     is(are) being queried.
+    </P
+><P  >&#13;     Field indices start from 1. Regarding the way binary or
+     long column data is returned refer to 
+     <A  HREF="function.odbc-binmode.html"  ><B  CLASS="function" >odbc_binmode()</B
+></A
+> and 
+     <A  HREF="function.odbc-longreadlen.html"  ><B  CLASS="function" >odbc_longreadlen()</B
+></A
+>.
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.odbc-result-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns the string contents of the field, <strong><code>FALSE</code></strong> on error, <strong><code>NULL</code></strong> for
-   NULL data, or <strong><code>TRUE</code></strong> for binary data.
-  </p>
- </div>
+
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.odbc-result-all.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.odbc-rollback.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >odbc_result_all</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.odbc.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >odbc_rollback</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.odbc-result-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   The first call to <span class="function"><strong>odbc_result()</strong></span> returns the
-   value of the third field in the current record of the query
-   result. The second function call to
-   <span class="function"><strong>odbc_result()</strong></span> returns the value of the field
-   whose field name is &quot;val&quot; in the current record of the query
-   result. An error occurs if a column number parameter for a field
-   is less than one or exceeds the number of columns (or fields) in
-   the current record. Similarly, an error occurs if a field with a
-   name that is not one of the fieldnames of the table(s) that
-   is(are) being queried.
-  </p>
-  <p class="para">
-   <div class="example" id="example-919">
-    <p><strong>Example #1 <span class="function"><strong>odbc_result()</strong></span> examples</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$item_3&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$Query_ID</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$item_val&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">odbc_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$Query_ID</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"val"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.odbc-result-notes">
-  <h3 class="title">Ê≥®Èáä</h3>
-  <p class="para">
-   Field indices start from 1. Regarding the way binary or
-   long column data is returned refer to
-   <span class="function"><a href="function.odbc-binmode.html" class="function">odbc_binmode()</a></span> and
-   <span class="function"><a href="function.odbc-longreadlen.html" class="function">odbc_longreadlen()</a></span>.
-   
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.odbc-result-all.html">odbc_result_all</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.odbc-rollback.html">odbc_rollback</a></div>
- <div class="up"><a href="ref.uodbc.html">ODBC ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

@@ -1,131 +1,123 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>äº¤æ¢æ•°ç»„ä¸­çš„é”®å’Œå€¼</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-filter.html">array_filter</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-intersect-assoc.html">array_intersect_assoc</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.array-flip" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">array_flip</h1>
-    <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">array_flip</span> &mdash; <span class="dc-title">äº¤æ¢æ•°ç»„ä¸­çš„é”®å’Œå€¼</span></p>
-
-   </div>
-   
- <div class="refsect1 description" id="refsect1-function.array-flip-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>array_flip</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$trans</code></span>
-   )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>array_flip()</strong></span> è¿”å›ä¸€ä¸ªåè½¬åçš„ <span class="type"><a href="language.types.array.html" class="type array">array</a></span>ï¼Œä¾‹å¦‚
-     <code class="parameter">trans</code> ä¸­çš„é”®åå˜æˆäº†å€¼ï¼Œè€Œ
-     <code class="parameter">trans</code> ä¸­çš„å€¼æˆäº†é”®åã€‚
-    </p>
-    <p class="para">
-     æ³¨æ„ <code class="parameter">trans</code> ä¸­çš„å€¼éœ€è¦èƒ½å¤Ÿä½œä¸ºåˆæ³•çš„é”®åï¼Œä¾‹å¦‚éœ€è¦æ˜¯
-     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> æˆ–è€… <span class="type"><a href="language.types.string.html" class="type string">string</a></span>ã€‚å¦‚æœå€¼çš„ç±»å‹ä¸å¯¹å°†å‘å‡ºä¸€ä¸ªè­¦å‘Šï¼Œå¹¶ä¸”æœ‰é—®é¢˜çš„é”®ï¼å€¼å¯¹<em class="emphasis">å°†ä¸ä¼šåè½¬</em>ã€‚
-    </p>
-    <p class="para">
-     å¦‚æœåŒä¸€ä¸ªå€¼å‡ºç°äº†å¤šæ¬¡ï¼Œåˆ™æœ€åä¸€ä¸ªé”®åå°†ä½œä¸ºå®ƒçš„å€¼ï¼Œæ‰€æœ‰å…¶å®ƒçš„éƒ½ä¸¢å¤±äº†ã€‚
-    </p>
-   </div>
-
-   
-   
- <div class="refsect1 parameters" id="refsect1-function.array-flip-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">trans</code></dt>
-
-     <dd>
-
-      <p class="para">
-       è¦äº¤æ¢é”®/å€¼å¯¹çš„æ•°ç»„ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.array-flip-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å›äº¤æ¢åçš„æ•°ç»„ï¼Œå¦‚æœå¤±è´¥è¿”å› <strong><code>NULL</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.array-flip-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5264">
-    <p><strong>Example #1 <span class="function"><strong>array_flip()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_flip</span><span style="color: #007700">(</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$original&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5265">
-     <p><strong>Example #2 <span class="function"><strong>array_flip()</strong></span> ä¾‹å­ï¼šå†²çª</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$trans&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_flip</span><span style="color: #007700">(</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     ç°åœ¨ <var class="varname"><var class="varname">$trans</var></var> æ˜¯ï¼š
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
+<HTML  ><HEAD  ><TITLE  >array_flip</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Êı×éº¯Êı¿â" HREF="ref.array.html"><LINK  REL="PREVIOUS" TITLE="array_filter" HREF="function.array-filter.html"><LINK  REL="NEXT" TITLE="array_intersect_assoc" HREF="function.array-intersect-assoc.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.array-filter.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.array-intersect-assoc.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.array-flip" ></A
+>array_flip</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN8389" ></A
+><P  >    (PHP 4 )</P
+>array_flip&nbsp;--&nbsp;½»»»Êı×éÖĞµÄ¼üºÍÖµ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN8392" ></A
+><H2  >ËµÃ÷</H2
+>array <B  CLASS="methodname" >array_flip</B
+> ( array trans)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >array_flip()</B
+> ·µ»ØÒ»¸ö·´×ªºóµÄ <A  HREF="language.types.array.html"  ><B  CLASS="type" >array</B
+></A
+>£¬ÀıÈç
+     <TT  CLASS="parameter" ><I  >trans</I
+></TT
+> ÖĞµÄ¼üÃû±ä³ÉÁËÖµ£¬¶ø
+     <TT  CLASS="parameter" ><I  >trans</I
+></TT
+> ÖĞµÄÖµ³ÉÁË¼üÃû¡£
+    </P
+><P  >&#13;     ×¢Òâ <TT  CLASS="parameter" ><I  >trans</I
+></TT
+> ÖĞµÄÖµĞèÒªÄÜ¹»×÷ÎªºÏ·¨µÄ¼üÃû£¬ÀıÈçĞèÒªÊÇ
+     <A  HREF="language.types.integer.html"  ><B  CLASS="type" >integer</B
+></A
+> »òÕß <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+>¡£Èç¹ûÖµµÄÀàĞÍ²»¶Ô½«·¢³öÒ»¸ö¾¯¸æ£¬²¢ÇÒÓĞÎÊÌâµÄ¼ü£¯Öµ¶Ô<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >½«²»»á·´×ª</I
+></SPAN
+>¡£
+    </P
+><P  >&#13;     Èç¹ûÍ¬Ò»¸öÖµ³öÏÖÁË¶à´Î£¬Ôò×îºóÒ»¸ö¼üÃû½«×÷ÎªËüµÄÖµ£¬ËùÓĞÆäËüµÄ¶¼¶ªÊ§ÁË¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >array_flip()</B
+> Èç¹ûÊ§°Ü·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8415" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >array_flip()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$trans </font><font  color="#007700">= </font><font  color="#0000BB">array_flip </font><font  color="#007700">(</font><font  color="#0000BB">$trans</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$original </font><font  color="#007700">= </font><font  color="#0000BB">strtr </font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">, </font><font  color="#0000BB">$trans</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN8420" ></A
+><P  ><B  >Àı×Ó 2. <B  CLASS="function" >array_flip()</B
+> Àı×Ó£º³åÍ»</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$trans </font><font  color="#007700">= array (</font><font  color="#DD0000">"a" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#DD0000">"b" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#DD0000">"c" </font><font  color="#007700">=&gt; </font><font  color="#0000BB">2</font><font  color="#007700">);<br  /></font><font  color="#0000BB">$trans </font><font  color="#007700">= </font><font  color="#0000BB">array_flip </font><font  color="#007700">(</font><font  color="#0000BB">$trans</font><font  color="#007700">);<br  /></font><font  color="#0000BB">print_r</font><font  color="#007700">(</font><font  color="#0000BB">$trans</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       ÏÖÔÚ <TT  CLASS="varname" >$trans</TT
+> ±ä³ÉÁË£º
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >Array
 (
-    [1] =&gt; b
-    [2] =&gt; c
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+    [1] =&#62; b
+    [2] =&#62; c
+)</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.array-values.html"  ><B  CLASS="function" >array_values()</B
+></A
+>£¬<A  HREF="function.array-keys.html"  ><B  CLASS="function" >array_keys()</B
+></A
+>
+     ºÍ <A  HREF="function.array-reverse.html"  ><B  CLASS="function" >array_reverse()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.array-filter.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.array-intersect-assoc.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >array_filter</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >array_intersect_assoc</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.array-flip-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.array-values.html" class="function" rel="rdfs-seeAlso">array_values()</a> - è¿”å›æ•°ç»„ä¸­æ‰€æœ‰çš„å€¼</span></li>
-    <li class="member"><span class="function"><a href="function.array-keys.html" class="function" rel="rdfs-seeAlso">array_keys()</a> - è¿”å›æ•°ç»„ä¸­éƒ¨åˆ†çš„æˆ–æ‰€æœ‰çš„é”®å</span></li>
-    <li class="member"><span class="function"><a href="function.array-reverse.html" class="function" rel="rdfs-seeAlso">array_reverse()</a> - è¿”å›ä¸€ä¸ªå•å…ƒé¡ºåºç›¸åçš„æ•°ç»„</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.array-filter.html">array_filter</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.array-intersect-assoc.html">array_intersect_assoc</a></div>
- <div class="up"><a href="ref.array.html">æ•°ç»„ å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

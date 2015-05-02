@@ -1,82 +1,66 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Cancel creating blob</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-blob-add.html">ibase_blob_add</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-blob-close.html">ibase_blob_close</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ibase-blob-cancel" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ibase_blob_cancel</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">ibase_blob_cancel</span> &mdash; <span class="dc-title">Cancel creating blob</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ibase-blob-cancel-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>ibase_blob_cancel</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$blob_handle</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   This function will discard a BLOB if it has not yet been closed by
-   <span class="function"><a href="function.ibase-blob-close.html" class="function">ibase_blob_close()</a></span>.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ibase-blob-cancel-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">blob_handle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       A BLOB handle opened with <span class="function"><a href="function.ibase-blob-create.html" class="function">ibase_blob_create()</a></span>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.ibase-blob-cancel-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ibase_blob_cancel</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="InterBase Functions" HREF="ref.ibase.html"><LINK  REL="PREVIOUS" TITLE="ibase_blob_add" HREF="function.ibase-blob-add.html"><LINK  REL="NEXT" TITLE="ibase_blob_close" HREF="function.ibase-blob-close.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ibase-blob-add.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ibase-blob-close.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ibase-blob-cancel" ></A
+>ibase_blob_cancel</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN44945" ></A
+><P  >    (PHP 3&#62;= 3.0.7, PHP 4 )</P
+>ibase_blob_cancel&nbsp;--&nbsp;
+     Cancel creating blob
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN44948" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >ibase_blob_cancel</B
+> ( resource blob_handle)<BR  ></BR
+><P  >&#13;     This function will discard a BLOB created by <B  CLASS="function" >ibase_create_blob()</B
+>
+     if it has not yet been closed by <A  HREF="function.ibase-blob-close.html"  ><B  CLASS="function" >ibase_blob_close()</B
+></A
+>.
+     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ibase-blob-close.html"  ><B  CLASS="function" >ibase_blob_close()</B
+></A
+>,
+     <A  HREF="function.ibase-blob-create.html"  ><B  CLASS="function" >ibase_blob_create()</B
+></A
+> and
+     <A  HREF="function.ibase-blob-import.html"  ><B  CLASS="function" >ibase_blob_import()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ibase-blob-add.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ibase-blob-close.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ibase_blob_add</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ibase.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ibase_blob_close</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.ibase-blob-cancel-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-blob-close.html" class="function" rel="rdfs-seeAlso">ibase_blob_close()</a> - Close blob</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-create.html" class="function" rel="rdfs-seeAlso">ibase_blob_create()</a> - Create a new blob for adding data</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-blob-import.html" class="function" rel="rdfs-seeAlso">ibase_blob_import()</a> - Create blob, copy file in it, and close it</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ibase-blob-add.html">ibase_blob_add</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ibase-blob-close.html">ibase_blob_close</a></div>
- <div class="up"><a href="ref.ibase.html">Firebird/InterBase å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

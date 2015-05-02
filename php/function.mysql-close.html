@@ -1,127 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å…³é—­ MySQL è¿æ¥</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-client-encoding.html">mysql_client_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-connect.html">mysql_connect</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mysql-close" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mysql_close</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_close</span> &mdash; <span class="dc-title">å…³é—­ MySQL è¿æ¥</span></p>
-
- </div>
-
- <div id="function.mysql-close-refsynopsisdiv">
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">æœ¬æ‰©å±•è‡ª PHP 5.5.0
-èµ·å·²åºŸå¼ƒï¼Œå¹¶åœ¨å°†æ¥ä¼šè¢«ç§»é™¤ã€‚åº”ä½¿ç”¨ <a href="book.mysqli.html" class="link">MySQLi</a> 
-æˆ– <a href="ref.pdo-mysql.html" class="link">PDO_MySQL</a> æ‰©å±•æ¥æ›¿æ¢ä¹‹ã€‚å‚è§
-<a href="mysqlinfo.api.choosing.html" class="link">MySQLï¼šé€‰æ‹© API</a> æŒ‡å—ä»¥åŠ<a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">ç›¸å…³ FAQ</a> ä»¥è·å–æ›´å¤šä¿¡æ¯ã€‚ç”¨ä»¥æ›¿ä»£æœ¬å‡½æ•°çš„æœ‰ï¼š</p>
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="mysqli.close.html" class="function">mysqli_close()</a></span></li>
-    <li class="member">PDO: ä¸º PDO å¯¹è±¡è®¾ç½®ä¸€ä¸ª <strong><code>NULL</code></strong> å€¼ </li>
-   </ul>
-  </div>
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.mysql-close-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>mysql_close</strong></span>
-    ([ <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code><span class="initializer"> = NULL</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>mysql_close()</strong></span> å…³é—­æŒ‡å®šçš„è¿æ¥æ ‡è¯†æ‰€å…³è”çš„åˆ°
-   MySQL æœåŠ¡å™¨çš„éæŒä¹…è¿æ¥ã€‚å¦‚æœæ²¡æœ‰æŒ‡å®š
-   <code class="parameter">link_identifier</code>ï¼Œåˆ™å…³é—­ä¸Šä¸€ä¸ªæ‰“å¼€çš„è¿æ¥ã€‚
-  </p>
-  <p class="para">
-   é€šå¸¸ä¸éœ€è¦ä½¿ç”¨
-   <span class="function"><strong>mysql_close()</strong></span>ï¼Œå› ä¸ºå·²æ‰“å¼€çš„éæŒä¹…è¿æ¥ä¼šåœ¨è„šæœ¬æ‰§è¡Œå®Œæ¯•åè‡ªåŠ¨å…³é—­ã€‚å‚è§<a href="language.types.resource.html#language.types.resource.self-destruct" class="link">é‡Šæ”¾èµ„æº</a>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mysql-close-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    <dt>
-<code class="parameter">
-link_identifier</code></dt>
-<dd>
-<p class="para"> MySQL è¿æ¥. å¦‚æœè¯¥è¿æ¥æ ‡è¯†ç¬¦æœªç»™å‡º, å°†ä½¿ç”¨æœ€è¿‘ä¸€æ¬¡<span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span>å»ºç«‹çš„è¿æ¥. 
-å¦‚æœæ²¡æœ‰æ‰¾åˆ°å¯ä½¿ç”¨çš„è¿æ¥, å°†äº§ç”Ÿä¸€ä¸ª <strong><code>E_WARNING</code></strong> é”™è¯¯.</p></dd>
-
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mysql-close-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mysql-close-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-1689">
-    <p><strong>Example #1 <span class="function"><strong>mysql_close()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$link</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br />}<br />echo&nbsp;</span><span style="color: #DD0000">'Connected&nbsp;successfully'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">mysql_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>ä»¥ä¸Šä¾‹ç¨‹ä¼šè¾“å‡ºï¼š</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Connected successfully
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mysql_close</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="MySQL º¯Êı¿â" HREF="ref.mysql.html"><LINK  REL="PREVIOUS" TITLE="mysql_client_encoding" HREF="function.mysql-client-encoding.html"><LINK  REL="NEXT" TITLE="mysql_connect" HREF="function.mysql-connect.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mysql-client-encoding.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mysql-connect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mysql-close" ></A
+>mysql_close</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN65167" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>mysql_close&nbsp;--&nbsp;¹Ø±Õ MySQL Á¬½Ó</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN65170" ></A
+><H2  >ËµÃ÷</H2
+>bool <B  CLASS="methodname" >mysql_close</B
+> ( [resource link_identifier])<BR  ></BR
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <B  CLASS="function" >mysql_close()</B
+> ¹Ø±ÕÖ¸¶¨µÄÁ¬½Ó±êÊ¶Ëù¹ØÁªµÄµ½
+     MySQL ·şÎñÆ÷µÄÁ¬½Ó¡£Èç¹ûÃ»ÓĞÖ¸¶¨
+     <TT  CLASS="parameter" ><I  >link_identifier</I
+></TT
+>£¬Ôò¹Ø±ÕÉÏÒ»¸ö´ò¿ªµÄÁ¬½Ó¡£
+    </P
+><P  >&#13;     Í¨³£²»ĞèÒªÊ¹ÓÃ
+     <B  CLASS="function" >mysql_close()</B
+>£¬ÒòÎªÒÑ´ò¿ªµÄ·Ç³Ö¾ÃÁ¬½Ó»áÔÚ½Å±¾Ö´ĞĞÍê±Ïºó×Ô¶¯¹Ø±Õ¡£²Î¼û<A  HREF="language.types.resource.html#language.types.resource.self-destruct"  >ÊÍ·Å×ÊÔ´</A
+>¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <B  CLASS="function" >mysql_close()</B
+> ²»»á¹Ø±ÕÓÉ
+      <A  HREF="function.mysql-pconnect.html"  ><B  CLASS="function" >mysql_pconnect()</B
+></A
+> ½¨Á¢µÄ³Ö¾ÃÁ¬½Ó¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN65192" ></A
+><P  ><B  >Àı×Ó 1. MySQL ¹Ø±ÕÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$link </font><font  color="#007700">= </font><font  color="#0000BB">mysql_connect</font><font  color="#007700">(</font><font  color="#DD0000">"localhost"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_user"</font><font  color="#007700">, </font><font  color="#DD0000">"mysql_password"</font><font  color="#007700">)<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or die(</font><font  color="#DD0000">"Could not connect: " </font><font  color="#007700">. </font><font  color="#0000BB">mysql_error</font><font  color="#007700">());<br  />&nbsp;&nbsp;&nbsp;&nbsp;print (</font><font  color="#DD0000">"Connected successfully"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mysql_close</font><font  color="#007700">(</font><font  color="#0000BB">$link</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.mysql-connect.html"  ><B  CLASS="function" >mysql_connect()</B
+></A
+> ºÍ
+     <A  HREF="function.mysql-pconnect.html"  ><B  CLASS="function" >mysql_pconnect()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mysql-client-encoding.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mysql-connect.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mysql_client_encoding</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mysql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mysql_connect</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.mysql-close-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>mysql_close()</strong></span> ä¸ä¼šå…³é—­ç”±
-    <span class="function"><a href="function.mysql-pconnect.html" class="function">mysql_pconnect()</a></span> å»ºç«‹çš„æŒä¹…è¿æ¥ã€‚
-   </p>
-  </p></blockquote>
- </div>
-
-
-  <div class="refsect1 seealso" id="refsect1-function.mysql-close-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mysql-connect.html" class="function" rel="rdfs-seeAlso">mysql_connect()</a> - æ‰“å¼€ä¸€ä¸ªåˆ° MySQL æœåŠ¡å™¨çš„è¿æ¥</span></li>
-    <li class="member"><span class="function"><a href="function.mysql-free-result.html" class="function" rel="rdfs-seeAlso">mysql_free_result()</a> - é‡Šæ”¾ç»“æœå†…å­˜</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mysql-client-encoding.html">mysql_client_encoding</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mysql-connect.html">mysql_connect</a></div>
- <div class="up"><a href="ref.mysql.html">MySQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

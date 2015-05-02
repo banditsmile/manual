@@ -1,167 +1,132 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>打开算法和模式对应的模块</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-module-is-block-mode.html">mcrypt_module_is_block_mode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-module-self-test.html">mcrypt_module_self_test</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.mcrypt-module-open" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">mcrypt_module_open</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5)</p><p class="refpurpose"><span class="refname">mcrypt_module_open</span> &mdash; <span class="dc-title">打开算法和模式对应的模块</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.mcrypt-module-open-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>mcrypt_module_open</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$algorithm</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$algorithm_directory</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode_directory</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   本函数打开指定算法和模式对应的模块。
-   算法名称可以是字符串，例如 <em>&quot;twofish&quot;</em>，
-   也可以是 <strong><code>MCRYPT_ciphername</code></strong> 常量。
-   调用 <span class="function"><a href="function.mcrypt-module-close.html" class="function">mcrypt_module_close()</a></span> 函数可以关闭模块。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.mcrypt-module-open-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">algorithm</code></dt>
-
-     <dd>
-
-      <p class="para"><strong><code>MCRYPT_ciphername</code></strong> 常量中的一个，或者是字符串值的算法名称。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">algorithm_directory</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">algorithm_directory</code> 参数指示加密模块的位置。
-       如果你提供此参数，则使用你指定的值。
-       如果将此参数设置为空字符串（<em>&quot;&quot;</em>），将使用
-       <var class="filename">php.ini</var> 中的 <em>mcrypt.algorithms_dir</em> 。
-       如果不指定此参数，则使用 libmcrypt 的编译路径
-       （通常是 <var class="filename">/usr/local/lib/libmcrypt</var>）。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode</code></dt>
-
-     <dd>
-
-      <p class="para"><strong><code>MCRYPT_MODE_modename</code></strong> 常量中的一个，或以下字符串中的一个：&quot;ecb&quot;，&quot;cbc&quot;，&quot;cfb&quot;，&quot;ofb&quot;，&quot;nofb&quot; 和 &quot;stream&quot;。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">mode_directory</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">algorithm_directory</code> 参数指示加密模式的位置。
-       如果你提供此参数，则使用你指定的值。
-       如果将此参数设置为空字符串（<em>&quot;&quot;</em>），将使用
-       <var class="filename">php.ini</var> 中的 <em>mcrypt.modes_dir</em> 。
-       如果不指定此参数，则使用 libmcrypt 的编译路径
-       （通常是 <var class="filename">/usr/local/lib/libmcrypt</var>）。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-module-open-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功则返回加密描述符，如果发生错误则返回 <strong><code>FALSE</code></strong>。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.mcrypt-module-open-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-862">
-    <p><strong>Example #1 <span class="function"><strong>mcrypt_module_open()</strong></span> 例程</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$td&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_module_open</span><span style="color: #007700">(</span><span style="color: #0000BB">MCRYPT_DES</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">MCRYPT_MODE_ECB</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/usr/lib/mcrypt-modes'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$td&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_module_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'rijndael-256'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ofb'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   例程中的第一行从默认目录打开 <em>DES</em> 加密算法，
-   从 <var class="filename">/usr/lib/mcrypt-modes</var> 目录打开
-   <em>ECB</em> 模式。
-   第二个示例中，使用字符串形式表示算法和模式，
-   这种形式仅适用于 libmcrypt 2.4.x 或 2.5.x 版本。
-  </p>
-
-  <p class="para">
-   <div class="example" id="example-863">
-    <p><strong>Example #2 在加密中使用 <span class="function"><strong>mcrypt_module_open()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;打开加密算法和模式&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$td&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_module_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'rijndael-256'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ofb'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;创建初始向量，并且检测密钥长度。&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Windows&nbsp;平台请使用&nbsp;MCRYPT_RAND。&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">mcrypt_enc_get_iv_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">MCRYPT_DEV_RANDOM</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ks&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_enc_get_key_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;创建密钥&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #0000BB">md5</span><span style="color: #007700">(</span><span style="color: #DD0000">'very&nbsp;secret&nbsp;key'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ks</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;初始化加密&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_init</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;加密数据&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$encrypted&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_generic</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;very&nbsp;important&nbsp;data'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;结束加密，执行清理工作&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_deinit</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;初始化解密模块&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_init</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iv</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;解密数据&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$decrypted&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mdecrypt_generic</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$encrypted</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;结束解密，执行清理工作，并且关闭模块&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_generic_deinit</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">mcrypt_module_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$td</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;显示文本&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">trim</span><span style="color: #007700">(</span><span style="color: #0000BB">$decrypted</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >mcrypt_module_open</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Mcrypt Encryption Functions" HREF="ref.mcrypt.html"><LINK  REL="PREVIOUS" TITLE="mcrypt_module_is_block_mode" HREF="function.mcrypt-module-is-block-mode.html"><LINK  REL="NEXT" TITLE="mcrypt_module_self_test" HREF="function.mcrypt-module-self-test.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.mcrypt-module-is-block-mode.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.mcrypt-module-self-test.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.mcrypt-module-open" ></A
+>mcrypt_module_open</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN54908" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>mcrypt_module_open&nbsp;--&nbsp;Opens the module of the algorithm and the mode to be used</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN54911" ></A
+><H2  >Description</H2
+>resource <B  CLASS="methodname" >mcrypt_module_open</B
+> ( string algorithm, string algorithm_directory, string mode, string mode_directory)<BR  ></BR
+><P  >&#13;     This function opens the module of the algorithm and the mode to be used.
+     The name of the algorithm is specified in algorithm, e.g. "twofish" or is
+     one of the MCRYPT_ciphername constants.  The module is closed by calling
+     <A  HREF="function.mcrypt-module-close.html"  ><B  CLASS="function" >mcrypt_module_close()</B
+></A
+>. Normally it returns an
+     encryption descriptor, or <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> on error.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >algorithm_directory</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >mode_directory</I
+></TT
+> are used to locate the encryption
+     modules. When you supply a directory name, it is used.  When you set one
+     of these to the empty string (""), the value set by the
+     <TT  CLASS="parameter" ><I  >mcrypt.algorithms_dir</I
+></TT
+> or
+     <TT  CLASS="parameter" ><I  >mcrypt.modes_dir</I
+></TT
+> ini-directive is used.  When
+     these are not set, the default directories that are used are the ones
+     that were compiled in into libmcrypt (usually /usr/local/lib/libmcrypt).
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN54937" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >mcrypt_module_open()</B
+> examples</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$td </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_module_open</font><font  color="#007700">(</font><font  color="#0000BB">MCRYPT_DES</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">MCRYPT_MODE_ECB</font><font  color="#007700">, </font><font  color="#DD0000">'/usr/lib/mcrypt-modes'</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$td </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_module_open</font><font  color="#007700">(</font><font  color="#DD0000">'rijndael-256'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#DD0000">'ofb'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     The first line in the example above will try to open the DES cipher from
+     the default directory and the EBC mode from the directory
+     <TT  CLASS="filename" >/usr/lib/mcrypt-modes</TT
+>. The second example uses
+     strings as name for the cipher and mode, this only works when the
+     extension is linked against libmcrypt 2.4.x or 2.5.x.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN54944" ></A
+><P  ><B  >���� 2. Using <B  CLASS="function" >mcrypt_module_open()</B
+> in encryption</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Open the cipher */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$td </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_module_open</font><font  color="#007700">(</font><font  color="#DD0000">'rijndael-256'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#DD0000">'ofb'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Create the IV and determine the keysize length, used MCRYPT_RAND<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* on Windows instead */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$iv </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_create_iv</font><font  color="#007700">(</font><font  color="#0000BB">mcrypt_enc_get_iv_size</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">), </font><font  color="#0000BB">MCRYPT_DEV_RANDOM</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ks </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_enc_get_key_size</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Create key */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$key </font><font  color="#007700">= </font><font  color="#0000BB">substr</font><font  color="#007700">(</font><font  color="#0000BB">md5</font><font  color="#007700">(</font><font  color="#DD0000">'very secret key'</font><font  color="#007700">), </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#0000BB">$ks</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Intialize encryption */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_init</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$iv</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Encrypt data */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$encrypted </font><font  color="#007700">= </font><font  color="#0000BB">mcrypt_generic</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#DD0000">'This is very important data'</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Terminate encryption handler */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_deinit</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Initialize encryption module for decryption */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_init</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$key</font><font  color="#007700">, </font><font  color="#0000BB">$iv</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Decrypt encrypted string */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$decrypted </font><font  color="#007700">= </font><font  color="#0000BB">mdecrypt_generic</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">, </font><font  color="#0000BB">$encrypted</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Terminate decryption handle and close module */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_generic_deinit</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">mcrypt_module_close</font><font  color="#007700">(</font><font  color="#0000BB">$td</font><font  color="#007700">);<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">/* Show string */<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#0000BB">trim</font><font  color="#007700">(</font><font  color="#0000BB">$decrypted</font><font  color="#007700">) . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     The first line in the example above will try to open the DES cipher from
+     the default directory and the EBC mode from the directory
+     <TT  CLASS="filename" >/usr/lib/mcrypt-modes</TT
+>. The second example uses
+     strings as name for the cipher and mode, this only works when the
+     extension is linked against libmcrypt 2.4.x or 2.5.x.
+    </P
+><P  >&#13;     See also 
+     <A  HREF="function.mcrypt-module-close.html"  ><B  CLASS="function" >mcrypt_module_close()</B
+></A
+>,
+     <A  HREF="function.mcrypt-generic.html"  ><B  CLASS="function" >mcrypt_generic()</B
+></A
+>,
+     <A  HREF="function.mdecrypt-generic.html"  ><B  CLASS="function" >mdecrypt_generic()</B
+></A
+>,
+     <A  HREF="function.mcrypt-generic-init.html"  ><B  CLASS="function" >mcrypt_generic_init()</B
+></A
+>, and
+     <A  HREF="function.mcrypt-generic-deinit.html"  ><B  CLASS="function" >mcrypt_generic_deinit()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.mcrypt-module-is-block-mode.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.mcrypt-module-self-test.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >mcrypt_module_is_block_mode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.mcrypt.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >mcrypt_module_self_test</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.mcrypt-module-open-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mcrypt-module-close.html" class="function" rel="rdfs-seeAlso">mcrypt_module_close()</a> - 关闭加密模块</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic.html" class="function" rel="rdfs-seeAlso">mcrypt_generic()</a> - 加密数据</span></li>
-    <li class="member"><span class="function"><a href="function.mdecrypt-generic.html" class="function" rel="rdfs-seeAlso">mdecrypt_generic()</a> - 解密数据</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic-init.html" class="function" rel="rdfs-seeAlso">mcrypt_generic_init()</a> - 初始化加密所需的缓冲区</span></li>
-    <li class="member"><span class="function"><a href="function.mcrypt-generic-deinit.html" class="function" rel="rdfs-seeAlso">mcrypt_generic_deinit()</a> - 对加密模块进行清理工作</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.mcrypt-module-is-block-mode.html">mcrypt_module_is_block_mode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.mcrypt-module-self-test.html">mcrypt_module_self_test</a></div>
- <div class="up"><a href="ref.mcrypt.html">Mcrypt 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

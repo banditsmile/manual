@@ -1,55 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>æµ‹è¯•å­—æ®µæ˜¯å¦ä¸º NULL</title>
+<HTML  ><HEAD  ><TITLE  >pg_field_is_null</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="PostgreSQL Êı¾İ¿âº¯Êı¿â" HREF="ref.pgsql.html"><LINK  REL="PREVIOUS" TITLE="pg_fetch_row" HREF="function.pg-fetch-row.html"><LINK  REL="NEXT" TITLE="pg_field_name" HREF="function.pg-field-name.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.pg-fetch-row.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pg-field-name.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pg-field-is-null" ></A
+>pg_field_is_null</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN91566" ></A
+><P  >    (PHP 4 &#62;= 4.2.0)</P
+>pg_field_is_null&nbsp;--&nbsp;²âÊÔ×Ö¶ÎÊÇ·ñÎª <TT  CLASS="constant" ><B  >NULL</B
+></TT
+></DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN91570" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >pg_field_is_null</B
+> ( resource result, int row, mixed field)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pg_field_is_null()</B
+> ²âÊÔ×Ö¶ÎÊÇ·ñÎª <TT  CLASS="constant" ><B  >NULL</B
+></TT
+>¡£Èç¹û×Ö¶ÎÔÚ¸ø³öµÄĞĞÖĞÎª <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> Ôò·µ»Ø 1£¬Èç¹û×Ö¶ÎÔÚ¸ø³öµÄĞĞÖĞ²»ÊÇ <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> Ôò·µ»Ø 0¡£×Ö¶Î¿ÉÒÔÒÔÁĞµÄË÷ÒıºÅ£¨Êı×Ö£©·½Ê½¸ø³ö£¬Ò²¿ÉÒÔÒÔ×Ö¶ÎÃû£¨×Ö·û´®£©·½Ê½¸ø³ö¡£ĞĞµÄ±àºÅ´Ó 0 ¿ªÊ¼¡£
+     </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN91590" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >pg_field_is_null()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn </font><font  color="#007700">= </font><font  color="#0000BB">pg_connect</font><font  color="#007700">(</font><font  color="#DD0000">"dbname=publisher"</font><font  color="#007700">) or die (</font><font  color="#DD0000">"Could not connect"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$res </font><font  color="#007700">= </font><font  color="#0000BB">pg_query</font><font  color="#007700">(</font><font  color="#0000BB">$dbconn</font><font  color="#007700">, </font><font  color="#DD0000">"select * from authors where author = 'Orwell'"</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">$res</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">pg_field_is_null</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#DD0000">"year"</font><font  color="#007700">) == </font><font  color="#0000BB">1</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"The value of the field year is null.\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (</font><font  color="#0000BB">pg_field_is_null</font><font  color="#007700">(</font><font  color="#0000BB">$res</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">, </font><font  color="#DD0000">"year"</font><font  color="#007700">) == </font><font  color="#0000BB">0</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"The value of the field year is not null.\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br  />&nbsp;&nbsp;&nbsp;}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ±¾º¯ÊıÒÔÇ°µÄÃû×ÖÎª <TT  CLASS="literal" >pg_fieldisnull()</TT
+>¡£
+     </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.pg-fetch-row.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pg-field-name.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >pg_fetch_row</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.pgsql.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pg_field_name</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-fetch-row.html">pg_fetch_row</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-field-name.html">pg_field_name</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-field-is-null" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">pg_field_is_null</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5)</p><p class="refpurpose"><span class="refname">pg_field_is_null</span> &mdash; <span class="dc-title">æµ‹è¯•å­—æ®µæ˜¯å¦ä¸º <strong><code>NULL</code></strong></span></p>
 
-   </div>
-   <div class="refsect1 unknown-seealsp" id="refsect1-function.pg-field-is-null-unknown-seealsp">
-    <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">int</span> <span class="methodname"><strong>pg_field_is_null</strong></span>
-       ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-      , <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>
-      , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$field</code></span>
-      )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>pg_field_is_null()</strong></span> æµ‹è¯•å­—æ®µæ˜¯å¦ä¸º <strong><code>NULL</code></strong>ã€‚å¦‚æœå­—æ®µåœ¨ç»™å‡ºçš„è¡Œä¸­ä¸º <strong><code>NULL</code></strong> åˆ™è¿”å› 1ï¼Œå¦‚æœå­—æ®µåœ¨ç»™å‡ºçš„è¡Œä¸­ä¸æ˜¯ <strong><code>NULL</code></strong> åˆ™è¿”å› 0ã€‚å­—æ®µå¯ä»¥ä»¥åˆ—çš„ç´¢å¼•å·ï¼ˆæ•°å­—ï¼‰æ–¹å¼ç»™å‡ºï¼Œä¹Ÿå¯ä»¥ä»¥å­—æ®µåï¼ˆå­—ç¬¦ä¸²ï¼‰æ–¹å¼ç»™å‡ºã€‚è¡Œçš„ç¼–å·ä» 0 å¼€å§‹ã€‚
-     </p> 
-     <p class="para">
-     <div class="example" id="example-2194">
-      <p><strong>Example #1 <span class="function"><strong>pg_field_is_null()</strong></span> ä¾‹å­</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">)&nbsp;or&nbsp;die&nbsp;(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;*&nbsp;from&nbsp;authors&nbsp;where&nbsp;author&nbsp;=&nbsp;'Orwell'"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">pg_field_is_null</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"year"</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;value&nbsp;of&nbsp;the&nbsp;field&nbsp;year&nbsp;is&nbsp;null.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">pg_field_is_null</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"year"</span><span style="color: #007700">)&nbsp;==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;value&nbsp;of&nbsp;the&nbsp;field&nbsp;year&nbsp;is&nbsp;not&nbsp;null.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <p class="para">
-      æœ¬å‡½æ•°ä»¥å‰çš„åå­—ä¸º <em>pg_fieldisnull()</em>ã€‚
-     </p>
-    </p></blockquote>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-fetch-row.html">pg_fetch_row</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-field-name.html">pg_field_name</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

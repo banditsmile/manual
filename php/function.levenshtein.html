@@ -1,170 +1,147 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>计算两个字符串之间的编辑距离</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.lcfirst.html">lcfirst</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.localeconv.html">localeconv</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.levenshtein" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">levenshtein</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5)</p><p class="refpurpose"><span class="refname">levenshtein</span> &mdash; <span class="dc-title">计算两个字符串之间的编辑距离</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.levenshtein-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>levenshtein</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>
-   )</div>
-
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>levenshtein</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$cost_ins</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$cost_rep</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$cost_del</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   编辑距离，是指两个字串之间，通过替换、插入、删除等操作将字符串<code class="parameter">str1</code>转换成<code class="parameter">str2</code>所需要操作的最少字符数量。
-   该算法的复杂度是 <em>O(m*n)</em>，其中 <em>n</em> 和 <em>m</em> 分别是<code class="parameter">str1</code> 和<code class="parameter">str2</code>的长度 （当和算法复杂度为O(max(n,m)**3)的<span class="function"><a href="function.similar-text.html" class="function">similar_text()</a></span>相比时，此函数还是相当不错的，尽管仍然很耗时。）。
-  </p>
-  <p class="para">
-   在最简单的形式中，该函数只以两个字符串作为参数，并计算通过插入、替换和删除等操作将<code class="parameter">str1</code>转换成<code class="parameter">str2</code>所需要的操作次数。
-  </p>
-  <p class="para">
-   第二种变体将采用三个额外的参数来定义插入、替换和删除操作的次数。此变体比第一种更加通用和适应，但效率不高。
-  </p>
- </div>
-
-
-<div class="refsect1 parameters" id="refsect1-function.levenshtein-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str1</code></dt>
-
-     <dd>
-
-      <p class="para">
-       求编辑距离中的其中一个字符串
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">str2</code></dt>
-
-     <dd>
-
-      <p class="para">
-       求编辑距离中的另一个字符串
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">cost_ins</code></dt>
-
-     <dd>
-
-      <p class="para">
-       定义插入次数
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">cost_rep</code></dt>
-
-     <dd>
-
-      <p class="para">
-       定义替换次数
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">cost_del</code></dt>
-
-     <dd>
-
-      <p class="para">
-       定义删除次数
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.levenshtein-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   此函数返回两个字符串参数之间的编辑距离，如果其中一个字符串参数长度大于限制的255个字符时，返回-1。
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.levenshtein-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5157">
-    <p><strong>Example #1 <span class="function"><strong>levenshtein()</strong></span> 例子：</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;输入拼写错误的单词<br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'carrrot'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;要检查的单词数组<br /></span><span style="color: #0000BB">$words&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">,</span><span style="color: #DD0000">'pineapple'</span><span style="color: #007700">,</span><span style="color: #DD0000">'banana'</span><span style="color: #007700">,</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'radish'</span><span style="color: #007700">,</span><span style="color: #DD0000">'carrot'</span><span style="color: #007700">,</span><span style="color: #DD0000">'pea'</span><span style="color: #007700">,</span><span style="color: #DD0000">'bean'</span><span style="color: #007700">,</span><span style="color: #DD0000">'potato'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;目前没有找到最短距离<br /></span><span style="color: #0000BB">$shortest&nbsp;</span><span style="color: #007700">=&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;遍历单词来找到最接近的<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$words&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$word</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;计算输入单词与当前单词的距离<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$lev&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">levenshtein</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$word</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;检查完全的匹配<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$lev&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;最接近的单词是这个（完全匹配）<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$closest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$word</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$shortest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;退出循环；我们已经找到一个完全的匹配<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">break;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;如果此次距离比上次找到的要短<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;或者还没找到接近的单词<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$lev&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">$shortest&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">$shortest&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;设置最接近的匹配以及它的最短距离<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$closest&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$word</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$shortest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$lev</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Input&nbsp;word:&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />if&nbsp;(</span><span style="color: #0000BB">$shortest&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Exact&nbsp;match&nbsp;found:&nbsp;</span><span style="color: #0000BB">$closest</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Did&nbsp;you&nbsp;mean:&nbsp;</span><span style="color: #0000BB">$closest</span><span style="color: #DD0000">?\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Input word: carrrot
-Did you mean: carrot?
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >levenshtein</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="join" HREF="function.join.html"><LINK  REL="NEXT" TITLE="localeconv" HREF="function.localeconv.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.join.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.localeconv.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.levenshtein" ></A
+>levenshtein</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN108612" ></A
+><P  >    (PHP 3&#62;= 3.0.17, PHP 4 &#62;= 4.0.1)</P
+>levenshtein&nbsp;--&nbsp;
+     Calculate Levenshtein distance between two strings
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN108615" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >levenshtein</B
+> ( string str1, string str2)<BR  ></BR
+>int <B  CLASS="methodname" >levenshtein</B
+> ( string str1, string str2, int cost_ins, int cost_rep, int cost_del)<BR  ></BR
+>int <B  CLASS="methodname" >levenshtein</B
+> ( string str1, string str2, function cost)<BR  ></BR
+><P  >&#13;     This function returns the Levenshtein-Distance between the
+     two argument strings or -1, if one of the argument strings
+     is longer than the limit of 255 characters (255 should be
+     more than enough for name or dictionary comparison, and 
+     nobody serious would be doing genetic analysis with PHP).
+    </P
+><P  >&#13;     The Levenshtein distance is defined as the minimal number of
+     characters you have to replace, insert or delete to transform
+     <TT  CLASS="parameter" ><I  >str1</I
+></TT
+> into <TT  CLASS="parameter" ><I  >str2</I
+></TT
+>.
+     The complexity of the algorithm is <TT  CLASS="literal" >O(m*n)</TT
+>,
+     where <TT  CLASS="literal" >n</TT
+> and <TT  CLASS="literal" >m</TT
+> are the
+     length of <TT  CLASS="parameter" ><I  >str1</I
+></TT
+> and
+     <TT  CLASS="parameter" ><I  >str2</I
+></TT
+> (rather good when compared to
+     <A  HREF="function.similar-text.html"  ><B  CLASS="function" >similar_text()</B
+></A
+>, which is O(max(n,m)**3),
+     but still expensive).
+    </P
+><P  >&#13;     In its simplest form the function will take only the two
+     strings as parameter and will calculate just the number of
+     insert, replace and delete operations needed to transform
+     <TT  CLASS="parameter" ><I  >str1</I
+></TT
+> into <TT  CLASS="parameter" ><I  >str2</I
+></TT
+>.
+    </P
+><P  > 
+     A second variant will take three additional parameters that
+     define the cost of insert, replace and delete operations.  This
+     is more general and adaptive than variant one, but not as
+     efficient.
+    </P
+><P  > 
+     The third variant (which is not implemented yet) will be the most
+     general and adaptive, but also the slowest alternative.  It will
+     call a user-supplied function that will determine the cost for
+     every possible operation.
+    </P
+><P  >&#13;     The user-supplied function will be called with the following
+     arguments:
+     <P  ></P
+><UL  ><LI  ><P  >&#13;        operation to apply: 'I', 'R' or 'D'
+       </P
+></LI
+><LI  ><P  >&#13;        actual character in string 1
+       </P
+></LI
+><LI  ><P  >&#13;        actual character in string 2
+       </P
+></LI
+><LI  ><P  >&#13;        position in string 1
+       </P
+></LI
+><LI  ><P  >&#13;        position in string 2
+       </P
+></LI
+><LI  ><P  >&#13;        remaining characters in string 1
+       </P
+></LI
+><LI  ><P  >&#13;        remaining characters in string 2
+       </P
+></LI
+></UL
+>
+     The user-supplied function has to return a positive integer
+     describing the cost for this particular operation, but it may
+     decide to use only some of the supplied arguments.
+    </P
+><P  > 
+     The user-supplied function approach offers the possibility to
+     take into account the relevance of and/or difference between
+     certain symbols (characters) or even the context those symbols
+     appear in to determine the cost of insert, replace and delete
+     operations, but at the cost of losing all optimizations done
+     regarding cpu register utilization and cache misses that have
+     been worked into the other two variants.
+    </P
+><P  >&#13;     See also <A  HREF="function.soundex.html"  ><B  CLASS="function" >soundex()</B
+></A
+>,
+     <A  HREF="function.similar-text.html"  ><B  CLASS="function" >similar_text()</B
+></A
+>, and
+     <A  HREF="function.metaphone.html"  ><B  CLASS="function" >metaphone()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.join.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.localeconv.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >join</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >localeconv</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.levenshtein-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.soundex.html" class="function" rel="rdfs-seeAlso">soundex()</a> - Calculate the soundex key of a string</span></li>
-    <li class="member"><span class="function"><a href="function.similar-text.html" class="function" rel="rdfs-seeAlso">similar_text()</a> - 计算两个字符串的相似度</span></li>
-    <li class="member"><span class="function"><a href="function.metaphone.html" class="function" rel="rdfs-seeAlso">metaphone()</a> - Calculate the metaphone key of a string</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.lcfirst.html">lcfirst</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.localeconv.html">localeconv</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

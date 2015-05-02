@@ -1,236 +1,384 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>PHP å’Œ HTML</title>
+<HTML  ><HEAD  ><TITLE  >PHP ºÍ HTML</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FAQ: ³£¼ûÎÊÌâ" HREF="faq.html"><LINK  REL="PREVIOUS" TITLE="Ê¹ÓÃ PHP" HREF="faq.using.html"><LINK  REL="NEXT" TITLE="PHP ºÍ COM" HREF="faq.com.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="chapter" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="faq.using.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="faq.com.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="chapter" ><H1  ><A  NAME="faq.html" >ÕÂ 51. PHP ºÍ HTML</A
+></H1
+><P  >&#13;   PHP ºÍ HTML ÓĞºÜ¶àÏà»¥×÷ÓÃ£ºPHP ÄÜÉú³É HTML£¬HTML ¿ÉÒÔÏò PHP
+   ´«µİĞÅÏ¢¡£ÔÚÔÄ¶ÁÕâĞ©³£¼ûÎÊÌâÖ®Ç°£¬ÏÈÑ§»áÔõÑù<A  HREF="language.variables.external.html"  >´Ó PHP
+   Ö®ÍâÈ¡µÃ±äÁ¿</A
+>ºÜÖØÒª¡£´ËÖ÷ÌâµÄÊÖ²áÒ³Ò²°üÀ¨ºÜ¶àÀı×Ó¡£»¹Òª×ĞÏ¸ÁôÒâ
+   <TT  CLASS="literal" >register_globals</TT
+> ¶ÔÄãÒâÎ¶×ÅÊ²Ã´¡£
+  </P
+><DIV  CLASS="qandaset" ><DL  ><DT  >1. <A  HREF="faq.html.html#faq.html.encoding"  >&#13;      µ±ÎÒÍ¨¹ı±íµ¥£¯URL ´«ÖµÊ±ĞèÒªÓÃÊ²Ã´±àÂë£¯½âÂë·½·¨£¿
+     </A
+></DT
+><DT  >2. <A  HREF="faq.html.html#faq.html.form-image"  >&#13;      ÎÒÔÚÊÔÓÃ &#60;input type="image"&#62; ±ê¼Ç£¬µ«ÊÇÃ»ÓĞ <TT  CLASS="varname" >$foo.x</TT
+> ºÍ
+      <TT  CLASS="varname" >$foo.y</TT
+> ±äÁ¿£¬ËüÃÇÄÄÈ¥ÁË£¿
+     </A
+></DT
+><DT  >3. <A  HREF="faq.html.html#faq.html.arrays"  >ÔõÑùÔÚ HTML µÄ &#60;form&#62; ÖĞ½¨Á¢Êı×é£¿</A
+></DT
+><DT  >4. <A  HREF="faq.html.html#faq.html.select-multiple"  >&#13;      ÔõÑù´Ó¿É¶àÑ¡µÄ HTML µÄ select multiple ±ê¼ÇÖĞµÃµ½ËùÓĞ½á¹û£¿
+     </A
+></DT
+><DT  >5. <A  HREF="faq.html.html#faq.html.javascript-variable"  >&#13;      ÔõÑù´Ó Javascript ´«µİÒ»¸ö±äÁ¿µ½ PHP£¿
+     </A
+></DT
+></DL
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.html.encoding" ></A
+><B  >1. </B
+>
+      µ±ÎÒÍ¨¹ı±íµ¥£¯URL ´«ÖµÊ±ĞèÒªÓÃÊ²Ã´±àÂë£¯½âÂë·½·¨£¿
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÔÚ¼¸¸ö»·½ÚÉÏ±àÂë·½Ê½ºÜÖØÒª¡£¼Ù¶¨ÄãÓĞ <A  HREF="language.types.string.html"  ><B  CLASS="type" >string</B
+></A
+>
+      <TT  CLASS="varname" >$data</TT
+>£¬ÆäÖĞ°üº¬ÁËÄãÏëÍ¨¹ı·Ç±àÂë·½Ê½´«µİµÄ×Ö·û´®£¬ÄÇÕâÊÇÏà¹Ø²½Öè£º
+      <P  ></P
+><UL  ><LI  ><P  >&#13;         HTML ½âÎö¡£ÒªÖ¸¶¨Ò»¸öÈÎÒâµÄ×Ö·û´®£¬Äã<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >±ØĞë</I
+></SPAN
+>½«Æä·ÅÔÚË«ÒıºÅÖĞ£¬²¢ÓÃ
+         <A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+> ´¦ÀíÕû¸öÖµ¡£
+        </P
+></LI
+><LI  ><P  >&#13;         URL£ºURL ÓÉ¼¸²¿·Ö×é³É¡£Èç¹ûÄãÏ£Íû×Ô¼ºµÄÊı¾İ±»µ±×÷ÆäÖĞÒ»ÏîÀ´½âÊÍ£¬Äã<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >±ØĞë</I
+></SPAN
+>ÓÃ
+         <A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+> ¶ÔÆä±àÂë¡£
+        </P
+></LI
+></UL
+>
+     </P
+><P  >&#13;      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN126016" ></A
+><P  ><B  >Àı×Ó 51-1. Òş²ØµÄ HTML ±íµ¥µ¥Ôª</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"&lt;input type='hidden' value='" </font><font  color="#007700">. </font><font  color="#0000BB">htmlspecialchars</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">) . </font><font  color="#DD0000">"'&gt;\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+      <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        ÓÃ <A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+> À´´¦Àí <TT  CLASS="varname" >$data</TT
+> ÊÇ´íÎóµÄ£¬ÒòÎªÊÇä¯ÀÀÆ÷µÄÔğÈÎÀ´
+        <A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+> Êı¾İ¡£ËùÓĞÁ÷ĞĞµÄä¯ÀÀÆ÷¶¼ÄÜÕıÈ·´¦Àí¡£×¢Òâ²»ÂÛºÎÖÖ·½·¨£¨ÀıÈç GET »ò
+        POST£©¶¼»áÕâÑù¡£²»¹ıÄãÖ»»áÔÚÓÃ GET ÇëÇóÊ±×¢Òâµ½ÕâÒ»µã£¬ÒòÎª POST ÇëÇóÍ¨³£ÊÇÒş²ØµÄ¡£
+       </P
+></BLOCKQUOTE
+></DIV
+>
+      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN126024" ></A
+><P  ><B  >Àı×Ó 51-2. µÈ´ıÓÃ»§±à¼­µÄÊı¾İ</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"&lt;textarea name='mydata'&gt;\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">htmlspecialchars</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">).</font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"&lt;/textarea&gt;"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+      <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        Êı¾İ»á°´ÕÕÔ¤ÆÚµÄÏÔÊ¾ÔÚä¯ÀÀÆ÷ÖĞ£¬ÒòÎªä¯ÀÀÆ÷»á½âÊÍ HTML ×ªÒå·ûºÅ¡£
+       </P
+><P  >&#13;        µ±Ìá½»Ê±£¬²»ÂÛÊÇ GET »òÕß POST ·½·¨£¬Êı¾İ¶¼»á±»ä¯ÀÀÆ÷½øĞĞ urlencode
+        À´´«Êä£¬²¢Ö±½Ó±» PHP urldecode¡£ËùÒÔ×îÖÕÄã²»ĞèÒª×Ô¼º´¦ÀíÈÎºÎ
+        urlencoding/urldecoding£¬È«¶¼ÊÇ×Ô¶¯´¦ÀíµÄ¡£
+       </P
+></BLOCKQUOTE
+></DIV
+>
+      <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN126030" ></A
+><P  ><B  >Àı×Ó 51-3. URL ÖĞµÄÀı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"&lt;a href='" </font><font  color="#007700">. </font><font  color="#0000BB">htmlspecialchars</font><font  color="#007700">(</font><font  color="#DD0000">"/nextpage.php?stage=23&amp;data=" </font><font  color="#007700">.<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">urlencode</font><font  color="#007700">(</font><font  color="#0000BB">$data</font><font  color="#007700">)) . </font><font  color="#DD0000">"'&gt;\n"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+      <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        ÊÂÊµÉÏÄãÔÚÄóÔìÒ»¸ö HTML µÄ GET ÇëÇó£¬Òò´ËĞèÒªÊÖ¹¤¶ÔÊı¾İ½øĞĞ <A  HREF="function.urlencode.html"  ><B  CLASS="function" >urlencode()</B
+></A
+>¡£
+       </P
+></BLOCKQUOTE
+></DIV
+>
+      <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+        ÄãĞèÒª¶ÔÕû¸ö URL ½øĞĞ <A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+>£¬ÒòÎª URL ÊÇ×÷Îª
+        HTML ÊôĞÔµÄÒ»¸öÖµ³öÏÖµÄ¡£ÔÚ±¾ÀıÖĞ£¬ä¯ÀÀÆ÷»áÊ×ÏÈ¶ÔÖµ½øĞĞ
+        un-<A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+>£¬È»ºóÔÙ´«µİ´Ë URL¡£PHP ½«ÄÜÕıÈ·Àí½â
+        URL£¬ÒòÎªÄã¶ÔÊı¾İ½øĞĞÁË <B  CLASS="function" >urlencoded()</B
+>¡£
+       </P
+><P  >&#13;        Äã»á×¢Òâµ½ URL ÖĞµÄ <TT  CLASS="literal" >&#38;</TT
+> ±»Ìæ»»³ÉÁË
+        <TT  CLASS="literal" >&#38;amp;</TT
+>¡£Èç¹ûÄãÍüÁËÕâÒ»²½£¬¾¡¹Ü´ó¶àÊıä¯ÀÀÆ÷¶¼ÄÜ»Ö¸´£¬µ«Ò²²»×ÜÊÇÕâÑù¡£Òò´Ë¼´Ê¹
+        URL ²»ÊÇ¶¯Ì¬µÄ£¬ÄãÒ²<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ĞèÒª</I
+></SPAN
+>¶Ô URL ½øĞĞ <A  HREF="function.htmlspecialchars.html"  ><B  CLASS="function" >htmlspecialchars()</B
+></A
+>¡£
+       </P
+></BLOCKQUOTE
+></DIV
+>
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.html.form-image" ></A
+><B  >2. </B
+>
+      ÎÒÔÚÊÔÓÃ &#60;input type="image"&#62; ±ê¼Ç£¬µ«ÊÇÃ»ÓĞ <TT  CLASS="varname" >$foo.x</TT
+> ºÍ
+      <TT  CLASS="varname" >$foo.y</TT
+> ±äÁ¿£¬ËüÃÇÄÄÈ¥ÁË£¿
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      µ±Ìá½»±íµ¥Ê±£¬¿ÉÒÔÓÃÍ¼Æ¬´úÌæ±ê×¼µÄÌá½»°´Å¥£¬ÓÃÀàËÆÕâÑùµÄ±ê¼Ç£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;input type="image" src="image.gif" name="foo"&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      µ±ÓÃ»§µã»÷ÁËÍ¼Æ¬µÄÈÎºÎ²¿·Ö£¬¸Ã±íµ¥»á±»·¢ËÍµ½·şÎñÆ÷²¢¼ÓÉÏÁ½¸ö¶îÍâµÄ±äÁ¿£º<TT  CLASS="varname" >foo.x</TT
+>
+      ºÍ <TT  CLASS="varname" >foo.y</TT
+>¡£
+     </P
+><P  >&#13;      ÒòÎª <TT  CLASS="varname" >foo.x</TT
+> ºÍ <TT  CLASS="varname" >foo.y</TT
+> ÔÚ PHP
+      ÖĞ»á³ÉÎª·Ç·¨µÄ±äÁ¿Ãû£¬ËüÃÇ±»×Ô¶¯×ª»»³ÉÁË <TT  CLASS="varname" >foo_x</TT
+> ºÍ
+      <TT  CLASS="varname" >foo_y</TT
+>¡£Ò²¾ÍÊÇÓÃÏÂ»®Ïß´úÌæÁËµã¡£Òò´Ë£¬Äã¿ÉÒÔ°´ÕÕÔÚ<A  HREF="language.variables.external.html"  >È¡µÃ PHP
+      Ö®ÍâµÄ±äÁ¿</A
+>ÕâÒ»½ÚÖĞËµÃ÷µÄÄÇÑù·ÃÎÊÕâĞ©±äÁ¿¡£ÀıÈç£¬<TT  CLASS="varname" >$_GET['foo_x']</TT
+>¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.html.arrays" ></A
+><B  >3. </B
+>ÔõÑùÔÚ HTML µÄ &#60;form&#62; ÖĞ½¨Á¢Êı×é£¿</P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÒªÊ¹ÄãµÄ &#60;form&#62; ½á¹û±»µ±³É <A  HREF="language.types.array.html"  >array</A
+>
+      ·¢ËÍµ½ PHP ½Å±¾£¬ÄãÒª¶Ô &#60;input&#62;£¬&#60;select&#62; »òÕß &#60;textarea&#62; µ¥ÔªÕâÑùÃüÃû£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;input name="MyArray[]"&#62;
+&#60;input name="MyArray[]"&#62;
+&#60;input name="MyArray[]"&#62;
+&#60;input name="MyArray[]"&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      ×¢Òâ±äÁ¿ÃûºóµÄ·½À¨ºÅ£¬ÕâÊ¹Æä³ÉÎªÒ»¸öÊı×é¡£Äã¿ÉÒÔÍ¨¹ı¸ø²»Í¬µÄµ¥Ôª·ÖÅäÏàÍ¬µÄÃû×ÖÀ´°Ñµ¥Ôª·Ö×éµ½²»Í¬µÄÊı×éÀï£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;input name="MyArray[]"&#62;
+&#60;input name="MyArray[]"&#62;
+&#60;input name="MyOtherArray[]"&#62;
+&#60;input name="MyOtherArray[]"&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      Õâ½«²úÉúÁ½¸öÊı×é£¬MyArray ºÍ MyOtherArray£¬²¢·¢ËÍ¸ø PHP ½Å±¾¡£»¹¿ÉÒÔ¸øÊı×é·ÖÅäÖ¸¶¨µÄ¼üÃû£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;input name="AnotherArray[]"&#62;
+&#60;input name="AnotherArray[]"&#62;
+&#60;input name="AnotherArray[email]"&#62;
+&#60;input name="AnotherArray[phone]"&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      AnotherArray Êı×é½«°üº¬¼üÃû 0£¬1£¬email ºÍ phone¡£
+      </P
+><P  >&#13;       <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+	 Ö¸¶¨Êı×éµÄ¼üÃûÊÇ HTML µÄ¿ÉÑ¡Ïî¡£Èç¹ûÄã²»Ö¸¶¨¼üÃû£¬ÔòÊı×é±»°´ÕÕµ¥ÔªÔÚ±íµ¥ÖĞ³öÏÖµÄË³ĞòÌî³ä¡£µÚÒ»¸öÀı×Ó½«°üº¬¼üÃû 0£¬1£¬2 ºÍ 3¡£
+        </P
+></BLOCKQUOTE
+></DIV
+>
+      </P
+><P  >&#13;      ²Î¼û<A  HREF="ref.array.html"  >Êı×éº¯Êı¿â</A
+>ºÍ<A  HREF="language.variables.external.html"  >PHP µÄÍâ²¿±äÁ¿</A
+>¡£
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.html.select-multiple" ></A
+><B  >4. </B
+>
+      ÔõÑù´Ó¿É¶àÑ¡µÄ HTML µÄ select multiple ±ê¼ÇÖĞµÃµ½ËùÓĞ½á¹û£¿
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ¿É¶àÑ¡µÄ select multiple ±ê¼ÇÊÇ HTML µÄÒ»¸ö¹¹Ôì£¬ÔÊĞíÓÃ»§´ÓÒ»¸öÁĞ±íÖĞÑ¡Ôñ¶à¸öÏîÄ¿¡£ÕâĞ©ÏîÄ¿½Ó×Å±»´«µİ¸ø¸Ã±íµ¥ action ÖĞÖ¸¶¨µÄ´¦Àí³ÌĞò¡£ÎÊÌâÊÇËüÃÇ¶¼»á±»ÓÃÍ¬ÑùµÄÃû×Ö´«µİ¡£ÀıÈç£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;select name="var" multiple="yes"&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      Ã¿¸ö±»Ñ¡Ïî½«ÕâÑù±»´«µİµ½±íµ¥´¦Àí³ÌĞò£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >var=option1
+var=option2
+var=option3</PRE
+></TD
+></TR
+></TABLE
+>
+      Ã¿¸öÑ¡Ïî½«¸²¸ÇÇ°ÃæÒ»¸ö <TT  CLASS="varname" >$var</TT
+> ±äÁ¿µÄÄÚÈİ¡£½â¾ö·½°¸ÊÇÓÃ PHP
+      µÄ¡°±íµ¥µ¥ÔªÊı×é¡±ÌØĞÔ¡£Ê¹ÓÃ·½·¨ÈçÏÂ£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="html" >&#60;select name="var[]" multiple="yes"&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+      Õâ½«¸æËß PHP ½« <TT  CLASS="varname" >$var</TT
+> µ±³ÉÊı×é¶Ô´ı£¬Ã¿¸ö¶Ô var[]
+      µÄ¸³Öµ¶¼»á¸øÊı×éÔö¼ÓÒ»Ïî¡£µÚÒ»Ïî½«³ÉÎª <TT  CLASS="varname" >$var[0]</TT
+>£¬ÏÂÒ»¸öÊÇ
+      <TT  CLASS="varname" >$var[1]</TT
+>£¬µÈµÈ¡£¿ÉÒÔÓÃ <A  HREF="function.count.html"  ><B  CLASS="function" >count()</B
+></A
+>
+      º¯ÊıÀ´²â¶¨Ñ¡ÔñÁË¶àÉÙ¸öÏîÄ¿£¬±ØÒªÊ±¿ÉÒÔÓÃ <A  HREF="function.sort.html"  ><B  CLASS="function" >sort()</B
+></A
+>
+      º¯ÊıÀ´¶ÔÑ¡ÏîµÄÊı×é½øĞĞÅÅĞò¡£
+     </P
+><P  >&#13;      ×¢ÒâÈç¹ûÄãÔÚ JavaScript ÖĞÍ¨¹ıÃû×ÖÀ´ÒıÓÃµ¥Ôª£¬µ¥ÔªÃû×ÖÖĞµÄ <TT  CLASS="literal" >[]</TT
+>
+      ¿ÉÄÜ»áÔì³ÉÎÊÌâ¡£ÓÃ±íµ¥µ¥ÔªÖĞµÄÊı×ÖĞòºÅÀ´Ìæ´ú£¬»òÕß½«±äÁ¿ÃûÓÃµ¥ÒıºÅÀ¨ÆğÀ´²¢ÓÃÆä×÷Îªµ¥ÔªÊı×éµÄË÷Òı£¬ÀıÈç£º
+      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >variable = documents.forms[0].elements['var[]'];</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></DIV
+><DIV  CLASS="qandaentry" ><B  ><DIV  CLASS="question" ><P  ><A  NAME="faq.html.javascript-variable" ></A
+><B  >5. </B
+>
+      ÔõÑù´Ó Javascript ´«µİÒ»¸ö±äÁ¿µ½ PHP£¿
+     </P
+></DIV
+></B
+><DIV  CLASS="answer" ><P  ><B  > </B
+>
+      ÓÉÓÚ Javascript £¨Í¨³£Çé¿öÏÂ£©ÊÇ¿Í»§¶Ë¼¼Êõ£¬¶ø
+      PHP £¨Í¨³£Çé¿öÏÂ£©ÊÇ·şÎñÆ÷¶Ë¼¼Êõ£¬¶øÇÒ
+      HTTP ÊÇÒ»ÖÖ¡°ÎŞ×´Ì¬¡±Ğ­Òé£¬Òò´ËÁ½ÖÖÓïÑÔÖ®¼ä²»ÄÜÖ±½Ó¹²Ïí±äÁ¿¡£
+     </P
+><P  >&#13;      µ«ÊÇ£¬ÓĞ¿ÉÄÜÔÚ¶şÕßÖ®¼ä´«µİ±äÁ¿¡£Ò»ÖÖÊµÏÖµÄ·½·¨ÊÇÓÃ
+      PHP Éú³É Javascript ´úÂë£¬²¢ÈÃä¯ÀÀÆ÷×Ô¶¯Ë¢ĞÂ£¬½«ÌØ¶¨µÄ±äÁ¿´«µİ»Ø
+      PHP ½Å±¾¡£ÒÔÏÂÀı×ÓÏÔÊ¾ÁËÈçºÎÕâÑù×ö -- ÈÃ
+      PHP ´úÂëÈ¡µÃÏÔÊ¾ÆÁÄ»µÄ¸ß¶ÈºÍ¿í¶È£¬Í¨³£Ö»ÄÜÔÚ¿Í»§¶ËÕâÃ´×ö¡£
+     </P
+><P  >&#13;      <TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="programlisting" >&#60;?php
+if (isset($_GET['width']) AND isset($_GET['height'])) {
+  // output the geometry variables
+  echo "Screen width is: ". $_GET['width'] ."&#60;br /&#62;\n";
+  echo "Screen height is: ". $_GET['height'] ."&#60;br /&#62;\n";
+} else {
+  // pass the geometry variables
+  // (preserve the original query string
+  //   -- post variables will need to handled differently)
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="faq.passwords.html">å¯†ç æ•£åˆ—</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="faq.com.html">PHP å’Œ COM</a></div>
- <div class="up"><a href="faq.html">FAQ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="faq.html" class="chapter">
-  <h1>PHP å’Œ HTML</h1>
+  echo "&#60;script language='javascript'&#62;\n";
+  echo "  location.href=\"${_SERVER['SCRIPT_NAME']}?${_SERVER['QUERY_STRING']}"
+            . "&#38;width=\" + screen.width + \"&#38;height=\" + screen.height;\n";
+  echo "&#60;/script&#62;\n";
+  exit();
+}
+?&#62;</PRE
+></TD
+></TR
+></TABLE
+>
+     </P
+></DIV
+></DIV
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="faq.using.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="faq.com.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >Ê¹ÓÃ PHP</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="faq.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >PHP ºÍ COM</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
-  
-  <p class="para">PHP å’Œ HTML æœ‰å¾ˆå¤šç›¸äº’ä½œç”¨ï¼šPHP èƒ½ç”Ÿæˆ HTMLï¼ŒHTML å¯ä»¥å‘ PHP ä¼ é€’ä¿¡æ¯ã€‚åœ¨é˜…è¯»è¿™äº›å¸¸è§é—®é¢˜ä¹‹å‰ï¼Œå…ˆå­¦ä¼šæ€æ ·
-  <a href="language.variables.external.html" class="link">ä» PHP ä¹‹å¤–å–å¾—å˜é‡</a>å¾ˆé‡è¦ã€‚æ­¤ä¸»é¢˜çš„æ‰‹å†Œé¡µä¹ŸåŒ…æ‹¬å¾ˆå¤šä¾‹å­ã€‚è¿˜è¦ä»”ç»†ç•™æ„ 
-  <em>register_globals</em>å¯¹ä½ æ„å‘³ç€ä»€ä¹ˆã€‚</p>
-  <div class="qandaset"><ol class="qandaset_questions"><li><a href="#faq.html.encoding">
-        å½“æˆ‘é€šè¿‡è¡¨å•ï¼URL ä¼ å€¼æ—¶éœ€è¦ç”¨ä»€ä¹ˆç¼–ç ï¼è§£ç æ–¹æ³•ï¼Ÿ
-      </a></li><li><a href="#faq.html.form-image">
-        æˆ‘åœ¨è¯•ç”¨ &lt;input type=&quot;image&quot;&gt; æ ‡è®°ï¼Œä½†æ˜¯æ²¡æœ‰ 
-        $foo.xå’Œ 
-        $foo.yå˜é‡ï¼Œå®ƒä»¬å“ªå»äº†ï¼Ÿ
-      </a></li><li><a href="#faq.html.arrays">
-        æ€æ ·åœ¨ HTML çš„ &lt;form&gt; ä¸­å»ºç«‹æ•°ç»„ï¼Ÿ
-      </a></li><li><a href="#faq.html.select-multiple">
-        æ€æ ·ä»å¯å¤šé€‰çš„ HTML çš„ select multiple æ ‡è®°ä¸­å¾—åˆ°æ‰€æœ‰ç»“æœï¼Ÿ
-      </a></li><li><a href="#faq.html.javascript-variable">
-        æ€æ ·ä» Javascript ä¼ é€’ä¸€ä¸ªå˜é‡åˆ° PHPï¼Ÿ
-      </a></li></ol></div>
-    <dl class="qandaentry" id="faq.html.encoding">
-      <dt><strong>
-        å½“æˆ‘é€šè¿‡è¡¨å•ï¼URL ä¼ å€¼æ—¶éœ€è¦ç”¨ä»€ä¹ˆç¼–ç ï¼è§£ç æ–¹æ³•ï¼Ÿ
-      </strong></dt>
-      <dd class="answer">
-        <p class="para">åœ¨å‡ ä¸ªç¯èŠ‚ä¸Šç¼–ç æ–¹å¼å¾ˆé‡è¦ã€‚å‡å®šæœ‰ 
-        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-        <var class="varname"><var class="varname">$data</var></var>ï¼Œå…¶ä¸­åŒ…å«äº†æƒ³é€šè¿‡éç¼–ç æ–¹å¼ä¼ é€’çš„å­—ç¬¦ä¸²ï¼Œé‚£è¿™æ˜¯ç›¸å…³æ­¥éª¤ï¼š 
-        <ul class="itemizedlist">
-          <li class="listitem">
-            <p class="para">HTML è§£æã€‚è¦æŒ‡å®šä¸€ä¸ªä»»æ„çš„å­—ç¬¦ä¸²ï¼Œ
-            <em class="emphasis">å¿…é¡»</em>å°†å…¶æ”¾åœ¨åŒå¼•å·ä¸­ï¼Œå¹¶ç”¨ 
-            <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>å¤„ç†æ•´ä¸ªå€¼ã€‚</p>
-          </li>
-          <li class="listitem">
-            <p class="para">URLï¼šURL ç”±å‡ éƒ¨åˆ†ç»„æˆã€‚å¦‚æœå¸Œæœ›è‡ªå·±çš„æ•°æ®è¢«å½“ä½œå…¶ä¸­ä¸€é¡¹æ¥è§£é‡Šï¼Œ
-            <em class="emphasis">å¿…é¡»</em>ç”¨ 
-            <span class="function"><a href="function.urlencode.html" class="function">urlencode()</a></span>å¯¹å…¶ç¼–ç ã€‚</p>
-          </li>
-        </ul></p>
-        <p class="para">
-          <div class="example" id="example-5860">
-            <p><strong>Example #1 éšè—çš„ HTML è¡¨å•å•å…ƒ</strong></p>
-            <div class="example-contents">
-              <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;input&nbsp;type='hidden'&nbsp;value='"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"'&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-</div>
 
-          </div>
-          <blockquote class="note"><p><strong class="note">Note</strong>: 
-            <span class="simpara">ç”¨ 
-            <span class="function"><a href="function.urlencode.html" class="function">urlencode()</a></span>æ¥å¤„ç† 
-            <var class="varname"><var class="varname">$data</var></var>æ˜¯é”™è¯¯çš„ï¼Œå› ä¸ºæ˜¯æµè§ˆå™¨çš„è´£ä»»æ¥ 
-            <span class="function"><a href="function.urlencode.html" class="function">urlencode()</a></span>æ•°æ®ã€‚æ‰€æœ‰æµè¡Œçš„æµè§ˆå™¨éƒ½èƒ½æ­£ç¡®å¤„ç†ã€‚æ³¨æ„ä¸è®ºä½•ç§æ–¹æ³•ï¼ˆä¾‹å¦‚ GET æˆ– POSTï¼‰éƒ½ä¼šè¿™æ ·ã€‚ä¸è¿‡åªä¼šåœ¨ç”¨ GET è¯·æ±‚æ—¶æ³¨æ„åˆ°è¿™ä¸€ç‚¹ï¼Œå› ä¸º POST è¯·æ±‚é€šå¸¸æ˜¯éšè—çš„ã€‚</span>
-          </p></blockquote>
-          <div class="example" id="example-5861">
-            <p><strong>Example #2 ç­‰å¾…ç”¨æˆ·ç¼–è¾‘çš„æ•°æ®</strong></p>
-            <div class="example-contents">
-              <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;textarea&nbsp;name='mydata'&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/textarea&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
 </div>
-
-          </div>
-          <blockquote class="note"><p><strong class="note">Note</strong>: 
-            <span class="simpara">æ•°æ®ä¼šæŒ‰ç…§é¢„æœŸçš„æ˜¾ç¤ºåœ¨æµè§ˆå™¨ä¸­ï¼Œå› ä¸ºæµè§ˆå™¨ä¼šè§£é‡Š HTML è½¬ä¹‰ç¬¦å·ã€‚</span>
-            <span class="simpara">å½“æäº¤æ—¶ï¼Œä¸è®ºæ˜¯ GET æˆ–è€… POST æ–¹æ³•ï¼Œæ•°æ®éƒ½ä¼šè¢«æµè§ˆå™¨è¿›è¡Œ urlencode æ¥ä¼ è¾“ï¼Œå¹¶ç›´æ¥è¢« PHP urldecodeã€‚æ‰€ä»¥æœ€ç»ˆä¸éœ€è¦è‡ªå·±å¤„ç†ä»»ä½• urlencoding/urldecodingï¼Œå…¨éƒ½æ˜¯è‡ªåŠ¨å¤„ç†çš„ã€‚</span>
-          </p></blockquote>
-          <div class="example" id="example-5862">
-            <p><strong>Example #3 URL ä¸­çš„ä¾‹å­</strong></p>
-            <div class="example-contents">
-              <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;a&nbsp;href='"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #DD0000">"/nextpage.php?stage=23&amp;data="&nbsp;</span><span style="color: #007700">.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">urlencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">))&nbsp;.&nbsp;</span><span style="color: #DD0000">"'&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-</div>
-
-          </div>
-          <blockquote class="note"><p><strong class="note">Note</strong>: 
-            <span class="simpara">äº‹å®ä¸Šè¿™åœ¨ç¼–é€ ä¸€ä¸ª HTML çš„ GET è¯·æ±‚ï¼Œå› æ­¤éœ€è¦æ‰‹å·¥å¯¹æ•°æ®è¿›è¡Œ 
-            <span class="function"><a href="function.urlencode.html" class="function">urlencode()</a></span>ã€‚</span>
-          </p></blockquote>
-          <blockquote class="note"><p><strong class="note">Note</strong>: 
-            <span class="simpara">éœ€è¦å¯¹æ•´ä¸ª URL è¿›è¡Œ 
-            <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>ï¼Œå› ä¸º URL æ˜¯ä½œä¸º HTML å±æ€§çš„ä¸€ä¸ªå€¼å‡ºç°çš„ã€‚åœ¨æœ¬ä¾‹ä¸­ï¼Œæµè§ˆå™¨ä¼šé¦–å…ˆå¯¹å€¼è¿›è¡Œ un-
-            <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>ï¼Œç„¶åå†ä¼ é€’æ­¤ URLã€‚PHP å°†èƒ½æ­£ç¡®ç†è§£ URLï¼Œå› ä¸ºå¯¹æ•°æ®è¿›è¡Œäº† 
-            <span class="function"><strong>urlencoded()</strong></span>ã€‚</span>
-            <span class="simpara">è¦æ³¨æ„åˆ° URL ä¸­çš„ 
-            <em>&amp;</em>è¢«æ›¿æ¢æˆäº† 
-            <em>&amp;amp;</em>ã€‚å¦‚æœå¿˜äº†è¿™ä¸€æ­¥ï¼Œå°½ç®¡å¤§å¤šæ•°æµè§ˆå™¨éƒ½èƒ½æ¢å¤ï¼Œä½†ä¹Ÿä¸æ€»æ˜¯è¿™æ ·ã€‚å› æ­¤å³ä½¿ URL ä¸æ˜¯åŠ¨æ€çš„ï¼Œä¹Ÿ
-            <em class="emphasis">éœ€è¦</em>å¯¹ URL è¿›è¡Œ 
-            <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>ã€‚</span>
-          </p></blockquote>
-        </p>
-        
-      </dd>
-    </dl>
-    <dl class="qandaentry" id="faq.html.form-image">
-      <dt><strong>
-        æˆ‘åœ¨è¯•ç”¨ &lt;input type=&quot;image&quot;&gt; æ ‡è®°ï¼Œä½†æ˜¯æ²¡æœ‰ 
-        <var class="varname"><var class="varname">$foo.x</var></var>å’Œ 
-        <var class="varname"><var class="varname">$foo.y</var></var>å˜é‡ï¼Œå®ƒä»¬å“ªå»äº†ï¼Ÿ
-      </strong></dt>
-      <dd class="answer">
-        <p class="para">å½“æäº¤è¡¨å•æ—¶ï¼Œå¯ä»¥ç”¨å›¾ç‰‡ä»£æ›¿æ ‡å‡†çš„æäº¤æŒ‰é’®ï¼Œç”¨ç±»ä¼¼è¿™æ ·çš„æ ‡è®°ï¼š 
-        <div class="example-contents">
-          <div class="htmlcode"><pre class="htmlcode">&lt;input type=&quot;image&quot; src=&quot;image.gif&quot; name=&quot;foo&quot; /&gt;</pre>
-</div>
-</div>
-å½“ç”¨æˆ·ç‚¹å‡»äº†å›¾ç‰‡çš„ä»»ä½•éƒ¨åˆ†ï¼Œè¯¥è¡¨å•ä¼šè¢«å‘é€åˆ°æœåŠ¡å™¨å¹¶åŠ ä¸Šä¸¤ä¸ªé¢å¤–çš„å˜é‡ï¼š
-        <var class="varname"><var class="varname">foo.x</var></var>å’Œ 
-        <var class="varname"><var class="varname">foo.y</var></var>ã€‚</p>
-        <p class="para">å› ä¸º 
-        <var class="varname"><var class="varname">foo.x</var></var>å’Œ 
-        <var class="varname"><var class="varname">foo.y</var></var>åœ¨ PHP ä¸­ä¼šæˆä¸ºéæ³•çš„å˜é‡åï¼Œå®ƒä»¬è¢«è‡ªåŠ¨è½¬æ¢æˆäº† 
-        <var class="varname"><var class="varname">foo_x</var></var>å’Œ 
-        <var class="varname"><var class="varname">foo_y</var></var>ã€‚ä¹Ÿå°±æ˜¯ç”¨ä¸‹åˆ’çº¿ä»£æ›¿äº†ç‚¹ã€‚å› æ­¤ï¼Œå¯ä»¥æŒ‰ç…§åœ¨
-        <a href="language.variables.external.html" class="link">æ¥è‡ª PHP ä¹‹å¤–çš„å˜é‡</a>è¿™ä¸€èŠ‚ä¸­è¯´æ˜çš„é‚£æ ·è®¿é—®è¿™äº›å˜é‡ã€‚ä¾‹å¦‚ï¼Œ
-        <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET['foo_x']</a></var></var>ã€‚ 
-        <blockquote class="note"><p><strong class="note">Note</strong>: 
-          <p class="para">è¯·æ±‚å˜é‡åä¸­çš„ç©ºæ ¼è¢«è½¬æ¢ä¸ºä¸‹åˆ’çº¿ã€‚</p>
-        </p></blockquote></p>
-      </dd>
-    </dl>
-    <dl class="qandaentry" id="faq.html.arrays">
-      <dt><strong>
-        æ€æ ·åœ¨ HTML çš„ &lt;form&gt; ä¸­å»ºç«‹æ•°ç»„ï¼Ÿ
-      </strong></dt>
-      <dd class="answer">
-        <p class="para">è¦ä½¿ä½ çš„ &lt;form&gt; ç»“æœè¢«å½“æˆ 
-        <a href="language.types.array.html" class="link">array</a>å‘é€åˆ° PHP è„šæœ¬ï¼Œè¦å¯¹ &lt;input&gt;ï¼Œ&lt;select&gt; æˆ–è€… &lt;textarea&gt; å•å…ƒè¿™æ ·å‘½åï¼š 
-        <div class="example-contents">
-          <div class="htmlcode"><pre class="htmlcode">&lt;input name=&quot;MyArray[]&quot; /&gt;
-&lt;input name=&quot;MyArray[]&quot; /&gt;
-&lt;input name=&quot;MyArray[]&quot; /&gt;
-&lt;input name=&quot;MyArray[]&quot; /&gt;</pre>
-</div>
-</div>
-æ³¨æ„å˜é‡ååçš„æ–¹æ‹¬å·ï¼Œè¿™ä½¿å…¶æˆä¸ºä¸€ä¸ªæ•°ç»„ã€‚å¯ä»¥é€šè¿‡ç»™ä¸åŒçš„å•å…ƒåˆ†é…ç›¸åŒçš„åå­—æ¥æŠŠå•å…ƒåˆ†ç»„åˆ°ä¸åŒçš„æ•°ç»„é‡Œï¼š 
-        <div class="example-contents">
-          <div class="htmlcode"><pre class="htmlcode">&lt;input name=&quot;MyArray[]&quot; /&gt;
-&lt;input name=&quot;MyArray[]&quot; /&gt;
-&lt;input name=&quot;MyOtherArray[]&quot; /&gt;
-&lt;input name=&quot;MyOtherArray[]&quot; /&gt;</pre>
-</div>
-</div>
-è¿™å°†äº§ç”Ÿä¸¤ä¸ªæ•°ç»„ï¼ŒMyArray å’Œ MyOtherArrayï¼Œå¹¶å‘é€ç»™ PHP è„šæœ¬ã€‚è¿˜å¯ä»¥ç»™æ•°ç»„åˆ†é…æŒ‡å®šçš„é”®åï¼š 
-        <div class="example-contents">
-          <div class="htmlcode"><pre class="htmlcode">&lt;input name=&quot;AnotherArray[]&quot; /&gt;
-&lt;input name=&quot;AnotherArray[]&quot; /&gt;
-&lt;input name=&quot;AnotherArray[email]&quot; /&gt;
-&lt;input name=&quot;AnotherArray[phone]&quot; /&gt;</pre>
-</div>
-</div>
-AnotherArray æ•°ç»„å°†åŒ…å«é”®å 0ï¼Œ1ï¼Œemail å’Œ phoneã€‚</p>
-        <p class="para">
-          <blockquote class="note"><p><strong class="note">Note</strong>: 
-            <p class="para">æŒ‡å®šæ•°ç»„çš„é”®åæ˜¯ HTML çš„å¯é€‰é¡¹ã€‚å¦‚æœä¸æŒ‡å®šé”®åï¼Œåˆ™æ•°ç»„è¢«æŒ‰ç…§å•å…ƒåœ¨è¡¨å•ä¸­å‡ºç°çš„é¡ºåºå¡«å……ã€‚ç¬¬ä¸€ä¸ªä¾‹å­å°†åŒ…å«é”®å 0ï¼Œ1ï¼Œ2 å’Œ 3ã€‚</p>
-          </p></blockquote>
-        </p>
-        <p class="para">å‚è§
-        <a href="ref.array.html" class="link">æ•°ç»„å‡½æ•°</a>å’Œ
-        <a href="language.variables.external.html" class="link">æ¥è‡ª PHP ä¹‹å¤–çš„å˜é‡</a>ã€‚</p>
-      </dd>
-    </dl>
-    <dl class="qandaentry" id="faq.html.select-multiple">
-      <dt><strong>
-        æ€æ ·ä»å¯å¤šé€‰çš„ HTML çš„ select multiple æ ‡è®°ä¸­å¾—åˆ°æ‰€æœ‰ç»“æœï¼Ÿ
-      </strong></dt>
-      <dd class="answer">
-        <p class="para">å¯å¤šé€‰çš„ select multiple æ ‡è®°æ˜¯ HTML çš„ä¸€ä¸ªæ„é€ ï¼Œå…è®¸ç”¨æˆ·ä»ä¸€ä¸ªåˆ—è¡¨ä¸­é€‰æ‹©å¤šä¸ªé¡¹ç›®ã€‚è¿™äº›é¡¹ç›®æ¥ç€è¢«ä¼ é€’ç»™è¯¥è¡¨å• action ä¸­æŒ‡å®šçš„å¤„ç†ç¨‹åºã€‚é—®é¢˜æ˜¯å®ƒä»¬éƒ½ä¼šè¢«ç”¨åŒæ ·çš„åå­—ä¼ é€’ã€‚ä¾‹å¦‚ï¼š 
-        <div class="example-contents">
-          <div class="htmlcode"><pre class="htmlcode">&lt;select name=&quot;var&quot; multiple=&quot;yes&quot;&gt;</pre>
-</div>
-</div>
-æ¯ä¸ªè¢«é€‰é¡¹å°†è¿™æ ·è¢«ä¼ é€’åˆ°è¡¨å•å¤„ç†ç¨‹åºï¼š 
-        <div class="example-contents"><div class="cdata"><pre>var=option1 var=option2 var=option3</pre></div></div>
-æ¯ä¸ªé€‰é¡¹å°†è¦†ç›–å‰é¢ä¸€ä¸ª 
-        <var class="varname"><var class="varname">$var</var></var>å˜é‡çš„å†…å®¹ã€‚è§£å†³æ–¹æ¡ˆæ˜¯ç”¨ PHP çš„â€œè¡¨å•å•å…ƒæ•°ç»„â€ç‰¹æ€§ã€‚ä½¿ç”¨æ–¹æ³•å¦‚ä¸‹ï¼š 
-        <div class="example-contents">
-          <div class="htmlcode"><pre class="htmlcode">&lt;select name=&quot;var[]&quot; multiple=&quot;yes&quot;&gt;</pre>
-</div>
-</div>
-è¿™å°†å‘Šè¯‰ PHP å°† 
-        <var class="varname"><var class="varname">$var</var></var>å½“æˆæ•°ç»„å¯¹å¾…ï¼Œæ¯ä¸ªå¯¹ var[] çš„èµ‹å€¼éƒ½ä¼šç»™æ•°ç»„å¢åŠ ä¸€é¡¹ã€‚ç¬¬ä¸€é¡¹å°†æˆä¸º 
-        <var class="varname"><var class="varname">$var[0]</var></var>ï¼Œä¸‹ä¸€ä¸ªæ˜¯ 
-        <var class="varname"><var class="varname">$var[1]</var></var>ï¼Œç­‰ç­‰ã€‚å¯ä»¥ç”¨ 
-        <span class="function"><a href="function.count.html" class="function">count()</a></span>å‡½æ•°æ¥æµ‹å®šé€‰æ‹©äº†å¤šå°‘ä¸ªé¡¹ç›®ï¼Œå¿…è¦æ—¶å¯ä»¥ç”¨ 
-        <span class="function"><a href="function.sort.html" class="function">sort()</a></span>å‡½æ•°æ¥å¯¹é€‰é¡¹çš„æ•°ç»„è¿›è¡Œæ’åºã€‚</p>
-        <p class="para">æ³¨æ„å¦‚æœåœ¨ JavaScript ä¸­é€šè¿‡åå­—æ¥å¼•ç”¨å•å…ƒï¼Œå•å…ƒåå­—ä¸­çš„ 
-        <em>[]</em>å¯èƒ½ä¼šé€ æˆé—®é¢˜ã€‚ç”¨è¡¨å•å•å…ƒä¸­çš„æ•°å­—åºå·æ¥æ›¿ä»£ï¼Œæˆ–è€…å°†å˜é‡åç”¨å•å¼•å·æ‹¬èµ·æ¥å¹¶ç”¨å…¶ä½œä¸ºå•å…ƒæ•°ç»„çš„ç´¢å¼•ï¼Œä¾‹å¦‚ï¼š 
-        <div class="example-contents"><div class="cdata"><pre>variable = documents.forms[0].elements[&#039;var[]&#039;];</pre></div></div>
-</p>
-      </dd>
-    </dl>
-    <dl class="qandaentry" id="faq.html.javascript-variable">
-      <dt><strong>
-        æ€æ ·ä» Javascript ä¼ é€’ä¸€ä¸ªå˜é‡åˆ° PHPï¼Ÿ
-      </strong></dt>
-      <dd class="answer">
-        <p class="para">ç”±äº Javascript ï¼ˆé€šå¸¸æƒ…å†µä¸‹ï¼‰æ˜¯å®¢æˆ·ç«¯æŠ€æœ¯ï¼Œè€Œ PHP ï¼ˆé€šå¸¸æƒ…å†µä¸‹ï¼‰æ˜¯æœåŠ¡å™¨ç«¯æŠ€æœ¯ï¼Œè€Œä¸” HTTP æ˜¯ä¸€ç§â€œæ— çŠ¶æ€â€åè®®ï¼Œå› æ­¤ä¸¤ç§è¯­è¨€ä¹‹é—´ä¸èƒ½ç›´æ¥å…±äº«å˜é‡ã€‚</p>
-        <p class="para">ä½†æ˜¯ï¼Œæœ‰å¯èƒ½åœ¨äºŒè€…ä¹‹é—´ä¼ é€’å˜é‡ã€‚ä¸€ç§å®ç°çš„æ–¹æ³•æ˜¯ç”¨ PHP ç”Ÿæˆ Javascript ä»£ç ï¼Œå¹¶è®©æµè§ˆå™¨è‡ªåŠ¨åˆ·æ–°ï¼Œå°†ç‰¹å®šçš„å˜é‡ä¼ é€’å› PHP è„šæœ¬ã€‚ä»¥ä¸‹ä¾‹å­æ˜¾ç¤ºäº†å¦‚ä½•è¿™æ ·åšâ€”â€”è®© PHP ä»£ç å–å¾—æ˜¾ç¤ºå±å¹•çš„é«˜åº¦å’Œå®½åº¦ï¼Œé€šå¸¸åªèƒ½åœ¨å®¢æˆ·ç«¯è¿™ä¹ˆåšã€‚</p>
-        <p class="para">
-          <div class="example-contents">
-            <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'width'</span><span style="color: #007700">])&nbsp;AND&nbsp;isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'height'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;output&nbsp;the&nbsp;geometry&nbsp;variables<br />&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Screen&nbsp;width&nbsp;is:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'width'</span><span style="color: #007700">]&nbsp;.</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Screen&nbsp;height&nbsp;is:&nbsp;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'height'</span><span style="color: #007700">]&nbsp;.</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;pass&nbsp;the&nbsp;geometry&nbsp;variables<br />&nbsp;&nbsp;//&nbsp;(preserve&nbsp;the&nbsp;original&nbsp;query&nbsp;string<br />&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;--&nbsp;post&nbsp;variables&nbsp;will&nbsp;need&nbsp;to&nbsp;handled&nbsp;differently)<br /><br />&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;script&nbsp;language='javascript'&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&nbsp;&nbsp;location.href=\"</span><span style="color: #007700">${</span><span style="color: #0000BB">_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SCRIPT_NAME'</span><span style="color: #007700">]}</span><span style="color: #DD0000">?</span><span style="color: #007700">${</span><span style="color: #0000BB">_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'QUERY_STRING'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&amp;width=\"&nbsp;+&nbsp;screen.width&nbsp;+&nbsp;\"&amp;height=\"&nbsp;+&nbsp;screen.height;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/script&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;exit();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-</div>
-
-        </p>
-      </dd>
-    </dl>
-  
-</div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="faq.passwords.html">å¯†ç æ•£åˆ—</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="faq.com.html">PHP å’Œ COM</a></div>
- <div class="up"><a href="faq.html">FAQ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</body>
+</html>

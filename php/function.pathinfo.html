@@ -1,202 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>返回文件路径的信息</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.parse-ini-string.html">parse_ini_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pclose.html">pclose</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pathinfo" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">pathinfo</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5)</p><p class="refpurpose"><span class="refname">pathinfo</span> &mdash; <span class="dc-title">返回文件路径的信息</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.pathinfo-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>pathinfo</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = PATHINFO_DIRNAME | PATHINFO_BASENAME | PATHINFO_EXTENSION | PATHINFO_FILENAME</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>pathinfo()</strong></span> 返回一个关联数组包含有 <em>path</em>
-   的信息。返回关联数组还是字符串取决于 <code class="parameter">options</code>。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.pathinfo-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">path</code></dt>
-
-     <dd>
-
-      <p class="para">
-       要解析的路径。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       如果指定了，将会返回指定元素；它们包括：<strong><code>PATHINFO_DIRNAME</code></strong>，<strong><code>PATHINFO_BASENAME</code></strong>
-   和 <strong><code>PATHINFO_EXTENSION</code></strong> 或 <strong><code>PATHINFO_FILENAME</code></strong>。
-      </p>
-      <p class="para">如果没有指定 <code class="parameter">options</code> 默认是返回全部的单元。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.pathinfo-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   如果没有传入 <code class="parameter">options</code> ，将会返回包括以下单元的数组 <span class="type"><a href="language.types.array.html" class="type array">array</a></span>：<em>dirname</em>，<em>basename</em>
-   和 <em>extension</em>（如果有），以 及<em>filename</em>。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    If the <code class="parameter">path</code> does not have an extension, no
-    <em>extension</em> element will be returned（以下第二个案例）。
-   </p>
-  </p></blockquote>
-  <p class="para">
-   If <code class="parameter">options</code> is present, returns a 
-   <span class="type"><a href="language.types.string.html" class="type string">string</a></span> containing the requested element.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.pathinfo-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.2.0</td>
-       <td>
-        添加了常量 <strong><code>PATHINFO_FILENAME</code></strong>。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >pathinfo</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ļ�ϵͳ������" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="parse_ini_file" HREF="function.parse-ini-file.html"><LINK  REL="NEXT" TITLE="pclose" HREF="function.pclose.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.parse-ini-file.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.pclose.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.pathinfo" ></A
+>pathinfo</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN29399" ></A
+><P  >    (PHP 4 &#62;= 4.0.3)</P
+>pathinfo&nbsp;--&nbsp;�����ļ�·������Ϣ</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN29402" ></A
+><H2  >˵��</H2
+>array <B  CLASS="methodname" >pathinfo</B
+> ( string path)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >pathinfo()</B
+> ����һ�������������� <TT  CLASS="parameter" ><I  >path</I
+></TT
+>
+     ����Ϣ���������µ����鵥Ԫ��<TT  CLASS="parameter" ><I  >dirname</I
+></TT
+>��<TT  CLASS="parameter" ><I  >basename</I
+></TT
+>
+     �� <TT  CLASS="parameter" ><I  >extension</I
+></TT
+>��
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN29417" ></A
+><P  ><B  >���� 1. <B  CLASS="function" >pathinfo()</B
+> ����</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$path_parts </font><font  color="#007700">= </font><font  color="#0000BB">pathinfo</font><font  color="#007700">(</font><font  color="#DD0000">"/www/htdocs/index.html"</font><font  color="#007700">);<br  /><br  />echo </font><font  color="#0000BB">$path_parts</font><font  color="#007700">[</font><font  color="#DD0000">"dirname"</font><font  color="#007700">] . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$path_parts</font><font  color="#007700">[</font><font  color="#DD0000">"basename"</font><font  color="#007700">] . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  />echo </font><font  color="#0000BB">$path_parts</font><font  color="#007700">[</font><font  color="#DD0000">"extension"</font><font  color="#007700">] . </font><font  color="#DD0000">"\n"</font><font  color="#007700">;<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       �������
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >/www/htdocs
+index.html
+html</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+      �й�ȡ�õ�ǰ·����Ϣ��˵�������Ķ�<A  HREF="language.variables.predefined.html"  >Ԥ�������</A
+>һ�¡�
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     �μ� <A  HREF="function.dirname.html"  ><B  CLASS="function" >dirname()</B
+></A
+>��<A  HREF="function.basename.html"  ><B  CLASS="function" >basename()</B
+></A
+>��<A  HREF="function.parse-url.html"  ><B  CLASS="function" >parse_url()</B
+></A
+>
+     �� <A  HREF="function.realpath.html"  ><B  CLASS="function" >realpath()</B
+></A
+>��
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.parse-ini-file.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.pclose.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >parse_ini_file</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >pclose</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.pathinfo-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-2514">
-    <p><strong>Example #1 <span class="function"><strong>pathinfo()</strong></span> 例子</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$path_parts&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pathinfo</span><span style="color: #007700">(</span><span style="color: #DD0000">'/www/htdocs/inc/lib.inc.php'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'dirname'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'basename'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'extension'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'filename'</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;since&nbsp;PHP&nbsp;5.2.0<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-/www/htdocs/inc
-lib.inc.php
-php
-lib.inc
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-2515">
-    <p><strong>Example #2 <span class="function"><strong>pathinfo()</strong></span> example showing difference between null and no extension</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$path_parts&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pathinfo</span><span style="color: #007700">(</span><span style="color: #DD0000">'/path/emptyextension.'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'extension'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #0000BB">$path_parts&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pathinfo</span><span style="color: #007700">(</span><span style="color: #DD0000">'/path/noextension'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'extension'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程的输出类似于：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-string(0) &quot;&quot;
-
-Notice: Undefined index: extension in test.php on line 6
-NULL
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.pathinfo-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    有关取得当前路径信息的说明，请阅读<a href="language.variables.predefined.html" class="link">预定义变量</a>一节。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>pathinfo()</strong></span> is locale aware, so for it to parse a path 
-    containing multibyte characters correctly, the matching locale must be set using 
-    the <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> function.
-   </p>
-  </p></blockquote>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.pathinfo-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.dirname.html" class="function" rel="rdfs-seeAlso">dirname()</a> - 返回路径中的目录部分</span></li>
-    <li class="member"><span class="function"><a href="function.basename.html" class="function" rel="rdfs-seeAlso">basename()</a> - 返回路径中的文件名部分</span></li>
-    <li class="member"><span class="function"><a href="function.parse-url.html" class="function" rel="rdfs-seeAlso">parse_url()</a> - 解析 URL，返回其组成部分</span></li>
-    <li class="member"><span class="function"><a href="function.realpath.html" class="function" rel="rdfs-seeAlso">realpath()</a> - 返回规范化的绝对路径名</span></li>
-   </ul>
-  </p>
- </div>
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.parse-ini-string.html">parse_ini_string</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pclose.html">pclose</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

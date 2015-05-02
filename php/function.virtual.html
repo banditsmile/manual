@@ -1,158 +1,72 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>执行 Apache 子请求</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.getallheaders.html">getallheaders</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.fpm.html">FastCGI 进程管理器</a></div>
- <div class="up"><a href="ref.apache.html">Apache 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.virtual" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">virtual</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">virtual</span> &mdash; <span class="dc-title">执行 Apache 子请求</span></p>
-
- </div>
-
- <div class="refsect1 description" id="refsect1-function.virtual-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>virtual</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>virtual()</strong></span> 是一个 Apache 特有函数，
-   类似于
-   <em>mod_include</em> 中的 <em>&lt;!--#include virtual...--&gt;</em>。
-   它执行一个 Apache 子请求。可用于包含一个
-   CGI 脚本或 <var class="filename">.shtml</var> 文件，或任何其它可通过
-   Apache 解析的请求。注意对一个 CGI 脚本，该脚本
-   生成合法的 CGI 头，至少必须
-   生成<em>Content-Type</em> 头。
-  </p>
-  <p class="para">
-   为运行子请求，所有缓冲将中止并刷新至浏览器，包括头信息。
-  </p>
-  <p class="simpara">、
-仅在将 PHP 安装为 Apache 模块时，支持此函数。</p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.virtual-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">filename</code></dt>
-
-     <dd>
-
-      <p class="para">
-       virtual命令将执行的文件
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.virtual-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   成功执行 virtual 命令，或失败时返回 <strong><code>FALSE</code></strong> 。
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >virtual</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Apache ������" HREF="ref.apache.html"><LINK  REL="PREVIOUS" TITLE="getallheaders" HREF="function.getallheaders.html"><LINK  REL="NEXT" TITLE="���麯����" HREF="ref.array.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.getallheaders.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="ref.array.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.virtual" ></A
+>virtual</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN7884" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>virtual&nbsp;--&nbsp;Perform an Apache sub-request</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN7887" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >virtual</B
+> ( string filename)<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >virtual()</B
+> is an Apache-specific function which
+     is equivalent to &#60;!--#include virtual...--&#62; in mod_include.
+     It performs an Apache sub-request.  It is useful for including
+     CGI scripts or .shtml files, or anything else that you would
+     parse through Apache.  Note that for a CGI script, the script
+     must generate valid CGI headers.  At the minimum that means it
+     must generate a Content-type header.
+    </P
+><P  >&#13;     To run the sub-request, all buffers are terminated and flushed to the
+     browser, pending headers are sent too.
+    </P
+><P  >&#13;     As of PHP 4.0.6, you can use <B  CLASS="function" >virtual()</B
+> on PHP files.
+     However, it is typically better to use <A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+> or
+     <A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> if you need to include another PHP file.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >ע: </B
+>
+  From PHP 4.3.3 on you can use this function with the
+  <A  HREF="ref.nsapi.html"  >NSAPI server module</A
+> in Netscape/iPlanet/SunONE
+   webservers, too.
+  </P
+></BLOCKQUOTE
+></DIV
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.getallheaders.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="ref.array.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >getallheaders</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.apache.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >���麯����</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 changelog" id="refsect1-function.virtual-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.3</td>
-       <td>
-        <p class="para">从
-PHP 4.3.3 起，也可在 Netscape/iPlanet/SunONE Web 服务器的 
-<a href="book.nsapi.html" class="link">NSAPI 服务器模块</a>使用此函数。</p>
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.6</td>
-       <td>
-        此函数可用于 PHP 文件。但是通常使用
-        <span class="function"><a href="function.include.html" class="function">include</a></span> 或
-        <span class="function"><a href="function.require.html" class="function">require</a></span> 更好。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.virtual-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   示例请看 <span class="function"><a href="function.apache-note.html" class="function">apache_note()</a></span> 。
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.virtual-notes">
-  <h3 class="title">注释</h3>
-  <div class="warning"><strong class="warning">Warning</strong>
-   <p class="para">
-    查询字符串可被传递至被包含文件，但是
-    <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var> 是拷贝于父文件，仅有
-    <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER['QUERY_STRING']</a></var></var> 将填充传递入的查询字符串。
-    且此查询字符串只在使用 Apache 2 时被填充。
-    此请求文件将不会显示在 Apache 访问日志中。
-   </p>
-  </div>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    在被请求文件中设置的环境变量在原请求文件中不可见。
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.virtual-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.apache-note.html" class="function" rel="rdfs-seeAlso">apache_note()</a> - 取得或设置 apache 请求记录</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.getallheaders.html">getallheaders</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="book.fpm.html">FastCGI 进程管理器</a></div>
- <div class="up"><a href="ref.apache.html">Apache 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

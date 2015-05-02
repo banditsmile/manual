@@ -1,74 +1,112 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å­˜å‚¨ä¸€ä¸ªæ–‡ä»¶è‡³ FTP æœåŠ¡å™¨ï¼ˆnon-blockingï¼‰</title>
+<HTML  ><HEAD  ><TITLE  >ftp_nb_put</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="FTP º¯Êı¿â" HREF="ref.ftp.html"><LINK  REL="PREVIOUS" TITLE="ftp_nb_get" HREF="function.ftp-nb-get.html"><LINK  REL="NEXT" TITLE="ftp_nlist" HREF="function.ftp-nlist.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ftp-nb-get.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ftp-nlist.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ftp-nb-put" ></A
+>ftp_nb_put</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN31763" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>ftp_nb_put&nbsp;--&nbsp;´æ´¢Ò»¸öÎÄ¼şÖÁ FTP ·şÎñÆ÷£¨non-blocking£©</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN31766" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >ftp_nb_put</B
+> ( resource ftp_stream, string remote_file, string local_file, int mode [, int startpos])<BR  ></BR
+><P  >&#13;     <B  CLASS="function" >ftp_nb_put()</B
+> º¯ÊıÓÃÀ´°Ñ±¾µØÎÄ¼ş <TT  CLASS="parameter" ><I  >local_file</I
+></TT
+>
+     ´æ´¢µ½ FTP ·şÎñÆ÷ÉÏÓÉ <TT  CLASS="parameter" ><I  >remote_file</I
+></TT
+> ²ÎÊıÖ¸¶¨µÄÂ·¾¶¡£´«ÊäÄ£Ê½²ÎÊı
+     <TT  CLASS="parameter" ><I  >mode</I
+></TT
+> Ö»ÄÜÎª <TT  CLASS="constant" ><B  >FTP_ASCII</B
+></TT
+> (ÎÄ±¾Ä£Ê½) »ò <TT  CLASS="constant" ><B  >FTP_BINARY</B
+></TT
+>
+     (¶ş½øÖÆÄ£Ê½) Á½ÖÖ¡£Óëº¯Êı <A  HREF="function.ftp-put.html"  ><B  CLASS="function" >ftp_put()</B
+></A
+>
+     ²»Í¬µÄÊÇ£¬´Ëº¯ÊıÉÏ´«ÎÄ¼şµÄÊ±ºò²ÉÓÃµÄÊÇÒì²½´«ÊäÄ£Ê½£¬Ò²¾ÍÒâÎ¶×ÅÔÚÎÄ¼ş´«ËÍµÄ¹ı³ÌÖĞ£¬ÄãµÄ³ÌĞò¿ÉÒÔ¼ÌĞø¸ÉÆäËüµÄÊÂÇé¡£
+    </P
+><P  >&#13;     ·µ»Ø <TT  CLASS="constant" ><B  >FTP_FAILED</B
+></TT
+>£¬<TT  CLASS="constant" ><B  >FTP_FINISHED</B
+></TT
+>
+     »ò <TT  CLASS="constant" ><B  >FTP_MOREDATA</B
+></TT
+>¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31799" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >ftp_nb_put()</B
+> ÊµÀı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ¿ªÊ¼ÉÏ´«<br  /></font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_put</font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">, </font><font  color="#DD0000">"test.remote"</font><font  color="#007700">, </font><font  color="#DD0000">"test.local"</font><font  color="#007700">, </font><font  color="#0000BB">FTP_BINARY</font><font  color="#007700">);<br  />while (</font><font  color="#0000BB">$ret </font><font  color="#007700">== </font><font  color="#0000BB">FTP_MOREDATA</font><font  color="#007700">) {<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ÔÚÕâÀï¿ÉÒÔ¼ÓÈëÆäËü´úÂë<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"."</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ¼ÌĞø´«ËÍ...<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_continue </font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">);<br  />}<br  />if (</font><font  color="#0000BB">$ret </font><font  color="#007700">!= </font><font  color="#0000BB">FTP_FINISHED</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"ÉÏ´«ÎÄ¼şÖĞ·¢Éú´íÎó..."</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;exit(</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN31803" ></A
+><P  ><B  >Àı×Ó 2. Ê¹ÓÃ <B  CLASS="function" >ftp_nb_put()</B
+> À´¶ÏÏßĞø´«</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#FF8000">// ¿ªÊ¼<br  /></font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_put </font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">, </font><font  color="#DD0000">"test.remote"</font><font  color="#007700">, </font><font  color="#DD0000">"test.local"</font><font  color="#007700">,<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">FTP_BINARY</font><font  color="#007700">, </font><font  color="#0000BB">ftp_size</font><font  color="#007700">(</font><font  color="#DD0000">"test.remote"</font><font  color="#007700">));<br  /></font><font  color="#FF8000">// »ò: $ret = ftp_nb_put ($my_connection, "test.remote", "test.local",<br  />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FTP_BINARY, FTP_AUTORESUME);<br  /><br  /></font><font  color="#007700">while (</font><font  color="#0000BB">$ret </font><font  color="#007700">== </font><font  color="#0000BB">FTP_MOREDATA</font><font  color="#007700">) {<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ¼ÓÈëÆäËüÒªÖ´ĞĞµÄ´úÂë<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#007700">echo </font><font  color="#DD0000">"."</font><font  color="#007700">;<br  /><br  />&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// ¼ÌĞø´«ËÍ...<br  />&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$ret </font><font  color="#007700">= </font><font  color="#0000BB">ftp_nb_continue </font><font  color="#007700">(</font><font  color="#0000BB">$my_connection</font><font  color="#007700">);<br  />}<br  />if (</font><font  color="#0000BB">$ret </font><font  color="#007700">!= </font><font  color="#0000BB">FTP_FINISHED</font><font  color="#007700">) {<br  />&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"ÉÏ´«ÎÄ¼şÖĞ·¢Éú´íÎó..."</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;exit(</font><font  color="#0000BB">1</font><font  color="#007700">);<br  />}<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ²Î¼û <A  HREF="function.ftp-nb-fput.html"  ><B  CLASS="function" >ftp_nb_fput()</B
+></A
+>£¬<A  HREF="function.ftp-nb-continue.html"  ><B  CLASS="function" >ftp_nb_continue()</B
+></A
+>£¬<A  HREF="function.ftp-put.html"  ><B  CLASS="function" >ftp_put()</B
+></A
+>
+     ºÍ <A  HREF="function.ftp-fput.html"  ><B  CLASS="function" >ftp_fput()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ftp-nb-get.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ftp-nlist.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ftp_nb_get</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ftp.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ftp_nlist</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-nb-get.html">ftp_nb_get</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-nlist.html">ftp_nlist</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ftp-nb-put" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">ftp_nb_put</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">ftp_nb_put</span> &mdash; <span class="dc-title">å­˜å‚¨ä¸€ä¸ªæ–‡ä»¶è‡³ FTP æœåŠ¡å™¨ï¼ˆnon-blockingï¼‰</span></p>
 
-   </div>
-   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.ftp-nb-put-unknown-unknown-seealsq">
-    <h3 class="title">è¯´æ˜</h3>
-    <div class="methodsynopsis dc-description">
-     <span class="type">int</span> <span class="methodname"><strong>ftp_nb_put</strong></span>
-      ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
-     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$remote_file</code></span>
-     , <span class="methodparam"><span class="type">string</span> <code class="parameter">$local_file</code></span>
-     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-     [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$startpos</code></span>
-    ] )</div>
-
-    <p class="para rdfs-comment">
-     <span class="function"><strong>ftp_nb_put()</strong></span> å‡½æ•°ç”¨æ¥æŠŠæœ¬åœ°æ–‡ä»¶ <code class="parameter">local_file</code>
-     å­˜å‚¨åˆ° FTP æœåŠ¡å™¨ä¸Šç”± <code class="parameter">remote_file</code> å‚æ•°æŒ‡å®šçš„è·¯å¾„ã€‚ä¼ è¾“æ¨¡å¼å‚æ•°
-     <code class="parameter">mode</code> åªèƒ½ä¸º <strong><code>FTP_ASCII</code></strong> (æ–‡æœ¬æ¨¡å¼) æˆ– <strong><code>FTP_BINARY</code></strong>
-     (äºŒè¿›åˆ¶æ¨¡å¼) ä¸¤ç§ã€‚ä¸å‡½æ•° <span class="function"><a href="function.ftp-put.html" class="function">ftp_put()</a></span>
-     ä¸åŒçš„æ˜¯ï¼Œæ­¤å‡½æ•°ä¸Šä¼ æ–‡ä»¶çš„æ—¶å€™é‡‡ç”¨çš„æ˜¯å¼‚æ­¥ä¼ è¾“æ¨¡å¼ï¼Œä¹Ÿå°±æ„å‘³ç€åœ¨æ–‡ä»¶ä¼ é€çš„è¿‡ç¨‹ä¸­ï¼Œä½ çš„ç¨‹åºå¯ä»¥ç»§ç»­å¹²å…¶å®ƒçš„äº‹æƒ…ã€‚
-    </p>
-    <p class="para">
-     è¿”å› <strong><code>FTP_FAILED</code></strong>ï¼Œ<strong><code>FTP_FINISHED</code></strong>
-     æˆ– <strong><code>FTP_MOREDATA</code></strong>ã€‚
-    </p>
-    <p class="para">
-     <div class="example" id="example-4586">
-      <p><strong>Example #1 <span class="function"><strong>ftp_nb_put()</strong></span> å®ä¾‹</strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å¼€å§‹ä¸Šä¼ <br /></span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_put</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test.remote"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test.local"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FTP_BINARY</span><span style="color: #007700">);<br />while&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">FTP_MOREDATA</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;åœ¨è¿™é‡Œå¯ä»¥åŠ å…¥å…¶å®ƒä»£ç <br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ç»§ç»­ä¼ é€...<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_continue&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">);<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">FTP_FINISHED</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ä¸Šä¼ æ–‡ä»¶ä¸­å‘ç”Ÿé”™è¯¯..."</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-     <div class="example" id="example-4587">
-      <p><strong>Example #2 ä½¿ç”¨ <span class="function"><strong>ftp_nb_put()</strong></span> æ¥æ–­çº¿ç»­ä¼ </strong></p>
-      <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;å¼€å§‹<br /></span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_put&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test.remote"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test.local"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">FTP_BINARY</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ftp_size</span><span style="color: #007700">(</span><span style="color: #DD0000">"test.remote"</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">//&nbsp;æˆ–:&nbsp;$ret&nbsp;=&nbsp;ftp_nb_put&nbsp;($my_connection,&nbsp;"test.remote",&nbsp;"test.local",<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FTP_BINARY,&nbsp;FTP_AUTORESUME);<br /><br /></span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">FTP_MOREDATA</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;åŠ å…¥å…¶å®ƒè¦æ‰§è¡Œçš„ä»£ç <br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"."</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ç»§ç»­ä¼ é€...<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ftp_nb_continue&nbsp;</span><span style="color: #007700">(</span><span style="color: #0000BB">$my_connection</span><span style="color: #007700">);<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">FTP_FINISHED</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ä¸Šä¼ æ–‡ä»¶ä¸­å‘ç”Ÿé”™è¯¯..."</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;exit(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-      </div>
-
-     </div>
-    </p>
-    <p class="para">
-     å‚è§ <span class="function"><a href="function.ftp-nb-fput.html" class="function">ftp_nb_fput()</a></span>ï¼Œ<span class="function"><a href="function.ftp-nb-continue.html" class="function">ftp_nb_continue()</a></span>ï¼Œ<span class="function"><a href="function.ftp-put.html" class="function">ftp_put()</a></span>
-     å’Œ <span class="function"><a href="function.ftp-fput.html" class="function">ftp_fput()</a></span>ã€‚
-    </p>
-   </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ftp-nb-get.html">ftp_nb_get</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ftp-nlist.html">ftp_nlist</a></div>
- <div class="up"><a href="ref.ftp.html">FTP å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

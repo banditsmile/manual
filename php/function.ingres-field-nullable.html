@@ -1,119 +1,86 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Test if a field is nullable</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-field-name.html">ingres_field_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ingres-field-precision.html">ingres_field_precision</a></div>
- <div class="up"><a href="ref.ingres.html">Ingres å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ingres-field-nullable" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">ingres_field_nullable</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5 &lt;= 5.0.5, PECL ingres &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">ingres_field_nullable</span> &mdash; <span class="dc-title">Test if a field is nullable</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.ingres-field-nullable-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>ingres_field_nullable</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$index</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Test if a field is nullable.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <strong>Related Configurations</strong><br />
-   <p class="para">
-    See <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a>
-    in <a href="ingres.configuration.html" class="link">Runtime Configuration</a>
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.ingres-field-nullable-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The query result identifier
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">index</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">index</code> is the field whose nullability will be
-       retrieved.
-      </p>
-      <p class="para">
-       The possible values of <code class="parameter">index</code> depend upon
-       the value
-       of <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a>.
-       If <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a>
-       is <em>1</em> (the default)
-       then <code class="parameter">index</code> must be
-       between <em>1</em> and the value returned
-       by <span class="function"><a href="function.ingres-num-fields.html" class="function">ingres_num_fields()</a></span>. If <a href="ingres.configuration.html#ini.ingres.array-index-start" class="link">ingres.array_index_start</a>
-       is <em>0</em> then <code class="parameter">index</code> must
-       be between <em>0</em>
-       and <span class="function"><a href="function.ingres-num-fields.html" class="function">ingres_num_fields()</a></span><em> -
-       1</em>.
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >ingres_field_nullable</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Ingres II Functions" HREF="ref.ingres.html"><LINK  REL="PREVIOUS" TITLE="ingres_field_name" HREF="function.ingres-field-name.html"><LINK  REL="NEXT" TITLE="ingres_field_precision" HREF="function.ingres-field-precision.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.ingres-field-name.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.ingres-field-precision.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.ingres-field-nullable" ></A
+>ingres_field_nullable</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN46246" ></A
+><P  >    (PHP 4 &#62;= 4.0.2)</P
+>ingres_field_nullable&nbsp;--&nbsp;Test if a field is nullable</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN46249" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >ingres_field_nullable</B
+> ( int index [, resource link])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <B  CLASS="function" >ingres_field_nullable()</B
+> returns <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+> if the
+     field can be set to the <TT  CLASS="constant" ><B  >NULL</B
+></TT
+> value and <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if it can't.
+    </P
+><P  >&#13;     <TT  CLASS="parameter" ><I  >index</I
+></TT
+> is the number of the field and must
+     be between 1 and the value given by
+     <A  HREF="function.ingres-num-fields.html"  ><B  CLASS="function" >ingres_num_fields()</B
+></A
+>.
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.ingres-query.html"  ><B  CLASS="function" >ingres_query()</B
+></A
+>,
+     <A  HREF="function.ingres-fetch-array.html"  ><B  CLASS="function" >ingres_fetch_array()</B
+></A
+>,
+     <A  HREF="function.ingres-fetch-object.html"  ><B  CLASS="function" >ingres_fetch_object()</B
+></A
+>, and
+     <A  HREF="function.ingres-fetch-row.html"  ><B  CLASS="function" >ingres_fetch_row()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.ingres-field-name.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.ingres-field-precision.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >ingres_field_name</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.ingres.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ingres_field_precision</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 returnvalues" id="refsect1-function.ingres-field-nullable-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   <span class="function"><strong>ingres_field_nullable()</strong></span> returns <strong><code>TRUE</code></strong> if the
-   field can be set to the <strong><code>NULL</code></strong> value and <strong><code>FALSE</code></strong> if it cannot
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.ingres-field-nullable-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ingres-query.html" class="function" rel="rdfs-seeAlso">ingres_query()</a> - Send an SQL query to Ingres</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-fetch-array.html" class="function" rel="rdfs-seeAlso">ingres_fetch_array()</a> - Fetch a row of result into an array</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-fetch-assoc.html" class="function" rel="rdfs-seeAlso">ingres_fetch_assoc()</a> - Fetch a row of result into an associative array</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-fetch-object.html" class="function" rel="rdfs-seeAlso">ingres_fetch_object()</a> - Fetch a row of result into an object</span></li>
-    <li class="member"><span class="function"><a href="function.ingres-fetch-row.html" class="function" rel="rdfs-seeAlso">ingres_fetch_row()</a> - Fetch a row of result into an enumerated array</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-field-name.html">ingres_field_name</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ingres-field-precision.html">ingres_field_precision</a></div>
- <div class="up"><a href="ref.ingres.html">Ingres å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

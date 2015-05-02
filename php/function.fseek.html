@@ -1,163 +1,132 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>åœ¨æ–‡ä»¶æŒ‡é’ˆä¸­å®šä½</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fscanf.html">fscanf</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fstat.html">fstat</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fseek" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fseek</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">fseek</span> &mdash; <span class="dc-title">åœ¨æ–‡ä»¶æŒ‡é’ˆä¸­å®šä½</span></p>
-
- </div>
- 
-  <div class="refsect1 description" id="refsect1-function.fseek-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>fseek</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$whence</code><span class="initializer"> = SEEK_SET</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   åœ¨ä¸
-   <code class="parameter">handle</code>
-   å…³è”çš„æ–‡ä»¶ä¸­è®¾å®šæ–‡ä»¶æŒ‡é’ˆä½ç½®ã€‚
-   æ–°ä½ç½®ä»æ–‡ä»¶å¤´å¼€å§‹ä»¥å­—èŠ‚æ•°åº¦é‡ï¼Œæ˜¯ä»¥
-   <code class="parameter">whence</code>
-   æŒ‡å®šçš„ä½ç½®åŠ ä¸Š
-   <code class="parameter">offset</code>ã€‚
-  </p>
-  <p class="para">
-   In general, it is allowed to seek past the end-of-file; if data is then
-   written, reads in any unwritten region between the end-of-file and the
-   sought position will yield bytes with value 0. However, certain streams
-   may not support this behavior, especially when they have an underlying
-   fixed size storage.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fseek-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">æ–‡ä»¶ç³»ç»ŸæŒ‡é’ˆï¼Œæ˜¯å…¸å‹åœ°ç”±
-<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> åˆ›å»ºçš„ <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>(èµ„æº)ã€‚</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">offset</code></dt>
-
-     <dd>
-
-      <p class="para">
-       åç§»é‡ã€‚
-      </p>
-      <p class="para">
-       è¦ç§»åŠ¨åˆ°æ–‡ä»¶å°¾ä¹‹å‰çš„ä½ç½®ï¼Œéœ€è¦ç»™
-    <code class="parameter">offset</code> ä¼ é€’ä¸€ä¸ªè´Ÿå€¼ï¼Œå¹¶è®¾ç½® <code class="parameter">whence</code>
-       ä¸º <strong><code>SEEK_END</code></strong>ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">whence</code></dt>
-
-     <dd>
-
-      <p class="para">
-       <code class="parameter">whence</code> values are:
-       <ul class="simplelist">
-        <li class="member"><strong><code>SEEK_SET</code></strong> - è®¾å®šä½ç½®ç­‰äº <code class="parameter">offset</code> å­—èŠ‚ã€‚</li>
-        <li class="member"><strong><code>SEEK_CUR</code></strong> - è®¾å®šä½ç½®ä¸ºå½“å‰ä½ç½®åŠ ä¸Š <code class="parameter">offset</code>ã€‚</li>
-        <li class="member"><strong><code>SEEK_END</code></strong> - è®¾å®šä½ç½®ä¸ºæ–‡ä»¶å°¾åŠ ä¸Š
-    <code class="parameter">offset</code>ã€‚</li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
-  <div class="refsect1 returnvalues" id="refsect1-function.fseek-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-    æˆåŠŸåˆ™è¿”å› 0ï¼›å¦åˆ™è¿”å› -1ã€‚æ³¨æ„ç§»åŠ¨åˆ° EOF ä¹‹åçš„ä½ç½®ä¸ç®—é”™è¯¯ã€‚
-  </p>
- </div>
-
- 
- <div class="refsect1 examples" id="refsect1-function.fseek-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-2490">
-    <p><strong>Example #1 <span class="function"><strong>fseek()</strong></span> ä¾‹å­</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'somefile.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;read&nbsp;some&nbsp;data<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fgets</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4096</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;move&nbsp;back&nbsp;to&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;file<br />//&nbsp;same&nbsp;as&nbsp;rewind($fp);<br /></span><span style="color: #0000BB">fseek</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >fseek</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="ÎÄ¼şÏµÍ³º¯Êı¿â" HREF="ref.filesystem.html"><LINK  REL="PREVIOUS" TITLE="fscanf" HREF="function.fscanf.html"><LINK  REL="NEXT" TITLE="fstat" HREF="function.fstat.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.fscanf.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.fstat.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fseek" ></A
+>fseek</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN28768" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>fseek&nbsp;--&nbsp;ÔÚÎÄ¼şÖ¸ÕëÖĞ¶¨Î»</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN28771" ></A
+><H2  >ËµÃ÷</H2
+>int <B  CLASS="methodname" >fseek</B
+> ( resource handle, int offset [, int whence])<BR  ></BR
+><P  >&#13;     ÔÚÓë
+     <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>
+     ¹ØÁªµÄÎÄ¼şÖĞÉè¶¨ÎÄ¼şÖ¸ÕëÎ»ÖÃ¡£ĞÂÎ»ÖÃ£¬´ÓÎÄ¼şÍ·¿ªÊ¼ÒÔ×Ö½ÚÊı¶ÈÁ¿£¬ÊÇÒÔ
+     <TT  CLASS="parameter" ><I  >whence</I
+></TT
+>
+     Ö¸¶¨µÄÎ»ÖÃ¼ÓÉÏ
+     <TT  CLASS="parameter" ><I  >offset</I
+></TT
+>¡£<TT  CLASS="parameter" ><I  >whence</I
+></TT
+>
+     µÄÖµ¶¨ÒåÎª£º
+     <P  ></P
+><TABLE  BORDER="0" ><TBODY  ><TR  ><TD  ><TT  CLASS="constant" ><B  >SEEK_SET</B
+></TT
+> - Éè¶¨Î»ÖÃµÈÓÚ <TT  CLASS="parameter" ><I  >offset</I
+></TT
+> ×Ö½Ú¡£</TD
+></TR
+><TR  ><TD  ><TT  CLASS="constant" ><B  >SEEK_CUR</B
+></TT
+> - Éè¶¨Î»ÖÃÎªµ±Ç°Î»ÖÃ¼ÓÉÏ <TT  CLASS="parameter" ><I  >offset</I
+></TT
+>¡£</TD
+></TR
+><TR  ><TD  ><TT  CLASS="constant" ><B  >SEEK_END</B
+></TT
+> - Éè¶¨Î»ÖÃÎªÎÄ¼şÎ²¼ÓÉÏ
+      <TT  CLASS="parameter" ><I  >offset</I
+></TT
+>¡££¨ÒªÒÆ¶¯µ½ÎÄ¼şÎ²Ö®Ç°µÄÎ»ÖÃ£¬ĞèÒª¸ø
+      <TT  CLASS="parameter" ><I  >offset</I
+></TT
+> ´«µİÒ»¸ö¸ºÖµ¡££©</TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+>
+    </P
+><P  >&#13;     Èç¹ûÃ»ÓĞÖ¸¶¨
+     <TT  CLASS="parameter" ><I  >whence</I
+></TT
+>£¬Ä¬ÈÏÎª
+    <TT  CLASS="constant" ><B  >SEEK_SET</B
+></TT
+>¡£
+    </P
+><P  >&#13;     ³É¹¦Ôò·µ»Ø 0£»·ñÔò·µ»Ø -1¡£×¢ÒâÒÆ¶¯µ½ EOF Ö®ºóµÄÎ»ÖÃ²»Ëã´íÎó¡£
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN28806" ></A
+><P  ><B  >Àı×Ó 1. <B  CLASS="function" >fseek()</B
+> Àı×Ó</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /><br  />$fp </font><font  color="#007700">= </font><font  color="#0000BB">fopen</font><font  color="#007700">(</font><font  color="#DD0000">'somefile.txt'</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// read some data<br  /></font><font  color="#0000BB">$data </font><font  color="#007700">= </font><font  color="#0000BB">fgets</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">4096</font><font  color="#007700">);<br  /><br  /></font><font  color="#FF8000">// move back to the begining of the file<br  />// same as rewind($fp);<br  /></font><font  color="#0000BB">fseek</font><font  color="#007700">(</font><font  color="#0000BB">$fp</font><font  color="#007700">, </font><font  color="#0000BB">0</font><font  color="#007700">);<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     ¿ÉÄÜ²»ÄÜÓÃÓÚÔÚ
+     <A  HREF="function.fopen.html"  ><B  CLASS="function" >fopen()</B
+></A
+>
+     ÖĞÒÔ "http://" »ò "ftp://" ¸ñÊ½´ò¿ªËù·µ»ØµÄÎÄ¼şÖ¸Õë¡£
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      <TT  CLASS="parameter" ><I  >whence</I
+></TT
+> ²ÎÊıÊÇ PHP 4.0.0 Ö®ºóÔö¼ÓµÄ¡£
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     ²Î¼û <A  HREF="function.ftell.html"  ><B  CLASS="function" >ftell()</B
+></A
+> ºÍ
+     <A  HREF="function.rewind.html"  ><B  CLASS="function" >rewind()</B
+></A
+>¡£
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.fscanf.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.fstat.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >fscanf</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.filesystem.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >fstat</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 notes" id="refsect1-function.fseek-notes">
-  <h3 class="title">æ³¨é‡Š</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    å¦‚æœä½¿ç”¨é™„åŠ æ¨¡è¯•ï¼ˆ<em>a</em> æˆ– <em>a+</em>ï¼‰ï¼Œä»»ä½•å†™å…¥æ–‡ä»¶æ•°æ®éƒ½ä¼šè¢«é™„åŠ ä¸Šå»ï¼Œè€Œæ–‡ä»¶çš„ä½ç½®å°†ä¼šè¢«å¿½ç•¥ï¼Œè°ƒç”¨ <span class="function"><strong>fseek()</strong></span> çš„ç»“æœå°šæœªå®šä¹‰ã€‚
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    Not all streams support seeking. For those that do not support seeking,
-    forward seeking from the current position is accomplished by reading
-    and discarding data; other forms of seeking will fail.
-   </p>
-  </p></blockquote>
- </div>
-
- 
-  <div class="refsect1 seealso" id="refsect1-function.fseek-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ftell.html" class="function" rel="rdfs-seeAlso">ftell()</a> - è¿”å›æ–‡ä»¶æŒ‡é’ˆè¯»/å†™çš„ä½ç½®</span></li>
-    <li class="member"><span class="function"><a href="function.rewind.html" class="function" rel="rdfs-seeAlso">rewind()</a> - å€’å›æ–‡ä»¶æŒ‡é’ˆçš„ä½ç½®</span></li>
-   </ul>
-  </p>
- </div>
-
- 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.fscanf.html">fscanf</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.fstat.html">fstat</a></div>
- <div class="up"><a href="ref.filesystem.html">Filesystem å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

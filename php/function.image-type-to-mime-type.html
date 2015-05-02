@@ -1,161 +1,194 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å–å¾— getimagesizeï¼Œexif_read_dataï¼Œexif_thumbnailï¼Œexif_imagetype
-    æ‰€è¿”å›çš„å›¾åƒç±»å‹çš„ MIME ç±»å‹</title>
+<HTML  ><HEAD  ><TITLE  >image_type_to_mime_type</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Í¼Ïñº¯Êı¿â" HREF="ref.image.html"><LINK  REL="PREVIOUS" TITLE="getimagesize" HREF="function.getimagesize.html"><LINK  REL="NEXT" TITLE="image2wbmp" HREF="function.image2wbmp.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.getimagesize.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.image2wbmp.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.image-type-to-mime-type" ></A
+>image_type_to_mime_type</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN38230" ></A
+><P  >    (PHP 4 &#62;= 4.3.0)</P
+>image_type_to_mime_type&nbsp;--&nbsp;
+    È¡µÃ getimagesize£¬exif_read_data£¬exif_thumbnail£¬exif_imagetype
+    Ëù·µ»ØµÄÍ¼ÏñÀàĞÍµÄ MIME ÀàĞÍ
+   </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN38233" ></A
+><H2  >ËµÃ÷</H2
+>string <B  CLASS="methodname" >image_type_to_mime_type</B
+> ( int imagetype)<BR  ></BR
+><P  >&#13;    <B  CLASS="function" >image_type_to_mime_type()</B
+> º¯Êı¿ÉÒÔÅĞ¶ÏÒ»¸ö IMAGETYPE
+    ³£Á¿µÄ MIME ÀàĞÍ¡£
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN38243" ></A
+><P  ><B  >Àı×Ó 1. image_type_to_mime_type (file)</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />header </font><font  color="#007700">(</font><font  color="#DD0000">"Content-type: "</font><font  color="#007700">.</font><font  color="#0000BB">image_type_to_mime_type </font><font  color="#007700">(</font><font  color="#0000BB">IMAGETYPE_PNG</font><font  color="#007700">));<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    ·µ»ØÖµÈçÏÂ£º
+    <DIV  CLASS="table" ><A  NAME="AEN38247" ></A
+><P  ><B  >±í¸ñ 1. ·µ»ØÖµ³£Á¿</B
+></P
+><TABLE  BORDER="1" CLASS="CALSTABLE" ><THEAD  ><TR  ><TH  ALIGN="LEFT" VALIGN="MIDDLE" >Í¼ÏñÀàĞÍ£¨<TT  CLASS="parameter" ><I  >imagetype</I
+></TT
+>£©</TH
+><TH  ALIGN="LEFT" VALIGN="MIDDLE" >·µ»ØÖµ</TH
+></TR
+></THEAD
+><TBODY  ><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_GIF</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/gif</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_JPEG</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/jpeg</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_PNG</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/png</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_SWF</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >application/x-shockwave-flash</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_PSD</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/psd</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_BMP</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/bmp</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_TIFF_II</B
+></TT
+> (intel byte order)</TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/tiff</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" >&#13;         <TT  CLASS="constant" ><B  >IMAGETYPE_TIFF_MM</B
+></TT
+> (motorola byte order)
+        </TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/tiff</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_JPC</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >application/octet-stream</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_JP2</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/jp2</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_JPX</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >application/octet-stream</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_JB2</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >application/octet-stream</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_SWC</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >application/x-shockwave-flash</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_IFF</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/iff</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_WBMP</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/vnd.wap.wbmp</TT
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="constant" ><B  >IMAGETYPE_XBM</B
+></TT
+></TD
+><TD  ALIGN="LEFT" VALIGN="MIDDLE" ><TT  CLASS="literal" >image/xbm</TT
+></TD
+></TR
+></TBODY
+></TABLE
+></DIV
+>
+   </P
+><P  >&#13;    <DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >×¢: </B
+>
+      ±¾º¯Êı²»ĞèÒª GD ¿â¡£
+     </P
+></BLOCKQUOTE
+></DIV
+>
+   </P
+><P  >&#13;    ²Î¼û <A  HREF="function.getimagesize.html"  ><B  CLASS="function" >getimagesize()</B
+></A
+>£¬<A  HREF="function.exif-imagetype.html"  ><B  CLASS="function" >exif_imagetype()</B
+></A
+>£¬<A  HREF="function.exif-read-data.html"  ><B  CLASS="function" >exif_read_data()</B
+></A
+>
+    ºÍ <A  HREF="function.exif-thumbnail.html"  ><B  CLASS="function" >exif_thumbnail()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.getimagesize.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.image2wbmp.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >getimagesize</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.image.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >image2wbmp</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.image-type-to-extension.html">image_type_to_extension</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.image2wbmp.html">image2wbmp</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.image-type-to-mime-type" class="refentry">
-  <div class="refnamediv">
-   <h1 class="refname">image_type_to_mime_type</h1>
-   <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5)</p><p class="refpurpose"><span class="refname">image_type_to_mime_type</span> &mdash; <span class="dc-title">å–å¾— getimagesizeï¼Œexif_read_dataï¼Œexif_thumbnailï¼Œexif_imagetype
-    æ‰€è¿”å›çš„å›¾åƒç±»å‹çš„ MIME ç±»å‹</span></p>
 
-  </div>
-  <div class="refsect1 unknown-notet" id="refsect1-function.image-type-to-mime-type-unknown-notet">
-   <h3 class="title">è¯´æ˜</h3>
-   <div class="methodsynopsis dc-description">
-    <span class="type">string</span> <span class="methodname"><strong>image_type_to_mime_type</strong></span>
-     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$imagetype</code></span>
-    )</div>
-
-   <p class="para rdfs-comment">
-    <span class="function"><strong>image_type_to_mime_type()</strong></span> å‡½æ•°å¯ä»¥åˆ¤æ–­ä¸€ä¸ª IMAGETYPE
-    å¸¸é‡çš„ MIME ç±»å‹ã€‚
-    <div class="example" id="example-3277">
-     <p><strong>Example #1 image_type_to_mime_type (file)</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">image_type_to_mime_type</span><span style="color: #007700">(</span><span style="color: #0000BB">IMAGETYPE_PNG</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    è¿”å›å€¼å¦‚ä¸‹ï¼š
-    <table class="doctable table">
-    <caption><strong>è¿”å›å€¼å¸¸é‡</strong></caption>
-     
-      <thead>
-       <tr>
-        <th>å›¾åƒç±»å‹ï¼ˆ<code class="parameter">imagetype</code>ï¼‰</th>
-        <th>è¿”å›å€¼</th>
-       </tr>
-
-      </thead>
-
-      <tbody class="tbody">
-       <tr>
-        <td><strong><code>IMAGETYPE_GIF</code></strong></td>
-        <td><em>image/gif</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_JPEG</code></strong></td>
-        <td><em>image/jpeg</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_PNG</code></strong></td>
-        <td><em>image/png</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_SWF</code></strong></td>
-        <td><em>application/x-shockwave-flash</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_PSD</code></strong></td>
-        <td><em>image/psd</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_BMP</code></strong></td>
-        <td><em>image/bmp</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_TIFF_II</code></strong> (intel byte order)</td>
-        <td><em>image/tiff</em></td>
-       </tr>
-
-       <tr>
-        <td>
-         <strong><code>IMAGETYPE_TIFF_MM</code></strong> (motorola byte order)
-        </td>
-        <td><em>image/tiff</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_JPC</code></strong></td>
-        <td><em>application/octet-stream</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_JP2</code></strong></td>
-        <td><em>image/jp2</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_JPX</code></strong></td>
-        <td><em>application/octet-stream</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_JB2</code></strong></td>
-        <td><em>application/octet-stream</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_SWC</code></strong></td>
-        <td><em>application/x-shockwave-flash</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_IFF</code></strong></td>
-        <td><em>image/iff</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_WBMP</code></strong></td>
-        <td><em>image/vnd.wap.wbmp</em></td>
-       </tr>
-
-       <tr>
-        <td><strong><code>IMAGETYPE_XBM</code></strong></td>
-        <td><em>image/xbm</em></td>
-       </tr>
-
-      </tbody>
-     
-    </table>
-
-   </p>
-   <p class="para">
-    <blockquote class="note"><p><strong class="note">Note</strong>: 
-     <span class="simpara">
-      æœ¬å‡½æ•°ä¸éœ€è¦ GD åº“ã€‚
-     </span>
-    </p></blockquote>
-   </p>
-   <p class="para">
-    å‚è§ <span class="function"><a href="function.getimagesize.html" class="function">getimagesize()</a></span>ï¼Œ<span class="function"><a href="function.exif-imagetype.html" class="function">exif_imagetype()</a></span>ï¼Œ<span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span>
-    å’Œ <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span>ã€‚
-   </p>
-  </div>
-
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.image-type-to-extension.html">image_type_to_extension</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.image2wbmp.html">image2wbmp</a></div>
- <div class="up"><a href="ref.image.html">GD å’Œå›¾åƒå¤„ç† å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

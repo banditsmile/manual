@@ -1,132 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetch row as array</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sybase-deadlock-retry-count.html">sybase_deadlock_retry_count</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sybase-fetch-assoc.html">sybase_fetch_assoc</a></div>
- <div class="up"><a href="ref.sybase.html">Sybase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.sybase-fetch-array" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">sybase_fetch_array</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">sybase_fetch_array</span> &mdash; <span class="dc-title">Fetch row as array</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.sybase-fetch-array-description">
-  <h3 class="title">ËØ¥Êòé</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">array</span> <span class="methodname"><strong>sybase_fetch_array</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   <span class="function"><strong>sybase_fetch_array()</strong></span> is an extended version of
-   <span class="function"><a href="function.sybase-fetch-row.html" class="function">sybase_fetch_row()</a></span>.  In addition to storing the
-   data in the numeric indices of the result array, it also stores
-   the data in associative indices, using the field names as keys.
-  </p>
-  <p class="para">
-   An important thing to note is that using
-   <span class="function"><strong>sybase_fetch_array()</strong></span> is NOT significantly
-   slower than using <span class="function"><a href="function.sybase-fetch-row.html" class="function">sybase_fetch_row()</a></span>, while it
-   provides a significant added value.
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.sybase-fetch-array-parameters">
-  <h3 class="title">ÂèÇÊï∞</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">result</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.sybase-fetch-array-returnvalues">
-  <h3 class="title">ËøîÂõûÂÄº</h3>
-  <p class="para">
-   Returns an array that corresponds to the fetched row, or <strong><code>FALSE</code></strong> if there
-   are no more rows.
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    When selecting fields with identical names (for instance, in a join), the
-    associative indices will have a sequential number prepended. See the
-    example for details.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.sybase-fetch-array-examples">
-  <h3 class="title">ËåÉ‰æã</h3>
-  <p class="para">
-   <div class="example" id="example-2290">
-    <p><strong>Example #1 Identical fieldnames</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$dbh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sybase_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'SYBASE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$q&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">sybase_query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;*&nbsp;FROM&nbsp;p,&nbsp;a&nbsp;WHERE&nbsp;p.person_id=&nbsp;a.person_id'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sybase_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$q</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">sybase_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     The above example would produce the following output (assuming the two tables only
-     have each one column called &quot;person_id&quot;):
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-array(4) {
-  [0]=&gt;
+<HTML  ><HEAD  ><TITLE  >sybase_fetch_array</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP  ÷≤·" HREF="index-2.html"><LINK  REL="UP" TITLE="Sybase Functions" HREF="ref.sybase.html"><LINK  REL="PREVIOUS" TITLE="sybase_deadlock_retry_count" HREF="function.sybase-deadlock-retry-count.html"><LINK  REL="NEXT" TITLE="sybase_fetch_assoc" HREF="function.sybase-fetch-assoc.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP  ÷≤·</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.sybase-deadlock-retry-count.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.sybase-fetch-assoc.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.sybase-fetch-array" ></A
+>sybase_fetch_array</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN111865" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>sybase_fetch_array&nbsp;--&nbsp;Fetch row as array</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN111868" ></A
+><H2  >Description</H2
+>array <B  CLASS="methodname" >sybase_fetch_array</B
+> ( resource result)<BR  ></BR
+><P  >&#13;     Returns an array that corresponds to the fetched row, or
+     <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+> if there are no more rows.
+    </P
+><P  >&#13;     <B  CLASS="function" >sybase_fetch_array()</B
+> is an extended version of
+     <A  HREF="function.sybase-fetch-row.html"  ><B  CLASS="function" >sybase_fetch_row()</B
+></A
+>.  In addition to storing the
+     data in the numeric indices of the result array, it also stores
+     the data in associative indices, using the field names as keys.
+    </P
+><P  >&#13;     An important thing to note is that using
+     <B  CLASS="function" >sybase_fetch_array()</B
+> is NOT significantly
+     slower than using <A  HREF="function.sybase-fetch-row.html"  ><B  CLASS="function" >sybase_fetch_row()</B
+></A
+>, while it
+     provides a significant added value.
+    </P
+><DIV  CLASS="note" ><BLOCKQUOTE  CLASS="note" ><P  ><B  >◊¢: </B
+> 
+      When selecting fields with identical names (for instance, in
+      a join), the associative indices will have a sequential number prepended.
+      See the example for details.
+     </P
+></BLOCKQUOTE
+></DIV
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN111887" ></A
+><P  ><B  >¿˝◊” 1. Identical fieldnames</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />&nbsp;&nbsp;&nbsp;&nbsp;$dbh </font><font  color="#007700">= </font><font  color="#0000BB">sybase_connect</font><font  color="#007700">(</font><font  color="#DD0000">'SYBASE'</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">, </font><font  color="#DD0000">''</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$q </font><font  color="#007700">= </font><font  color="#0000BB">sybase_query</font><font  color="#007700">(</font><font  color="#DD0000">'SELECT * FROM p, a WHERE p.person_id= a.person_id'</font><font  color="#007700">);<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">var_dump</font><font  color="#007700">(</font><font  color="#0000BB">sybase_fetch_array</font><font  color="#007700">(</font><font  color="#0000BB">$q</font><font  color="#007700">));<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">sybase_close</font><font  color="#007700">(</font><font  color="#0000BB">$dbh</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  >&#13;       The above example would produce the following output (assuming the two tables only 
+       have each one column called "person_id"):
+      </P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><PRE  CLASS="screen" >array(4) {
+  [0]=&#62;
   int(1)
-  [&quot;person_id&quot;]=&gt;
+  ["person_id"]=&#62;
   int(1)
-  [1]=&gt;
+  [1]=&#62;
   int(1)
-  [&quot;person_id1&quot;]=&gt;
+  ["person_id1"]=&#62;
   int(1)
-}
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+}</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also
+     <A  HREF="function.sybase-fetch-row.html"  ><B  CLASS="function" >sybase_fetch_row()</B
+></A
+>,
+     <A  HREF="function.sybase-fetch-assoc.html"  ><B  CLASS="function" >sybase_fetch_assoc()</B
+></A
+> and
+     <A  HREF="function.sybase-fetch-object.html"  ><B  CLASS="function" >sybase_fetch_object()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.sybase-deadlock-retry-count.html"  ACCESSKEY="P" >∫ÛÕÀ</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >∆µ„</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.sybase-fetch-assoc.html"  ACCESSKEY="N" >«∞Ω¯</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >sybase_deadlock_retry_count</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sybase.html"  ACCESSKEY="U" >…œ“ªº∂</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >sybase_fetch_assoc</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.sybase-fetch-array-seealso">
-  <h3 class="title">ÂèÇËßÅ</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.sybase-fetch-row.html" class="function" rel="rdfs-seeAlso">sybase_fetch_row()</a> - Get a result row as an enumerated array</span></li>
-    <li class="member"><span class="function"><a href="function.sybase-fetch-assoc.html" class="function" rel="rdfs-seeAlso">sybase_fetch_assoc()</a> - Fetch a result row as an associative array</span></li>
-    <li class="member"><span class="function"><a href="function.sybase-fetch-object.html" class="function" rel="rdfs-seeAlso">sybase_fetch_object()</a> - Fetch a row as an object</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.sybase-deadlock-retry-count.html">sybase_deadlock_retry_count</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.sybase-fetch-assoc.html">sybase_fetch_assoc</a></div>
- <div class="up"><a href="ref.sybase.html">Sybase ÂáΩÊï∞</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

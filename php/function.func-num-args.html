@@ -1,172 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns the number of arguments passed to the function</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.func-get-args.html">func_get_args</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.function-exists.html">function_exists</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.func-num-args" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">func_num_args</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">func_num_args</span> &mdash; <span class="dc-title">Returns the number of arguments passed to the function</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.func-num-args-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>func_num_args</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Gets the number of arguments passed to the function.
-  </p>
-  <p class="para">
-   This function may be used in conjunction with 
-   <span class="function"><a href="function.func-get-arg.html" class="function">func_get_arg()</a></span> and <span class="function"><a href="function.func-get-args.html" class="function">func_get_args()</a></span>
-   to allow user-defined functions to accept variable-length argument lists.
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.func-num-args-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   Returns the number of arguments passed into the current user-defined
-   function.
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.func-num-args-changelog">
-  <h3 class="title">更新日志</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>版本</th>
-       <th>说明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        This function can now be used in parameter lists.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>
-        If this function is called from the outermost scope of a file
-        which has been included by calling <span class="function"><a href="function.include.html" class="function">include</a></span>
-        or <span class="function"><a href="function.require.html" class="function">require</a></span> from within a function in the
-        calling file, it now generates a warning and returns -1.
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >func_num_args</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="Function Handling Functions" HREF="ref.funchand.html"><LINK  REL="PREVIOUS" TITLE="func_get_args" HREF="function.func-get-args.html"><LINK  REL="NEXT" TITLE="function_exists" HREF="function.function-exists.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.func-get-args.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.function-exists.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.func-num-args" ></A
+>func_num_args</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN32357" ></A
+><P  >    (PHP 4 )</P
+>func_num_args&nbsp;--&nbsp;
+     Returns the number of arguments passed to the function
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN32360" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >func_num_args</B
+> ( void )<BR  ></BR
+><P  >&#13;     Returns the number of arguments passed into the current
+     user-defined function. <B  CLASS="function" >func_num_args()</B
+> will
+     generate a warning if called from outside of a user-defined function.
+    </P
+><P  >&#13;     <DIV  CLASS="informalexample" ><A  NAME="AEN32369" ></A
+><P  ></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">() <br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$numargs </font><font  color="#007700">= </font><font  color="#0000BB">func_num_args</font><font  color="#007700">();<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"Number of arguments: $numargs\n"</font><font  color="#007700">;<br  />} <br  /><br  /></font><font  color="#0000BB">foo</font><font  color="#007700">(</font><font  color="#0000BB">1</font><font  color="#007700">, </font><font  color="#0000BB">2</font><font  color="#007700">, </font><font  color="#0000BB">3</font><font  color="#007700">);&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// Prints 'Number of arguments: 3'<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+><P  ></P
+></DIV
+>
+    </P
+><P  >&#13;     <B  CLASS="function" >func_num_args()</B
+> may be used in conjunction
+     with <A  HREF="function.func-get-arg.html"  ><B  CLASS="function" >func_get_arg()</B
+></A
+> and
+     <A  HREF="function.func-get-args.html"  ><B  CLASS="function" >func_get_args()</B
+></A
+> to allow user-defined
+     functions to accept variable-length argument lists.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.func-get-args.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.function-exists.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >func_get_args</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.funchand.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >function_exists</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 errors" id="refsect1-function.func-num-args-errors">
-  <h3 class="title">错误／异常</h3>
-  <p class="para">
-   Generates a warning if called from outside of a user-defined function.
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.func-num-args-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5433">
-    <p><strong>Example #1 <span class="function"><strong>func_num_args()</strong></span> example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$numargs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_num_args</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Number&nbsp;of&nbsp;arguments:&nbsp;</span><span style="color: #0000BB">$numargs</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Number of arguments: 3
-</pre></div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-5434">
-    <p><strong>Example #2 <span class="function"><strong>func_num_args()</strong></span> example before and
-    after PHP 5.3</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-test.php<br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;</span><span style="color: #DD0000">'./fna.php'</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #DD0000">'First&nbsp;arg'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Second&nbsp;arg'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span><br />fna.php<br /><span style="color: #0000BB">&lt;?php<br /><br />$num_args&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">func_num_args</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$num_args</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>
-     Output previous to PHP 5.3:
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-2
-</pre></div>
-    </div>
-    <div class="example-contents"><p>
-     Output in PHP 5.3 and later will be something similar to:
-    </p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Warning: func_num_args():  Called from the global scope - no function
-context in /home/torben/Desktop/code/ml/fna.php on line 3
--1
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.func-num-args-notes">
-  <h3 class="title">注释</h3>
-  <blockquote class="note"><p><strong class="note">Note</strong>: <p class="para">因为函数依赖于当前作用域以确定参数的细节，所以在
-5.3.0 以前的版本中不能用作函数的参数。如必须传递此值时，可将结果赋与一个变量，然后用此变量进行传递。</p></p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.func-num-args-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.func-get-arg.html" class="function" rel="rdfs-seeAlso">func_get_arg()</a> - 返回参数列表的某一项</span></li>
-    <li class="member"><span class="function"><a href="function.func-get-args.html" class="function" rel="rdfs-seeAlso">func_get_args()</a> - 返回一个包含函数参数列表的数组</span></li>
-    <li class="member"><span class="methodname"><a href="reflectionfunctionabstract.getnumberofparameters.html" class="methodname" rel="rdfs-seeAlso">ReflectionFunctionAbstract::getNumberOfParameters()</a> - 获取参数数目</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.func-get-args.html">func_get_args</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.function-exists.html">function_exists</a></div>
- <div class="up"><a href="ref.funchand.html">Function handling 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

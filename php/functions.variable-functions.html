@@ -1,75 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å¯å˜å‡½æ•°</title>
+<HTML  ><HEAD  ><TITLE  >±äÁ¿º¯Êı</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="º¯Êı" HREF="functions.html"><LINK  REL="PREVIOUS" TITLE="·µ»ØÖµ" HREF="functions.returning-values.html"><LINK  REL="NEXT" TITLE="ÄÚ²¿£¨ÄÚ½¨£©º¯Êı" HREF="functions.internal.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="sect1" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="functions.returning-values.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" >ÕÂ 12. º¯Êı</TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="functions.internal.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><DIV  CLASS="sect1" ><H1  CLASS="sect1" ><A  NAME="functions.variable-functions" ></A
+>±äÁ¿º¯Êı</H1
+><P  >&#13;    PHP Ö§³Ö±äÁ¿º¯ÊıµÄ¸ÅÄî¡£ÕâÒâÎ¶×ÅÈç¹ûÒ»¸ö±äÁ¿ÃûºóÓĞÔ²À¨ºÅ£¬PHP ½«Ñ°ÕÒ
+    Óë±äÁ¿µÄÖµÏàÍ¬µÄº¯Êı£¬²¢ÇÒ½«³¢ÊÔÖ´ĞĞËü¡£³ıÁË±ğµÄÊÂÇéÒÔÍâ£¬Õâ¸ö¿ÉÒÔ±»
+    ÓÃÓÚÊµÏÖ»Øµ÷º¯Êı£¬º¯Êı±íµÈµÈ¡£
+    </P
+><P  >&#13;    ±äÁ¿º¯Êı²»ÄÜÓÃÓÚÓïÑÔ½á¹¹£¬ÀıÈç <A  HREF="function.echo.html"  ><B  CLASS="function" >echo()</B
+></A
+>¡¢<A  HREF="function.print.html"  ><B  CLASS="function" >print()</B
+></A
+>¡¢<A  HREF="function.unset.html"  ><B  CLASS="function" >unset()</B
+></A
+>¡¢<A  HREF="function.isset.html"  ><B  CLASS="function" >isset()</B
+></A
+>¡¢<A  HREF="function.empty.html"  ><B  CLASS="function" >empty()</B
+></A
+>¡¢<A  HREF="function.include.html"  ><B  CLASS="function" >include()</B
+></A
+>¡¢<A  HREF="function.require.html"  ><B  CLASS="function" >require()</B
+></A
+> ÒÔ¼°ÀàËÆµÄÓï¾ä¡£ÄúĞèÒªÊ¹ÓÃÄú×Ô¼ºµÄÍâ¿Çº¯ÊıÀ´½«ÕâĞ©½á¹¹ÓÃ×÷±äÁ¿º¯Êı¡£
+   </P
+><P  >&#13;    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5630" ></A
+><P  ><B  >Àı×Ó 12-12. ±äÁ¿º¯ÊıÊ¾Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">function </font><font  color="#0000BB">foo</font><font  color="#007700">()<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"In foo()&lt;br&gt;\n"</font><font  color="#007700">;<br  />}<br  /><br  />function </font><font  color="#0000BB">bar</font><font  color="#007700">(</font><font  color="#0000BB">$arg </font><font  color="#007700">= </font><font  color="#DD0000">''</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"In bar(); argument was '$arg'.&lt;br&gt;\n"</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#FF8000">// This is a wrapper function around echo<br  /></font><font  color="#007700">function </font><font  color="#0000BB">echoit</font><font  color="#007700">(</font><font  color="#0000BB">$string</font><font  color="#007700">)<br  />{<br  />&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#0000BB">$string</font><font  color="#007700">;<br  />}<br  /><br  /></font><font  color="#0000BB">$func </font><font  color="#007700">= </font><font  color="#DD0000">'foo'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$func</font><font  color="#007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// This calls foo()<br  /><br  /></font><font  color="#0000BB">$func </font><font  color="#007700">= </font><font  color="#DD0000">'bar'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$func</font><font  color="#007700">(</font><font  color="#DD0000">'test'</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// This calls bar()<br  /><br  /></font><font  color="#0000BB">$func </font><font  color="#007700">= </font><font  color="#DD0000">'echoit'</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$func</font><font  color="#007700">(</font><font  color="#DD0000">'test'</font><font  color="#007700">);&nbsp;&nbsp;</font><font  color="#FF8000">// This calls echoit()<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    Äú»¹¿ÉÒÔÀûÓÃ±äÁ¿º¯ÊıµÄÌØĞÔÀ´µ÷ÓÃÒ»¸ö¶ÔÏóµÄ·½·¨¡£
+    <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN5634" ></A
+><P  ><B  >Àı×Ó 12-13. ±äÁ¿·½·¨·¶Àı</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  /></font><font  color="#007700">class </font><font  color="#0000BB">Foo<br  /></font><font  color="#007700">{<br  />&nbsp;&nbsp;&nbsp;&nbsp;function Var()<br  />&nbsp;&nbsp;&nbsp;&nbsp;{<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$name </font><font  color="#007700">= </font><font  color="#DD0000">'Bar'</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#0000BB">$this</font><font  color="#007700">-&gt;</font><font  color="#0000BB">$name</font><font  color="#007700">(); </font><font  color="#FF8000">// This calls the Bar() method<br  />&nbsp;&nbsp;&nbsp;&nbsp;</font><font  color="#007700">}<br  /><br  />&nbsp;&nbsp;&nbsp;&nbsp;function </font><font  color="#0000BB">Bar</font><font  color="#007700">()<br  />&nbsp;&nbsp;&nbsp;&nbsp;{<br  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo </font><font  color="#DD0000">"This is Bar"</font><font  color="#007700">;<br  />&nbsp;&nbsp;&nbsp;&nbsp;}<br  />}<br  /><br  /></font><font  color="#0000BB">$foo </font><font  color="#007700">= new </font><font  color="#0000BB">Foo</font><font  color="#007700">();<br  /></font><font  color="#0000BB">$funcname </font><font  color="#007700">= </font><font  color="#DD0000">"Var"</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$foo</font><font  color="#007700">-&gt;</font><font  color="#0000BB">$funcname</font><font  color="#007700">();&nbsp;&nbsp;&nbsp;</font><font  color="#FF8000">// This calls $foo-&gt;Var()<br  /><br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+   </P
+><P  >&#13;    Çë²ÎÔÄ <A  HREF="function.call-user-func.html"  ><B  CLASS="function" >call_user_func()</B
+></A
+>¡¢<A  HREF="language.variables.variable.html"  >±äÁ¿±äÁ¿</A
+> ºÍ <A  HREF="function.function-exists.html"  ><B  CLASS="function" >function_exists()</B
+></A
+>¡£
+   </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="functions.returning-values.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="functions.internal.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >·µ»ØÖµ</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="functions.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >ÄÚ²¿£¨ÄÚ½¨£©º¯Êı</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="functions.returning-values.html">è¿”å›å€¼</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="functions.internal.html">å†…éƒ¨ï¼ˆå†…ç½®ï¼‰å‡½æ•°</a></div>
- <div class="up"><a href="language.functions.html">å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="functions.variable-functions" class="sect1">
-   <h2 class="title">å¯å˜å‡½æ•°</h2>
 
-   <p class="para">
-    PHP æ”¯æŒå¯å˜å‡½æ•°çš„æ¦‚å¿µã€‚è¿™æ„å‘³ç€å¦‚æœä¸€ä¸ªå˜é‡ååæœ‰åœ†æ‹¬å·ï¼ŒPHP
-    å°†å¯»æ‰¾ä¸å˜é‡çš„å€¼åŒåçš„å‡½æ•°ï¼Œå¹¶ä¸”å°è¯•æ‰§è¡Œå®ƒã€‚å¯å˜å‡½æ•°å¯ä»¥ç”¨æ¥å®ç°åŒ…æ‹¬å›è°ƒå‡½æ•°ï¼Œå‡½æ•°è¡¨åœ¨å†…çš„ä¸€äº›ç”¨é€”ã€‚
-    </p>
-   <p class="para">
-    å¯å˜å‡½æ•°ä¸èƒ½ç”¨äºä¾‹å¦‚
-    <span class="function"><a href="function.echo.html" class="function">echo</a></span>ï¼Œ<span class="function"><a href="function.print.html" class="function">print</a></span>ï¼Œ<span class="function"><a href="function.unset.html" class="function">unset()</a></span>ï¼Œ<span class="function"><a href="function.isset.html" class="function">isset()</a></span>ï¼Œ<span class="function"><a href="function.empty.html" class="function">empty()</a></span>ï¼Œ<span class="function"><a href="function.include.html" class="function">include</a></span>ï¼Œ<span class="function"><a href="function.require.html" class="function">require</a></span>
-    ä»¥åŠç±»ä¼¼çš„è¯­è¨€ç»“æ„ã€‚éœ€è¦ä½¿ç”¨è‡ªå·±çš„åŒ…è£…å‡½æ•°æ¥å°†è¿™äº›ç»“æ„ç”¨ä½œå¯å˜å‡½æ•°ã€‚
-   </p>
-   <p class="para">
-    <div class="example" id="example-177">
-     <p><strong>Example #1 å¯å˜å‡½æ•°ç¤ºä¾‹</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"In&nbsp;foo()&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"In&nbsp;bar();&nbsp;argument&nbsp;was&nbsp;'</span><span style="color: #0000BB">$arg</span><span style="color: #DD0000">'.&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;ä½¿ç”¨&nbsp;echo&nbsp;çš„åŒ…è£…å‡½æ•°<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">echoit</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;foo()<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;bar()<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'echoit'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;echoit()<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-   <p class="para">
-    ä¹Ÿå¯ä»¥ç”¨å¯å˜å‡½æ•°çš„è¯­æ³•æ¥è°ƒç”¨ä¸€ä¸ªå¯¹è±¡çš„æ–¹æ³•ã€‚
-    <div class="example" id="example-178">
-     <p><strong>Example #2 å¯å˜æ–¹æ³•èŒƒä¾‹</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">Variable</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Bar'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$name</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;the&nbsp;Bar()&nbsp;method<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">Bar</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;Bar"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$funcname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Variable"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$funcname</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;$foo-&gt;Variable()<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-
-   <p class="para">
-    å½“è°ƒç”¨é™æ€æ–¹æ³•æ—¶ï¼Œå‡½æ•°è°ƒç”¨è¦æ¯”é™æ€å±æ€§ä¼˜å…ˆï¼š
-    <div class="example" id="example-179">
-     <p><strong>Example #3 Variable æ–¹æ³•å’Œé™æ€å±æ€§ç¤ºä¾‹</strong></p>
-     <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$variable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'static&nbsp;property'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">Variable</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Method&nbsp;Variable&nbsp;called'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">::</span><span style="color: #0000BB">$variable</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;prints&nbsp;'static&nbsp;property'.&nbsp;It&nbsp;does&nbsp;need&nbsp;a&nbsp;$variable&nbsp;in&nbsp;this&nbsp;scope.<br /></span><span style="color: #0000BB">$variable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Variable"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">Foo</span><span style="color: #007700">::</span><span style="color: #0000BB">$variable</span><span style="color: #007700">();&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;$foo-&gt;Variable()&nbsp;reading&nbsp;$variable&nbsp;in&nbsp;this&nbsp;scope.<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-   </p>
-
-   <p class="para">
-    å‚è§ <span class="function"><a href="function.is-callable.html" class="function">is_callable()</a></span>ï¼Œ<span class="function"><a href="function.call-user-func.html" class="function">call_user_func()</a></span>ï¼Œ<a href="language.variables.variable.html" class="link">å¯å˜å˜é‡</a>å’Œ
-    <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span>ã€‚
-   </p>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="functions.returning-values.html">è¿”å›å€¼</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="functions.internal.html">å†…éƒ¨ï¼ˆå†…ç½®ï¼‰å‡½æ•°</a></div>
- <div class="up"><a href="language.functions.html">å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

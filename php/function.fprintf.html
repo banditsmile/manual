@@ -1,149 +1,235 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>将格式化后的字符串写入到流</title>
+<HTML  ><HEAD  ><TITLE  >fprintf</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="explode" HREF="function.explode.html"><LINK  REL="NEXT" TITLE="get_html_translation_table" HREF="function.get-html-translation-table.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.explode.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.get-html-translation-table.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.fprintf" ></A
+>fprintf</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN108040" ></A
+><P  >    (PHP 5 CVS only)</P
+>fprintf&nbsp;--&nbsp;Write a formatted string to a stream</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN108043" ></A
+><H2  >Description</H2
+>int <B  CLASS="methodname" >fprintf</B
+> ( resource handle, string format [, mixed args])<BR  ></BR
+><P  >&#13;     Write a string produced according to the formatting string
+     <TT  CLASS="parameter" ><I  >format</I
+></TT
+> to the stream resource specified
+     by <TT  CLASS="parameter" ><I  >handle</I
+></TT
+>..
+    </P
+><P  >&#13;     The format string is composed of zero or more directives:
+     ordinary characters (excluding <TT  CLASS="literal" >%</TT
+>) that are
+     copied directly to the result, and <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >conversion
+     specifications</I
+></SPAN
+>, each of which results in fetching its
+     own parameter.  This applies to <B  CLASS="function" >fprintf()</B
+>,
+     <A  HREF="function.sprintf.html"  ><B  CLASS="function" >sprintf()</B
+></A
+>, and <A  HREF="function.printf.html"  ><B  CLASS="function" >printf()</B
+></A
+>.
+    </P
+><P  >&#13;     Each conversion specification consists of a percent sign
+     (<TT  CLASS="literal" >%</TT
+>), followed by one or more of these
+     elements, in order:
+     <P  ></P
+><OL  TYPE="1" ><LI  ><P  >&#13;        An optional <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >padding specifier</I
+></SPAN
+> that says
+        what character will be used for padding the results to the
+        right string size.  This may be a space character or a
+        <TT  CLASS="literal" >0</TT
+> (zero character).  The default is to pad
+        with spaces.  An alternate padding character can be specified
+        by prefixing it with a single quote (<TT  CLASS="literal" >'</TT
+>).
+        See the examples below.
+       </P
+></LI
+><LI  ><P  >&#13;        An optional <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >alignment specifier</I
+></SPAN
+> that says
+        if the result should be left-justified or right-justified.
+        The default is right-justified; a <TT  CLASS="literal" >-</TT
+>
+        character here will make it left-justified.
+       </P
+></LI
+><LI  ><P  >&#13;        An optional number, a <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >width specifier</I
+></SPAN
+>
+        that says how many characters (minimum) this conversion should
+        result in.
+       </P
+></LI
+><LI  ><P  >&#13;        An optional <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >precision specifier</I
+></SPAN
+> that says
+        how many decimal digits should be displayed for floating-point
+        numbers.  This option has no effect for other types than
+        <A  HREF="language.types.float.html"  ><B  CLASS="type" >float</B
+></A
+>. (Another function useful for formatting numbers is
+        <A  HREF="function.number-format.html"  ><B  CLASS="function" >number_format()</B
+></A
+>.)
+       </P
+></LI
+><LI  ><P  >&#13;        A <SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >type specifier</I
+></SPAN
+> that says what type the
+        argument data should be treated as.  Possible types:
+        <P  ></P
+><TABLE  BORDER="0" ><TBODY  ><TR  ><TD  >&#13;          <TT  CLASS="literal" >%</TT
+> - a literal percent character. No
+          argument is required.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >b</TT
+> - the argument is treated as an
+          integer, and presented as a binary number.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >c</TT
+> - the argument is treated as an
+          integer, and presented as the character with that ASCII
+          value.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >d</TT
+> - the argument is treated as an
+          integer, and presented as a (signed) decimal number.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >u</TT
+> - the argument is treated as an
+          integer, and presented as an unsigned decimal number.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >f</TT
+> - the argument is treated as a
+          <A  HREF="language.types.float.html"  ><B  CLASS="type" >float</B
+></A
+>, and presented as a floating-point number.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >o</TT
+> - the argument is treated as an
+          integer, and presented as an octal number.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >s</TT
+> - the argument is treated as and
+          presented as a string.
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >x</TT
+> - the argument is treated as an integer
+          and presented as a hexadecimal number (with lowercase
+          letters).
+         </TD
+></TR
+><TR  ><TD  >&#13;          <TT  CLASS="literal" >X</TT
+> - the argument is treated as an integer
+          and presented as a hexadecimal number (with uppercase
+          letters).
+         </TD
+></TR
+></TBODY
+></TABLE
+><P  ></P
+>
+       </P
+></LI
+></OL
+>
+    </P
+><P  >&#13;     See also: <A  HREF="function.printf.html"  ><B  CLASS="function" >printf()</B
+></A
+>,
+     <A  HREF="function.sprintf.html"  ><B  CLASS="function" >sprintf()</B
+></A
+>,
+     <A  HREF="function.sscanf.html"  ><B  CLASS="function" >sscanf()</B
+></A
+>, <A  HREF="function.fscanf.html"  ><B  CLASS="function" >fscanf()</B
+></A
+>, 
+     <A  HREF="function.vsprintf.html"  ><B  CLASS="function" >vsprintf()</B
+></A
+>, and
+     <A  HREF="function.number-format.html"  ><B  CLASS="function" >number_format()</B
+></A
+>.
+    </P
+></DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN108118" ></A
+><H2  >Examples</H2
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN108121" ></A
+><P  ><B  >���� 1. <A  HREF="function.sprintf.html"  ><B  CLASS="function" >sprintf()</B
+></A
+>: zero-padded integers</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$isodate </font><font  color="#007700">= </font><font  color="#0000BB">sprintf</font><font  color="#007700">(</font><font  color="#DD0000">"%04d-%02d-%02d"</font><font  color="#007700">, </font><font  color="#0000BB">$year</font><font  color="#007700">, </font><font  color="#0000BB">$month</font><font  color="#007700">, </font><font  color="#0000BB">$day</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN108125" ></A
+><P  ><B  >���� 2. <A  HREF="function.sprintf.html"  ><B  CLASS="function" >sprintf()</B
+></A
+>: formatting currency</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$money1 </font><font  color="#007700">= </font><font  color="#0000BB">68.75</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$money2 </font><font  color="#007700">= </font><font  color="#0000BB">54.35</font><font  color="#007700">;<br  /></font><font  color="#0000BB">$money </font><font  color="#007700">= </font><font  color="#0000BB">$money1 </font><font  color="#007700">+ </font><font  color="#0000BB">$money2</font><font  color="#007700">;<br  /></font><font  color="#FF8000">// echo $money will output "123.1";<br  /></font><font  color="#0000BB">$formatted </font><font  color="#007700">= </font><font  color="#0000BB">sprintf</font><font  color="#007700">(</font><font  color="#DD0000">"%01.2f"</font><font  color="#007700">, </font><font  color="#0000BB">$money</font><font  color="#007700">);<br  /></font><font  color="#FF8000">// echo $formatted will output "123.10"<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.explode.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.get-html-translation-table.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >explode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >get_html_translation_table</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.explode.html">explode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-html-translation-table.html">get_html_translation_table</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.fprintf" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">fprintf</h1>
-  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">fprintf</span> &mdash; <span class="dc-title">将格式化后的字符串写入到流</span></p>
 
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.fprintf-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>fprintf</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$args</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ]] )</div>
-
-  <p class="para rdfs-comment">
-   写入一个根据 <code class="parameter">format</code> 格式化后的字符串到
-   由 <code class="parameter">handle</code> 句柄打开的流中。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.fprintf-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">handle</code></dt>
-
-     <dd>
-
-      <p class="para">文件系统指针，是典型地由
-<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> 创建的 <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>(资源)。</p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">format</code></dt>
-
-     <dd>
-
-      <p class="para">
-       参见 <span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> 中对 
-       <code class="parameter">format</code> 的描述。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">args</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">...</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.fprintf-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回写入的字符串长度。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.fprintf-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5146">
-    <p><strong>Example #1 <span class="function"><strong>fprintf()</strong></span>: zero-padded integers</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(!(</span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'date.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return;<br />}<br /><br /></span><span style="color: #0000BB">fprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"%04d-%02d-%02d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$year</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$month</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$day</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;will&nbsp;write&nbsp;the&nbsp;formatted&nbsp;ISO&nbsp;date&nbsp;to&nbsp;date.txt<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-   <div class="example" id="example-5147">
-    <p><strong>Example #2 <span class="function"><strong>fprintf()</strong></span>: formatting currency</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(!(</span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'currency.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return;<br />}<br /><br /></span><span style="color: #0000BB">$money1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">68.75</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$money2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">54.35</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$money&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$money1&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$money2</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;echo&nbsp;$money&nbsp;will&nbsp;output&nbsp;"123.1";<br /></span><span style="color: #0000BB">$len&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fprintf</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'%01.2f'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$money</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;will&nbsp;write&nbsp;"123.10"&nbsp;to&nbsp;currency.txt<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"wrote&nbsp;</span><span style="color: #0000BB">$len</span><span style="color: #DD0000">&nbsp;bytes&nbsp;to&nbsp;currency.txt"</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;use&nbsp;the&nbsp;return&nbsp;value&nbsp;of&nbsp;fprintf&nbsp;to&nbsp;determine&nbsp;how&nbsp;many&nbsp;bytes&nbsp;we&nbsp;wrote<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- 
- <div class="refsect1 seealso" id="refsect1-function.fprintf-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.printf.html" class="function" rel="rdfs-seeAlso">printf()</a> - 输出格式化字符串</span></li>
-    <li class="member"><span class="function"><a href="function.sprintf.html" class="function" rel="rdfs-seeAlso">sprintf()</a> - Return a formatted string</span></li>
-    <li class="member"><span class="function"><a href="function.sscanf.html" class="function" rel="rdfs-seeAlso">sscanf()</a> - 根据指定格式解析输入的字符</span></li>
-    <li class="member"><span class="function"><a href="function.fscanf.html" class="function" rel="rdfs-seeAlso">fscanf()</a> - 从文件中格式化输入</span></li>
-    <li class="member"><span class="function"><a href="function.vsprintf.html" class="function" rel="rdfs-seeAlso">vsprintf()</a> - 返回格式化字符串</span></li>
-    <li class="member"><span class="function"><a href="function.number-format.html" class="function" rel="rdfs-seeAlso">number_format()</a> - 以千位分隔符方式格式化一个数字</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.explode.html">explode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.get-html-translation-table.html">get_html_translation_table</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

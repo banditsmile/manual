@@ -1,130 +1,66 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ä¸º PHP çš„å€¼ç”Ÿæˆ XML</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xmlrpc-decode.html">xmlrpc_decode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xmlrpc-encode.html">xmlrpc_encode</a></div>
- <div class="up"><a href="ref.xmlrpc.html">XML-RPC å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.xmlrpc-encode-request" class="refentry">
-   <div class="refnamediv">
-    <h1 class="refname">xmlrpc_encode_request</h1>
-    <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">xmlrpc_encode_request</span> &mdash; <span class="dc-title">ä¸º PHP çš„å€¼ç”Ÿæˆ XML</span></p>
-
-   </div>
- <div class="refsect1 description" id="refsect1-function.xmlrpc-encode-request-description">
-  <h3 class="title">è¯´æ˜</h3>
-     <div class="methodsynopsis dc-description">
-      <span class="type">string</span> <span class="methodname"><strong>xmlrpc_encode_request</strong></span>
-       ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$method</code></span>
-      , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$params</code></span>
-      [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$output_options</code></span>
-     ] )</div>
-
-     <div class="warning"><strong class="warning">Warning</strong><p class="simpara">æ­¤å‡½æ•°æ˜¯<em class="emphasis">å®éªŒæ€§</em>çš„ã€‚æ­¤å‡½æ•°çš„è¡¨è±¡ï¼ŒåŒ…æ‹¬åç§°åŠå…¶ç›¸å…³æ–‡æ¡£éƒ½å¯èƒ½åœ¨æœªæ¥çš„
-PHP å‘å¸ƒç‰ˆæœ¬ä¸­æœªé€šçŸ¥å°±è¢«ä¿®æ”¹ã€‚ä½¿ç”¨æœ¬å‡½æ•°é£é™©è‡ªæ‹… ã€‚</p></div>
-   </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.xmlrpc-encode-request-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">method</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Name of the method to call.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">params</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Method parameters compatible with method signature.
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">output_options</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Array specifying output options may contain (default values are
-       emphasised):
-       <ul class="itemizedlist">
-        <li class="listitem"><p class="para">output_type: php, <em class="emphasis">xml</em></p></li>
-        <li class="listitem"><p class="para">verbosity: no_white_space, newlines_only, <em class="emphasis">pretty</em></p></li>
-        <li class="listitem"><p class="para">escaping: cdata, <em class="emphasis">non-ascii, non-print, markup</em>
-          (may be a string with one value or an array with multiple values)</p></li>
-        <li class="listitem"><p class="para">version: simple, <em class="emphasis">xmlrpc</em>, soap 1.1, auto</p></li>
-        <li class="listitem"><p class="para">encoding: <em class="emphasis">iso-8859-1</em>, other character set supported by iconv</p></li>
-       </ul>
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
- 
- <div class="refsect1 returnvalues" id="refsect1-function.xmlrpc-encode-request-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   Returns a string containing the XML representation of the request.
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >xmlrpc_encode_request</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="XML-RPC º¯Êı¿â" HREF="ref.xmlrpc.html"><LINK  REL="PREVIOUS" TITLE="xmlrpc_decode" HREF="function.xmlrpc-decode.html"><LINK  REL="NEXT" TITLE="xmlrpc_encode" HREF="function.xmlrpc-encode.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.xmlrpc-decode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.xmlrpc-encode.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.xmlrpc-encode-request" ></A
+>xmlrpc_encode_request</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN118536" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>xmlrpc_encode_request&nbsp;--&nbsp;Îª PHP µÄÖµÉú³É XML</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN118539" ></A
+><H2  >ÃèÊö</H2
+>string <B  CLASS="methodname" >xmlrpc_encode_request</B
+> ( string method, mixed params)<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     <DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >¸Ãº¯ÊıÄ¿Ç°ÉĞÎŞ²Î¿¼ÎÄµµ£»½ö²ÎÊıÁĞ±í¿ÉÓÃ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.xmlrpc-decode.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.xmlrpc-encode.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >xmlrpc_decode</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.xmlrpc.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >xmlrpc_encode</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 examples" id="refsect1-function.xmlrpc-encode-request-examples">
-  <h3 class="title">èŒƒä¾‹</h3>
-  <p class="para">
-   <div class="example" id="example-5642">
-    <p><strong>Example #1 XMLRPC client functions example</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$request&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xmlrpc_encode_request</span><span style="color: #007700">(</span><span style="color: #DD0000">"method"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$context&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'http'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'method'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"POST"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'header'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Content-Type:&nbsp;text/xml"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'content'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$request<br /></span><span style="color: #007700">)));<br /></span><span style="color: #0000BB">$file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/xmlrpc"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$context</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xmlrpc_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$response&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">xmlrpc_is_fault</span><span style="color: #007700">(</span><span style="color: #0000BB">$response</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #DD0000">"xmlrpc:&nbsp;</span><span style="color: #0000BB">$response</span><span style="color: #007700">[</span><span style="color: #0000BB">faultString</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;(</span><span style="color: #0000BB">$response</span><span style="color: #007700">[</span><span style="color: #0000BB">faultCode</span><span style="color: #007700">]</span><span style="color: #DD0000">)"</span><span style="color: #007700">);<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$response</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.xmlrpc-encode-request-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.stream-context-create.html" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - åˆ›å»ºèµ„æºæµä¸Šä¸‹æ–‡</span></li>
-    <li class="member"><span class="function"><a href="function.file-get-contents.html" class="function" rel="rdfs-seeAlso">file_get_contents()</a> - å°†æ•´ä¸ªæ–‡ä»¶è¯»å…¥ä¸€ä¸ªå­—ç¬¦ä¸²</span></li>
-    <li class="member"><span class="function"><a href="function.xmlrpc-decode.html" class="function" rel="rdfs-seeAlso">xmlrpc_decode()</a> - å°† XML è¯‘ç ä¸º PHP æœ¬èº«çš„ç±»å‹</span></li>
-   </ul>
-  </p>
- </div>
-
-  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.xmlrpc-decode.html">xmlrpc_decode</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.xmlrpc-encode.html">xmlrpc_encode</a></div>
- <div class="up"><a href="ref.xmlrpc.html">XML-RPC å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

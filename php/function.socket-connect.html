@@ -1,120 +1,115 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>å¼€å¯ä¸€ä¸ªå¥—æ¥å­—è¿æ¥</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-cmsg-space.html">socket_cmsg_space</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-create-listen.html">socket_create_listen</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.socket-connect" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">socket_connect</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5)</p><p class="refpurpose"><span class="refname">socket_connect</span> &mdash; <span class="dc-title">å¼€å¯ä¸€ä¸ªå¥—æ¥å­—è¿æ¥</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.socket-connect-description">
-  <h3 class="title">è¯´æ˜</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>socket_connect</strong></span>
-    ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$address</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$port</code><span class="initializer"> = 0</span></span>
-  ] )</div>
-
-  <p class="para rdfs-comment">
-   ç”¨ <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> åˆ›å»ºçš„æœ‰æ•ˆçš„å¥—æ¥å­—èµ„æºæ¥è¿æ¥åˆ° <code class="parameter">address</code> ã€‚
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.socket-connect-parameters">
-  <h3 class="title">å‚æ•°</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">socket</code></dt>
-
-     <dd>
-
-      <p class="para">
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">address</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å¦‚æœå‚æ•° <code class="parameter">socket</code> æ˜¯ <strong><code>AF_INET</code></strong> ï¼Œ
-       é‚£ä¹ˆå‚æ•° <code class="parameter">address</code> åˆ™å¯ä»¥æ˜¯ä¸€ä¸ªç‚¹åˆ†å››ç»„è¡¨ç¤ºæ³•ï¼ˆä¾‹å¦‚ <em>127.0.0.1</em> ï¼‰ çš„ IPv4 åœ°å€ï¼›
-       å¦‚æœæ”¯æŒ IPv6 å¹¶ä¸” <code class="parameter">socket</code> æ˜¯ <strong><code>AF_INET6</code></strong>ï¼Œé‚£ä¹ˆ <code class="parameter">address</code>
-       ä¹Ÿå¯ä»¥æ˜¯æœ‰æ•ˆçš„ IPv6 åœ°å€ï¼ˆä¾‹å¦‚ <em>::1</em>ï¼‰ï¼›å¦‚æœå¥—æ¥å­—ç±»å‹ä¸º <strong><code>AF_UNIX</code></strong> ï¼Œé‚£ä¹ˆ
-        <code class="parameter">address</code> ä¹Ÿå¯ä»¥æ˜¯ä¸€ä¸ªUnix å¥—æ¥å­—ã€‚
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">port</code></dt>
-
-     <dd>
-
-      <p class="para">
-       å‚æ•° <code class="parameter">port</code> ä»…ä»…ç”¨äº <strong><code>AF_INET</code></strong> å’Œ <strong><code>AF_INET6</code></strong>
-       å¥—æ¥å­—è¿æ¥çš„æ—¶å€™ï¼Œå¹¶ä¸”æ˜¯åœ¨æ­¤æƒ…å†µä¸‹æ˜¯éœ€è¦å¼ºåˆ¶è¯´æ˜è¿æ¥å¯¹åº”çš„è¿œç¨‹æœåŠ¡å™¨ä¸Šçš„ç«¯å£å·ã€‚
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.socket-connect-returnvalues">
-  <h3 class="title">è¿”å›å€¼</h3>
-  <p class="para">
-   æˆåŠŸæ—¶è¿”å› <strong><code>TRUE</code></strong>ï¼Œ æˆ–è€…åœ¨å¤±è´¥æ—¶è¿”å› <strong><code>FALSE</code></strong>ã€‚ é”™è¯¯ä»£ç ä¼šä¼ å…¥ <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span> ï¼Œå¦‚æœå°†æ­¤å‚æ•°ä¼ å…¥ <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span>
-   åˆ™å¯ä»¥å¾—åˆ°é”™è¯¯çš„æ–‡å­—è¯´æ˜ã€‚
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    If the socket is non-blocking then this function returns <strong><code>FALSE</code></strong> with an
-    error <em>Operation now in progress</em>.
-   </p>
-  </p></blockquote>
- </div>
-
-
- <div class="refsect1 seealso" id="refsect1-function.socket-connect-seealso">
-  <h3 class="title">å‚è§</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.socket-bind.html" class="function" rel="rdfs-seeAlso">socket_bind()</a> - ç»™å¥—æ¥å­—ç»‘å®šåå­—</span></li>
-    <li class="member"><span class="function"><a href="function.socket-listen.html" class="function" rel="rdfs-seeAlso">socket_listen()</a> - Listens for a connection on a socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-create.html" class="function" rel="rdfs-seeAlso">socket_create()</a> - åˆ›å»ºä¸€ä¸ªå¥—æ¥å­—ï¼ˆé€šè®¯èŠ‚ç‚¹ï¼‰</span></li>
-    <li class="member"><span class="function"><a href="function.socket-last-error.html" class="function" rel="rdfs-seeAlso">socket_last_error()</a> - Returns the last error on the socket</span></li>
-    <li class="member"><span class="function"><a href="function.socket-strerror.html" class="function" rel="rdfs-seeAlso">socket_strerror()</a> - Return a string describing a socket error</span></li>
-   </ul>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >socket_connect</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP ÊÖ²á" HREF="index-2.html"><LINK  REL="UP" TITLE="Socket Functions" HREF="ref.sockets.html"><LINK  REL="PREVIOUS" TITLE="socket_close" HREF="function.socket-close.html"><LINK  REL="NEXT" TITLE="socket_create_listen" HREF="function.socket-create-listen.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP ÊÖ²á</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.socket-close.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.socket-create-listen.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.socket-connect" ></A
+>socket_connect</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN103994" ></A
+><P  >    (PHP 4 &#62;= 4.1.0)</P
+>socket_connect&nbsp;--&nbsp;Initiates a connection on a socket</DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN103997" ></A
+><H2  >Description</H2
+>bool <B  CLASS="methodname" >socket_connect</B
+> ( resource socket, string address [, int port])<BR  ></BR
+><DIV  CLASS="warning" ><P  ></P
+><TABLE  CLASS="warning" BORDER="1" WIDTH="100%" ><TR  ><TD  ALIGN="CENTER" ><B  >¾¯¸æ</B
+></TD
+></TR
+><TR  ><TD  ALIGN="LEFT" ><P  >±¾À©Õ¹Ä£¿éÊÇ<SPAN  CLASS="emphasis" ><I  CLASS="emphasis" >ÊµÑéĞÔ</I
+></SPAN
+>µÄ¡£¸ÃÄ£¿éµÄĞĞÎª£¬°üÀ¨Æäº¯ÊıµÄÃû³ÆÒÔ¼°ÆäËüÈÎºÎ¹ØÓÚ´ËÄ£¿éµÄÎÄµµ¿ÉÄÜ»áÔÚÃ»ÓĞÍ¨ÖªµÄÇé¿öÏÂËæ PHP ÒÔºóµÄ·¢²¼¶ø¸Ä±ä¡£ÎÒÃÇÌáĞÑÄúÔÚÊ¹ÓÃ±¾À©Õ¹Ä£¿éµÄÍ¬Ê±×Ôµ£·çÏÕ¡£
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P  >&#13;     Initiates a connection using the socket resource
+     <TT  CLASS="parameter" ><I  >socket</I
+></TT
+>, which must be a valid socket
+     resource created with <A  HREF="function.socket-create.html"  ><B  CLASS="function" >socket_create()</B
+></A
+>.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >address</I
+></TT
+> parameter is either an IP
+     address in dotted-quad notation
+     (e.g. <TT  CLASS="literal" >127.0.0.1</TT
+>), if the socket is of the
+     <TT  CLASS="constant" ><B  >AF_INET</B
+></TT
+> family; or the pathname of a
+     Unix domain socket, if the socket family is
+     <TT  CLASS="constant" ><B  >AF_UNIX</B
+></TT
+>.
+    </P
+><P  >&#13;     The <TT  CLASS="parameter" ><I  >port</I
+></TT
+> parameter is only used when
+     connecting to an <TT  CLASS="constant" ><B  >AF_INET</B
+></TT
+> socket, and
+     designates the port on the remote host to which a connection
+     should be made.
+    </P
+><P  >&#13;     Èç¹û³É¹¦Ôò·µ»Ø <TT  CLASS="constant" ><B  >TRUE</B
+></TT
+>£¬Ê§°ÜÔò·µ»Ø <TT  CLASS="constant" ><B  >FALSE</B
+></TT
+>¡£ The error code can be retrieved with
+     <A  HREF="function.socket-last-error.html"  ><B  CLASS="function" >socket_last_error()</B
+></A
+>. This code may be passed to
+     <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+> to get a textual explanation of the
+     error.
+    </P
+><P  >&#13;     See also 
+     <A  HREF="function.socket-bind.html"  ><B  CLASS="function" >socket_bind()</B
+></A
+>,
+     <A  HREF="function.socket-listen.html"  ><B  CLASS="function" >socket_listen()</B
+></A
+>,
+     <A  HREF="function.socket-create.html"  ><B  CLASS="function" >socket_create()</B
+></A
+>,
+     <A  HREF="function.socket-last-error.html"  ><B  CLASS="function" >socket_last_error()</B
+></A
+> and
+     <A  HREF="function.socket-strerror.html"  ><B  CLASS="function" >socket_strerror()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.socket-close.html"  ACCESSKEY="P" >ºóÍË</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >Æğµã</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.socket-create-listen.html"  ACCESSKEY="N" >Ç°½ø</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >socket_close</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.sockets.html"  ACCESSKEY="U" >ÉÏÒ»¼¶</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >socket_create_listen</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.socket-cmsg-space.html">socket_cmsg_space</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.socket-create-listen.html">socket_create_listen</a></div>
- <div class="up"><a href="ref.sockets.html">Socket å‡½æ•°</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>

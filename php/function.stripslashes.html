@@ -1,138 +1,88 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
- <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>反引用一个引用字符串</title>
-
- </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stripos.html">stripos</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stristr.html">stristr</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.stripslashes" class="refentry">
- <div class="refnamediv">
-  <h1 class="refname">stripslashes</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">stripslashes</span> &mdash; <span class="dc-title">反引用一个引用字符串</span></p>
-
- </div>
- 
- <div class="refsect1 description" id="refsect1-function.stripslashes-description">
-  <h3 class="title">说明</h3>
-  <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>stripslashes</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   反引用一个引用字符串。
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    如果 <a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">magic_quotes_sybase</a> 项开启，反斜线将被去除，但是两个反斜线将会被替换成一个。
-   </p>
-  </p></blockquote>
-  <p class="para">
-   一个使用范例是使用 PHP 检测 <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">magic_quotes_gpc</a> 配置项的 <em>开启</em>情况（在 PHP 5.4之 前默认是开启的）并且你不需要将数据插入到一个需要转义的位置（例如数据库）。例如，你只是简单地将表单数据直接输出。
-  </p>
- </div>
-
-
- <div class="refsect1 parameters" id="refsect1-function.stripslashes-parameters">
-  <h3 class="title">参数</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">str</code></dt>
-
-     <dd>
-
-      <p class="para">
-       输入字符串。
-      </p>
-     </dd>
-
-    
-   </dl>
-
-  </p>
- </div>
-
-
- <div class="refsect1 returnvalues" id="refsect1-function.stripslashes-returnvalues">
-  <h3 class="title">返回值</h3>
-  <p class="para">
-   返回一个去除转义反斜线后的字符串（<em>\&#039;</em> 转换为 <em>&#039;</em> 等等）。双反斜线（<em>\\</em>）被转换为单个反斜线（<em>\</em>）。
-  </p>
- </div>
-
-
- <div class="refsect1 examples" id="refsect1-function.stripslashes-examples">
-  <h3 class="title">范例</h3>
-  <p class="para">
-   <div class="example" id="example-5205">
-    <p><strong>Example #1 <span class="function"><strong>stripslashes()</strong></span> 范例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Is&nbsp;your&nbsp;name&nbsp;O\'reilly?"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;输出:&nbsp;Is&nbsp;your&nbsp;name&nbsp;O'reilly?<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">stripslashes</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <blockquote class="note"><p><strong class="note">Note</strong>: 
-   <p class="para">
-    <span class="function"><strong>stripslashes()</strong></span> 是非递归的。如果你想要在多维数组中使用该函数，你需要使用递归函数。
-   </p>
-  </p></blockquote>
-  <p class="para">
-   <div class="example" id="example-5206">
-    <p><strong>Example #2 对数组使用 <span class="function"><strong>stripslashes()</strong></span></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">stripslashes_deep</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">is_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;?<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">array_map</span><span style="color: #007700">(</span><span style="color: #DD0000">'stripslashes_deep'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">stripslashes</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;范例<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"f\\'oo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b\\'ar"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"fo\\'o"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b\\'ar"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stripslashes_deep</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;输出<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>以上例程会输出：</p></div>
-    <div class="example-contents screen">
-<div class="cdata"><pre>
-Array
-(
-    [0] =&gt; f&#039;oo
-    [1] =&gt; b&#039;ar
-    [2] =&gt; Array
-        (
-            [0] =&gt; fo&#039;o
-            [1] =&gt; b&#039;ar
-        )
-
-)
-</pre></div>
-    </div>
-   </div>
-  </p>
- </div>
+<HTML  ><HEAD  ><TITLE  >stripslashes</TITLE
+><META  NAME="GENERATOR" CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK  REL="HOME" TITLE="PHP �ֲ�" HREF="index-2.html"><LINK  REL="UP" TITLE="�ַ�������������" HREF="ref.strings.html"><LINK  REL="PREVIOUS" TITLE="stripos" HREF="function.stripos.html"><LINK  REL="NEXT" TITLE="stristr" HREF="function.stristr.html"><META  HTTP-EQUIV="Content-type" CONTENT="text/html; charset=gb2312"><LINK REL="stylesheet" HREF="style.css" ></HEAD
+><BODY TOPMARGIN="0" LEFTMARGIN="0"  CLASS="refentry" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#840084" ALINK="#0000FF" ><TABLE BORDER="0" WIDTH="100%" HEIGHT="100%" CELLSPACING="0" CELLPADDING="0"><TR><TD COLSPAN="3"><DIV CLASS="NAVHEADER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD><TABLE  SUMMARY="Header navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TH  COLSPAN="3" ALIGN="center" >PHP �ֲ�</TH
+></TR
+><TR  ><TD  WIDTH="10%" ALIGN="left" VALIGN="bottom" ><A  HREF="function.stripos.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="80%" ALIGN="center" VALIGN="bottom" ></TD
+><TD  WIDTH="10%" ALIGN="right" VALIGN="bottom" ><A  HREF="function.stristr.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+></TABLE></TD></TR><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR></TABLE></DIV></TD></TR><TR><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD><TD HEIGHT="100%" VALIGN="TOP" WIDTH="100%"><BR><H1  ><A  NAME="function.stripslashes" ></A
+>stripslashes</H1
+><DIV  CLASS="refnamediv" ><A  NAME="AEN110490" ></A
+><P  >    (PHP 3, PHP 4 )</P
+>stripslashes&nbsp;--&nbsp;
+     Un-quote string quoted with <A  HREF="function.addslashes.html"  ><B  CLASS="function" >addslashes()</B
+></A
+>
+    </DIV
+><DIV  CLASS="refsect1" ><A  NAME="AEN110494" ></A
+><H2  >Description</H2
+>string <B  CLASS="methodname" >stripslashes</B
+> ( string str)<BR  ></BR
+><P  >&#13;     Returns a string with backslashes stripped off.
+     (<TT  CLASS="literal" >\'</TT
+> becomes <TT  CLASS="literal" >'</TT
+> and so on.)
+     Double backslashes (<TT  CLASS="literal" >\\</TT
+>) are made into a single
+     backslash (<TT  CLASS="literal" >\</TT
+>). 
+    </P
+><P  >&#13;     An example use of <B  CLASS="function" >stripslashes()</B
+> is when the PHP
+     directive <A  HREF="ref.info.html#ini.magic-quotes-gpc"  >magic_quotes_gpc</A
+>
+     is <TT  CLASS="literal" >on</TT
+> (it's on by default), and you aren't inserting
+     this data into a place (such as a database) that requires escaping.
+     For example, if you're simply outputting data straight from an HTML
+     form.
+    </P
+><P  >&#13;     <TABLE  WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" CLASS="EXAMPLE" ><TR  ><TD  ><DIV  CLASS="example" ><A  NAME="AEN110512" ></A
+><P  ><B  >���� 1. A <B  CLASS="function" >stripslashes()</B
+> example</B
+></P
+><TABLE  BORDER="0" BGCOLOR="#E0E0E0" CELLPADDING="5" ><TR  ><TD  ><code ><font  color="#000000">
+<font  color="#0000BB">&lt;?php<br  />$str </font><font  color="#007700">= </font><font  color="#DD0000">"Is your name O\'reilly?"</font><font  color="#007700">;<br  /><br  /></font><font  color="#FF8000">// Outputs: Is your name O'reilly?<br  /></font><font  color="#007700">echo </font><font  color="#0000BB">stripslashes</font><font  color="#007700">(</font><font  color="#0000BB">$str</font><font  color="#007700">);<br  /></font><font  color="#0000BB">?&gt;</font>
+</font>
+</code></TD
+></TR
+></TABLE
+></DIV
+></TD
+></TR
+></TABLE
+>
+    </P
+><P  >&#13;     See also <A  HREF="function.addslashes.html"  ><B  CLASS="function" >addslashes()</B
+></A
+> and
+     <A  HREF="function.get-magic-quotes-gpc.html"  ><B  CLASS="function" >get_magic_quotes_gpc()</B
+></A
+>.
+    </P
+></DIV
+><BR></TD><TD><IMG SRC="spacer.gif"  WIDTH="10" HEIGHT="1"></TD></TR><TR><TD COLSPAN="3"><DIV CLASS="NAVFOOTER"><TABLE BGCOLOR="#CCCCFF" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD><IMG SRC="spacer.gif"  BORDER="0" WIDTH="1" HEIGHT="1"><BR></TD></TR><TR><TD><TABLE  SUMMARY="Footer navigation table" WIDTH="100%" BORDER="0" CELLPADDING="3" CELLSPACING="0" ><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" ><A  HREF="function.stripos.html"  ACCESSKEY="P" >����</A
+></TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="index-2.html"  ACCESSKEY="H" >���</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" ><A  HREF="function.stristr.html"  ACCESSKEY="N" >ǰ��</A
+></TD
+></TR
+><TR  ><TD  WIDTH="33%" ALIGN="left" VALIGN="top" >stripos</TD
+><TD  WIDTH="34%" ALIGN="center" VALIGN="top" ><A  HREF="ref.strings.html"  ACCESSKEY="U" >��һ��</A
+></TD
+><TD  WIDTH="33%" ALIGN="right" VALIGN="top" >stristr</TD
+></TR
+></TABLE></TD></TR></TABLE></DIV></TD></TR></TABLE>
+<!-- a-d-s -->
+<p style="text-align:center;"><script type="text/javascript" src="http://shouce.jb51.net/js/manual.js" ></script></p>
 
 
- <div class="refsect1 seealso" id="refsect1-function.stripslashes-seealso">
-  <h3 class="title">参见</h3>
-  <p class="para">
-   <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.addslashes.html" class="function" rel="rdfs-seeAlso">addslashes()</a> - 使用反斜线引用字符串</span></li>
-    <li class="member"><span class="function"><a href="function.get-magic-quotes-gpc.html" class="function" rel="rdfs-seeAlso">get_magic_quotes_gpc()</a> - 获取当前 magic_quotes_gpc 的配置选项设置</span></li>
-   </ul>
-  </p>
- </div>
-
-
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.stripos.html">stripos</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.stristr.html">stristr</a></div>
- <div class="up"><a href="ref.strings.html">字符串 函数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+<div style="display:none;">
+<script type="text/javascript" src="http://shouce.jb51.net/js/stat.js" ></script>
+</div>
+</body>
+</html>
